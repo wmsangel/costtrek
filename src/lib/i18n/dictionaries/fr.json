@@ -70,6 +70,22 @@
     "healthcare": "Santé",
     "goods": "Biens & services"
   },
+  "faq": {
+    "title": "Questions fréquentes",
+    "cityCostQ": "Combien coûte la vie à {city} ?",
+    "cityCostA": "L'indice du coût de la vie de {city} est de {index} (moyenne américaine = 100) — environ {pct}% {word} qu'une ville américaine typique. Un studio dans le centre coûte environ {rent} $ par mois.",
+    "cityRentQ": "Quel est le loyer moyen à {city} ?",
+    "cityRentA": "Un studio dans le centre coûte en moyenne environ {rentCentre} $ par mois, et autour de {rentOutside} $ en dehors du centre.",
+    "cityTaxQ": "Quels impôts paierais-je en {country} ?",
+    "cityTaxA": "{country} a un taux marginal d'impôt sur le revenu de {incomeTax}% et une TVA de {vat}%. Voir le détail dans la section impôts ci-dessus.",
+    "cmpCheaperQ": "{a} est-elle moins chère que {b} ?",
+    "cmpCheaperA": "{b} est globalement environ {pct}% {word} que {a} — son indice du coût de la vie est de {ib} contre {ia} pour {a}.",
+    "cmpSalaryQ": "Combien faut-il gagner à {b} pour vivre comme à {a} ?",
+    "cmpSalaryA": "Pour conserver le même niveau de vie, un salaire de {salary} $ à {a} équivaut à environ {equivalent} $ à {b}. Saisissez votre propre chiffre dans le calculateur ci-dessus.",
+    "cmpTaxQ": "Où les impôts sont-ils plus bas, à {a} ou à {b} ?",
+    "cmpTaxADiff": "{lowCountry} a le taux marginal d'impôt sur le revenu le plus bas — {lowRate}% contre {highRate}% en {highCountry}.",
+    "cmpTaxASame": "Les deux villes sont dans le même pays, donc l'impôt sur le revenu ({rate}%) et la TVA sont identiques ; seul le coût de la vie local diffère."
+  },
   "data": {
     "fullComparison": "Comparaison complète",
     "comingSoon": "Bientôt disponible",

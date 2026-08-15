@@ -70,6 +70,22 @@
     "healthcare": "Gesundheit",
     "goods": "Waren & Dienstleistungen"
   },
+  "faq": {
+    "title": "Häufige Fragen",
+    "cityCostQ": "Wie viel kostet das Leben in {city}?",
+    "cityCostA": "Der Lebenshaltungskosten-Index von {city} liegt bei {index} (US-Durchschnitt = 100) — etwa {pct}% {word} als eine typische US-Stadt. Eine 1-Zimmer-Wohnung im Zentrum kostet rund {rent} $ pro Monat.",
+    "cityRentQ": "Wie hoch ist die durchschnittliche Miete in {city}?",
+    "cityRentA": "Eine 1-Zimmer-Wohnung im Zentrum kostet im Schnitt etwa {rentCentre} $ pro Monat, außerhalb rund {rentOutside} $.",
+    "cityTaxQ": "Welche Steuern zahle ich in {country}?",
+    "cityTaxA": "{country} hat einen Spitzen-Einkommensteuersatz von {incomeTax}% und eine Mehrwert-/Umsatzsteuer von {vat}%. Details im Steuer-Abschnitt oben.",
+    "cmpCheaperQ": "Ist {a} günstiger als {b}?",
+    "cmpCheaperA": "{b} ist insgesamt etwa {pct}% {word} als {a} — der Index liegt bei {ib} gegenüber {ia} für {a}.",
+    "cmpSalaryQ": "Wie viel muss man in {b} verdienen, um wie in {a} zu leben?",
+    "cmpSalaryA": "Um denselben Lebensstandard zu halten, entspricht ein Gehalt von {salary} $ in {a} etwa {equivalent} $ in {b}. Gib oben im Rechner deinen eigenen Wert ein.",
+    "cmpTaxQ": "Wo sind die Steuern niedriger, in {a} oder {b}?",
+    "cmpTaxADiff": "{lowCountry} hat den niedrigeren Spitzensteuersatz — {lowRate}% gegenüber {highRate}% in {highCountry}.",
+    "cmpTaxASame": "Beide Städte liegen im selben Land, daher sind Einkommensteuer ({rate}%) und Mehrwertsteuer identisch; nur die lokalen Lebenshaltungskosten unterscheiden sich."
+  },
   "data": {
     "fullComparison": "Vollständiger Vergleich",
     "comingSoon": "Bald verfügbar",

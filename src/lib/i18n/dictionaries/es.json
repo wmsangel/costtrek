@@ -70,6 +70,22 @@
     "healthcare": "Sanidad",
     "goods": "Bienes y servicios"
   },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "cityCostQ": "¿Cuánto cuesta vivir en {city}?",
+    "cityCostA": "El índice de coste de vida de {city} es {index} (media de EE. UU. = 100) — alrededor de un {pct}% {word} que una ciudad estadounidense típica. Un piso de una habitación en el centro cuesta unos {rent} $ al mes.",
+    "cityRentQ": "¿Cuál es el alquiler medio en {city}?",
+    "cityRentA": "Un piso de una habitación en el centro cuesta de media unos {rentCentre} $ al mes, y alrededor de {rentOutside} $ fuera del centro.",
+    "cityTaxQ": "¿Qué impuestos pagaría en {country}?",
+    "cityTaxA": "{country} tiene un tipo máximo de IRPF del {incomeTax}% y un IVA o impuesto sobre ventas del {vat}%. Consulta el desglose en la sección de impuestos de arriba.",
+    "cmpCheaperQ": "¿Es {a} más barata que {b}?",
+    "cmpCheaperA": "{b} es en total alrededor de un {pct}% {word} que {a} — su índice de coste de vida es {ib} frente a {ia} de {a}.",
+    "cmpSalaryQ": "¿Cuánto hay que ganar en {b} para vivir como en {a}?",
+    "cmpSalaryA": "Para mantener el mismo nivel de vida, un salario de {salary} $ en {a} equivale a unos {equivalent} $ en {b}. Introduce tu propia cifra en la calculadora de arriba.",
+    "cmpTaxQ": "¿Dónde se pagan menos impuestos, en {a} o en {b}?",
+    "cmpTaxADiff": "{lowCountry} tiene el tipo máximo de IRPF más bajo — {lowRate}% frente al {highRate}% de {highCountry}.",
+    "cmpTaxASame": "Ambas ciudades están en el mismo país, así que el IRPF ({rate}%) y el IVA son idénticos; solo cambia el coste de vida local."
+  },
   "data": {
     "fullComparison": "Comparación completa",
     "comingSoon": "Próximamente",

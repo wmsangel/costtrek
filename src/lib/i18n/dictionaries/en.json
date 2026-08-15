@@ -70,6 +70,22 @@
     "healthcare": "Healthcare",
     "goods": "Goods & services"
   },
+  "faq": {
+    "title": "Frequently asked questions",
+    "cityCostQ": "How much does it cost to live in {city}?",
+    "cityCostA": "{city}'s cost-of-living index is {index} (US average = 100) — about {pct}% {word} than a typical US city. A one-bedroom apartment in the centre costs around ${rent} per month.",
+    "cityRentQ": "What is the average rent in {city}?",
+    "cityRentA": "A one-bedroom in the city centre averages about ${rentCentre} per month, and around ${rentOutside} outside the centre.",
+    "cityTaxQ": "What taxes would I pay in {country}?",
+    "cityTaxA": "{country} has a top income-tax rate of {incomeTax}% and a VAT or sales tax of {vat}%. See the taxes section above for the full breakdown.",
+    "cmpCheaperQ": "Is {a} cheaper than {b}?",
+    "cmpCheaperA": "{b} is about {pct}% {word} than {a} overall — its cost-of-living index is {ib} versus {ia} for {a}.",
+    "cmpSalaryQ": "How much do you need to earn in {b} to live like in {a}?",
+    "cmpSalaryA": "To keep the same standard of living, a ${salary} salary in {a} is worth about ${equivalent} in {b}. Enter your own figure in the calculator above.",
+    "cmpTaxQ": "Which has lower taxes, {a} or {b}?",
+    "cmpTaxADiff": "{lowCountry} has the lower top income-tax rate — {lowRate}% versus {highRate}% in {highCountry}.",
+    "cmpTaxASame": "Both cities are in the same country, so national income tax ({rate}%) and VAT are identical; only local cost of living differs."
+  },
   "data": {
     "fullComparison": "Full comparison",
     "comingSoon": "Coming soon",

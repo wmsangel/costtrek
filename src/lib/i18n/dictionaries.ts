@@ -65,6 +65,22 @@ export type Dictionary = {
     goods: string;
   };
   breadcrumbHome: string;
+  faq: {
+    title: string;
+    cityCostQ: string; // {city}
+    cityCostA: string; // {city} {index} {pct} {word} {rent}
+    cityRentQ: string; // {city}
+    cityRentA: string; // {rentCentre} {rentOutside}
+    cityTaxQ: string; // {country}
+    cityTaxA: string; // {country} {incomeTax} {vat}
+    cmpCheaperQ: string; // {a} {b}
+    cmpCheaperA: string; // {a} {b} {pct} {word} {ia} {ib}
+    cmpSalaryQ: string; // {a} {b}
+    cmpSalaryA: string; // {a} {b} {salary} {equivalent}
+    cmpTaxQ: string; // {a} {b}
+    cmpTaxADiff: string; // {lowCountry} {lowRate} {highRate} {highCountry}
+    cmpTaxASame: string; // {country} {rate}
+  };
   data: {
     fullComparison: string;
     comingSoon: string;

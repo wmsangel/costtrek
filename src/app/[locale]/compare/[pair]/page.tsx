@@ -17,10 +17,16 @@ import {
 import Mountains from "@/components/Mountains";
 import { LOCALE_BCP47, isLocale, type Locale } from "@/lib/i18n/config";
 import { fill, getDictionary } from "@/lib/i18n/dictionaries";
-import { localizedCityLabel, localizedCityName } from "@/lib/i18n/places";
+import {
+  localizedCityLabel,
+  localizedCityName,
+  localizedCountry,
+} from "@/lib/i18n/places";
+import { getCountry } from "@/lib/data";
 import { pageMetadata } from "@/lib/seo/site";
 import { breadcrumbJsonLd } from "@/lib/seo/jsonld";
 import JsonLd from "@/components/JsonLd";
+import Faq, { type FaqItem } from "@/components/Faq";
 
 export const dynamicParams = false;
 
@@ -208,6 +214,67 @@ export default async function ComparePage({
         b={b}
         labelA={labelA}
         labelB={labelB}
+      />
+
+      <Faq
+        title={dict.faq.title}
+        items={(() => {
+          const nl = LOCALE_BCP47[l];
+          const aName = localizedCityName(l, a);
+          const bName = localizedCityName(l, b);
+          const word = cheaper ? dict.compare.cheaper : dict.compare.moreExpensive;
+          const exampleSalary = 75000;
+          const equivalent = Math.round((exampleSalary * overallB) / overallA);
+          const countryA = getCountry(a.countryCode);
+          const countryB = getCountry(b.countryCode);
+          const items: FaqItem[] = [
+            {
+              q: fill(dict.faq.cmpCheaperQ, { a: aName, b: bName }),
+              a: fill(dict.faq.cmpCheaperA, {
+                a: aName,
+                b: bName,
+                pct: Math.abs(Math.round(overallDiff)),
+                word,
+                ia: Math.round(overallA),
+                ib: Math.round(overallB),
+              }),
+            },
+            {
+              q: fill(dict.faq.cmpSalaryQ, { a: aName, b: bName }),
+              a: fill(dict.faq.cmpSalaryA, {
+                a: aName,
+                b: bName,
+                salary: exampleSalary.toLocaleString(nl),
+                equivalent: equivalent.toLocaleString(nl),
+              }),
+            },
+          ];
+          if (countryA && countryB) {
+            if (a.countryCode === b.countryCode) {
+              items.push({
+                q: fill(dict.faq.cmpTaxQ, { a: aName, b: bName }),
+                a: fill(dict.faq.cmpTaxASame, {
+                  country: localizedCountry(l, a),
+                  rate: countryA.taxes.incomeTax.topRate,
+                }),
+              });
+            } else {
+              const rA = countryA.taxes.incomeTax.topRate;
+              const rB = countryB.taxes.incomeTax.topRate;
+              const aLower = rA <= rB;
+              items.push({
+                q: fill(dict.faq.cmpTaxQ, { a: aName, b: bName }),
+                a: fill(dict.faq.cmpTaxADiff, {
+                  lowCountry: localizedCountry(l, aLower ? a : b),
+                  lowRate: aLower ? rA : rB,
+                  highRate: aLower ? rB : rA,
+                  highCountry: localizedCountry(l, aLower ? b : a),
+                }),
+              });
+            }
+          }
+          return items;
+        })()}
       />
 
       <section className="mt-12">

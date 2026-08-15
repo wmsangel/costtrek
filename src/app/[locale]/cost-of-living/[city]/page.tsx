@@ -18,10 +18,12 @@ import {
 } from "@/lib/i18n/places";
 import { pageMetadata } from "@/lib/seo/site";
 import { breadcrumbJsonLd, cityJsonLd } from "@/lib/seo/jsonld";
-import { getCityProfile } from "@/lib/data";
+import { getCityProfile, getCountry } from "@/lib/data";
+import { localizedCountry } from "@/lib/i18n/places";
 import CityProfileSections from "@/components/CityProfileSections";
 import Mountains from "@/components/Mountains";
 import JsonLd from "@/components/JsonLd";
+import Faq, { type FaqItem } from "@/components/Faq";
 
 export const dynamicParams = false;
 
@@ -214,6 +216,52 @@ export default async function CityPage({
       </section>
 
       <CityProfileSections locale={l} dict={dict} city={c} />
+
+      <Faq
+        title={dict.faq.title}
+        items={(() => {
+          const country = getCountry(c.countryCode);
+          const nl = LOCALE_BCP47[l];
+          const label = localizedCityLabel(l, c);
+          const word =
+            index < 100 ? dict.compare.cheaper : dict.compare.moreExpensive;
+          const rentCentre =
+            profile?.housing?.medianRent1brCentreUsd ?? c.medianRent1br;
+          const rentOutside =
+            profile?.housing?.medianRent1brOutsideUsd ??
+            Math.round(c.medianRent1br * 0.75);
+          const items: FaqItem[] = [
+            {
+              q: fill(dict.faq.cityCostQ, { city: label }),
+              a: fill(dict.faq.cityCostA, {
+                city: label,
+                index: roundedIndex,
+                pct: Math.abs(Math.round(index - 100)),
+                word,
+                rent: c.medianRent1br.toLocaleString(nl),
+              }),
+            },
+            {
+              q: fill(dict.faq.cityRentQ, { city: label }),
+              a: fill(dict.faq.cityRentA, {
+                rentCentre: rentCentre.toLocaleString(nl),
+                rentOutside: rentOutside.toLocaleString(nl),
+              }),
+            },
+          ];
+          if (country) {
+            items.push({
+              q: fill(dict.faq.cityTaxQ, { country: localizedCountry(l, c) }),
+              a: fill(dict.faq.cityTaxA, {
+                country: localizedCountry(l, c),
+                incomeTax: country.taxes.incomeTax.topRate,
+                vat: country.taxes.vat?.standard ?? 0,
+              }),
+            });
+          }
+          return items;
+        })()}
+      />
 
       <section className="mt-12">
         <h2 className="mag-h2 mb-4">

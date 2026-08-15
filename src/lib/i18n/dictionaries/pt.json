@@ -70,6 +70,22 @@
     "healthcare": "Saúde",
     "goods": "Bens e serviços"
   },
+  "faq": {
+    "title": "Perguntas frequentes",
+    "cityCostQ": "Quanto custa viver em {city}?",
+    "cityCostA": "O índice de custo de vida de {city} é {index} (média dos EUA = 100) — cerca de {pct}% {word} do que uma cidade dos EUA típica. Um apartamento T1 no centro custa cerca de {rent} $ por mês.",
+    "cityRentQ": "Qual é a renda média em {city}?",
+    "cityRentA": "Um T1 no centro custa em média cerca de {rentCentre} $ por mês, e à volta de {rentOutside} $ fora do centro.",
+    "cityTaxQ": "Que impostos pagaria em {country}?",
+    "cityTaxA": "{country} tem uma taxa máxima de imposto sobre o rendimento de {incomeTax}% e um IVA de {vat}%. Veja o detalhe na secção de impostos acima.",
+    "cmpCheaperQ": "{a} é mais barata do que {b}?",
+    "cmpCheaperA": "{b} é, no total, cerca de {pct}% {word} do que {a} — o seu índice de custo de vida é {ib} contra {ia} de {a}.",
+    "cmpSalaryQ": "Quanto é preciso ganhar em {b} para viver como em {a}?",
+    "cmpSalaryA": "Para manter o mesmo padrão de vida, um salário de {salary} $ em {a} equivale a cerca de {equivalent} $ em {b}. Introduza o seu próprio valor na calculadora acima.",
+    "cmpTaxQ": "Onde se pagam menos impostos, em {a} ou {b}?",
+    "cmpTaxADiff": "{lowCountry} tem a taxa máxima de imposto sobre o rendimento mais baixa — {lowRate}% contra {highRate}% em {highCountry}.",
+    "cmpTaxASame": "Ambas as cidades estão no mesmo país, por isso o imposto sobre o rendimento ({rate}%) e o IVA são idênticos; só difere o custo de vida local."
+  },
   "data": {
     "fullComparison": "Comparação completa",
     "comingSoon": "Em breve",

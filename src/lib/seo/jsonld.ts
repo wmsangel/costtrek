@@ -41,6 +41,19 @@ export function breadcrumbJsonLd(
   };
 }
 
+/** FAQPage from a list of {q, a}. */
+export function faqJsonLd(items: { q: string; a: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((it) => ({
+      "@type": "Question",
+      name: it.q,
+      acceptedAnswer: { "@type": "Answer", text: it.a },
+    })),
+  };
+}
+
 /** Place / City with its cost-of-living index as an additionalProperty. */
 export function cityJsonLd(opts: {
   locale: Locale;
