@@ -73,6 +73,15 @@ export function localizedCountry(locale: Locale, city: City): string {
   return COUNTRY_NAMES[locale]?.[city.countryCode] ?? city.country;
 }
 
+/** Localized country name from an ISO-2 code (fallback = English name). */
+export function localizedCountryNameByCode(
+  locale: Locale,
+  code: string,
+  fallback: string,
+): string {
+  return COUNTRY_NAMES[locale]?.[code] ?? fallback;
+}
+
 /** Short chip label: "Múnich, DE" / "Austin, TX". */
 export function localizedCityLabel(locale: Locale, city: City): string {
   return `${localizedCityName(locale, city)}, ${regionCode(city)}`;

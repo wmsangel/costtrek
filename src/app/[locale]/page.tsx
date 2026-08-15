@@ -219,6 +219,14 @@ export default async function Home({
             </div>
           ))}
         </div>
+        <p className="mt-6">
+          <Link
+            href={`/${l}/countries`}
+            className="text-[var(--accent)] font-semibold hover:underline"
+          >
+            {dict.countriesIndex.linkTitle} →
+          </Link>
+        </p>
       </section>
     </div>
   );

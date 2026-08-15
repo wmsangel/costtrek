@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { CITIES, cityPath, comparePath } from "@/lib/cities";
 import { COLLECTION_KEYS } from "@/lib/collections";
 import { countrySlug, getCountry } from "@/lib/data";
+import { countriesWithCities } from "@/lib/countryStats";
 import { locales } from "@/lib/i18n/config";
 import { absUrl, languageAlternates } from "@/lib/seo/site";
 
@@ -12,7 +13,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "privacy", priority: 0.2 },
     { path: "cookies", priority: 0.2 },
     { path: "terms", priority: 0.2 },
+    { path: "countries", priority: 0.7 },
   ];
+
+  const countryList = countriesWithCities();
+  for (const a of countryList) {
+    for (const b of countryList) {
+      if (a.code === b.code) continue;
+      paths.push({
+        path: `compare-countries/${countrySlug(a)}-vs-${countrySlug(b)}`,
+        priority: 0.5,
+      });
+    }
+  }
 
   for (const key of COLLECTION_KEYS) {
     paths.push({ path: `best/${key}`, priority: 0.8 });

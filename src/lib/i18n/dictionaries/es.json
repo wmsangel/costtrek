@@ -45,6 +45,16 @@
     "subtitle": "Impuestos nacionales, visados y economía, además de todas las ciudades que seguimos en {country}.",
     "citiesTitle": "Ciudades en {country}"
   },
+  "countriesIndex": {
+    "title": "Coste de vida por país",
+    "subtitle": "Cada país de nuestro índice — impuestos nacionales, visados, salarios y las ciudades que seguimos.",
+    "linkTitle": "Explorar por país"
+  },
+  "compareCountries": {
+    "breadcrumb": "Comparar países",
+    "title": "{a} vs {b}: coste de vida e impuestos",
+    "subtitle": "Compara el coste de vida, los impuestos, los salarios y los visados entre {a} y {b}."
+  },
   "compare": {
     "breadcrumb": "Comparar",
     "subtitle": "Comparación del coste de vida y equivalencia salarial. Introduce tu salario actual para ver cuánto tendrías que ganar para vivir igual de bien.",
@@ -95,6 +105,8 @@
     "cityTaxA": "{country} tiene un tipo máximo de IRPF del {incomeTax}% y un IVA o impuesto sobre ventas del {vat}%. Consulta el desglose en la sección de impuestos de arriba.",
     "cityClimateQ": "¿Qué tiempo hace en {city}?",
     "cityClimateA": "{city} promedia alrededor de {jan} en enero y {jul} en julio, con unos {sunny} días de sol al año.",
+    "citySafetyQ": "¿Es segura {city}?",
+    "citySafetyA": "{city} obtiene {safety} sobre 100 en nuestro índice de seguridad, donde más alto es más seguro.",
     "cmpCheaperQ": "¿Es {a} más barata que {b}?",
     "cmpCheaperA": "{b} es en total alrededor de un {pct}% {word} que {a} — su índice de coste de vida es {ib} frente a {ia} de {a}.",
     "cmpSalaryQ": "¿Cuánto hay que ganar en {b} para vivir como en {a}?",

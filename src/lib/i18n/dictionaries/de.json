@@ -45,6 +45,16 @@
     "subtitle": "Nationale Steuern, Visa und Wirtschaft — sowie jede Stadt, die wir in {country} erfassen.",
     "citiesTitle": "Städte in {country}"
   },
+  "countriesIndex": {
+    "title": "Lebenshaltungskosten nach Land",
+    "subtitle": "Jedes Land in unserem Index — nationale Steuern, Visa, Gehälter und die erfassten Städte.",
+    "linkTitle": "Nach Land durchsuchen"
+  },
+  "compareCountries": {
+    "breadcrumb": "Länder vergleichen",
+    "title": "{a} vs {b}: Lebenshaltungskosten & Steuern",
+    "subtitle": "Vergleiche Lebenshaltungskosten, Steuern, Gehälter und Visa zwischen {a} und {b}."
+  },
   "compare": {
     "breadcrumb": "Vergleich",
     "subtitle": "Vergleich der Lebenshaltungskosten und Gehaltsäquivalenz. Gib dein aktuelles Gehalt ein, um zu sehen, was du verdienen müsstest, um gleich gut zu leben.",
@@ -95,6 +105,8 @@
     "cityTaxA": "{country} hat einen Spitzen-Einkommensteuersatz von {incomeTax}% und eine Mehrwert-/Umsatzsteuer von {vat}%. Details im Steuer-Abschnitt oben.",
     "cityClimateQ": "Wie ist das Wetter in {city}?",
     "cityClimateA": "{city} hat im Januar durchschnittlich etwa {jan} und im Juli {jul}, mit rund {sunny} Sonnentagen pro Jahr.",
+    "citySafetyQ": "Ist {city} sicher?",
+    "citySafetyA": "{city} erreicht {safety} von 100 auf unserem Sicherheitsindex, wobei höher sicherer bedeutet.",
     "cmpCheaperQ": "Ist {a} günstiger als {b}?",
     "cmpCheaperA": "{b} ist insgesamt etwa {pct}% {word} als {a} — der Index liegt bei {ib} gegenüber {ia} für {a}.",
     "cmpSalaryQ": "Wie viel muss man in {b} verdienen, um wie in {a} zu leben?",

@@ -283,6 +283,13 @@ export default async function CityPage({
               }),
             });
           }
+          const safety = profile?.qualityOfLife?.safetyIndex;
+          if (safety != null) {
+            items.push({
+              q: fill(dict.faq.citySafetyQ, { city: label }),
+              a: fill(dict.faq.citySafetyA, { city: label, safety }),
+            });
+          }
           return items;
         })()}
       />

@@ -39,6 +39,16 @@ export type Dictionary = {
     subtitle: string; // {n} {country}
     citiesTitle: string; // {country}
   };
+  countriesIndex: {
+    title: string;
+    subtitle: string;
+    linkTitle: string;
+  };
+  compareCountries: {
+    breadcrumb: string;
+    title: string; // {a} {b}
+    subtitle: string; // {a} {b}
+  };
   compare: {
     breadcrumb: string;
     subtitle: string;
@@ -90,6 +100,8 @@ export type Dictionary = {
     cityTaxA: string; // {country} {incomeTax} {vat}
     cityClimateQ: string; // {city}
     cityClimateA: string; // {city} {jan} {jul} {sunny}
+    citySafetyQ: string; // {city}
+    citySafetyA: string; // {city} {safety}
     cmpCheaperQ: string; // {a} {b}
     cmpCheaperA: string; // {a} {b} {pct} {word} {ia} {ib}
     cmpSalaryQ: string; // {a} {b}
