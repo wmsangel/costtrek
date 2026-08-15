@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { CITIES, cityPath, comparePath } from "@/lib/cities";
+import { COLLECTION_KEYS } from "@/lib/collections";
 import { locales } from "@/lib/i18n/config";
 import { absUrl, languageAlternates } from "@/lib/seo/site";
 
@@ -12,6 +13,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "terms", priority: 0.2 },
   ];
 
+  for (const key of COLLECTION_KEYS) {
+    paths.push({ path: `best/${key}`, priority: 0.8 });
+  }
   for (const c of CITIES) {
     paths.push({ path: cityPath(c).replace(/^\//, ""), priority: 0.7 });
   }

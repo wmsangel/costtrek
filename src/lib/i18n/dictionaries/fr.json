@@ -86,6 +86,15 @@
     "cmpTaxADiff": "{lowCountry} a le taux marginal d'impôt sur le revenu le plus bas — {lowRate}% contre {highRate}% en {highCountry}.",
     "cmpTaxASame": "Les deux villes sont dans le même pays, donc l'impôt sur le revenu ({rate}%) et la TVA sont identiques ; seul le coût de la vie local diffère."
   },
+  "collections": {
+    "homeTitle": "Meilleurs endroits où vivre",
+    "rank": "Rang",
+    "cheapest": { "title": "Les villes les moins chères où vivre", "description": "Les villes les plus abordables de notre index, classées par coût de la vie global (moyenne américaine = 100). Plus bas = moins cher.", "metric": "Indice du coût" },
+    "lowTax": { "title": "Villes où l'impôt sur le revenu est le plus bas", "description": "Là où il reste le plus de votre salaire — classées selon le taux marginal d'impôt sur le revenu du pays.", "metric": "Taux marginal" },
+    "safest": { "title": "Les villes les plus sûres", "description": "Villes classées selon leur indice de sécurité (0–100, plus haut = plus sûr).", "metric": "Sécurité" },
+    "sunniest": { "title": "Les villes les plus ensoleillées", "description": "Les villes avec le plus de soleil, classées par jours clairs par an.", "metric": "Jours de soleil/an" },
+    "nomad": { "title": "Meilleures villes pour les nomades numériques", "description": "Villes abordables et bien connectées, prisées des télétravailleurs, classées par coût de la vie.", "metric": "Indice du coût" }
+  },
   "data": {
     "fullComparison": "Comparaison complète",
     "comingSoon": "Bientôt disponible",

@@ -86,6 +86,15 @@
     "cmpTaxADiff": "{lowCountry} tem a taxa máxima de imposto sobre o rendimento mais baixa — {lowRate}% contra {highRate}% em {highCountry}.",
     "cmpTaxASame": "Ambas as cidades estão no mesmo país, por isso o imposto sobre o rendimento ({rate}%) e o IVA são idênticos; só difere o custo de vida local."
   },
+  "collections": {
+    "homeTitle": "Melhores lugares para viver",
+    "rank": "Posição",
+    "cheapest": { "title": "Cidades mais baratas para viver", "description": "As cidades mais acessíveis do nosso índice, ordenadas pelo custo de vida geral (média dos EUA = 100). Mais baixo = mais barato.", "metric": "Índice de custo" },
+    "lowTax": { "title": "Cidades com o imposto sobre o rendimento mais baixo", "description": "Onde o salário rende mais — ordenadas pela taxa máxima de imposto sobre o rendimento do país.", "metric": "Taxa máxima" },
+    "safest": { "title": "Cidades mais seguras", "description": "Cidades ordenadas pelo índice de segurança (0–100, mais alto = mais seguro).", "metric": "Segurança" },
+    "sunniest": { "title": "Cidades com mais sol", "description": "As cidades com mais sol, ordenadas por dias limpos por ano.", "metric": "Dias de sol/ano" },
+    "nomad": { "title": "Melhores cidades para nómadas digitais", "description": "Cidades acessíveis e bem ligadas, populares entre teletrabalhadores, ordenadas por custo de vida.", "metric": "Índice de custo" }
+  },
   "data": {
     "fullComparison": "Comparação completa",
     "comingSoon": "Em breve",

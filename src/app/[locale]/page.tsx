@@ -14,6 +14,7 @@ import {
 import { isLocale, type Locale } from "@/lib/i18n/config";
 import { fill, getDictionary } from "@/lib/i18n/dictionaries";
 import { localizedCityLabel, localizedCityName } from "@/lib/i18n/places";
+import { COLLECTIONS, COLLECTION_KEYS } from "@/lib/collections";
 import { pageMetadata, SITE_NAME } from "@/lib/seo/site";
 import { websiteJsonLd } from "@/lib/seo/jsonld";
 import JsonLd from "@/components/JsonLd";
@@ -150,6 +151,25 @@ export default async function Home({
               </Link>
             );
           })}
+        </div>
+      </section>
+
+      {/* Best-of collections */}
+      <section className="mt-12">
+        <h2 className="mag-h2 mb-4">★ {dict.collections.homeTitle}</h2>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {COLLECTION_KEYS.map((k) => (
+            <Link
+              key={k}
+              href={`/${l}/best/${k}`}
+              className="card card-hover rounded-xl p-4 flex items-center justify-between gap-3"
+            >
+              <span className="font-semibold">
+                {dict.collections[COLLECTIONS[k].dictKey].title}
+              </span>
+              <span className="text-[var(--muted)]">→</span>
+            </Link>
+          ))}
         </div>
       </section>
 

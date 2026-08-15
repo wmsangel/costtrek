@@ -86,6 +86,15 @@
     "cmpTaxADiff": "{lowCountry} has the lower top income-tax rate — {lowRate}% versus {highRate}% in {highCountry}.",
     "cmpTaxASame": "Both cities are in the same country, so national income tax ({rate}%) and VAT are identical; only local cost of living differs."
   },
+  "collections": {
+    "homeTitle": "Best places to live",
+    "rank": "Rank",
+    "cheapest": { "title": "Cheapest cities to live in", "description": "The most affordable cities in our index, ranked by overall cost of living (US average = 100). Lower is cheaper.", "metric": "Cost index" },
+    "lowTax": { "title": "Cities with the lowest income tax", "description": "Where your salary keeps the most — ranked by each country's top personal income-tax rate.", "metric": "Top income tax" },
+    "safest": { "title": "Safest cities to live in", "description": "Cities ranked by their safety index (0–100, higher is safer).", "metric": "Safety" },
+    "sunniest": { "title": "Sunniest cities to live in", "description": "Cities with the most sunshine, ranked by clear days per year.", "metric": "Sunny days/yr" },
+    "nomad": { "title": "Best cities for digital nomads", "description": "Affordable, well-connected cities popular with remote workers, ranked by cost of living.", "metric": "Cost index" }
+  },
   "data": {
     "fullComparison": "Full comparison",
     "comingSoon": "Coming soon",

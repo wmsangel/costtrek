@@ -86,6 +86,15 @@
     "cmpTaxADiff": "{lowCountry} tiene el tipo máximo de IRPF más bajo — {lowRate}% frente al {highRate}% de {highCountry}.",
     "cmpTaxASame": "Ambas ciudades están en el mismo país, así que el IRPF ({rate}%) y el IVA son idénticos; solo cambia el coste de vida local."
   },
+  "collections": {
+    "homeTitle": "Mejores lugares para vivir",
+    "rank": "Puesto",
+    "cheapest": { "title": "Ciudades más baratas para vivir", "description": "Las ciudades más asequibles de nuestro índice, ordenadas por coste de vida general (media de EE. UU. = 100). Más bajo = más barato.", "metric": "Índice de coste" },
+    "lowTax": { "title": "Ciudades con el IRPF más bajo", "description": "Donde tu salario cunde más, ordenadas por el tipo máximo de IRPF del país.", "metric": "Tipo máximo" },
+    "safest": { "title": "Ciudades más seguras", "description": "Ciudades ordenadas por su índice de seguridad (0–100, más alto = más seguro).", "metric": "Seguridad" },
+    "sunniest": { "title": "Ciudades más soleadas", "description": "Las ciudades con más sol, ordenadas por días despejados al año.", "metric": "Días de sol/año" },
+    "nomad": { "title": "Mejores ciudades para nómadas digitales", "description": "Ciudades asequibles y bien conectadas, populares entre teletrabajadores, ordenadas por coste de vida.", "metric": "Índice de coste" }
+  },
   "data": {
     "fullComparison": "Comparación completa",
     "comingSoon": "Próximamente",

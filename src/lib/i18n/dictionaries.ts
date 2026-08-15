@@ -81,6 +81,15 @@ export type Dictionary = {
     cmpTaxADiff: string; // {lowCountry} {lowRate} {highRate} {highCountry}
     cmpTaxASame: string; // {country} {rate}
   };
+  collections: {
+    homeTitle: string;
+    rank: string;
+    cheapest: { title: string; description: string; metric: string };
+    lowTax: { title: string; description: string; metric: string };
+    safest: { title: string; description: string; metric: string };
+    sunniest: { title: string; description: string; metric: string };
+    nomad: { title: string; description: string; metric: string };
+  };
   data: {
     fullComparison: string;
     comingSoon: string;
