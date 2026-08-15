@@ -1,0 +1,259 @@
+@import "tailwindcss";
+
+/* ===================================================================
+   CostCompare — "Travel magazine" design system
+   Warm paper ground, mustard cover blocks, coral accent, teal data.
+   Light is the primary world; dark is a warm, considered variant.
+   =================================================================== */
+
+:root {
+  --background: #faf6ee; /* warm paper */
+  --foreground: #171310;
+  --card: #ffffff;
+  --card-2: #fbf7ef;
+  --border: #e7ddca;
+  --border-strong: #d8cbb0;
+  --muted: #7a7062;
+  --accent: #e0492f; /* coral */
+  --accent-2: #f4c020; /* mustard */
+  --accent-soft: rgba(224, 73, 47, 0.1);
+  --accent-fg: #ffffff;
+  --mustard: #f4c020;
+  --mustard-ink: #171310;
+  --ink: #171310; /* dark block bg */
+  --ink-fg: #f7efe0;
+  --good: #0d7d70; /* teal — cheaper / positive */
+  --bad: #c8402a; /* red — pricier / negative */
+  --shadow: 0 1px 2px rgba(60, 40, 12, 0.05), 0 10px 26px -14px rgba(60, 40, 12, 0.18);
+  --shadow-lg: 0 2px 4px rgba(60, 40, 12, 0.06), 0 26px 50px -20px rgba(60, 40, 12, 0.3);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-2: var(--card-2);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-fg: var(--accent-fg);
+  --color-good: var(--good);
+  --color-bad: var(--bad);
+  --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-archivo);
+}
+
+/* Softer, warmer dark palette (less "acidic" than pure mustard/coral on black).
+   Applied when the OS is dark AND the user hasn't forced light, and whenever the
+   user explicitly picks dark via the theme toggle. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --background: #1a1611;
+    --foreground: #f2ebdf;
+    --card: #221c15;
+    --card-2: #2a2319;
+    --border: #383021;
+    --border-strong: #4a3f2d;
+    --muted: #a89a86;
+    --accent: #ec6a4c; /* softened coral */
+    --accent-2: #d9ad42; /* muted ochre, not neon mustard */
+    --accent-soft: rgba(236, 106, 76, 0.14);
+    --accent-fg: #1a1611;
+    --mustard: #d9ad42;
+    --mustard-ink: #1a1611;
+    --ink: #100d09;
+    --ink-fg: #f2ebdf;
+    --good: #33b39d;
+    --bad: #ec6a4c;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 10px 26px -14px rgba(0, 0, 0, 0.6);
+    --shadow-lg: 0 2px 4px rgba(0, 0, 0, 0.4), 0 26px 50px -20px rgba(0, 0, 0, 0.7);
+  }
+}
+:root[data-theme="dark"] {
+  --background: #1a1611;
+  --foreground: #f2ebdf;
+  --card: #221c15;
+  --card-2: #2a2319;
+  --border: #383021;
+  --border-strong: #4a3f2d;
+  --muted: #a89a86;
+  --accent: #ec6a4c;
+  --accent-2: #d9ad42;
+  --accent-soft: rgba(236, 106, 76, 0.14);
+  --accent-fg: #1a1611;
+  --mustard: #d9ad42;
+  --mustard-ink: #1a1611;
+  --ink: #100d09;
+  --ink-fg: #f2ebdf;
+  --good: #33b39d;
+  --bad: #ec6a4c;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 10px 26px -14px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 2px 4px rgba(0, 0, 0, 0.4), 0 26px 50px -20px rgba(0, 0, 0, 0.7);
+}
+
+body {
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .display {
+  font-family: var(--font-display), var(--font-sans), sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Accent word (replaces the old gradient) — solid coral. */
+.gradient-text {
+  color: var(--accent);
+}
+
+/* Primary action — coral, poster-flat with a lift on hover. */
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-fg);
+  font-weight: 700;
+  box-shadow: 0 6px 16px -8px color-mix(in oklab, var(--accent) 70%, transparent);
+  transition: transform 0.14s ease, background 0.14s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+  background: color-mix(in oklab, var(--accent) 90%, black);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.card-hover {
+  transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in oklab, var(--accent) 50%, var(--border));
+  box-shadow: var(--shadow-lg);
+}
+
+/* Uppercase kicker/eyebrow. */
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display), sans-serif;
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+/* Section heading — coral, uppercase, with a leading glyph. */
+.mag-h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-display), sans-serif;
+  font-weight: 800;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* Mustard cover band (magazine cover). */
+.cover {
+  position: relative;
+  overflow: hidden;
+  background: var(--mustard);
+  color: var(--mustard-ink);
+  border-radius: 1.25rem;
+}
+.cover .cover-mts {
+  position: absolute;
+  right: -8px;
+  bottom: -2px;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+/* Big-number stat card. */
+.bignum {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.15rem 1.25rem;
+}
+.bignum .n {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 900;
+  font-size: 2.2rem;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.bignum .k {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 0.35rem;
+}
+
+/* Dark ink block (used for the tax band). */
+.ink-band {
+  background: var(--ink);
+  color: var(--ink-fg);
+  border-radius: 1.25rem;
+}
+.ink-band .n {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 900;
+  font-size: 2.3rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--mustard);
+}
+
+/* Coral call-to-action band (relocation). */
+.coral-band {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 1.25rem;
+}
+
+/* Pills / chips. */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Data bar (breakdown / quality). */
+.barz-track {
+  height: 0.55rem;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--muted) 28%, transparent);
+}
+.barz-fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--good);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

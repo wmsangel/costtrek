@@ -1,0 +1,121 @@
+{
+  "breadcrumbHome": "Accueil",
+  "footer": {
+    "line1": "© CostTrek. Les estimations du coût de la vie sont fournies à titre informatif uniquement.",
+    "line2": "Les chiffres sont approximatifs et ne doivent pas servir de base à des décisions financières."
+  },
+  "legal": {
+    "privacy": "Confidentialité",
+    "cookies": "Politique de cookies",
+    "terms": "Conditions d'utilisation",
+    "lastUpdated": "Dernière mise à jour"
+  },
+  "cookie": {
+    "message": "Nous utilisons des cookies pour l'analyse et la publicité. Vous pouvez accepter ou refuser les cookies non essentiels.",
+    "accept": "Accepter",
+    "decline": "Refuser",
+    "more": "Politique de cookies"
+  },
+  "home": {
+    "eyebrow": "Coût de la vie, ville contre ville",
+    "titlePre": "Un déménagement en vue ? Découvrez ce que votre salaire y vaut ",
+    "titleEmph": "vraiment",
+    "titlePost": ".",
+    "subtitle": "Comparez le coût de la vie entre les villes du monde entier et trouvez le salaire dont vous auriez besoin pour conserver votre niveau de vie après un déménagement.",
+    "tagline": "{n} villes · 5 langues",
+    "from": "De",
+    "to": "À",
+    "searchPlaceholder": "Rechercher une ville…",
+    "compareBtn": "Comparer le coût de la vie",
+    "popularTitle": "Comparaisons populaires",
+    "browseTitle": "Parcourir les villes"
+  },
+  "compare": {
+    "breadcrumb": "Comparer",
+    "subtitle": "Comparaison du coût de la vie et équivalence de salaire. Saisissez votre salaire actuel pour voir ce que vous devriez gagner pour vivre aussi bien.",
+    "vs": "vs",
+    "salaryLabel": "Votre salaire à {city}",
+    "perYear": "/ an",
+    "needLine": "Pour conserver le même niveau de vie à {city}, il vous faudrait",
+    "overallResult": "{city} est globalement {pct} {word}",
+    "cheaper": "moins cher",
+    "moreExpensive": "plus cher",
+    "breakdownTitle": "Détail par catégorie ({b} vs {a})",
+    "medianRent": "Loyer médian (1 chambre)",
+    "perMonth": "/mois",
+    "overviewLink": "Aperçu de {city} →",
+    "moreFrom": "Plus de comparaisons depuis {city}",
+    "disclaimer": "Les estimations reposent sur des indices approximatifs du coût de la vie (moyenne américaine = 100) et ne sont fournies qu'à titre indicatif."
+  },
+  "city": {
+    "breadcrumb": "Coût de la vie",
+    "subtitle": "{location} — indice {index} par rapport à la moyenne américaine de 100.",
+    "overallIndex": "Indice global du coût",
+    "aboveAvg": "{n}% au-dessus de la moyenne américaine",
+    "belowAvg": "{n}% en dessous de la moyenne américaine",
+    "medianRent": "Loyer médian (studio / 1 chambre)",
+    "perMonth": "/mois",
+    "breakdownTitle": "Détail par catégorie",
+    "indexLegend": "Indice par rapport à la moyenne américaine — la ligne marque 100. Plus bas = moins cher.",
+    "plainBelow": "En clair : {city} est environ {pct}% moins chère qu'une ville américaine typique. Un studio dans le centre coûte environ {rent} $/mois.",
+    "plainAbove": "En clair : {city} est environ {pct}% plus chère qu'une ville américaine typique. Un studio dans le centre coûte environ {rent} $/mois.",
+    "compareWith": "Comparer {city} avec…",
+    "disclaimer": "Les estimations reposent sur des indices approximatifs du coût de la vie (moyenne américaine = 100) et ne sont fournies qu'à titre indicatif."
+  },
+  "categories": {
+    "housing": "Logement",
+    "food": "Alimentation",
+    "transport": "Transport",
+    "utilities": "Charges",
+    "healthcare": "Santé",
+    "goods": "Biens & services"
+  },
+  "data": {
+    "fullComparison": "Comparaison complète",
+    "comingSoon": "Bientôt disponible",
+    "updated": "Mis à jour",
+    "sources": "Sources",
+    "groups": {
+      "cost": "Coût de la vie",
+      "housing": "Logement",
+      "money": "Argent & pouvoir d'achat",
+      "taxes": "Impôts",
+      "economy": "Économie & salaires",
+      "work": "Travail & nomade numérique",
+      "quality": "Qualité de vie",
+      "climate": "Climat",
+      "connectivity": "Connexions"
+    },
+    "sections": {
+      "prices": "Ce que ça coûte",
+      "taxes": "Impôts",
+      "visas": "Visas & résidence",
+      "relocation": "Déménagement & documents",
+      "referral": "Où chercher",
+      "quality": "Qualité de vie",
+      "about": "À propos"
+    },
+    "referralTypes": {
+      "rent": "Louer",
+      "buy": "Acheter",
+      "sell": "Vendre",
+      "flights": "Vols",
+      "insurance": "Assurance",
+      "sim": "SIM & internet",
+      "coworking": "Coworking",
+      "movers": "Déménageurs",
+      "bank": "Banque",
+      "jobs": "Emplois",
+      "other": "Autre"
+    }
+  },
+  "meta": {
+    "homeTitle": "CostTrek — comparez le coût de la vie entre les villes",
+    "titleTemplate": "%s · CostTrek",
+    "homeDescription": "Comparez le coût de la vie entre les villes du monde entier et trouvez le salaire dont vous auriez besoin pour conserver votre niveau de vie après un déménagement.",
+    "compareTitle": "{a} vs {b} : comparaison du coût de la vie",
+    "compareDescription": "Comparez le coût de la vie entre {aName} et {bName}. Découvrez le salaire dont vous auriez besoin à {bName} pour égaler votre mode de vie à {aName}, avec un détail catégorie par catégorie.",
+    "cityTitle": "Coût de la vie à {city}",
+    "cityDescription": "Coût de la vie à {location} : indice {index} (moyenne américaine = 100), loyer médian pour un logement d'une chambre d'environ {rent} $/mois, avec un détail par catégorie."
+  }
+}

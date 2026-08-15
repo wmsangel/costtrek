@@ -1,0 +1,121 @@
+{
+  "breadcrumbHome": "Home",
+  "footer": {
+    "line1": "© CostTrek. Cost-of-living estimates for informational purposes only.",
+    "line2": "Figures are approximate and should not be relied on for financial decisions."
+  },
+  "legal": {
+    "privacy": "Privacy Policy",
+    "cookies": "Cookie Policy",
+    "terms": "Terms of Use",
+    "lastUpdated": "Last updated"
+  },
+  "cookie": {
+    "message": "We use cookies for analytics and to support ads. You can accept or decline non-essential cookies.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "more": "Cookie Policy"
+  },
+  "home": {
+    "eyebrow": "Cost of living, city vs city",
+    "titlePre": "Thinking of moving? See what your salary is really ",
+    "titleEmph": "worth",
+    "titlePost": " there.",
+    "subtitle": "Compare the cost of living between cities worldwide and find the salary you'd need to keep your standard of living after a move.",
+    "tagline": "{n} cities · 5 languages",
+    "from": "From",
+    "to": "To",
+    "searchPlaceholder": "Search a city…",
+    "compareBtn": "Compare cost of living",
+    "popularTitle": "Popular comparisons",
+    "browseTitle": "Browse cities"
+  },
+  "compare": {
+    "breadcrumb": "Compare",
+    "subtitle": "Cost-of-living comparison and salary equivalence. Enter your current salary to see what you'd need to earn to live equally well.",
+    "vs": "vs",
+    "salaryLabel": "Your salary in {city}",
+    "perYear": "/ year",
+    "needLine": "To keep the same standard of living in {city}, you'd need",
+    "overallResult": "{city} is {pct} {word} overall",
+    "cheaper": "cheaper",
+    "moreExpensive": "more expensive",
+    "breakdownTitle": "Category breakdown ({b} vs {a})",
+    "medianRent": "Median 1-bed rent",
+    "perMonth": "/mo",
+    "overviewLink": "{city} overview →",
+    "moreFrom": "More comparisons from {city}",
+    "disclaimer": "Estimates use approximate cost-of-living indices (US average = 100) and are for general guidance only."
+  },
+  "city": {
+    "breadcrumb": "Cost of living",
+    "subtitle": "{location} — index {index} vs the US average of 100.",
+    "overallIndex": "Overall cost index",
+    "aboveAvg": "{n}% above the US average",
+    "belowAvg": "{n}% below the US average",
+    "medianRent": "Median 1-bedroom rent",
+    "perMonth": "/mo",
+    "breakdownTitle": "Category breakdown",
+    "indexLegend": "Index vs the US average — the line marks 100. Lower is cheaper.",
+    "plainBelow": "In plain terms: {city} is about {pct}% cheaper than a typical US city. A one-bedroom in the centre runs around ${rent}/month.",
+    "plainAbove": "In plain terms: {city} is about {pct}% pricier than a typical US city. A one-bedroom in the centre runs around ${rent}/month.",
+    "compareWith": "Compare {city} with…",
+    "disclaimer": "Estimates use approximate cost-of-living indices (US average = 100) and are for general guidance only."
+  },
+  "categories": {
+    "housing": "Housing",
+    "food": "Food & groceries",
+    "transport": "Transport",
+    "utilities": "Utilities",
+    "healthcare": "Healthcare",
+    "goods": "Goods & services"
+  },
+  "data": {
+    "fullComparison": "Full comparison",
+    "comingSoon": "Coming soon",
+    "updated": "Updated",
+    "sources": "Sources",
+    "groups": {
+      "cost": "Cost of living",
+      "housing": "Housing",
+      "money": "Money & purchasing power",
+      "taxes": "Taxes",
+      "economy": "Economy & salaries",
+      "work": "Work & digital nomad",
+      "quality": "Quality of life",
+      "climate": "Climate",
+      "connectivity": "Connectivity"
+    },
+    "sections": {
+      "prices": "What things cost",
+      "taxes": "Taxes",
+      "visas": "Visas & residency",
+      "relocation": "Relocation & documents",
+      "referral": "Where to look",
+      "quality": "Quality of life",
+      "about": "About"
+    },
+    "referralTypes": {
+      "rent": "Rent",
+      "buy": "Buy",
+      "sell": "Sell",
+      "flights": "Flights",
+      "insurance": "Insurance",
+      "sim": "SIM & internet",
+      "coworking": "Coworking",
+      "movers": "Movers",
+      "bank": "Banking",
+      "jobs": "Jobs",
+      "other": "Other"
+    }
+  },
+  "meta": {
+    "homeTitle": "CostTrek — compare the cost of living between cities",
+    "titleTemplate": "%s · CostTrek",
+    "homeDescription": "Compare the cost of living between cities worldwide and find the salary you'd need to keep your standard of living after a move.",
+    "compareTitle": "{a} vs {b}: cost of living comparison",
+    "compareDescription": "Compare the cost of living between {aName} and {bName}. See the salary you'd need in {bName} to match your lifestyle in {aName}, with a category-by-category breakdown.",
+    "cityTitle": "Cost of living in {city}",
+    "cityDescription": "Cost of living in {location}: index {index} (US average = 100), median 1-bedroom rent about ${rent}/month, plus a category breakdown."
+  }
+}

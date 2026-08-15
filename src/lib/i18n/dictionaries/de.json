@@ -1,0 +1,121 @@
+{
+  "breadcrumbHome": "Start",
+  "footer": {
+    "line1": "© CostTrek. Schätzungen der Lebenshaltungskosten dienen nur zur Information.",
+    "line2": "Die Angaben sind Näherungswerte und sollten nicht als Grundlage für finanzielle Entscheidungen dienen."
+  },
+  "legal": {
+    "privacy": "Datenschutz",
+    "cookies": "Cookie-Richtlinie",
+    "terms": "Nutzungsbedingungen",
+    "lastUpdated": "Zuletzt aktualisiert"
+  },
+  "cookie": {
+    "message": "Wir verwenden Cookies für Analysen und Werbung. Du kannst nicht notwendige Cookies akzeptieren oder ablehnen.",
+    "accept": "Akzeptieren",
+    "decline": "Ablehnen",
+    "more": "Cookie-Richtlinie"
+  },
+  "home": {
+    "eyebrow": "Lebenshaltungskosten, Stadt gegen Stadt",
+    "titlePre": "Umzug geplant? Sieh, was dein Gehalt dort wirklich ",
+    "titleEmph": "wert",
+    "titlePost": " ist.",
+    "subtitle": "Vergleiche die Lebenshaltungskosten von Städten weltweit und finde heraus, welches Gehalt du brauchst, um nach einem Umzug deinen Lebensstandard zu halten.",
+    "tagline": "{n} Städte · 5 Sprachen",
+    "from": "Von",
+    "to": "Nach",
+    "searchPlaceholder": "Stadt suchen…",
+    "compareBtn": "Lebenshaltungskosten vergleichen",
+    "popularTitle": "Beliebte Vergleiche",
+    "browseTitle": "Städte durchsuchen"
+  },
+  "compare": {
+    "breadcrumb": "Vergleich",
+    "subtitle": "Vergleich der Lebenshaltungskosten und Gehaltsäquivalenz. Gib dein aktuelles Gehalt ein, um zu sehen, was du verdienen müsstest, um gleich gut zu leben.",
+    "vs": "vs",
+    "salaryLabel": "Dein Gehalt in {city}",
+    "perYear": "/ Jahr",
+    "needLine": "Um in {city} denselben Lebensstandard zu halten, bräuchtest du",
+    "overallResult": "{city} ist insgesamt {pct} {word}",
+    "cheaper": "günstiger",
+    "moreExpensive": "teurer",
+    "breakdownTitle": "Aufschlüsselung nach Kategorie ({b} vs {a})",
+    "medianRent": "Median-Miete (1 Zimmer)",
+    "perMonth": "/Mon.",
+    "overviewLink": "Überblick {city} →",
+    "moreFrom": "Weitere Vergleiche ab {city}",
+    "disclaimer": "Die Schätzungen verwenden ungefähre Lebenshaltungskosten-Indizes (US-Durchschnitt = 100) und dienen nur zur allgemeinen Orientierung."
+  },
+  "city": {
+    "breadcrumb": "Lebenshaltungskosten",
+    "subtitle": "{location} — Index {index} gegenüber dem US-Durchschnitt von 100.",
+    "overallIndex": "Gesamtkostenindex",
+    "aboveAvg": "{n}% über dem US-Durchschnitt",
+    "belowAvg": "{n}% unter dem US-Durchschnitt",
+    "medianRent": "Median-Miete (1-Zimmer-Wohnung)",
+    "perMonth": "/Mon.",
+    "breakdownTitle": "Aufschlüsselung nach Kategorie",
+    "indexLegend": "Index gegenüber dem US-Durchschnitt — die Linie markiert 100. Niedriger = günstiger.",
+    "plainBelow": "Kurz gesagt: {city} ist etwa {pct}% günstiger als eine typische US-Stadt. Eine 1-Zimmer-Wohnung im Zentrum kostet rund {rent} $/Monat.",
+    "plainAbove": "Kurz gesagt: {city} ist etwa {pct}% teurer als eine typische US-Stadt. Eine 1-Zimmer-Wohnung im Zentrum kostet rund {rent} $/Monat.",
+    "compareWith": "{city} vergleichen mit…",
+    "disclaimer": "Die Schätzungen verwenden ungefähre Lebenshaltungskosten-Indizes (US-Durchschnitt = 100) und dienen nur zur allgemeinen Orientierung."
+  },
+  "categories": {
+    "housing": "Wohnen",
+    "food": "Lebensmittel",
+    "transport": "Transport",
+    "utilities": "Nebenkosten",
+    "healthcare": "Gesundheit",
+    "goods": "Waren & Dienstleistungen"
+  },
+  "data": {
+    "fullComparison": "Vollständiger Vergleich",
+    "comingSoon": "Bald verfügbar",
+    "updated": "Aktualisiert",
+    "sources": "Quellen",
+    "groups": {
+      "cost": "Lebenshaltungskosten",
+      "housing": "Wohnen",
+      "money": "Geld & Kaufkraft",
+      "taxes": "Steuern",
+      "economy": "Wirtschaft & Gehälter",
+      "work": "Arbeit & Digital Nomad",
+      "quality": "Lebensqualität",
+      "climate": "Klima",
+      "connectivity": "Anbindung"
+    },
+    "sections": {
+      "prices": "Was die Dinge kosten",
+      "taxes": "Steuern",
+      "visas": "Visa & Aufenthalt",
+      "relocation": "Umzug & Dokumente",
+      "referral": "Wo suchen",
+      "quality": "Lebensqualität",
+      "about": "Über die Stadt"
+    },
+    "referralTypes": {
+      "rent": "Mieten",
+      "buy": "Kaufen",
+      "sell": "Verkaufen",
+      "flights": "Flüge",
+      "insurance": "Versicherung",
+      "sim": "SIM & Internet",
+      "coworking": "Coworking",
+      "movers": "Umzugsfirmen",
+      "bank": "Bank",
+      "jobs": "Jobs",
+      "other": "Sonstiges"
+    }
+  },
+  "meta": {
+    "homeTitle": "CostTrek — Lebenshaltungskosten von Städten vergleichen",
+    "titleTemplate": "%s · CostTrek",
+    "homeDescription": "Vergleiche die Lebenshaltungskosten von Städten weltweit und finde das Gehalt, das du brauchst, um nach einem Umzug deinen Lebensstandard zu halten.",
+    "compareTitle": "{a} vs {b}: Vergleich der Lebenshaltungskosten",
+    "compareDescription": "Vergleiche die Lebenshaltungskosten zwischen {aName} und {bName}. Sieh, welches Gehalt du in {bName} brauchst, um deinen Lebensstil aus {aName} zu halten – mit einer Aufschlüsselung nach Kategorie.",
+    "cityTitle": "Lebenshaltungskosten in {city}",
+    "cityDescription": "Lebenshaltungskosten in {location}: Index {index} (US-Durchschnitt = 100), Median-Miete für eine 1-Zimmer-Wohnung etwa {rent} $/Monat, plus Aufschlüsselung nach Kategorie."
+  }
+}
