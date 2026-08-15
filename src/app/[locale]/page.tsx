@@ -15,6 +15,7 @@ import { isLocale, type Locale } from "@/lib/i18n/config";
 import { fill, getDictionary } from "@/lib/i18n/dictionaries";
 import { localizedCityLabel, localizedCityName } from "@/lib/i18n/places";
 import { COLLECTIONS, COLLECTION_KEYS } from "@/lib/collections";
+import { getCountry } from "@/lib/data";
 import { pageMetadata, SITE_NAME } from "@/lib/seo/site";
 import { websiteJsonLd } from "@/lib/seo/jsonld";
 import JsonLd from "@/components/JsonLd";
@@ -63,6 +64,18 @@ export default async function Home({
     ["🌆", dict.data.groups.quality],
   ];
 
+  const CONTINENTS = [
+    { name: "North America", key: "northAmerica" },
+    { name: "Europe", key: "europe" },
+    { name: "Asia", key: "asia" },
+    { name: "Oceania", key: "oceania" },
+    { name: "South America", key: "southAmerica" },
+  ] as const;
+  const cityGroups = CONTINENTS.map(({ name, key }) => ({
+    key,
+    cities: CITIES.filter((c) => getCountry(c.countryCode)?.continent === name),
+  })).filter((g) => g.cities.length > 0);
+
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:py-12">
       <JsonLd data={websiteJsonLd(l)} />
@@ -100,7 +113,7 @@ export default async function Home({
       </div>
 
       {/* What you compare */}
-      <section className="mt-10">
+      <section className="mt-12">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {features.map(([icon, label]) => (
             <div
@@ -115,8 +128,11 @@ export default async function Home({
       </section>
 
       {/* Popular comparisons */}
-      <section className="mt-12">
-        <h2 className="mag-h2 mb-4">◷ {dict.home.popularTitle}</h2>
+      <section className="mt-16">
+        <h2 className="mag-h2 mb-1.5">◷ {dict.home.popularTitle}</h2>
+        <p className="text-[var(--muted)] mb-5 max-w-[60ch]">
+          {dict.home.popularSub}
+        </p>
         <div className="grid sm:grid-cols-2 gap-3">
           {POPULAR.map(([aSlug, bSlug]) => {
             const a = getCity(aSlug);
@@ -155,8 +171,11 @@ export default async function Home({
       </section>
 
       {/* Best-of collections */}
-      <section className="mt-12">
-        <h2 className="mag-h2 mb-4">★ {dict.collections.homeTitle}</h2>
+      <section className="mt-16">
+        <h2 className="mag-h2 mb-1.5">★ {dict.collections.homeTitle}</h2>
+        <p className="text-[var(--muted)] mb-5 max-w-[60ch]">
+          {dict.home.collectionsSub}
+        </p>
         <div className="grid sm:grid-cols-2 gap-3">
           {COLLECTION_KEYS.map((k) => (
             <Link
@@ -173,19 +192,31 @@ export default async function Home({
         </div>
       </section>
 
-      {/* Browse cities */}
-      <section className="mt-12">
-        <h2 className="mag-h2 mb-4">❖ {dict.home.browseTitle}</h2>
-        <div className="flex flex-wrap gap-2">
-          {CITIES.map((c) => (
-            <Link
-              key={c.slug}
-              href={`/${l}${cityPath(c)}`}
-              className="text-sm rounded-full border border-[var(--border)] px-3 py-1.5 hover:border-[var(--accent)] flex items-center gap-1.5"
-            >
-              <span aria-hidden="true">{flagEmoji(c.countryCode)}</span>
-              {localizedCityLabel(l, c)}
-            </Link>
+      {/* Browse cities by region */}
+      <section className="mt-16">
+        <h2 className="mag-h2 mb-1.5">❖ {dict.home.browseTitle}</h2>
+        <p className="text-[var(--muted)] mb-6 max-w-[60ch]">
+          {dict.home.browseSub}
+        </p>
+        <div className="space-y-6">
+          {cityGroups.map((g) => (
+            <div key={g.key}>
+              <h3 className="text-xs font-bold uppercase tracking-wider text-[var(--muted)] mb-2.5">
+                {dict.continents[g.key]}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {g.cities.map((c) => (
+                  <Link
+                    key={c.slug}
+                    href={`/${l}${cityPath(c)}`}
+                    className="text-sm rounded-full border border-[var(--border)] px-3 py-1.5 hover:border-[var(--accent)] flex items-center gap-1.5"
+                  >
+                    <span aria-hidden="true">{flagEmoji(c.countryCode)}</span>
+                    {localizedCityLabel(l, c)}
+                  </Link>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </section>

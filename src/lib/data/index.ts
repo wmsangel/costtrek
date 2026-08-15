@@ -1,5 +1,11 @@
 export type * from "./schema";
-export { COUNTRIES, getCountry, type CountryCode } from "./countries";
+export {
+  COUNTRIES,
+  getCountry,
+  countrySlug,
+  getCountryBySlug,
+  type CountryCode,
+} from "./countries";
 export { CITY_PROFILES, getCityProfile } from "./cityProfiles";
 export {
   METRICS,

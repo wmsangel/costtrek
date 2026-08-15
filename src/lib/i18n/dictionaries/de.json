@@ -28,7 +28,22 @@
     "searchPlaceholder": "Stadt suchen…",
     "compareBtn": "Lebenshaltungskosten vergleichen",
     "popularTitle": "Beliebte Vergleiche",
-    "browseTitle": "Städte durchsuchen"
+    "popularSub": "Die meistgesuchten Umzugsrouten.",
+    "collectionsSub": "Städte sortiert nach dem, was zählt — Kosten, Steuern, Sicherheit und mehr.",
+    "browseTitle": "Städte durchsuchen",
+    "browseSub": "Wähle eine Stadt für eine vollständige Aufschlüsselung von Kosten, Steuern und Lebensqualität."
+  },
+  "continents": {
+    "northAmerica": "Nordamerika",
+    "europe": "Europa",
+    "asia": "Asien",
+    "oceania": "Ozeanien",
+    "southAmerica": "Südamerika"
+  },
+  "country": {
+    "heading": "Lebenshaltungskosten in {country}",
+    "subtitle": "Nationale Steuern, Visa und Wirtschaft — sowie jede Stadt, die wir in {country} erfassen.",
+    "citiesTitle": "Städte in {country}"
   },
   "compare": {
     "breadcrumb": "Vergleich",
@@ -78,6 +93,8 @@
     "cityRentA": "Eine 1-Zimmer-Wohnung im Zentrum kostet im Schnitt etwa {rentCentre} $ pro Monat, außerhalb rund {rentOutside} $.",
     "cityTaxQ": "Welche Steuern zahle ich in {country}?",
     "cityTaxA": "{country} hat einen Spitzen-Einkommensteuersatz von {incomeTax}% und eine Mehrwert-/Umsatzsteuer von {vat}%. Details im Steuer-Abschnitt oben.",
+    "cityClimateQ": "Wie ist das Wetter in {city}?",
+    "cityClimateA": "{city} hat im Januar durchschnittlich etwa {jan} und im Juli {jul}, mit rund {sunny} Sonnentagen pro Jahr.",
     "cmpCheaperQ": "Ist {a} günstiger als {b}?",
     "cmpCheaperA": "{b} ist insgesamt etwa {pct}% {word} als {a} — der Index liegt bei {ib} gegenüber {ia} für {a}.",
     "cmpSalaryQ": "Wie viel muss man in {b} verdienen, um wie in {a} zu leben?",

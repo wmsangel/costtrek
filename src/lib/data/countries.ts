@@ -512,3 +512,20 @@ for (const [code, ex] of Object.entries(EXTRA)) {
 export function getCountry(code: string): Country | undefined {
   return (COUNTRIES as Record<string, Country>)[code];
 }
+
+/** URL slug from a country name, e.g. "United States" → "united-states". */
+export function countrySlug(country: Country): string {
+  return country.name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+const SLUG_TO_CODE = new Map(
+  Object.values(COUNTRIES).map((c) => [countrySlug(c), c.code]),
+);
+
+export function getCountryBySlug(slug: string): Country | undefined {
+  const code = SLUG_TO_CODE.get(slug);
+  return code ? getCountry(code) : undefined;
+}

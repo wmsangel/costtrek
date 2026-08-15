@@ -28,7 +28,22 @@
     "searchPlaceholder": "Buscar una ciudad…",
     "compareBtn": "Comparar coste de vida",
     "popularTitle": "Comparaciones populares",
-    "browseTitle": "Explorar ciudades"
+    "popularSub": "Las rutas de mudanza que más se buscan.",
+    "collectionsSub": "Ciudades ordenadas por lo que importa — coste, impuestos, seguridad y más.",
+    "browseTitle": "Explorar ciudades",
+    "browseSub": "Elige cualquier ciudad para un desglose completo de coste, impuestos y calidad de vida."
+  },
+  "continents": {
+    "northAmerica": "América del Norte",
+    "europe": "Europa",
+    "asia": "Asia",
+    "oceania": "Oceanía",
+    "southAmerica": "América del Sur"
+  },
+  "country": {
+    "heading": "Coste de vida en {country}",
+    "subtitle": "Impuestos nacionales, visados y economía, además de todas las ciudades que seguimos en {country}.",
+    "citiesTitle": "Ciudades en {country}"
   },
   "compare": {
     "breadcrumb": "Comparar",
@@ -78,6 +93,8 @@
     "cityRentA": "Un piso de una habitación en el centro cuesta de media unos {rentCentre} $ al mes, y alrededor de {rentOutside} $ fuera del centro.",
     "cityTaxQ": "¿Qué impuestos pagaría en {country}?",
     "cityTaxA": "{country} tiene un tipo máximo de IRPF del {incomeTax}% y un IVA o impuesto sobre ventas del {vat}%. Consulta el desglose en la sección de impuestos de arriba.",
+    "cityClimateQ": "¿Qué tiempo hace en {city}?",
+    "cityClimateA": "{city} promedia alrededor de {jan} en enero y {jul} en julio, con unos {sunny} días de sol al año.",
     "cmpCheaperQ": "¿Es {a} más barata que {b}?",
     "cmpCheaperA": "{b} es en total alrededor de un {pct}% {word} que {a} — su índice de coste de vida es {ib} frente a {ia} de {a}.",
     "cmpSalaryQ": "¿Cuánto hay que ganar en {b} para vivir como en {a}?",

@@ -28,7 +28,22 @@
     "searchPlaceholder": "Search a city…",
     "compareBtn": "Compare cost of living",
     "popularTitle": "Popular comparisons",
-    "browseTitle": "Browse cities"
+    "popularSub": "The relocation routes people search for most.",
+    "collectionsSub": "Cities ranked by what matters — cost, taxes, safety and more.",
+    "browseTitle": "Browse cities",
+    "browseSub": "Pick any city for a full cost, tax and quality-of-life breakdown."
+  },
+  "continents": {
+    "northAmerica": "North America",
+    "europe": "Europe",
+    "asia": "Asia",
+    "oceania": "Oceania",
+    "southAmerica": "South America"
+  },
+  "country": {
+    "heading": "Cost of living in {country}",
+    "subtitle": "National taxes, visas and economy — plus every city we track in {country}.",
+    "citiesTitle": "Cities in {country}"
   },
   "compare": {
     "breadcrumb": "Compare",
@@ -78,6 +93,8 @@
     "cityRentA": "A one-bedroom in the city centre averages about ${rentCentre} per month, and around ${rentOutside} outside the centre.",
     "cityTaxQ": "What taxes would I pay in {country}?",
     "cityTaxA": "{country} has a top income-tax rate of {incomeTax}% and a VAT or sales tax of {vat}%. See the taxes section above for the full breakdown.",
+    "cityClimateQ": "What is the weather like in {city}?",
+    "cityClimateA": "{city} averages around {jan} in January and {jul} in July, with roughly {sunny} sunny days a year.",
     "cmpCheaperQ": "Is {a} cheaper than {b}?",
     "cmpCheaperA": "{b} is about {pct}% {word} than {a} overall — its cost-of-living index is {ib} versus {ia} for {a}.",
     "cmpSalaryQ": "How much do you need to earn in {b} to live like in {a}?",

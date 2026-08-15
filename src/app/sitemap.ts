@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { CITIES, cityPath, comparePath } from "@/lib/cities";
 import { COLLECTION_KEYS } from "@/lib/collections";
+import { countrySlug, getCountry } from "@/lib/data";
 import { locales } from "@/lib/i18n/config";
 import { absUrl, languageAlternates } from "@/lib/seo/site";
 
@@ -15,6 +16,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   for (const key of COLLECTION_KEYS) {
     paths.push({ path: `best/${key}`, priority: 0.8 });
+  }
+  const countryCodes = new Set(CITIES.map((c) => c.countryCode));
+  for (const code of countryCodes) {
+    const co = getCountry(code);
+    if (co) paths.push({ path: `country/${countrySlug(co)}`, priority: 0.7 });
   }
   for (const c of CITIES) {
     paths.push({ path: cityPath(c).replace(/^\//, ""), priority: 0.7 });

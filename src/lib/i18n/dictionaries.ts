@@ -22,7 +22,22 @@ export type Dictionary = {
     searchPlaceholder: string;
     compareBtn: string;
     popularTitle: string;
+    popularSub: string;
+    collectionsSub: string;
     browseTitle: string;
+    browseSub: string;
+  };
+  continents: {
+    northAmerica: string;
+    europe: string;
+    asia: string;
+    oceania: string;
+    southAmerica: string;
+  };
+  country: {
+    heading: string; // {country}
+    subtitle: string; // {n} {country}
+    citiesTitle: string; // {country}
   };
   compare: {
     breadcrumb: string;
@@ -73,6 +88,8 @@ export type Dictionary = {
     cityRentA: string; // {rentCentre} {rentOutside}
     cityTaxQ: string; // {country}
     cityTaxA: string; // {country} {incomeTax} {vat}
+    cityClimateQ: string; // {city}
+    cityClimateA: string; // {city} {jan} {jul} {sunny}
     cmpCheaperQ: string; // {a} {b}
     cmpCheaperA: string; // {a} {b} {pct} {word} {ia} {ib}
     cmpSalaryQ: string; // {a} {b}

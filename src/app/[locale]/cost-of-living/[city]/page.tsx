@@ -18,7 +18,7 @@ import {
 } from "@/lib/i18n/places";
 import { pageMetadata } from "@/lib/seo/site";
 import { breadcrumbJsonLd, cityJsonLd } from "@/lib/seo/jsonld";
-import { getCityProfile, getCountry } from "@/lib/data";
+import { getCityProfile, getCountry, countrySlug } from "@/lib/data";
 import { localizedCountry } from "@/lib/i18n/places";
 import CityProfileSections from "@/components/CityProfileSections";
 import Mountains from "@/components/Mountains";
@@ -167,6 +167,17 @@ export default async function CityPage({
         })}
       </p>
 
+      {getCountry(c.countryCode) && (
+        <p className="mt-3">
+          <Link
+            href={`/${l}/country/${countrySlug(getCountry(c.countryCode)!)}`}
+            className="text-[var(--accent)] font-semibold hover:underline"
+          >
+            {fill(dict.country.citiesTitle, { country: localizedCountry(l, c) })} →
+          </Link>
+        </p>
+      )}
+
       <section className="mt-10">
         <h2 className="mag-h2 mb-1.5">▤ {dict.city.breakdownTitle}</h2>
         <p className="text-xs text-[var(--muted)] mb-4">{dict.city.indexLegend}</p>
@@ -256,6 +267,19 @@ export default async function CityPage({
                 country: localizedCountry(l, c),
                 incomeTax: country.taxes.incomeTax.topRate,
                 vat: country.taxes.vat?.standard ?? 0,
+              }),
+            });
+          }
+          const cl = profile?.qualityOfLife?.climate;
+          if (cl && cl.janAvgC != null && cl.julAvgC != null) {
+            const t = (v: number) => `${v > 0 ? "+" : ""}${v} °C`;
+            items.push({
+              q: fill(dict.faq.cityClimateQ, { city: label }),
+              a: fill(dict.faq.cityClimateA, {
+                city: label,
+                jan: t(cl.janAvgC),
+                jul: t(cl.julAvgC),
+                sunny: cl.sunnyDays ?? 0,
               }),
             });
           }

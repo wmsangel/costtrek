@@ -28,7 +28,22 @@
     "searchPlaceholder": "Rechercher une ville…",
     "compareBtn": "Comparer le coût de la vie",
     "popularTitle": "Comparaisons populaires",
-    "browseTitle": "Parcourir les villes"
+    "popularSub": "Les itinéraires de déménagement les plus recherchés.",
+    "collectionsSub": "Des villes classées selon ce qui compte — coût, impôts, sécurité et plus.",
+    "browseTitle": "Parcourir les villes",
+    "browseSub": "Choisissez une ville pour un détail complet du coût, des impôts et de la qualité de vie."
+  },
+  "continents": {
+    "northAmerica": "Amérique du Nord",
+    "europe": "Europe",
+    "asia": "Asie",
+    "oceania": "Océanie",
+    "southAmerica": "Amérique du Sud"
+  },
+  "country": {
+    "heading": "Coût de la vie en {country}",
+    "subtitle": "Impôts nationaux, visas et économie — ainsi que chaque ville que nous suivons en {country}.",
+    "citiesTitle": "Villes en {country}"
   },
   "compare": {
     "breadcrumb": "Comparer",
@@ -78,6 +93,8 @@
     "cityRentA": "Un studio dans le centre coûte en moyenne environ {rentCentre} $ par mois, et autour de {rentOutside} $ en dehors du centre.",
     "cityTaxQ": "Quels impôts paierais-je en {country} ?",
     "cityTaxA": "{country} a un taux marginal d'impôt sur le revenu de {incomeTax}% et une TVA de {vat}%. Voir le détail dans la section impôts ci-dessus.",
+    "cityClimateQ": "Quel temps fait-il à {city} ?",
+    "cityClimateA": "{city} affiche en moyenne environ {jan} en janvier et {jul} en juillet, avec à peu près {sunny} jours de soleil par an.",
     "cmpCheaperQ": "{a} est-elle moins chère que {b} ?",
     "cmpCheaperA": "{b} est globalement environ {pct}% {word} que {a} — son indice du coût de la vie est de {ib} contre {ia} pour {a}.",
     "cmpSalaryQ": "Combien faut-il gagner à {b} pour vivre comme à {a} ?",
