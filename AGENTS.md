@@ -140,6 +140,15 @@ Two layers, designed so new comparison dimensions are cheap to add:
 - i18n: group/section headings live in `dictionaries/*.json → data`; individual
   metric labels are English in the registry (localize later if needed).
 
+## Data provenance status (mixed: some REAL, some estimated)
+- **REAL (World Bank Open Data, no API key):** country GDP per capita, life
+  expectancy, CPI inflation — pulled into the `EXTRA` map in `countries.ts`.
+- **Estimated (hand-authored, verify before "official" claims):** tax rates,
+  avg net salary, minimum wage (country); all city-level cost indices, rents,
+  prices, quality-of-life. No free legal per-city global cost feed exists
+  (Numbeo is paid/ToS). US cities could use BEA RPP + Census ACS (public domain,
+  free key) for real cost/rent; non-US city cost stays estimated.
+
 ## Data source — ⚠️ THE KEY RISK, READ THIS
 `src/lib/cities.ts` currently holds **~24 hand-seeded, APPROXIMATE** US cities
 (indices, US avg = 100). They are placeholders to build/demo the templates and

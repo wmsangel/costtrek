@@ -43,6 +43,7 @@ const METRICS: CM[] = [
   { group: "economy", label: "Avg net salary", format: "usdMonth", better: true, get: (co) => co.economy?.avgNetSalaryUsdMonthly },
   { group: "economy", label: "Minimum wage", format: "usdMonth", better: true, get: (co) => co.economy?.minWageUsdMonthly || null },
   { group: "economy", label: "GDP per capita", format: "usd", better: true, get: (co) => co.economy?.gdpPerCapitaUsd },
+  { group: "economy", label: "Inflation (annual)", format: "percent", better: false, get: (co) => co.economy?.inflationPct },
   { group: "economy", label: "Life expectancy", format: "years", better: true, get: (co) => co.economy?.lifeExpectancyYears },
   { group: "quality", label: "LGBTQ+ acceptance", format: "text", better: null, get: (co) => co.social?.lgbtqAcceptance },
   { group: "quality", label: "Digital-nomad visa", format: "text", better: null, get: (co) => (co.immigration.digitalNomad ? (co.immigration.digitalNomad.available ? "Yes" : "No") : null) },

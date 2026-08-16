@@ -100,6 +100,7 @@ export type Country = {
     avgNetSalaryUsdMonthly?: number;
     minWageUsdMonthly?: number;
     lifeExpectancyYears?: number;
+    inflationPct?: number;
   };
 
   /** Social/relocation climate (factual indicators, neutral). */

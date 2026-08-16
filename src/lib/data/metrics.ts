@@ -100,6 +100,7 @@ export const METRICS: Metric[] = [
   { key: "avgNetSalary", group: "economy", label: "Avg net salary", format: "usdMonth", higherIsBetter: true, get: (c) => c.country?.economy?.avgNetSalaryUsdMonthly },
   { key: "minWage", group: "economy", label: "Minimum wage", format: "usdMonth", higherIsBetter: true, get: (c) => c.country?.economy?.minWageUsdMonthly || null },
   { key: "gdpPerCapita", group: "economy", label: "GDP per capita", format: "usd", higherIsBetter: true, get: (c) => c.country?.economy?.gdpPerCapitaUsd },
+  { key: "inflation", group: "economy", label: "Inflation (annual)", format: "percent", higherIsBetter: false, get: (c) => c.country?.economy?.inflationPct },
 
   // Work & digital nomad
   { key: "nomadVisa", group: "work", label: "Digital-nomad visa", format: "text", higherIsBetter: null, get: (c) => { const d = c.country?.immigration.digitalNomad; return d == null ? null : d.available ? "Yes" : "No"; } },

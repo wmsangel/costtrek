@@ -4,7 +4,13 @@ import type { Country } from "./schema";
 // but PLACEHOLDER-grade — verify against primary sources before launch.
 // Adding a country = add one entry keyed by ISO-2 code.
 
-const SRC = [{ label: "National tax authority / OECD (headline figures)" }];
+const SRC = [
+  {
+    label: "Economy: World Bank Open Data (GDP per capita, life expectancy, inflation)",
+    url: "https://data.worldbank.org",
+  },
+  { label: "Taxes: national tax authority / OECD (headline figures)" },
+];
 const UPDATED = "2026-08-14";
 
 export const COUNTRIES = {
@@ -482,30 +488,49 @@ export const COUNTRIES = {
 
 export type CountryCode = keyof typeof COUNTRIES;
 
-// Supplementary country facts, merged into COUNTRIES at load. Keep additions
-// here (or inline above) — both are picked up by the metric registry.
+// Supplementary country facts, merged into COUNTRIES at load.
+// gdp / life / inflation are REAL World Bank Open Data (GDP per capita current
+// US$ + GDP-per-capita 2025 est., life expectancy 2024, CPI inflation 2025).
+// null = World Bank had no value (keep the inline estimate / omit).
 // lgbtqAcceptance is a coarse, factual legal-climate indicator, shown neutrally.
 type Extra = {
+  gdp: number | null;
   life: number;
+  inflation: number | null;
   lgbtq: "high" | "moderate" | "low" | "restricted";
 };
 const EXTRA: Record<string, Extra> = {
-  US: { life: 79, lgbtq: "high" }, GB: { life: 81, lgbtq: "high" },
-  FR: { life: 82, lgbtq: "high" }, DE: { life: 81, lgbtq: "high" },
-  NL: { life: 82, lgbtq: "high" }, IE: { life: 82, lgbtq: "high" },
-  ES: { life: 83, lgbtq: "high" }, PT: { life: 81, lgbtq: "high" },
-  IT: { life: 83, lgbtq: "moderate" }, CH: { life: 84, lgbtq: "high" },
-  CA: { life: 82, lgbtq: "high" }, AE: { life: 79, lgbtq: "restricted" },
-  SG: { life: 84, lgbtq: "low" }, JP: { life: 84, lgbtq: "moderate" },
-  AU: { life: 83, lgbtq: "high" }, TH: { life: 79, lgbtq: "moderate" },
-  MX: { life: 75, lgbtq: "moderate" }, PL: { life: 78, lgbtq: "low" },
-  AR: { life: 77, lgbtq: "high" }, IN: { life: 70, lgbtq: "low" },
-  KG: { life: 72, lgbtq: "low" },
+  US: { gdp: 90027, life: 78.9, inflation: null, lgbtq: "high" },
+  GB: { gdp: 57602, life: 81.4, inflation: 3.9, lgbtq: "high" },
+  FR: { gdp: 48986, life: 83.0, inflation: 0.9, lgbtq: "high" },
+  DE: { gdp: 60496, life: 80.8, inflation: 2.2, lgbtq: "high" },
+  NL: { gdp: 73684, life: 82.0, inflation: 3.3, lgbtq: "high" },
+  IE: { gdp: 131592, life: 83.0, inflation: 2.2, lgbtq: "high" },
+  ES: { gdp: 38627, life: 83.9, inflation: 2.7, lgbtq: "high" },
+  PT: { gdp: 32082, life: 82.4, inflation: 2.3, lgbtq: "high" },
+  IT: { gdp: 43309, life: 83.9, inflation: 1.5, lgbtq: "moderate" },
+  CH: { gdp: 114769, life: 84.4, inflation: 0.2, lgbtq: "high" },
+  CA: { gdp: 55698, life: 82.1, inflation: 2.1, lgbtq: "high" },
+  AE: { gdp: null, life: 83.1, inflation: 1.3, lgbtq: "restricted" },
+  SG: { gdp: 98814, life: 83.3, inflation: 0.9, lgbtq: "low" },
+  JP: { gdp: 35951, life: 84.0, inflation: 3.2, lgbtq: "moderate" },
+  AU: { gdp: 65130, life: 83.1, inflation: 2.9, lgbtq: "high" },
+  TH: { gdp: 8057, life: 76.6, inflation: -0.1, lgbtq: "moderate" },
+  MX: { gdp: 13889, life: 75.3, inflation: 3.8, lgbtq: "moderate" },
+  PL: { gdp: 28420, life: 78.4, inflation: 3.8, lgbtq: "low" },
+  AR: { gdp: 14898, life: 77.5, inflation: null, lgbtq: "high" },
+  IN: { gdp: 2702, life: 72.2, inflation: 2.4, lgbtq: "low" },
+  KG: { gdp: 3081, life: 72.4, inflation: 8.2, lgbtq: "low" },
 };
 for (const [code, ex] of Object.entries(EXTRA)) {
   const c = (COUNTRIES as Record<string, Country>)[code];
   if (!c) continue;
-  c.economy = { ...c.economy, lifeExpectancyYears: ex.life };
+  c.economy = {
+    ...c.economy,
+    gdpPerCapitaUsd: ex.gdp ?? c.economy?.gdpPerCapitaUsd,
+    lifeExpectancyYears: ex.life,
+    ...(ex.inflation != null ? { inflationPct: ex.inflation } : {}),
+  };
   c.social = { lgbtqAcceptance: ex.lgbtq };
 }
 
