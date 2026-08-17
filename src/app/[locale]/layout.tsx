@@ -143,6 +143,12 @@ export default async function LocaleLayout({
                 Cost<span className="gradient-text">Trek</span>
               </p>
               <nav className="flex flex-wrap gap-x-5 gap-y-2">
+                <Link href={`/${locale}/about`} className="hover:text-[var(--foreground)]">
+                  {dict.legal.about}
+                </Link>
+                <Link href={`/${locale}/contact`} className="hover:text-[var(--foreground)]">
+                  {dict.legal.contact}
+                </Link>
                 <Link href={`/${locale}/privacy`} className="hover:text-[var(--foreground)]">
                   {dict.legal.privacy}
                 </Link>

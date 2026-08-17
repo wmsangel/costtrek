@@ -69,7 +69,10 @@ export default async function PrivacyPage({
         certain processing. Contact us to exercise them.
       </p>
       <h2>Contact</h2>
-      <p>Questions? Email privacy@example.com.</p>
+      <p>
+        Questions about your data or this policy? Email{" "}
+        <a href="mailto:info@costtrek.com">info@costtrek.com</a>.
+      </p>
     </LegalShell>
   );
 }

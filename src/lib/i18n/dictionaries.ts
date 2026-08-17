@@ -3,7 +3,14 @@ import type { Locale } from "./config";
 
 export type Dictionary = {
   footer: { line1: string; line2: string };
-  legal: { privacy: string; cookies: string; terms: string; lastUpdated: string };
+  legal: {
+    privacy: string;
+    cookies: string;
+    terms: string;
+    about: string;
+    contact: string;
+    lastUpdated: string;
+  };
   cookie: {
     message: string;
     accept: string;
