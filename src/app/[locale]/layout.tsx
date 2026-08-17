@@ -14,7 +14,13 @@ import ThemeToggle from "@/components/ThemeToggle";
 import CookieBanner from "@/components/CookieBanner";
 import Analytics from "@/components/Analytics";
 import JsonLd from "@/components/JsonLd";
-import { OG_LOCALE, SITE_NAME, SITE_URL, absUrl } from "@/lib/seo/site";
+import {
+  OG_LOCALE,
+  SITE_NAME,
+  SITE_URL,
+  VERIFICATION,
+  absUrl,
+} from "@/lib/seo/site";
 import { organizationJsonLd } from "@/lib/seo/jsonld";
 import "../globals.css";
 
@@ -60,7 +66,11 @@ export async function generateMetadata({
     category: "travel",
     referrer: "origin-when-cross-origin",
     verification: {
-      google: "g713sfTU6uNWhiBx2o4cZ_bibo6o-5L0hApvlmU0tEk",
+      google: VERIFICATION.google,
+      ...(VERIFICATION.yandex ? { yandex: VERIFICATION.yandex } : {}),
+      ...(VERIFICATION.bing
+        ? { other: { "msvalidate.01": VERIFICATION.bing } }
+        : {}),
     },
     formatDetection: { telephone: false, email: false, address: false },
     robots: {

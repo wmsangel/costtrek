@@ -9,6 +9,21 @@ export const SITE_URL = (
 
 export const SITE_NAME = "CostTrek";
 
+/**
+ * Search-engine site verification codes. Google is set; paste Bing/Yandex
+ * codes here when you add the site in their webmaster tools and redeploy.
+ * (Bing can also be verified in one click via "Import from Google Search
+ * Console", in which case no code is needed here.)
+ */
+export const VERIFICATION = {
+  google: "g713sfTU6uNWhiBx2o4cZ_bibo6o-5L0hApvlmU0tEk",
+  bing: "", // msvalidate.01
+  yandex: "", // yandex-verification
+};
+
+/** IndexNow key (instant Bing/Yandex/Seznam indexing). Hosted at /<key>.txt. */
+export const INDEXNOW_KEY = "8880ab76707dbf3a0c09b8f2b1274883";
+
 /** OpenGraph locale codes for our UI locales. */
 export const OG_LOCALE: Record<Locale, string> = {
   en: "en_US",
