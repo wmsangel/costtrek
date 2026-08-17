@@ -52,6 +52,12 @@
     "subtitle": "Jedes Land in unserem Index — nationale Steuern, Visa, Gehälter und die erfassten Städte.",
     "linkTitle": "Nach Land durchsuchen"
   },
+  "guides": {
+    "nav": "Ratgeber",
+    "title": "Umzugs- & Lebenshaltungskosten-Ratgeber",
+    "subtitle": "Praktische Ratgeber zum Auswandern, zum Vergleich von Städten, zu Steuern und dazu, wie dein Geld weiter reicht.",
+    "readTime": "{n} Min. Lesezeit"
+  },
   "compareCountries": {
     "breadcrumb": "Länder vergleichen",
     "title": "{a} vs {b}: Lebenshaltungskosten & Steuern",

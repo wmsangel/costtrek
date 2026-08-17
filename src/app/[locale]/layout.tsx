@@ -130,6 +130,12 @@ export default async function LocaleLayout({
               Cost<span className="gradient-text">Trek</span>
             </Link>
             <div className="flex items-center gap-2">
+              <Link
+                href={`/${locale}/guides`}
+                className="hidden sm:inline text-sm font-medium text-[var(--muted)] hover:text-[var(--foreground)] px-2"
+              >
+                {dict.guides.nav}
+              </Link>
               <ThemeToggle />
               <LanguageDropdown current={locale} />
             </div>
@@ -143,6 +149,9 @@ export default async function LocaleLayout({
                 Cost<span className="gradient-text">Trek</span>
               </p>
               <nav className="flex flex-wrap gap-x-5 gap-y-2">
+                <Link href={`/${locale}/guides`} className="hover:text-[var(--foreground)]">
+                  {dict.guides.nav}
+                </Link>
                 <Link href={`/${locale}/about`} className="hover:text-[var(--foreground)]">
                   {dict.legal.about}
                 </Link>

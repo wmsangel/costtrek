@@ -52,6 +52,12 @@
     "subtitle": "Cada país de nuestro índice — impuestos nacionales, visados, salarios y las ciudades que seguimos.",
     "linkTitle": "Explorar por país"
   },
+  "guides": {
+    "nav": "Guías",
+    "title": "Guías de mudanza y coste de vida",
+    "subtitle": "Guías prácticas para mudarte al extranjero, comparar ciudades, entender los impuestos y estirar tu dinero.",
+    "readTime": "{n} min de lectura"
+  },
   "compareCountries": {
     "breadcrumb": "Comparar países",
     "title": "{a} vs {b}: coste de vida e impuestos",

@@ -3,6 +3,7 @@ import { CITIES, cityPath, comparePath } from "@/lib/cities";
 import { COLLECTION_KEYS } from "@/lib/collections";
 import { countrySlug, getCountry } from "@/lib/data";
 import { countriesWithCities } from "@/lib/countryStats";
+import { GUIDES } from "@/content/guides";
 import { locales } from "@/lib/i18n/config";
 import { absUrl, languageAlternates } from "@/lib/seo/site";
 
@@ -16,7 +17,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "about", priority: 0.4 },
     { path: "contact", priority: 0.3 },
     { path: "countries", priority: 0.7 },
+    { path: "guides", priority: 0.6 },
   ];
+
+  for (const g of GUIDES) {
+    paths.push({ path: `guides/${g.slug}`, priority: 0.6 });
+  }
 
   const countryList = countriesWithCities();
   for (const a of countryList) {

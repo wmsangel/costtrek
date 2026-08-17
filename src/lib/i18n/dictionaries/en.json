@@ -52,6 +52,12 @@
     "subtitle": "Every country in our index — national taxes, visas, salaries and the cities we track.",
     "linkTitle": "Browse by country"
   },
+  "guides": {
+    "nav": "Guides",
+    "title": "Relocation & cost-of-living guides",
+    "subtitle": "Practical, no-fluff guides to moving abroad, comparing cities, taxes and making your money go further.",
+    "readTime": "{n} min read"
+  },
   "compareCountries": {
     "breadcrumb": "Compare countries",
     "title": "{a} vs {b}: cost of living & taxes",

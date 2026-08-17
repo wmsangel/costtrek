@@ -56,6 +56,12 @@ export type Dictionary = {
     title: string; // {a} {b}
     subtitle: string; // {a} {b}
   };
+  guides: {
+    nav: string;
+    title: string;
+    subtitle: string;
+    readTime: string; // {n}
+  };
   compare: {
     breadcrumb: string;
     subtitle: string;

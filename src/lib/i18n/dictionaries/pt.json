@@ -52,6 +52,12 @@
     "subtitle": "Cada país do nosso índice — impostos nacionais, vistos, salários e as cidades que acompanhamos.",
     "linkTitle": "Explorar por país"
   },
+  "guides": {
+    "nav": "Guias",
+    "title": "Guias de mudança e custo de vida",
+    "subtitle": "Guias práticos para emigrar, comparar cidades, perceber os impostos e esticar o seu dinheiro.",
+    "readTime": "{n} min de leitura"
+  },
   "compareCountries": {
     "breadcrumb": "Comparar países",
     "title": "{a} vs {b}: custo de vida e impostos",

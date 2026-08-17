@@ -15,6 +15,7 @@ import { isLocale, type Locale } from "@/lib/i18n/config";
 import { fill, getDictionary } from "@/lib/i18n/dictionaries";
 import { localizedCityLabel, localizedCityName } from "@/lib/i18n/places";
 import { COLLECTIONS, COLLECTION_KEYS } from "@/lib/collections";
+import { GUIDES } from "@/content/guides";
 import { getCountry } from "@/lib/data";
 import { pageMetadata, SITE_NAME } from "@/lib/seo/site";
 import { websiteJsonLd } from "@/lib/seo/jsonld";
@@ -225,6 +226,37 @@ export default async function Home({
             className="text-[var(--accent)] font-semibold hover:underline"
           >
             {dict.countriesIndex.linkTitle} →
+          </Link>
+        </p>
+      </section>
+
+      <section className="mt-16">
+        <h2 className="mag-h2 mb-1.5">✎ {dict.guides.title}</h2>
+        <p className="text-[var(--muted)] mb-6 max-w-[60ch]">
+          {dict.guides.subtitle}
+        </p>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {GUIDES.slice(0, 4).map((g) => (
+            <Link
+              key={g.slug}
+              href={`/${l}/guides/${g.slug}`}
+              className="group block rounded-2xl border border-[var(--border)] p-5 hover:border-[var(--accent)]"
+            >
+              <h3 className="display font-bold leading-snug tracking-tight group-hover:text-[var(--accent)]">
+                {g.title}
+              </h3>
+              <p className="mt-1.5 text-sm text-[var(--muted)] leading-relaxed">
+                {g.excerpt}
+              </p>
+            </Link>
+          ))}
+        </div>
+        <p className="mt-6">
+          <Link
+            href={`/${l}/guides`}
+            className="text-[var(--accent)] font-semibold hover:underline"
+          >
+            {dict.guides.nav} →
           </Link>
         </p>
       </section>

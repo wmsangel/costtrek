@@ -54,6 +54,36 @@ export function faqJsonLd(items: { q: string; a: string }[]) {
   };
 }
 
+/** BlogPosting / article — for guide pages. */
+export function articleJsonLd(opts: {
+  locale: Locale;
+  headline: string;
+  description: string;
+  path: string;
+  datePublished: string;
+  image?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: opts.headline,
+    description: opts.description,
+    inLanguage: opts.locale,
+    datePublished: opts.datePublished,
+    dateModified: opts.datePublished,
+    mainEntityOfPage: { "@type": "WebPage", "@id": absUrl(opts.locale, opts.path) },
+    url: absUrl(opts.locale, opts.path),
+    ...(opts.image ? { image: opts.image } : {}),
+    author: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+      logo: { "@type": "ImageObject", url: `${SITE_URL}/icon` },
+    },
+  };
+}
+
 /** Place / City with its cost-of-living index as an additionalProperty. */
 export function cityJsonLd(opts: {
   locale: Locale;

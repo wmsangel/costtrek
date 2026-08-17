@@ -52,6 +52,12 @@
     "subtitle": "Chaque pays de notre index — impôts nationaux, visas, salaires et les villes que nous suivons.",
     "linkTitle": "Parcourir par pays"
   },
+  "guides": {
+    "nav": "Guides",
+    "title": "Guides déménagement & coût de la vie",
+    "subtitle": "Des guides pratiques pour s'expatrier, comparer les villes, comprendre les impôts et faire durer son argent.",
+    "readTime": "{n} min de lecture"
+  },
   "compareCountries": {
     "breadcrumb": "Comparer les pays",
     "title": "{a} vs {b} : coût de la vie & impôts",
