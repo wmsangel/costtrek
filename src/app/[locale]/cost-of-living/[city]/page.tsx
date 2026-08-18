@@ -159,6 +159,16 @@ export default async function CityPage({
         </div>
       </div>
 
+      {c.medianGrossRentUsd && (
+        <p className="mt-3 text-sm text-[var(--muted)]">
+          {dict.city.metroGrossRent}:{" "}
+          <span className="font-semibold text-[var(--foreground)]">
+            ${c.medianGrossRentUsd.toLocaleString(LOCALE_BCP47[l])}/mo
+          </span>{" "}
+          · <span className="text-xs">U.S. Census ACS 2023</span>
+        </p>
+      )}
+
       <p className="mt-6 text-lg leading-relaxed max-w-[62ch] font-medium">
         {fill(index >= 100 ? dict.city.plainAbove : dict.city.plainBelow, {
           city: localizedCityName(l, c),

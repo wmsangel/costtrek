@@ -9,10 +9,13 @@
  *   - International cities: index + breakdown are still hand-estimated
  *     (calibrated-approximate); OECD price levels (USA=100, 2024) exist at the
  *     COUNTRY level for 14 countries and can anchor these later.
- *   - medianRent1br: ESTIMATE for all cities (Census ACS needs a free API key;
- *     not yet integrated).
- * Do NOT scrape Numbeo/Expatistan. Next real sources: Census ACS B25064 (US
- * rents, needs key), Eurostat/OECD price levels (intl).
+ *   - medianGrossRentUsd: REAL metro median gross rent for US cities, U.S.
+ *     Census ACS 2023 (table B25064). This is a metro-wide, all-unit figure —
+ *     a different (and more authoritative) metric than medianRent1br.
+ *   - medianRent1br: ESTIMATE (1-bedroom, city-centre) for all cities; still
+ *     hand-authored. International rents remain estimates.
+ * Do NOT scrape Numbeo/Expatistan. Next real source: Eurostat/OECD price
+ * levels for international cities.
  */
 
 export type CostCategory =
@@ -33,7 +36,8 @@ export type City = {
   state?: string; // US only: "Texas"
   stateCode?: string; // US only: "TX"
   aliases?: string[]; // alternate / other-language spellings for search
-  medianRent1br: number; // approx USD / month for a 1-bedroom
+  medianRent1br: number; // approx USD / month for a 1-bedroom (centre estimate)
+  medianGrossRentUsd?: number; // US only: REAL metro median gross rent, Census ACS 2023
   breakdown: CostBreakdown; // per-category index, US avg = 100
 };
 
@@ -71,30 +75,30 @@ type UsSeed = Omit<City, "country" | "countryCode">;
 // breakdown is scaled to that official total and remains an estimate.
 const US_CITIES: City[] = (
   [
-    { slug: "new-york-ny", name: "New York", state: "New York", stateCode: "NY", medianRent1br: 3800, breakdown: { housing: 170, food: 86, transport: 89, utilities: 79, healthcare: 77, goods: 94 } },
-    { slug: "san-francisco-ca", name: "San Francisco", state: "California", stateCode: "CA", medianRent1br: 3300, breakdown: { housing: 174, food: 94, transport: 92, utilities: 87, healthcare: 92, goods: 98 } },
-    { slug: "los-angeles-ca", name: "Los Angeles", state: "California", stateCode: "CA", medianRent1br: 2400, breakdown: { housing: 152, food: 95, transport: 114, utilities: 88, healthcare: 93, goods: 100 } },
-    { slug: "san-diego-ca", name: "San Diego", state: "California", stateCode: "CA", medianRent1br: 2500, breakdown: { housing: 148, food: 93, transport: 107, utilities: 87, healthcare: 92, goods: 96 } },
-    { slug: "seattle-wa", name: "Seattle", state: "Washington", stateCode: "WA", medianRent1br: 2100, breakdown: { housing: 146, food: 99, transport: 102, utilities: 85, healthcare: 102, goods: 101 } },
-    { slug: "boston-ma", name: "Boston", state: "Massachusetts", stateCode: "MA", medianRent1br: 3000, breakdown: { housing: 152, food: 90, transport: 91, utilities: 95, healthcare: 98, goods: 96 } },
-    { slug: "washington-dc", name: "Washington", state: "District of Columbia", stateCode: "DC", medianRent1br: 2300, breakdown: { housing: 144, food: 91, transport: 95, utilities: 86, healthcare: 87, goods: 97 } },
-    { slug: "chicago-il", name: "Chicago", state: "Illinois", stateCode: "IL", medianRent1br: 1900, breakdown: { housing: 116, food: 95, transport: 101, utilities: 90, healthcare: 98, goods: 98 } },
-    { slug: "miami-fl", name: "Miami", state: "Florida", stateCode: "FL", medianRent1br: 2600, breakdown: { housing: 138, food: 99, transport: 103, utilities: 96, healthcare: 96, goods: 103 } },
-    { slug: "austin-tx", name: "Austin", state: "Texas", stateCode: "TX", medianRent1br: 1650, breakdown: { housing: 109, food: 91, transport: 94, utilities: 92, healthcare: 91, goods: 94 } },
-    { slug: "dallas-tx", name: "Dallas", state: "Texas", stateCode: "TX", medianRent1br: 1500, breakdown: { housing: 108, food: 98, transport: 103, utilities: 104, healthcare: 100, goods: 101 } },
-    { slug: "houston-tx", name: "Houston", state: "Texas", stateCode: "TX", medianRent1br: 1400, breakdown: { housing: 100, food: 96, transport: 102, utilities: 106, healthcare: 98, goods: 99 } },
-    { slug: "denver-co", name: "Denver", state: "Colorado", stateCode: "CO", medianRent1br: 1750, breakdown: { housing: 123, food: 97, transport: 99, utilities: 88, healthcare: 98, goods: 101 } },
-    { slug: "phoenix-az", name: "Phoenix", state: "Arizona", stateCode: "AZ", medianRent1br: 1450, breakdown: { housing: 113, food: 101, transport: 106, utilities: 105, healthcare: 101, goods: 102 } },
-    { slug: "atlanta-ga", name: "Atlanta", state: "Georgia", stateCode: "GA", medianRent1br: 1650, breakdown: { housing: 112, food: 95, transport: 98, utilities: 93, healthcare: 96, goods: 97 } },
-    { slug: "portland-or", name: "Portland", state: "Oregon", stateCode: "OR", medianRent1br: 1600, breakdown: { housing: 127, food: 97, transport: 99, utilities: 84, healthcare: 101, goods: 101 } },
-    { slug: "philadelphia-pa", name: "Philadelphia", state: "Pennsylvania", stateCode: "PA", medianRent1br: 1600, breakdown: { housing: 114, food: 97, transport: 103, utilities: 99, healthcare: 99, goods: 99 } },
-    { slug: "nashville-tn", name: "Nashville", state: "Tennessee", stateCode: "TN", medianRent1br: 1550, breakdown: { housing: 108, food: 91, transport: 95, utilities: 89, healthcare: 91, goods: 95 } },
-    { slug: "minneapolis-mn", name: "Minneapolis", state: "Minnesota", stateCode: "MN", medianRent1br: 1450, breakdown: { housing: 109, food: 101, transport: 103, utilities: 96, healthcare: 105, goods: 103 } },
-    { slug: "charlotte-nc", name: "Charlotte", state: "North Carolina", stateCode: "NC", medianRent1br: 1500, breakdown: { housing: 105, food: 92, transport: 95, utilities: 92, healthcare: 94, goods: 95 } },
-    { slug: "las-vegas-nv", name: "Las Vegas", state: "Nevada", stateCode: "NV", medianRent1br: 1400, breakdown: { housing: 103, food: 93, transport: 99, utilities: 93, healthcare: 93, goods: 95 } },
-    { slug: "detroit-mi", name: "Detroit", state: "Michigan", stateCode: "MI", medianRent1br: 1150, breakdown: { housing: 90, food: 98, transport: 106, utilities: 104, healthcare: 102, goods: 100 } },
-    { slug: "san-antonio-tx", name: "San Antonio", state: "Texas", stateCode: "TX", medianRent1br: 1250, breakdown: { housing: 91, food: 92, transport: 98, utilities: 99, healthcare: 94, goods: 94 } },
-    { slug: "columbus-oh", name: "Columbus", state: "Ohio", stateCode: "OH", medianRent1br: 1200, breakdown: { housing: 90, food: 94, transport: 98, utilities: 96, healthcare: 97, goods: 96 } },
+    { slug: "new-york-ny", name: "New York", state: "New York", stateCode: "NY", medianRent1br: 3800,medianGrossRentUsd: 1764, breakdown: { housing: 170, food: 86, transport: 89, utilities: 79, healthcare: 77, goods: 94 } },
+    { slug: "san-francisco-ca", name: "San Francisco", state: "California", stateCode: "CA", medianRent1br: 3300,medianGrossRentUsd: 2397, breakdown: { housing: 174, food: 94, transport: 92, utilities: 87, healthcare: 92, goods: 98 } },
+    { slug: "los-angeles-ca", name: "Los Angeles", state: "California", stateCode: "CA", medianRent1br: 2400,medianGrossRentUsd: 1993, breakdown: { housing: 152, food: 95, transport: 114, utilities: 88, healthcare: 93, goods: 100 } },
+    { slug: "san-diego-ca", name: "San Diego", state: "California", stateCode: "CA", medianRent1br: 2500,medianGrossRentUsd: 2296, breakdown: { housing: 148, food: 93, transport: 107, utilities: 87, healthcare: 92, goods: 96 } },
+    { slug: "seattle-wa", name: "Seattle", state: "Washington", stateCode: "WA", medianRent1br: 2100,medianGrossRentUsd: 1965, breakdown: { housing: 146, food: 99, transport: 102, utilities: 85, healthcare: 102, goods: 101 } },
+    { slug: "boston-ma", name: "Boston", state: "Massachusetts", stateCode: "MA", medianRent1br: 3000,medianGrossRentUsd: 2000, breakdown: { housing: 152, food: 90, transport: 91, utilities: 95, healthcare: 98, goods: 96 } },
+    { slug: "washington-dc", name: "Washington", state: "District of Columbia", stateCode: "DC", medianRent1br: 2300,medianGrossRentUsd: 1945, breakdown: { housing: 144, food: 91, transport: 95, utilities: 86, healthcare: 87, goods: 97 } },
+    { slug: "chicago-il", name: "Chicago", state: "Illinois", stateCode: "IL", medianRent1br: 1900,medianGrossRentUsd: 1390, breakdown: { housing: 116, food: 95, transport: 101, utilities: 90, healthcare: 98, goods: 98 } },
+    { slug: "miami-fl", name: "Miami", state: "Florida", stateCode: "FL", medianRent1br: 2600,medianGrossRentUsd: 1914, breakdown: { housing: 138, food: 99, transport: 103, utilities: 96, healthcare: 96, goods: 103 } },
+    { slug: "austin-tx", name: "Austin", state: "Texas", stateCode: "TX", medianRent1br: 1650,medianGrossRentUsd: 1752, breakdown: { housing: 109, food: 91, transport: 94, utilities: 92, healthcare: 91, goods: 94 } },
+    { slug: "dallas-tx", name: "Dallas", state: "Texas", stateCode: "TX", medianRent1br: 1500,medianGrossRentUsd: 1638, breakdown: { housing: 108, food: 98, transport: 103, utilities: 104, healthcare: 100, goods: 101 } },
+    { slug: "houston-tx", name: "Houston", state: "Texas", stateCode: "TX", medianRent1br: 1400,medianGrossRentUsd: 1433, breakdown: { housing: 100, food: 96, transport: 102, utilities: 106, healthcare: 98, goods: 99 } },
+    { slug: "denver-co", name: "Denver", state: "Colorado", stateCode: "CO", medianRent1br: 1750,medianGrossRentUsd: 1898, breakdown: { housing: 123, food: 97, transport: 99, utilities: 88, healthcare: 98, goods: 101 } },
+    { slug: "phoenix-az", name: "Phoenix", state: "Arizona", stateCode: "AZ", medianRent1br: 1450,medianGrossRentUsd: 1760, breakdown: { housing: 113, food: 101, transport: 106, utilities: 105, healthcare: 101, goods: 102 } },
+    { slug: "atlanta-ga", name: "Atlanta", state: "Georgia", stateCode: "GA", medianRent1br: 1650,medianGrossRentUsd: 1701, breakdown: { housing: 112, food: 95, transport: 98, utilities: 93, healthcare: 96, goods: 97 } },
+    { slug: "portland-or", name: "Portland", state: "Oregon", stateCode: "OR", medianRent1br: 1600,medianGrossRentUsd: 1670, breakdown: { housing: 127, food: 97, transport: 99, utilities: 84, healthcare: 101, goods: 101 } },
+    { slug: "philadelphia-pa", name: "Philadelphia", state: "Pennsylvania", stateCode: "PA", medianRent1br: 1600,medianGrossRentUsd: 1456, breakdown: { housing: 114, food: 97, transport: 103, utilities: 99, healthcare: 99, goods: 99 } },
+    { slug: "nashville-tn", name: "Nashville", state: "Tennessee", stateCode: "TN", medianRent1br: 1550,medianGrossRentUsd: 1566, breakdown: { housing: 108, food: 91, transport: 95, utilities: 89, healthcare: 91, goods: 95 } },
+    { slug: "minneapolis-mn", name: "Minneapolis", state: "Minnesota", stateCode: "MN", medianRent1br: 1450,medianGrossRentUsd: 1427, breakdown: { housing: 109, food: 101, transport: 103, utilities: 96, healthcare: 105, goods: 103 } },
+    { slug: "charlotte-nc", name: "Charlotte", state: "North Carolina", stateCode: "NC", medianRent1br: 1500,medianGrossRentUsd: 1505, breakdown: { housing: 105, food: 92, transport: 95, utilities: 92, healthcare: 94, goods: 95 } },
+    { slug: "las-vegas-nv", name: "Las Vegas", state: "Nevada", stateCode: "NV", medianRent1br: 1400,medianGrossRentUsd: 1654, breakdown: { housing: 103, food: 93, transport: 99, utilities: 93, healthcare: 93, goods: 95 } },
+    { slug: "detroit-mi", name: "Detroit", state: "Michigan", stateCode: "MI", medianRent1br: 1150,medianGrossRentUsd: 1183, breakdown: { housing: 90, food: 98, transport: 106, utilities: 104, healthcare: 102, goods: 100 } },
+    { slug: "san-antonio-tx", name: "San Antonio", state: "Texas", stateCode: "TX", medianRent1br: 1250,medianGrossRentUsd: 1342, breakdown: { housing: 91, food: 92, transport: 98, utilities: 99, healthcare: 94, goods: 94 } },
+    { slug: "columbus-oh", name: "Columbus", state: "Ohio", stateCode: "OH", medianRent1br: 1200,medianGrossRentUsd: 1254, breakdown: { housing: 90, food: 94, transport: 98, utilities: 96, healthcare: 97, goods: 96 } },
   ] satisfies UsSeed[]
 ).map((c) => ({ ...c, country: "United States", countryCode: "US" }));
 

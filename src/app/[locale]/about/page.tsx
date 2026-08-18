@@ -77,7 +77,19 @@ export default async function AboutPage({
           (all items, US = 100, 2023).
         </li>
         <li>
-          <strong>Category breakdowns, rents and quality-of-life scores</strong>{" "}
+          <strong>US metro rents</strong> use the real median gross rent from the{" "}
+          <a
+            href="https://data.census.gov/table?q=B25064"
+            rel="noopener"
+            target="_blank"
+          >
+            U.S. Census Bureau ACS
+          </a>{" "}
+          (2023).
+        </li>
+        <li>
+          <strong>Category breakdowns, 1-bedroom rent estimates and
+          quality-of-life scores</strong>{" "}
           are compiled estimates for general guidance, refined over time.
           International city indices are calibrated estimates.
         </li>

@@ -92,6 +92,7 @@
     "aboveAvg": "{n}% au-dessus de la moyenne américaine",
     "belowAvg": "{n}% en dessous de la moyenne américaine",
     "medianRent": "Loyer médian (studio / 1 chambre)",
+    "metroGrossRent": "Loyer brut médian (agglo.)",
     "perMonth": "/mois",
     "breakdownTitle": "Détail par catégorie",
     "indexLegend": "Indice par rapport à la moyenne américaine — la ligne marque 100. Plus bas = moins cher.",
@@ -131,11 +132,31 @@
   "collections": {
     "homeTitle": "Meilleurs endroits où vivre",
     "rank": "Rang",
-    "cheapest": { "title": "Les villes les moins chères où vivre", "description": "Les villes les plus abordables de notre index, classées par coût de la vie global (moyenne américaine = 100). Plus bas = moins cher.", "metric": "Indice du coût" },
-    "lowTax": { "title": "Villes où l'impôt sur le revenu est le plus bas", "description": "Là où il reste le plus de votre salaire — classées selon le taux marginal d'impôt sur le revenu du pays.", "metric": "Taux marginal" },
-    "safest": { "title": "Les villes les plus sûres", "description": "Villes classées selon leur indice de sécurité (0–100, plus haut = plus sûr).", "metric": "Sécurité" },
-    "sunniest": { "title": "Les villes les plus ensoleillées", "description": "Les villes avec le plus de soleil, classées par jours clairs par an.", "metric": "Jours de soleil/an" },
-    "nomad": { "title": "Meilleures villes pour les nomades numériques", "description": "Villes abordables et bien connectées, prisées des télétravailleurs, classées par coût de la vie.", "metric": "Indice du coût" }
+    "cheapest": {
+      "title": "Les villes les moins chères où vivre",
+      "description": "Les villes les plus abordables de notre index, classées par coût de la vie global (moyenne américaine = 100). Plus bas = moins cher.",
+      "metric": "Indice du coût"
+    },
+    "lowTax": {
+      "title": "Villes où l'impôt sur le revenu est le plus bas",
+      "description": "Là où il reste le plus de votre salaire — classées selon le taux marginal d'impôt sur le revenu du pays.",
+      "metric": "Taux marginal"
+    },
+    "safest": {
+      "title": "Les villes les plus sûres",
+      "description": "Villes classées selon leur indice de sécurité (0–100, plus haut = plus sûr).",
+      "metric": "Sécurité"
+    },
+    "sunniest": {
+      "title": "Les villes les plus ensoleillées",
+      "description": "Les villes avec le plus de soleil, classées par jours clairs par an.",
+      "metric": "Jours de soleil/an"
+    },
+    "nomad": {
+      "title": "Meilleures villes pour les nomades numériques",
+      "description": "Villes abordables et bien connectées, prisées des télétravailleurs, classées par coût de la vie.",
+      "metric": "Indice du coût"
+    }
   },
   "data": {
     "fullComparison": "Comparaison complète",

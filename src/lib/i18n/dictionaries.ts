@@ -91,6 +91,7 @@ export type Dictionary = {
     aboveAvg: string; // {n}
     belowAvg: string; // {n}
     medianRent: string;
+    metroGrossRent: string;
     perMonth: string;
     breakdownTitle: string;
     indexLegend: string;

@@ -92,6 +92,7 @@
     "aboveAvg": "{n}% über dem US-Durchschnitt",
     "belowAvg": "{n}% unter dem US-Durchschnitt",
     "medianRent": "Median-Miete (1-Zimmer-Wohnung)",
+    "metroGrossRent": "Median-Bruttomiete (Metro)",
     "perMonth": "/Mon.",
     "breakdownTitle": "Aufschlüsselung nach Kategorie",
     "indexLegend": "Index gegenüber dem US-Durchschnitt — die Linie markiert 100. Niedriger = günstiger.",
@@ -131,11 +132,31 @@
   "collections": {
     "homeTitle": "Beste Orte zum Leben",
     "rank": "Rang",
-    "cheapest": { "title": "Die günstigsten Städte zum Leben", "description": "Die erschwinglichsten Städte in unserem Index, sortiert nach den gesamten Lebenshaltungskosten (US-Durchschnitt = 100). Niedriger = günstiger.", "metric": "Kostenindex" },
-    "lowTax": { "title": "Städte mit der niedrigsten Einkommensteuer", "description": "Wo vom Gehalt am meisten bleibt — sortiert nach dem Spitzen-Einkommensteuersatz des Landes.", "metric": "Spitzensteuersatz" },
-    "safest": { "title": "Die sichersten Städte", "description": "Städte sortiert nach ihrem Sicherheitsindex (0–100, höher = sicherer).", "metric": "Sicherheit" },
-    "sunniest": { "title": "Die sonnigsten Städte", "description": "Städte mit dem meisten Sonnenschein, sortiert nach klaren Tagen pro Jahr.", "metric": "Sonnentage/Jahr" },
-    "nomad": { "title": "Beste Städte für digitale Nomaden", "description": "Günstige, gut angebundene Städte, die bei Remote-Arbeitern beliebt sind, sortiert nach Lebenshaltungskosten.", "metric": "Kostenindex" }
+    "cheapest": {
+      "title": "Die günstigsten Städte zum Leben",
+      "description": "Die erschwinglichsten Städte in unserem Index, sortiert nach den gesamten Lebenshaltungskosten (US-Durchschnitt = 100). Niedriger = günstiger.",
+      "metric": "Kostenindex"
+    },
+    "lowTax": {
+      "title": "Städte mit der niedrigsten Einkommensteuer",
+      "description": "Wo vom Gehalt am meisten bleibt — sortiert nach dem Spitzen-Einkommensteuersatz des Landes.",
+      "metric": "Spitzensteuersatz"
+    },
+    "safest": {
+      "title": "Die sichersten Städte",
+      "description": "Städte sortiert nach ihrem Sicherheitsindex (0–100, höher = sicherer).",
+      "metric": "Sicherheit"
+    },
+    "sunniest": {
+      "title": "Die sonnigsten Städte",
+      "description": "Städte mit dem meisten Sonnenschein, sortiert nach klaren Tagen pro Jahr.",
+      "metric": "Sonnentage/Jahr"
+    },
+    "nomad": {
+      "title": "Beste Städte für digitale Nomaden",
+      "description": "Günstige, gut angebundene Städte, die bei Remote-Arbeitern beliebt sind, sortiert nach Lebenshaltungskosten.",
+      "metric": "Kostenindex"
+    }
   },
   "data": {
     "fullComparison": "Vollständiger Vergleich",
