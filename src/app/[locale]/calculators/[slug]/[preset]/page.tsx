@@ -10,9 +10,14 @@ import Faq from "@/components/Faq";
 import OfferSlot from "@/components/calculators/OfferSlot";
 import MortgageCalculator from "@/components/calculators/MortgageCalculator";
 import CarLoanCalculator from "@/components/calculators/CarLoanCalculator";
+import LoanCalculator from "@/components/calculators/LoanCalculator";
+import SalaryCalculator from "@/components/calculators/SalaryCalculator";
+import ElectricityCalculator from "@/components/calculators/ElectricityCalculator";
 import { getCalculator } from "@/lib/calculators/registry";
 import { CALC_PRESETS, getPreset } from "@/lib/calculators/presets";
 import { monthlyPayment } from "@/lib/calculators/mortgage";
+import { computeSalary } from "@/lib/calculators/salary";
+import { computeElectricity } from "@/lib/calculators/electricity";
 
 export const dynamicParams = false;
 
@@ -68,6 +73,108 @@ function PresetTable({ slug, init }: { slug: string; init: number }) {
                 <td className="px-4 py-2 font-semibold">{r}%</td>
                 <td className="px-4 py-2">{usd0(monthlyPayment(loan, r, 30))}</td>
                 <td className="px-4 py-2">{usd0(monthlyPayment(loan, r, 15))}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+  if (slug === "loan-calculator") {
+    const aprs = [6, 8, 10, 12];
+    const terms = [24, 36, 48, 60];
+    return (
+      <div className="mt-6 overflow-x-auto rounded-2xl border border-[var(--border)]">
+        <table className="w-full text-sm tabular-nums">
+          <caption className="px-4 py-3 text-left text-[var(--muted)]">
+            Monthly payment on a {usd0(init)} loan by APR and term (months)
+          </caption>
+          <thead className="bg-[var(--card)] text-left text-xs uppercase tracking-wider text-[var(--muted)]">
+            <tr>
+              <th className="px-4 py-2 font-bold">APR</th>
+              {terms.map((t) => (
+                <th key={t} className="px-4 py-2 font-bold">
+                  {t} mo
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {aprs.map((a) => (
+              <tr key={a} className="border-t border-[var(--border)]">
+                <td className="px-4 py-2 font-semibold">{a}%</td>
+                {terms.map((t) => (
+                  <td key={t} className="px-4 py-2">
+                    {usd0(monthlyPayment(init, a, t / 12))}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+  if (slug === "salary-calculator") {
+    const stateRates = [0, 5, 7, 9];
+    const net = (filing: "single" | "married", stateRatePct: number) =>
+      computeSalary({ grossAnnual: init, filing, preTaxAnnual: 0, stateRatePct }).netMonthly;
+    return (
+      <div className="mt-6 overflow-x-auto rounded-2xl border border-[var(--border)]">
+        <table className="w-full text-sm tabular-nums">
+          <caption className="px-4 py-3 text-left text-[var(--muted)]">
+            Estimated monthly take-home on {usd0(init)}/yr by state tax rate (2024)
+          </caption>
+          <thead className="bg-[var(--card)] text-left text-xs uppercase tracking-wider text-[var(--muted)]">
+            <tr>
+              <th className="px-4 py-2 font-bold">State tax</th>
+              <th className="px-4 py-2 font-bold">Single</th>
+              <th className="px-4 py-2 font-bold">Married</th>
+            </tr>
+          </thead>
+          <tbody>
+            {stateRates.map((s) => (
+              <tr key={s} className="border-t border-[var(--border)]">
+                <td className="px-4 py-2 font-semibold">{s}%</td>
+                <td className="px-4 py-2">{usd0(net("single", s))} / mo</td>
+                <td className="px-4 py-2">{usd0(net("married", s))} / mo</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+  if (slug === "electricity-cost-calculator") {
+    const hoursList = [2, 4, 8, 24];
+    const prices = [0.15, 0.25, 0.35];
+    const cost = (hoursPerDay: number, pricePerKwh: number) =>
+      computeElectricity({ powerWatts: init, hoursPerDay, daysPerMonth: 30, pricePerKwh, quantity: 1 }).costPerMonth;
+    return (
+      <div className="mt-6 overflow-x-auto rounded-2xl border border-[var(--border)]">
+        <table className="w-full text-sm tabular-nums">
+          <caption className="px-4 py-3 text-left text-[var(--muted)]">
+            Monthly cost at {init}W by hours per day and price per kWh
+          </caption>
+          <thead className="bg-[var(--card)] text-left text-xs uppercase tracking-wider text-[var(--muted)]">
+            <tr>
+              <th className="px-4 py-2 font-bold">Hours/day</th>
+              {prices.map((pr) => (
+                <th key={pr} className="px-4 py-2 font-bold">
+                  ${pr.toFixed(2)}/kWh
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {hoursList.map((h) => (
+              <tr key={h} className="border-t border-[var(--border)]">
+                <td className="px-4 py-2 font-semibold">{h} h</td>
+                {prices.map((pr) => (
+                  <td key={pr} className="px-4 py-2">
+                    {usd0(cost(h, pr))}
+                  </td>
+                ))}
               </tr>
             ))}
           </tbody>
@@ -132,6 +239,12 @@ export default async function CalculatorPresetPage({
       <MortgageCalculator initialPrice={p.init} />
     ) : slug === "car-loan-calculator" ? (
       <CarLoanCalculator initialMonths={p.init} />
+    ) : slug === "loan-calculator" ? (
+      <LoanCalculator initialAmount={p.init} />
+    ) : slug === "salary-calculator" ? (
+      <SalaryCalculator initialAnnual={p.init} />
+    ) : slug === "electricity-cost-calculator" ? (
+      <ElectricityCalculator initialWatts={p.init} />
     ) : null;
 
   const softwareJsonLd = {

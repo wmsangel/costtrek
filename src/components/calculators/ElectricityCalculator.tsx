@@ -13,9 +13,13 @@ import {
   CURRENCIES,
 } from "./fields";
 
-export default function ElectricityCalculator() {
+export default function ElectricityCalculator({
+  initialWatts = 1500,
+}: {
+  initialWatts?: number;
+}) {
   const [currency, setCurrency] = useState("USD");
-  const [watts, setWatts] = useState(1500);
+  const [watts, setWatts] = useState(initialWatts);
   const [hours, setHours] = useState(4);
   const [days, setDays] = useState(30);
   const [price, setPrice] = useState(0.17);

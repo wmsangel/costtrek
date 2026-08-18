@@ -13,9 +13,13 @@ import {
   CURRENCIES,
 } from "./fields";
 
-export default function LoanCalculator() {
+export default function LoanCalculator({
+  initialAmount = 20_000,
+}: {
+  initialAmount?: number;
+}) {
   const [currency, setCurrency] = useState("USD");
-  const [amount, setAmount] = useState(20_000);
+  const [amount, setAmount] = useState(initialAmount);
   const [rate, setRate] = useState(9.5);
   const [months, setMonths] = useState(60);
 

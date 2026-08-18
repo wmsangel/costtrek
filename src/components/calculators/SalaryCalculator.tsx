@@ -22,9 +22,13 @@ const PERIODS = [
   { value: "hour", label: "Per hour" },
 ];
 
-export default function SalaryCalculator() {
+export default function SalaryCalculator({
+  initialAnnual = 85_000,
+}: {
+  initialAnnual?: number;
+}) {
   const [currency, setCurrency] = useState("USD");
-  const [amount, setAmount] = useState(85_000);
+  const [amount, setAmount] = useState(initialAnnual);
   const [period, setPeriod] = useState("year");
   const [hoursPerWeek, setHoursPerWeek] = useState(40);
   const [filing, setFiling] = useState<Filing>("single");
