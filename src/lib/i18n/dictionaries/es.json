@@ -58,6 +58,11 @@
     "subtitle": "Guías prácticas para mudarte al extranjero, comparar ciudades, entender los impuestos y estirar tu dinero.",
     "readTime": "{n} min de lectura"
   },
+  "calculators": {
+    "nav": "Calculadoras",
+    "title": "Calculadoras financieras",
+    "subtitle": "Calculadoras gratuitas e instantáneas de hipotecas, préstamos, salario y gastos cotidianos — con los números explicados."
+  },
   "compareCountries": {
     "breadcrumb": "Comparar países",
     "title": "{a} vs {b}: coste de vida e impuestos",

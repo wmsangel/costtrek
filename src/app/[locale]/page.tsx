@@ -16,6 +16,7 @@ import { fill, getDictionary } from "@/lib/i18n/dictionaries";
 import { localizedCityLabel, localizedCityName } from "@/lib/i18n/places";
 import { COLLECTIONS, COLLECTION_KEYS } from "@/lib/collections";
 import { GUIDES } from "@/content/guides";
+import { CALCULATORS } from "@/lib/calculators/registry";
 import { getCountry } from "@/lib/data";
 import { pageMetadata, SITE_NAME } from "@/lib/seo/site";
 import { websiteJsonLd } from "@/lib/seo/jsonld";
@@ -226,6 +227,35 @@ export default async function Home({
             className="text-[var(--accent)] font-semibold hover:underline"
           >
             {dict.countriesIndex.linkTitle} →
+          </Link>
+        </p>
+      </section>
+
+      <section className="mt-16">
+        <h2 className="mag-h2 mb-1.5">🧮 {dict.calculators.title}</h2>
+        <p className="text-[var(--muted)] mb-6 max-w-[60ch]">
+          {dict.calculators.subtitle}
+        </p>
+        <div className="flex flex-wrap gap-3">
+          {CALCULATORS.filter((c) => c.live).map((c) => (
+            <Link
+              key={c.slug}
+              href={`/${l}/calculators/${c.slug}`}
+              className="group flex items-center gap-2.5 rounded-full border border-[var(--border)] px-4 py-2 hover:border-[var(--accent)]"
+            >
+              <span aria-hidden>{c.glyph}</span>
+              <span className="font-semibold group-hover:text-[var(--accent)]">
+                {c.title}
+              </span>
+            </Link>
+          ))}
+        </div>
+        <p className="mt-6">
+          <Link
+            href={`/${l}/calculators`}
+            className="text-[var(--accent)] font-semibold hover:underline"
+          >
+            {dict.calculators.nav} →
           </Link>
         </p>
       </section>

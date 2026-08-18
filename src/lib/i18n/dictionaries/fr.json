@@ -58,6 +58,11 @@
     "subtitle": "Des guides pratiques pour s'expatrier, comparer les villes, comprendre les impôts et faire durer son argent.",
     "readTime": "{n} min de lecture"
   },
+  "calculators": {
+    "nav": "Calculateurs",
+    "title": "Calculateurs financiers",
+    "subtitle": "Des calculateurs gratuits et instantanés pour prêts immobiliers, crédits, salaire et coûts du quotidien — chiffres expliqués."
+  },
   "compareCountries": {
     "breadcrumb": "Comparer les pays",
     "title": "{a} vs {b} : coût de la vie & impôts",

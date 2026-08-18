@@ -62,6 +62,11 @@ export type Dictionary = {
     subtitle: string;
     readTime: string; // {n}
   };
+  calculators: {
+    nav: string;
+    title: string;
+    subtitle: string;
+  };
   compare: {
     breadcrumb: string;
     subtitle: string;

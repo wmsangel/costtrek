@@ -58,6 +58,11 @@
     "subtitle": "Guias práticos para emigrar, comparar cidades, perceber os impostos e esticar o seu dinheiro.",
     "readTime": "{n} min de leitura"
   },
+  "calculators": {
+    "nav": "Calculadoras",
+    "title": "Calculadoras financeiras",
+    "subtitle": "Calculadoras gratuitas e instantâneas de hipotecas, empréstimos, salário e custos do dia a dia — com os números explicados."
+  },
   "compareCountries": {
     "breadcrumb": "Comparar países",
     "title": "{a} vs {b}: custo de vida e impostos",

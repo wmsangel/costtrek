@@ -58,6 +58,11 @@
     "subtitle": "Practical, no-fluff guides to moving abroad, comparing cities, taxes and making your money go further.",
     "readTime": "{n} min read"
   },
+  "calculators": {
+    "nav": "Calculators",
+    "title": "Financial calculators",
+    "subtitle": "Free, instant calculators for mortgages, loans, salary and everyday costs — with the numbers explained."
+  },
   "compareCountries": {
     "breadcrumb": "Compare countries",
     "title": "{a} vs {b}: cost of living & taxes",

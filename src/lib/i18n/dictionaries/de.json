@@ -58,6 +58,11 @@
     "subtitle": "Praktische Ratgeber zum Auswandern, zum Vergleich von Städten, zu Steuern und dazu, wie dein Geld weiter reicht.",
     "readTime": "{n} Min. Lesezeit"
   },
+  "calculators": {
+    "nav": "Rechner",
+    "title": "Finanzrechner",
+    "subtitle": "Kostenlose Sofort-Rechner für Hypotheken, Kredite, Gehalt und Alltagskosten – mit verständlich erklärten Zahlen."
+  },
   "compareCountries": {
     "breadcrumb": "Länder vergleichen",
     "title": "{a} vs {b}: Lebenshaltungskosten & Steuern",
