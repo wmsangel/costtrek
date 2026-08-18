@@ -9,6 +9,10 @@ import JsonLd from "@/components/JsonLd";
 import Faq from "@/components/Faq";
 import OfferSlot from "@/components/calculators/OfferSlot";
 import MortgageCalculator from "@/components/calculators/MortgageCalculator";
+import LoanCalculator from "@/components/calculators/LoanCalculator";
+import CarLoanCalculator from "@/components/calculators/CarLoanCalculator";
+import SalaryCalculator from "@/components/calculators/SalaryCalculator";
+import ElectricityCalculator from "@/components/calculators/ElectricityCalculator";
 import { CALCULATORS, getCalculator } from "@/lib/calculators/registry";
 
 export const dynamicParams = false;
@@ -24,6 +28,14 @@ function widgetFor(slug: string) {
   switch (slug) {
     case "mortgage-calculator":
       return <MortgageCalculator />;
+    case "loan-calculator":
+      return <LoanCalculator />;
+    case "car-loan-calculator":
+      return <CarLoanCalculator />;
+    case "salary-calculator":
+      return <SalaryCalculator />;
+    case "electricity-cost-calculator":
+      return <ElectricityCalculator />;
     default:
       return null;
   }
