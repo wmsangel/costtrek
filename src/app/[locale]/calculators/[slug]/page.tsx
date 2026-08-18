@@ -14,6 +14,7 @@ import CarLoanCalculator from "@/components/calculators/CarLoanCalculator";
 import SalaryCalculator from "@/components/calculators/SalaryCalculator";
 import ElectricityCalculator from "@/components/calculators/ElectricityCalculator";
 import { CALCULATORS, getCalculator } from "@/lib/calculators/registry";
+import { CALC_PRESETS } from "@/lib/calculators/presets";
 
 export const dynamicParams = false;
 
@@ -133,6 +134,27 @@ export default async function CalculatorPage({
           </ul>
         )}
       </div>
+
+      {(() => {
+        const presets = CALC_PRESETS.filter((p) => p.calcSlug === slug);
+        if (presets.length === 0) return null;
+        return (
+          <section className="mt-10">
+            <h2 className="mag-h2 text-xl mb-4">Popular</h2>
+            <div className="flex flex-wrap gap-2">
+              {presets.map((p) => (
+                <Link
+                  key={p.preset}
+                  href={`/${l}/calculators/${slug}/${p.preset}`}
+                  className="text-sm rounded-full border border-[var(--border)] px-3 py-1.5 hover:border-[var(--accent)]"
+                >
+                  {p.h1}
+                </Link>
+              ))}
+            </div>
+          </section>
+        );
+      })()}
 
       <div className="mt-10">
         <Faq title={dict.faq.title} items={calc.faq} />

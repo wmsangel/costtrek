@@ -13,14 +13,18 @@ import {
   CURRENCIES,
 } from "./fields";
 
-export default function CarLoanCalculator() {
+export default function CarLoanCalculator({
+  initialMonths = 60,
+}: {
+  initialMonths?: number;
+}) {
   const [currency, setCurrency] = useState("USD");
   const [price, setPrice] = useState(35_000);
   const [down, setDown] = useState(5_000);
   const [tradeIn, setTradeIn] = useState(0);
   const [salesTax, setSalesTax] = useState(7);
   const [rate, setRate] = useState(7.5);
-  const [months, setMonths] = useState(60);
+  const [months, setMonths] = useState(initialMonths);
 
   const money = useMoney(CURRENCIES[currency].code);
   const symbol = CURRENCIES[currency].symbol;

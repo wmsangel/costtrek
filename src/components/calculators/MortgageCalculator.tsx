@@ -70,10 +70,14 @@ function Field({
   );
 }
 
-export default function MortgageCalculator() {
+export default function MortgageCalculator({
+  initialPrice = 400_000,
+}: {
+  initialPrice?: number;
+}) {
   const [currency, setCurrency] = useState("USD");
-  const [price, setPrice] = useState(400_000);
-  const [down, setDown] = useState(80_000);
+  const [price, setPrice] = useState(initialPrice);
+  const [down, setDown] = useState(Math.round(initialPrice * 0.2));
   const [rate, setRate] = useState(6.5);
   const [term, setTerm] = useState(30);
   const [tax, setTax] = useState(4_800);

@@ -5,6 +5,7 @@ import { countrySlug, getCountry } from "@/lib/data";
 import { countriesWithCities } from "@/lib/countryStats";
 import { GUIDES } from "@/content/guides";
 import { CALCULATORS } from "@/lib/calculators/registry";
+import { CALC_PRESETS } from "@/lib/calculators/presets";
 import { locales } from "@/lib/i18n/config";
 import { absUrl, languageAlternates } from "@/lib/seo/site";
 
@@ -28,6 +29,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   paths.push({ path: "calculators", priority: 0.7 });
   for (const c of CALCULATORS) {
     if (c.live) paths.push({ path: `calculators/${c.slug}`, priority: 0.7 });
+  }
+  for (const p of CALC_PRESETS) {
+    paths.push({ path: `calculators/${p.calcSlug}/${p.preset}`, priority: 0.5 });
   }
 
   const countryList = countriesWithCities();
