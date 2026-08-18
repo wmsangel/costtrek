@@ -66,9 +66,20 @@ export default async function AboutPage({
           authorities and public sources, at a headline level.
         </li>
         <li>
-          <strong>City-level prices, rents and quality-of-life scores</strong> are
-          compiled estimates for general guidance, and are being refined over
-          time.
+          <strong>US cities&apos; overall cost index</strong> is anchored to real{" "}
+          <a
+            href="https://www.bea.gov/data/prices-inflation/regional-price-parities-state-and-metro-area"
+            rel="noopener"
+            target="_blank"
+          >
+            BEA Regional Price Parities
+          </a>{" "}
+          (all items, US = 100, 2023).
+        </li>
+        <li>
+          <strong>Category breakdowns, rents and quality-of-life scores</strong>{" "}
+          are compiled estimates for general guidance, refined over time.
+          International city indices are calibrated estimates.
         </li>
       </ul>
       <p>
