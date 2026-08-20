@@ -229,6 +229,17 @@ export default async function ComparePage({
           const countryB = getCountry(b.countryCode);
           const items: FaqItem[] = [
             {
+              q: fill(dict.faq.cmpMoveQ, { a: aName, b: bName }),
+              a: fill(dict.faq.cmpMoveA, {
+                a: aName,
+                b: bName,
+                pct: Math.abs(Math.round(overallDiff)),
+                word,
+                ia: Math.round(overallA),
+                ib: Math.round(overallB),
+              }),
+            },
+            {
               q: fill(dict.faq.cmpCheaperQ, { a: aName, b: bName }),
               a: fill(dict.faq.cmpCheaperA, {
                 a: aName,

@@ -121,6 +121,8 @@
     "cityClimateA": "{city} hat im Januar durchschnittlich etwa {jan} und im Juli {jul}, mit rund {sunny} Sonnentagen pro Jahr.",
     "citySafetyQ": "Ist {city} sicher?",
     "citySafetyA": "{city} erreicht {safety} von 100 auf unserem Sicherheitsindex, wobei höher sicherer bedeutet.",
+    "cmpMoveQ": "Umzug von {a} nach {b}: günstiger oder teurer?",
+    "cmpMoveA": "Beim Umzug von {a} nach {b} sind die Lebenshaltungskosten etwa {pct}% {word}. Der Index von {b} liegt bei {ib} gegenüber {ia} für {a} (USA = 100). Oben siehst du das nötige Gehalt für denselben Lebensstandard.",
     "cmpCheaperQ": "Ist {a} günstiger als {b}?",
     "cmpCheaperA": "{b} ist insgesamt etwa {pct}% {word} als {a} — der Index liegt bei {ib} gegenüber {ia} für {a}.",
     "cmpSalaryQ": "Wie viel muss man in {b} verdienen, um wie in {a} zu leben?",
@@ -202,7 +204,7 @@
     "titleTemplate": "%s · CostTrek",
     "homeDescription": "Vergleiche die Lebenshaltungskosten von Städten weltweit und finde das Gehalt, das du brauchst, um nach einem Umzug deinen Lebensstandard zu halten.",
     "compareTitle": "{a} vs {b}: Vergleich der Lebenshaltungskosten",
-    "compareDescription": "Vergleiche die Lebenshaltungskosten zwischen {aName} und {bName}. Sieh, welches Gehalt du in {bName} brauchst, um deinen Lebensstil aus {aName} zu halten – mit einer Aufschlüsselung nach Kategorie.",
+    "compareDescription": "Umzug von {aName} nach {bName}? Vergleiche die Lebenshaltungskosten zwischen {aName} und {bName}. Sieh, welches Gehalt du in {bName} brauchst, um deinen Lebensstil aus {aName} zu halten – mit einer Aufschlüsselung nach Kategorie.",
     "cityTitle": "Lebenshaltungskosten in {city}",
     "cityDescription": "Lebenshaltungskosten in {location}: Index {index} (US-Durchschnitt = 100), Median-Miete für eine 1-Zimmer-Wohnung etwa {rent} $/Monat, plus Aufschlüsselung nach Kategorie."
   }

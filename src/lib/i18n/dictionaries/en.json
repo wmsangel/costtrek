@@ -121,6 +121,8 @@
     "cityClimateA": "{city} averages around {jan} in January and {jul} in July, with roughly {sunny} sunny days a year.",
     "citySafetyQ": "Is {city} safe?",
     "citySafetyA": "{city} scores {safety} out of 100 on our safety index, where higher means safer.",
+    "cmpMoveQ": "Moving from {a} to {b}: cheaper or more expensive?",
+    "cmpMoveA": "Moving from {a} to {b}, your cost of living will be roughly {pct}% {word}. {b}’s cost-of-living index is {ib} versus {ia} for {a} (US = 100). Use the salary tool above to see the income you’d need to keep the same lifestyle.",
     "cmpCheaperQ": "Is {a} cheaper than {b}?",
     "cmpCheaperA": "{b} is about {pct}% {word} than {a} overall — its cost-of-living index is {ib} versus {ia} for {a}.",
     "cmpSalaryQ": "How much do you need to earn in {b} to live like in {a}?",
@@ -202,7 +204,7 @@
     "titleTemplate": "%s · CostTrek",
     "homeDescription": "Compare the cost of living between cities worldwide and find the salary you'd need to keep your standard of living after a move.",
     "compareTitle": "{a} vs {b}: cost of living comparison",
-    "compareDescription": "Compare the cost of living between {aName} and {bName}. See the salary you'd need in {bName} to match your lifestyle in {aName}, with a category-by-category breakdown.",
+    "compareDescription": "Moving from {aName} to {bName}? Compare the cost of living between {aName} and {bName}. See the salary you'd need in {bName} to match your lifestyle in {aName}, with a category-by-category breakdown.",
     "cityTitle": "Cost of living in {city}",
     "cityDescription": "Cost of living in {location}: index {index} (US average = 100), median 1-bedroom rent about ${rent}/month, plus a category breakdown."
   }

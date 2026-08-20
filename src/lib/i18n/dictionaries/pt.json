@@ -121,6 +121,8 @@
     "cityClimateA": "{city} tem em média cerca de {jan} em janeiro e {jul} em julho, com aproximadamente {sunny} dias de sol por ano.",
     "citySafetyQ": "{city} é segura?",
     "citySafetyA": "{city} tem {safety} em 100 no nosso índice de segurança, onde mais alto significa mais seguro.",
+    "cmpMoveQ": "Mudar de {a} para {b}: mais barato ou mais caro?",
+    "cmpMoveA": "Ao mudar de {a} para {b}, seu custo de vida será cerca de {pct}% {word}. O índice de {b} é {ib} ante {ia} de {a} (EUA = 100). Use a ferramenta de salário acima para ver a renda necessária para manter o mesmo padrão.",
     "cmpCheaperQ": "{a} é mais barata do que {b}?",
     "cmpCheaperA": "{b} é, no total, cerca de {pct}% {word} do que {a} — o seu índice de custo de vida é {ib} contra {ia} de {a}.",
     "cmpSalaryQ": "Quanto é preciso ganhar em {b} para viver como em {a}?",
@@ -202,7 +204,7 @@
     "titleTemplate": "%s · CostTrek",
     "homeDescription": "Compare o custo de vida entre cidades de todo o mundo e descubra o salário de que precisaria para manter o seu padrão de vida após uma mudança.",
     "compareTitle": "{a} vs {b}: comparação do custo de vida",
-    "compareDescription": "Compare o custo de vida entre {aName} e {bName}. Veja o salário de que precisaria em {bName} para igualar o seu estilo de vida em {aName}, com um detalhe categoria a categoria.",
+    "compareDescription": "Mudar de {aName} para {bName}? Compare o custo de vida entre {aName} e {bName}. Veja o salário de que precisaria em {bName} para igualar o seu estilo de vida em {aName}, com um detalhe categoria a categoria.",
     "cityTitle": "Custo de vida em {city}",
     "cityDescription": "Custo de vida em {location}: índice {index} (média dos EUA = 100), renda mediana de um apartamento de um quarto de cerca de {rent} $/mês, além de um detalhe por categoria."
   }

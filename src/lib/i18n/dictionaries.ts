@@ -121,6 +121,8 @@ export type Dictionary = {
     cityClimateA: string; // {city} {jan} {jul} {sunny}
     citySafetyQ: string; // {city}
     citySafetyA: string; // {city} {safety}
+    cmpMoveQ: string; // {a} {b}
+    cmpMoveA: string; // {a} {b} {pct} {word} {ia} {ib}
     cmpCheaperQ: string; // {a} {b}
     cmpCheaperA: string; // {a} {b} {pct} {word} {ia} {ib}
     cmpSalaryQ: string; // {a} {b}

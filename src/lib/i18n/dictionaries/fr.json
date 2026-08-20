@@ -121,6 +121,8 @@
     "cityClimateA": "{city} affiche en moyenne environ {jan} en janvier et {jul} en juillet, avec à peu près {sunny} jours de soleil par an.",
     "citySafetyQ": "{city} est-elle sûre ?",
     "citySafetyA": "{city} obtient {safety} sur 100 à notre indice de sécurité, où plus haut signifie plus sûr.",
+    "cmpMoveQ": "Déménager de {a} à {b} : moins cher ou plus cher ?",
+    "cmpMoveA": "En déménageant de {a} à {b}, votre coût de la vie sera environ {pct}% {word}. L’indice de {b} est de {ib} contre {ia} pour {a} (USA = 100). Utilisez l’outil de salaire ci-dessus pour le revenu nécessaire au même niveau de vie.",
     "cmpCheaperQ": "{a} est-elle moins chère que {b} ?",
     "cmpCheaperA": "{b} est globalement environ {pct}% {word} que {a} — son indice du coût de la vie est de {ib} contre {ia} pour {a}.",
     "cmpSalaryQ": "Combien faut-il gagner à {b} pour vivre comme à {a} ?",
@@ -202,7 +204,7 @@
     "titleTemplate": "%s · CostTrek",
     "homeDescription": "Comparez le coût de la vie entre les villes du monde entier et trouvez le salaire dont vous auriez besoin pour conserver votre niveau de vie après un déménagement.",
     "compareTitle": "{a} vs {b} : comparaison du coût de la vie",
-    "compareDescription": "Comparez le coût de la vie entre {aName} et {bName}. Découvrez le salaire dont vous auriez besoin à {bName} pour égaler votre mode de vie à {aName}, avec un détail catégorie par catégorie.",
+    "compareDescription": "Déménager de {aName} à {bName} ? Comparez le coût de la vie entre {aName} et {bName}. Découvrez le salaire dont vous auriez besoin à {bName} pour égaler votre mode de vie à {aName}, avec un détail catégorie par catégorie.",
     "cityTitle": "Coût de la vie à {city}",
     "cityDescription": "Coût de la vie à {location} : indice {index} (moyenne américaine = 100), loyer médian pour un logement d'une chambre d'environ {rent} $/mois, avec un détail par catégorie."
   }
