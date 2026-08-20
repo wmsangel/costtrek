@@ -160,11 +160,13 @@ export type Dictionary = {
     };
     sections: {
       prices: string;
+      housing: string;
       taxes: string;
       visas: string;
       relocation: string;
       referral: string;
       quality: string;
+      living: string;
       about: string;
     };
     referralTypes: {

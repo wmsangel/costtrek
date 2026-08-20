@@ -180,11 +180,13 @@
     },
     "sections": {
       "prices": "What things cost",
+      "housing": "Housing",
       "taxes": "Taxes",
       "visas": "Visas & residency",
       "relocation": "Relocation & documents",
       "referral": "Where to look",
       "quality": "Quality of life",
+      "living": "Living there",
       "about": "About"
     },
     "referralTypes": {

@@ -105,6 +105,31 @@ export default function CityProfileSections({
         </section>
       )}
 
+      {/* Housing */}
+      {profile?.housing &&
+        Object.values(profile.housing).some((v) => v != null) && (
+          <section className="mt-10">
+            <SectionTitle glyph="⌂">{t.sections.housing}</SectionTitle>
+            <div className="grid sm:grid-cols-2 gap-x-8">
+              {profile.housing.medianRent1brCentreUsd != null && (
+                <HouseRow k="Rent, 1-bed centre" v={profile.housing.medianRent1brCentreUsd} unit="/mo" locale={numLocale} />
+              )}
+              {profile.housing.medianRent1brOutsideUsd != null && (
+                <HouseRow k="Rent, 1-bed outside centre" v={profile.housing.medianRent1brOutsideUsd} unit="/mo" locale={numLocale} />
+              )}
+              {profile.housing.medianRent3brCentreUsd != null && (
+                <HouseRow k="Rent, 3-bed centre" v={profile.housing.medianRent3brCentreUsd} unit="/mo" locale={numLocale} />
+              )}
+              {profile.housing.buyPriceSqmCentreUsd != null && (
+                <HouseRow k="Buy price, centre" v={profile.housing.buyPriceSqmCentreUsd} unit="/m²" locale={numLocale} />
+              )}
+              {profile.housing.buyPriceSqmOutsideUsd != null && (
+                <HouseRow k="Buy price, outside centre" v={profile.housing.buyPriceSqmOutsideUsd} unit="/m²" locale={numLocale} />
+              )}
+            </div>
+          </section>
+        )}
+
       {/* Taxes + economy */}
       {country && (
         <section className="mt-10">
@@ -209,7 +234,58 @@ export default function CityProfileSections({
             {profile.qualityOfLife.walkability != null && (
               <QStat k="Walkability" v={profile.qualityOfLife.walkability} suffix="/100" />
             )}
+            {profile.qualityOfLife.transitScore != null && (
+              <QStat k="Public transit" v={profile.qualityOfLife.transitScore} suffix="/100" />
+            )}
+            {profile.qualityOfLife.familyFriendly != null && (
+              <QStat k="Family-friendly" v={profile.qualityOfLife.familyFriendly} suffix="/100" />
+            )}
           </div>
+        </section>
+      )}
+
+      {/* Living there — expat & practical */}
+      {(profile?.expat || profile?.qualityOfLife?.tapWaterSafe != null) && (
+        <section className="mt-10">
+          <SectionTitle glyph="◍">{t.sections.living}</SectionTitle>
+          <dl className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
+            {profile?.expat?.englishProficiency && (
+              <Fact k="English spoken" v={cap(profile.expat.englishProficiency)} />
+            )}
+            {profile?.expat?.communitySize && (
+              <Fact k="Expat community" v={`${cap(profile.expat.communitySize)}`} />
+            )}
+            {profile?.expat?.coworkingSpaces != null && (
+              <Fact k="Coworking spaces" v={String(profile.expat.coworkingSpaces)} />
+            )}
+            {profile?.qualityOfLife?.tapWaterSafe != null && (
+              <Fact
+                k="Tap water"
+                v={profile.qualityOfLife.tapWaterSafe ? "Safe to drink" : "Not recommended"}
+              />
+            )}
+            {profile?.qualityOfLife?.healthInsuranceUsdMonthly != null && (
+              <Fact
+                k="Private health insurance"
+                v={`$${profile.qualityOfLife.healthInsuranceUsdMonthly.toLocaleString(numLocale)}/mo`}
+              />
+            )}
+          </dl>
+          {profile?.expat?.neighborhoods && profile.expat.neighborhoods.length > 0 && (
+            <div className="mt-4">
+              <p className="text-[var(--muted)] mb-2">Popular areas</p>
+              <div className="flex flex-wrap gap-2">
+                {profile.expat.neighborhoods.map((n) => (
+                  <span
+                    key={n}
+                    className="rounded-full border border-[var(--border)] px-3 py-1 text-sm"
+                  >
+                    {n}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
         </section>
       )}
 
@@ -266,6 +342,38 @@ export default function CityProfileSections({
         </p>
       )}
     </>
+  );
+}
+
+function cap(s: string): string {
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
+function HouseRow({
+  k,
+  v,
+  unit,
+  locale,
+}: {
+  k: string;
+  v: number;
+  unit?: string;
+  locale: string;
+}) {
+  return (
+    <div className="flex justify-between py-2 border-b border-[var(--border)] text-sm">
+      <span className="text-[var(--muted)]">{k}</span>
+      <Money v={v} locale={locale} unit={unit} />
+    </div>
+  );
+}
+
+function Fact({ k, v }: { k: string; v: string }) {
+  return (
+    <div>
+      <dt className="text-[var(--muted)]">{k}</dt>
+      <dd className="font-medium">{v}</dd>
+    </div>
   );
 }
 

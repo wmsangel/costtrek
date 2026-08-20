@@ -180,11 +180,13 @@
     },
     "sections": {
       "prices": "Cuánto cuesta todo",
+      "housing": "Vivienda",
       "taxes": "Impuestos",
       "visas": "Visados y residencia",
       "relocation": "Mudanza y documentos",
       "referral": "Dónde buscar",
       "quality": "Calidad de vida",
+      "living": "Vivir allí",
       "about": "Acerca de"
     },
     "referralTypes": {

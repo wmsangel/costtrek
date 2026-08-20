@@ -180,11 +180,13 @@
     },
     "sections": {
       "prices": "Quanto custa tudo",
+      "housing": "Moradia",
       "taxes": "Impostos",
       "visas": "Vistos e residência",
       "relocation": "Mudança e documentos",
       "referral": "Onde procurar",
       "quality": "Qualidade de vida",
+      "living": "Viver lá",
       "about": "Sobre"
     },
     "referralTypes": {
