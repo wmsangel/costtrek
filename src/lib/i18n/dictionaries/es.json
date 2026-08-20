@@ -113,6 +113,8 @@
     "title": "Preguntas frecuentes",
     "cityCostQ": "¿Cuánto cuesta vivir en {city}?",
     "cityCostA": "El índice de coste de vida de {city} es {index} (media de EE. UU. = 100) — alrededor de un {pct}% {word} que una ciudad estadounidense típica. Un piso de una habitación en el centro cuesta unos {rent} $ al mes.",
+    "cityLivingQ": "¿Cuáles son los gastos de vida en {city}?",
+    "cityLivingA": "Los gastos de vida en {city} son alrededor de un {pct}% {word} que la media de EE. UU. — su índice de coste de vida es {index} (EE. UU. = 100). El gasto mensual va en esa línea, y la vivienda es la mayor partida: un piso de un dormitorio en el centro cuesta unos ${rent}. Consulta el desglose por categorías más arriba.",
     "cityRentQ": "¿Cuál es el alquiler medio en {city}?",
     "cityRentA": "Un piso de una habitación en el centro cuesta de media unos {rentCentre} $ al mes, y alrededor de {rentOutside} $ fuera del centro.",
     "cityTaxQ": "¿Qué impuestos pagaría en {country}?",

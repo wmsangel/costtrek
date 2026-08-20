@@ -263,6 +263,16 @@ export default async function CityPage({
               }),
             },
             {
+              q: fill(dict.faq.cityLivingQ, { city: label }),
+              a: fill(dict.faq.cityLivingA, {
+                city: label,
+                index: roundedIndex,
+                pct: Math.abs(Math.round(index - 100)),
+                word,
+                rent: c.medianRent1br.toLocaleString(nl),
+              }),
+            },
+            {
               q: fill(dict.faq.cityRentQ, { city: label }),
               a: fill(dict.faq.cityRentA, {
                 rentCentre: rentCentre.toLocaleString(nl),

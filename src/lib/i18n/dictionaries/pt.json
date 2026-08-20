@@ -113,6 +113,8 @@
     "title": "Perguntas frequentes",
     "cityCostQ": "Quanto custa viver em {city}?",
     "cityCostA": "O índice de custo de vida de {city} é {index} (média dos EUA = 100) — cerca de {pct}% {word} do que uma cidade dos EUA típica. Um apartamento T1 no centro custa cerca de {rent} $ por mês.",
+    "cityLivingQ": "Quais são os custos de vida em {city}?",
+    "cityLivingA": "Os custos de vida em {city} são cerca de {pct}% {word} que a média dos EUA — seu índice de custo de vida é {index} (EUA = 100). O gasto mensal acompanha isso, e a moradia é a maior parcela: um apartamento de um quarto no centro custa cerca de ${rent}. Veja o detalhamento por categoria acima.",
     "cityRentQ": "Qual é a renda média em {city}?",
     "cityRentA": "Um T1 no centro custa em média cerca de {rentCentre} $ por mês, e à volta de {rentOutside} $ fora do centro.",
     "cityTaxQ": "Que impostos pagaria em {country}?",

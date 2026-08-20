@@ -113,6 +113,8 @@
     "title": "Questions fréquentes",
     "cityCostQ": "Combien coûte la vie à {city} ?",
     "cityCostA": "L'indice du coût de la vie de {city} est de {index} (moyenne américaine = 100) — environ {pct}% {word} qu'une ville américaine typique. Un studio dans le centre coûte environ {rent} $ par mois.",
+    "cityLivingQ": "Quelles sont les dépenses courantes à {city} ?",
+    "cityLivingA": "Les dépenses courantes à {city} sont environ {pct}% {word} que la moyenne américaine — son indice du coût de la vie est de {index} (USA = 100). Le budget mensuel suit cette tendance, et le logement est le poste principal : un studio au centre coûte environ ${rent}. Voir la répartition par catégorie ci-dessus.",
     "cityRentQ": "Quel est le loyer moyen à {city} ?",
     "cityRentA": "Un studio dans le centre coûte en moyenne environ {rentCentre} $ par mois, et autour de {rentOutside} $ en dehors du centre.",
     "cityTaxQ": "Quels impôts paierais-je en {country} ?",

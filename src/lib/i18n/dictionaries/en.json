@@ -113,6 +113,8 @@
     "title": "Frequently asked questions",
     "cityCostQ": "How much does it cost to live in {city}?",
     "cityCostA": "{city}'s cost-of-living index is {index} (US average = 100) — about {pct}% {word} than a typical US city. A one-bedroom apartment in the centre costs around ${rent} per month.",
+    "cityLivingQ": "What are the average living costs in {city}?",
+    "cityLivingA": "Living costs in {city} are about {pct}% {word} than the US average — its cost-of-living index is {index} (US = 100). Monthly living expenses scale with that, and housing is the biggest line: a one-bedroom in the centre runs around ${rent}. See the category breakdown above for where the money goes.",
     "cityRentQ": "What is the average rent in {city}?",
     "cityRentA": "A one-bedroom in the city centre averages about ${rentCentre} per month, and around ${rentOutside} outside the centre.",
     "cityTaxQ": "What taxes would I pay in {country}?",

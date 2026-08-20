@@ -113,6 +113,8 @@ export type Dictionary = {
     title: string;
     cityCostQ: string; // {city}
     cityCostA: string; // {city} {index} {pct} {word} {rent}
+    cityLivingQ: string; // {city}
+    cityLivingA: string; // {city} {index} {pct} {word} {rent}
     cityRentQ: string; // {city}
     cityRentA: string; // {rentCentre} {rentOutside}
     cityTaxQ: string; // {country}
