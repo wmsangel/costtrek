@@ -13,6 +13,7 @@ import LanguageDropdown from "@/components/LanguageDropdown";
 import ThemeToggle from "@/components/ThemeToggle";
 import CookieBanner from "@/components/CookieBanner";
 import Analytics from "@/components/Analytics";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 import JsonLd from "@/components/JsonLd";
 import {
   OG_LOCALE,
@@ -189,6 +190,7 @@ export default async function LocaleLayout({
           strings={dict.cookie}
         />
         <Analytics />
+        <VercelAnalytics />
       </body>
     </html>
   );
