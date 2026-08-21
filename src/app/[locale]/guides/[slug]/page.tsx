@@ -6,7 +6,7 @@ import { getDictionary, fill } from "@/lib/i18n/dictionaries";
 import { pageMetadata, ogImageUrl, SITE_NAME } from "@/lib/seo/site";
 import { articleJsonLd, breadcrumbJsonLd } from "@/lib/seo/jsonld";
 import JsonLd from "@/components/JsonLd";
-import { GUIDES, getGuide } from "@/content/guides";
+import { GUIDES, getGuide, localizedGuide } from "@/content/guides";
 
 export const dynamicParams = false;
 
@@ -25,13 +25,14 @@ export async function generateMetadata({
   if (!isLocale(locale)) return {};
   const guide = getGuide(slug);
   if (!guide) return {};
+  const c = localizedGuide(guide, locale);
   return pageMetadata({
     locale,
     path: `guides/${slug}`,
-    title: guide.title,
-    description: guide.excerpt,
+    title: c.title,
+    description: c.excerpt,
     ogType: "article",
-    ogImage: { title: guide.title, sub: SITE_NAME, tag: "Guide" },
+    ogImage: { title: c.title, sub: SITE_NAME, tag: "Guide" },
   });
 }
 
@@ -46,7 +47,8 @@ export default async function GuidePage({
   const guide = getGuide(slug);
   if (!guide) notFound();
   const dict = await getDictionary(l);
-  const { Body } = guide;
+  const c = localizedGuide(guide, l);
+  const { Body } = c;
 
   const others = GUIDES.filter((g) => g.slug !== guide.slug).slice(0, 2);
 
@@ -55,18 +57,18 @@ export default async function GuidePage({
       <JsonLd
         data={articleJsonLd({
           locale: l,
-          headline: guide.title,
-          description: guide.excerpt,
+          headline: c.title,
+          description: c.excerpt,
           path: `guides/${slug}`,
           datePublished: guide.date,
-          image: ogImageUrl({ title: guide.title, sub: SITE_NAME, tag: "Guide" }),
+          image: ogImageUrl({ title: c.title, sub: SITE_NAME, tag: "Guide" }),
         })}
       />
       <JsonLd
         data={breadcrumbJsonLd(l, [
           { name: dict.breadcrumbHome, path: "" },
           { name: dict.guides.nav, path: "guides" },
-          { name: guide.title, path: `guides/${slug}` },
+          { name: c.title, path: `guides/${slug}` },
         ])}
       />
 
@@ -93,10 +95,10 @@ export default async function GuidePage({
           <span>{fill(dict.guides.readTime, { n: guide.minutes })}</span>
         </div>
         <h1 className="mt-3 display text-4xl md:text-5xl font-black leading-tight tracking-tight">
-          {guide.title}
+          {c.title}
         </h1>
         <p className="mt-4 text-lg text-[var(--muted)] leading-relaxed">
-          {guide.excerpt}
+          {c.excerpt}
         </p>
       </header>
 
@@ -123,7 +125,7 @@ export default async function GuidePage({
                 className="group block rounded-xl border border-[var(--border)] p-4 transition-colors hover:border-[var(--accent)]"
               >
                 <h3 className="display font-bold leading-snug group-hover:text-[var(--accent)]">
-                  {g.title}
+                  {localizedGuide(g, l).title}
                 </h3>
                 <p className="mt-1 text-xs text-[var(--muted)]">
                   {fill(dict.guides.readTime, { n: g.minutes })}

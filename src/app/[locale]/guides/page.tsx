@@ -6,7 +6,7 @@ import { getDictionary, fill } from "@/lib/i18n/dictionaries";
 import { pageMetadata } from "@/lib/seo/site";
 import { breadcrumbJsonLd } from "@/lib/seo/jsonld";
 import JsonLd from "@/components/JsonLd";
-import { GUIDES } from "@/content/guides";
+import { GUIDES, localizedGuide } from "@/content/guides";
 
 export async function generateMetadata({
   params,
@@ -77,10 +77,10 @@ export default async function GuidesIndex({
               <span>{fill(dict.guides.readTime, { n: g.minutes })}</span>
             </div>
             <h2 className="mt-3 display text-xl font-bold leading-snug tracking-tight group-hover:text-[var(--accent)]">
-              {g.title}
+              {localizedGuide(g, l).title}
             </h2>
             <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
-              {g.excerpt}
+              {localizedGuide(g, l).excerpt}
             </p>
           </Link>
         ))}

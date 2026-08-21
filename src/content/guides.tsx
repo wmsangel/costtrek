@@ -1,18 +1,23 @@
 import Link from "next/link";
 import type { Locale } from "@/lib/i18n/config";
+import { GUIDE_TR } from "./guides-i18n";
 
 /**
  * Original, hand-written guide articles (the editorial content that a
  * data-driven site needs — for readers and for ad-network review). Each Body
  * receives the active locale so internal links stay in-locale.
  */
-export type Guide = {
-  slug: string;
+/** The translatable part of a guide (English lives inline; other locales in guides-i18n/). */
+export type GuideContent = {
   title: string;
   excerpt: string;
+  Body: (props: { l: Locale }) => React.ReactNode;
+};
+
+export type Guide = GuideContent & {
+  slug: string;
   date: string; // ISO
   minutes: number;
-  Body: (props: { l: Locale }) => React.ReactNode;
 };
 
 export const GUIDES: Guide[] = [
@@ -659,4 +664,10 @@ export const GUIDES: Guide[] = [
 
 export function getGuide(slug: string): Guide | undefined {
   return GUIDES.find((g) => g.slug === slug);
+}
+
+/** Localized guide content (title/excerpt/Body) with English fallback. */
+export function localizedGuide(g: Guide, l: Locale): GuideContent {
+  const tr = GUIDE_TR[l]?.[g.slug];
+  return tr ?? { title: g.title, excerpt: g.excerpt, Body: g.Body };
 }

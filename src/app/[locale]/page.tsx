@@ -15,7 +15,7 @@ import { isLocale, type Locale } from "@/lib/i18n/config";
 import { fill, getDictionary } from "@/lib/i18n/dictionaries";
 import { localizedCityLabel, localizedCityName } from "@/lib/i18n/places";
 import { COLLECTIONS, COLLECTION_KEYS } from "@/lib/collections";
-import { GUIDES } from "@/content/guides";
+import { GUIDES, localizedGuide } from "@/content/guides";
 import { CALCULATORS } from "@/lib/calculators/registry";
 import { getCountry } from "@/lib/data";
 import { pageMetadata, SITE_NAME } from "@/lib/seo/site";
@@ -273,10 +273,10 @@ export default async function Home({
               className="group block rounded-2xl border border-[var(--border)] p-5 hover:border-[var(--accent)]"
             >
               <h3 className="display font-bold leading-snug tracking-tight group-hover:text-[var(--accent)]">
-                {g.title}
+                {localizedGuide(g, l).title}
               </h3>
               <p className="mt-1.5 text-sm text-[var(--muted)] leading-relaxed">
-                {g.excerpt}
+                {localizedGuide(g, l).excerpt}
               </p>
             </Link>
           ))}
