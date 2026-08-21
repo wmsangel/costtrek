@@ -69,9 +69,12 @@ export async function generateMetadata({
     verification: {
       google: VERIFICATION.google,
       ...(VERIFICATION.yandex ? { yandex: VERIFICATION.yandex } : {}),
-      ...(VERIFICATION.bing
-        ? { other: { "msvalidate.01": VERIFICATION.bing } }
-        : {}),
+      other: {
+        ...(VERIFICATION.bing ? { "msvalidate.01": VERIFICATION.bing } : {}),
+        ...(VERIFICATION.mitgo
+          ? { "mitgo-verification": VERIFICATION.mitgo }
+          : {}),
+      },
     },
     formatDetection: { telephone: false, email: false, address: false },
     robots: {

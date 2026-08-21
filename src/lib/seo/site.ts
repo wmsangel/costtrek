@@ -19,6 +19,7 @@ export const VERIFICATION = {
   google: "g713sfTU6uNWhiBx2o4cZ_bibo6o-5L0hApvlmU0tEk",
   bing: "", // msvalidate.01
   yandex: "", // yandex-verification
+  mitgo: "2e595c4b-5adb-49e6-872e-9e38aa6a0c0e", // Mitgo/Admitad affiliate network
 };
 
 /** IndexNow key (instant Bing/Yandex/Seznam indexing). Hosted at /<key>.txt. */
