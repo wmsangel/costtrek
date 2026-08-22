@@ -1,6 +1,7 @@
 import type { City } from "@/lib/cities";
 import type { Country, CityProfile } from "@/lib/data";
 import { getCountry, getCityProfile } from "@/lib/data";
+import { PROFILE_TR } from "@/lib/data/cityProfiles-i18n";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import { LOCALE_BCP47, type Locale } from "@/lib/i18n/config";
 
@@ -41,21 +42,24 @@ export default function CityProfileSections({
   const profile: CityProfile | undefined = getCityProfile(city.slug);
   const numLocale = LOCALE_BCP47[locale];
   const t = dict.data;
+  const tr = PROFILE_TR[locale]?.[city.slug];
+  const nickname = tr?.nickname ?? profile?.nickname;
+  const summary = tr?.summary ?? profile?.summary;
 
   return (
     <>
       {/* About */}
-      {(profile?.summary || profile?.nickname) && (
+      {(summary || nickname) && (
         <section className="mt-10">
           <SectionTitle glyph="❝">{t.sections.about}</SectionTitle>
-          {profile?.nickname && (
+          {nickname && (
             <p className="text-sm text-[var(--accent)] font-medium mb-1">
-              “{profile.nickname}”
+              “{nickname}”
             </p>
           )}
-          {profile?.summary && (
+          {summary && (
             <p className="text-[var(--foreground)] max-w-[62ch] leading-relaxed">
-              {profile.summary}
+              {summary}
             </p>
           )}
           {country && (
