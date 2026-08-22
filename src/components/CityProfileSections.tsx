@@ -1,6 +1,6 @@
 import type { City } from "@/lib/cities";
 import type { Country, CityProfile } from "@/lib/data";
-import { getCountry, getCityProfile } from "@/lib/data";
+import { getCountry, getCityProfile, translateCountry } from "@/lib/data";
 import { PROFILE_TR } from "@/lib/data/cityProfiles-i18n";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import { LOCALE_BCP47, type Locale } from "@/lib/i18n/config";
@@ -38,7 +38,10 @@ export default function CityProfileSections({
   dict: Dictionary;
   city: City;
 }) {
-  const country: Country | undefined = getCountry(city.countryCode);
+  const rawCountry = getCountry(city.countryCode);
+  const country: Country | undefined = rawCountry
+    ? translateCountry(rawCountry, locale)
+    : undefined;
   const profile: CityProfile | undefined = getCityProfile(city.slug);
   const numLocale = LOCALE_BCP47[locale];
   const t = dict.data;

@@ -12,6 +12,7 @@ import {
   countrySlug,
   getCountry,
   getCountryBySlug,
+  translateCountry,
   type Country,
 } from "@/lib/data";
 import { LOCALE_BCP47, isLocale, type Locale } from "@/lib/i18n/config";
@@ -70,9 +71,10 @@ export default async function CountryPage({
 }) {
   const { locale, country } = await params;
   if (!isLocale(locale)) notFound();
-  const co = getCountryBySlug(country);
-  if (!co) notFound();
+  const co0 = getCountryBySlug(country);
+  if (!co0) notFound();
   const l = locale as Locale;
+  const co = translateCountry(co0, l);
   const dict = await getDictionary(l);
   const cities = citiesOf(co.code);
   const name = cities[0] ? localizedCountry(l, cities[0]) : co.name;
