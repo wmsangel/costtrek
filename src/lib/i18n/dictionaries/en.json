@@ -56,7 +56,8 @@
     "nav": "Guides",
     "title": "Relocation & cost-of-living guides",
     "subtitle": "Practical, no-fluff guides to moving abroad, comparing cities, taxes and making your money go further.",
-    "readTime": "{n} min read"
+    "readTime": "{n} min read",
+    "disclaimer": "{site} provides general information, not financial, tax, legal or immigration advice. Figures are estimates — verify anything important with an official source before making decisions."
   },
   "calculators": {
     "nav": "Calculators",

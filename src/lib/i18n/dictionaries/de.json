@@ -56,7 +56,8 @@
     "nav": "Ratgeber",
     "title": "Umzugs- & Lebenshaltungskosten-Ratgeber",
     "subtitle": "Praktische Ratgeber zum Auswandern, zum Vergleich von Städten, zu Steuern und dazu, wie dein Geld weiter reicht.",
-    "readTime": "{n} Min. Lesezeit"
+    "readTime": "{n} Min. Lesezeit",
+    "disclaimer": "{site} bietet allgemeine Informationen, keine Finanz-, Steuer-, Rechts- oder Einwanderungsberatung. Angaben sind Schätzungen — prüfe Wichtiges vor Entscheidungen an einer offiziellen Quelle."
   },
   "calculators": {
     "nav": "Rechner",

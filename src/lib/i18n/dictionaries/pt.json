@@ -56,7 +56,8 @@
     "nav": "Guias",
     "title": "Guias de mudança e custo de vida",
     "subtitle": "Guias práticos para emigrar, comparar cidades, perceber os impostos e esticar o seu dinheiro.",
-    "readTime": "{n} min de leitura"
+    "readTime": "{n} min de leitura",
+    "disclaimer": "{site} fornece informação geral, não aconselhamento financeiro, fiscal, jurídico ou de imigração. Os valores são estimativas — confirme o que for importante numa fonte oficial antes de decidir."
   },
   "calculators": {
     "nav": "Calculadoras",

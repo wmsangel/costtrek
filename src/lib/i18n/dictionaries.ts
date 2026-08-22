@@ -61,6 +61,7 @@ export type Dictionary = {
     title: string;
     subtitle: string;
     readTime: string; // {n}
+    disclaimer: string; // {site}
   };
   calculators: {
     nav: string;

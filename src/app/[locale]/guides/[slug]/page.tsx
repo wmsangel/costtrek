@@ -107,9 +107,7 @@ export default async function GuidePage({
       </div>
 
       <p className="mt-10 rounded-xl border border-[var(--border)] bg-[var(--card)] p-4 text-sm text-[var(--muted)]">
-        {SITE_NAME} provides general information, not financial, tax, legal or
-        immigration advice. Figures are estimates — verify anything important with
-        an official source before making decisions.
+        {fill(dict.guides.disclaimer, { site: SITE_NAME })}
       </p>
 
       {others.length > 0 && (

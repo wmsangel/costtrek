@@ -2,8 +2,9 @@ import type { City } from "@/lib/cities";
 import type { Country, CityProfile } from "@/lib/data";
 import { getCountry, getCityProfile, translateCountry } from "@/lib/data";
 import { PROFILE_TR } from "@/lib/data/cityProfiles-i18n";
-import type { Dictionary } from "@/lib/i18n/dictionaries";
+import { type Dictionary, fill } from "@/lib/i18n/dictionaries";
 import { LOCALE_BCP47, type Locale } from "@/lib/i18n/config";
+import { cityLabels } from "@/lib/i18n/cityLabels";
 
 function Money({ v, locale, unit }: { v: number; locale: string; unit?: string }) {
   return (
@@ -45,6 +46,7 @@ export default function CityProfileSections({
   const profile: CityProfile | undefined = getCityProfile(city.slug);
   const numLocale = LOCALE_BCP47[locale];
   const t = dict.data;
+  const L = cityLabels(locale);
   const tr = PROFILE_TR[locale]?.[city.slug];
   const nickname = tr?.nickname ?? profile?.nickname;
   const summary = tr?.summary ?? profile?.summary;
@@ -68,16 +70,16 @@ export default function CityProfileSections({
           {country && (
             <dl className="mt-4 flex flex-wrap gap-x-8 gap-y-2 text-sm">
               <div>
-                <dt className="text-[var(--muted)]">Currency</dt>
+                <dt className="text-[var(--muted)]">{L.currency}</dt>
                 <dd>{country.currency.name} · {country.currency.code}</dd>
               </div>
               <div>
-                <dt className="text-[var(--muted)]">Languages</dt>
+                <dt className="text-[var(--muted)]">{L.languages}</dt>
                 <dd>{country.languages.join(", ")}</dd>
               </div>
               {profile?.geo && (
                 <div>
-                  <dt className="text-[var(--muted)]">Coordinates</dt>
+                  <dt className="text-[var(--muted)]">{L.coordinates}</dt>
                   <dd className="tabular-nums">
                     {profile.geo.lat.toFixed(2)}, {profile.geo.lng.toFixed(2)}
                   </dd>
@@ -85,7 +87,7 @@ export default function CityProfileSections({
               )}
               {country.practical?.emergencyNumber && (
                 <div>
-                  <dt className="text-[var(--muted)]">Emergency</dt>
+                  <dt className="text-[var(--muted)]">{L.emergency}</dt>
                   <dd>{country.practical.emergencyNumber}</dd>
                 </div>
               )}
@@ -104,7 +106,7 @@ export default function CityProfileSections({
                 key={p.key}
                 className="flex justify-between py-2 border-b border-[var(--border)] text-sm"
               >
-                <span className="text-[var(--muted)]">{p.label}</span>
+                <span className="text-[var(--muted)]">{L[`price_${p.key}`] ?? p.label}</span>
                 <Money v={p.amountUsd} locale={numLocale} unit={p.unit} />
               </div>
             ))}
@@ -119,19 +121,19 @@ export default function CityProfileSections({
             <SectionTitle glyph="⌂">{t.sections.housing}</SectionTitle>
             <div className="grid sm:grid-cols-2 gap-x-8">
               {profile.housing.medianRent1brCentreUsd != null && (
-                <HouseRow k="Rent, 1-bed centre" v={profile.housing.medianRent1brCentreUsd} unit="/mo" locale={numLocale} />
+                <HouseRow k={L.house_rent1brCentre} v={profile.housing.medianRent1brCentreUsd} unit="/mo" locale={numLocale} />
               )}
               {profile.housing.medianRent1brOutsideUsd != null && (
-                <HouseRow k="Rent, 1-bed outside centre" v={profile.housing.medianRent1brOutsideUsd} unit="/mo" locale={numLocale} />
+                <HouseRow k={L.house_rent1brOutside} v={profile.housing.medianRent1brOutsideUsd} unit="/mo" locale={numLocale} />
               )}
               {profile.housing.medianRent3brCentreUsd != null && (
-                <HouseRow k="Rent, 3-bed centre" v={profile.housing.medianRent3brCentreUsd} unit="/mo" locale={numLocale} />
+                <HouseRow k={L.house_rent3brCentre} v={profile.housing.medianRent3brCentreUsd} unit="/mo" locale={numLocale} />
               )}
               {profile.housing.buyPriceSqmCentreUsd != null && (
-                <HouseRow k="Buy price, centre" v={profile.housing.buyPriceSqmCentreUsd} unit="/m²" locale={numLocale} />
+                <HouseRow k={L.house_buyCentre} v={profile.housing.buyPriceSqmCentreUsd} unit="/m²" locale={numLocale} />
               )}
               {profile.housing.buyPriceSqmOutsideUsd != null && (
-                <HouseRow k="Buy price, outside centre" v={profile.housing.buyPriceSqmOutsideUsd} unit="/m²" locale={numLocale} />
+                <HouseRow k={L.house_buyOutside} v={profile.housing.buyPriceSqmOutsideUsd} unit="/m²" locale={numLocale} />
               )}
             </div>
           </section>
@@ -142,24 +144,24 @@ export default function CityProfileSections({
         <section className="mt-10">
           <SectionTitle glyph="▤">{t.sections.taxes}</SectionTitle>
           <div className="ink-band p-6 sm:p-7 grid grid-cols-2 sm:grid-cols-3 gap-y-6 gap-x-4">
-            <TaxStat k="Income tax" v={`${country.taxes.incomeTax.topRate}%`} note={country.taxes.incomeTax.type} />
+            <TaxStat k={L.tax_incomeTax} v={`${country.taxes.incomeTax.topRate}%`} note={country.taxes.incomeTax.type} />
             {country.taxes.vat && (
-              <TaxStat k="VAT / sales" v={`${country.taxes.vat.standard}%`} />
+              <TaxStat k={L.tax_vatSales} v={`${country.taxes.vat.standard}%`} />
             )}
             {country.taxes.socialSecurity?.employee != null && (
-              <TaxStat k="Social (employee)" v={`${country.taxes.socialSecurity.employee}%`} />
+              <TaxStat k={L.tax_socialEmployee} v={`${country.taxes.socialSecurity.employee}%`} />
             )}
             {country.taxes.corporateTax != null && (
-              <TaxStat k="Corporate" v={`${country.taxes.corporateTax}%`} />
+              <TaxStat k={L.tax_corporate} v={`${country.taxes.corporateTax}%`} />
             )}
             {country.taxes.capitalGains?.rate != null && (
-              <TaxStat k="Capital gains" v={`${country.taxes.capitalGains.rate}%`} />
+              <TaxStat k={L.tax_capitalGains} v={`${country.taxes.capitalGains.rate}%`} />
             )}
             {country.economy?.avgNetSalaryUsdMonthly != null && (
               <TaxStat
-                k="Avg net salary"
+                k={L.tax_avgNetSalary}
                 v={`$${country.economy.avgNetSalaryUsdMonthly.toLocaleString(numLocale)}`}
-                note="per month"
+                note={L.perMonth}
               />
             )}
           </div>
@@ -194,7 +196,7 @@ export default function CityProfileSections({
                 <div className="flex items-center justify-between gap-2">
                   <span className="font-medium">{v.name}</span>
                   <span className="text-[10px] uppercase tracking-wide rounded-full border border-[var(--border-strong)] px-2 py-0.5 text-[var(--muted)]">
-                    {v.category}
+                    {L[`visaCat_${v.category}`] ?? v.category}
                   </span>
                 </div>
                 {v.note && (
@@ -202,7 +204,7 @@ export default function CityProfileSections({
                 )}
                 {v.maxStayDays != null && (
                   <p className="text-xs text-[var(--muted)] mt-1">
-                    Max stay: {Math.round(v.maxStayDays / 30)} months
+                    {fill(L.maxStay, { n: Math.round(v.maxStayDays / 30) })}
                   </p>
                 )}
               </div>
@@ -211,9 +213,13 @@ export default function CityProfileSections({
           {country.immigration.residency && (
             <p className="mt-3 text-sm text-[var(--muted)]">
               {country.immigration.residency.permanentAfterYears != null &&
-                `Permanent residence after ~${country.immigration.residency.permanentAfterYears} yrs. `}
+                fill(L.permanentAfter, {
+                  n: country.immigration.residency.permanentAfterYears,
+                }) + " "}
               {country.immigration.residency.citizenshipAfterYears != null &&
-                `Citizenship after ~${country.immigration.residency.citizenshipAfterYears} yrs. `}
+                fill(L.citizenshipAfter, {
+                  n: country.immigration.residency.citizenshipAfterYears,
+                }) + " "}
               {country.immigration.residency.note}
             </p>
           )}
@@ -225,27 +231,27 @@ export default function CityProfileSections({
         <section className="mt-10">
           <SectionTitle glyph="❖">{t.sections.quality}</SectionTitle>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            <QStat k="Safety" v={profile.qualityOfLife.safetyIndex} suffix="/100" />
-            <QStat k="Healthcare" v={profile.qualityOfLife.healthcareIndex} suffix="/100" />
-            <QStat k="Pollution" v={profile.qualityOfLife.pollutionIndex} suffix="/100" />
-            <QStat k="Internet" v={profile.qualityOfLife.internetMbps} suffix=" Mbps" />
+            <QStat k={L.qol_safety} v={profile.qualityOfLife.safetyIndex} suffix="/100" />
+            <QStat k={L.qol_healthcare} v={profile.qualityOfLife.healthcareIndex} suffix="/100" />
+            <QStat k={L.qol_pollution} v={profile.qualityOfLife.pollutionIndex} suffix="/100" />
+            <QStat k={L.qol_internet} v={profile.qualityOfLife.internetMbps} suffix=" Mbps" />
             {profile.qualityOfLife.climate?.janAvgC != null && (
-              <QStat k="Jan avg" v={profile.qualityOfLife.climate.janAvgC} suffix=" °C" signed />
+              <QStat k={L.qol_janAvg} v={profile.qualityOfLife.climate.janAvgC} suffix=" °C" signed />
             )}
             {profile.qualityOfLife.climate?.julAvgC != null && (
-              <QStat k="Jul avg" v={profile.qualityOfLife.climate.julAvgC} suffix=" °C" signed />
+              <QStat k={L.qol_julAvg} v={profile.qualityOfLife.climate.julAvgC} suffix=" °C" signed />
             )}
             {profile.qualityOfLife.climate?.sunnyDays != null && (
-              <QStat k="Sunny days" v={profile.qualityOfLife.climate.sunnyDays} suffix="/yr" />
+              <QStat k={L.qol_sunnyDays} v={profile.qualityOfLife.climate.sunnyDays} suffix="/yr" />
             )}
             {profile.qualityOfLife.walkability != null && (
-              <QStat k="Walkability" v={profile.qualityOfLife.walkability} suffix="/100" />
+              <QStat k={L.qol_walkability} v={profile.qualityOfLife.walkability} suffix="/100" />
             )}
             {profile.qualityOfLife.transitScore != null && (
-              <QStat k="Public transit" v={profile.qualityOfLife.transitScore} suffix="/100" />
+              <QStat k={L.qol_transit} v={profile.qualityOfLife.transitScore} suffix="/100" />
             )}
             {profile.qualityOfLife.familyFriendly != null && (
-              <QStat k="Family-friendly" v={profile.qualityOfLife.familyFriendly} suffix="/100" />
+              <QStat k={L.qol_familyFriendly} v={profile.qualityOfLife.familyFriendly} suffix="/100" />
             )}
           </div>
         </section>
@@ -257,30 +263,36 @@ export default function CityProfileSections({
           <SectionTitle glyph="◍">{t.sections.living}</SectionTitle>
           <dl className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
             {profile?.expat?.englishProficiency && (
-              <Fact k="English spoken" v={cap(profile.expat.englishProficiency)} />
+              <Fact
+                k={L.live_english}
+                v={L[`prof_${profile.expat.englishProficiency}`] ?? profile.expat.englishProficiency}
+              />
             )}
             {profile?.expat?.communitySize && (
-              <Fact k="Expat community" v={`${cap(profile.expat.communitySize)}`} />
+              <Fact
+                k={L.live_expatCommunity}
+                v={L[`comm_${profile.expat.communitySize}`] ?? profile.expat.communitySize}
+              />
             )}
             {profile?.expat?.coworkingSpaces != null && (
-              <Fact k="Coworking spaces" v={String(profile.expat.coworkingSpaces)} />
+              <Fact k={L.live_coworking} v={String(profile.expat.coworkingSpaces)} />
             )}
             {profile?.qualityOfLife?.tapWaterSafe != null && (
               <Fact
-                k="Tap water"
-                v={profile.qualityOfLife.tapWaterSafe ? "Safe to drink" : "Not recommended"}
+                k={L.live_tapWater}
+                v={profile.qualityOfLife.tapWaterSafe ? L.tapSafe : L.tapUnsafe}
               />
             )}
             {profile?.qualityOfLife?.healthInsuranceUsdMonthly != null && (
               <Fact
-                k="Private health insurance"
+                k={L.live_healthInsurance}
                 v={`$${profile.qualityOfLife.healthInsuranceUsdMonthly.toLocaleString(numLocale)}/mo`}
               />
             )}
           </dl>
           {profile?.expat?.neighborhoods && profile.expat.neighborhoods.length > 0 && (
             <div className="mt-4">
-              <p className="text-[var(--muted)] mb-2">Popular areas</p>
+              <p className="text-[var(--muted)] mb-2">{L.popularAreas}</p>
               <div className="flex flex-wrap gap-2">
                 {profile.expat.neighborhoods.map((n) => (
                   <span
@@ -350,10 +362,6 @@ export default function CityProfileSections({
       )}
     </>
   );
-}
-
-function cap(s: string): string {
-  return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
 function HouseRow({
