@@ -308,49 +308,78 @@ export default function CityProfileSections({
         </section>
       )}
 
-      {/* Relocation / referral links (reserved slots, wired later) */}
-      {profile?.referralLinks && profile.referralLinks.length > 0 && (
-        <section className="mt-10 coral-band p-6 sm:p-8">
-          <div className="flex items-center gap-3 mb-1">
-            <h2 className="display text-2xl font-black">{t.sections.relocation}</h2>
-            <span className="text-[10px] uppercase tracking-wider rounded-full bg-[#171310] text-[var(--mustard)] px-2 py-1 font-extrabold">
-              {t.comingSoon}
-            </span>
-          </div>
-          <p className="text-white/90 font-medium mb-4 max-w-[46ch]">
-            {t.sections.referral}
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {profile.referralLinks.map((r, i) => {
-              const label = t.referralTypes[r.type] ?? r.type;
-              const inner = (
-                <>
-                  <span className="opacity-80">{label}</span>
-                  <span className="font-bold">{r.provider}</span>
-                  {r.note && <span className="opacity-70">· {r.note}</span>}
-                </>
-              );
-              const cls =
-                "flex items-center gap-1.5 rounded-full border border-white/40 bg-white/15 px-3 py-1.5 text-sm text-white";
-              return r.url ? (
-                <a
-                  key={i}
-                  href={r.url}
-                  rel="sponsored nofollow noopener"
-                  target="_blank"
-                  className={`${cls} hover:bg-white/25`}
-                >
-                  {inner}
-                </a>
-              ) : (
-                <span key={i} className={cls}>
-                  {inner}
-                </span>
-              );
-            })}
-          </div>
-        </section>
-      )}
+      {/* Relocation / referral links */}
+      {profile?.referralLinks &&
+        profile.referralLinks.length > 0 &&
+        (() => {
+          const live = profile.referralLinks.filter((r) => r.url);
+          const reserved = profile.referralLinks.filter((r) => !r.url);
+          return (
+            <section className="mt-10 coral-band p-6 sm:p-8">
+              <h2 className="display text-2xl font-black">
+                {t.sections.relocation}
+              </h2>
+              <p className="text-white/90 font-medium mt-1 mb-5 max-w-[46ch]">
+                {t.sections.referral}
+              </p>
+
+              {/* Live partner offers — prominent, clickable, disclosed */}
+              {live.length > 0 && (
+                <div className="space-y-2.5">
+                  {live.map((r, i) => (
+                    <a
+                      key={i}
+                      href={r.url}
+                      rel="sponsored nofollow noopener"
+                      target="_blank"
+                      className="group flex items-center justify-between gap-4 rounded-2xl bg-white px-4 py-3.5 text-[#171310] shadow-sm transition hover:shadow-lg"
+                    >
+                      <span className="flex flex-col gap-0.5">
+                        <span className="flex items-center gap-2">
+                          <span className="font-black">{r.provider}</span>
+                          <span className="text-[9px] uppercase tracking-wider rounded bg-[#171310]/10 px-1.5 py-0.5 font-bold text-[#171310]/60">
+                            {dict.calculators.sponsoredBadge}
+                          </span>
+                        </span>
+                        <span className="text-sm text-[#171310]/70">
+                          {r.note ?? t.referralTypes[r.type] ?? r.type}
+                        </span>
+                      </span>
+                      <span
+                        aria-hidden="true"
+                        className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[var(--accent)] text-lg font-bold text-white transition group-hover:translate-x-0.5"
+                      >
+                        ↗
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              )}
+
+              {/* Reserved slots — wired up as partners are approved */}
+              {reserved.length > 0 && (
+                <div className="mt-5">
+                  <span className="mb-2 inline-block text-[10px] uppercase tracking-wider rounded-full bg-[#171310] text-[var(--mustard)] px-2 py-1 font-extrabold">
+                    {t.comingSoon}
+                  </span>
+                  <div className="flex flex-wrap gap-2">
+                    {reserved.map((r, i) => (
+                      <span
+                        key={i}
+                        className="flex items-center gap-1.5 rounded-full border border-white/40 bg-white/15 px-3 py-1.5 text-sm text-white"
+                      >
+                        <span className="opacity-80">
+                          {t.referralTypes[r.type] ?? r.type}
+                        </span>
+                        <span className="font-bold">{r.provider}</span>
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </section>
+          );
+        })()}
 
       {/* Sources */}
       {(profile?.meta || country?.meta) && (
