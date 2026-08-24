@@ -55,6 +55,7 @@ export type Dictionary = {
     breadcrumb: string;
     title: string; // {a} {b}
     subtitle: string; // {a} {b}
+    compareWith: string; // {country}
   };
   guides: {
     nav: string;

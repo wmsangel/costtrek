@@ -69,7 +69,8 @@
   "compareCountries": {
     "breadcrumb": "Comparer les pays",
     "title": "{a} vs {b} : coût de la vie & impôts",
-    "subtitle": "Comparez le coût de la vie, les impôts, les salaires et les visas entre {a} et {b}."
+    "subtitle": "Comparez le coût de la vie, les impôts, les salaires et les visas entre {a} et {b}.",
+    "compareWith": "Comparer {country} avec d'autres pays"
   },
   "compare": {
     "breadcrumb": "Comparer",

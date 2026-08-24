@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import LegalShell from "@/components/LegalShell";
+import { legalBody } from "@/content/legal-i18n";
 import { isLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { pageMetadata, SITE_NAME } from "@/lib/seo/site";
@@ -36,6 +37,8 @@ export default async function AboutPage({
 
   return (
     <LegalShell locale={l} dict={dict} title={dict.legal.about} updated={UPDATED}>
+      {legalBody("about", l, (
+        <>
       <p>
         {SITE_NAME} helps you compare the <strong>cost of living, taxes,
         salaries, quality of life and visas</strong> between cities and countries
@@ -111,6 +114,8 @@ export default async function AboutPage({
         Questions, corrections or partnership ideas? See our{" "}
         <Link href={`/${l}/contact`}>{dict.legal.contact}</Link> page.
       </p>
+        </>
+      ))}
     </LegalShell>
   );
 }

@@ -69,7 +69,8 @@
   "compareCountries": {
     "breadcrumb": "Comparar países",
     "title": "{a} vs {b}: custo de vida e impostos",
-    "subtitle": "Compare o custo de vida, os impostos, os salários e os vistos entre {a} e {b}."
+    "subtitle": "Compare o custo de vida, os impostos, os salários e os vistos entre {a} e {b}.",
+    "compareWith": "Comparar {country} com outros países"
   },
   "compare": {
     "breadcrumb": "Comparar",

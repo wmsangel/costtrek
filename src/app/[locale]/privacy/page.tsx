@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import LegalShell from "@/components/LegalShell";
+import { legalBody } from "@/content/legal-i18n";
 import { isLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { pageMetadata, SITE_NAME } from "@/lib/seo/site";
@@ -36,6 +37,8 @@ export default async function PrivacyPage({
 
   return (
     <LegalShell locale={l} dict={dict} title={dict.legal.privacy} updated={UPDATED}>
+      {legalBody("privacy", l, (
+        <>
       <p>
         This is a template privacy policy for {SITE_NAME}; review it with a
         qualified professional before relying on it. It explains what we collect
@@ -73,6 +76,8 @@ export default async function PrivacyPage({
         Questions about your data or this policy? Email{" "}
         <a href="mailto:info@costtrek.com">info@costtrek.com</a>.
       </p>
+        </>
+      ))}
     </LegalShell>
   );
 }

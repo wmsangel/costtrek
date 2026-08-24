@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import LegalShell from "@/components/LegalShell";
+import { legalBody } from "@/content/legal-i18n";
 import { isLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { pageMetadata, SITE_NAME } from "@/lib/seo/site";
@@ -35,6 +36,8 @@ export default async function CookiesPage({
 
   return (
     <LegalShell locale={l} dict={dict} title={dict.legal.cookies} updated={UPDATED}>
+      {legalBody("cookies", l, (
+        <>
       <p>
         {SITE_NAME} uses cookies — small files stored on your device — to run the
         site and, with your consent, to measure traffic and support advertising.
@@ -60,6 +63,8 @@ export default async function CookiesPage({
         your first visit, and change your mind anytime by clearing this site&apos;s
         data in your browser. You can also block cookies in your browser settings.
       </p>
+        </>
+      ))}
     </LegalShell>
   );
 }

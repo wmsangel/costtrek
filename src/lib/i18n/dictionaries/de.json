@@ -69,7 +69,8 @@
   "compareCountries": {
     "breadcrumb": "Länder vergleichen",
     "title": "{a} vs {b}: Lebenshaltungskosten & Steuern",
-    "subtitle": "Vergleiche Lebenshaltungskosten, Steuern, Gehälter und Visa zwischen {a} und {b}."
+    "subtitle": "Vergleiche Lebenshaltungskosten, Steuern, Gehälter und Visa zwischen {a} und {b}.",
+    "compareWith": "{country} mit anderen Ländern vergleichen"
   },
   "compare": {
     "breadcrumb": "Vergleich",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import LegalShell from "@/components/LegalShell";
+import { legalBody } from "@/content/legal-i18n";
 import { isLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { pageMetadata, SITE_NAME } from "@/lib/seo/site";
@@ -35,6 +36,8 @@ export default async function TermsPage({
 
   return (
     <LegalShell locale={l} dict={dict} title={dict.legal.terms} updated={UPDATED}>
+      {legalBody("terms", l, (
+        <>
       <p>
         By using {SITE_NAME} you agree to these terms. This is a template; review
         it with a qualified professional before relying on it.
@@ -59,6 +62,8 @@ export default async function TermsPage({
       </p>
       <h2>Changes</h2>
       <p>We may update these terms; continued use means you accept the changes.</p>
+        </>
+      ))}
     </LegalShell>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import LegalShell from "@/components/LegalShell";
+import { legalBody } from "@/content/legal-i18n";
 import { isLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { pageMetadata, SITE_NAME } from "@/lib/seo/site";
@@ -35,6 +36,8 @@ export default async function ContactPage({
 
   return (
     <LegalShell locale={l} dict={dict} title={dict.legal.contact} updated={UPDATED}>
+      {legalBody("contact", l, (
+        <>
       <p>
         We&apos;d love to hear from you — questions, feedback, data corrections or
         partnership ideas are all welcome. We aim to reply within a few business
@@ -56,6 +59,8 @@ export default async function ContactPage({
         {SITE_NAME} is an independent, ad-supported project comparing the cost of
         living, taxes and quality of life between cities and countries worldwide.
       </p>
+        </>
+      ))}
     </LegalShell>
   );
 }
