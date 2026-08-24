@@ -1,6 +1,7 @@
 import type { CityText } from "./index";
 
 const pt: Record<string, CityText> = {
+  "istanbul-tr": { nickname: "A cidade sobre dois continentes", summary: "A única megacidade a cavalo entre dois continentes — 15 milhões de pessoas onde a Europa encontra a Ásia. Energia de grande cidade, história profunda e gastronomia de nível mundial por uma fração dos preços da Europa Ocidental, compensadas por uma lira volátil e longos deslocamentos através do Bósforo." },
   "bishkek-kg": { nickname: "A Cidade-Jardim", summary: "A frondosa capital do Quirguistão fica ao pé do Tien Shan. Um imposto único de 10%, rendas muito baixas e grandes montanhas à porta atraem uma comunidade de trabalho remoto pequena, mas em crescimento." },
   "new-york-ny": { nickname: "A Grande Maçã", summary: "A referência que faz todos os outros sítios parecerem baratos. Salários e tudo o resto de nível mundial, contrabalançados pelas rendas mais altas do conjunto de dados." },
   "london-uk": { nickname: "A Grande Fumaça", summary: "A capital financeira da Europa — emprego, cultura e ligações incomparáveis, pagos com algumas das rendas mais altas do continente." },

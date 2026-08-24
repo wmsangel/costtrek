@@ -1,6 +1,7 @@
 import type { CountryText } from "./index";
 
 const fr: Record<string, CountryText> = {
+  "TR": { summary: "Le permis de séjour de courte durée (ikamet) est la voie courante ; s'y ajoutent un nouveau programme pour nomades numériques (2024) et la citoyenneté par investissement immobilier.", visaFreeNote: "Séjours courts sans visa ou avec e-Visa (jusqu'à 90 jours) pour de nombreux passeports (UE, R.-U., É.-U.…).", residencyNote: "Résidence permanente après 8 ans ; naturalisation après 5 ans.", nomadNote: "Carte d'identification pour nomades numériques, lancée en 2024.", healthcareNote: "Système public universel SGK ; les expatriés privilégient les hôpitaux privés — haute qualité à faible coût.", incomeTaxNote: "Tranches de 15/20/27/35/40 %.", vatNote: "KDV ; taux standard de 20 % depuis 2023.", socialNote: "Cotisations SGK.", taxNotes: ["Une forte inflation entraîne de fréquentes réévaluations des tranches et du salaire minimum."], visaNotes: ["Renouvelable ; utilisé par les travailleurs à distance et les propriétaires.", "Programme 2024 : travailleurs à distance de 21 à 55 ans, diplômés et justifiant de revenus.", "Achat immobilier de 400 000 $, conservé 3 ans.", "Parrainé par l'employeur."] },
   "US": {
     summary: "Voies fondées sur l'emploi (H-1B, L-1, O-1) et le regroupement familial ; la carte verte est réputée difficile à obtenir.",
     visaFreeNote: "Sans objet pour l'immigration ; ESTA pour les courts séjours depuis les pays du VWP.",

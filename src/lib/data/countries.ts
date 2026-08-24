@@ -484,6 +484,33 @@ export const COUNTRIES = {
     practical: { powerPlugs: ["C", "F"], voltage: 220, emergencyNumber: "112", timezoneNote: "UTC+6" },
     meta: { updatedAt: UPDATED, sources: SRC },
   },
+  TR: {
+    code: "TR", name: "Turkey", continent: "Europe", capital: "Ankara",
+    currency: { code: "TRY", symbol: "₺", name: "Turkish lira" }, languages: ["Turkish"], callingCode: "+90", drivingSide: "right",
+    taxes: {
+      incomeTax: { type: "progressive", topRate: 40, note: "Brackets 15/20/27/35/40%." },
+      vat: { standard: 20, reduced: [10, 1], note: "KDV; 20% standard since 2023." },
+      socialSecurity: { employee: 15, employer: 20.5, note: "SGK contributions." },
+      corporateTax: 25,
+      notes: ["High inflation drives frequent bracket and minimum-wage revaluations."],
+    },
+    immigration: {
+      summary: "Short-term residence permit (ikamet) is the common route; a new Digital Nomad program (2024) and citizenship by property investment.",
+      visaFreeNote: "Visa-free or e-Visa short stays (up to 90 days) for many passports (EU, UK, US…).",
+      visaTypes: [
+        { name: "Short-Term Residence Permit (İkamet)", category: "residence", note: "Renewable; used by remote workers and property owners." },
+        { name: "Digital Nomad Visa", category: "digital-nomad", note: "2024 program: remote workers 21–55 with a degree and proof of income." },
+        { name: "Citizenship by Investment", category: "investment", maxStayDays: null, note: "$400,000 property purchase, held 3 years." },
+        { name: "Work Permit", category: "work", note: "Employer-sponsored." },
+      ],
+      residency: { permanentAfterYears: 8, citizenshipAfterYears: 5, note: "Long-term residence after 8 years; naturalization after 5." },
+      digitalNomad: { available: true, minIncomeUsdMonthly: 3000, note: "Digital Nomad Identification Card, launched 2024." },
+    },
+    healthcare: { system: "mixed", note: "Universal SGK public system; expats favour private hospitals — high quality at low cost.", expatInsuranceRecommended: true },
+    economy: { gdpPerCapitaUsd: 15666, avgNetSalaryUsdMonthly: 700, minWageUsdMonthly: 600 },
+    practical: { powerPlugs: ["C", "F"], voltage: 230, emergencyNumber: "112", timezoneNote: "UTC+3" },
+    meta: { updatedAt: UPDATED, sources: SRC },
+  },
 } satisfies Record<string, Country>;
 
 export type CountryCode = keyof typeof COUNTRIES;
@@ -521,6 +548,7 @@ const EXTRA: Record<string, Extra> = {
   AR: { gdp: 14898, life: 77.5, inflation: null, lgbtq: "high" },
   IN: { gdp: 2702, life: 72.2, inflation: 2.4, lgbtq: "low" },
   KG: { gdp: 3081, life: 72.4, inflation: 8.2, lgbtq: "low" },
+  TR: { gdp: 15666, life: 77.5, inflation: 44.0, lgbtq: "low" },
 };
 for (const [code, ex] of Object.entries(EXTRA)) {
   const c = (COUNTRIES as Record<string, Country>)[code];

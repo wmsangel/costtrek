@@ -1,6 +1,7 @@
 import type { CityText } from "./index";
 
 const es: Record<string, CityText> = {
+  "istanbul-tr": { nickname: "La ciudad de los dos continentes", summary: "La única megaciudad que se extiende sobre dos continentes — 15 millones de personas donde Europa se encuentra con Asia. Energía de gran ciudad, historia profunda y gastronomía de primer nivel a una fracción de los precios de Europa occidental, contrarrestadas por una lira volátil y largos desplazamientos a través del Bósforo." },
   "bishkek-kg": { nickname: "La ciudad jardín", summary: "La frondosa capital de Kirguistán se asienta al pie del Tien Shan. Un impuesto único del 10%, alquileres muy bajos y grandes montañas a las puertas atraen a una comunidad de trabajadores remotos pequeña pero en crecimiento." },
   "new-york-ny": { nickname: "La Gran Manzana", summary: "El referente frente al cual cualquier otro lugar parece barato. Salarios de primer nivel y todo lo demás, contrarrestados por los alquileres más altos del conjunto de datos." },
   "london-uk": { nickname: "La gran humareda", summary: "La capital financiera de Europa: empleo, cultura y contactos inigualables, pagados con algunos de los alquileres más altos del continente." },

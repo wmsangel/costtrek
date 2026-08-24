@@ -8,6 +8,38 @@ const UPDATED = "2026-08-14";
 const SRC = [{ label: "Cost/quality survey (placeholder)" }];
 
 export const CITY_PROFILES = {
+  "istanbul-tr": {
+    slug: "istanbul-tr", geo: { lat: 41.01, lng: 28.98, elevationM: 40 }, timezoneOffset: 3,
+    nickname: "The City on Two Continents",
+    summary:
+      "The only megacity straddling two continents — 15 million people where Europe meets Asia. Big-city energy, deep history and world-class food at a fraction of Western-European prices, offset by a volatile lira and long cross-Bosphorus commutes.",
+    prices: [
+      { key: "rent1brCentre", label: "1-bed, city centre", group: "rent", amountUsd: 650, unit: "/mo" },
+      { key: "rent1brOutside", label: "1-bed, outside centre", group: "rent", amountUsd: 400, unit: "/mo" },
+      { key: "mealInexpensive", label: "Inexpensive meal", group: "food", amountUsd: 6 },
+      { key: "mealMidRange", label: "Dinner for two, mid-range", group: "food", amountUsd: 30 },
+      { key: "coffee", label: "Cappuccino", group: "food", amountUsd: 3 },
+      { key: "transitPass", label: "Monthly transit pass", group: "transport", amountUsd: 30 },
+      { key: "taxiKm", label: "Taxi per km", group: "transport", amountUsd: 0.6, unit: "/km" },
+      { key: "utilities", label: "Utilities (85 m²)", group: "utilities", amountUsd: 55, unit: "/mo" },
+      { key: "internet", label: "Internet, 100 Mbps", group: "utilities", amountUsd: 15, unit: "/mo" },
+      { key: "gym", label: "Gym membership", group: "leisure", amountUsd: 35, unit: "/mo" },
+    ],
+    housing: { medianRent1brCentreUsd: 650, medianRent1brOutsideUsd: 400, medianRent3brCentreUsd: 1300, buyPriceSqmCentreUsd: 2500, buyPriceSqmOutsideUsd: 1400 },
+    qualityOfLife: { safetyIndex: 58, healthcareIndex: 65, pollutionIndex: 62, internetMbps: 60, walkability: 70, transitScore: 72, familyFriendly: 60, tapWaterSafe: false, climate: { koppen: "Csa", janAvgC: 6, julAvgC: 24, sunnyDays: 190, rainfallMm: 810 } },
+    connectivity: { airportCodes: ["IST", "SAW"], avgFlightToHubHours: 3 },
+    expat: { englishProficiency: "moderate", communitySize: "large", coworkingSpaces: 50, neighborhoods: ["Kadıköy", "Beşiktaş", "Cihangir", "Şişli"] },
+    tags: ["transcontinental", "affordable", "megacity", "expat-hub"],
+    referralLinks: [
+      { type: "rent", provider: "Sahibinden" },
+      { type: "buy", provider: "Sahibinden" },
+      { type: "flights", provider: "Skyscanner", affiliate: true },
+      { type: "insurance", provider: "SafetyWing", affiliate: true },
+      { type: "coworking", provider: "Kolektif House" },
+      { type: "other", provider: "AvitoVIP", url: "https://kjuzv.com/g/02swkf5uv6a27dee2ccdbabf13962c/", affiliate: true, note: "Airport transfers & private driver" },
+    ],
+    meta: { updatedAt: UPDATED, sources: SRC },
+  },
   "bishkek-kg": {
     slug: "bishkek-kg",
     geo: { lat: 42.87, lng: 74.59, elevationM: 800 },

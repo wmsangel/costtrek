@@ -1,6 +1,7 @@
 import type { CountryText } from "./index";
 
 const pt: Record<string, CountryText> = {
+  "TR": { summary: "A autorização de residência de curta duração (ikamet) é a via habitual; há ainda um novo programa para nómadas digitais (2024) e a cidadania por investimento imobiliário.", visaFreeNote: "Estadias curtas sem visto ou com e-Visa (até 90 dias) para muitos passaportes (UE, R.U., EUA…).", residencyNote: "Residência permanente após 8 anos; naturalização após 5.", nomadNote: "Cartão de identificação para nómadas digitais, lançado em 2024.", healthcareNote: "Sistema público universal SGK; os expatriados preferem os hospitais privados — alta qualidade a baixo custo.", incomeTaxNote: "Escalões de 15/20/27/35/40 %.", vatNote: "KDV; taxa padrão de 20 % desde 2023.", socialNote: "Contribuições para a SGK.", taxNotes: ["A inflação elevada provoca revalorizações frequentes dos escalões e do salário mínimo."], visaNotes: ["Renovável; usado por trabalhadores remotos e proprietários.", "Programa de 2024: trabalhadores remotos dos 21 aos 55 anos com diploma e comprovativo de rendimentos.", "Compra de imóvel de 400 000 $, mantida 3 anos.", "Patrocinado pelo empregador."] },
   "US": {
     summary: "Vias baseadas no emprego (H-1B, L-1, O-1) e familiares; notoriamente difícil obter o green card.",
     visaFreeNote: "N/A para imigração; ESTA para visitas curtas de países do VWP.",

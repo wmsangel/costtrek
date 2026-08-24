@@ -1,6 +1,7 @@
 import type { CityText } from "./index";
 
 const de: Record<string, CityText> = {
+  "istanbul-tr": { nickname: "Die Stadt auf zwei Kontinenten", summary: "Die einzige Megastadt, die sich über zwei Kontinente erstreckt — 15 Millionen Menschen, wo Europa auf Asien trifft. Großstadtenergie, tiefe Geschichte und Weltklasse-Küche zu einem Bruchteil westeuropäischer Preise, aufgewogen durch eine schwankende Lira und lange Pendelwege über den Bosporus." },
   "bishkek-kg": { nickname: "Die Gartenstadt", summary: "Kirgisistans grüne Hauptstadt liegt am Fuße des Tien Shan. Eine pauschale Steuer von 10 %, sehr niedrige Mieten und große Berge direkt vor der Haustür ziehen eine kleine, aber wachsende Remote-Work-Szene an." },
   "new-york-ny": { nickname: "The Big Apple", summary: "Der Maßstab, an dem überall sonst günstig erscheint. Weltklasse-Gehälter und alles andere, aufgewogen durch die höchsten Mieten im Datensatz." },
   "london-uk": { nickname: "The Big Smoke", summary: "Europas Finanzhauptstadt — unübertroffene Jobs, Kultur und Kontakte, bezahlt mit einigen der höchsten Mieten des Kontinents." },

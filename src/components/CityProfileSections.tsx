@@ -327,6 +327,7 @@ export default function CityProfileSections({
                 <>
                   <span className="opacity-80">{label}</span>
                   <span className="font-bold">{r.provider}</span>
+                  {r.note && <span className="opacity-70">· {r.note}</span>}
                 </>
               );
               const cls =

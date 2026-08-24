@@ -128,6 +128,7 @@ const INTL_CITIES: City[] = [
   { slug: "warsaw-pl", name: "Warsaw", country: "Poland", countryCode: "PL", aliases: ["Warszawa"], medianRent1br: 900, breakdown: { housing: 72, food: 70, transport: 55, utilities: 100, healthcare: 65, goods: 74 } },
   { slug: "buenos-aires-ar", name: "Buenos Aires", country: "Argentina", countryCode: "AR", medianRent1br: 500, breakdown: { housing: 46, food: 55, transport: 40, utilities: 70, healthcare: 55, goods: 60 } },
   { slug: "mumbai-in", name: "Mumbai", country: "India", countryCode: "IN", aliases: ["Bombay"], medianRent1br: 700, breakdown: { housing: 60, food: 50, transport: 45, utilities: 85, healthcare: 55, goods: 56 } },
+  { slug: "istanbul-tr", name: "Istanbul", country: "Turkey", countryCode: "TR", aliases: ["İstanbul", "Estambul", "Istambul", "Constantinople", "Стамбул"], medianRent1br: 650, breakdown: { housing: 55, food: 52, transport: 40, utilities: 60, healthcare: 45, goods: 60 } },
   { slug: "bishkek-kg", name: "Bishkek", country: "Kyrgyzstan", countryCode: "KG", aliases: ["Бишкек", "Bichkek", "Biskek", "Frunze"], medianRent1br: 350, breakdown: { housing: 18, food: 30, transport: 22, utilities: 40, healthcare: 25, goods: 30 } },
 ];
 
