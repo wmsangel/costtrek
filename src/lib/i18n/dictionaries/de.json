@@ -62,7 +62,9 @@
   "calculators": {
     "nav": "Rechner",
     "title": "Finanzrechner",
-    "subtitle": "Kostenlose Sofort-Rechner für Hypotheken, Kredite, Gehalt und Alltagskosten – mit verständlich erklärten Zahlen."
+    "subtitle": "Kostenlose Sofort-Rechner für Hypotheken, Kredite, Gehalt und Alltagskosten – mit verständlich erklärten Zahlen.",
+    "sponsored": "Anzeige — wir erhalten ggf. eine Provision von diesen Partnern, ohne Mehrkosten für dich.",
+    "sponsoredBadge": "Anzeige"
   },
   "compareCountries": {
     "breadcrumb": "Länder vergleichen",

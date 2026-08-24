@@ -62,7 +62,9 @@
   "calculators": {
     "nav": "Calculateurs",
     "title": "Calculateurs financiers",
-    "subtitle": "Des calculateurs gratuits et instantanés pour prêts immobiliers, crédits, salaire et coûts du quotidien — chiffres expliqués."
+    "subtitle": "Des calculateurs gratuits et instantanés pour prêts immobiliers, crédits, salaire et coûts du quotidien — chiffres expliqués.",
+    "sponsored": "Sponsorisé — nous pouvons percevoir une commission de ces partenaires, sans coût pour vous.",
+    "sponsoredBadge": "Sponsorisé"
   },
   "compareCountries": {
     "breadcrumb": "Comparer les pays",

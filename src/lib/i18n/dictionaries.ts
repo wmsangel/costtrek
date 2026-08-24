@@ -67,6 +67,8 @@ export type Dictionary = {
     nav: string;
     title: string;
     subtitle: string;
+    sponsored: string;
+    sponsoredBadge: string;
   };
   compare: {
     breadcrumb: string;

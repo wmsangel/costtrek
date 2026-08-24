@@ -14,6 +14,7 @@ import LoanCalculator from "@/components/calculators/LoanCalculator";
 import SalaryCalculator from "@/components/calculators/SalaryCalculator";
 import ElectricityCalculator from "@/components/calculators/ElectricityCalculator";
 import { getCalculator } from "@/lib/calculators/registry";
+import { localizedCalc } from "@/lib/calculators/calc-i18n";
 import { CALC_PRESETS, getPreset } from "@/lib/calculators/presets";
 import { monthlyPayment } from "@/lib/calculators/mortgage";
 import { computeSalary } from "@/lib/calculators/salary";
@@ -230,8 +231,9 @@ export default async function CalculatorPresetPage({
   if (!isLocale(locale)) notFound();
   const l = locale as Locale;
   const p = getPreset(slug, preset);
-  const calc = getCalculator(slug);
-  if (!p || !calc) notFound();
+  const calcRaw = getCalculator(slug);
+  if (!p || !calcRaw) notFound();
+  const calc = localizedCalc(calcRaw, l);
   const dict = await getDictionary(l);
 
   const widget =
@@ -299,7 +301,7 @@ export default async function CalculatorPresetPage({
 
       <PresetTable slug={slug} init={p.init} />
 
-      <OfferSlot heading={calc.offersHeading} offers={calc.offers} />
+      <OfferSlot heading={calc.offersHeading} offers={calc.offers} sponsored={dict.calculators.sponsored} badgeLabel={dict.calculators.sponsoredBadge} />
 
       <div className="mt-10">
         <Faq title={dict.faq.title} items={calc.faq} />

@@ -62,7 +62,9 @@
   "calculators": {
     "nav": "Calculadoras",
     "title": "Calculadoras financeiras",
-    "subtitle": "Calculadoras gratuitas e instantâneas de hipotecas, empréstimos, salário e custos do dia a dia — com os números explicados."
+    "subtitle": "Calculadoras gratuitas e instantâneas de hipotecas, empréstimos, salário e custos do dia a dia — com os números explicados.",
+    "sponsored": "Patrocinado — podemos receber uma comissão destes parceiros, sem custo para si.",
+    "sponsoredBadge": "Patrocinado"
   },
   "compareCountries": {
     "breadcrumb": "Comparar países",

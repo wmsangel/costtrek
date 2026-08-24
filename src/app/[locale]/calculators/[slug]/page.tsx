@@ -14,6 +14,7 @@ import CarLoanCalculator from "@/components/calculators/CarLoanCalculator";
 import SalaryCalculator from "@/components/calculators/SalaryCalculator";
 import ElectricityCalculator from "@/components/calculators/ElectricityCalculator";
 import { CALCULATORS, getCalculator } from "@/lib/calculators/registry";
+import { localizedCalc } from "@/lib/calculators/calc-i18n";
 import { CALC_PRESETS } from "@/lib/calculators/presets";
 
 export const dynamicParams = false;
@@ -49,8 +50,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale, slug } = await params;
   if (!isLocale(locale)) return {};
-  const calc = getCalculator(slug);
-  if (!calc) return {};
+  const calcRaw = getCalculator(slug);
+  if (!calcRaw) return {};
+  const calc = localizedCalc(calcRaw, locale);
   return pageMetadata({
     locale,
     path: `calculators/${slug}`,
@@ -68,8 +70,9 @@ export default async function CalculatorPage({
   const { locale, slug } = await params;
   if (!isLocale(locale)) notFound();
   const l = locale as Locale;
-  const calc = getCalculator(slug);
-  if (!calc || !calc.live) notFound();
+  const calcRaw = getCalculator(slug);
+  if (!calcRaw || !calcRaw.live) notFound();
+  const calc = localizedCalc(calcRaw, l);
   const dict = await getDictionary(l);
   const widget = widgetFor(slug);
 
@@ -120,7 +123,7 @@ export default async function CalculatorPage({
 
       <div className="mt-8">{widget}</div>
 
-      <OfferSlot heading={calc.offersHeading} offers={calc.offers} />
+      <OfferSlot heading={calc.offersHeading} offers={calc.offers} sponsored={dict.calculators.sponsored} badgeLabel={dict.calculators.sponsoredBadge} />
 
       <div className="mt-10 space-y-5 leading-relaxed text-[var(--foreground)]">
         {calc.intro.map((p, i) => (

@@ -7,6 +7,7 @@ import { pageMetadata } from "@/lib/seo/site";
 import { breadcrumbJsonLd } from "@/lib/seo/jsonld";
 import JsonLd from "@/components/JsonLd";
 import { CALCULATORS } from "@/lib/calculators/registry";
+import { localizedCalc } from "@/lib/calculators/calc-i18n";
 
 export async function generateMetadata({
   params,
@@ -34,7 +35,7 @@ export default async function CalculatorsIndex({
   if (!isLocale(locale)) notFound();
   const l = locale as Locale;
   const dict = await getDictionary(l);
-  const live = CALCULATORS.filter((c) => c.live);
+  const live = CALCULATORS.filter((c) => c.live).map((c) => localizedCalc(c, l));
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-10">

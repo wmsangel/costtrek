@@ -62,7 +62,9 @@
   "calculators": {
     "nav": "Calculators",
     "title": "Financial calculators",
-    "subtitle": "Free, instant calculators for mortgages, loans, salary and everyday costs — with the numbers explained."
+    "subtitle": "Free, instant calculators for mortgages, loans, salary and everyday costs — with the numbers explained.",
+    "sponsored": "Sponsored — we may earn a commission from these partners, at no cost to you.",
+    "sponsoredBadge": "Sponsored"
   },
   "compareCountries": {
     "breadcrumb": "Compare countries",
