@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { flagEmoji } from "@/lib/cities";
 import {
   countrySlug,
@@ -20,7 +20,8 @@ import JsonLd from "@/components/JsonLd";
 import Mountains from "@/components/Mountains";
 import Faq, { type FaqItem } from "@/components/Faq";
 
-export const dynamicParams = false;
+// Canonical direction only (see city compare route); reverse 308-redirects.
+export const dynamicParams = true;
 
 type Params = { locale: string; pair: string };
 type Group = "cost" | "taxes" | "economy" | "quality";
@@ -55,7 +56,7 @@ export function generateStaticParams() {
   const out: { pair: string }[] = [];
   for (const a of cs)
     for (const b of cs)
-      if (a.code !== b.code)
+      if (countrySlug(a) < countrySlug(b))
         out.push({ pair: `${countrySlug(a)}-vs-${countrySlug(b)}` });
   return out;
 }
@@ -102,8 +103,11 @@ export default async function CompareCountriesPage({
   const parsed = parse(pair);
   if (!parsed) notFound();
   const l = locale as Locale;
-  const dict = await getDictionary(l);
   const { a, b } = parsed;
+  // Reverse URL → 308 to the canonical (sorted) direction.
+  if (countrySlug(a) > countrySlug(b))
+    permanentRedirect(`/${l}/compare-countries/${countrySlug(b)}-vs-${countrySlug(a)}`);
+  const dict = await getDictionary(l);
   const nl = LOCALE_BCP47[l];
   const aName = localizedCountryNameByCode(l, a.code, a.name);
   const bName = localizedCountryNameByCode(l, b.code, b.name);

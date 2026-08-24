@@ -211,15 +211,19 @@ export default async function CountryPage({
         <div className="flex flex-wrap gap-2">
           {countriesWithCities()
             .filter((x) => x.code !== co.code)
-            .map((x) => (
-              <Link
-                key={x.code}
-                href={`/${l}/compare-countries/${countrySlug(co)}-vs-${countrySlug(x)}`}
-                className="text-sm rounded-full border border-[var(--border)] px-3 py-1.5 hover:border-[var(--accent)]"
-              >
-                {name} {dict.compare.vs} {x.name}
-              </Link>
-            ))}
+            .map((x) => {
+              const [p, q] =
+                countrySlug(co) < countrySlug(x) ? [co, x] : [x, co];
+              return (
+                <Link
+                  key={x.code}
+                  href={`/${l}/compare-countries/${countrySlug(p)}-vs-${countrySlug(q)}`}
+                  className="text-sm rounded-full border border-[var(--border)] px-3 py-1.5 hover:border-[var(--accent)]"
+                >
+                  {name} {dict.compare.vs} {x.name}
+                </Link>
+              );
+            })}
         </div>
       </section>
     </div>

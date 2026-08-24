@@ -193,7 +193,9 @@ export function cityPath(city: City): string {
 
 /** Ordered compare path: A vs B. */
 export function comparePath(a: City, b: City): string {
-  return `/compare/${a.slug}-vs-${b.slug}`;
+  // Canonical direction only (slugs sorted) — one URL per unordered pair.
+  const [x, y] = a.slug < b.slug ? [a, b] : [b, a];
+  return `/compare/${x.slug}-vs-${y.slug}`;
 }
 
 const PAIR_SEP = "-vs-";

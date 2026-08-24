@@ -37,7 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const countryList = countriesWithCities();
   for (const a of countryList) {
     for (const b of countryList) {
-      if (a.code === b.code) continue;
+      if (countrySlug(a) >= countrySlug(b)) continue; // canonical direction only
       paths.push({
         path: `compare-countries/${countrySlug(a)}-vs-${countrySlug(b)}`,
         priority: 0.5,
@@ -58,7 +58,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
   for (const a of CITIES) {
     for (const b of CITIES) {
-      if (a.slug === b.slug) continue;
+      if (a.slug >= b.slug) continue; // canonical direction only
       paths.push({ path: comparePath(a, b).replace(/^\//, ""), priority: 0.6 });
     }
   }

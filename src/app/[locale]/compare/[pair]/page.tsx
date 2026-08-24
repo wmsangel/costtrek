@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import CostCompareCalculator, {
   type BreakdownRow,
 } from "@/components/CostCompareCalculator";
@@ -28,7 +28,10 @@ import { breadcrumbJsonLd } from "@/lib/seo/jsonld";
 import JsonLd from "@/components/JsonLd";
 import Faq, { type FaqItem } from "@/components/Faq";
 
-export const dynamicParams = false;
+// Prerender only the canonical direction of each pair; the reverse URL resolves
+// on-demand and 308-redirects to canonical (see below). Halves the static-page
+// count and removes mirror-URL duplicate content.
+export const dynamicParams = true;
 
 type Params = { locale: string; pair: string };
 
@@ -36,7 +39,7 @@ export function generateStaticParams() {
   const params: { pair: string }[] = [];
   for (const a of CITIES) {
     for (const b of CITIES) {
-      if (a.slug === b.slug) continue;
+      if (a.slug >= b.slug) continue;
       params.push({ pair: `${a.slug}-vs-${b.slug}` });
     }
   }
@@ -97,8 +100,10 @@ export default async function ComparePage({
   const parsed = parsePair(pair);
   if (!parsed) notFound();
   const l = locale as Locale;
-  const dict = await getDictionary(l);
   const { a, b } = parsed;
+  // Reverse URL → 308 to the canonical (sorted) direction.
+  if (a.slug > b.slug) permanentRedirect(`/${l}/compare/${b.slug}-vs-${a.slug}`);
+  const dict = await getDictionary(l);
 
   const overallA = overallIndex(a);
   const overallB = overallIndex(b);
