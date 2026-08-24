@@ -511,6 +511,99 @@ export const COUNTRIES = {
     practical: { powerPlugs: ["C", "F"], voltage: 230, emergencyNumber: "112", timezoneNote: "UTC+3" },
     meta: { updatedAt: UPDATED, sources: SRC },
   },
+  ID: {
+    code: "ID", name: "Indonesia", continent: "Asia", capital: "Jakarta",
+    currency: { code: "IDR", symbol: "Rp", name: "Indonesian rupiah" }, languages: ["Indonesian"], callingCode: "+62", drivingSide: "left",
+    taxes: {
+      incomeTax: { type: "progressive", topRate: 35, note: "Brackets 5/15/25/30/35%." },
+      vat: { standard: 11, note: "PPN; rising toward 12%." }, corporateTax: 22,
+    },
+    immigration: {
+      summary: "The new E33G Remote Worker KITAS (2024), plus a Second Home visa for retirees and investors.",
+      visaFreeNote: "Visa on arrival (30 days, extendable once) for many passports.",
+      visaTypes: [
+        { name: "E33G Remote Worker KITAS", category: "digital-nomad", maxStayDays: 365, note: "1-year; foreign income untaxed locally." },
+        { name: "Second Home Visa", category: "residence", note: "5–10 years; savings or property requirement." },
+        { name: "Work KITAS", category: "work", note: "Employer-sponsored." },
+      ],
+      residency: { permanentAfterYears: 5 },
+      digitalNomad: { available: true, note: "E33G Remote Worker KITAS, launched 2024." },
+    },
+    healthcare: { system: "mixed", note: "BPJS public scheme; expats use private hospitals or international insurance.", expatInsuranceRecommended: true },
+    economy: { gdpPerCapitaUsd: 4981, avgNetSalaryUsdMonthly: 300, minWageUsdMonthly: 200 },
+    practical: { powerPlugs: ["C", "F"], voltage: 230, emergencyNumber: "112", timezoneNote: "UTC+7 to +9" },
+    meta: { updatedAt: UPDATED, sources: SRC },
+  },
+  CO: {
+    code: "CO", name: "Colombia", continent: "South America", capital: "Bogotá",
+    currency: { code: "COP", symbol: "$", name: "Colombian peso" }, languages: ["Spanish"], callingCode: "+57", drivingSide: "right",
+    taxes: {
+      incomeTax: { type: "progressive", topRate: 39 },
+      vat: { standard: 19, note: "IVA." }, corporateTax: 35,
+    },
+    immigration: {
+      summary: "The V-type Digital Nomad visa and M-type migrant visas make it a popular, affordable Latin-American base.",
+      visaFreeNote: "90 days visa-free (extendable to 180/year) for many passports.",
+      visaTypes: [
+        { name: "V Digital Nomad Visa", category: "digital-nomad", maxStayDays: 730, note: "Up to 2 years; ~$1,000/mo income." },
+        { name: "M Migrant Visa", category: "residence", note: "Work, marriage or investment routes." },
+        { name: "R Resident Visa", category: "residence", maxStayDays: null },
+      ],
+      residency: { permanentAfterYears: 5 },
+      digitalNomad: { available: true, minIncomeUsdMonthly: 1000, note: "V-type Digital Nomad visa, since 2022." },
+    },
+    healthcare: { system: "mixed", note: "EPS public system; private care is high-quality and inexpensive.", expatInsuranceRecommended: true },
+    economy: { gdpPerCapitaUsd: 6976, avgNetSalaryUsdMonthly: 450, minWageUsdMonthly: 330 },
+    practical: { powerPlugs: ["A", "B"], voltage: 110, emergencyNumber: "123", timezoneNote: "UTC-5" },
+    meta: { updatedAt: UPDATED, sources: SRC },
+  },
+  GE: {
+    code: "GE", name: "Georgia", continent: "Asia", capital: "Tbilisi",
+    currency: { code: "GEL", symbol: "₾", name: "Georgian lari" }, languages: ["Georgian"], callingCode: "+995", drivingSide: "right",
+    taxes: {
+      incomeTax: { type: "flat", topRate: 20, note: "1% small-business regime on turnover up to ~155k GEL." },
+      vat: { standard: 18 }, corporateTax: 15,
+      notes: ["Estonian-style corporate tax — levied only on distributed profit."],
+    },
+    immigration: {
+      summary: "A full year of visa-free stay for many nationals, a famous 1% small-business tax, and the Remotely from Georgia program.",
+      visaFreeNote: "Visa-free up to 365 days for citizens of ~95 countries.",
+      visaTypes: [
+        { name: "Visa-free 1-year stay", category: "tourist", maxStayDays: 365, note: "~95 nationalities; de-facto nomad base." },
+        { name: "Remotely from Georgia", category: "digital-nomad", note: "Remote workers, ~$2,000/mo income." },
+        { name: "Residence Permit", category: "residence" },
+      ],
+      residency: { permanentAfterYears: 6, citizenshipAfterYears: 10 },
+      digitalNomad: { available: true, minIncomeUsdMonthly: 2000, note: "Remotely from Georgia, plus the 1-year visa-free stay." },
+    },
+    healthcare: { system: "mixed", note: "Universal healthcare program; private clinics are cheap; insurance recommended.", expatInsuranceRecommended: true },
+    economy: { gdpPerCapitaUsd: 8120, avgNetSalaryUsdMonthly: 600 },
+    practical: { powerPlugs: ["C", "F"], voltage: 220, emergencyNumber: "112", timezoneNote: "UTC+4" },
+    meta: { updatedAt: UPDATED, sources: SRC },
+  },
+  BR: {
+    code: "BR", name: "Brazil", continent: "South America", capital: "Brasília",
+    currency: { code: "BRL", symbol: "R$", name: "Brazilian real" }, languages: ["Portuguese"], callingCode: "+55", drivingSide: "right",
+    taxes: {
+      incomeTax: { type: "progressive", topRate: 27.5 },
+      vat: { standard: 17, note: "ICMS state VAT ~17–20%; plus federal PIS/COFINS." }, corporateTax: 34,
+    },
+    immigration: {
+      summary: "The VITEM XIV Digital Nomad visa; residence via investment, retirement or family.",
+      visaFreeNote: "90 days visa-free (extendable) for EU/UK; US/CA/AU need an e-visa (2025).",
+      visaTypes: [
+        { name: "VITEM XIV Digital Nomad Visa", category: "digital-nomad", maxStayDays: 365, note: "1-year, renewable; ~$1,500/mo income." },
+        { name: "Investor Residence (VIPER)", category: "investment", note: "~R$500k business investment." },
+        { name: "Retirement / Family Residence", category: "residence" },
+      ],
+      residency: { permanentAfterYears: 4, citizenshipAfterYears: 4 },
+      digitalNomad: { available: true, minIncomeUsdMonthly: 1500, note: "VITEM XIV, since 2022." },
+    },
+    healthcare: { system: "mixed", note: "Free universal SUS; expats often add a private plan.", expatInsuranceRecommended: true },
+    economy: { gdpPerCapitaUsd: 10296, avgNetSalaryUsdMonthly: 600, minWageUsdMonthly: 280 },
+    practical: { powerPlugs: ["N", "C"], voltage: 127, emergencyNumber: "190", timezoneNote: "UTC-3" },
+    meta: { updatedAt: UPDATED, sources: SRC },
+  },
 } satisfies Record<string, Country>;
 
 export type CountryCode = keyof typeof COUNTRIES;
@@ -549,6 +642,10 @@ const EXTRA: Record<string, Extra> = {
   IN: { gdp: 2702, life: 72.2, inflation: 2.4, lgbtq: "low" },
   KG: { gdp: 3081, life: 72.4, inflation: 8.2, lgbtq: "low" },
   TR: { gdp: 15666, life: 77.5, inflation: 44.0, lgbtq: "low" },
+  ID: { gdp: 4981, life: 71.3, inflation: 2.8, lgbtq: "low" },
+  CO: { gdp: 6976, life: 73.7, inflation: 5.2, lgbtq: "high" },
+  GE: { gdp: 8120, life: 73.3, inflation: 2.5, lgbtq: "low" },
+  BR: { gdp: 10296, life: 75.9, inflation: 4.5, lgbtq: "high" },
 };
 for (const [code, ex] of Object.entries(EXTRA)) {
   const c = (COUNTRIES as Record<string, Country>)[code];

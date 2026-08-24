@@ -129,6 +129,13 @@ const INTL_CITIES: City[] = [
   { slug: "buenos-aires-ar", name: "Buenos Aires", country: "Argentina", countryCode: "AR", medianRent1br: 500, breakdown: { housing: 46, food: 55, transport: 40, utilities: 70, healthcare: 55, goods: 60 } },
   { slug: "mumbai-in", name: "Mumbai", country: "India", countryCode: "IN", aliases: ["Bombay"], medianRent1br: 700, breakdown: { housing: 60, food: 50, transport: 45, utilities: 85, healthcare: 55, goods: 56 } },
   { slug: "istanbul-tr", name: "Istanbul", country: "Turkey", countryCode: "TR", aliases: ["İstanbul", "Estambul", "Istambul", "Constantinople", "Стамбул"], medianRent1br: 650, breakdown: { housing: 55, food: 52, transport: 40, utilities: 60, healthcare: 45, goods: 60 } },
+  { slug: "bali-id", name: "Bali", country: "Indonesia", countryCode: "ID", aliases: ["Canggu", "Denpasar", "Ubud", "Seminyak"], medianRent1br: 600, breakdown: { housing: 40, food: 45, transport: 35, utilities: 55, healthcare: 45, goods: 55 } },
+  { slug: "chiang-mai-th", name: "Chiang Mai", country: "Thailand", countryCode: "TH", aliases: ["เชียงใหม่"], medianRent1br: 450, breakdown: { housing: 42, food: 45, transport: 38, utilities: 65, healthcare: 55, goods: 55 } },
+  { slug: "medellin-co", name: "Medellín", country: "Colombia", countryCode: "CO", aliases: ["Medellin"], medianRent1br: 550, breakdown: { housing: 42, food: 48, transport: 40, utilities: 55, healthcare: 55, goods: 58 } },
+  { slug: "tbilisi-ge", name: "Tbilisi", country: "Georgia", countryCode: "GE", aliases: ["Tiflis", "თბილისი", "Тбилиси"], medianRent1br: 500, breakdown: { housing: 40, food: 45, transport: 35, utilities: 55, healthcare: 50, goods: 55 } },
+  { slug: "porto-pt", name: "Porto", country: "Portugal", countryCode: "PT", aliases: ["Oporto"], medianRent1br: 1050, breakdown: { housing: 100, food: 88, transport: 65, utilities: 95, healthcare: 72, goods: 88 } },
+  { slug: "valencia-es", name: "Valencia", country: "Spain", countryCode: "ES", aliases: ["València"], medianRent1br: 1000, breakdown: { housing: 105, food: 92, transport: 70, utilities: 100, healthcare: 78, goods: 92 } },
+  { slug: "sao-paulo-br", name: "São Paulo", country: "Brazil", countryCode: "BR", aliases: ["Sao Paulo", "Sampa"], medianRent1br: 650, breakdown: { housing: 55, food: 55, transport: 50, utilities: 65, healthcare: 60, goods: 68 } },
   { slug: "bishkek-kg", name: "Bishkek", country: "Kyrgyzstan", countryCode: "KG", aliases: ["Бишкек", "Bichkek", "Biskek", "Frunze"], medianRent1br: 350, breakdown: { housing: 18, food: 30, transport: 22, utilities: 40, healthcare: 25, goods: 30 } },
 ];
 
