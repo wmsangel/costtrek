@@ -8,6 +8,7 @@ import {
   overallIndex,
   type City,
 } from "@/lib/cities";
+import { countriesWithCities } from "@/lib/countryStats";
 import {
   countrySlug,
   getCountry,
