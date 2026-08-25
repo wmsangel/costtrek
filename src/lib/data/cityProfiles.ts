@@ -33,7 +33,7 @@ export const CITY_PROFILES = {
     referralLinks: [
       { type: "rent", provider: "Sahibinden" },
       { type: "buy", provider: "Sahibinden" },
-      { type: "flights", provider: "Skyscanner", affiliate: true },
+      { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" },
       { type: "insurance", provider: "SafetyWing", affiliate: true },
       { type: "coworking", provider: "Kolektif House" },
       { type: "other", provider: "AvitoVIP", url: "https://kjuzv.com/g/02swkf5uv6a27dee2ccdbabf13962c/", affiliate: true, note: "Airport transfers & private driver" },
@@ -63,7 +63,7 @@ export const CITY_PROFILES = {
     tags: ["digital-nomad", "tropical", "affordable", "beach"],
     referralLinks: [
       { type: "rent", provider: "Rumah123" },
-      { type: "flights", provider: "Skyscanner", affiliate: true },
+      { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" },
       { type: "insurance", provider: "SafetyWing", affiliate: true },
       { type: "sim", provider: "Airalo", affiliate: true },
       { type: "coworking", provider: "Dojo Bali" },
@@ -92,7 +92,7 @@ export const CITY_PROFILES = {
     tags: ["digital-nomad", "affordable", "mountains", "smog-season"],
     referralLinks: [
       { type: "rent", provider: "DDproperty" },
-      { type: "flights", provider: "Skyscanner", affiliate: true },
+      { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" },
       { type: "insurance", provider: "SafetyWing", affiliate: true },
       { type: "sim", provider: "Airalo", affiliate: true },
       { type: "coworking", provider: "Yellow" },
@@ -121,7 +121,7 @@ export const CITY_PROFILES = {
     tags: ["digital-nomad", "spring-climate", "affordable", "emerging"],
     referralLinks: [
       { type: "rent", provider: "Fincaraíz" },
-      { type: "flights", provider: "Skyscanner", affiliate: true },
+      { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" },
       { type: "insurance", provider: "SafetyWing", affiliate: true },
       { type: "sim", provider: "Airalo", affiliate: true },
       { type: "coworking", provider: "Selina" },
@@ -150,7 +150,7 @@ export const CITY_PROFILES = {
     tags: ["low-tax", "visa-free", "affordable", "emerging-nomad"],
     referralLinks: [
       { type: "rent", provider: "MyHome.ge" },
-      { type: "flights", provider: "Skyscanner", affiliate: true },
+      { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" },
       { type: "insurance", provider: "SafetyWing", affiliate: true },
       { type: "sim", provider: "Airalo", affiliate: true },
       { type: "coworking", provider: "Terminal" },
@@ -179,7 +179,7 @@ export const CITY_PROFILES = {
     referralLinks: [
       { type: "rent", provider: "Idealista" },
       { type: "buy", provider: "Idealista" },
-      { type: "flights", provider: "Skyscanner", affiliate: true },
+      { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" },
       { type: "insurance", provider: "SafetyWing", affiliate: true },
       { type: "coworking", provider: "Porto i/o" },
     ],
@@ -207,7 +207,7 @@ export const CITY_PROFILES = {
     referralLinks: [
       { type: "rent", provider: "Idealista" },
       { type: "buy", provider: "Idealista" },
-      { type: "flights", provider: "Skyscanner", affiliate: true },
+      { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" },
       { type: "insurance", provider: "SafetyWing", affiliate: true },
       { type: "coworking", provider: "Wayco" },
     ],
@@ -236,7 +236,7 @@ export const CITY_PROFILES = {
     referralLinks: [
       { type: "rent", provider: "QuintoAndar" },
       { type: "buy", provider: "VivaReal" },
-      { type: "flights", provider: "Skyscanner", affiliate: true },
+      { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" },
       { type: "insurance", provider: "SafetyWing", affiliate: true },
       { type: "coworking", provider: "WeWork" },
     ],
@@ -264,7 +264,7 @@ export const CITY_PROFILES = {
     referralLinks: [
       { type: "rent", provider: "Sreality" },
       { type: "buy", provider: "Sreality" },
-      { type: "flights", provider: "Skyscanner", affiliate: true },
+      { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" },
       { type: "insurance", provider: "SafetyWing", affiliate: true },
       { type: "coworking", provider: "Impact Hub" },
     ],
@@ -292,7 +292,7 @@ export const CITY_PROFILES = {
     referralLinks: [
       { type: "rent", provider: "Willhaben" },
       { type: "buy", provider: "Willhaben" },
-      { type: "flights", provider: "Skyscanner", affiliate: true },
+      { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" },
       { type: "insurance", provider: "SafetyWing", affiliate: true },
       { type: "coworking", provider: "Talent Garden" },
     ],
@@ -320,7 +320,7 @@ export const CITY_PROFILES = {
     referralLinks: [
       { type: "rent", provider: "Ingatlan.com" },
       { type: "buy", provider: "Ingatlan.com" },
-      { type: "flights", provider: "Skyscanner", affiliate: true },
+      { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" },
       { type: "insurance", provider: "SafetyWing", affiliate: true },
       { type: "coworking", provider: "Kaptár" },
     ],
@@ -348,7 +348,7 @@ export const CITY_PROFILES = {
     referralLinks: [
       { type: "rent", provider: "Spitogatos" },
       { type: "buy", provider: "Spitogatos" },
-      { type: "flights", provider: "Skyscanner", affiliate: true },
+      { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" },
       { type: "insurance", provider: "SafetyWing", affiliate: true },
       { type: "coworking", provider: "Impact Hub Athens" },
     ],
@@ -376,7 +376,7 @@ export const CITY_PROFILES = {
     referralLinks: [
       { type: "rent", provider: "KV.ee" },
       { type: "buy", provider: "KV.ee" },
-      { type: "flights", provider: "Skyscanner", affiliate: true },
+      { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" },
       { type: "insurance", provider: "SafetyWing", affiliate: true },
       { type: "coworking", provider: "Lift99" },
     ],
@@ -419,7 +419,7 @@ export const CITY_PROFILES = {
     referralLinks: [
       { type: "rent", provider: "House.kg", affiliate: false },
       { type: "buy", provider: "House.kg", affiliate: false },
-      { type: "flights", provider: "Skyscanner", affiliate: true },
+      { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" },
       { type: "insurance", provider: "SafetyWing", affiliate: true },
       { type: "sim", provider: "Beeline KG" },
       { type: "coworking", provider: "Ololo" },
@@ -461,7 +461,7 @@ export const CITY_PROFILES = {
     referralLinks: [
       { type: "rent", provider: "StreetEasy", affiliate: true },
       { type: "buy", provider: "StreetEasy", affiliate: true },
-      { type: "flights", provider: "Skyscanner", affiliate: true },
+      { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" },
       { type: "insurance", provider: "SafetyWing", affiliate: true },
       { type: "coworking", provider: "WeWork" },
     ],
@@ -486,7 +486,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["LHR", "LGW", "STN", "LCY"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "native", communitySize: "large", coworkingSpaces: 250, neighborhoods: ["Shoreditch", "Camden", "Clapham"] },
     tags: ["global-city", "finance-hub", "high-cost", "transit-rich"],
-    referralLinks: [{ type: "rent", provider: "Rightmove" }, { type: "buy", provider: "Zoopla" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Rightmove" }, { type: "buy", provider: "Zoopla" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "paris-fr": {
@@ -508,7 +508,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["CDG", "ORY"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "moderate", communitySize: "large", coworkingSpaces: 150, neighborhoods: ["Le Marais", "Montmartre", "Bastille"] },
     tags: ["global-city", "culture", "high-cost", "transit-rich"],
-    referralLinks: [{ type: "rent", provider: "SeLoger" }, { type: "buy", provider: "SeLoger" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "SeLoger" }, { type: "buy", provider: "SeLoger" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "berlin-de": {
@@ -530,7 +530,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["BER"], avgFlightToHubHours: 1.5 },
     expat: { englishProficiency: "high", communitySize: "large", coworkingSpaces: 120, neighborhoods: ["Kreuzberg", "Mitte", "Neukölln"] },
     tags: ["startup-hub", "affordable-capital", "creative"],
-    referralLinks: [{ type: "rent", provider: "ImmoScout24" }, { type: "buy", provider: "ImmoScout24" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "betahaus" }],
+    referralLinks: [{ type: "rent", provider: "ImmoScout24" }, { type: "buy", provider: "ImmoScout24" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "betahaus" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "munich-de": {
@@ -550,7 +550,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["MUC"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "high", communitySize: "medium", coworkingSpaces: 60, neighborhoods: ["Schwabing", "Glockenbachviertel", "Maxvorstadt"] },
     tags: ["safe", "high-salary", "alps-nearby", "expensive"],
-    referralLinks: [{ type: "rent", provider: "ImmoScout24" }, { type: "buy", provider: "ImmoScout24" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "ImmoScout24" }, { type: "buy", provider: "ImmoScout24" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "amsterdam-nl": {
@@ -572,7 +572,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["AMS"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "high", communitySize: "large", coworkingSpaces: 90, neighborhoods: ["Jordaan", "De Pijp", "Oost"] },
     tags: ["bike-friendly", "expat-hub", "high-cost"],
-    referralLinks: [{ type: "rent", provider: "Pararius" }, { type: "buy", provider: "Funda" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Pararius" }, { type: "buy", provider: "Funda" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "zurich-ch": {
@@ -594,7 +594,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["ZRH"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "high", communitySize: "medium", coworkingSpaces: 40, neighborhoods: ["Kreis 4", "Kreis 5", "Seefeld"] },
     tags: ["safe", "high-salary", "very-expensive"],
-    referralLinks: [{ type: "rent", provider: "Homegate" }, { type: "buy", provider: "ImmoScout24.ch" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "Impact Hub" }],
+    referralLinks: [{ type: "rent", provider: "Homegate" }, { type: "buy", provider: "ImmoScout24.ch" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "Impact Hub" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "dubai-ae": {
@@ -616,7 +616,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["DXB", "DWC"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "high", communitySize: "large", coworkingSpaces: 60, neighborhoods: ["Marina", "Downtown", "JLT"] },
     tags: ["tax-free", "expat-hub", "hot-climate", "car-dependent"],
-    referralLinks: [{ type: "rent", provider: "Bayut" }, { type: "buy", provider: "Property Finder" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "AstroLabs" }],
+    referralLinks: [{ type: "rent", provider: "Bayut" }, { type: "buy", provider: "Property Finder" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "AstroLabs" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "singapore-sg": {
@@ -638,7 +638,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["SIN"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "high", communitySize: "large", coworkingSpaces: 100, neighborhoods: ["Tiong Bahru", "Holland Village", "CBD"] },
     tags: ["safe", "business-hub", "humid", "low-tax"],
-    referralLinks: [{ type: "rent", provider: "PropertyGuru" }, { type: "buy", provider: "99.co" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "JustCo" }],
+    referralLinks: [{ type: "rent", provider: "PropertyGuru" }, { type: "buy", provider: "99.co" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "JustCo" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "tokyo-jp": {
@@ -660,7 +660,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["HND", "NRT"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "low", communitySize: "large", coworkingSpaces: 90, neighborhoods: ["Shibuya", "Shinjuku", "Setagaya"] },
     tags: ["safe", "transit-rich", "dense", "weak-yen"],
-    referralLinks: [{ type: "rent", provider: "Suumo" }, { type: "buy", provider: "Suumo" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Suumo" }, { type: "buy", provider: "Suumo" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "toronto-ca": {
@@ -682,7 +682,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["YYZ", "YTZ"], avgFlightToHubHours: 1.5 },
     expat: { englishProficiency: "native", communitySize: "large", coworkingSpaces: 90, neighborhoods: ["Downtown", "Leslieville", "West End"] },
     tags: ["multicultural", "cold-winter", "high-rent", "easy-immigration"],
-    referralLinks: [{ type: "rent", provider: "Zumper" }, { type: "buy", provider: "Realtor.ca" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Zumper" }, { type: "buy", provider: "Realtor.ca" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "sydney-au": {
@@ -704,7 +704,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["SYD"], avgFlightToHubHours: 3 },
     expat: { englishProficiency: "native", communitySize: "large", coworkingSpaces: 90, neighborhoods: ["Surry Hills", "Bondi", "Newtown"] },
     tags: ["coastal", "sunny", "high-cost", "outdoors"],
-    referralLinks: [{ type: "rent", provider: "Domain" }, { type: "buy", provider: "realestate.com.au" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Domain" }, { type: "buy", provider: "realestate.com.au" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "san-francisco-ca": {
@@ -724,7 +724,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["SFO", "OAK"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "native", communitySize: "large", coworkingSpaces: 150, neighborhoods: ["Mission", "SoMa", "Hayes Valley"] },
     tags: ["tech-hub", "very-expensive", "high-salary"],
-    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "los-angeles-ca": {
@@ -744,7 +744,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["LAX", "BUR"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "native", communitySize: "large", coworkingSpaces: 120, neighborhoods: ["Silver Lake", "Santa Monica", "DTLA"] },
     tags: ["sunny", "entertainment", "car-dependent"],
-    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "san-diego-ca": {
@@ -763,7 +763,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["SAN"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "native", communitySize: "large", coworkingSpaces: 60, neighborhoods: ["North Park", "La Jolla", "Little Italy"] },
     tags: ["coastal", "sunny", "relaxed"],
-    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "seattle-wa": {
@@ -783,7 +783,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["SEA"], avgFlightToHubHours: 1.5 },
     expat: { englishProficiency: "native", communitySize: "large", coworkingSpaces: 70, neighborhoods: ["Capitol Hill", "Ballard", "Fremont"] },
     tags: ["tech-hub", "no-income-tax", "rainy", "outdoors"],
-    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "boston-ma": {
@@ -803,7 +803,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["BOS"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "native", communitySize: "large", coworkingSpaces: 80, neighborhoods: ["Back Bay", "Cambridge", "South End"] },
     tags: ["university-hub", "biotech", "cold-winter", "walkable"],
-    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "washington-dc": {
@@ -823,7 +823,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["DCA", "IAD"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "native", communitySize: "large", coworkingSpaces: 80, neighborhoods: ["Dupont Circle", "Georgetown", "Shaw"] },
     tags: ["capital", "government", "transit-rich"],
-    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "chicago-il": {
@@ -843,7 +843,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["ORD", "MDW"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "native", communitySize: "large", coworkingSpaces: 90, neighborhoods: ["Loop", "Wicker Park", "Lincoln Park"] },
     tags: ["value", "architecture", "cold-winter", "transit-rich"],
-    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "miami-fl": {
@@ -863,7 +863,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["MIA", "FLL"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "native", communitySize: "large", coworkingSpaces: 70, neighborhoods: ["Brickell", "Wynwood", "Coconut Grove"] },
     tags: ["no-income-tax", "coastal", "latin-hub", "humid"],
-    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "austin-tx": {
@@ -883,7 +883,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["AUS"], avgFlightToHubHours: 1.5 },
     expat: { englishProficiency: "native", communitySize: "large", coworkingSpaces: 60, neighborhoods: ["Downtown", "East Austin", "South Congress"] },
     tags: ["tech-hub", "no-income-tax", "music", "car-dependent"],
-    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "dallas-tx": {
@@ -902,7 +902,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["DFW", "DAL"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "native", communitySize: "large", coworkingSpaces: 50, neighborhoods: ["Uptown", "Deep Ellum", "Bishop Arts"] },
     tags: ["no-income-tax", "affordable", "car-dependent"],
-    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "houston-tx": {
@@ -922,7 +922,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["IAH", "HOU"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "native", communitySize: "large", coworkingSpaces: 45, neighborhoods: ["Montrose", "The Heights", "Midtown"] },
     tags: ["no-income-tax", "affordable", "energy-hub", "humid"],
-    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "denver-co": {
@@ -942,7 +942,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["DEN"], avgFlightToHubHours: 1.5 },
     expat: { englishProficiency: "native", communitySize: "medium", coworkingSpaces: 50, neighborhoods: ["RiNo", "LoHi", "Capitol Hill"] },
     tags: ["outdoors", "sunny", "growing"],
-    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "phoenix-az": {
@@ -962,7 +962,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["PHX"], avgFlightToHubHours: 1.5 },
     expat: { englishProficiency: "native", communitySize: "medium", coworkingSpaces: 40, neighborhoods: ["Downtown", "Arcadia", "Tempe"] },
     tags: ["affordable", "sunny", "hot-climate", "car-dependent"],
-    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "atlanta-ga": {
@@ -982,7 +982,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["ATL"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "native", communitySize: "large", coworkingSpaces: 55, neighborhoods: ["Midtown", "Old Fourth Ward", "Buckhead"] },
     tags: ["business-hub", "affordable", "green"],
-    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "portland-or": {
@@ -1002,7 +1002,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["PDX"], avgFlightToHubHours: 1.5 },
     expat: { englishProficiency: "native", communitySize: "medium", coworkingSpaces: 45, neighborhoods: ["Pearl District", "Alberta", "Hawthorne"] },
     tags: ["bike-friendly", "no-sales-tax", "green", "rainy"],
-    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "philadelphia-pa": {
@@ -1022,7 +1022,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["PHL"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "native", communitySize: "large", coworkingSpaces: 50, neighborhoods: ["Center City", "Fishtown", "University City"] },
     tags: ["walkable", "affordable", "historic"],
-    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "nashville-tn": {
@@ -1042,7 +1042,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["BNA"], avgFlightToHubHours: 1.5 },
     expat: { englishProficiency: "native", communitySize: "medium", coworkingSpaces: 40, neighborhoods: ["The Gulch", "East Nashville", "Germantown"] },
     tags: ["music", "no-income-tax", "booming", "car-dependent"],
-    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "minneapolis-mn": {
@@ -1062,7 +1062,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["MSP"], avgFlightToHubHours: 1.5 },
     expat: { englishProficiency: "native", communitySize: "medium", coworkingSpaces: 40, neighborhoods: ["North Loop", "Uptown", "Northeast"] },
     tags: ["quality-of-life", "lakes", "cold-winter"],
-    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "charlotte-nc": {
@@ -1082,7 +1082,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["CLT"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "native", communitySize: "medium", coworkingSpaces: 35, neighborhoods: ["Uptown", "NoDa", "South End"] },
     tags: ["finance-hub", "affordable", "mild-climate"],
-    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "las-vegas-nv": {
@@ -1102,7 +1102,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["LAS"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "native", communitySize: "medium", coworkingSpaces: 30, neighborhoods: ["Summerlin", "Downtown", "Henderson"] },
     tags: ["no-income-tax", "entertainment", "hot-climate", "affordable"],
-    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "detroit-mi": {
@@ -1122,7 +1122,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["DTW"], avgFlightToHubHours: 1.5 },
     expat: { englishProficiency: "native", communitySize: "medium", coworkingSpaces: 25, neighborhoods: ["Midtown", "Corktown", "Downtown"] },
     tags: ["very-affordable", "comeback", "cold-winter"],
-    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "san-antonio-tx": {
@@ -1142,7 +1142,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["SAT"], avgFlightToHubHours: 1.5 },
     expat: { englishProficiency: "native", communitySize: "medium", coworkingSpaces: 25, neighborhoods: ["Pearl", "Southtown", "Alamo Heights"] },
     tags: ["no-income-tax", "affordable", "culture", "hot-climate"],
-    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "columbus-oh": {
@@ -1161,7 +1161,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["CMH"], avgFlightToHubHours: 1.5 },
     expat: { englishProficiency: "native", communitySize: "medium", coworkingSpaces: 25, neighborhoods: ["Short North", "German Village", "Clintonville"] },
     tags: ["affordable", "college-town", "growing"],
-    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Zillow" }, { type: "buy", provider: "Redfin" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "dublin-ie": {
@@ -1180,7 +1180,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["DUB"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "native", communitySize: "large", coworkingSpaces: 50, neighborhoods: ["City Centre", "Rathmines", "Portobello"] },
     tags: ["tech-hub", "english-speaking", "housing-crunch"],
-    referralLinks: [{ type: "rent", provider: "Daft.ie" }, { type: "buy", provider: "MyHome.ie" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Daft.ie" }, { type: "buy", provider: "MyHome.ie" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "madrid-es": {
@@ -1199,7 +1199,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["MAD"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "low", communitySize: "large", coworkingSpaces: 70, neighborhoods: ["Malasaña", "Chamberí", "La Latina"] },
     tags: ["sunny", "nightlife", "affordable-capital", "digital-nomad"],
-    referralLinks: [{ type: "rent", provider: "Idealista" }, { type: "buy", provider: "Idealista" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Idealista" }, { type: "buy", provider: "Idealista" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "barcelona-es": {
@@ -1218,7 +1218,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["BCN"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "moderate", communitySize: "large", coworkingSpaces: 80, neighborhoods: ["Gràcia", "El Born", "Poblenou"] },
     tags: ["coastal", "digital-nomad", "culture", "tourist-heavy"],
-    referralLinks: [{ type: "rent", provider: "Idealista" }, { type: "buy", provider: "Idealista" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Idealista" }, { type: "buy", provider: "Idealista" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "lisbon-pt": {
@@ -1237,7 +1237,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["LIS"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "moderate", communitySize: "large", coworkingSpaces: 60, neighborhoods: ["Alfama", "Príncipe Real", "Alcântara"] },
     tags: ["digital-nomad", "sunny", "safe", "hilly"],
-    referralLinks: [{ type: "rent", provider: "Idealista" }, { type: "buy", provider: "Idealista" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "Second Home" }],
+    referralLinks: [{ type: "rent", provider: "Idealista" }, { type: "buy", provider: "Idealista" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "Second Home" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "rome-it": {
@@ -1257,7 +1257,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["FCO", "CIA"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "low", communitySize: "medium", coworkingSpaces: 40, neighborhoods: ["Trastevere", "Monti", "Prati"] },
     tags: ["history", "food", "bureaucracy", "tourist-heavy"],
-    referralLinks: [{ type: "rent", provider: "Immobiliare.it" }, { type: "buy", provider: "Immobiliare.it" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "Talent Garden" }],
+    referralLinks: [{ type: "rent", provider: "Immobiliare.it" }, { type: "buy", provider: "Immobiliare.it" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "Talent Garden" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "milan-it": {
@@ -1276,7 +1276,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["MXP", "LIN", "BGY"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "moderate", communitySize: "medium", coworkingSpaces: 60, neighborhoods: ["Navigli", "Brera", "Isola"] },
     tags: ["finance-hub", "fashion", "polluted", "high-cost"],
-    referralLinks: [{ type: "rent", provider: "Immobiliare.it" }, { type: "buy", provider: "Immobiliare.it" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "Talent Garden" }],
+    referralLinks: [{ type: "rent", provider: "Immobiliare.it" }, { type: "buy", provider: "Immobiliare.it" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "Talent Garden" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "vancouver-ca": {
@@ -1296,7 +1296,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["YVR"], avgFlightToHubHours: 1.5 },
     expat: { englishProficiency: "native", communitySize: "large", coworkingSpaces: 60, neighborhoods: ["Kitsilano", "Yaletown", "Mount Pleasant"] },
     tags: ["outdoors", "mild-climate", "very-expensive", "rainy"],
-    referralLinks: [{ type: "rent", provider: "Zumper" }, { type: "buy", provider: "Realtor.ca" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Zumper" }, { type: "buy", provider: "Realtor.ca" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "melbourne-au": {
@@ -1316,7 +1316,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["MEL"], avgFlightToHubHours: 1.5 },
     expat: { englishProficiency: "native", communitySize: "large", coworkingSpaces: 70, neighborhoods: ["Fitzroy", "St Kilda", "Carlton"] },
     tags: ["liveable", "coffee", "coastal", "high-cost"],
-    referralLinks: [{ type: "rent", provider: "Domain" }, { type: "buy", provider: "realestate.com.au" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Domain" }, { type: "buy", provider: "realestate.com.au" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "bangkok-th": {
@@ -1336,7 +1336,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["BKK", "DMK"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "low", communitySize: "large", coworkingSpaces: 60, neighborhoods: ["Sukhumvit", "Sathorn", "Ari"] },
     tags: ["nomad-favourite", "cheap-food", "hot-climate", "traffic"],
-    referralLinks: [{ type: "rent", provider: "DDproperty" }, { type: "buy", provider: "DDproperty" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "The Hive" }],
+    referralLinks: [{ type: "rent", provider: "DDproperty" }, { type: "buy", provider: "DDproperty" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "The Hive" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "mexico-city-mx": {
@@ -1356,7 +1356,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["MEX", "NLU"], avgFlightToHubHours: 1 },
     expat: { englishProficiency: "low", communitySize: "large", coworkingSpaces: 70, neighborhoods: ["Roma", "Condesa", "Polanco"] },
     tags: ["nomad-favourite", "spring-climate", "affordable", "polluted"],
-    referralLinks: [{ type: "rent", provider: "Inmuebles24" }, { type: "buy", provider: "Inmuebles24" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Inmuebles24" }, { type: "buy", provider: "Inmuebles24" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "warsaw-pl": {
@@ -1375,7 +1375,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["WAW", "WMI"], avgFlightToHubHours: 1.5 },
     expat: { englishProficiency: "moderate", communitySize: "medium", coworkingSpaces: 50, neighborhoods: ["Śródmieście", "Praga", "Mokotów"] },
     tags: ["business-hub", "affordable", "safe", "cold-winter"],
-    referralLinks: [{ type: "rent", provider: "Otodom" }, { type: "buy", provider: "Otodom" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Otodom" }, { type: "buy", provider: "Otodom" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "buenos-aires-ar": {
@@ -1395,7 +1395,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["EZE", "AEP"], avgFlightToHubHours: 3 },
     expat: { englishProficiency: "low", communitySize: "medium", coworkingSpaces: 45, neighborhoods: ["Palermo", "Recoleta", "San Telmo"] },
     tags: ["affordable", "culture", "inflation", "nightlife"],
-    referralLinks: [{ type: "rent", provider: "Zonaprop" }, { type: "buy", provider: "Zonaprop" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "Zonaprop" }, { type: "buy", provider: "Zonaprop" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
   "mumbai-in": {
@@ -1415,7 +1415,7 @@ export const CITY_PROFILES = {
     connectivity: { airportCodes: ["BOM"], avgFlightToHubHours: 3 },
     expat: { englishProficiency: "high", communitySize: "large", coworkingSpaces: 80, neighborhoods: ["Bandra", "Andheri", "Lower Parel"] },
     tags: ["finance-hub", "very-affordable", "crowded", "polluted"],
-    referralLinks: [{ type: "rent", provider: "MagicBricks" }, { type: "buy", provider: "99acres" }, { type: "flights", provider: "Skyscanner", affiliate: true }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
+    referralLinks: [{ type: "rent", provider: "MagicBricks" }, { type: "buy", provider: "99acres" }, { type: "flights", provider: "Cheapvuelos", url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", affiliate: true, note: "Search cheap flights worldwide" }, { type: "insurance", provider: "SafetyWing", affiliate: true }, { type: "coworking", provider: "WeWork" }],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
 } satisfies Record<string, CityProfile>;
