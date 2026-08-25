@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import { notFound } from "next/navigation";
 import { Geist, Geist_Mono, Archivo } from "next/font/google";
 import {
@@ -118,6 +119,15 @@ export default async function LocaleLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${archivo.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)]">
+        {/* Ezoic (standalone JS integration — same as calclumen). */}
+        <Script
+          id="ezoic-sa"
+          strategy="beforeInteractive"
+          src="https://www.ezojs.com/ezoic/sa.min.js"
+        />
+        <Script id="ezoic-init" strategy="beforeInteractive">
+          {`window.ezstandalone=window.ezstandalone||{};ezstandalone.cmd=ezstandalone.cmd||[];`}
+        </Script>
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light'){document.documentElement.dataset.theme=t;}}catch(e){}})();`,
