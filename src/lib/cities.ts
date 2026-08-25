@@ -136,6 +136,11 @@ const INTL_CITIES: City[] = [
   { slug: "porto-pt", name: "Porto", country: "Portugal", countryCode: "PT", aliases: ["Oporto"], medianRent1br: 1050, breakdown: { housing: 100, food: 88, transport: 65, utilities: 95, healthcare: 72, goods: 88 } },
   { slug: "valencia-es", name: "Valencia", country: "Spain", countryCode: "ES", aliases: ["València"], medianRent1br: 1000, breakdown: { housing: 105, food: 92, transport: 70, utilities: 100, healthcare: 78, goods: 92 } },
   { slug: "sao-paulo-br", name: "São Paulo", country: "Brazil", countryCode: "BR", aliases: ["Sao Paulo", "Sampa"], medianRent1br: 650, breakdown: { housing: 55, food: 55, transport: 50, utilities: 65, healthcare: 60, goods: 68 } },
+  { slug: "prague-cz", name: "Prague", country: "Czech Republic", countryCode: "CZ", aliases: ["Praha", "Prag"], medianRent1br: 950, breakdown: { housing: 88, food: 78, transport: 60, utilities: 100, healthcare: 65, goods: 82 } },
+  { slug: "vienna-at", name: "Vienna", country: "Austria", countryCode: "AT", aliases: ["Wien", "Viena"], medianRent1br: 1150, breakdown: { housing: 105, food: 95, transport: 70, utilities: 110, healthcare: 80, goods: 100 } },
+  { slug: "budapest-hu", name: "Budapest", country: "Hungary", countryCode: "HU", aliases: ["Budapeste"], medianRent1br: 700, breakdown: { housing: 65, food: 68, transport: 50, utilities: 95, healthcare: 55, goods: 72 } },
+  { slug: "athens-gr", name: "Athens", country: "Greece", countryCode: "GR", aliases: ["Athína", "Atenas", "Atene", "Athen"], medianRent1br: 750, breakdown: { housing: 72, food: 78, transport: 55, utilities: 100, healthcare: 65, goods: 80 } },
+  { slug: "tallinn-ee", name: "Tallinn", country: "Estonia", countryCode: "EE", aliases: ["Reval"], medianRent1br: 800, breakdown: { housing: 75, food: 78, transport: 55, utilities: 105, healthcare: 65, goods: 80 } },
   { slug: "bishkek-kg", name: "Bishkek", country: "Kyrgyzstan", countryCode: "KG", aliases: ["Бишкек", "Bichkek", "Biskek", "Frunze"], medianRent1br: 350, breakdown: { housing: 18, food: 30, transport: 22, utilities: 40, healthcare: 25, goods: 30 } },
 ];
 

@@ -22,14 +22,21 @@ import { pageMetadata, SITE_NAME } from "@/lib/seo/site";
 import { websiteJsonLd } from "@/lib/seo/jsonld";
 import JsonLd from "@/components/JsonLd";
 
-// A few hand-picked popular relocation comparisons.
+// A few hand-picked popular relocation comparisons. Mixes evergreen pairs with
+// high-intent comparisons involving newer cities, feeding crawl to the long tail.
 const POPULAR: [string, string][] = [
   ["new-york-ny", "london-uk"],
+  ["lisbon-pt", "porto-pt"],
+  ["bali-id", "chiang-mai-th"],
   ["san-francisco-ca", "austin-tx"],
+  ["madrid-es", "valencia-es"],
   ["london-uk", "berlin-de"],
-  ["new-york-ny", "lisbon-pt"],
+  ["medellin-co", "mexico-city-mx"],
+  ["berlin-de", "prague-cz"],
   ["dubai-ae", "singapore-sg"],
-  ["los-angeles-ca", "bishkek-kg"],
+  ["lisbon-pt", "tbilisi-ge"],
+  ["vienna-at", "budapest-hu"],
+  ["new-york-ny", "istanbul-tr"],
 ];
 
 export async function generateMetadata({

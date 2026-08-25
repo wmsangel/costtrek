@@ -604,6 +604,125 @@ export const COUNTRIES = {
     practical: { powerPlugs: ["N", "C"], voltage: 127, emergencyNumber: "190", timezoneNote: "UTC-3" },
     meta: { updatedAt: UPDATED, sources: SRC },
   },
+  CZ: {
+    code: "CZ", name: "Czech Republic", continent: "Europe", capital: "Prague",
+    currency: { code: "CZK", symbol: "Kč", name: "Czech koruna" }, languages: ["Czech"], callingCode: "+420", drivingSide: "right",
+    taxes: {
+      incomeTax: { type: "progressive", topRate: 23, note: "15% base, 23% above ~3× average wage." },
+      vat: { standard: 21, reduced: [12] }, corporateTax: 21,
+    },
+    immigration: {
+      summary: "EU Blue Card and the Employee Card; the živnostenský list (trade licence) is the classic freelancer/nomad route.",
+      visaFreeNote: "Schengen 90/180 for many passports.",
+      visaTypes: [
+        { name: "Employee Card", category: "work", note: "Employer-tied residence + work permit." },
+        { name: "EU Blue Card", category: "work" },
+        { name: "Živnostenský list (trade licence)", category: "residence", note: "Self-employment route used by nomads." },
+        { name: "Digital Nomad Visa", category: "digital-nomad", note: "2023 program for select nationalities in IT." },
+      ],
+      residency: { permanentAfterYears: 5, citizenshipAfterYears: 5 },
+      digitalNomad: { available: true, note: "2023 program for select nationalities in IT." },
+    },
+    healthcare: { system: "public", note: "Mandatory public insurance; high quality and affordable." },
+    economy: { gdpPerCapitaUsd: 31368, avgNetSalaryUsdMonthly: 1400, minWageUsdMonthly: 800 },
+    practical: { powerPlugs: ["E"], voltage: 230, emergencyNumber: "112", timezoneNote: "UTC+1" },
+    meta: { updatedAt: UPDATED, sources: SRC },
+  },
+  AT: {
+    code: "AT", name: "Austria", continent: "Europe", capital: "Vienna",
+    currency: { code: "EUR", symbol: "€", name: "Euro" }, languages: ["German"], callingCode: "+43", drivingSide: "right",
+    taxes: {
+      incomeTax: { type: "progressive", topRate: 55 },
+      vat: { standard: 20, reduced: [13, 10] }, capitalGains: { rate: 27.5 }, corporateTax: 23,
+    },
+    immigration: {
+      summary: "The points-based Red-White-Red Card for skilled workers; EU Blue Card.",
+      visaFreeNote: "Schengen 90/180 for many passports.",
+      visaTypes: [
+        { name: "Red-White-Red Card", category: "work", note: "Points-based, for skilled workers." },
+        { name: "EU Blue Card", category: "work" },
+        { name: "Residence Permit", category: "residence" },
+      ],
+      residency: { permanentAfterYears: 5, citizenshipAfterYears: 10 },
+      digitalNomad: { available: false, note: "No dedicated visa." },
+    },
+    healthcare: { system: "public", note: "Universal statutory insurance; consistently top-ranked." },
+    economy: { gdpPerCapitaUsd: 56505, avgNetSalaryUsdMonthly: 2400 },
+    practical: { powerPlugs: ["F"], voltage: 230, emergencyNumber: "112", timezoneNote: "UTC+1" },
+    meta: { updatedAt: UPDATED, sources: SRC },
+  },
+  HU: {
+    code: "HU", name: "Hungary", continent: "Europe", capital: "Budapest",
+    currency: { code: "HUF", symbol: "Ft", name: "Hungarian forint" }, languages: ["Hungarian"], callingCode: "+36", drivingSide: "right",
+    taxes: {
+      incomeTax: { type: "flat", topRate: 15 },
+      vat: { standard: 27, reduced: [18, 5], note: "27% is the EU's highest." }, corporateTax: 9,
+      notes: ["9% corporate tax is the lowest in the EU."],
+    },
+    immigration: {
+      summary: "A flat 15% income tax and the White Card digital-nomad residence permit.",
+      visaFreeNote: "Schengen 90/180 for many passports.",
+      visaTypes: [
+        { name: "White Card", category: "digital-nomad", note: "Remote workers, ~$3,000/mo income." },
+        { name: "Work Permit", category: "work" },
+        { name: "Residence Permit", category: "residence" },
+      ],
+      residency: { permanentAfterYears: 3, citizenshipAfterYears: 8 },
+      digitalNomad: { available: true, minIncomeUsdMonthly: 3000, note: "White Card residence permit." },
+    },
+    healthcare: { system: "public", note: "Public system; expats often add private clinics.", expatInsuranceRecommended: true },
+    economy: { gdpPerCapitaUsd: 23320, avgNetSalaryUsdMonthly: 900, minWageUsdMonthly: 700 },
+    practical: { powerPlugs: ["F"], voltage: 230, emergencyNumber: "112", timezoneNote: "UTC+1" },
+    meta: { updatedAt: UPDATED, sources: SRC },
+  },
+  GR: {
+    code: "GR", name: "Greece", continent: "Europe", capital: "Athens",
+    currency: { code: "EUR", symbol: "€", name: "Euro" }, languages: ["Greek"], callingCode: "+30", drivingSide: "right",
+    taxes: {
+      incomeTax: { type: "progressive", topRate: 44 },
+      vat: { standard: 24, reduced: [13, 6] }, corporateTax: 22,
+      notes: ["50% income-tax exemption for 7 years for qualifying new tax residents."],
+    },
+    immigration: {
+      summary: "The Golden Visa (property) and a digital-nomad visa carrying a 50% tax break for new residents.",
+      visaFreeNote: "Schengen 90/180 for many passports.",
+      visaTypes: [
+        { name: "Digital Nomad Visa", category: "digital-nomad", note: "Remote workers, €3,500/mo; 50% income-tax break." },
+        { name: "Golden Visa", category: "investment", note: "€250k–800k property investment." },
+        { name: "Residence Permit", category: "residence" },
+      ],
+      residency: { permanentAfterYears: 5, citizenshipAfterYears: 7 },
+      digitalNomad: { available: true, minIncomeUsdMonthly: 3800, note: "Digital-nomad visa + 50% tax break." },
+    },
+    healthcare: { system: "public", note: "ESY public system; private care common for expats.", expatInsuranceRecommended: true },
+    economy: { gdpPerCapitaUsd: 23565, avgNetSalaryUsdMonthly: 1000, minWageUsdMonthly: 850 },
+    practical: { powerPlugs: ["F"], voltage: 230, emergencyNumber: "112", timezoneNote: "UTC+2" },
+    meta: { updatedAt: UPDATED, sources: SRC },
+  },
+  EE: {
+    code: "EE", name: "Estonia", continent: "Europe", capital: "Tallinn",
+    currency: { code: "EUR", symbol: "€", name: "Euro" }, languages: ["Estonian"], callingCode: "+372", drivingSide: "right",
+    taxes: {
+      incomeTax: { type: "flat", topRate: 22, note: "Flat rate; rose to 22% in 2025." },
+      vat: { standard: 22 }, corporateTax: 20,
+      notes: ["Estonian-style corporate tax — levied only on distributed profit."],
+    },
+    immigration: {
+      summary: "Pioneer of the Digital Nomad Visa and e-Residency; a simple, digital-first system.",
+      visaFreeNote: "Schengen 90/180 for many passports.",
+      visaTypes: [
+        { name: "Digital Nomad Visa", category: "digital-nomad", note: "The original DNV (2020); remote workers, €4,500/mo." },
+        { name: "e-Residency", category: "business", note: "Run an EU company remotely — not a residence permit." },
+        { name: "Startup Visa", category: "work" },
+      ],
+      residency: { permanentAfterYears: 5, citizenshipAfterYears: 8 },
+      digitalNomad: { available: true, minIncomeUsdMonthly: 4900, note: "Launched Europe's first DNV in 2020." },
+    },
+    healthcare: { system: "public", note: "Public insurance; the most digital healthcare in the EU." },
+    economy: { gdpPerCapitaUsd: 29824, avgNetSalaryUsdMonthly: 1500, minWageUsdMonthly: 900 },
+    practical: { powerPlugs: ["F"], voltage: 230, emergencyNumber: "112", timezoneNote: "UTC+2" },
+    meta: { updatedAt: UPDATED, sources: SRC },
+  },
 } satisfies Record<string, Country>;
 
 export type CountryCode = keyof typeof COUNTRIES;
@@ -646,6 +765,11 @@ const EXTRA: Record<string, Extra> = {
   CO: { gdp: 6976, life: 73.7, inflation: 5.2, lgbtq: "high" },
   GE: { gdp: 8120, life: 73.3, inflation: 2.5, lgbtq: "low" },
   BR: { gdp: 10296, life: 75.9, inflation: 4.5, lgbtq: "high" },
+  CZ: { gdp: 31368, life: 79.8, inflation: 2.4, lgbtq: "moderate" },
+  AT: { gdp: 56505, life: 81.6, inflation: 3.0, lgbtq: "high" },
+  HU: { gdp: 23320, life: 76.9, inflation: 3.7, lgbtq: "low" },
+  GR: { gdp: 23565, life: 81.8, inflation: 2.6, lgbtq: "moderate" },
+  EE: { gdp: 29824, life: 78.9, inflation: 3.5, lgbtq: "moderate" },
 };
 for (const [code, ex] of Object.entries(EXTRA)) {
   const c = (COUNTRIES as Record<string, Country>)[code];
