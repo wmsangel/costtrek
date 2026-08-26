@@ -141,11 +141,18 @@ export type Dictionary = {
   collections: {
     homeTitle: string;
     rank: string;
+    flightsCta: string;
     cheapest: { title: string; description: string; metric: string };
+    mostExpensive: { title: string; description: string; metric: string };
     lowTax: { title: string; description: string; metric: string };
     safest: { title: string; description: string; metric: string };
     sunniest: { title: string; description: string; metric: string };
     nomad: { title: string; description: string; metric: string };
+    bestInternet: { title: string; description: string; metric: string };
+    bestTransit: { title: string; description: string; metric: string };
+    bestHealthcare: { title: string; description: string; metric: string };
+    cleanestAir: { title: string; description: string; metric: string };
+    walkable: { title: string; description: string; metric: string };
   };
   data: {
     fullComparison: string;

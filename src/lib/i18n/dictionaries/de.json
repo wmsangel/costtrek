@@ -165,7 +165,14 @@
       "title": "Beste Städte für digitale Nomaden",
       "description": "Günstige, gut angebundene Städte, die bei Remote-Arbeitern beliebt sind, sortiert nach Lebenshaltungskosten.",
       "metric": "Kostenindex"
-    }
+    },
+    "mostExpensive": { "title": "Teuerste Städte zum Leben", "description": "Die teuersten Städte in unserem Index, sortiert nach den Gesamtlebenshaltungskosten (US-Durchschnitt = 100). Höher ist teurer.", "metric": "Kostenindex" },
+    "bestInternet": { "title": "Städte mit dem schnellsten Internet", "description": "Wo Remote-Arbeit einfach funktioniert — Städte sortiert nach typischer Breitbandgeschwindigkeit zu Hause.", "metric": "Geschwindigkeit" },
+    "bestTransit": { "title": "Städte mit dem besten Nahverkehr", "description": "Ohne Auto vorankommen — Städte sortiert nach der Qualität ihres Nahverkehrs.", "metric": "Nahverkehr" },
+    "bestHealthcare": { "title": "Städte mit der besten Gesundheitsversorgung", "description": "Städte sortiert nach Qualität und Zugänglichkeit ihrer Gesundheitsversorgung.", "metric": "Gesundheit" },
+    "cleanestAir": { "title": "Städte mit der saubersten Luft", "description": "Durchatmen — Städte sortiert nach Luftqualität, geringste Belastung zuerst.", "metric": "Umweltbelastung" },
+    "walkable": { "title": "Fußgängerfreundlichste Städte", "description": "Autofrei leben — Städte sortiert danach, wie gut man sie täglich zu Fuß erschließen kann.", "metric": "Fußgängerfreundlichkeit" },
+    "flightsCta": "Umzug geplant? Günstige Flüge weltweit finden"
   },
   "data": {
     "fullComparison": "Vollständiger Vergleich",

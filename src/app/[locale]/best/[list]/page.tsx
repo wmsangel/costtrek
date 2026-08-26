@@ -54,7 +54,7 @@ export default async function CollectionPage({
   const dict = await getDictionary(l);
   const def = COLLECTIONS[list];
   const cd = dict.collections[def.dictKey];
-  const rows = rankCities(list);
+  const rows = rankCities(list, 200); // full ranked list — richer hub + more links
   const nl = LOCALE_BCP47[l];
 
   const itemListJsonLd = {
@@ -133,6 +133,30 @@ export default async function CollectionPage({
           ))}
         </ol>
       </div>
+
+      {/* Flights affiliate CTA (sponsored, worldwide) */}
+      <a
+        href="https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/"
+        rel="sponsored nofollow noopener"
+        target="_blank"
+        className="mt-10 flex items-center justify-between gap-4 rounded-2xl bg-[var(--accent)] px-5 sm:px-6 py-4 sm:py-5 text-white transition hover:brightness-110"
+      >
+        <span className="flex flex-col gap-0.5">
+          <span className="display font-black text-base sm:text-lg leading-tight">
+            <span aria-hidden="true">✈ </span>
+            {dict.collections.flightsCta}
+          </span>
+          <span className="text-[10px] uppercase tracking-wider font-bold text-white/70">
+            {dict.calculators.sponsoredBadge}
+          </span>
+        </span>
+        <span
+          aria-hidden="true"
+          className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white text-lg font-bold text-[#171310]"
+        >
+          ↗
+        </span>
+      </a>
 
       <section className="mt-10">
         <h2 className="mag-h2 mb-4">★ {dict.collections.homeTitle}</h2>

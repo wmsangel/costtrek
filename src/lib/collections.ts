@@ -9,19 +9,40 @@ import { getCityProfile, getCountry } from "@/lib/data";
  */
 export type CollectionKey =
   | "cheapest"
+  | "most-expensive"
   | "low-tax"
   | "safest"
   | "sunniest"
-  | "nomad";
+  | "nomad"
+  | "best-internet"
+  | "best-transit"
+  | "best-healthcare"
+  | "cleanest-air"
+  | "walkable";
+
+type DictKey =
+  | "cheapest"
+  | "mostExpensive"
+  | "lowTax"
+  | "safest"
+  | "sunniest"
+  | "nomad"
+  | "bestInternet"
+  | "bestTransit"
+  | "bestHealthcare"
+  | "cleanestAir"
+  | "walkable";
 
 type Def = {
   slug: CollectionKey;
-  dictKey: "cheapest" | "lowTax" | "safest" | "sunniest" | "nomad";
+  dictKey: DictKey;
   metric: (c: City) => number | null | undefined;
   direction: "asc" | "desc"; // asc = lower value ranks first
   suffix: string;
   filter?: (c: City) => boolean;
 };
+
+const qol = (c: City) => getCityProfile(c.slug)?.qualityOfLife;
 
 const NOMAD_TAGS = new Set([
   "nomad-favourite",
@@ -37,12 +58,54 @@ export const COLLECTIONS: Record<CollectionKey, Def> = {
     direction: "asc",
     suffix: "",
   },
+  "most-expensive": {
+    slug: "most-expensive",
+    dictKey: "mostExpensive",
+    metric: (c) => Math.round(overallIndex(c)),
+    direction: "desc",
+    suffix: "",
+  },
   "low-tax": {
     slug: "low-tax",
     dictKey: "lowTax",
     metric: (c) => getCountry(c.countryCode)?.taxes.incomeTax.topRate,
     direction: "asc",
     suffix: "%",
+  },
+  "best-internet": {
+    slug: "best-internet",
+    dictKey: "bestInternet",
+    metric: (c) => qol(c)?.internetMbps,
+    direction: "desc",
+    suffix: " Mbps",
+  },
+  "best-transit": {
+    slug: "best-transit",
+    dictKey: "bestTransit",
+    metric: (c) => qol(c)?.transitScore,
+    direction: "desc",
+    suffix: "/100",
+  },
+  "best-healthcare": {
+    slug: "best-healthcare",
+    dictKey: "bestHealthcare",
+    metric: (c) => qol(c)?.healthcareIndex,
+    direction: "desc",
+    suffix: "/100",
+  },
+  "cleanest-air": {
+    slug: "cleanest-air",
+    dictKey: "cleanestAir",
+    metric: (c) => qol(c)?.pollutionIndex,
+    direction: "asc",
+    suffix: "/100",
+  },
+  "walkable": {
+    slug: "walkable",
+    dictKey: "walkable",
+    metric: (c) => qol(c)?.walkability,
+    direction: "desc",
+    suffix: "/100",
   },
   safest: {
     slug: "safest",

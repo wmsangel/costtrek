@@ -165,7 +165,14 @@
       "title": "Meilleures villes pour les nomades numériques",
       "description": "Villes abordables et bien connectées, prisées des télétravailleurs, classées par coût de la vie.",
       "metric": "Indice du coût"
-    }
+    },
+    "mostExpensive": { "title": "Les villes les plus chères où vivre", "description": "Les villes les plus chères de notre index, classées selon le coût de la vie global (moyenne américaine = 100). Plus c'est élevé, plus c'est cher.", "metric": "Indice de coût" },
+    "bestInternet": { "title": "Villes avec l'internet le plus rapide", "description": "Là où le télétravail fonctionne sans accroc — villes classées selon le débit internet domestique typique.", "metric": "Débit" },
+    "bestTransit": { "title": "Villes avec les meilleurs transports en commun", "description": "Se déplacer sans voiture — villes classées selon la qualité de leurs transports en commun.", "metric": "Transports" },
+    "bestHealthcare": { "title": "Villes avec les meilleurs soins de santé", "description": "Villes classées selon la qualité et l'accessibilité de leurs soins de santé.", "metric": "Santé" },
+    "cleanestAir": { "title": "Villes à l'air le plus pur", "description": "Respirez — villes classées selon la qualité de l'air, la plus faible pollution d'abord.", "metric": "Pollution" },
+    "walkable": { "title": "Villes les plus propices à la marche", "description": "Vivre sans voiture — villes classées selon leur caractère piétonnier au quotidien.", "metric": "Marchabilité" },
+    "flightsCta": "Un déménagement en vue ? Trouvez des vols pas chers dans le monde entier"
   },
   "data": {
     "fullComparison": "Comparaison complète",

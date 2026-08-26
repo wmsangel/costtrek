@@ -165,7 +165,14 @@
       "title": "Melhores cidades para nómadas digitais",
       "description": "Cidades acessíveis e bem ligadas, populares entre teletrabalhadores, ordenadas por custo de vida.",
       "metric": "Índice de custo"
-    }
+    },
+    "mostExpensive": { "title": "As cidades mais caras para viver", "description": "As cidades mais caras do nosso índice, ordenadas pelo custo de vida global (média dos EUA = 100). Quanto mais alto, mais caro.", "metric": "Índice de custo" },
+    "bestInternet": { "title": "Cidades com a internet mais rápida", "description": "Onde o trabalho remoto simplesmente funciona — cidades ordenadas pela velocidade típica da banda larga doméstica.", "metric": "Velocidade" },
+    "bestTransit": { "title": "Cidades com os melhores transportes públicos", "description": "Circular sem carro — cidades ordenadas pela qualidade dos seus transportes públicos.", "metric": "Transportes" },
+    "bestHealthcare": { "title": "Cidades com a melhor saúde", "description": "Cidades ordenadas pela qualidade e acessibilidade da sua saúde.", "metric": "Saúde" },
+    "cleanestAir": { "title": "Cidades com o ar mais limpo", "description": "Respire fundo — cidades ordenadas pela qualidade do ar, menor poluição primeiro.", "metric": "Poluição" },
+    "walkable": { "title": "Cidades mais caminháveis", "description": "Viver sem carro — cidades ordenadas pela facilidade de se andar a pé no dia a dia.", "metric": "Caminhabilidade" },
+    "flightsCta": "A planear uma mudança? Encontre voos baratos em todo o mundo"
   },
   "data": {
     "fullComparison": "Comparação completa",

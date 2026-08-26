@@ -141,6 +141,7 @@
   "collections": {
     "homeTitle": "Best places to live",
     "rank": "Rank",
+    "flightsCta": "Planning a move? Search cheap flights worldwide",
     "cheapest": {
       "title": "Cheapest cities to live in",
       "description": "The most affordable cities in our index, ranked by overall cost of living (US average = 100). Lower is cheaper.",
@@ -165,6 +166,36 @@
       "title": "Best cities for digital nomads",
       "description": "Affordable, well-connected cities popular with remote workers, ranked by cost of living.",
       "metric": "Cost index"
+    },
+    "mostExpensive": {
+      "title": "Most expensive cities to live in",
+      "description": "The priciest cities in our index, ranked by overall cost of living (US average = 100). Higher is more expensive.",
+      "metric": "Cost index"
+    },
+    "bestInternet": {
+      "title": "Cities with the fastest internet",
+      "description": "Where remote work just works — cities ranked by typical home broadband speed.",
+      "metric": "Speed"
+    },
+    "bestTransit": {
+      "title": "Cities with the best public transport",
+      "description": "Get around without a car — cities ranked by the quality of their public transit.",
+      "metric": "Transit"
+    },
+    "bestHealthcare": {
+      "title": "Cities with the best healthcare",
+      "description": "Cities ranked by the quality and accessibility of their healthcare.",
+      "metric": "Healthcare"
+    },
+    "cleanestAir": {
+      "title": "Cities with the cleanest air",
+      "description": "Breathe easy — cities ranked by air quality, lowest pollution first.",
+      "metric": "Pollution"
+    },
+    "walkable": {
+      "title": "Most walkable cities",
+      "description": "Live car-free — cities ranked by how walkable they are day to day.",
+      "metric": "Walkability"
     }
   },
   "data": {
