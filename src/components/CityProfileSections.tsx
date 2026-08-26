@@ -310,20 +310,32 @@ export default function CityProfileSections({
 
       {/* Relocation / referral links (profile slots + geo-scoped partners) */}
       {(() => {
-          // Way.com is US & Canada only — auto super-app (airport parking,
-          // car washes, car insurance). Only surface it where it's usable.
-          const geo: ReferralLink[] =
-            city.countryCode === "US" || city.countryCode === "CA"
-              ? [
-                  {
-                    type: "other",
-                    provider: "Way.com",
-                    url: "https://yyczo.com/g/vln7ctwgqja27dee2ccd12f7a14e01/",
-                    affiliate: true,
-                    note: "Airport parking, car washes & car insurance",
-                  },
-                ]
-              : [];
+          // Geo-scoped affiliate cards — only shown where the partner operates.
+          const geo: ReferralLink[] = [];
+          // Way.com — US & Canada only (airport parking, car washes, insurance).
+          if (city.countryCode === "US" || city.countryCode === "CA") {
+            geo.push({
+              type: "other",
+              provider: "Way.com",
+              url: "https://yyczo.com/g/vln7ctwgqja27dee2ccd12f7a14e01/",
+              affiliate: true,
+              note: "Airport parking, car washes & car insurance",
+            });
+          }
+          // NH Hotels — city hotels in the GEOs where the chain operates.
+          const NH_COUNTRIES = new Set([
+            "NL", "ES", "DE", "GB", "IT", "FR", "US",
+            "MX", "AR", "BR", "CO", "PT", "AT",
+          ]);
+          if (NH_COUNTRIES.has(city.countryCode)) {
+            geo.push({
+              type: "other",
+              provider: "NH Hotels",
+              url: "https://xnmik.com/g/jpnebfysh2a27dee2ccd8f408ce589/",
+              affiliate: true,
+              note: "City-centre hotels — book your stay",
+            });
+          }
           const referralLinks = [...(profile?.referralLinks ?? []), ...geo];
           if (referralLinks.length === 0) return null;
           const live = referralLinks.filter((r) => r.url);
