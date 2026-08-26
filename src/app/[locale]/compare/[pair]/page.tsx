@@ -24,6 +24,7 @@ import {
 } from "@/lib/i18n/places";
 import { getCountry } from "@/lib/data";
 import { pageMetadata } from "@/lib/seo/site";
+import { cityPairIndexable } from "@/lib/seo/indexable";
 import { breadcrumbJsonLd } from "@/lib/seo/jsonld";
 import JsonLd from "@/components/JsonLd";
 import Faq, { type FaqItem } from "@/components/Faq";
@@ -70,6 +71,7 @@ export async function generateMetadata({
     locale: l,
     path,
     ogType: "article",
+    noindex: !cityPairIndexable(a.slug, b.slug),
     title: fill(dict.meta.compareTitle, {
       a: localizedCityLabel(l, a),
       b: localizedCityLabel(l, b),

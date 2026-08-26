@@ -8,6 +8,7 @@ import { CALCULATORS } from "@/lib/calculators/registry";
 import { CALC_PRESETS } from "@/lib/calculators/presets";
 import { locales } from "@/lib/i18n/config";
 import { absUrl, languageAlternates } from "@/lib/seo/site";
+import { cityPairIndexable, countryPairIndexable } from "@/lib/seo/indexable";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Locale-less paths, each emitted once per locale with hreflang alternates.
@@ -38,6 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const a of countryList) {
     for (const b of countryList) {
       if (countrySlug(a) >= countrySlug(b)) continue; // canonical direction only
+      if (!countryPairIndexable(a.code, b.code)) continue; // skip noindex long tail
       paths.push({
         path: `compare-countries/${countrySlug(a)}-vs-${countrySlug(b)}`,
         priority: 0.5,
@@ -59,6 +61,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const a of CITIES) {
     for (const b of CITIES) {
       if (a.slug >= b.slug) continue; // canonical direction only
+      if (!cityPairIndexable(a.slug, b.slug)) continue; // skip noindex long tail
       paths.push({ path: comparePath(a, b).replace(/^\//, ""), priority: 0.6 });
     }
   }

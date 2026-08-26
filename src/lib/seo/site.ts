@@ -77,6 +77,8 @@ export function pageMetadata(opts: {
   path?: string;
   ogType?: "website" | "article";
   ogImage?: { title: string; sub?: string; stat?: string; tag?: string };
+  /** Keep the page out of the index (still followed) — for thin long-tail. */
+  noindex?: boolean;
 }): Metadata {
   const { locale, title, description, path = "", ogType = "website" } = opts;
   const url = absUrl(locale, path);
@@ -84,6 +86,9 @@ export function pageMetadata(opts: {
   return {
     title,
     description,
+    ...(opts.noindex
+      ? { robots: { index: false, follow: true } }
+      : {}),
     alternates: {
       canonical: url,
       languages: languageAlternates(path),

@@ -141,6 +141,9 @@ const INTL_CITIES: City[] = [
   { slug: "budapest-hu", name: "Budapest", country: "Hungary", countryCode: "HU", aliases: ["Budapeste"], medianRent1br: 700, breakdown: { housing: 65, food: 68, transport: 50, utilities: 95, healthcare: 55, goods: 72 } },
   { slug: "athens-gr", name: "Athens", country: "Greece", countryCode: "GR", aliases: ["Athína", "Atenas", "Atene", "Athen"], medianRent1br: 750, breakdown: { housing: 72, food: 78, transport: 55, utilities: 100, healthcare: 65, goods: 80 } },
   { slug: "tallinn-ee", name: "Tallinn", country: "Estonia", countryCode: "EE", aliases: ["Reval"], medianRent1br: 800, breakdown: { housing: 75, food: 78, transport: 55, utilities: 105, healthcare: 65, goods: 80 } },
+  { slug: "kuala-lumpur-my", name: "Kuala Lumpur", country: "Malaysia", countryCode: "MY", aliases: ["KL"], medianRent1br: 600, breakdown: { housing: 45, food: 50, transport: 40, utilities: 55, healthcare: 50, goods: 62 } },
+  { slug: "ho-chi-minh-city-vn", name: "Ho Chi Minh City", country: "Vietnam", countryCode: "VN", aliases: ["Saigon", "Sài Gòn", "HCMC"], medianRent1br: 500, breakdown: { housing: 38, food: 42, transport: 35, utilities: 55, healthcare: 45, goods: 55 } },
+  { slug: "seoul-kr", name: "Seoul", country: "South Korea", countryCode: "KR", aliases: ["서울", "Seúl", "Séoul"], medianRent1br: 900, breakdown: { housing: 90, food: 85, transport: 55, utilities: 80, healthcare: 65, goods: 95 } },
   { slug: "bishkek-kg", name: "Bishkek", country: "Kyrgyzstan", countryCode: "KG", aliases: ["Бишкек", "Bichkek", "Biskek", "Frunze"], medianRent1br: 350, breakdown: { housing: 18, food: 30, transport: 22, utilities: 40, healthcare: 25, goods: 30 } },
 ];
 

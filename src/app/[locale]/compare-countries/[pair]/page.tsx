@@ -15,6 +15,7 @@ import { LOCALE_BCP47, isLocale, type Locale } from "@/lib/i18n/config";
 import { fill, getDictionary } from "@/lib/i18n/dictionaries";
 import { localizedCountryNameByCode } from "@/lib/i18n/places";
 import { pageMetadata } from "@/lib/seo/site";
+import { countryPairIndexable } from "@/lib/seo/indexable";
 import { breadcrumbJsonLd } from "@/lib/seo/jsonld";
 import JsonLd from "@/components/JsonLd";
 import Mountains from "@/components/Mountains";
@@ -87,6 +88,7 @@ export async function generateMetadata({
     locale: l,
     path: `compare-countries/${pair}`,
     ogType: "article",
+    noindex: !countryPairIndexable(parsed.a.code, parsed.b.code),
     title: fill(dict.compareCountries.title, { a: aName, b: bName }),
     description: fill(dict.compareCountries.subtitle, { a: aName, b: bName }),
     ogImage: { title: `${aName} vs ${bName}`, tag: dict.compareCountries.breadcrumb },
