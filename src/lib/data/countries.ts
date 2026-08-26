@@ -723,6 +723,75 @@ export const COUNTRIES = {
     practical: { powerPlugs: ["F"], voltage: 230, emergencyNumber: "112", timezoneNote: "UTC+2" },
     meta: { updatedAt: UPDATED, sources: SRC },
   },
+  MY: {
+    code: "MY", name: "Malaysia", continent: "Asia", capital: "Kuala Lumpur",
+    currency: { code: "MYR", symbol: "RM", name: "Malaysian ringgit" }, languages: ["Malay", "English"], callingCode: "+60", drivingSide: "left",
+    taxes: {
+      incomeTax: { type: "progressive", topRate: 30 },
+      vat: { standard: 8, note: "SST (sales & service tax); no broad VAT." }, corporateTax: 24,
+    },
+    immigration: {
+      summary: "The DE Rantau nomad pass (2022) and the MM2H (Malaysia My Second Home) long-stay program.",
+      visaFreeNote: "Visa-free short stays (up to 90 days) for many passports.",
+      visaTypes: [
+        { name: "DE Rantau Nomad Pass", category: "digital-nomad", maxStayDays: 365, note: "Tech remote workers/freelancers; renewable." },
+        { name: "MM2H (Malaysia My Second Home)", category: "residence", note: "Long-stay via savings/income proof." },
+        { name: "Employment Pass", category: "work", note: "Employer-sponsored." },
+      ],
+      residency: { permanentAfterYears: 5 },
+      digitalNomad: { available: true, minIncomeUsdMonthly: 2000, note: "DE Rantau pass, launched 2022." },
+    },
+    healthcare: { system: "mixed", note: "Affordable, high-quality private hospitals; a medical-tourism hub.", expatInsuranceRecommended: true },
+    economy: { gdpPerCapitaUsd: 12000, avgNetSalaryUsdMonthly: 900, minWageUsdMonthly: 350 },
+    practical: { powerPlugs: ["G"], voltage: 240, emergencyNumber: "999", timezoneNote: "UTC+8" },
+    meta: { updatedAt: UPDATED, sources: SRC },
+  },
+  VN: {
+    code: "VN", name: "Vietnam", continent: "Asia", capital: "Hanoi",
+    currency: { code: "VND", symbol: "₫", name: "Vietnamese dong" }, languages: ["Vietnamese"], callingCode: "+84", drivingSide: "right",
+    taxes: {
+      incomeTax: { type: "progressive", topRate: 35 },
+      vat: { standard: 10, note: "VAT (GTGT)." }, corporateTax: 20,
+    },
+    immigration: {
+      summary: "No dedicated nomad visa; long-stay via a 90-day e-visa, temporary residence, or work permit.",
+      visaFreeNote: "45-day visa exemption for some passports; 90-day e-visa for most.",
+      visaTypes: [
+        { name: "90-day e-Visa", category: "tourist", maxStayDays: 90, note: "Multiple-entry; used de-facto by remote workers." },
+        { name: "Temporary Residence Card", category: "residence", note: "Via work, investment or family." },
+        { name: "Work Permit", category: "work", note: "Employer-sponsored." },
+      ],
+      residency: { permanentAfterYears: 3 },
+      digitalNomad: { available: false, note: "No dedicated visa; e-visa renewals are common." },
+    },
+    healthcare: { system: "mixed", note: "Public plus growing private/international clinics; insurance recommended.", expatInsuranceRecommended: true },
+    economy: { gdpPerCapitaUsd: 4347, avgNetSalaryUsdMonthly: 500, minWageUsdMonthly: 200 },
+    practical: { powerPlugs: ["A", "C", "F"], voltage: 220, emergencyNumber: "113", timezoneNote: "UTC+7" },
+    meta: { updatedAt: UPDATED, sources: SRC },
+  },
+  KR: {
+    code: "KR", name: "South Korea", continent: "Asia", capital: "Seoul",
+    currency: { code: "KRW", symbol: "₩", name: "South Korean won" }, languages: ["Korean"], callingCode: "+82", drivingSide: "right",
+    taxes: {
+      incomeTax: { type: "progressive", topRate: 45 },
+      vat: { standard: 10 }, corporateTax: 24,
+    },
+    immigration: {
+      summary: "Points-based E-7 skilled visa and F-2 residence tracks; a workation (F-1-D) nomad visa launched 2024.",
+      visaFreeNote: "K-ETA or visa-free short stays for many passports.",
+      visaTypes: [
+        { name: "Workation Visa (F-1-D)", category: "digital-nomad", maxStayDays: 730, note: "2024; remote workers, ~$65k/yr income." },
+        { name: "E-7 Skilled Worker", category: "work", note: "Employer-sponsored, occupation list." },
+        { name: "F-2 Residence", category: "residence" },
+      ],
+      residency: { permanentAfterYears: 5, citizenshipAfterYears: 5 },
+      digitalNomad: { available: true, minIncomeUsdMonthly: 5000, note: "F-1-D workation visa, 2024." },
+    },
+    healthcare: { system: "public", note: "Excellent universal NHIS; expats enrol after ~6 months.", expatInsuranceRecommended: false },
+    economy: { gdpPerCapitaUsd: 35563, avgNetSalaryUsdMonthly: 2500, minWageUsdMonthly: 1500 },
+    practical: { powerPlugs: ["C", "F"], voltage: 220, emergencyNumber: "112", timezoneNote: "UTC+9" },
+    meta: { updatedAt: UPDATED, sources: SRC },
+  },
 } satisfies Record<string, Country>;
 
 export type CountryCode = keyof typeof COUNTRIES;
@@ -770,6 +839,9 @@ const EXTRA: Record<string, Extra> = {
   HU: { gdp: 23320, life: 76.9, inflation: 3.7, lgbtq: "low" },
   GR: { gdp: 23565, life: 81.8, inflation: 2.6, lgbtq: "moderate" },
   EE: { gdp: 29824, life: 78.9, inflation: 3.5, lgbtq: "moderate" },
+  MY: { gdp: 12000, life: 76.3, inflation: 2.0, lgbtq: "low" },
+  VN: { gdp: 4347, life: 74.6, inflation: 3.6, lgbtq: "moderate" },
+  KR: { gdp: 35563, life: 83.6, inflation: 2.3, lgbtq: "low" },
 };
 for (const [code, ex] of Object.entries(EXTRA)) {
   const c = (COUNTRIES as Record<string, Country>)[code];

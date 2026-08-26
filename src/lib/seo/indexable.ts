@@ -21,7 +21,7 @@ export const MAJOR_CITY_SLUGS = new Set<string>([
   "madrid-es", "barcelona-es", "lisbon-pt", "rome-it", "zurich-ch",
   "vienna-at", "prague-cz",
   // Middle East / Asia
-  "dubai-ae", "singapore-sg", "tokyo-jp", "bangkok-th", "mumbai-in",
+  "dubai-ae", "singapore-sg", "tokyo-jp", "seoul-kr", "bangkok-th", "mumbai-in",
   // Oceania / Americas
   "toronto-ca", "vancouver-ca", "sydney-au", "melbourne-au",
   "mexico-city-mx", "sao-paulo-br", "buenos-aires-ar", "medellin-co",
@@ -31,7 +31,7 @@ export const MAJOR_CITY_SLUGS = new Set<string>([
 
 export const MAJOR_COUNTRY_CODES = new Set<string>([
   "US", "GB", "FR", "DE", "NL", "ES", "PT", "IT", "CH", "AT", "IE",
-  "AE", "SG", "JP", "TH", "IN", "ID",
+  "AE", "SG", "JP", "KR", "TH", "IN", "ID",
   "CA", "AU", "MX", "BR", "AR", "CO", "TR",
 ]);
 
