@@ -86,6 +86,7 @@ export type Dictionary = {
     perMonth: string;
     overviewLink: string; // {city}
     moreFrom: string; // {city}
+    flightsCta: string; // {a} {b}
     disclaimer: string;
   };
   city: {

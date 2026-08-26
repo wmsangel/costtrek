@@ -87,6 +87,7 @@
     "perMonth": "/mo",
     "overviewLink": "{city} overview →",
     "moreFrom": "More comparisons from {city}",
+    "flightsCta": "Flying between {a} and {b}? Find cheap flights",
     "disclaimer": "Estimates use approximate cost-of-living indices (US average = 100) and are for general guidance only."
   },
   "city": {

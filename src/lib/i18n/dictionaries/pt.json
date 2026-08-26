@@ -87,6 +87,7 @@
     "perMonth": "/mês",
     "overviewLink": "Visão geral de {city} →",
     "moreFrom": "Mais comparações a partir de {city}",
+    "flightsCta": "Um voo entre {a} e {b}? Encontre passagens baratas",
     "disclaimer": "As estimativas usam índices aproximados de custo de vida (média dos EUA = 100) e servem apenas de orientação geral."
   },
   "city": {

@@ -221,6 +221,30 @@ export default async function ComparePage({
         labelB={labelB}
       />
 
+      {/* Flights affiliate CTA (sponsored, worldwide) */}
+      <a
+        href="https://xyowz.com/g/n2q2nolvw6a27dee2ccd6d2e807f50/"
+        rel="sponsored nofollow noopener"
+        target="_blank"
+        className="mt-12 flex items-center justify-between gap-4 rounded-2xl bg-[var(--accent)] px-5 sm:px-6 py-4 sm:py-5 text-white transition hover:brightness-110"
+      >
+        <span className="flex flex-col gap-0.5">
+          <span className="display font-black text-base sm:text-lg leading-tight">
+            <span aria-hidden="true">✈ </span>
+            {fill(dict.compare.flightsCta, { a: labelA, b: labelB })}
+          </span>
+          <span className="text-[10px] uppercase tracking-wider font-bold text-white/70">
+            {dict.calculators.sponsoredBadge}
+          </span>
+        </span>
+        <span
+          aria-hidden="true"
+          className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white text-lg font-bold text-[#171310]"
+        >
+          ↗
+        </span>
+      </a>
+
       <Faq
         title={dict.faq.title}
         items={(() => {
