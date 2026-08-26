@@ -1,5 +1,5 @@
 import type { City } from "@/lib/cities";
-import type { Country, CityProfile } from "@/lib/data";
+import type { Country, CityProfile, ReferralLink } from "@/lib/data";
 import { getCountry, getCityProfile, translateCountry } from "@/lib/data";
 import { PROFILE_TR } from "@/lib/data/cityProfiles-i18n";
 import { type Dictionary, fill } from "@/lib/i18n/dictionaries";
@@ -308,12 +308,26 @@ export default function CityProfileSections({
         </section>
       )}
 
-      {/* Relocation / referral links */}
-      {profile?.referralLinks &&
-        profile.referralLinks.length > 0 &&
-        (() => {
-          const live = profile.referralLinks.filter((r) => r.url);
-          const reserved = profile.referralLinks.filter((r) => !r.url);
+      {/* Relocation / referral links (profile slots + geo-scoped partners) */}
+      {(() => {
+          // Way.com is US & Canada only — auto super-app (airport parking,
+          // car washes, car insurance). Only surface it where it's usable.
+          const geo: ReferralLink[] =
+            city.countryCode === "US" || city.countryCode === "CA"
+              ? [
+                  {
+                    type: "other",
+                    provider: "Way.com",
+                    url: "https://yyczo.com/g/vln7ctwgqja27dee2ccd12f7a14e01/",
+                    affiliate: true,
+                    note: "Airport parking, car washes & car insurance",
+                  },
+                ]
+              : [];
+          const referralLinks = [...(profile?.referralLinks ?? []), ...geo];
+          if (referralLinks.length === 0) return null;
+          const live = referralLinks.filter((r) => r.url);
+          const reserved = referralLinks.filter((r) => !r.url);
           return (
             <section className="mt-10 coral-band p-6 sm:p-8">
               <h2 className="display text-2xl font-black">
