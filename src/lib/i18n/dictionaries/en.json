@@ -25,6 +25,14 @@
     "titlePost": " there.",
     "subtitle": "Compare the cost of living between cities worldwide and find the salary you'd need to keep your standard of living after a move.",
     "tagline": "{n} cities · 5 languages",
+    "stats": { "cities": "Cities", "countries": "Countries", "rankings": "Rankings", "languages": "Languages" },
+    "why": {
+      "title": "Why CostTrek",
+      "lead": "Moving city or country is one of the biggest money decisions you will make — and most cost-of-living figures online are guesses. CostTrek turns them into an honest, like-for-like comparison of rent, taxes, salaries and everyday life, so you can see what a move really means before you commit.",
+      "p1t": "Real, sourced data", "p1d": "US costs anchored to BEA and Census, economies from the World Bank — not scraped guesses.",
+      "p2t": "Salary equivalence", "p2d": "See the income you would need elsewhere to keep the same standard of living.",
+      "p3t": "For movers and nomads", "p3d": "Taxes, visas, safety, climate and quality of life across every city, in five languages."
+    },
     "from": "From",
     "to": "To",
     "searchPlaceholder": "Search a city…",

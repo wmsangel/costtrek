@@ -25,6 +25,14 @@
     "titlePost": " ist.",
     "subtitle": "Vergleiche die Lebenshaltungskosten von Städten weltweit und finde heraus, welches Gehalt du brauchst, um nach einem Umzug deinen Lebensstandard zu halten.",
     "tagline": "{n} Städte · 5 Sprachen",
+    "stats": { "cities": "Städte", "countries": "Länder", "rankings": "Ranglisten", "languages": "Sprachen" },
+    "why": {
+      "title": "Warum CostTrek",
+      "lead": "Ein Umzug in eine andere Stadt oder ein anderes Land ist eine der größten Geldentscheidungen überhaupt — und die meisten Lebenshaltungskosten-Angaben im Netz sind bloß geschätzt. CostTrek macht daraus einen ehrlichen, direkten Vergleich von Miete, Steuern, Gehältern und Alltag, damit du vor der Entscheidung siehst, was ein Umzug wirklich bedeutet.",
+      "p1t": "Echte, belegte Daten", "p1d": "US-Kosten verankert an BEA und Census, Wirtschaftsdaten von der Weltbank — keine zusammengescrapten Schätzungen.",
+      "p2t": "Gehaltsäquivalenz", "p2d": "Sieh, welches Einkommen du anderswo brauchst, um denselben Lebensstandard zu halten.",
+      "p3t": "Für Umziehende und Nomaden", "p3d": "Steuern, Visa, Sicherheit, Klima und Lebensqualität für jede Stadt, in fünf Sprachen."
+    },
     "from": "Von",
     "to": "Nach",
     "searchPlaceholder": "Stadt suchen…",

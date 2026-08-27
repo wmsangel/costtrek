@@ -25,6 +25,13 @@ export type Dictionary = {
     subtitle: string;
     tagline: string; // {n}
     stats: { cities: string; countries: string; rankings: string; languages: string };
+    why: {
+      title: string;
+      lead: string;
+      p1t: string; p1d: string;
+      p2t: string; p2d: string;
+      p3t: string; p3d: string;
+    };
     from: string;
     to: string;
     searchPlaceholder: string;

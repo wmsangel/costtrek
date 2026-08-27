@@ -25,6 +25,14 @@
     "titlePost": " allí.",
     "subtitle": "Compara el coste de vida entre ciudades de todo el mundo y averigua el salario que necesitarías para mantener tu nivel de vida tras una mudanza.",
     "tagline": "{n} ciudades · 5 idiomas",
+    "stats": { "cities": "Ciudades", "countries": "Países", "rankings": "Rankings", "languages": "Idiomas" },
+    "why": {
+      "title": "Por qué CostTrek",
+      "lead": "Cambiar de ciudad o de país es una de las mayores decisiones económicas que tomarás — y la mayoría de las cifras de coste de vida en internet son suposiciones. CostTrek las convierte en una comparación honesta y equivalente de alquiler, impuestos, salarios y vida diaria, para que veas lo que una mudanza significa de verdad antes de decidir.",
+      "p1t": "Datos reales y con fuentes", "p1d": "Costes de EE. UU. anclados a BEA y Census, economías del Banco Mundial — no suposiciones extraídas.",
+      "p2t": "Equivalencia salarial", "p2d": "Descubre el sueldo que necesitarías en otro lugar para mantener el mismo nivel de vida.",
+      "p3t": "Para quienes se mudan y nómadas", "p3d": "Impuestos, visados, seguridad, clima y calidad de vida en cada ciudad, en cinco idiomas."
+    },
     "from": "Desde",
     "to": "Hasta",
     "searchPlaceholder": "Buscar una ciudad…",

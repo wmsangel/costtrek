@@ -359,7 +359,55 @@ export default function CityProfileSections({
               affiliate: true,
               note: "Rent a local car — no big-chain markups",
             });
+          } else {
+            // Economybookings — worldwide car rental fallback elsewhere.
+            geo.push({
+              type: "other",
+              provider: "Economybookings",
+              url: "https://economybookings.tpm.li/S2nY6rl8",
+              affiliate: true,
+              note: "Compare worldwide car rental",
+            });
           }
+          // BikesBooking — scooter/motorbike rental in scooter-first cities.
+          if (["ID", "VN", "TH"].includes(city.countryCode)) {
+            geo.push({
+              type: "other",
+              provider: "BikesBooking",
+              url: "https://bikesbooking.tpm.li/N6lAuW1e",
+              affiliate: true,
+              note: "Rent a scooter or motorbike",
+            });
+          }
+          // Airport transfers — one per city. Istanbul already has AvitoVIP;
+          // Welcome Pickups for its strong European markets, Kiwitaxi elsewhere.
+          if (city.countryCode !== "TR") {
+            if (["ES", "IT", "GR", "PT", "FR"].includes(city.countryCode)) {
+              geo.push({
+                type: "other",
+                provider: "Welcome Pickups",
+                url: "https://tpm.li/bFe65KrG",
+                affiliate: true,
+                note: "Airport pickup — English-speaking driver",
+              });
+            } else {
+              geo.push({
+                type: "other",
+                provider: "Kiwitaxi",
+                url: "https://kiwitaxi.tpm.li/IPwPgM2i",
+                affiliate: true,
+                note: "Book an airport transfer",
+              });
+            }
+          }
+          // Klook — tours & things to do (worldwide, Asia-strong).
+          geo.push({
+            type: "other",
+            provider: "Klook",
+            url: "https://klook.tpm.li/fmtzsvTl",
+            affiliate: true,
+            note: "Tours & things to do",
+          });
           const referralLinks = [...(profile?.referralLinks ?? []), ...geo];
           if (referralLinks.length === 0) return null;
           const live = referralLinks.filter((r) => r.url);

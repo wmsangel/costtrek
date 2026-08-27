@@ -12,7 +12,7 @@ import {
   overallIndex,
 } from "@/lib/cities";
 import { isLocale, type Locale } from "@/lib/i18n/config";
-import { fill, getDictionary } from "@/lib/i18n/dictionaries";
+import { getDictionary } from "@/lib/i18n/dictionaries";
 import { localizedCityLabel, localizedCityName } from "@/lib/i18n/places";
 import { COLLECTIONS, COLLECTION_KEYS } from "@/lib/collections";
 import { GUIDES, localizedGuide } from "@/content/guides";
@@ -66,11 +66,17 @@ export default async function Home({
   const l = locale as Locale;
   const dict = await getDictionary(l);
 
-  const features: [string, string][] = [
-    ["💸", dict.data.groups.cost],
-    ["🧾", dict.data.groups.taxes],
-    ["💻", dict.data.groups.work],
-    ["🌆", dict.data.groups.quality],
+  const countryCount = new Set(CITIES.map((c) => c.countryCode)).size;
+  const whyPoints: [string, string, string][] = [
+    ["📊", dict.home.why.p1t, dict.home.why.p1d],
+    ["⚖️", dict.home.why.p2t, dict.home.why.p2d],
+    ["🌍", dict.home.why.p3t, dict.home.why.p3d],
+  ];
+  const stats: [number, string][] = [
+    [CITIES.length, dict.home.stats.cities],
+    [countryCount, dict.home.stats.countries],
+    [COLLECTION_KEYS.length, dict.home.stats.rankings],
+    [5, dict.home.stats.languages],
   ];
 
   const CONTINENTS = [
@@ -86,25 +92,34 @@ export default async function Home({
   })).filter((g) => g.cities.length > 0);
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-8 sm:py-12">
+    <div className="mx-auto max-w-5xl px-4 py-8 sm:py-12">
       <JsonLd data={websiteJsonLd(l)} />
 
       {/* Hero */}
-      <section className="cover px-6 sm:px-10 py-11 sm:py-14">
+      <section className="cover px-6 sm:px-12 py-12 sm:py-16">
         <Mountains className="cover-mts text-[var(--mustard-ink)]" />
         <div className="relative">
           <p className="kicker">✦ {dict.home.eyebrow}</p>
-          <h1 className="display text-[2.6rem] sm:text-6xl font-black leading-[0.95] mt-3 max-w-[15ch]">
+          <h1 className="display font-black leading-[0.92] mt-3 max-w-[16ch] text-[clamp(2.9rem,6vw,5rem)]">
             {dict.home.titlePre}
             <span className="gradient-text">{dict.home.titleEmph}</span>
             {dict.home.titlePost}
           </h1>
-          <p className="mt-4 text-lg font-medium max-w-[44ch]">
+          <p className="mt-4 text-lg font-medium max-w-[46ch]">
             {dict.home.subtitle}
           </p>
-          <p className="mt-5 inline-flex items-center gap-2 rounded-full bg-[var(--mustard-ink)] text-[var(--mustard)] text-sm font-bold px-3 py-1.5">
-            {fill(dict.home.tagline, { n: CITIES.length })}
-          </p>
+          <dl className="mt-8 flex flex-wrap gap-x-9 gap-y-3">
+            {stats.map(([n, label]) => (
+              <div key={label}>
+                <dd className="display font-black text-3xl sm:text-4xl leading-none tabular-nums">
+                  {n}
+                </dd>
+                <dt className="text-[11px] font-bold uppercase tracking-wider mt-1.5 opacity-70">
+                  {label}
+                </dt>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 
@@ -121,18 +136,30 @@ export default async function Home({
         />
       </div>
 
-      {/* What you compare */}
-      <section className="mt-12">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-          {features.map(([icon, label]) => (
-            <div
-              key={label}
-              className="card rounded-xl p-4 flex items-center gap-3"
-            >
-              <span className="text-2xl leading-none">{icon}</span>
-              <span className="font-semibold text-sm leading-tight">{label}</span>
-            </div>
-          ))}
+      {/* Why CostTrek */}
+      <section className="mt-14">
+        <div className="card rounded-2xl p-7 sm:p-9 grid md:grid-cols-[1.05fr_1fr] gap-8 md:gap-10 items-center">
+          <div>
+            <h2 className="mag-h2 mb-3">{dict.home.why.title}</h2>
+            <p className="text-lg leading-relaxed font-medium max-w-[46ch]">
+              {dict.home.why.lead}
+            </p>
+          </div>
+          <div className="grid gap-4">
+            {whyPoints.map(([icon, title, desc]) => (
+              <div key={title} className="flex gap-3.5 items-start">
+                <span className="grid place-items-center w-10 h-10 rounded-xl bg-[var(--accent-soft)] text-[var(--accent)] text-lg shrink-0">
+                  {icon}
+                </span>
+                <div>
+                  <div className="display font-bold text-[15px] leading-tight">
+                    {title}
+                  </div>
+                  <div className="text-sm text-[var(--muted)] mt-0.5">{desc}</div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

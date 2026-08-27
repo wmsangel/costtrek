@@ -25,6 +25,14 @@
     "titlePost": ".",
     "subtitle": "Comparez le coût de la vie entre les villes du monde entier et trouvez le salaire dont vous auriez besoin pour conserver votre niveau de vie après un déménagement.",
     "tagline": "{n} villes · 5 langues",
+    "stats": { "cities": "Villes", "countries": "Pays", "rankings": "Classements", "languages": "Langues" },
+    "why": {
+      "title": "Pourquoi CostTrek",
+      "lead": "Changer de ville ou de pays est l’une des plus grandes décisions financières de votre vie — et la plupart des chiffres du coût de la vie en ligne ne sont que des estimations. CostTrek en fait une comparaison honnête et équitable du loyer, des impôts, des salaires et du quotidien, pour voir ce qu’un déménagement signifie vraiment avant de vous lancer.",
+      "p1t": "Des données réelles et sourcées", "p1d": "Coûts américains ancrés au BEA et au Census, économies de la Banque mondiale — pas des estimations grattées.",
+      "p2t": "Équivalence de salaire", "p2d": "Voyez le revenu qu’il vous faudrait ailleurs pour garder le même niveau de vie.",
+      "p3t": "Pour ceux qui déménagent et les nomades", "p3d": "Impôts, visas, sécurité, climat et qualité de vie pour chaque ville, en cinq langues."
+    },
     "from": "De",
     "to": "À",
     "searchPlaceholder": "Rechercher une ville…",
