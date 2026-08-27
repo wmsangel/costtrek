@@ -345,6 +345,21 @@ export default function CityProfileSections({
               note: "City-centre hotels — book your stay",
             });
           }
+          // Localrent — local car rental, strong in tourist/expat markets
+          // (complements Way.com, which covers US/CA).
+          const LOCALRENT_COUNTRIES = new Set([
+            "GE", "TR", "AE", "TH", "ID", "VN", "MY",
+            "GR", "ES", "IT", "PT", "MX", "CO",
+          ]);
+          if (LOCALRENT_COUNTRIES.has(city.countryCode)) {
+            geo.push({
+              type: "other",
+              provider: "Localrent",
+              url: "https://localrent.tpm.li/Yh75GbWb",
+              affiliate: true,
+              note: "Rent a local car — no big-chain markups",
+            });
+          }
           const referralLinks = [...(profile?.referralLinks ?? []), ...geo];
           if (referralLinks.length === 0) return null;
           const live = referralLinks.filter((r) => r.url);

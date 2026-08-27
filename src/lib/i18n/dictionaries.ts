@@ -24,6 +24,7 @@ export type Dictionary = {
     titlePost: string;
     subtitle: string;
     tagline: string; // {n}
+    stats: { cities: string; countries: string; rankings: string; languages: string };
     from: string;
     to: string;
     searchPlaceholder: string;
