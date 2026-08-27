@@ -17,7 +17,7 @@ import {
   localizedLocation,
 } from "@/lib/i18n/places";
 import { pageMetadata } from "@/lib/seo/site";
-import { breadcrumbJsonLd, cityJsonLd } from "@/lib/seo/jsonld";
+import { breadcrumbJsonLd, cityJsonLd, datasetJsonLd } from "@/lib/seo/jsonld";
 import { getCityProfile, getCountry, countrySlug } from "@/lib/data";
 import { localizedCountry } from "@/lib/i18n/places";
 import CityProfileSections from "@/components/CityProfileSections";
@@ -101,10 +101,32 @@ export default async function CityPage({
             index: roundedIndex,
             lat: profile?.geo?.lat,
             lng: profile?.geo?.lng,
+            rentUsd: c.medianRent1br,
+            safetyIndex: profile?.qualityOfLife?.safetyIndex,
             description: fill(dict.city.subtitle, {
               location: localizedLocation(l, c),
               index: roundedIndex,
             }),
+          }),
+          datasetJsonLd({
+            locale: l,
+            name: fill(dict.meta.cityTitle, { city: localizedCityName(l, c) }),
+            description: fill(dict.city.subtitle, {
+              location: localizedLocation(l, c),
+              index: roundedIndex,
+            }),
+            path,
+            measured: [
+              "Cost of living index",
+              "Median rent",
+              "Food prices",
+              "Transport costs",
+              "Utilities",
+              "Income tax rate",
+              "Safety index",
+              "Internet speed",
+              "Healthcare index",
+            ],
           }),
         ]}
       />

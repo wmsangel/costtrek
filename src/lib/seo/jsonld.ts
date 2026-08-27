@@ -84,7 +84,7 @@ export function articleJsonLd(opts: {
   };
 }
 
-/** Place / City with its cost-of-living index as an additionalProperty. */
+/** Place / City with cost-of-living metrics as additionalProperty values. */
 export function cityJsonLd(opts: {
   locale: Locale;
   name: string;
@@ -94,12 +94,41 @@ export function cityJsonLd(opts: {
   lat?: number;
   lng?: number;
   description: string;
+  rentUsd?: number;
+  safetyIndex?: number;
 }) {
+  const props = [
+    {
+      "@type": "PropertyValue",
+      name: "Cost of living index (US average = 100)",
+      value: opts.index,
+    },
+    ...(opts.rentUsd != null
+      ? [
+          {
+            "@type": "PropertyValue",
+            name: "Median 1-bedroom rent (USD/month)",
+            value: opts.rentUsd,
+            unitText: "USD",
+          },
+        ]
+      : []),
+    ...(opts.safetyIndex != null
+      ? [
+          {
+            "@type": "PropertyValue",
+            name: "Safety index (0–100)",
+            value: opts.safetyIndex,
+          },
+        ]
+      : []),
+  ];
   return {
     "@context": "https://schema.org",
     "@type": "City",
     name: opts.name,
     url: absUrl(opts.locale, opts.path),
+    inLanguage: opts.locale,
     description: opts.description,
     containedInPlace: { "@type": "Country", name: opts.country },
     ...(opts.lat != null && opts.lng != null
@@ -111,10 +140,27 @@ export function cityJsonLd(opts: {
           },
         }
       : {}),
-    additionalProperty: {
-      "@type": "PropertyValue",
-      name: "Cost of living index (US average = 100)",
-      value: opts.index,
-    },
+    additionalProperty: props,
+  };
+}
+
+/** Dataset — the cost-of-living statistics on a page (Google Dataset Search). */
+export function datasetJsonLd(opts: {
+  locale: Locale;
+  name: string;
+  description: string;
+  path: string;
+  measured: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    name: opts.name,
+    description: opts.description,
+    url: absUrl(opts.locale, opts.path),
+    inLanguage: opts.locale,
+    isAccessibleForFree: true,
+    creator: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+    variableMeasured: opts.measured,
   };
 }

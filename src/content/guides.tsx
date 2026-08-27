@@ -363,6 +363,27 @@ export const GUIDES: Guide[] = [
           fine print on renewals and on whether time spent counts before you build
           long-term plans around it.
         </p>
+        <h2>Where to look right now</h2>
+        <p>
+          The map changes constantly, but a handful of programs stand out. On the
+          more affordable, lower-threshold end sit{" "}
+          <strong>Portugal&apos;s D8</strong>,{" "}
+          <strong>Spain&apos;s digital-nomad visa</strong> (with a Beckham-law tax
+          option), <strong>Greece</strong> (a 50% income-tax break for new
+          residents), <strong>Georgia</strong> (a full year visa-free plus a 1%
+          small-business regime) and <strong>Malaysia&apos;s DE Rantau</strong>{" "}
+          pass, along with Latin-American routes in{" "}
+          <strong>Brazil</strong> and <strong>Colombia</strong>. At the
+          higher-income end are <strong>Estonia</strong>, which pioneered the
+          format, the <strong>UAE</strong>&apos;s remote-work visa and{" "}
+          <strong>South Korea</strong>&apos;s new workation visa.
+        </p>
+        <p>
+          Check the exact income floor, duration and tax treatment on each{" "}
+          <Link href={`/${l}/countries`}>country page</Link> before applying — the
+          numbers move, and a scheme that fits a solo freelancer may not clear the
+          bar for a couple.
+        </p>
         <h2>The tax catch nobody advertises</h2>
         <p>
           A visa is permission to stay; it is not a promise you won&apos;t be

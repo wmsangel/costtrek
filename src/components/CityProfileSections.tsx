@@ -50,6 +50,8 @@ export default function CityProfileSections({
   const tr = PROFILE_TR[locale]?.[city.slug];
   const nickname = tr?.nickname ?? profile?.nickname;
   const summary = tr?.summary ?? profile?.summary;
+  // Show long-form insights once localized; English uses the inline source.
+  const insights = tr?.insights ?? (locale === "en" ? profile?.insights : undefined);
 
   return (
     <>
@@ -66,6 +68,13 @@ export default function CityProfileSections({
             <p className="text-[var(--foreground)] max-w-[62ch] leading-relaxed">
               {summary}
             </p>
+          )}
+          {insights && insights.length > 0 && (
+            <div className="mt-4 space-y-3 max-w-[62ch] text-[var(--foreground)] leading-relaxed">
+              {insights.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </div>
           )}
           {country && (
             <dl className="mt-4 flex flex-wrap gap-x-8 gap-y-2 text-sm">
@@ -410,7 +419,11 @@ export default function CityProfileSections({
       {/* Sources */}
       {(profile?.meta || country?.meta) && (
         <p className="mt-10 text-xs text-[var(--muted)]">
-          {t.updated}: {(profile?.meta ?? country?.meta)?.updatedAt} · {t.sources}:{" "}
+          {t.updated}:{" "}
+          <time dateTime={(profile?.meta ?? country?.meta)?.updatedAt}>
+            {(profile?.meta ?? country?.meta)?.updatedAt}
+          </time>{" "}
+          · {t.sources}:{" "}
           {[...(profile?.meta?.sources ?? []), ...(country?.meta.sources ?? [])]
             .map((s) => s.label)
             .join(" · ")}

@@ -6,7 +6,7 @@ import pt from "./pt";
 
 /** Translated city text (summary/nickname) per locale, keyed by city slug.
  *  English lives inline in cityProfiles.ts; a missing entry falls back to it. */
-export type CityText = { summary?: string; nickname?: string };
+export type CityText = { summary?: string; nickname?: string; insights?: string[] };
 
 export const PROFILE_TR: Partial<Record<Locale, Record<string, CityText>>> = {
   de,

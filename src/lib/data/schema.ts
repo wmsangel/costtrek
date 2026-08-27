@@ -166,6 +166,8 @@ export type CityProfile = {
   founded?: number;
   nickname?: string;
   summary?: string;
+  /** Long-form original prose (paragraphs) — depth for SEO on top cities. */
+  insights?: string[];
 
   prices?: PriceItem[];
 

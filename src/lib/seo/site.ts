@@ -79,6 +79,9 @@ export function pageMetadata(opts: {
   ogImage?: { title: string; sub?: string; stat?: string; tag?: string };
   /** Keep the page out of the index (still followed) — for thin long-tail. */
   noindex?: boolean;
+  /** Article dates (ISO) — enrich the OpenGraph article card. */
+  publishedTime?: string;
+  modifiedTime?: string;
 }): Metadata {
   const { locale, title, description, path = "", ogType = "website" } = opts;
   const url = absUrl(locale, path);
@@ -104,6 +107,13 @@ export function pageMetadata(opts: {
         .filter((l) => l !== locale)
         .map((l) => OG_LOCALE[l]),
       images: [{ url: image, width: 1200, height: 630, alt: title }],
+      ...(ogType === "article" && opts.publishedTime
+        ? {
+            publishedTime: opts.publishedTime,
+            modifiedTime: opts.modifiedTime ?? opts.publishedTime,
+            authors: [SITE_NAME],
+          }
+        : {}),
     },
     twitter: {
       card: "summary_large_image",

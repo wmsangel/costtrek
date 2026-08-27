@@ -558,6 +558,11 @@ export const CITY_PROFILES = {
     slug: "london-uk", geo: { lat: 51.51, lng: -0.13, elevationM: 11 }, timezoneOffset: 0, isCapital: true,
     nickname: "The Big Smoke",
     summary: "Europe's financial capital — unmatched jobs, culture and connections, paid for with some of the highest rents on the continent.",
+    insights: [
+      "London's cost of living is dominated by one number: rent. As Europe's financial capital it commands some of the continent's highest housing costs, and a one-bedroom in a central borough can swallow well over half of a median local salary. What you buy in return is access — to jobs, capital, culture and global connections that almost no other city can match.",
+      "Transport is the next big line item. The Tube is extensive but among Europe's priciest, and a monthly zone 1–2 travelcard costs more than public transport in most other capitals. Everyday spending — groceries, pubs, eating out — is high but not extreme; the real budget-killer is almost always the flat, which is why so many residents share houses or live further out along the commuter rail lines.",
+      "Salaries in finance, tech and law are high enough to make the maths work for many professionals, and the NHS removes the healthcare costs that weigh heavily on, say, a comparable US city. For expats, London's diversity and English-speaking familiarity ease the landing — provided you arrive with realistic expectations about how much of your pay the rent will take.",
+    ],
     prices: [
       { key: "rent1brCentre", label: "1-bed, city centre", group: "rent", amountUsd: 2600, unit: "/mo" },
       { key: "rent1brOutside", label: "1-bed, outside centre", group: "rent", amountUsd: 1850, unit: "/mo" },
@@ -688,6 +693,11 @@ export const CITY_PROFILES = {
     slug: "dubai-ae", geo: { lat: 25.2, lng: 55.27, elevationM: 5 }, timezoneOffset: 4,
     nickname: "City of Gold",
     summary: "Zero income tax and a big expat scene draw remote workers and founders — offset by pricey rent, car-dependence and brutal summers.",
+    insights: [
+      "Dubai's headline appeal is simple: no personal income tax. For high earners and founders, keeping 100% of a salary changes the cost-of-living calculation entirely. But the emirate itself is not cheap — rents in popular areas like Dubai Marina or Downtown are high and are typically paid in one to four large cheques a year, which demands real cash-flow planning from newcomers.",
+      "Daily costs swing wildly by choice. You can eat at a neighbourhood shawarma counter for a few dirhams or at a weekend brunch that costs more than a week's groceries elsewhere. Alcohol is heavily taxed, private schooling is expensive, and healthcare runs on private insurance. Public transport is modern but limited in reach, so the city is built around cars and most residents budget for one.",
+      "For remote workers, the mix of zero income tax, an expat majority, reliable infrastructure and year-round sun is a powerful draw. The counterweights are brutal summer heat that pushes life indoors, high housing costs, and a lifestyle that quietly encourages spending. Dubai rewards those who come to earn and save aggressively far more than it does anyone on a tight nomad budget.",
+    ],
     prices: [
       { key: "rent1brCentre", label: "1-bed, city centre", group: "rent", amountUsd: 2000, unit: "/mo" },
       { key: "rent1brOutside", label: "1-bed, outside centre", group: "rent", amountUsd: 1300, unit: "/mo" },
@@ -710,6 +720,11 @@ export const CITY_PROFILES = {
     slug: "singapore-sg", geo: { lat: 1.35, lng: 103.82, elevationM: 15 }, timezoneOffset: 8, isCapital: true,
     nickname: "The Lion City",
     summary: "Asia's safest, most efficient business hub — low taxes and world-class infrastructure, with rent and cars among the world's priciest.",
+    insights: [
+      "Singapore consistently ranks among the world's most expensive cities, and housing is the single biggest reason. A one-bedroom condo in a central district routinely rents for S$3,000–4,500 a month, while a room in an HDB flat — the public housing where about 80% of residents live — costs a fraction of that. Cars are deliberately priced out of reach through the Certificate of Entitlement, which can cost more than the vehicle itself, so almost everyone relies on the MRT: clean, cheap and covering the whole island.",
+      "Where Singapore surprises newcomers is food. Hawker centres serve full, genuinely good meals for S$4–6, which keeps everyday eating costs low even as rent climbs. Groceries, alcohol and imported goods, by contrast, are heavily taxed and expensive. The result is a city where fixed costs — rent, healthcare, international schooling — are very high, but your day-to-day spending can stay reasonable if you live and eat like a local.",
+      "For remote workers and expats the draw is a low-tax, English-speaking, hyper-efficient base in the heart of Asia, with world-class healthcare and near-zero street crime. The counterweights are the rent, the year-round tropical humidity, and a fast, competitive culture. Salaries in finance and tech are high enough to absorb the costs; on a foreign remote income you need to budget carefully, because Singapore rewards high earners far more than it does shoestring digital nomads.",
+    ],
     prices: [
       { key: "rent1brCentre", label: "1-bed, city centre", group: "rent", amountUsd: 2600, unit: "/mo" },
       { key: "rent1brOutside", label: "1-bed, outside centre", group: "rent", amountUsd: 1900, unit: "/mo" },
@@ -732,6 +747,11 @@ export const CITY_PROFILES = {
     slug: "tokyo-jp", geo: { lat: 35.68, lng: 139.69, elevationM: 40 }, timezoneOffset: 9, isCapital: true,
     nickname: "The Eastern Capital",
     summary: "Astonishingly safe, clean and well-connected for a megacity — and, thanks to a weak yen, cheaper than most Western capitals right now.",
+    insights: [
+      "Tokyo's reputation for being unaffordable no longer matches reality. A weak yen has made the world's largest metro area cheaper than most Western capitals for anyone earning in dollars or euros. One-bedroom apartments in central wards rent for well below London or New York, and Japan's famously low inflation has kept everyday prices flat for years while wages elsewhere chased rising costs.",
+      "The city's efficiency does much of the heavy lifting. The train and subway network is so comprehensive that almost nobody owns a car, convenience stores sell genuinely good meals for a few dollars, and a bowl of ramen or a set lunch rarely breaks the bank. Utilities and mobile plans are the line items that feel pricey by Asian standards; rent is reasonable, and eating out is a bargain.",
+      "For newcomers the real costs are practical rather than purely financial: key money and guarantor requirements when signing a lease, a language barrier in day-to-day bureaucracy, and long hours in traditional companies. But for remote workers and expats who can navigate that, Tokyo offers world-class safety, cleanliness and transport at a price that, right now, is a genuine bargain.",
+    ],
     prices: [
       { key: "rent1brCentre", label: "1-bed, city centre", group: "rent", amountUsd: 1300, unit: "/mo" },
       { key: "rent1brOutside", label: "1-bed, outside centre", group: "rent", amountUsd: 900, unit: "/mo" },
@@ -1311,6 +1331,11 @@ export const CITY_PROFILES = {
   "lisbon-pt": {
     slug: "lisbon-pt", geo: { lat: 38.72, lng: -9.14, elevationM: 2 }, timezoneOffset: 0, isCapital: true,
     summary: "Sunny, hilly and the poster child for the digital-nomad wave — locals feel priced out as rents climb.",
+    insights: [
+      "Lisbon became the poster child for the digital-nomad wave, and its cost of living now reflects that shift. Rents in central neighbourhoods have climbed sharply as remote workers and short-term lets compete with locals for a limited supply of flats. What was once one of Western Europe's great bargains is now merely mid-priced — still cheaper than Paris, London or Amsterdam, but the gap has narrowed fast.",
+      "Beyond rent, Lisbon still delivers value. Eating out is affordable by Western-European standards, the mild climate keeps heating bills low, and the city is compact and walkable. Portugal's D8 digital-nomad and D7 passive-income visas, together with tax incentives for some qualifying newcomers, add a practical pull for remote workers weighing a move.",
+      "The trade-offs are a tight housing market, local salaries that lag well behind the rising rents, and a growing sense that the nomad boom has priced out the very affordability that drew people in. For someone earning abroad and spending in Lisbon, though, the sums still work: sunshine, safety and a noticeably lower burn rate than most of Western Europe.",
+    ],
     prices: [
       { key: "rent1brCentre", label: "1-bed, city centre", group: "rent", amountUsd: 1300, unit: "/mo" },
       { key: "rent1brOutside", label: "1-bed, outside centre", group: "rent", amountUsd: 950, unit: "/mo" },
@@ -1410,6 +1435,11 @@ export const CITY_PROFILES = {
     slug: "bangkok-th", geo: { lat: 13.76, lng: 100.5, elevationM: 2 }, timezoneOffset: 7, isCapital: true,
     nickname: "City of Angels",
     summary: "A nomad favourite — incredible cheap food, modern transit and low rents, wrapped in heat and traffic.",
+    insights: [
+      "Bangkok offers big-city life at a fraction of Western prices, which is why it has been a nomad and expat hub for decades. Modern condos with pools and gyms rent for a fraction of what comparable places cost in Europe or the US, and the street food — some of the best in the world — keeps daily eating costs remarkably low without ever feeling like a compromise.",
+      "The city runs on cheap, plentiful options. The BTS Skytrain and MRT cover the core, motorbike taxis and app-based rides fill the gaps, and fresh markets undercut supermarkets on almost everything. Costs climb toward Western levels only where you choose Western things — imported groceries, international schools, hotel brunches — so your monthly total depends heavily on how local you're willing to live.",
+      "For remote workers, Thailand's newer long-stay and destination visas have made Bangkok easier to base in legally, adding to the appeal of low costs, excellent-value private healthcare and a huge established expat community. The trade-offs are the heat and humidity, notorious traffic, and the dry-season air pollution — plus the visa admin that inevitably comes with a longer stay.",
+    ],
     prices: [
       { key: "rent1brCentre", label: "1-bed, city centre", group: "rent", amountUsd: 600, unit: "/mo" },
       { key: "rent1brOutside", label: "1-bed, outside centre", group: "rent", amountUsd: 400, unit: "/mo" },

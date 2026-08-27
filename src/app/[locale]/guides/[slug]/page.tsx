@@ -32,6 +32,7 @@ export async function generateMetadata({
     title: c.title,
     description: c.excerpt,
     ogType: "article",
+    publishedTime: guide.date,
     ogImage: { title: c.title, sub: SITE_NAME, tag: "Guide" },
   });
 }
