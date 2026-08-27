@@ -408,6 +408,58 @@ export default function CityProfileSections({
             affiliate: true,
             note: "Tours & things to do",
           });
+          // Tiqets — museums & attraction tickets (Europe-strong; complements Klook).
+          const TIQETS_COUNTRIES = new Set([
+            "GB", "FR", "ES", "IT", "PT", "DE", "AT", "CZ",
+            "HU", "GR", "NL", "EE", "IE", "BE", "PL", "TR", "AE",
+          ]);
+          if (TIQETS_COUNTRIES.has(city.countryCode)) {
+            geo.push({
+              type: "other",
+              provider: "Tiqets",
+              url: "https://tiqets.tpm.li/rpRB7oEZ",
+              affiliate: true,
+              note: "Museum & attraction tickets — skip the line",
+            });
+          }
+          // Airalo — travel eSIM, works worldwide (data the moment you land).
+          geo.push({
+            type: "sim",
+            provider: "Airalo",
+            url: "https://airalo.tpm.li/7Nn9Ad1q",
+            affiliate: true,
+            note: "Travel eSIM — data in 200+ countries",
+          });
+          // Aviasales — flight metasearch (compare every airline; 40% partner rate).
+          geo.push({
+            type: "flights",
+            provider: "Aviasales",
+            url: "https://aviasales.tpm.li/dAyfvzBW",
+            affiliate: true,
+            note: "Compare flights across every airline",
+          });
+          // Radical Storage — luggage storage in tourist hubs worldwide.
+          geo.push({
+            type: "other",
+            provider: "Radical Storage",
+            url: "https://radicalstorage.tpm.li/jDrZYmIj",
+            affiliate: true,
+            note: "Store your bags by the hour",
+          });
+          // AirHelp — flight-delay compensation (EU261/UK261 covers EU & UK departures).
+          const AIRHELP_COUNTRIES = new Set([
+            "GB", "FR", "ES", "IT", "PT", "DE", "AT",
+            "CZ", "HU", "GR", "NL", "EE", "IE", "BE", "PL",
+          ]);
+          if (AIRHELP_COUNTRIES.has(city.countryCode)) {
+            geo.push({
+              type: "other",
+              provider: "AirHelp",
+              url: "https://airhelp.tpm.li/xOYCZ6oP",
+              affiliate: true,
+              note: "Delayed flight? Claim up to €600",
+            });
+          }
           const referralLinks = [...(profile?.referralLinks ?? []), ...geo];
           if (referralLinks.length === 0) return null;
           const live = referralLinks.filter((r) => r.url);
