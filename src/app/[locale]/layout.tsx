@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import Link from "next/link";
-import Script from "next/script";
 import { notFound } from "next/navigation";
 import { Geist, Geist_Mono, Archivo } from "next/font/google";
 import {
@@ -119,10 +118,14 @@ export default async function LocaleLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${archivo.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)]">
-        {/* Travelpayouts verification / monetisation loader (all pages). */}
-        <Script id="travelpayouts" strategy="afterInteractive" data-cmp-ab="2">
-          {`(function(){var s=document.createElement("script");s.async=1;s.setAttribute("data-cmp-ab","2");s.src="https://emrldco.com/NTY3MzE3.js?t=567317";document.head.appendChild(s);})();`}
-        </Script>
+        {/* Travelpayouts verification / monetisation loader — inlined so it's
+            present in the static HTML of every page (reliable verification). */}
+        <script
+          data-cmp-ab="2"
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var s=document.createElement("script");s.async=1;s.setAttribute("data-cmp-ab","2");s.src="https://emrldco.com/NTY3MzE3.js?t=567317";document.head.appendChild(s);})();`,
+          }}
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light'){document.documentElement.dataset.theme=t;}}catch(e){}})();`,
