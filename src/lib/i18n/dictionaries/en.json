@@ -88,6 +88,7 @@
     "overviewLink": "{city} overview →",
     "moreFrom": "More comparisons from {city}",
     "flightsCta": "Flying between {a} and {b}? Find cheap flights",
+    "radarTitle": "How {a} and {b} compare",
     "disclaimer": "Estimates use approximate cost-of-living indices (US average = 100) and are for general guidance only."
   },
   "city": {

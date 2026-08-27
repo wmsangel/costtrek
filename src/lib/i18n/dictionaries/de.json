@@ -88,6 +88,7 @@
     "overviewLink": "Überblick {city} →",
     "moreFrom": "Weitere Vergleiche ab {city}",
     "flightsCta": "Flug zwischen {a} und {b}? Günstige Flüge finden",
+    "radarTitle": "{a} und {b} im Vergleich",
     "disclaimer": "Die Schätzungen verwenden ungefähre Lebenshaltungskosten-Indizes (US-Durchschnitt = 100) und dienen nur zur allgemeinen Orientierung."
   },
   "city": {

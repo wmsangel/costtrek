@@ -88,6 +88,7 @@
     "overviewLink": "Aperçu de {city} →",
     "moreFrom": "Plus de comparaisons depuis {city}",
     "flightsCta": "Un vol entre {a} et {b} ? Trouvez des billets pas chers",
+    "radarTitle": "{a} et {b} en un coup d’œil",
     "disclaimer": "Les estimations reposent sur des indices approximatifs du coût de la vie (moyenne américaine = 100) et ne sont fournies qu'à titre indicatif."
   },
   "city": {

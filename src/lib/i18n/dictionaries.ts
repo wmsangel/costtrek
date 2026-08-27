@@ -87,6 +87,7 @@ export type Dictionary = {
     overviewLink: string; // {city}
     moreFrom: string; // {city}
     flightsCta: string; // {a} {b}
+    radarTitle: string; // {a} {b}
     disclaimer: string;
   };
   city: {

@@ -5,6 +5,7 @@ import CostCompareCalculator, {
   type BreakdownRow,
 } from "@/components/CostCompareCalculator";
 import MetricComparison from "@/components/MetricComparison";
+import RadarChart from "@/components/RadarChart";
 import {
   CATEGORY_ORDER,
   CITIES,
@@ -213,6 +214,51 @@ export default async function ComparePage({
           </Link>
         ))}
       </div>
+
+      <section className="mt-10">
+        <h2 className="mag-h2 mb-4">
+          ◎ {fill(dict.compare.radarTitle, { a: labelA, b: labelB })}
+        </h2>
+        <div className="card rounded-2xl p-4 sm:p-6 flex flex-col items-center">
+          <RadarChart
+            max={200}
+            axes={CATEGORY_ORDER.map((c) => dict.categories[c])}
+            series={[
+              {
+                label: labelA,
+                color: "var(--accent)",
+                values: CATEGORY_ORDER.map((c) => a.breakdown[c]),
+              },
+              {
+                label: labelB,
+                color: "var(--teal)",
+                values: CATEGORY_ORDER.map((c) => b.breakdown[c]),
+              },
+            ]}
+          />
+          <div className="flex flex-wrap gap-x-6 gap-y-2 mt-2 text-sm font-semibold">
+            <span className="flex items-center gap-2">
+              <span
+                className="inline-block w-3.5 h-3.5 rounded"
+                style={{ background: "var(--accent)" }}
+                aria-hidden="true"
+              />
+              {labelA}
+            </span>
+            <span className="flex items-center gap-2">
+              <span
+                className="inline-block w-3.5 h-3.5 rounded"
+                style={{ background: "var(--teal)" }}
+                aria-hidden="true"
+              />
+              {labelB}
+            </span>
+          </div>
+          <p className="text-xs text-[var(--muted)] mt-3 text-center max-w-[52ch]">
+            {dict.city.indexLegend}
+          </p>
+        </div>
+      </section>
 
       <MetricComparison
         locale={l}

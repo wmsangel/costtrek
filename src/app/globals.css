@@ -19,6 +19,7 @@
   --accent-soft: rgba(224, 73, 47, 0.1);
   --accent-fg: #ffffff;
   --mustard: #f4c020;
+  --teal: #1c8a7c;
   --mustard-ink: #171310;
   --ink: #171310; /* dark block bg */
   --ink-fg: #f7efe0;
@@ -62,6 +63,7 @@
     --accent-soft: rgba(236, 106, 76, 0.14);
     --accent-fg: #1a1611;
     --mustard: #d9ad42;
+    --teal: #4fb3a3;
     --mustard-ink: #1a1611;
     --ink: #100d09;
     --ink-fg: #f2ebdf;
@@ -84,6 +86,7 @@
   --accent-soft: rgba(236, 106, 76, 0.14);
   --accent-fg: #1a1611;
   --mustard: #d9ad42;
+  --teal: #4fb3a3;
   --mustard-ink: #1a1611;
   --ink: #100d09;
   --ink-fg: #f2ebdf;
