@@ -39,6 +39,7 @@
     "compareBtn": "Comparar custo de vida",
     "popularTitle": "Comparações populares",
     "popularSub": "As rotas de mudança que mais se procuram.",
+    "trust": "Baseado em dados públicos de institutos nacionais de estatística, do U.S. Bureau of Economic Analysis, do Census Bureau e do Banco Mundial.",
     "collectionsSub": "Cidades ordenadas pelo que importa — custo, impostos, segurança e mais.",
     "browseTitle": "Explorar cidades",
     "browseSub": "Escolha uma cidade para um detalhe completo de custo, impostos e qualidade de vida."
@@ -122,6 +123,33 @@
     "utilities": "Serviços (água, luz)",
     "healthcare": "Saúde",
     "goods": "Bens e serviços"
+  },
+  "facts": {
+    "title": "O que saber antes de se mudar para {city}",
+    "intro": "O essencial para se instalar em {city} — dinheiro, idioma, clima e dia a dia num relance.",
+    "currency": "Moeda",
+    "languages": "Idiomas",
+    "timezone": "Fuso horário",
+    "power": "Eletricidade",
+    "driving": "Condução",
+    "left": "Pela esquerda",
+    "right": "Pela direita",
+    "tapWater": "Água da torneira",
+    "safe": "Potável",
+    "notSafe": "Recomenda-se engarrafada",
+    "internet": "Internet",
+    "english": "Inglês",
+    "safety": "Segurança",
+    "climate": "Clima",
+    "climateValue": "❄ {jan}°C · ☀ {jul}°C",
+    "sunnyDays": "{n} dias de sol/ano",
+    "neighborhoods": "Zonas populares",
+    "englishLevel": {
+      "low": "Pouco falado",
+      "moderate": "Bastante comum",
+      "high": "Muito difundido",
+      "native": "Língua materna"
+    }
   },
   "faq": {
     "title": "Perguntas frequentes",

@@ -5,6 +5,7 @@ import CostCompareCalculator, {
   type BreakdownRow,
 } from "@/components/CostCompareCalculator";
 import MetricComparison from "@/components/MetricComparison";
+import CityFacts from "@/components/CityFacts";
 import RadarChart from "@/components/RadarChart";
 import {
   CATEGORY_ORDER,
@@ -296,6 +297,11 @@ export default async function ComparePage({
         labelA={labelA}
         labelB={labelB}
       />
+
+      <section className="mt-12 grid md:grid-cols-2 gap-4">
+        <CityFacts city={a} dict={dict} locale={l} />
+        <CityFacts city={b} dict={dict} locale={l} />
+      </section>
 
       <Faq
         title={dict.faq.title}

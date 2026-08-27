@@ -163,6 +163,12 @@ export default async function Home({
         </div>
       </section>
 
+      {/* Trust / data provenance */}
+      <p className="mt-5 flex items-start gap-2 text-sm text-[var(--muted)] max-w-[70ch]">
+        <span aria-hidden="true">🔎</span>
+        <span>{dict.home.trust}</span>
+      </p>
+
       {/* Popular comparisons */}
       <section className="mt-16">
         <h2 className="mag-h2 mb-1.5">◷ {dict.home.popularTitle}</h2>
@@ -178,28 +184,40 @@ export default async function Home({
               ((overallIndex(b) - overallIndex(a)) / overallIndex(a)) * 100,
             );
             const cheaper = diff < 0;
+            const barPct = Math.min(100, Math.abs(diff) * 1.5);
             return (
               <Link
                 key={`${aSlug}-${bSlug}`}
                 href={`/${l}${comparePath(a, b)}`}
-                className="card card-hover rounded-xl p-4 flex items-center justify-between gap-3"
+                className="card card-hover rounded-xl p-4 block"
               >
-                <span className="flex items-center gap-2 font-semibold min-w-0">
-                  <span aria-hidden="true">{flagEmoji(a.countryCode)}</span>
-                  <span className="truncate">{localizedCityName(l, a)}</span>
-                  <span className="text-[var(--muted)] font-normal">
-                    {dict.compare.vs}
+                <div className="flex items-center justify-between gap-3">
+                  <span className="flex items-center gap-2 font-semibold min-w-0">
+                    <span aria-hidden="true">{flagEmoji(a.countryCode)}</span>
+                    <span className="truncate">{localizedCityName(l, a)}</span>
+                    <span className="text-[var(--muted)] font-normal">
+                      {dict.compare.vs}
+                    </span>
+                    <span aria-hidden="true">{flagEmoji(b.countryCode)}</span>
+                    <span className="truncate">{localizedCityName(l, b)}</span>
                   </span>
-                  <span aria-hidden="true">{flagEmoji(b.countryCode)}</span>
-                  <span className="truncate">{localizedCityName(l, b)}</span>
-                </span>
-                <span
-                  className="shrink-0 text-sm font-extrabold tabular-nums"
-                  style={{ color: cheaper ? "var(--good)" : "var(--bad)" }}
-                >
-                  {diff > 0 ? "+" : "−"}
-                  {Math.abs(diff)}%
-                </span>
+                  <span
+                    className="shrink-0 text-sm font-extrabold tabular-nums"
+                    style={{ color: cheaper ? "var(--good)" : "var(--bad)" }}
+                  >
+                    {diff > 0 ? "+" : "−"}
+                    {Math.abs(diff)}%
+                  </span>
+                </div>
+                <div className="mt-2.5 h-1.5 rounded-full bg-[var(--border)] overflow-hidden">
+                  <div
+                    className="h-full rounded-full"
+                    style={{
+                      width: `${Math.max(barPct, 4)}%`,
+                      background: cheaper ? "var(--good)" : "var(--bad)",
+                    }}
+                  />
+                </div>
               </Link>
             );
           })}

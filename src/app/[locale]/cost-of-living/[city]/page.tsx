@@ -21,6 +21,7 @@ import { breadcrumbJsonLd, cityJsonLd, datasetJsonLd } from "@/lib/seo/jsonld";
 import { getCityProfile, getCountry, countrySlug } from "@/lib/data";
 import { localizedCountry } from "@/lib/i18n/places";
 import CityProfileSections from "@/components/CityProfileSections";
+import CityFacts from "@/components/CityFacts";
 import Mountains from "@/components/Mountains";
 import JsonLd from "@/components/JsonLd";
 import Faq, { type FaqItem } from "@/components/Faq";
@@ -256,6 +257,10 @@ export default async function CityPage({
             );
           })}
         </ul>
+      </section>
+
+      <section className="mt-10">
+        <CityFacts city={c} dict={dict} locale={l} />
       </section>
 
       <CityProfileSections locale={l} dict={dict} city={c} />

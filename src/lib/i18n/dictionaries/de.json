@@ -39,6 +39,7 @@
     "compareBtn": "Lebenshaltungskosten vergleichen",
     "popularTitle": "Beliebte Vergleiche",
     "popularSub": "Die meistgesuchten Umzugsrouten.",
+    "trust": "Basiert auf öffentlichen Daten nationaler Statistikämter, des U.S. Bureau of Economic Analysis, des Census Bureau und der Weltbank.",
     "collectionsSub": "Städte sortiert nach dem, was zählt — Kosten, Steuern, Sicherheit und mehr.",
     "browseTitle": "Städte durchsuchen",
     "browseSub": "Wähle eine Stadt für eine vollständige Aufschlüsselung von Kosten, Steuern und Lebensqualität."
@@ -122,6 +123,33 @@
     "utilities": "Nebenkosten",
     "healthcare": "Gesundheit",
     "goods": "Waren & Dienstleistungen"
+  },
+  "facts": {
+    "title": "Wissenswertes vor dem Umzug nach {city}",
+    "intro": "Das Wichtigste, um in {city} anzukommen — Geld, Sprache, Klima und Alltag auf einen Blick.",
+    "currency": "Währung",
+    "languages": "Sprachen",
+    "timezone": "Zeitzone",
+    "power": "Strom",
+    "driving": "Verkehr",
+    "left": "Linksverkehr",
+    "right": "Rechtsverkehr",
+    "tapWater": "Leitungswasser",
+    "safe": "Trinkbar",
+    "notSafe": "Flaschenwasser empfohlen",
+    "internet": "Internet",
+    "english": "Englisch",
+    "safety": "Sicherheit",
+    "climate": "Klima",
+    "climateValue": "❄ {jan}°C · ☀ {jul}°C",
+    "sunnyDays": "{n} Sonnentage/Jahr",
+    "neighborhoods": "Beliebte Viertel",
+    "englishLevel": {
+      "low": "Kaum gesprochen",
+      "moderate": "Recht verbreitet",
+      "high": "Weit verbreitet",
+      "native": "Muttersprache"
+    }
   },
   "faq": {
     "title": "Häufige Fragen",

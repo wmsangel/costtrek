@@ -38,6 +38,7 @@ export type Dictionary = {
     compareBtn: string;
     popularTitle: string;
     popularSub: string;
+    trust: string;
     collectionsSub: string;
     browseTitle: string;
     browseSub: string;
@@ -121,6 +122,28 @@ export type Dictionary = {
     utilities: string;
     healthcare: string;
     goods: string;
+  };
+  facts: {
+    title: string; // {city}
+    intro: string; // {city}
+    currency: string;
+    languages: string;
+    timezone: string;
+    power: string;
+    driving: string;
+    left: string;
+    right: string;
+    tapWater: string;
+    safe: string;
+    notSafe: string;
+    internet: string;
+    english: string;
+    safety: string;
+    climate: string;
+    climateValue: string; // {jan} {jul}
+    sunnyDays: string; // {n}
+    neighborhoods: string;
+    englishLevel: { low: string; moderate: string; high: string; native: string };
   };
   breadcrumbHome: string;
   faq: {

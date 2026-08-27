@@ -39,6 +39,7 @@
     "compareBtn": "Comparer le coût de la vie",
     "popularTitle": "Comparaisons populaires",
     "popularSub": "Les itinéraires de déménagement les plus recherchés.",
+    "trust": "Fondé sur des données publiques des instituts nationaux de statistique, du U.S. Bureau of Economic Analysis, du Census Bureau et de la Banque mondiale.",
     "collectionsSub": "Des villes classées selon ce qui compte — coût, impôts, sécurité et plus.",
     "browseTitle": "Parcourir les villes",
     "browseSub": "Choisissez une ville pour un détail complet du coût, des impôts et de la qualité de vie."
@@ -122,6 +123,33 @@
     "utilities": "Charges",
     "healthcare": "Santé",
     "goods": "Biens & services"
+  },
+  "facts": {
+    "title": "À savoir avant de vous installer à {city}",
+    "intro": "L’essentiel pour s’installer à {city} — argent, langue, climat et vie quotidienne en un coup d’œil.",
+    "currency": "Monnaie",
+    "languages": "Langues",
+    "timezone": "Fuseau horaire",
+    "power": "Électricité",
+    "driving": "Conduite",
+    "left": "À gauche",
+    "right": "À droite",
+    "tapWater": "Eau du robinet",
+    "safe": "Potable",
+    "notSafe": "Eau en bouteille conseillée",
+    "internet": "Internet",
+    "english": "Anglais",
+    "safety": "Sécurité",
+    "climate": "Climat",
+    "climateValue": "❄ {jan}°C · ☀ {jul}°C",
+    "sunnyDays": "{n} jours de soleil/an",
+    "neighborhoods": "Quartiers prisés",
+    "englishLevel": {
+      "low": "Peu parlé",
+      "moderate": "Assez courant",
+      "high": "Très répandu",
+      "native": "Langue maternelle"
+    }
   },
   "faq": {
     "title": "Questions fréquentes",

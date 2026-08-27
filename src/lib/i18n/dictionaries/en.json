@@ -39,6 +39,7 @@
     "compareBtn": "Compare cost of living",
     "popularTitle": "Popular comparisons",
     "popularSub": "The relocation routes people search for most.",
+    "trust": "Built on public data from national statistics offices, the U.S. Bureau of Economic Analysis, the Census Bureau and the World Bank.",
     "collectionsSub": "Cities ranked by what matters — cost, taxes, safety and more.",
     "browseTitle": "Browse cities",
     "browseSub": "Pick any city for a full cost, tax and quality-of-life breakdown."
@@ -122,6 +123,33 @@
     "utilities": "Utilities",
     "healthcare": "Healthcare",
     "goods": "Goods & services"
+  },
+  "facts": {
+    "title": "Good to know before you move to {city}",
+    "intro": "The essentials for settling into {city} — money, language, climate and daily life at a glance.",
+    "currency": "Currency",
+    "languages": "Languages",
+    "timezone": "Time zone",
+    "power": "Power",
+    "driving": "Driving",
+    "left": "Left-hand side",
+    "right": "Right-hand side",
+    "tapWater": "Tap water",
+    "safe": "Safe to drink",
+    "notSafe": "Bottled recommended",
+    "internet": "Internet",
+    "english": "English",
+    "safety": "Safety",
+    "climate": "Climate",
+    "climateValue": "❄ {jan}°C · ☀ {jul}°C",
+    "sunnyDays": "{n} sunny days/yr",
+    "neighborhoods": "Popular areas",
+    "englishLevel": {
+      "low": "Rarely spoken",
+      "moderate": "Fairly common",
+      "high": "Widely spoken",
+      "native": "Native language"
+    }
   },
   "faq": {
     "title": "Frequently asked questions",
