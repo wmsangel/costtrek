@@ -137,7 +137,7 @@ export default async function ComparePage({
   ).slice(0, 6);
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-10">
+    <div className="mx-auto max-w-5xl px-4 py-10">
       <JsonLd
         data={breadcrumbJsonLd(l, [
           { name: dict.breadcrumbHome, path: "" },
@@ -215,49 +215,77 @@ export default async function ComparePage({
         ))}
       </div>
 
-      <section className="mt-10">
-        <h2 className="mag-h2 mb-4">
-          ◎ {fill(dict.compare.radarTitle, { a: labelA, b: labelB })}
-        </h2>
-        <div className="card rounded-2xl p-4 sm:p-6 flex flex-col items-center">
-          <RadarChart
-            max={200}
-            axes={CATEGORY_ORDER.map((c) => dict.categories[c])}
-            series={[
-              {
-                label: labelA,
-                color: "var(--accent)",
-                values: CATEGORY_ORDER.map((c) => a.breakdown[c]),
-              },
-              {
-                label: labelB,
-                color: "var(--teal)",
-                values: CATEGORY_ORDER.map((c) => b.breakdown[c]),
-              },
-            ]}
-          />
-          <div className="flex flex-wrap gap-x-6 gap-y-2 mt-2 text-sm font-semibold">
-            <span className="flex items-center gap-2">
-              <span
-                className="inline-block w-3.5 h-3.5 rounded"
-                style={{ background: "var(--accent)" }}
-                aria-hidden="true"
-              />
-              {labelA}
-            </span>
-            <span className="flex items-center gap-2">
-              <span
-                className="inline-block w-3.5 h-3.5 rounded"
-                style={{ background: "var(--teal)" }}
-                aria-hidden="true"
-              />
-              {labelB}
-            </span>
+      <section className="mt-10 grid lg:grid-cols-[minmax(0,1fr)_290px] gap-5 items-start">
+        <div className="min-w-0">
+          <h2 className="mag-h2 mb-4">
+            ◎ {fill(dict.compare.radarTitle, { a: labelA, b: labelB })}
+          </h2>
+          <div className="card rounded-2xl p-4 sm:p-6 flex flex-col items-center">
+            <RadarChart
+              max={200}
+              axes={CATEGORY_ORDER.map((c) => dict.categories[c])}
+              series={[
+                {
+                  label: labelA,
+                  color: "var(--accent)",
+                  values: CATEGORY_ORDER.map((c) => a.breakdown[c]),
+                },
+                {
+                  label: labelB,
+                  color: "var(--teal)",
+                  values: CATEGORY_ORDER.map((c) => b.breakdown[c]),
+                },
+              ]}
+            />
+            <div className="flex flex-wrap gap-x-6 gap-y-2 mt-2 text-sm font-semibold">
+              <span className="flex items-center gap-2">
+                <span className="inline-block w-3.5 h-3.5 rounded" style={{ background: "var(--accent)" }} aria-hidden="true" />
+                {labelA}
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="inline-block w-3.5 h-3.5 rounded" style={{ background: "var(--teal)" }} aria-hidden="true" />
+                {labelB}
+              </span>
+            </div>
+            <p className="text-xs text-[var(--muted)] mt-3 text-center max-w-[52ch]">
+              {dict.city.indexLegend}
+            </p>
           </div>
-          <p className="text-xs text-[var(--muted)] mt-3 text-center max-w-[52ch]">
-            {dict.city.indexLegend}
-          </p>
         </div>
+
+        <aside className="lg:sticky lg:top-6 flex flex-col gap-4">
+          <div className="card rounded-2xl p-5">
+            <div className="grid grid-cols-[1fr_auto_auto] gap-x-3 gap-y-2.5 items-center text-sm">
+              <span></span>
+              <span className="text-right font-bold" aria-hidden="true">{flagEmoji(a.countryCode)}</span>
+              <span className="text-right font-bold" aria-hidden="true">{flagEmoji(b.countryCode)}</span>
+              <span className="text-[var(--muted)]">{dict.city.overallIndex}</span>
+              <span className="text-right font-bold tabular-nums">{Math.round(overallA)}</span>
+              <span className="text-right font-bold tabular-nums">{Math.round(overallB)}</span>
+              <span className="text-[var(--muted)]">{dict.compare.medianRent}</span>
+              <span className="text-right font-bold tabular-nums">${a.medianRent1br.toLocaleString(LOCALE_BCP47[l])}</span>
+              <span className="text-right font-bold tabular-nums">${b.medianRent1br.toLocaleString(LOCALE_BCP47[l])}</span>
+              <span className="text-[var(--muted)]">{dict.data.sections.taxes}</span>
+              <span className="text-right font-bold tabular-nums">{getCountry(a.countryCode)?.taxes.incomeTax.topRate ?? "—"}%</span>
+              <span className="text-right font-bold tabular-nums">{getCountry(b.countryCode)?.taxes.incomeTax.topRate ?? "—"}%</span>
+            </div>
+          </div>
+
+          <a
+            href="https://xyowz.com/g/n2q2nolvw6a27dee2ccd6d2e807f50/"
+            rel="sponsored nofollow noopener"
+            target="_blank"
+            className="rounded-2xl bg-[var(--accent)] px-5 py-4 text-white transition hover:brightness-110"
+          >
+            <span className="display font-black text-base leading-tight block">
+              <span aria-hidden="true">✈ </span>
+              {fill(dict.compare.flightsCta, { a: labelA, b: labelB })}
+            </span>
+            <span className="text-[10px] uppercase tracking-wider font-bold text-white/70 mt-1 inline-block">
+              {dict.calculators.sponsoredBadge}
+            </span>
+          </a>
+        </aside>
       </section>
 
       <MetricComparison
@@ -268,30 +296,6 @@ export default async function ComparePage({
         labelA={labelA}
         labelB={labelB}
       />
-
-      {/* Flights affiliate CTA (sponsored, worldwide) */}
-      <a
-        href="https://xyowz.com/g/n2q2nolvw6a27dee2ccd6d2e807f50/"
-        rel="sponsored nofollow noopener"
-        target="_blank"
-        className="mt-12 flex items-center justify-between gap-4 rounded-2xl bg-[var(--accent)] px-5 sm:px-6 py-4 sm:py-5 text-white transition hover:brightness-110"
-      >
-        <span className="flex flex-col gap-0.5">
-          <span className="display font-black text-base sm:text-lg leading-tight">
-            <span aria-hidden="true">✈ </span>
-            {fill(dict.compare.flightsCta, { a: labelA, b: labelB })}
-          </span>
-          <span className="text-[10px] uppercase tracking-wider font-bold text-white/70">
-            {dict.calculators.sponsoredBadge}
-          </span>
-        </span>
-        <span
-          aria-hidden="true"
-          className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white text-lg font-bold text-[#171310]"
-        >
-          ↗
-        </span>
-      </a>
 
       <Faq
         title={dict.faq.title}
