@@ -12,6 +12,7 @@ import { getDictionary } from "@/lib/i18n/dictionaries";
 import LanguageDropdown from "@/components/LanguageDropdown";
 import ThemeToggle from "@/components/ThemeToggle";
 import CookieBanner from "@/components/CookieBanner";
+import NetworkStrip from "@/components/NetworkStrip";
 import Analytics from "@/components/Analytics";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 import JsonLd from "@/components/JsonLd";
@@ -190,7 +191,8 @@ export default async function LocaleLayout({
                 </Link>
               </nav>
             </div>
-            <div className="mt-4 space-y-1">
+            <NetworkStrip heading={dict.footer.network} />
+            <div className="mt-6 space-y-1">
               <p>{dict.footer.line1}</p>
               <p>{dict.footer.line2}</p>
             </div>

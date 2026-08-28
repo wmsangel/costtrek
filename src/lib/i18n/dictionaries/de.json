@@ -2,7 +2,8 @@
   "breadcrumbHome": "Start",
   "footer": {
     "line1": "© CostTrek. Schätzungen der Lebenshaltungskosten dienen nur zur Information.",
-    "line2": "Die Angaben sind Näherungswerte und sollten nicht als Grundlage für finanzielle Entscheidungen dienen."
+    "line2": "Die Angaben sind Näherungswerte und sollten nicht als Grundlage für finanzielle Entscheidungen dienen.",
+    "network": "Aus unserem Netzwerk"
   },
   "legal": {
     "privacy": "Datenschutz",

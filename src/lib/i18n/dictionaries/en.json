@@ -2,7 +2,8 @@
   "breadcrumbHome": "Home",
   "footer": {
     "line1": "© CostTrek. Cost-of-living estimates for informational purposes only.",
-    "line2": "Figures are approximate and should not be relied on for financial decisions."
+    "line2": "Figures are approximate and should not be relied on for financial decisions.",
+    "network": "From our network"
   },
   "legal": {
     "privacy": "Privacy Policy",
