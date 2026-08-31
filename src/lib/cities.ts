@@ -145,6 +145,11 @@ const INTL_CITIES: City[] = [
   { slug: "ho-chi-minh-city-vn", name: "Ho Chi Minh City", country: "Vietnam", countryCode: "VN", aliases: ["Saigon", "Sài Gòn", "HCMC"], medianRent1br: 500, breakdown: { housing: 38, food: 42, transport: 35, utilities: 55, healthcare: 45, goods: 55 } },
   { slug: "seoul-kr", name: "Seoul", country: "South Korea", countryCode: "KR", aliases: ["서울", "Seúl", "Séoul"], medianRent1br: 900, breakdown: { housing: 90, food: 85, transport: 55, utilities: 80, healthcare: 65, goods: 95 } },
   { slug: "bishkek-kg", name: "Bishkek", country: "Kyrgyzstan", countryCode: "KG", aliases: ["Бишкек", "Bichkek", "Biskek", "Frunze"], medianRent1br: 350, breakdown: { housing: 18, food: 30, transport: 22, utilities: 40, healthcare: 25, goods: 30 } },
+  { slug: "frankfurt-de", name: "Frankfurt", country: "Germany", countryCode: "DE", aliases: ["Frankfurt am Main", "Fráncfort"], medianRent1br: 1350, breakdown: { housing: 135, food: 106, transport: 88, utilities: 128, healthcare: 95, goods: 106 } },
+  { slug: "lyon-fr", name: "Lyon", country: "France", countryCode: "FR", aliases: ["Lyone"], medianRent1br: 900, breakdown: { housing: 98, food: 107, transport: 78, utilities: 112, healthcare: 82, goods: 107 } },
+  { slug: "manchester-uk", name: "Manchester", country: "United Kingdom", countryCode: "GB", aliases: [], medianRent1br: 1100, breakdown: { housing: 118, food: 110, transport: 92, utilities: 122, healthcare: 85, goods: 110 } },
+  { slug: "osaka-jp", name: "Osaka", country: "Japan", countryCode: "JP", aliases: ["大阪", "Ōsaka", "Osaca"], medianRent1br: 850, breakdown: { housing: 92, food: 98, transport: 82, utilities: 110, healthcare: 85, goods: 104 } },
+  { slug: "montreal-ca", name: "Montreal", country: "Canada", countryCode: "CA", aliases: ["Montréal"], medianRent1br: 1150, breakdown: { housing: 102, food: 106, transport: 80, utilities: 98, healthcare: 80, goods: 105 } },
 ];
 
 export const CITIES: City[] = [...US_CITIES, ...INTL_CITIES];

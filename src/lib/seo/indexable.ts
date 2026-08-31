@@ -19,11 +19,12 @@ export const MAJOR_CITY_SLUGS = new Set<string>([
   // Europe
   "london-uk", "paris-fr", "berlin-de", "munich-de", "amsterdam-nl",
   "madrid-es", "barcelona-es", "lisbon-pt", "rome-it", "zurich-ch",
-  "vienna-at", "prague-cz",
+  "vienna-at", "prague-cz", "frankfurt-de", "lyon-fr", "manchester-uk",
   // Middle East / Asia
   "dubai-ae", "singapore-sg", "tokyo-jp", "seoul-kr", "bangkok-th", "mumbai-in",
+  "osaka-jp",
   // Oceania / Americas
-  "toronto-ca", "vancouver-ca", "sydney-au", "melbourne-au",
+  "toronto-ca", "vancouver-ca", "sydney-au", "melbourne-au", "montreal-ca",
   "mexico-city-mx", "sao-paulo-br", "buenos-aires-ar", "medellin-co",
   // Nomad hubs with strong demand
   "istanbul-tr", "bali-id", "chiang-mai-th",

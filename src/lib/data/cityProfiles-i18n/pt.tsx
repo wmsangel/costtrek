@@ -66,6 +66,11 @@ const pt: Record<string, CityText> = {
   "warsaw-pl": { summary: "O polo de negócios de mais rápida ascensão da Europa Central — moderno, seguro e acessível, com invernos frios." },
   "buenos-aires-ar": { nickname: "A Paris da América do Sul", summary: "Elegância europeia a preços de saldo — bifes, tango e cultura de café, ensombrados por uma inflação crónica." },
   "mumbai-in": { nickname: "A Cidade dos Sonhos", summary: "A capital financeira e de Bollywood da Índia — intensa, veloz e barata para os padrões globais, ainda que sobrelotada e húmida." },
+  "frankfurt-de": { nickname: "Mainhattan", summary: "A capital bancária da Alemanha e o seu único skyline a sério — sede do BCE, o maior aeroporto do país e um centro compacto e internacional. Os custos são altos para a Alemanha, mas ficam abaixo de Munique, e o aeroporto torna-a a base mais prática para quem voa muito." },
+  "lyon-fr": { nickname: "A capital gastronómica da França", summary: "Uma cidade classificada pela UNESCO onde dois rios se encontram — a capital gastronómica da França, a duas horas de TGV de Paris por uma fração das suas rendas. As ruas renascentistas, uma forte cena tech e biotech e os Alpes ao fim de semana fazem dela uma aterragem mais suave do que a capital." },
+  "manchester-uk": { nickname: "A cidade da chuva", summary: "A capital do norte do Reino Unido — uma cidade de música e futebol a reinventar-se como polo de media e tecnologia em rápido crescimento. As rendas são cerca de metade das de Londres, o público é jovem e a vida noturna intensa; em troca, o tempo é notoriamente cinzento e húmido." },
+  "osaka-jp": { nickname: "A cozinha do Japão", summary: "A calorosa e bem-humorada segunda cidade do Japão e o seu coração de comida de rua — mais barata e descontraída que Tóquio, com a mesma segurança, transportes e fiabilidade. Porta da região de Kansai (Quioto e Kobe ficam a minutos), é uma base fácil de viver com uma grande cena gastronómica e de startups." },
+  "montreal-ca": { nickname: "A capital cultural do Canadá", summary: "Uma metrópole bilingue de ares europeus e a mais acessível das grandes cidades do Canadá — rendas bem abaixo de Toronto ou Vancouver, uma enorme cultura de festivais e gastronomia, e universidades baratas. O senão é o longo e gélido inverno e a burocracia francófona do Quebec." },
 };
 
 export default pt;
