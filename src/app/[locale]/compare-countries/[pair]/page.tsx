@@ -57,7 +57,10 @@ export function generateStaticParams() {
   const out: { pair: string }[] = [];
   for (const a of cs)
     for (const b of cs)
-      if (countrySlug(a) < countrySlug(b))
+      if (
+        countrySlug(a) < countrySlug(b) &&
+        countryPairIndexable(a.code, b.code)
+      )
         out.push({ pair: `${countrySlug(a)}-vs-${countrySlug(b)}` });
   return out;
 }

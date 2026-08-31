@@ -39,11 +39,16 @@ export const dynamicParams = true;
 
 type Params = { locale: string; pair: string };
 
+// Prerender only the INDEXABLE compares (both cities are major places); the
+// thin long-tail is noindex anyway, so it renders on-demand via ISR
+// (dynamicParams=true) instead of being baked at build time. Keeps the static
+// page count well under Vercel's ~15k ceiling and makes adding cities cheap.
 export function generateStaticParams() {
   const params: { pair: string }[] = [];
   for (const a of CITIES) {
     for (const b of CITIES) {
       if (a.slug >= b.slug) continue;
+      if (!cityPairIndexable(a.slug, b.slug)) continue;
       params.push({ pair: `${a.slug}-vs-${b.slug}` });
     }
   }
