@@ -4,12 +4,13 @@ _Last updated: 2026-08-28. Buckets, not deadlines. Owner constraint: organic SEO
 only (no ad budget); KG ИП payout (no PayPal receive)._
 
 ## Content
-- [ ] **"Plan your move" visual block on the compare page** (phase 4 of the design mock) — group the wired affiliate cards (flights/cars/transfers/tours/insurance/eSIM) into one styled toolkit section with light graphics. Links already exist (see [AFFILIATES.md](AFFILIATES.md)); this is the layout.
-- [ ] **More cities** — Tier-3 in existing countries (Frankfurt, Lyon, Kraków, Manchester, Osaka, Montreal), plus new hubs. ⚠️ Watch the **~15k-page Vercel ceiling** — ~6–7 cities of headroom before needing another lever (ISR the long tail, not just canonicalization). Note: no "Africa" continent in the home grouping yet — adding a ZA city needs `dict.continents.africa` ×5 + the CONTINENTS list.
+- [x] **"Plan your move" toolkit block on compare pages** (done 2026-08-31) — `PlanYourMove` component renders the geo-scoped affiliate toolkit as an icon-led grid, one per destination. Single source of truth: `src/lib/affiliates/toolkit.ts` (also feeds city pages).
+- [x] **+5 Tier-3 cities** (done 2026-08-31): Frankfurt, Lyon, Manchester, Osaka, Montreal — all existing countries. Now ~70 cities. ⚠️ Ceiling no longer the blocker: the compare long tail is now **ISR** (see infra), so prerendered pages dropped ~14k→~7k. Note: still no "Africa" continent in the home grouping — a ZA city needs `dict.continents.africa` ×5 + the CONTINENTS list.
 - [x] Ranking hubs (`collections`) — cheapest / nomad / safest / etc. (done)
 - [x] Data-driven "Good to know" city facts on city + compare pages (done)
-- [ ] **Internal linking** to speed long-tail indexation (GSC: most pages still "discovered – not indexed"; position ~34 is the bottleneck, not indexation).
+- [x] **Internal linking — reciprocal city ↔ ranking-hub** (done 2026-08-31): city pages now list every `/best/[list]` hub they rank in (`cityCollections`). Note: city pages already linked all compare pairs. Position (~34), not indexation, remains the traffic bottleneck.
 - [ ] Persona comparisons (nomad/family/student/retiree weighting) — big long-tail, but build as **rich hubs + noindex/ISR**, not millions of templated pages.
+- [ ] More Tier-3 cities (Hamburg, Nice, Kraków [needs Poland], Bangalore, Cape Town [needs Africa continent]).
 
 ## Monetization
 - [ ] **Selective Travelpayouts widgets** (iframe) — 1 flagship, lazy-loaded below the fold, on top pages only (avoid link-farm look / ad-approval risk). Owner keeps sending widget previews to pick.
@@ -25,6 +26,7 @@ only (no ad budget); KG ИП payout (no PayPal receive)._
 - [ ] **About / bylines** — named owner + author bios on guides
 
 ## Infra / housekeeping
+- [x] **ISR the compare long tail** (done 2026-08-31) — `generateStaticParams` on both compare routes now prerenders only indexable (major↔major) pairs; the rest render on-demand via ISR. Prerendered pages ~14k→~7k, well under the ceiling; adding cities is now cheap.
 - [ ] Set `NEXT_PUBLIC_SITE_URL` in Vercel env (currently defaults to https://costtrek.com)
 - [ ] Bing Webmaster (import from GSC) + Yandex verify → re-ping IndexNow (Yandex already 202; Bing 403 until claimed)
 - [ ] Refresh stale copy in `README.md` / `AGENTS.md` (still say "CostCompare / 48 cities / 11.5k pages / AdSense")

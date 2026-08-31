@@ -12,9 +12,9 @@ site. Multilingual (en/de/fr/es/pt), programmatic SEO, relocation intent.
 - **Vercel default domain:** worldtime-one.vercel.app
 
 ## Scale (as of last build)
-- **~65 cities · ~34 countries · ~14,059 static pages** × 5 locales
+- **~70 cities · ~34 countries · ~7k prerendered pages** × 5 locales (down from ~14k — the compare long tail is now ISR)
 - Tech: Next.js 16 (App Router, `[locale]` routing, `src/proxy.ts` middleware), SSG + ISR long tail
-- ⚠️ **Vercel deploy ceiling ~15k pages** — keep prerendered count under it (compare pages are O(n²); canonical-only halving buys room). See [ROADMAP.md](ROADMAP.md).
+- **Vercel deploy ceiling ~15k pages** — no longer the blocker: only indexable (major↔major) compares prerender; the rest render on-demand via ISR. See [ROADMAP.md](ROADMAP.md).
 
 ## Integrations (live on prod)
 - **Google Search Console** — verified (meta token in `[locale]/layout.tsx`), sitemap submitted
