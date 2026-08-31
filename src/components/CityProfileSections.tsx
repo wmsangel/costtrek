@@ -5,6 +5,7 @@ import { PROFILE_TR } from "@/lib/data/cityProfiles-i18n";
 import { type Dictionary, fill } from "@/lib/i18n/dictionaries";
 import { LOCALE_BCP47, type Locale } from "@/lib/i18n/config";
 import { cityLabels } from "@/lib/i18n/cityLabels";
+import { buildGeoToolkit } from "@/lib/affiliates/toolkit";
 
 function Money({ v, locale, unit }: { v: number; locale: string; unit?: string }) {
   return (
@@ -319,151 +320,25 @@ export default function CityProfileSections({
 
       {/* Relocation / referral links (profile slots + geo-scoped partners) */}
       {(() => {
-          // Geo-scoped affiliate cards — only shown where the partner operates.
-          const geo: ReferralLink[] = [];
-          // Way.com — US & Canada only (airport parking, car washes, insurance).
-          if (city.countryCode === "US" || city.countryCode === "CA") {
-            geo.push({
-              type: "other",
-              provider: "Way.com",
-              url: "https://yyczo.com/g/vln7ctwgqja27dee2ccd12f7a14e01/",
-              affiliate: true,
-              note: "Airport parking, car washes & car insurance",
-            });
-          }
-          // NH Hotels — city hotels in the GEOs where the chain operates.
-          const NH_COUNTRIES = new Set([
-            "NL", "ES", "DE", "GB", "IT", "FR", "US",
-            "MX", "AR", "BR", "CO", "PT", "AT",
-          ]);
-          if (NH_COUNTRIES.has(city.countryCode)) {
-            geo.push({
-              type: "other",
-              provider: "NH Hotels",
-              url: "https://xnmik.com/g/jpnebfysh2a27dee2ccd8f408ce589/",
-              affiliate: true,
-              note: "City-centre hotels — book your stay",
-            });
-          }
-          // Localrent — local car rental, strong in tourist/expat markets
-          // (complements Way.com, which covers US/CA).
-          const LOCALRENT_COUNTRIES = new Set([
-            "GE", "TR", "AE", "TH", "ID", "VN", "MY",
-            "GR", "ES", "IT", "PT", "MX", "CO",
-          ]);
-          if (LOCALRENT_COUNTRIES.has(city.countryCode)) {
-            geo.push({
-              type: "other",
-              provider: "Localrent",
-              url: "https://localrent.tpm.li/Yh75GbWb",
-              affiliate: true,
-              note: "Rent a local car — no big-chain markups",
-            });
-          } else {
-            // Economybookings — worldwide car rental fallback elsewhere.
-            geo.push({
-              type: "other",
-              provider: "Economybookings",
-              url: "https://economybookings.tpm.li/S2nY6rl8",
-              affiliate: true,
-              note: "Compare worldwide car rental",
-            });
-          }
-          // BikesBooking — scooter/motorbike rental in scooter-first cities.
-          if (["ID", "VN", "TH"].includes(city.countryCode)) {
-            geo.push({
-              type: "other",
-              provider: "BikesBooking",
-              url: "https://bikesbooking.tpm.li/N6lAuW1e",
-              affiliate: true,
-              note: "Rent a scooter or motorbike",
-            });
-          }
-          // Airport transfers — one per city. Istanbul already has AvitoVIP;
-          // Welcome Pickups for its strong European markets, Kiwitaxi elsewhere.
-          if (city.countryCode !== "TR") {
-            if (["ES", "IT", "GR", "PT", "FR"].includes(city.countryCode)) {
-              geo.push({
-                type: "other",
-                provider: "Welcome Pickups",
-                url: "https://tpm.li/bFe65KrG",
-                affiliate: true,
-                note: "Airport pickup — English-speaking driver",
-              });
-            } else {
-              geo.push({
-                type: "other",
-                provider: "Kiwitaxi",
-                url: "https://kiwitaxi.tpm.li/IPwPgM2i",
-                affiliate: true,
-                note: "Book an airport transfer",
-              });
-            }
-          }
-          // Klook — tours & things to do (worldwide, Asia-strong).
-          geo.push({
-            type: "other",
-            provider: "Klook",
-            url: "https://klook.tpm.li/fmtzsvTl",
-            affiliate: true,
-            note: "Tours & things to do",
-          });
-          // Tiqets — museums & attraction tickets (Europe-strong; complements Klook).
-          const TIQETS_COUNTRIES = new Set([
-            "GB", "FR", "ES", "IT", "PT", "DE", "AT", "CZ",
-            "HU", "GR", "NL", "EE", "IE", "BE", "PL", "TR", "AE",
-          ]);
-          if (TIQETS_COUNTRIES.has(city.countryCode)) {
-            geo.push({
-              type: "other",
-              provider: "Tiqets",
-              url: "https://tiqets.tpm.li/rpRB7oEZ",
-              affiliate: true,
-              note: "Museum & attraction tickets — skip the line",
-            });
-          }
-          // Airalo — travel eSIM, works worldwide (data the moment you land).
-          geo.push({
-            type: "sim",
-            provider: "Airalo",
-            url: "https://airalo.tpm.li/7Nn9Ad1q",
-            affiliate: true,
-            note: "Travel eSIM — data in 200+ countries",
-          });
-          // Aviasales — flight metasearch (compare every airline; 40% partner rate).
-          geo.push({
-            type: "flights",
-            provider: "Aviasales",
-            url: "https://aviasales.tpm.li/dAyfvzBW",
-            affiliate: true,
-            note: "Compare flights across every airline",
-          });
-          // Radical Storage — luggage storage in tourist hubs worldwide.
-          geo.push({
-            type: "other",
-            provider: "Radical Storage",
-            url: "https://radicalstorage.tpm.li/jDrZYmIj",
-            affiliate: true,
-            note: "Store your bags by the hour",
-          });
-          // AirHelp — flight-delay compensation (EU261/UK261 covers EU & UK departures).
-          const AIRHELP_COUNTRIES = new Set([
-            "GB", "FR", "ES", "IT", "PT", "DE", "AT",
-            "CZ", "HU", "GR", "NL", "EE", "IE", "BE", "PL",
-          ]);
-          if (AIRHELP_COUNTRIES.has(city.countryCode)) {
-            geo.push({
-              type: "other",
-              provider: "AirHelp",
-              url: "https://airhelp.tpm.li/xOYCZ6oP",
-              affiliate: true,
-              note: "Delayed flight? Claim up to €600",
-            });
-          }
-          const referralLinks = [...(profile?.referralLinks ?? []), ...geo];
-          if (referralLinks.length === 0) return null;
-          const live = referralLinks.filter((r) => r.url);
-          const reserved = referralLinks.filter((r) => !r.url);
+          const profileLinks = profile?.referralLinks ?? [];
+          const reserved = profileLinks.filter((r) => !r.url);
+          // Live cards: in-profile partners (with a url) + geo-scoped toolkit,
+          // both normalised to a common {provider,url,note} shape.
+          const live: { provider: string; url: string; note?: string }[] = [
+            ...profileLinks
+              .filter((r): r is ReferralLink & { url: string } => Boolean(r.url))
+              .map((r) => ({
+                provider: r.provider,
+                url: r.url,
+                note: r.note ?? t.referralTypes[r.type] ?? r.type,
+              })),
+            ...buildGeoToolkit(city).map((it) => ({
+              provider: it.provider,
+              url: it.url,
+              note: it.note,
+            })),
+          ];
+          if (live.length === 0 && reserved.length === 0) return null;
           return (
             <section className="mt-10 coral-band p-6 sm:p-8">
               <h2 className="display text-2xl font-black">
@@ -492,7 +367,7 @@ export default function CityProfileSections({
                           </span>
                         </span>
                         <span className="text-sm text-[#171310]/70">
-                          {r.note ?? t.referralTypes[r.type] ?? r.type}
+                          {r.note}
                         </span>
                       </span>
                       <span

@@ -125,6 +125,26 @@
     "healthcare": "Healthcare",
     "goods": "Goods & services"
   },
+  "toolkit": {
+    "title": "Plan your move to {city}",
+    "intro": "Everything you will book for the move — sorted, and updated as we add partners.",
+    "cat": {
+      "flights": "Flights",
+      "cars": "Car rental",
+      "scooter": "Scooter rental",
+      "transfer": "Airport transfer",
+      "hotel": "Hotels",
+      "tours": "Tours & tickets",
+      "insurance": "Insurance",
+      "esim": "eSIM / data",
+      "luggage": "Luggage storage",
+      "compensation": "Flight compensation",
+      "parking": "Parking & car",
+      "housing": "Housing",
+      "other": "More"
+    }
+  },
+
   "facts": {
     "title": "Good to know before you move to {city}",
     "intro": "The essentials for settling into {city} — money, language, climate and daily life at a glance.",

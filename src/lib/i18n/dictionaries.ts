@@ -123,6 +123,25 @@ export type Dictionary = {
     healthcare: string;
     goods: string;
   };
+  toolkit: {
+    title: string; // {city}
+    intro: string;
+    cat: {
+      flights: string;
+      cars: string;
+      scooter: string;
+      transfer: string;
+      hotel: string;
+      tours: string;
+      insurance: string;
+      esim: string;
+      luggage: string;
+      compensation: string;
+      parking: string;
+      housing: string;
+      other: string;
+    };
+  };
   facts: {
     title: string; // {city}
     intro: string; // {city}

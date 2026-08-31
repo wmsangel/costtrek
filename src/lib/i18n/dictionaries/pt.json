@@ -125,6 +125,26 @@
     "healthcare": "Saúde",
     "goods": "Bens e serviços"
   },
+  "toolkit": {
+    "title": "Planeie a sua mudança para {city}",
+    "intro": "Tudo o que vai reservar para a mudança — organizado e ampliado à medida que somamos parceiros.",
+    "cat": {
+      "flights": "Voos",
+      "cars": "Aluguer de carro",
+      "scooter": "Aluguer de scooter",
+      "transfer": "Transfer do aeroporto",
+      "hotel": "Hotéis",
+      "tours": "Passeios e bilhetes",
+      "insurance": "Seguro",
+      "esim": "eSIM / dados",
+      "luggage": "Guarda-volumes",
+      "compensation": "Indemnização de voo",
+      "parking": "Estacionamento e carro",
+      "housing": "Habitação",
+      "other": "Mais"
+    }
+  },
+
   "facts": {
     "title": "O que saber antes de se mudar para {city}",
     "intro": "O essencial para se instalar em {city} — dinheiro, idioma, clima e dia a dia num relance.",

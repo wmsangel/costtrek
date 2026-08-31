@@ -6,6 +6,7 @@ import CostCompareCalculator, {
 } from "@/components/CostCompareCalculator";
 import MetricComparison from "@/components/MetricComparison";
 import CityFacts from "@/components/CityFacts";
+import PlanYourMove from "@/components/PlanYourMove";
 import RadarChart from "@/components/RadarChart";
 import {
   CATEGORY_ORDER,
@@ -301,6 +302,11 @@ export default async function ComparePage({
       <section className="mt-12 grid md:grid-cols-2 gap-4">
         <CityFacts city={a} dict={dict} locale={l} />
         <CityFacts city={b} dict={dict} locale={l} />
+      </section>
+
+      <section className="mt-4 grid md:grid-cols-2 gap-4">
+        <PlanYourMove city={a} dict={dict} locale={l} />
+        <PlanYourMove city={b} dict={dict} locale={l} />
       </section>
 
       <Faq

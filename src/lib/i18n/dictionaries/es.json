@@ -125,6 +125,26 @@
     "healthcare": "Sanidad",
     "goods": "Bienes y servicios"
   },
+  "toolkit": {
+    "title": "Planifica tu mudanza a {city}",
+    "intro": "Todo lo que reservarás para la mudanza — ordenado y ampliado a medida que sumamos socios.",
+    "cat": {
+      "flights": "Vuelos",
+      "cars": "Alquiler de coches",
+      "scooter": "Alquiler de scooter",
+      "transfer": "Traslado al aeropuerto",
+      "hotel": "Hoteles",
+      "tours": "Tours y entradas",
+      "insurance": "Seguro",
+      "esim": "eSIM / datos",
+      "luggage": "Consigna de equipaje",
+      "compensation": "Compensación de vuelo",
+      "parking": "Aparcamiento y coche",
+      "housing": "Vivienda",
+      "other": "Más"
+    }
+  },
+
   "facts": {
     "title": "Lo que debes saber antes de mudarte a {city}",
     "intro": "Lo esencial para instalarte en {city}: dinero, idioma, clima y vida diaria de un vistazo.",

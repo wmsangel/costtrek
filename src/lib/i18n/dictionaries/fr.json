@@ -125,6 +125,26 @@
     "healthcare": "Santé",
     "goods": "Biens & services"
   },
+  "toolkit": {
+    "title": "Préparez votre installation à {city}",
+    "intro": "Tout ce que vous réserverez pour le déménagement — trié, et enrichi au fil des partenaires.",
+    "cat": {
+      "flights": "Vols",
+      "cars": "Location de voiture",
+      "scooter": "Location de scooter",
+      "transfer": "Transfert aéroport",
+      "hotel": "Hôtels",
+      "tours": "Visites & billets",
+      "insurance": "Assurance",
+      "esim": "eSIM / données",
+      "luggage": "Consigne à bagages",
+      "compensation": "Indemnisation de vol",
+      "parking": "Parking & voiture",
+      "housing": "Logement",
+      "other": "Plus"
+    }
+  },
+
   "facts": {
     "title": "À savoir avant de vous installer à {city}",
     "intro": "L’essentiel pour s’installer à {city} — argent, langue, climat et vie quotidienne en un coup d’œil.",

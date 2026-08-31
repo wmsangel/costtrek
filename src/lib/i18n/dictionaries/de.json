@@ -125,6 +125,26 @@
     "healthcare": "Gesundheit",
     "goods": "Waren & Dienstleistungen"
   },
+  "toolkit": {
+    "title": "Deinen Umzug nach {city} planen",
+    "intro": "Alles, was du für den Umzug buchst — sortiert und laufend um neue Partner ergänzt.",
+    "cat": {
+      "flights": "Flüge",
+      "cars": "Mietwagen",
+      "scooter": "Rollerverleih",
+      "transfer": "Flughafentransfer",
+      "hotel": "Hotels",
+      "tours": "Touren & Tickets",
+      "insurance": "Versicherung",
+      "esim": "eSIM / Daten",
+      "luggage": "Gepäckaufbewahrung",
+      "compensation": "Flugentschädigung",
+      "parking": "Parken & Auto",
+      "housing": "Wohnen",
+      "other": "Mehr"
+    }
+  },
+
   "facts": {
     "title": "Wissenswertes vor dem Umzug nach {city}",
     "intro": "Das Wichtigste, um in {city} anzukommen — Geld, Sprache, Klima und Alltag auf einen Blick.",
