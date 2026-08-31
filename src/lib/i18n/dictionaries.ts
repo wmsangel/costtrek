@@ -113,6 +113,7 @@ export type Dictionary = {
     plainBelow: string; // {city} {pct} {rent}
     plainAbove: string; // {city} {pct} {rent}
     compareWith: string; // {city}
+    rankedIn: string;
     disclaimer: string;
   };
   categories: {

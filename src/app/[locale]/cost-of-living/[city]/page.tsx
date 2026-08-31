@@ -22,6 +22,7 @@ import { getCityProfile, getCountry, countrySlug } from "@/lib/data";
 import { localizedCountry } from "@/lib/i18n/places";
 import CityProfileSections from "@/components/CityProfileSections";
 import CityFacts from "@/components/CityFacts";
+import { COLLECTIONS, cityCollections } from "@/lib/collections";
 import Mountains from "@/components/Mountains";
 import JsonLd from "@/components/JsonLd";
 import Faq, { type FaqItem } from "@/components/Faq";
@@ -358,6 +359,27 @@ export default async function CityPage({
           ))}
         </div>
       </section>
+
+      {(() => {
+        const ranks = cityCollections(c);
+        if (ranks.length === 0) return null;
+        return (
+          <section className="mt-12">
+            <h2 className="mag-h2 mb-4">★ {dict.city.rankedIn}</h2>
+            <div className="flex flex-wrap gap-2">
+              {ranks.map((k) => (
+                <Link
+                  key={k}
+                  href={`/${l}/best/${k}`}
+                  className="text-sm font-medium rounded-full border border-[var(--border)] px-3 py-1.5 hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                >
+                  {dict.collections[COLLECTIONS[k].dictKey].title}
+                </Link>
+              ))}
+            </div>
+          </section>
+        );
+      })()}
 
       <p className="mt-10 text-xs text-[var(--muted)]">
         {dict.city.disclaimer}

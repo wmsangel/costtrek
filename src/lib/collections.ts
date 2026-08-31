@@ -140,6 +140,17 @@ export function isCollection(v: string): v is CollectionKey {
   return v in COLLECTIONS;
 }
 
+/**
+ * Which ranking hubs a city places in (top `topN`). Powers reciprocal
+ * hub↔spoke internal links: the hub lists the city, the city links back to
+ * every hub it ranks in. Ordered by COLLECTION_KEYS for stable output.
+ */
+export function cityCollections(city: City, topN = 15): CollectionKey[] {
+  return COLLECTION_KEYS.filter((key) =>
+    rankCities(key, topN).some((r) => r.city.slug === city.slug),
+  );
+}
+
 export function rankCities(
   key: CollectionKey,
   limit = 30,

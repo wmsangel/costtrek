@@ -115,6 +115,7 @@
     "plainBelow": "En pocas palabras: {city} es un {pct}% más barata que una ciudad estadounidense típica. Un piso de una habitación en el centro cuesta unos {rent} $/mes.",
     "plainAbove": "En pocas palabras: {city} es un {pct}% más cara que una ciudad estadounidense típica. Un piso de una habitación en el centro cuesta unos {rent} $/mes.",
     "compareWith": "Comparar {city} con…",
+    "rankedIn": "Clasificada en",
     "disclaimer": "Las estimaciones usan índices aproximados del coste de vida (media de EE. UU. = 100) y son solo orientativas."
   },
   "categories": {
