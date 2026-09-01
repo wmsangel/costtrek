@@ -16,9 +16,12 @@ export function proxy(req: NextRequest) {
 }
 
 export const config = {
-  // Run on everything except API/asset routes, Next internals, metadata routes
-  // (og image, icons, manifest, sitemap, robots), and files with an extension.
+  // Run ONLY on locale-less paths that actually need the redirect. Already
+  // localized paths (/en, /de/…) are excluded so the middleware doesn't fire a
+  // no-op on every page request — that's pure Edge Request waste. Also excludes
+  // API/asset routes, Next internals, metadata routes (og image, icons,
+  // manifest, sitemap, robots), and files with an extension.
   matcher: [
-    "/((?!api|og|icon|apple-icon|manifest\\.webmanifest|sitemap\\.xml|robots\\.txt|_next/static|_next/image|.*\\..*).*)",
+    "/((?!(?:en|de|fr|es|pt)(?:/|$)|api|og|icon|apple-icon|manifest\\.webmanifest|sitemap\\.xml|robots\\.txt|_next/static|_next/image|.*\\..*).*)",
   ],
 };

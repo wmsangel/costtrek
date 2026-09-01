@@ -36,6 +36,10 @@ import Faq, { type FaqItem } from "@/components/Faq";
 // on-demand and 308-redirects to canonical (see below). Halves the static-page
 // count and removes mirror-URL duplicate content.
 export const dynamicParams = true;
+// Cost-of-living data is near-static between deploys; a 7-day window lets the
+// CDN serve these ISR pages as edge HITs instead of an ISR Read per request
+// (revalidates in the background at most once/week). Deploys still invalidate.
+export const revalidate = 604800;
 
 type Params = { locale: string; pair: string };
 

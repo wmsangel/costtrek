@@ -99,6 +99,15 @@ export function GET(req: Request) {
         </div>
       </div>
     ),
-    { width: 1200, height: 630 },
+    {
+      width: 1200,
+      height: 630,
+      // OG images are fully determined by the query params, so each unique image
+      // can be generated once and served from the CDN forever — no per-request
+      // regeneration (cuts function invocations, CPU and origin transfer).
+      headers: {
+        "Cache-Control": "public, immutable, no-transform, max-age=31536000, s-maxage=31536000",
+      },
+    },
   );
 }
