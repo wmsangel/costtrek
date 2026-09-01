@@ -81,7 +81,7 @@
   "compareCountries": {
     "breadcrumb": "Comparar países",
     "title": "{a} vs {b}: custo de vida e impostos",
-    "subtitle": "Compare o custo de vida, os impostos, os salários e os vistos entre {a} e {b}.",
+    "subtitle": "{b} é {pct} {word} que {a}. Compare custo de vida, impostos, salários e vistos — e o salário de que precisaria em {b} para igualar {a}.",
     "compareWith": "Comparar {country} com outros países"
   },
   "compare": {
@@ -281,7 +281,7 @@
     "titleTemplate": "%s · CostTrek",
     "homeDescription": "Compare o custo de vida entre cidades de todo o mundo e descubra o salário de que precisaria para manter o seu padrão de vida após uma mudança.",
     "compareTitle": "{a} vs {b}: comparação do custo de vida",
-    "compareDescription": "Mudar de {aName} para {bName}? Compare o custo de vida entre {aName} e {bName}. Veja o salário de que precisaria em {bName} para igualar o seu estilo de vida em {aName}, com um detalhe categoria a categoria.",
+    "compareDescription": "{bName} é {pct} {word} que {aName}. Compare o custo de vida completo — renda, comida, transporte e impostos — e veja o salário líquido de que precisaria em {bName} para manter o seu padrão de vida de {aName}.",
     "cityTitle": "Custo de vida em {city}",
     "cityDescription": "Custo de vida em {location}: índice {index} (média dos EUA = 100), renda mediana de um apartamento de um quarto de cerca de {rent} $/mês, além de um detalhe por categoria."
   }

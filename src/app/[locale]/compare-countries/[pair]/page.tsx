@@ -90,13 +90,21 @@ export async function generateMetadata({
   const dict = await getDictionary(l);
   const aName = localizedCountryNameByCode(l, parsed.a.code, parsed.a.name);
   const bName = localizedCountryNameByCode(l, parsed.b.code, parsed.b.name);
+  const avgA = avgCostIndex(parsed.a.code);
+  const avgB = avgCostIndex(parsed.b.code);
+  const diff = avgA > 0 ? Math.round(((avgB - avgA) / avgA) * 100) : 0;
   return pageMetadata({
     locale: l,
     path: `compare-countries/${pair}`,
     ogType: "article",
     noindex: !countryPairIndexable(parsed.a.code, parsed.b.code),
     title: fill(dict.compareCountries.title, { a: aName, b: bName }),
-    description: fill(dict.compareCountries.subtitle, { a: aName, b: bName }),
+    description: fill(dict.compareCountries.subtitle, {
+      a: aName,
+      b: bName,
+      pct: `${Math.abs(diff)}%`,
+      word: diff < 0 ? dict.compare.cheaper : dict.compare.moreExpensive,
+    }),
     ogImage: { title: `${aName} vs ${bName}`, tag: dict.compareCountries.breadcrumb },
   });
 }

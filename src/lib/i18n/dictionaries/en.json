@@ -81,7 +81,7 @@
   "compareCountries": {
     "breadcrumb": "Compare countries",
     "title": "{a} vs {b}: cost of living & taxes",
-    "subtitle": "Compare cost of living, taxes, salaries and visas between {a} and {b}.",
+    "subtitle": "{b} is {pct} {word} than {a}. Compare cost of living, taxes, salaries and visas — and the salary you’d need in {b} to match {a}.",
     "compareWith": "Compare {country} with other countries"
   },
   "compare": {
@@ -305,7 +305,7 @@
     "titleTemplate": "%s · CostTrek",
     "homeDescription": "Compare the cost of living between cities worldwide and find the salary you'd need to keep your standard of living after a move.",
     "compareTitle": "{a} vs {b}: cost of living comparison",
-    "compareDescription": "Moving from {aName} to {bName}? Compare the cost of living between {aName} and {bName}. See the salary you'd need in {bName} to match your lifestyle in {aName}, with a category-by-category breakdown.",
+    "compareDescription": "{bName} is {pct} {word} than {aName}. Compare the full cost of living — rent, food, transport and taxes — and see the net salary you’d need in {bName} to keep your {aName} standard of living.",
     "cityTitle": "Cost of living in {city}",
     "cityDescription": "Cost of living in {location}: index {index} (US average = 100), median 1-bedroom rent about ${rent}/month, plus a category breakdown."
   }

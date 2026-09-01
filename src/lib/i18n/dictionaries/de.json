@@ -81,7 +81,7 @@
   "compareCountries": {
     "breadcrumb": "Länder vergleichen",
     "title": "{a} vs {b}: Lebenshaltungskosten & Steuern",
-    "subtitle": "Vergleiche Lebenshaltungskosten, Steuern, Gehälter und Visa zwischen {a} und {b}.",
+    "subtitle": "{b} ist {pct} {word} als {a}. Vergleiche Lebenshaltungskosten, Steuern, Gehälter und Visa — und das Gehalt, das du in {b} bräuchtest, um mit {a} gleichzuziehen.",
     "compareWith": "{country} mit anderen Ländern vergleichen"
   },
   "compare": {
@@ -281,7 +281,7 @@
     "titleTemplate": "%s · CostTrek",
     "homeDescription": "Vergleiche die Lebenshaltungskosten von Städten weltweit und finde das Gehalt, das du brauchst, um nach einem Umzug deinen Lebensstandard zu halten.",
     "compareTitle": "{a} vs {b}: Vergleich der Lebenshaltungskosten",
-    "compareDescription": "Umzug von {aName} nach {bName}? Vergleiche die Lebenshaltungskosten zwischen {aName} und {bName}. Sieh, welches Gehalt du in {bName} brauchst, um deinen Lebensstil aus {aName} zu halten – mit einer Aufschlüsselung nach Kategorie.",
+    "compareDescription": "{bName} ist {pct} {word} als {aName}. Vergleiche die kompletten Lebenshaltungskosten — Miete, Essen, Transport und Steuern — und sieh, welches Nettogehalt du in {bName} bräuchtest, um deinen Lebensstandard aus {aName} zu halten.",
     "cityTitle": "Lebenshaltungskosten in {city}",
     "cityDescription": "Lebenshaltungskosten in {location}: Index {index} (US-Durchschnitt = 100), Median-Miete für eine 1-Zimmer-Wohnung etwa {rent} $/Monat, plus Aufschlüsselung nach Kategorie."
   }

@@ -91,6 +91,8 @@ export async function generateMetadata({
     description: fill(dict.meta.compareDescription, {
       aName: localizedCityName(l, a),
       bName: localizedCityName(l, b),
+      pct: `${Math.abs(diff)}%`,
+      word: diff < 0 ? dict.compare.cheaper : dict.compare.moreExpensive,
     }),
     ogImage: {
       title: `${localizedCityName(l, a)} vs ${localizedCityName(l, b)}`,
