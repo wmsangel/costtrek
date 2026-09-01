@@ -74,7 +74,12 @@ export function articleJsonLd(opts: {
     mainEntityOfPage: { "@type": "WebPage", "@id": absUrl(opts.locale, opts.path) },
     url: absUrl(opts.locale, opts.path),
     ...(opts.image ? { image: opts.image } : {}),
-    author: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+    author: {
+      "@type": "Person",
+      name: "Igor Zagorodnyi",
+      jobTitle: "Founder & editor",
+      url: `${SITE_URL}/${opts.locale}/about`,
+    },
     publisher: {
       "@type": "Organization",
       name: SITE_NAME,

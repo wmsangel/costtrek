@@ -67,6 +67,8 @@
     "title": "Guides déménagement & coût de la vie",
     "subtitle": "Des guides pratiques pour s'expatrier, comparer les villes, comprendre les impôts et faire durer son argent.",
     "readTime": "{n} min de lecture",
+    "by": "Par",
+    "role": "Fondateur & rédacteur",
     "disclaimer": "{site} fournit des informations générales, non des conseils financiers, fiscaux, juridiques ou d'immigration. Les chiffres sont des estimations — vérifiez tout élément important auprès d'une source officielle avant de décider."
   },
   "calculators": {

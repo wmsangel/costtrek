@@ -71,6 +71,8 @@ export type Dictionary = {
     title: string;
     subtitle: string;
     readTime: string; // {n}
+    by: string;
+    role: string;
     disclaimer: string; // {site}
   };
   calculators: {

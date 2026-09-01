@@ -40,9 +40,10 @@ export default async function PrivacyPage({
       {legalBody("privacy", l, (
         <>
       <p>
-        This is a template privacy policy for {SITE_NAME}; review it with a
-        qualified professional before relying on it. It explains what we collect
-        and why.
+        This policy explains what information {SITE_NAME} collects, how it is
+        used, and the choices you have over cookies and advertising. {SITE_NAME}
+        is an independent site run by Igor Zagorodnyi; see our{" "}
+        <Link href={`/${l}/about`}>{dict.legal.about}</Link> page.
       </p>
       <h2>Information we collect</h2>
       <p>
@@ -61,9 +62,40 @@ export default async function PrivacyPage({
       <h2>Advertising &amp; third parties</h2>
       <p>
         We may display ads served by third-party networks (for example, Google
-        AdSense). These partners may use cookies to serve ads based on your prior
-        visits. You can control personalised advertising through your device and
-        browser settings and, in the EU/UK, via the consent choices we present.
+        AdSense/Ezoic). These partners, including Google, may use cookies to serve
+        ads based on your prior visits to this and other websites. You can opt out
+        of personalised advertising here:
+      </p>
+      <ul>
+        <li>
+          Google —{" "}
+          <a href="https://adssettings.google.com" rel="noopener" target="_blank">
+            Ads Settings
+          </a>
+        </li>
+        <li>
+          US —{" "}
+          <a href="https://optout.aboutads.info" rel="noopener" target="_blank">
+            aboutads.info
+          </a>{" "}
+          and{" "}
+          <a href="https://optout.networkadvertising.org" rel="noopener" target="_blank">
+            NAI opt-out
+          </a>
+        </li>
+        <li>
+          EU/UK —{" "}
+          <a href="https://www.youronlinechoices.eu" rel="noopener" target="_blank">
+            youronlinechoices.eu
+          </a>{" "}
+          and the consent choices we present on your first visit
+        </li>
+      </ul>
+      <p>
+        We also use <strong>affiliate links</strong>: if you click a partner offer
+        (flights, car rental, insurance and similar) and book, we may earn a
+        commission at no extra cost to you. These links are marked and never affect
+        the figures or rankings we show.
       </p>
       <h2>Your rights</h2>
       <p>

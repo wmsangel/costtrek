@@ -67,6 +67,8 @@
     "title": "Guías de mudanza y coste de vida",
     "subtitle": "Guías prácticas para mudarte al extranjero, comparar ciudades, entender los impuestos y estirar tu dinero.",
     "readTime": "{n} min de lectura",
+    "by": "Por",
+    "role": "Fundador y editor",
     "disclaimer": "{site} ofrece información general, no asesoramiento financiero, fiscal, legal ni de inmigración. Las cifras son estimaciones — verifica lo importante en una fuente oficial antes de decidir."
   },
   "calculators": {

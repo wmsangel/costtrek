@@ -109,6 +109,17 @@ export default async function AboutPage({
         base, companies planning moves, and anyone simply curious how far their
         money would go somewhere else.
       </p>
+      <h2>Who runs {SITE_NAME}</h2>
+      <p>
+        {SITE_NAME} is an independent, self-funded project founded and edited by{" "}
+        <strong>Igor Zagorodnyi</strong>, a developer who builds data-driven
+        reference tools. It is not affiliated with any government body, relocation
+        agency or real-estate company — which is why the numbers and rankings are
+        never influenced by advertisers. The site is supported by display ads and
+        affiliate links (both clearly marked); those partnerships never change the
+        data we show. Corrections and questions reach the editor directly at{" "}
+        <a href="mailto:info@costtrek.com">info@costtrek.com</a>.
+      </p>
       <h2>Get in touch</h2>
       <p>
         Questions, corrections or partnership ideas? See our{" "}

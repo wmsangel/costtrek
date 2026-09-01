@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import LegalShell from "@/components/LegalShell";
 import { legalBody } from "@/content/legal-i18n";
@@ -39,8 +40,9 @@ export default async function TermsPage({
       {legalBody("terms", l, (
         <>
       <p>
-        By using {SITE_NAME} you agree to these terms. This is a template; review
-        it with a qualified professional before relying on it.
+        By using {SITE_NAME} you agree to these terms. {SITE_NAME} is an
+        independent site run by Igor Zagorodnyi; see our{" "}
+        <Link href={`/${l}/about`}>{dict.legal.about}</Link> page.
       </p>
       <h2>Informational use only</h2>
       <p>

@@ -84,7 +84,19 @@ export default async function GuidePage({
       </nav>
 
       <header>
-        <div className="flex items-center gap-3 text-xs text-[var(--muted)]">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[var(--muted)]">
+          <span>
+            {dict.guides.by}{" "}
+            <Link
+              href={`/${l}/about`}
+              rel="author"
+              className="font-semibold text-[var(--foreground)] hover:text-[var(--accent)]"
+            >
+              Igor Zagorodnyi
+            </Link>{" "}
+            · {dict.guides.role}
+          </span>
+          <span aria-hidden>·</span>
           <time dateTime={guide.date}>
             {new Date(guide.date).toLocaleDateString(l, {
               year: "numeric",

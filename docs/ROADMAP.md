@@ -22,8 +22,8 @@ only (no ad budget); KG ИП payout (no PayPal receive)._
 - [x] Noindex the thin long-tail compare pages (`src/lib/seo/indexable.ts`)
 - [ ] **ads.txt** — add `app/ads.txt/route.ts` (need exact lines from the ad network)
 - [ ] **CMP decision** — homemade CookieBanner is not IAB TCF/CCPA; rely on the network's certified CMP when ads go live
-- [ ] **Privacy/terms cleanup** — drop "template" wording; add ad-network disclosure + opt-out links
-- [ ] **About / bylines** — named owner + author bios on guides
+- [x] **Privacy/terms cleanup** (done 2026-09-01) — dropped "template" wording; privacy has an Advertising section with opt-out links (Google/aboutads/NAI/youronlinechoices) + affiliate disclosure
+- [x] **About / bylines** (done 2026-09-01) — About names Igor Zagorodnyi (founder & editor); guides carry a byline + `rel=author`; article JSON-LD uses a Person author
 
 ## Infra / housekeeping
 - [x] **ISR the compare long tail** (done 2026-08-31) — `generateStaticParams` on both compare routes now prerenders only indexable (major↔major) pairs; the rest render on-demand via ISR. Prerendered pages ~14k→~7k, well under the ceiling; adding cities is now cheap.
