@@ -145,6 +145,28 @@ export default async function ComparePage({
     word: cheaper ? dict.compare.cheaper : dict.compare.moreExpensive,
   });
 
+  // Data-driven verdict — a concise, unique answer to "is A cheaper than B?" /
+  // "A vs B cost of living" that thickens the page and can win a rich snippet.
+  const nl = LOCALE_BCP47[l];
+  const taxA = getCountry(a.countryCode)?.taxes.incomeTax.topRate;
+  const taxB = getCountry(b.countryCode)?.taxes.incomeTax.topRate;
+  const verdict =
+    fill(dict.compare.verdictLead, {
+      a: labelA,
+      b: labelB,
+      pct: Math.abs(overallDiff).toFixed(0),
+      word: cheaper ? dict.compare.cheaper : dict.compare.moreExpensive,
+    }) +
+    fill(dict.compare.verdictRent, {
+      rb: `$${b.medianRent1br.toLocaleString(nl)}`,
+      ra: `$${a.medianRent1br.toLocaleString(nl)}`,
+    }) +
+    (taxA != null && taxB != null
+      ? a.countryCode === b.countryCode
+        ? fill(dict.compare.verdictTaxSame, { ta: taxA })
+        : fill(dict.compare.verdictTaxDiff, { tb: taxB, ta: taxA })
+      : "");
+
   const related = CITIES.filter(
     (c) => c.slug !== a.slug && c.slug !== b.slug,
   ).slice(0, 6);
@@ -182,6 +204,10 @@ export default async function ComparePage({
           <p className="mt-3 font-semibold max-w-[46ch]">{dict.compare.subtitle}</p>
         </div>
       </section>
+
+      <p className="mt-6 text-lg leading-relaxed text-[var(--foreground)] max-w-[72ch]">
+        {verdict}
+      </p>
 
       <div className="mt-6">
         <CostCompareCalculator

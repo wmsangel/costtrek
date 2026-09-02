@@ -101,6 +101,11 @@
     "moreFrom": "Más comparaciones desde {city}",
     "flightsCta": "¿Un vuelo entre {a} y {b}? Encuentra billetes baratos",
     "radarTitle": "{a} y {b}, comparadas",
+    "verdictLead": "{a} vs {b} de un vistazo: {b} es un {pct}% {word} que {a} en total.",
+    "verdictRent": " El alquiler de 1 dormitorio ronda {rb}/mes frente a {ra}/mes.",
+    "verdictSalary": " Salario neto medio: {sb}/mes frente a {sa}/mes.",
+    "verdictTaxDiff": " Tipo máximo de IRPF: {tb}% frente a {ta}%.",
+    "verdictTaxSame": " El tipo máximo nacional del impuesto sobre la renta es del {ta}%.",
     "disclaimer": "Las estimaciones usan índices aproximados del coste de vida (media de EE. UU. = 100) y son solo orientativas."
   },
   "city": {

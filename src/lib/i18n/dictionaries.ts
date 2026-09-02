@@ -99,6 +99,11 @@ export type Dictionary = {
     moreFrom: string; // {city}
     flightsCta: string; // {a} {b}
     radarTitle: string; // {a} {b}
+    verdictLead: string; // {a} {b} {pct} {word}
+    verdictRent: string; // {rb} {ra}
+    verdictSalary: string; // {sb} {sa}
+    verdictTaxDiff: string; // {tb} {ta}
+    verdictTaxSame: string; // {ta}
     disclaimer: string;
   };
   city: {

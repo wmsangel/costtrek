@@ -101,6 +101,11 @@
     "moreFrom": "Plus de comparaisons depuis {city}",
     "flightsCta": "Un vol entre {a} et {b} ? Trouvez des billets pas chers",
     "radarTitle": "{a} et {b} en un coup d’œil",
+    "verdictLead": "{a} vs {b} en un coup d’œil — {b} est globalement {pct}% {word} que {a}.",
+    "verdictRent": " Le loyer d’un T1 tourne autour de {rb}/mois contre {ra}/mois.",
+    "verdictSalary": " Salaire net moyen : {sb}/mois contre {sa}/mois.",
+    "verdictTaxDiff": " Taux marginal d’impôt : {tb}% contre {ta}%.",
+    "verdictTaxSame": " Le taux marginal national d’impôt sur le revenu est de {ta}%.",
     "disclaimer": "Les estimations reposent sur des indices approximatifs du coût de la vie (moyenne américaine = 100) et ne sont fournies qu'à titre indicatif."
   },
   "city": {

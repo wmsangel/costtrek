@@ -101,6 +101,11 @@
     "moreFrom": "More comparisons from {city}",
     "flightsCta": "Flying between {a} and {b}? Find cheap flights",
     "radarTitle": "How {a} and {b} compare",
+    "verdictLead": "{a} vs {b} at a glance — {b} is {pct}% {word} than {a} overall.",
+    "verdictRent": " Median 1-bed rent runs about {rb}/mo versus {ra}/mo.",
+    "verdictSalary": " Average net salary: {sb}/mo vs {sa}/mo.",
+    "verdictTaxDiff": " Top income tax: {tb}% vs {ta}%.",
+    "verdictTaxSame": " The top national income-tax rate is {ta}%.",
     "disclaimer": "Estimates use approximate cost-of-living indices (US average = 100) and are for general guidance only."
   },
   "city": {

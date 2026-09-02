@@ -101,6 +101,11 @@
     "moreFrom": "Mais comparações a partir de {city}",
     "flightsCta": "Um voo entre {a} e {b}? Encontre passagens baratas",
     "radarTitle": "{a} e {b} lado a lado",
+    "verdictLead": "{a} vs {b} num relance — {b} é {pct}% {word} do que {a} no total.",
+    "verdictRent": " A renda de T1 ronda os {rb}/mês contra {ra}/mês.",
+    "verdictSalary": " Salário líquido médio: {sb}/mês contra {sa}/mês.",
+    "verdictTaxDiff": " Imposto marginal: {tb}% contra {ta}%.",
+    "verdictTaxSame": " A taxa marginal nacional de IRS é de {ta}%.",
     "disclaimer": "As estimativas usam índices aproximados de custo de vida (média dos EUA = 100) e servem apenas de orientação geral."
   },
   "city": {

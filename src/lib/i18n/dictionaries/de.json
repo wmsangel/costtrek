@@ -101,6 +101,11 @@
     "moreFrom": "Weitere Vergleiche ab {city}",
     "flightsCta": "Flug zwischen {a} und {b}? Günstige Flüge finden",
     "radarTitle": "{a} und {b} im Vergleich",
+    "verdictLead": "{a} vs {b} auf einen Blick — {b} ist insgesamt {pct}% {word} als {a}.",
+    "verdictRent": " Die Miete für 1 Zimmer liegt bei rund {rb}/Mon. gegenüber {ra}/Mon.",
+    "verdictSalary": " Durchschnittliches Nettogehalt: {sb}/Mon. vs. {sa}/Mon.",
+    "verdictTaxDiff": " Spitzeneinkommensteuer: {tb}% vs. {ta}%.",
+    "verdictTaxSame": " Der nationale Spitzensteuersatz liegt bei {ta}%.",
     "disclaimer": "Die Schätzungen verwenden ungefähre Lebenshaltungskosten-Indizes (US-Durchschnitt = 100) und dienen nur zur allgemeinen Orientierung."
   },
   "city": {

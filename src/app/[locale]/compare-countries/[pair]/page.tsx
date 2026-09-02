@@ -157,6 +157,24 @@ export default async function CompareCountriesPage({
   const equivalent = Math.round((75000 * avgB) / avgA);
   const rA = a.taxes.incomeTax.topRate;
   const rB = b.taxes.incomeTax.topRate;
+
+  // Data-driven verdict — a concise, unique answer to "is A cheaper than B?".
+  const salA = a.economy?.avgNetSalaryUsdMonthly;
+  const salB = b.economy?.avgNetSalaryUsdMonthly;
+  const verdict =
+    fill(dict.compare.verdictLead, {
+      a: aName,
+      b: bName,
+      pct: Math.abs(diff).toFixed(0),
+      word: diff < 0 ? dict.compare.cheaper : dict.compare.moreExpensive,
+    }) +
+    (salA != null && salB != null
+      ? fill(dict.compare.verdictSalary, {
+          sb: `$${salB.toLocaleString(nl)}`,
+          sa: `$${salA.toLocaleString(nl)}`,
+        })
+      : "") +
+    fill(dict.compare.verdictTaxDiff, { tb: rB, ta: rA });
   const aLower = rA <= rB;
   const faqItems: FaqItem[] = [
     {
@@ -222,6 +240,10 @@ export default async function CompareCountriesPage({
           </p>
         </div>
       </section>
+
+      <p className="mt-6 text-lg leading-relaxed text-[var(--foreground)] max-w-[72ch]">
+        {verdict}
+      </p>
 
       <div className="card rounded-2xl overflow-x-auto mt-6">
         <table className="w-full text-sm border-collapse">
