@@ -150,6 +150,9 @@ const INTL_CITIES: City[] = [
   { slug: "manchester-uk", name: "Manchester", country: "United Kingdom", countryCode: "GB", aliases: [], medianRent1br: 1100, breakdown: { housing: 118, food: 110, transport: 92, utilities: 122, healthcare: 85, goods: 110 } },
   { slug: "osaka-jp", name: "Osaka", country: "Japan", countryCode: "JP", aliases: ["大阪", "Ōsaka", "Osaca"], medianRent1br: 850, breakdown: { housing: 92, food: 98, transport: 82, utilities: 110, healthcare: 85, goods: 104 } },
   { slug: "montreal-ca", name: "Montreal", country: "Canada", countryCode: "CA", aliases: ["Montréal"], medianRent1br: 1150, breakdown: { housing: 102, food: 106, transport: 80, utilities: 98, healthcare: 80, goods: 105 } },
+  { slug: "hamburg-de", name: "Hamburg", country: "Germany", countryCode: "DE", aliases: ["Hambourg", "Amburgo"], medianRent1br: 1200, breakdown: { housing: 125, food: 106, transport: 86, utilities: 128, healthcare: 95, goods: 106 } },
+  { slug: "nice-fr", name: "Nice", country: "France", countryCode: "FR", aliases: ["Niza", "Nizza"], medianRent1br: 1000, breakdown: { housing: 108, food: 106, transport: 76, utilities: 110, healthcare: 82, goods: 106 } },
+  { slug: "bangalore-in", name: "Bangalore", country: "India", countryCode: "IN", aliases: ["Bengaluru", "Bengalúru"], medianRent1br: 350, breakdown: { housing: 30, food: 38, transport: 32, utilities: 50, healthcare: 40, goods: 52 } },
 ];
 
 export const CITIES: City[] = [...US_CITIES, ...INTL_CITIES];
