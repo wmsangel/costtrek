@@ -153,6 +153,10 @@ const INTL_CITIES: City[] = [
   { slug: "hamburg-de", name: "Hamburg", country: "Germany", countryCode: "DE", aliases: ["Hambourg", "Amburgo"], medianRent1br: 1200, breakdown: { housing: 125, food: 106, transport: 86, utilities: 128, healthcare: 95, goods: 106 } },
   { slug: "nice-fr", name: "Nice", country: "France", countryCode: "FR", aliases: ["Niza", "Nizza"], medianRent1br: 1000, breakdown: { housing: 108, food: 106, transport: 76, utilities: 110, healthcare: 82, goods: 106 } },
   { slug: "bangalore-in", name: "Bangalore", country: "India", countryCode: "IN", aliases: ["Bengaluru", "Bengalúru"], medianRent1br: 350, breakdown: { housing: 30, food: 38, transport: 32, utilities: 50, healthcare: 40, goods: 52 } },
+  { slug: "rotterdam-nl", name: "Rotterdam", country: "Netherlands", countryCode: "NL", aliases: ["Róterdam"], medianRent1br: 1500, breakdown: { housing: 145, food: 110, transport: 92, utilities: 120, healthcare: 98, goods: 112 } },
+  { slug: "turin-it", name: "Turin", country: "Italy", countryCode: "IT", aliases: ["Torino", "Turín"], medianRent1br: 750, breakdown: { housing: 88, food: 100, transport: 80, utilities: 115, healthcare: 88, goods: 104 } },
+  { slug: "fukuoka-jp", name: "Fukuoka", country: "Japan", countryCode: "JP", aliases: ["福岡"], medianRent1br: 700, breakdown: { housing: 80, food: 95, transport: 78, utilities: 108, healthcare: 85, goods: 102 } },
+  { slug: "guadalajara-mx", name: "Guadalajara", country: "Mexico", countryCode: "MX", aliases: ["GDL"], medianRent1br: 500, breakdown: { housing: 42, food: 55, transport: 45, utilities: 60, healthcare: 55, goods: 65 } },
 ];
 
 export const CITIES: City[] = [...US_CITIES, ...INTL_CITIES];
