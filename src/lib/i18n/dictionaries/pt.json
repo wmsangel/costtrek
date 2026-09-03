@@ -55,7 +55,12 @@
   "country": {
     "heading": "Custo de vida em {country}",
     "subtitle": "Impostos nacionais, vistos e economia, além de todas as cidades que acompanhamos em {country}.",
-    "citiesTitle": "Cidades em {country}"
+    "citiesTitle": "Cidades em {country}",
+    "verdictLead": "O custo de vida em {country} situa-se em média em {index} no nosso índice (uma cidade dos EUA típica = 100) — cerca de {pct}% {word}.",
+    "verdictSpread": " Entre as cidades que acompanhamos, {cheap} é a mais acessível e {expensive} a mais cara.",
+    "verdictStats": " A renda de um T1 ronda os {rent} $/mês e a taxa marginal de imposto é de {tax}%.",
+    "verdictSalary": " O salário líquido médio é de cerca de {salary} $/mês.",
+    "capital": "Capital"
   },
   "countriesIndex": {
     "title": "Custo de vida por país",

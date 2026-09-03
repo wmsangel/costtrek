@@ -8,7 +8,7 @@ import {
   overallIndex,
   type City,
 } from "@/lib/cities";
-import { countriesWithCities } from "@/lib/countryStats";
+import { countriesWithCities, avgCostIndex } from "@/lib/countryStats";
 import {
   countrySlug,
   getCountry,
@@ -98,6 +98,45 @@ export default async function CountryPage({
   if (co.economy?.lifeExpectancyYears != null)
     taxes.push(["Life expectancy", `${co.economy.lifeExpectancyYears} yr`]);
 
+  // Data-driven verdict intro — answers "cost of living in {country}".
+  const index = Math.round(avgCostIndex(co.code));
+  const pct = Math.abs(index - 100);
+  const word = index < 100 ? dict.compare.cheaper : dict.compare.moreExpensive;
+  const avgRent = cities.length
+    ? Math.round(cities.reduce((s, c) => s + c.medianRent1br, 0) / cities.length)
+    : null;
+  const salary = co.economy?.avgNetSalaryUsdMonthly;
+  const verdict =
+    fill(dict.country.verdictLead, { country: name, index, pct, word }) +
+    (cities.length >= 2
+      ? fill(dict.country.verdictSpread, {
+          cheap: localizedCityName(l, cities[0]),
+          expensive: localizedCityName(l, cities[cities.length - 1]),
+        })
+      : "") +
+    (avgRent != null
+      ? fill(dict.country.verdictStats, { rent: avgRent.toLocaleString(nl), tax: co.taxes.incomeTax.topRate })
+      : "") +
+    (salary != null
+      ? fill(dict.country.verdictSalary, { salary: salary.toLocaleString(nl) })
+      : "");
+
+  // Country facts strip (reuses dict.facts labels; language-neutral values).
+  const facts: [string, string, string][] = [];
+  if (co.currency)
+    facts.push([dict.facts.currency, `${co.currency.name} (${co.currency.symbol} ${co.currency.code})`, "💱"]);
+  if (co.languages?.length)
+    facts.push([dict.facts.languages, co.languages.join(", "), "🗣️"]);
+  if (co.capital) facts.push([dict.country.capital, co.capital, "🏛️"]);
+  if (co.drivingSide)
+    facts.push([dict.facts.driving, co.drivingSide === "left" ? dict.facts.left : dict.facts.right, "🚗"]);
+  if (co.practical?.powerPlugs?.length)
+    facts.push([
+      dict.facts.power,
+      `${co.practical.powerPlugs.join("/")}${co.practical.voltage ? ` · ${co.practical.voltage}V` : ""}`,
+      "🔌",
+    ]);
+
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:py-10">
       <JsonLd
@@ -126,6 +165,28 @@ export default async function CountryPage({
           </p>
         </div>
       </section>
+
+      <p className="mt-6 text-lg leading-relaxed text-[var(--foreground)] max-w-[72ch]">
+        {verdict}
+      </p>
+
+      {facts.length > 0 && (
+        <dl className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-x-5 gap-y-3">
+          {facts.map(([label, value, icon]) => (
+            <div key={label} className="flex items-start gap-2.5">
+              <span aria-hidden="true" className="text-base leading-5 shrink-0">
+                {icon}
+              </span>
+              <div className="min-w-0">
+                <dt className="text-[11px] font-bold uppercase tracking-wider text-[var(--muted)]">
+                  {label}
+                </dt>
+                <dd className="text-sm font-semibold leading-snug">{value}</dd>
+              </div>
+            </div>
+          ))}
+        </dl>
+      )}
 
       {/* National taxes & economy */}
       <section className="mt-8">

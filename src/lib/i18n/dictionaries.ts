@@ -54,6 +54,11 @@ export type Dictionary = {
     heading: string; // {country}
     subtitle: string; // {n} {country}
     citiesTitle: string; // {country}
+    verdictLead: string; // {country} {index} {pct} {word}
+    verdictSpread: string; // {cheap} {expensive}
+    verdictStats: string; // {rent} {tax}
+    verdictSalary: string; // {salary}
+    capital: string;
   };
   countriesIndex: {
     title: string;

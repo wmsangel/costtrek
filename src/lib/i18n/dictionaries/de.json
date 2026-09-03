@@ -55,7 +55,12 @@
   "country": {
     "heading": "Lebenshaltungskosten in {country}",
     "subtitle": "Nationale Steuern, Visa und Wirtschaft — sowie jede Stadt, die wir in {country} erfassen.",
-    "citiesTitle": "Städte in {country}"
+    "citiesTitle": "Städte in {country}",
+    "verdictLead": "Die Lebenshaltungskosten in {country} liegen im Schnitt bei {index} auf unserem Index (eine typische US-Stadt = 100) — rund {pct}% {word}.",
+    "verdictSpread": " Unter den erfassten Städten ist {cheap} am günstigsten und {expensive} am teuersten.",
+    "verdictStats": " Eine 1-Zimmer-Miete liegt bei etwa {rent} $/Mon., der Spitzensteuersatz bei {tax}%.",
+    "verdictSalary": " Das durchschnittliche Nettogehalt beträgt rund {salary} $/Mon.",
+    "capital": "Hauptstadt"
   },
   "countriesIndex": {
     "title": "Lebenshaltungskosten nach Land",

@@ -55,7 +55,12 @@
   "country": {
     "heading": "Cost of living in {country}",
     "subtitle": "National taxes, visas and economy — plus every city we track in {country}.",
-    "citiesTitle": "Cities in {country}"
+    "citiesTitle": "Cities in {country}",
+    "verdictLead": "The cost of living in {country} averages {index} on our index (a typical US city = 100) — about {pct}% {word}.",
+    "verdictSpread": " Among the cities we track, {cheap} is the most affordable and {expensive} the priciest.",
+    "verdictStats": " A one-bedroom rent runs roughly ${rent}/mo and the top income-tax rate is {tax}%.",
+    "verdictSalary": " The average net salary is about ${salary}/mo.",
+    "capital": "Capital"
   },
   "countriesIndex": {
     "title": "Cost of living by country",

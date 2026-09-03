@@ -55,7 +55,12 @@
   "country": {
     "heading": "Coste de vida en {country}",
     "subtitle": "Impuestos nacionales, visados y economía, además de todas las ciudades que seguimos en {country}.",
-    "citiesTitle": "Ciudades en {country}"
+    "citiesTitle": "Ciudades en {country}",
+    "verdictLead": "El coste de vida en {country} promedia {index} en nuestro índice (una ciudad estadounidense típica = 100): alrededor de un {pct}% {word}.",
+    "verdictSpread": " Entre las ciudades que seguimos, {cheap} es la más asequible y {expensive} la más cara.",
+    "verdictStats": " El alquiler de 1 dormitorio ronda {rent} $/mes y el tipo máximo de IRPF es del {tax}%.",
+    "verdictSalary": " El salario neto medio es de unos {salary} $/mes.",
+    "capital": "Capital"
   },
   "countriesIndex": {
     "title": "Coste de vida por país",
