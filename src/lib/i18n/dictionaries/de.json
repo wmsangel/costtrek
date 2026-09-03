@@ -128,6 +128,7 @@
     "plainAbove": "Kurz gesagt: {city} ist etwa {pct}% teurer als eine typische US-Stadt. Eine 1-Zimmer-Wohnung im Zentrum kostet rund {rent} $/Monat.",
     "compareWith": "{city} vergleichen mit…",
     "rankedIn": "Platziert in",
+    "flightSearch": "Günstige Flüge finden",
     "disclaimer": "Die Schätzungen verwenden ungefähre Lebenshaltungskosten-Indizes (US-Durchschnitt = 100) und dienen nur zur allgemeinen Orientierung."
   },
   "categories": {

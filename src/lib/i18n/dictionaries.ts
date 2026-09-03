@@ -126,6 +126,7 @@ export type Dictionary = {
     plainAbove: string; // {city} {pct} {rent}
     compareWith: string; // {city}
     rankedIn: string;
+    flightSearch: string;
     disclaimer: string;
   };
   categories: {

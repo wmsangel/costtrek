@@ -128,6 +128,7 @@
     "plainAbove": "In plain terms: {city} is about {pct}% pricier than a typical US city. A one-bedroom in the centre runs around ${rent}/month.",
     "compareWith": "Compare {city} with…",
     "rankedIn": "Ranked in",
+    "flightSearch": "Search cheap flights",
     "disclaimer": "Estimates use approximate cost-of-living indices (US average = 100) and are for general guidance only."
   },
   "categories": {

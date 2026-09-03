@@ -22,6 +22,7 @@ import { getCityProfile, getCountry, countrySlug } from "@/lib/data";
 import { localizedCountry } from "@/lib/i18n/places";
 import CityProfileSections from "@/components/CityProfileSections";
 import CityFacts from "@/components/CityFacts";
+import FlightWidget from "@/components/FlightWidget";
 import { COLLECTIONS, cityCollections } from "@/lib/collections";
 import Mountains from "@/components/Mountains";
 import JsonLd from "@/components/JsonLd";
@@ -265,6 +266,11 @@ export default async function CityPage({
       </section>
 
       <CityProfileSections locale={l} dict={dict} city={c} />
+
+      <FlightWidget
+        title={dict.city.flightSearch}
+        sponsoredLabel={dict.calculators.sponsoredBadge}
+      />
 
       <Faq
         title={dict.faq.title}

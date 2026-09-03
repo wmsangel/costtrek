@@ -128,6 +128,7 @@
     "plainAbove": "En clair : {city} est environ {pct}% plus chère qu'une ville américaine typique. Un studio dans le centre coûte environ {rent} $/mois.",
     "compareWith": "Comparer {city} avec…",
     "rankedIn": "Classé dans",
+    "flightSearch": "Trouver un vol pas cher",
     "disclaimer": "Les estimations reposent sur des indices approximatifs du coût de la vie (moyenne américaine = 100) et ne sont fournies qu'à titre indicatif."
   },
   "categories": {
