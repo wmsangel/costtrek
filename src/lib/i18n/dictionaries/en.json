@@ -268,7 +268,10 @@
       "title": "Most walkable cities",
       "description": "Live car-free — cities ranked by how walkable they are day to day.",
       "metric": "Walkability"
-    }
+    },
+    "forFamilies": {"title":"Best cities for families","description":"Cities that balance safety, healthcare, clean air and family-friendly living — ranked for anyone relocating with kids.","metric":"Family score"},
+    "forRetirees": {"title":"Best cities to retire","description":"Where a pension stretches furthest alongside good healthcare, low crime, clean air and a mild climate — ranked for retirees.","metric":"Retiree score"},
+    "forStudents": {"title":"Best cities for students","description":"Affordable, walkable, well-connected cities with fast internet — ranked for students and young movers on a budget.","metric":"Student score"}
   },
   "data": {
     "fullComparison": "Full comparison",

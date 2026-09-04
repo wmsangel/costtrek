@@ -218,6 +218,9 @@ export type Dictionary = {
     bestHealthcare: { title: string; description: string; metric: string };
     cleanestAir: { title: string; description: string; metric: string };
     walkable: { title: string; description: string; metric: string };
+    forFamilies: { title: string; description: string; metric: string };
+    forRetirees: { title: string; description: string; metric: string };
+    forStudents: { title: string; description: string; metric: string };
   };
   data: {
     fullComparison: string;

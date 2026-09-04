@@ -245,7 +245,7 @@
     "cleanestAir": { "title": "Städte mit der saubersten Luft", "description": "Durchatmen — Städte sortiert nach Luftqualität, geringste Belastung zuerst.", "metric": "Umweltbelastung" },
     "walkable": { "title": "Fußgängerfreundlichste Städte", "description": "Autofrei leben — Städte sortiert danach, wie gut man sie täglich zu Fuß erschließen kann.", "metric": "Fußgängerfreundlichkeit" },
     "flightsCta": "Umzug geplant? Günstige Flüge weltweit finden"
-  },
+  ,"forFamilies":{"title":"Beste Städte für Familien","description":"Städte, die Sicherheit, Gesundheitsversorgung, saubere Luft und Familienfreundlichkeit vereinen — für alle, die mit Kindern umziehen.","metric":"Familien-Score"},"forRetirees":{"title":"Beste Städte für den Ruhestand","description":"Wo die Rente am weitesten reicht — mit guter Gesundheitsversorgung, wenig Kriminalität, sauberer Luft und mildem Klima.","metric":"Rentner-Score"},"forStudents":{"title":"Beste Städte für Studierende","description":"Günstige, fußläufige, gut angebundene Städte mit schnellem Internet — für Studierende und junge Umziehende mit knappem Budget.","metric":"Studenten-Score"}},
   "data": {
     "fullComparison": "Vollständiger Vergleich",
     "comingSoon": "Bald verfügbar",

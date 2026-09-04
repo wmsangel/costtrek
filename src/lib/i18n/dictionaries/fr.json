@@ -245,7 +245,7 @@
     "cleanestAir": { "title": "Villes à l'air le plus pur", "description": "Respirez — villes classées selon la qualité de l'air, la plus faible pollution d'abord.", "metric": "Pollution" },
     "walkable": { "title": "Villes les plus propices à la marche", "description": "Vivre sans voiture — villes classées selon leur caractère piétonnier au quotidien.", "metric": "Marchabilité" },
     "flightsCta": "Un déménagement en vue ? Trouvez des vols pas chers dans le monde entier"
-  },
+  ,"forFamilies":{"title":"Meilleures villes pour les familles","description":"Des villes qui allient sécurité, santé, air pur et cadre familial — classées pour ceux qui déménagent avec des enfants.","metric":"Score familles"},"forRetirees":{"title":"Meilleures villes pour la retraite","description":"Là où la retraite va le plus loin — avec de bons soins, peu de criminalité, un air pur et un climat doux.","metric":"Score retraite"},"forStudents":{"title":"Meilleures villes pour les étudiants","description":"Des villes abordables, piétonnes et bien connectées, au bon débit internet — pour les étudiants et jeunes au budget serré.","metric":"Score étudiants"}},
   "data": {
     "fullComparison": "Comparaison complète",
     "comingSoon": "Bientôt disponible",

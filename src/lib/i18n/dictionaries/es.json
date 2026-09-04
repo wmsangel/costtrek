@@ -245,7 +245,7 @@
     "cleanestAir": { "title": "Ciudades con el aire más limpio", "description": "Respira tranquilo: ciudades ordenadas por calidad del aire, menor contaminación primero.", "metric": "Contaminación" },
     "walkable": { "title": "Ciudades más caminables", "description": "Vivir sin coche: ciudades ordenadas por lo caminables que son en el día a día.", "metric": "Caminabilidad" },
     "flightsCta": "¿Planeando una mudanza? Encuentra vuelos baratos por todo el mundo"
-  },
+  ,"forFamilies":{"title":"Mejores ciudades para familias","description":"Ciudades que equilibran seguridad, sanidad, aire limpio y vida familiar — clasificadas para quienes se mudan con hijos.","metric":"Puntuación familias"},"forRetirees":{"title":"Mejores ciudades para jubilarse","description":"Donde la pensión rinde más, con buena sanidad, poca delincuencia, aire limpio y clima suave — para jubilados.","metric":"Puntuación jubilación"},"forStudents":{"title":"Mejores ciudades para estudiantes","description":"Ciudades asequibles, caminables y bien conectadas con internet rápido — para estudiantes y jóvenes con presupuesto ajustado.","metric":"Puntuación estudiantes"}},
   "data": {
     "fullComparison": "Comparación completa",
     "comingSoon": "Próximamente",

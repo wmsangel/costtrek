@@ -18,7 +18,10 @@ export type CollectionKey =
   | "best-transit"
   | "best-healthcare"
   | "cleanest-air"
-  | "walkable";
+  | "walkable"
+  | "for-families"
+  | "for-retirees"
+  | "for-students";
 
 type DictKey =
   | "cheapest"
@@ -31,7 +34,10 @@ type DictKey =
   | "bestTransit"
   | "bestHealthcare"
   | "cleanestAir"
-  | "walkable";
+  | "walkable"
+  | "forFamilies"
+  | "forRetirees"
+  | "forStudents";
 
 type Def = {
   slug: CollectionKey;
@@ -49,6 +55,69 @@ const NOMAD_TAGS = new Set([
   "digital-nomad",
   "emerging-nomad",
 ]);
+
+/* ---- Persona composite scores (0–100) from existing data ---------------- */
+
+const clamp01 = (x: number) => Math.max(0, Math.min(100, x));
+/** Min–max to 0–100 on fixed bounds (stable as cities are added). */
+const norm = (v: number, lo: number, hi: number) =>
+  clamp01(((v - lo) / (hi - lo)) * 100);
+
+const ENGLISH_SCORE: Record<string, number> = {
+  low: 20,
+  moderate: 50,
+  high: 80,
+  native: 100,
+};
+
+/** Comfort of climate: rewards mild winters (~12°C) and warm summers (~24°C). */
+function climateMild(cl?: { janAvgC?: number; julAvgC?: number }): number | undefined {
+  if (!cl || cl.janAvgC == null || cl.julAvgC == null) return undefined;
+  return clamp01(100 - Math.abs(cl.janAvgC - 12) * 2.2 - Math.abs(cl.julAvgC - 24) * 2.2);
+}
+
+type Weights = Partial<
+  Record<
+    "cost" | "internet" | "safety" | "healthcare" | "air" | "family" | "walk" | "english" | "climate",
+    number
+  >
+>;
+
+/** Weighted average of the normalised components that exist for the city. */
+function personaScore(c: City, w: Weights): number | null {
+  const q = qol(c);
+  if (!q) return null;
+  const p = getCityProfile(c.slug);
+  const comp: Record<string, number | undefined> = {
+    cost: clamp01(100 - norm(overallIndex(c), 30, 180)),
+    internet: q.internetMbps != null ? norm(q.internetMbps, 20, 220) : undefined,
+    safety: q.safetyIndex,
+    healthcare: q.healthcareIndex,
+    air: q.pollutionIndex != null ? 100 - q.pollutionIndex : undefined,
+    family: q.familyFriendly,
+    walk: q.walkability,
+    english: p?.expat?.englishProficiency
+      ? ENGLISH_SCORE[p.expat.englishProficiency]
+      : undefined,
+    climate: climateMild(q.climate),
+  };
+  let wsum = 0;
+  let acc = 0;
+  for (const [key, weight] of Object.entries(w)) {
+    const v = comp[key];
+    if (weight && Number.isFinite(v)) {
+      wsum += weight;
+      acc += weight * (v as number);
+    }
+  }
+  return wsum === 0 ? null : Math.round(acc / wsum);
+}
+
+const PERSONA_WEIGHTS: Record<"family" | "retiree" | "student", Weights> = {
+  family: { family: 0.25, healthcare: 0.25, safety: 0.25, air: 0.15, cost: 0.1 },
+  retiree: { healthcare: 0.25, cost: 0.2, safety: 0.2, air: 0.15, climate: 0.2 },
+  student: { cost: 0.35, walk: 0.2, internet: 0.2, safety: 0.15, english: 0.1 },
+};
 
 export const COLLECTIONS: Record<CollectionKey, Def> = {
   cheapest: {
@@ -131,6 +200,27 @@ export const COLLECTIONS: Record<CollectionKey, Def> = {
       const tags = getCityProfile(c.slug)?.tags;
       return !!tags && tags.some((t) => NOMAD_TAGS.has(t));
     },
+  },
+  "for-families": {
+    slug: "for-families",
+    dictKey: "forFamilies",
+    metric: (c) => personaScore(c, PERSONA_WEIGHTS.family),
+    direction: "desc",
+    suffix: "/100",
+  },
+  "for-retirees": {
+    slug: "for-retirees",
+    dictKey: "forRetirees",
+    metric: (c) => personaScore(c, PERSONA_WEIGHTS.retiree),
+    direction: "desc",
+    suffix: "/100",
+  },
+  "for-students": {
+    slug: "for-students",
+    dictKey: "forStudents",
+    metric: (c) => personaScore(c, PERSONA_WEIGHTS.student),
+    direction: "desc",
+    suffix: "/100",
   },
 };
 
