@@ -21,9 +21,10 @@ export const MAJOR_CITY_SLUGS = new Set<string>([
   "madrid-es", "barcelona-es", "lisbon-pt", "rome-it", "zurich-ch",
   "vienna-at", "prague-cz", "frankfurt-de", "lyon-fr", "manchester-uk",
   "hamburg-de", "nice-fr", "rotterdam-nl", "turin-it",
+  "cologne-de", "marseille-fr", "naples-it",
   // Middle East / Asia
   "dubai-ae", "singapore-sg", "tokyo-jp", "seoul-kr", "bangkok-th", "mumbai-in",
-  "osaka-jp", "bangalore-in", "fukuoka-jp",
+  "osaka-jp", "bangalore-in", "fukuoka-jp", "nagoya-jp", "pune-in",
   // Oceania / Americas
   "toronto-ca", "vancouver-ca", "sydney-au", "melbourne-au", "montreal-ca",
   "mexico-city-mx", "sao-paulo-br", "buenos-aires-ar", "medellin-co", "guadalajara-mx",

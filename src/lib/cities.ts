@@ -157,6 +157,11 @@ const INTL_CITIES: City[] = [
   { slug: "turin-it", name: "Turin", country: "Italy", countryCode: "IT", aliases: ["Torino", "Turín"], medianRent1br: 750, breakdown: { housing: 88, food: 100, transport: 80, utilities: 115, healthcare: 88, goods: 104 } },
   { slug: "fukuoka-jp", name: "Fukuoka", country: "Japan", countryCode: "JP", aliases: ["福岡"], medianRent1br: 700, breakdown: { housing: 80, food: 95, transport: 78, utilities: 108, healthcare: 85, goods: 102 } },
   { slug: "guadalajara-mx", name: "Guadalajara", country: "Mexico", countryCode: "MX", aliases: ["GDL"], medianRent1br: 500, breakdown: { housing: 42, food: 55, transport: 45, utilities: 60, healthcare: 55, goods: 65 } },
+  { slug: "cologne-de", name: "Cologne", country: "Germany", countryCode: "DE", aliases: ["Köln", "Koeln", "Colonia"], medianRent1br: 1050, breakdown: { housing: 112, food: 105, transport: 84, utilities: 126, healthcare: 95, goods: 105 } },
+  { slug: "marseille-fr", name: "Marseille", country: "France", countryCode: "FR", aliases: ["Marsella", "Marsiglia"], medianRent1br: 800, breakdown: { housing: 95, food: 105, transport: 76, utilities: 110, healthcare: 82, goods: 105 } },
+  { slug: "naples-it", name: "Naples", country: "Italy", countryCode: "IT", aliases: ["Napoli", "Nápoles", "Neapel"], medianRent1br: 750, breakdown: { housing: 88, food: 100, transport: 78, utilities: 118, healthcare: 80, goods: 104 } },
+  { slug: "nagoya-jp", name: "Nagoya", country: "Japan", countryCode: "JP", aliases: ["名古屋"], medianRent1br: 750, breakdown: { housing: 82, food: 96, transport: 80, utilities: 110, healthcare: 85, goods: 103 } },
+  { slug: "pune-in", name: "Pune", country: "India", countryCode: "IN", aliases: ["Poona"], medianRent1br: 250, breakdown: { housing: 25, food: 35, transport: 30, utilities: 48, healthcare: 38, goods: 50 } },
 ];
 
 export const CITIES: City[] = [...US_CITIES, ...INTL_CITIES];
