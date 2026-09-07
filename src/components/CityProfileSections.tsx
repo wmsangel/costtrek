@@ -5,7 +5,11 @@ import { PROFILE_TR } from "@/lib/data/cityProfiles-i18n";
 import { type Dictionary, fill } from "@/lib/i18n/dictionaries";
 import { LOCALE_BCP47, type Locale } from "@/lib/i18n/config";
 import { cityLabels } from "@/lib/i18n/cityLabels";
-import { buildGeoToolkit } from "@/lib/affiliates/toolkit";
+import {
+  buildGeoToolkit,
+  referralCategory,
+  TOOLKIT_ICON,
+} from "@/lib/affiliates/toolkit";
 
 function Money({ v, locale, unit }: { v: number; locale: string; unit?: string }) {
   return (
@@ -324,18 +328,25 @@ export default function CityProfileSections({
           const reserved = profileLinks.filter((r) => !r.url);
           // Live cards: in-profile partners (with a url) + geo-scoped toolkit,
           // both normalised to a common {provider,url,note} shape.
-          const live: { provider: string; url: string; note?: string }[] = [
+          const live: {
+            provider: string;
+            url: string;
+            note?: string;
+            icon: string;
+          }[] = [
             ...profileLinks
               .filter((r): r is ReferralLink & { url: string } => Boolean(r.url))
               .map((r) => ({
                 provider: r.provider,
                 url: r.url,
                 note: r.note ?? t.referralTypes[r.type] ?? r.type,
+                icon: TOOLKIT_ICON[referralCategory(r.type)],
               })),
             ...buildGeoToolkit(city).map((it) => ({
               provider: it.provider,
               url: it.url,
               note: it.note,
+              icon: TOOLKIT_ICON[it.category],
             })),
           ];
           if (live.length === 0 && reserved.length === 0) return null;
@@ -357,22 +368,30 @@ export default function CityProfileSections({
                       href={r.url}
                       rel="sponsored nofollow noopener"
                       target="_blank"
-                      className="group flex items-center justify-between gap-4 rounded-2xl bg-white px-4 py-3.5 text-[#171310] shadow-sm transition hover:shadow-lg"
+                      className="group flex items-center justify-between gap-3 rounded-2xl bg-white px-3.5 py-3 text-[#171310] shadow-sm transition hover:shadow-xl hover:-translate-y-0.5"
                     >
-                      <span className="flex flex-col gap-0.5">
-                        <span className="flex items-center gap-2">
-                          <span className="font-black">{r.provider}</span>
-                          <span className="text-[9px] uppercase tracking-wider rounded bg-[#171310]/10 px-1.5 py-0.5 font-bold text-[#171310]/60">
-                            {dict.calculators.sponsoredBadge}
-                          </span>
+                      <span className="flex items-center gap-3 min-w-0">
+                        <span
+                          aria-hidden="true"
+                          className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[var(--accent-soft)] text-xl"
+                        >
+                          {r.icon}
                         </span>
-                        <span className="text-sm text-[#171310]/70">
-                          {r.note}
+                        <span className="flex flex-col gap-0.5 min-w-0">
+                          <span className="flex items-center gap-2">
+                            <span className="font-black truncate">{r.provider}</span>
+                            <span className="shrink-0 text-[9px] uppercase tracking-wider rounded bg-[#171310]/10 px-1.5 py-0.5 font-bold text-[#171310]/55">
+                              {dict.calculators.sponsoredBadge}
+                            </span>
+                          </span>
+                          <span className="text-sm text-[#171310]/70 truncate">
+                            {r.note}
+                          </span>
                         </span>
                       </span>
                       <span
                         aria-hidden="true"
-                        className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[var(--accent)] text-lg font-bold text-white transition group-hover:translate-x-0.5"
+                        className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[var(--accent)] text-lg font-bold text-white transition group-hover:translate-x-0.5 group-hover:brightness-110"
                       >
                         ↗
                       </span>

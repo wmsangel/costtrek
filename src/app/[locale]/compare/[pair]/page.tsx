@@ -314,13 +314,21 @@ export default async function ComparePage({
             href="https://xyowz.com/g/n2q2nolvw6a27dee2ccd6d2e807f50/"
             rel="sponsored nofollow noopener"
             target="_blank"
-            className="rounded-2xl bg-[var(--accent)] px-5 py-4 text-white transition hover:brightness-110"
+            className="group block rounded-2xl bg-[var(--accent)] px-5 py-4 text-white shadow-sm transition hover:brightness-110 hover:shadow-lg hover:-translate-y-0.5"
           >
-            <span className="display font-black text-base leading-tight block">
-              <span aria-hidden="true">✈ </span>
-              {fill(dict.compare.flightsCta, { a: labelA, b: labelB })}
+            <span className="flex items-start justify-between gap-3">
+              <span className="display font-black text-base leading-tight">
+                <span aria-hidden="true">✈ </span>
+                {fill(dict.compare.flightsCta, { a: labelA, b: labelB })}
+              </span>
+              <span
+                aria-hidden="true"
+                className="shrink-0 text-lg font-bold transition group-hover:translate-x-0.5"
+              >
+                ↗
+              </span>
             </span>
-            <span className="text-[10px] uppercase tracking-wider font-bold text-white/70 mt-1 inline-block">
+            <span className="text-[10px] uppercase tracking-wider font-bold text-white/70 mt-1.5 inline-block">
               {dict.calculators.sponsoredBadge}
             </span>
           </a>

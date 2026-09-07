@@ -71,15 +71,15 @@ export default function PlanYourMove({
               href={it.url}
               rel="sponsored nofollow noopener"
               target="_blank"
-              className="group flex items-center gap-3 rounded-xl border border-[var(--border)] bg-[var(--card)] px-3 py-2.5 transition hover:border-[var(--accent)] hover:shadow-sm"
+              className="group flex items-center gap-3 rounded-xl border border-[var(--border)] bg-[var(--card)] px-3 py-2.5 transition hover:border-[var(--accent)] hover:shadow-md hover:-translate-y-0.5"
             >
               <span
                 aria-hidden="true"
-                className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-[var(--accent-soft)] text-lg"
+                className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-[var(--accent-soft)] text-lg transition-colors group-hover:bg-[var(--accent)]"
               >
                 {TOOLKIT_ICON[it.category]}
               </span>
-              <span className="min-w-0 leading-tight">
+              <span className="min-w-0 flex-1 leading-tight">
                 <span className="block font-bold text-sm leading-tight group-hover:text-[var(--accent)]">
                   {tk.cat[it.category]}
                 </span>
@@ -87,11 +87,18 @@ export default function PlanYourMove({
                   {it.provider}
                 </span>
               </span>
+              <span
+                aria-hidden="true"
+                className="shrink-0 text-[var(--accent)] opacity-0 -translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-x-0"
+              >
+                ↗
+              </span>
             </a>
           </li>
         ))}
       </ul>
-      <p className="mt-3 text-[10px] uppercase tracking-wider font-bold text-[var(--muted)]">
+      <p className="mt-4 flex items-center gap-1.5 border-t border-[var(--border)] pt-3 text-[10px] uppercase tracking-wider font-bold text-[var(--muted)]">
+        <span aria-hidden="true" className="text-[var(--accent)]">✦</span>
         {dict.calculators.sponsoredBadge}
       </p>
     </div>
