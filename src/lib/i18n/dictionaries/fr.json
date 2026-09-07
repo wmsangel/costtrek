@@ -55,6 +55,7 @@
   "country": {
     "heading": "Coût de la vie en {country}",
     "subtitle": "Impôts nationaux, visas et économie — ainsi que chaque ville que nous suivons en {country}.",
+    "metaDesc": "Le coût de la vie en {country} expliqué : impôt sur le revenu, TVA, options de visa et de résidence, salaires moyens et qualité de vie — ainsi que les {n} villes suivies. Voyez comment {country} se compare.",
     "citiesTitle": "Villes en {country}",
     "verdictLead": "Le coût de la vie en {country} s’établit en moyenne à {index} sur notre indice (une ville américaine type = 100) — soit environ {pct}% {word}.",
     "verdictSpread": " Parmi les villes suivies, {cheap} est la plus abordable et {expensive} la plus chère.",

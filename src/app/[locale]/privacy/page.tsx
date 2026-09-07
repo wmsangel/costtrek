@@ -21,7 +21,7 @@ export async function generateMetadata({
     locale,
     path: "privacy",
     title: dict.legal.privacy,
-    description: `${SITE_NAME} — ${dict.legal.privacy}`,
+    description: `How ${SITE_NAME} handles your data, cookies and advertising — what we collect, why, and the privacy choices you have, including opt-outs for personalised ads.`,
   });
 }
 

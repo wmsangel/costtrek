@@ -55,6 +55,7 @@
   "country": {
     "heading": "Lebenshaltungskosten in {country}",
     "subtitle": "Nationale Steuern, Visa und Wirtschaft — sowie jede Stadt, die wir in {country} erfassen.",
+    "metaDesc": "Lebenshaltungskosten in {country} erklärt: nationale Einkommensteuer, Mehrwertsteuer, Visa- und Aufenthaltsoptionen, Durchschnittsgehälter und Lebensqualität — plus alle {n} erfassten Städte. So schneidet {country} ab.",
     "citiesTitle": "Städte in {country}",
     "verdictLead": "Die Lebenshaltungskosten in {country} liegen im Schnitt bei {index} auf unserem Index (eine typische US-Stadt = 100) — rund {pct}% {word}.",
     "verdictSpread": " Unter den erfassten Städten ist {cheap} am günstigsten und {expensive} am teuersten.",

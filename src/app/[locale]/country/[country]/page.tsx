@@ -60,7 +60,7 @@ export async function generateMetadata({
     path: `country/${country}`,
     ogType: "article",
     title: fill(dict.country.heading, { country: name }),
-    description: fill(dict.country.subtitle, { n: cities.length, country: name }),
+    description: fill(dict.country.metaDesc, { n: cities.length, country: name }),
     ogImage: { title: name, sub: fill(dict.country.heading, { country: name }) },
   });
 }

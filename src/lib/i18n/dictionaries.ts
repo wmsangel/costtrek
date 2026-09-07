@@ -53,6 +53,7 @@ export type Dictionary = {
   country: {
     heading: string; // {country}
     subtitle: string; // {n} {country}
+    metaDesc: string; // {country} {n}
     citiesTitle: string; // {country}
     verdictLead: string; // {country} {index} {pct} {word}
     verdictSpread: string; // {cheap} {expensive}

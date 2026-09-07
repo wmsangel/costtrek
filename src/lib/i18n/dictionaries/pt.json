@@ -55,6 +55,7 @@
   "country": {
     "heading": "Custo de vida em {country}",
     "subtitle": "Impostos nacionais, vistos e economia, além de todas as cidades que acompanhamos em {country}.",
+    "metaDesc": "O custo de vida em {country} explicado: imposto de renda, IVA, opções de visto e residência, salários médios e qualidade de vida — e todas as {n} cidades que acompanhamos. Veja como {country} se compara.",
     "citiesTitle": "Cidades em {country}",
     "verdictLead": "O custo de vida em {country} situa-se em média em {index} no nosso índice (uma cidade dos EUA típica = 100) — cerca de {pct}% {word}.",
     "verdictSpread": " Entre as cidades que acompanhamos, {cheap} é a mais acessível e {expensive} a mais cara.",

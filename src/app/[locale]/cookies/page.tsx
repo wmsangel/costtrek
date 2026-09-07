@@ -20,7 +20,7 @@ export async function generateMetadata({
     locale,
     path: "cookies",
     title: dict.legal.cookies,
-    description: `${SITE_NAME} — ${dict.legal.cookies}`,
+    description: `How ${SITE_NAME} uses cookies and similar technologies for analytics and advertising, what each type does, and how you can control or decline them.`,
   });
 }
 

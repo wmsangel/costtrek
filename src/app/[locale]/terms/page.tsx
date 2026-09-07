@@ -21,7 +21,7 @@ export async function generateMetadata({
     locale,
     path: "terms",
     title: dict.legal.terms,
-    description: `${SITE_NAME} — ${dict.legal.terms}`,
+    description: `The terms for using ${SITE_NAME}, an independent cost-of-living comparison site. All figures are estimates for general guidance — not financial, tax or legal advice.`,
   });
 }
 

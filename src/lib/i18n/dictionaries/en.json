@@ -55,6 +55,7 @@
   "country": {
     "heading": "Cost of living in {country}",
     "subtitle": "National taxes, visas and economy — plus every city we track in {country}.",
+    "metaDesc": "Cost of living in {country} explained: national income tax, VAT, visa and residency options, average salaries and quality of life — plus every one of the {n} cities we track. See how {country} compares.",
     "citiesTitle": "Cities in {country}",
     "verdictLead": "The cost of living in {country} averages {index} on our index (a typical US city = 100) — about {pct}% {word}.",
     "verdictSpread": " Among the cities we track, {cheap} is the most affordable and {expensive} the priciest.",
