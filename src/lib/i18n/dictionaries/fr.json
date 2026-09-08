@@ -213,6 +213,13 @@
   },
   "collections": {
     "homeTitle": "Meilleurs endroits où vivre",
+    "intro": "Ce classement couvre {n} villes de notre index, triées par {metric}. {top1} arrive en tête avec {v1}, devant {top2} et {top3}. Ouvrez une ville pour le détail complet du coût de la vie, des impôts et de la qualité de vie — ou comparez-en deux côte à côte.",
+    "faqTopQ": "Quelles villes sont en tête de ce classement ?",
+    "faqTopA": "{top1} mène avec {v1}, suivie de {top2} et {top3}. Le classement complet de {n} villes figure ci-dessus.",
+    "faqMethodQ": "Comment ce classement est-il calculé ?",
+    "faqMethodA": "Nous trions les {n} villes de notre index par {metric}. Les chiffres sont des estimations calibrées, actualisées à mesure que la couverture s’élargit — un repère pratique, pas une statistique officielle.",
+    "faqCompareQ": "Puis-je comparer ces villes en détail ?",
+    "faqCompareA": "Oui. Ouvrez une ville pour son coût de la vie, ses loyers, impôts, visas et qualité de vie, ou utilisez la comparaison côte à côte de CostTrek.",
     "rank": "Rang",
     "cheapest": {
       "title": "Les villes les moins chères où vivre",

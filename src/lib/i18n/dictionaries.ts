@@ -208,6 +208,13 @@ export type Dictionary = {
     homeTitle: string;
     rank: string;
     flightsCta: string;
+    intro: string; // {n} {metric} {top1} {v1} {top2} {top3}
+    faqTopQ: string;
+    faqTopA: string; // {top1} {v1} {top2} {top3} {n}
+    faqMethodQ: string;
+    faqMethodA: string; // {n} {metric}
+    faqCompareQ: string;
+    faqCompareA: string;
     cheapest: { title: string; description: string; metric: string };
     mostExpensive: { title: string; description: string; metric: string };
     lowTax: { title: string; description: string; metric: string };

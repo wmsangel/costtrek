@@ -9,12 +9,13 @@ import {
 } from "@/lib/collections";
 import { cityPath, flagEmoji } from "@/lib/cities";
 import { LOCALE_BCP47, isLocale, type Locale } from "@/lib/i18n/config";
-import { getDictionary } from "@/lib/i18n/dictionaries";
+import { fill, getDictionary } from "@/lib/i18n/dictionaries";
 import { localizedCityName, localizedCountry } from "@/lib/i18n/places";
 import { absUrl, pageMetadata, SITE_NAME } from "@/lib/seo/site";
 import { breadcrumbJsonLd } from "@/lib/seo/jsonld";
 import JsonLd from "@/components/JsonLd";
 import Mountains from "@/components/Mountains";
+import Faq, { type FaqItem } from "@/components/Faq";
 
 export const dynamicParams = false;
 
@@ -57,6 +58,24 @@ export default async function CollectionPage({
   const rows = rankCities(list, 200); // full ranked list — richer hub + more links
   const nl = LOCALE_BCP47[l];
 
+  // Data-driven intro + FAQ — unique per hub, thickens the page and can win a
+  // rich result. Composed from the ranking itself, so it stays correct as data grows.
+  const top = rows.slice(0, 3).map((r) => localizedCityName(l, r.city));
+  const vars = {
+    n: rows.length,
+    metric: cd.metric,
+    top1: top[0] ?? "",
+    top2: top[1] ?? "",
+    top3: top[2] ?? "",
+    v1: rows[0] ? `${rows[0].value.toLocaleString(nl)}${def.suffix ?? ""}` : "",
+  };
+  const co = dict.collections;
+  const faqItems: FaqItem[] = [
+    { q: co.faqTopQ, a: fill(co.faqTopA, vars) },
+    { q: co.faqMethodQ, a: fill(co.faqMethodA, vars) },
+    { q: co.faqCompareQ, a: co.faqCompareA },
+  ];
+
   const itemListJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -98,6 +117,10 @@ export default async function CollectionPage({
           <p className="mt-3 font-medium max-w-[52ch]">{cd.description}</p>
         </div>
       </section>
+
+      <p className="mt-6 text-lg leading-relaxed max-w-[72ch] text-[var(--foreground)]">
+        {fill(co.intro, vars)}
+      </p>
 
       <div className="card rounded-2xl overflow-hidden mt-6">
         <div className="grid grid-cols-[2.5rem_1fr_auto] gap-3 px-4 sm:px-5 py-3 border-b border-[var(--border)] text-xs font-semibold uppercase tracking-wide text-[var(--muted)]">
@@ -157,6 +180,10 @@ export default async function CollectionPage({
           ↗
         </span>
       </a>
+
+      <div className="mt-12">
+        <Faq title={dict.faq.title} items={faqItems} />
+      </div>
 
       <section className="mt-10">
         <h2 className="mag-h2 mb-4">★ {dict.collections.homeTitle}</h2>

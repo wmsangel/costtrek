@@ -213,6 +213,13 @@
   },
   "collections": {
     "homeTitle": "Best places to live",
+    "intro": "This ranking covers {n} cities from our index, sorted by {metric}. {top1} comes out on top at {v1}, ahead of {top2} and {top3}. Open any city for its full cost-of-living, tax and quality-of-life breakdown — or compare two side by side.",
+    "faqTopQ": "Which cities top this ranking?",
+    "faqTopA": "{top1} leads at {v1}, followed by {top2} and {top3}. The full ranking of {n} cities is listed above.",
+    "faqMethodQ": "How is this ranking calculated?",
+    "faqMethodA": "We sort all {n} cities in our index by {metric}. Figures are calibrated estimates, refreshed as we expand coverage — a practical guide, not official statistics.",
+    "faqCompareQ": "Can I compare these cities in detail?",
+    "faqCompareA": "Yes. Open any city for its cost of living, rent, taxes, visas and quality of life, or use CostTrek’s side-by-side comparison to weigh two cities against each other.",
     "rank": "Rank",
     "flightsCta": "Planning a move? Search cheap flights worldwide",
     "cheapest": {

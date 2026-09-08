@@ -213,6 +213,13 @@
   },
   "collections": {
     "homeTitle": "Beste Orte zum Leben",
+    "intro": "Dieses Ranking umfasst {n} Städte aus unserem Index, sortiert nach {metric}. {top1} liegt mit {v1} an der Spitze, vor {top2} und {top3}. Öffne eine Stadt für die volle Aufschlüsselung von Kosten, Steuern und Lebensqualität — oder vergleiche zwei direkt.",
+    "faqTopQ": "Welche Städte führen dieses Ranking an?",
+    "faqTopA": "{top1} führt mit {v1}, gefolgt von {top2} und {top3}. Die vollständige Liste mit {n} Städten steht oben.",
+    "faqMethodQ": "Wie wird dieses Ranking berechnet?",
+    "faqMethodA": "Wir sortieren alle {n} Städte unseres Index nach {metric}. Die Werte sind kalibrierte Schätzungen, die mit wachsender Abdeckung aktualisiert werden — ein praktischer Leitfaden, keine amtliche Statistik.",
+    "faqCompareQ": "Kann ich diese Städte im Detail vergleichen?",
+    "faqCompareA": "Ja. Öffne eine Stadt für Lebenshaltungskosten, Miete, Steuern, Visa und Lebensqualität, oder nutze den direkten Vergleich von CostTrek für zwei Städte.",
     "rank": "Rang",
     "cheapest": {
       "title": "Die günstigsten Städte zum Leben",
