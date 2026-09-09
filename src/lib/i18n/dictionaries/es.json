@@ -214,6 +214,7 @@
   "collections": {
     "homeTitle": "Mejores lugares para vivir",
     "intro": "Esta clasificación abarca {n} ciudades de nuestro índice, ordenadas por {metric}. {top1} encabeza la lista con {v1}, por delante de {top2} y {top3}. Abre cualquier ciudad para ver el desglose completo de coste de vida, impuestos y calidad de vida, o compara dos en paralelo.",
+    "metaDesc": "{title}: {n} ciudades clasificadas por {metric}. {top1} encabeza con {v1}, por delante de {top2} y {top3}. Ranking completo, metodología y comparación de ciudades.",
     "faqTopQ": "¿Qué ciudades encabezan esta clasificación?",
     "faqTopA": "{top1} lidera con {v1}, seguida de {top2} y {top3}. La clasificación completa de {n} ciudades está arriba.",
     "faqMethodQ": "¿Cómo se calcula esta clasificación?",

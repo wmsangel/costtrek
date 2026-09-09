@@ -33,12 +33,32 @@ export async function generateMetadata({
   const { locale, list } = await params;
   if (!isLocale(locale) || !isCollection(list)) return {};
   const dict = await getDictionary(locale);
-  const cd = dict.collections[COLLECTIONS[list].dictKey];
+  const l = locale as Locale;
+  const def = COLLECTIONS[list];
+  const cd = dict.collections[def.dictKey];
+  // Rich, data-driven meta description from the live ranking (top cities +
+  // score + count) — fixes thin/short descriptions and matches "<metric> index"
+  // style queries. Falls back to the static blurb if a hub is too sparse.
+  const ranked = rankCities(list, 200);
+  const nl = LOCALE_BCP47[l];
+  const top = ranked.slice(0, 3).map((r) => localizedCityName(l, r.city));
+  const description =
+    ranked.length >= 3
+      ? fill(dict.collections.metaDesc, {
+          title: cd.title,
+          n: ranked.length,
+          metric: cd.metric,
+          top1: top[0],
+          top2: top[1],
+          top3: top[2],
+          v1: `${ranked[0].value.toLocaleString(nl)}${def.suffix ?? ""}`,
+        })
+      : cd.description;
   return pageMetadata({
     locale,
     path: `best/${list}`,
     title: cd.title,
-    description: cd.description,
+    description,
     ogType: "article",
     ogImage: { title: cd.title, sub: SITE_NAME, tag: dict.collections.homeTitle },
   });

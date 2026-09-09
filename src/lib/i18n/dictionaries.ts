@@ -209,6 +209,7 @@ export type Dictionary = {
     rank: string;
     flightsCta: string;
     intro: string; // {n} {metric} {top1} {v1} {top2} {top3}
+    metaDesc: string; // {title} {n} {metric} {top1} {v1} {top2} {top3}
     faqTopQ: string;
     faqTopA: string; // {top1} {v1} {top2} {top3} {n}
     faqMethodQ: string;

@@ -214,6 +214,7 @@
   "collections": {
     "homeTitle": "Beste Orte zum Leben",
     "intro": "Dieses Ranking umfasst {n} Städte aus unserem Index, sortiert nach {metric}. {top1} liegt mit {v1} an der Spitze, vor {top2} und {top3}. Öffne eine Stadt für die volle Aufschlüsselung von Kosten, Steuern und Lebensqualität — oder vergleiche zwei direkt.",
+    "metaDesc": "{title}: {n} Städte nach {metric} gerankt. {top1} führt mit {v1}, vor {top2} und {top3}. Zur vollständigen Rangliste, zur Methodik und zum Städtevergleich.",
     "faqTopQ": "Welche Städte führen dieses Ranking an?",
     "faqTopA": "{top1} führt mit {v1}, gefolgt von {top2} und {top3}. Die vollständige Liste mit {n} Städten steht oben.",
     "faqMethodQ": "Wie wird dieses Ranking berechnet?",

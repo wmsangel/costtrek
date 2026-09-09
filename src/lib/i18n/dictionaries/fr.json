@@ -214,6 +214,7 @@
   "collections": {
     "homeTitle": "Meilleurs endroits où vivre",
     "intro": "Ce classement couvre {n} villes de notre index, triées par {metric}. {top1} arrive en tête avec {v1}, devant {top2} et {top3}. Ouvrez une ville pour le détail complet du coût de la vie, des impôts et de la qualité de vie — ou comparez-en deux côte à côte.",
+    "metaDesc": "{title} : {n} villes classées par {metric}. {top1} arrive en tête avec {v1}, devant {top2} et {top3}. Classement complet, méthodologie et comparaison de villes.",
     "faqTopQ": "Quelles villes sont en tête de ce classement ?",
     "faqTopA": "{top1} mène avec {v1}, suivie de {top2} et {top3}. Le classement complet de {n} villes figure ci-dessus.",
     "faqMethodQ": "Comment ce classement est-il calculé ?",
