@@ -235,6 +235,52 @@ const de: Record<string, CalcText> = {
       }
     ]
   },
+  "take-home-pay-calculator": {
+    title: "Nettolohnrechner nach Land",
+    excerpt: "Sehen Sie Ihr Nettogehalt nach Einkommensteuer und Sozialabgaben in den USA, Großbritannien, Deutschland, Frankreich und mehr — wählen Sie ein Land und geben Sie Ihr Bruttogehalt ein.",
+    intent: "Verwandeln Sie ein Bruttogehalt in das tatsächliche Nettogehalt in einem gewählten Land.",
+    intro: [
+      "Dieser Rechner schätzt Ihr Netto- bzw. Nettogehalt — das, was nach Einkommensteuer und Sozialabgaben des Arbeitnehmers tatsächlich auf Ihrem Konto landet — für zehn große Länder. Wählen Sie ein Land, geben Sie Ihr jährliches oder monatliches Bruttogehalt in der Landeswährung ein und sehen Sie den Nettobetrag, die Aufteilung zwischen Steuer und Sozialabgaben sowie Ihren effektiven Steuersatz.",
+      "Er bildet die wichtigsten Steuertarife 2025 jedes Landes ab, dazu die größten üblichen Anpassungen (Grundfreibeträge, allgemeine Steuergutschriften und Regeln zu Sozialabgaben), und ist so kalibriert, dass er innerhalb weniger Prozent der offiziellen Nettogehaltswerte liegt. Es ist eine gute Schätzung für eine alleinverdienende Person, keine Gehaltsabrechnung: Er lässt Unterhaltsberechtigte, persönliche Gutschriften, Einzelabzüge und regionale Unterschiede außer Acht — prüfen Sie daher alles Wichtige mit einer Fachperson."
+    ],
+    notes: [
+      "Der effektive Steuersatz ist die Summe aus Steuer und Sozialabgaben geteilt durch das Bruttogehalt — immer niedriger als der höchste Grenzsteuersatz.",
+      "Dasselbe Bruttogehalt kauft je nach Lebenshaltungskosten sehr unterschiedliche Lebensstile — vergleichen Sie Städte und Länder an anderer Stelle auf CostTrek.",
+      "Sozialabgaben finanzieren oft Rente und Gesundheitsversorgung, ein höherer Abzug ist also nicht rein ein Verlust."
+    ],
+    faq: [
+      {
+        q: "Wie wird das Nettogehalt berechnet?",
+        a: "Wir nehmen Ihr Bruttogehalt, wenden den Grundfreibetrag und die üblichen Abzüge des Landes an, durchlaufen die progressiven Einkommensteuertarife, addieren die Sozialabgaben des Arbeitnehmers und ziehen beides vom Brutto ab. Was übrig bleibt, ist Ihr geschätztes Nettogehalt."
+      },
+      {
+        q: "Welche Länder und welches Jahr deckt er ab?",
+        a: "Zehn Länder — die USA, Großbritannien, Deutschland, Frankreich, Spanien, Italien, Kanada, Australien, die Niederlande und Irland — auf Grundlage der ungefähren nationalen Regeln für 2025 für eine alleinverdienende Person."
+      },
+      {
+        q: "Warum stimmt er nicht genau mit meiner Gehaltsabrechnung überein?",
+        a: "Das tatsächliche Gehalt hängt von Unterhaltsberechtigten, persönlichen Steuergutschriften, Rentenentscheidungen, regionalen oder bundeslandspezifischen Steuern und arbeitgeberspezifischem Lohnsteuerabzug ab. Dies ist eine kalibrierte Schätzung — ein guter Anhaltspunkt, keine Steuerberatung."
+      }
+    ],
+    offersHeading: "Holen Sie mehr aus Ihrem Gehalt heraus",
+    offers: [
+      {
+        name: "Geld ins Ausland senden mit Wise",
+        blurb: "Überweisen Sie Ihr Gehalt über Grenzen hinweg? Erhalten Sie den echten Wechselkurs und niedrige, transparente Gebühren.",
+        cta: "Überweisungskosten vergleichen"
+      },
+      {
+        name: "Multi-Währungs-Konto",
+        blurb: "Halten und zahlen Sie in mehreren Währungen mit einem modernen Konto für Expats und Nomaden.",
+        cta: "Konten ansehen"
+      },
+      {
+        name: "Internationale Krankenversicherung",
+        blurb: "Versichern Sie sich, wo immer Sie arbeiten, mit einem Tarif für Umziehende und Remote-Arbeitende.",
+        cta: "Angebot einholen"
+      }
+    ]
+  },
 };
 
 export default de;

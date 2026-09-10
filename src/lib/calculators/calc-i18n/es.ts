@@ -234,6 +234,52 @@ const es: Record<string, CalcText> = {
         cta: "Ver dispositivos"
       }
     ]
+  },
+  "take-home-pay-calculator": {
+    title: "Calculadora de salario neto por país",
+    excerpt: "Consulta tu salario neto después del impuesto sobre la renta y las cotizaciones sociales en EE. UU., Reino Unido, Alemania, Francia y más — elige un país e introduce tu salario bruto.",
+    intent: "Convierte un salario bruto en salario neto real en el país elegido.",
+    intro: [
+      "Esta calculadora estima tu salario neto — lo que realmente llega a tu cuenta después del impuesto sobre la renta y las cotizaciones sociales del empleado — en diez países importantes. Elige un país, introduce tu salario bruto anual o mensual en la moneda local y consulta la cifra neta, el reparto entre impuestos y cotizaciones sociales, y tu tipo impositivo efectivo.",
+      "Modela los tramos impositivos principales de 2025 de cada país más los ajustes estándar más importantes (mínimos personales, créditos fiscales generales y reglas de cotización social), y está calibrada para acercarse a unos pocos puntos porcentuales de las cifras netas oficiales. Es una estimación aproximada para una persona soltera con ingresos, no una nómina: no tiene en cuenta dependientes, créditos personales, deducciones detalladas ni la variación regional, así que verifica cualquier cosa importante con un profesional."
+    ],
+    notes: [
+      "El tipo impositivo efectivo es el total de impuestos y cotizaciones sociales dividido entre el salario bruto — siempre inferior al tramo marginal más alto.",
+      "El mismo salario bruto permite estilos de vida muy distintos una vez que se tiene en cuenta el coste de vida — compara ciudades y países en otras secciones de CostTrek.",
+      "Las cotizaciones sociales a menudo financian pensiones y sanidad, así que una deducción más alta no es una pérdida pura."
+    ],
+    faq: [
+      {
+        q: "¿Cómo se calcula el salario neto?",
+        a: "Tomamos tu salario bruto, aplicamos el mínimo básico y las deducciones estándar del país, recorremos los tramos progresivos del impuesto sobre la renta, añadimos las cotizaciones sociales del empleado y luego restamos ambos del bruto. Lo que queda es tu salario neto estimado."
+      },
+      {
+        q: "¿Qué países y qué año cubre?",
+        a: "Diez países — EE. UU., Reino Unido, Alemania, Francia, España, Italia, Canadá, Australia, los Países Bajos e Irlanda — según las reglas nacionales aproximadas de 2025 para una persona soltera con ingresos."
+      },
+      {
+        q: "¿Por qué no coincide exactamente con mi nómina?",
+        a: "El salario real refleja dependientes, créditos fiscales personales, decisiones de pensión, impuestos regionales o provinciales y la retención específica del empleador. Esta es una estimación calibrada — una guía aproximada, no asesoramiento fiscal."
+      }
+    ],
+    offersHeading: "Haz que tu salario rinda más",
+    offers: [
+      {
+        name: "Envía dinero al extranjero con Wise",
+        blurb: "¿Mueves tu salario a través de fronteras? Consigue el tipo de cambio real y comisiones bajas y transparentes.",
+        cta: "Comparar costes de transferencia"
+      },
+      {
+        name: "Cuenta multidivisa",
+        blurb: "Guarda y gasta en varias monedas con una cuenta moderna pensada para expatriados y nómadas.",
+        cta: "Ver cuentas"
+      },
+      {
+        name: "Seguro médico internacional",
+        blurb: "Protégete dondequiera que trabajes con un plan diseñado para quienes se mudan y trabajan en remoto.",
+        cta: "Obtener presupuesto"
+      }
+    ]
   }
 };
 

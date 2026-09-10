@@ -235,6 +235,52 @@ const pt: Record<string, CalcText> = {
       },
     ],
   },
+  "take-home-pay-calculator": {
+    title: "Calculadora de Salário Líquido por País",
+    excerpt: "Veja o seu salário líquido após o imposto sobre o rendimento e as contribuições sociais nos EUA, Reino Unido, Alemanha, França e mais — escolha um país e introduza o seu salário bruto.",
+    intent: "Converta um salário bruto no salário líquido real num país à escolha.",
+    intro: [
+      "Esta calculadora estima o seu salário líquido — o que realmente chega à sua conta após o imposto sobre o rendimento e as contribuições sociais do trabalhador — em dez países importantes. Escolha um país, introduza o seu salário bruto anual ou mensal na moeda local e veja o valor líquido, a divisão entre imposto e contribuições sociais e a sua taxa efetiva de imposto.",
+      "Modela os escalões de imposto de referência de cada país para 2025, acrescentando os principais ajustes-padrão (deduções pessoais, créditos de imposto gerais e regras das contribuições sociais), e está calibrada para ficar a poucos pontos percentuais dos valores líquidos oficiais. É uma estimativa aproximada para um único trabalhador, não um recibo de vencimento: não inclui dependentes, créditos pessoais, deduções discriminadas nem variações regionais, por isso confirme tudo o que for importante com um profissional.",
+    ],
+    notes: [
+      "A taxa efetiva de imposto é o total de imposto e contribuições sociais dividido pelo salário bruto — é sempre inferior ao escalão marginal mais alto.",
+      "O mesmo salário bruto proporciona estilos de vida muito diferentes depois de considerar o custo de vida — compare cidades e países noutras secções do CostTrek.",
+      "As contribuições sociais financiam muitas vezes pensões e cuidados de saúde, por isso uma dedução mais elevada não é uma perda pura.",
+    ],
+    faq: [
+      {
+        q: "Como é calculado o salário líquido?",
+        a: "Partimos do seu salário bruto, aplicamos a dedução básica e as deduções-padrão do país, percorremos os escalões progressivos do imposto sobre o rendimento, somamos as contribuições sociais do trabalhador e subtraímos ambos ao valor bruto. O que sobra é o seu salário líquido estimado.",
+      },
+      {
+        q: "Que países e ano abrange?",
+        a: "Dez países — os EUA, o Reino Unido, a Alemanha, a França, a Espanha, a Itália, o Canadá, a Austrália, os Países Baixos e a Irlanda — com base nas regras nacionais aproximadas de 2025 para um único trabalhador.",
+      },
+      {
+        q: "Porque é que não corresponde exatamente ao meu recibo de vencimento?",
+        a: "O salário real reflete dependentes, créditos de imposto pessoais, opções de reforma, impostos regionais ou provinciais e retenções específicas da entidade empregadora. Esta é uma estimativa calibrada — um guia aproximado, não aconselhamento fiscal.",
+      },
+    ],
+    offersHeading: "Faça o seu salário render mais",
+    offers: [
+      {
+        name: "Envie dinheiro para o estrangeiro com a Wise",
+        blurb: "A transferir o salário entre países? Obtenha a taxa de câmbio real e comissões baixas e transparentes.",
+        cta: "Comparar custos de transferência",
+      },
+      {
+        name: "Conta multimoeda",
+        blurb: "Guarde e gaste em várias moedas com uma conta moderna pensada para expatriados e nómadas.",
+        cta: "Ver contas",
+      },
+      {
+        name: "Seguro de saúde internacional",
+        blurb: "Proteja-se onde quer que trabalhe com um plano concebido para quem muda de país e trabalha remotamente.",
+        cta: "Pedir orçamento",
+      },
+    ],
+  },
 };
 
 export default pt;

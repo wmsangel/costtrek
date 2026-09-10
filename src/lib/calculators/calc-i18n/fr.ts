@@ -234,6 +234,52 @@ const fr: Record<string, CalcText> = {
         cta: "Voir les appareils"
       }
     ]
+  },
+  "take-home-pay-calculator": {
+    title: "Calculateur de salaire net par pays",
+    excerpt: "Découvrez votre salaire net après impôt sur le revenu et cotisations sociales aux États-Unis, au Royaume-Uni, en Allemagne, en France et ailleurs — choisissez un pays et saisissez votre salaire brut.",
+    intent: "Transformez un salaire brut en véritable salaire net dans le pays de votre choix.",
+    intro: [
+      "Ce calculateur estime votre salaire net — ce qui arrive réellement sur votre compte après l'impôt sur le revenu et les cotisations sociales salariales — dans dix grands pays. Choisissez un pays, saisissez votre salaire brut annuel ou mensuel dans la devise locale, et obtenez le montant net, la répartition entre impôt et cotisations sociales, ainsi que votre taux d'imposition effectif.",
+      "Il modélise les principales tranches d'imposition 2025 de chaque pays, ainsi que les plus importants ajustements standard (abattements personnels, crédits d'impôt généraux et règles de cotisations sociales), et il est calibré pour rester à quelques pour cent des chiffres officiels du salaire net. C'est une estimation proche pour une personne seule, pas une fiche de paie : il ne tient pas compte des personnes à charge, des crédits personnels, des déductions détaillées ni des variations régionales, alors vérifiez tout élément important auprès d'un professionnel."
+    ],
+    notes: [
+      "Le taux d'imposition effectif correspond au total de l'impôt et des cotisations sociales divisé par le salaire brut — il est toujours inférieur à la tranche marginale la plus élevée.",
+      "Un même salaire brut offre des modes de vie très différents une fois le coût de la vie pris en compte — comparez les villes et les pays ailleurs sur CostTrek.",
+      "Les cotisations sociales financent souvent les retraites et la santé, si bien qu'une déduction plus élevée n'est pas une pure perte."
+    ],
+    faq: [
+      {
+        q: "Comment le salaire net est-il calculé ?",
+        a: "Nous prenons votre salaire brut, appliquons l'abattement de base et les déductions standard du pays, passons par les tranches progressives de l'impôt sur le revenu, ajoutons les cotisations sociales salariales, puis soustrayons le tout du brut. Ce qui reste est votre salaire net estimé."
+      },
+      {
+        q: "Quels pays et quelle année couvre-t-il ?",
+        a: "Dix pays — les États-Unis, le Royaume-Uni, l'Allemagne, la France, l'Espagne, l'Italie, le Canada, l'Australie, les Pays-Bas et l'Irlande — selon les règles nationales approximatives de 2025 pour une personne seule."
+      },
+      {
+        q: "Pourquoi ne correspond-il pas exactement à ma fiche de paie ?",
+        a: "Le salaire réel reflète les personnes à charge, les crédits d'impôt personnels, les choix de retraite, les taxes régionales ou provinciales et les retenues propres à l'employeur. Il s'agit d'une estimation calibrée — un bon repère, pas un conseil fiscal."
+      }
+    ],
+    offersHeading: "Faites fructifier votre salaire",
+    offers: [
+      {
+        name: "Envoyer de l'argent à l'étranger avec Wise",
+        blurb: "Vous transférez votre salaire d'un pays à l'autre ? Profitez du taux de change réel et de frais bas et transparents.",
+        cta: "Comparer les coûts de transfert"
+      },
+      {
+        name: "Compte multidevise",
+        blurb: "Détenez et dépensez dans plusieurs devises grâce à un compte moderne conçu pour les expatriés et les nomades.",
+        cta: "Voir les comptes"
+      },
+      {
+        name: "Assurance santé internationale",
+        blurb: "Protégez-vous où que vous travailliez avec une offre pensée pour les personnes mobiles et les travailleurs à distance.",
+        cta: "Obtenir un devis"
+      }
+    ]
   }
 };
 
