@@ -13,6 +13,7 @@ import LoanCalculator from "@/components/calculators/LoanCalculator";
 import CarLoanCalculator from "@/components/calculators/CarLoanCalculator";
 import SalaryCalculator from "@/components/calculators/SalaryCalculator";
 import ElectricityCalculator from "@/components/calculators/ElectricityCalculator";
+import TakeHomeCalculator from "@/components/calculators/TakeHomeCalculator";
 import { CALCULATORS, getCalculator } from "@/lib/calculators/registry";
 import { localizedCalc } from "@/lib/calculators/calc-i18n";
 import { CALC_PRESETS } from "@/lib/calculators/presets";
@@ -38,6 +39,8 @@ function widgetFor(slug: string) {
       return <SalaryCalculator />;
     case "electricity-cost-calculator":
       return <ElectricityCalculator />;
+    case "take-home-pay-calculator":
+      return <TakeHomeCalculator />;
     default:
       return null;
   }

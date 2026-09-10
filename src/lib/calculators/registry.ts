@@ -326,6 +326,62 @@ export const CALCULATORS: CalcMeta[] = [
     ],
     live: true,
   },
+  {
+    slug: "take-home-pay-calculator",
+    glyph: "🧮",
+    title: "Take-Home Pay Calculator by Country",
+    excerpt:
+      "See your net salary after income tax and social contributions in the US, UK, Germany, France and more — pick a country and enter your gross pay.",
+    intent: "Turn a gross salary into real take-home pay in a chosen country.",
+    intro: [
+      "This calculator estimates your net, take-home salary — what actually lands in your account after income tax and employee social contributions — across ten major countries. Pick a country, enter your gross annual or monthly pay in the local currency, and see the net figure, the split between tax and social contributions, and your effective tax rate.",
+      "It models each country's 2025 headline tax brackets plus the biggest standard adjustments (personal allowances, general tax credits and social-contribution rules), and is calibrated to land within a few percent of official net-pay figures. It's a close estimate for a single earner, not a payslip: it leaves out dependants, personal credits, itemised deductions and regional variation, so verify anything important with a professional.",
+    ],
+    notes: [
+      "Effective tax rate is total tax and social contributions divided by gross pay — always lower than the top marginal bracket.",
+      "The same gross salary buys very different lifestyles once cost of living is factored in — compare cities and countries elsewhere on CostTrek.",
+      "Social contributions often fund pensions and healthcare, so a higher deduction isn't purely a loss.",
+    ],
+    faq: [
+      {
+        q: "How is take-home pay calculated?",
+        a: "We take your gross salary, apply the country's basic allowance and standard deductions, run the progressive income-tax brackets, add employee social contributions, then subtract both from gross. What's left is your estimated net pay.",
+      },
+      {
+        q: "Which countries and year does it cover?",
+        a: "Ten countries — the US, UK, Germany, France, Spain, Italy, Canada, Australia, the Netherlands and Ireland — on approximate 2025 national rules for a single earner.",
+      },
+      {
+        q: "Why doesn't it exactly match my payslip?",
+        a: "Real pay reflects dependants, personal tax credits, pension choices, regional or provincial taxes and employer-specific withholding. This is a calibrated estimate — a close guide, not tax advice.",
+      },
+    ],
+    offersHeading: "Make your salary go further",
+    offers: [
+      {
+        name: "Send money abroad with Wise",
+        blurb: "Moving pay across borders? Get the real exchange rate and low, transparent fees.",
+        cta: "Compare transfer costs",
+        href: null,
+        badge: "Sponsored",
+      },
+      {
+        name: "Multi-currency account",
+        blurb: "Hold and spend in several currencies with a modern account built for expats and nomads.",
+        cta: "See accounts",
+        href: null,
+        badge: "Sponsored",
+      },
+      {
+        name: "International health insurance",
+        blurb: "Cover yourself wherever you work with a plan designed for movers and remote workers.",
+        cta: "Get a quote",
+        href: null,
+        badge: "Sponsored",
+      },
+    ],
+    live: true,
+  },
 ];
 
 export function getCalculator(slug: string): CalcMeta | undefined {
