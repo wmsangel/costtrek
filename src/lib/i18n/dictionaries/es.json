@@ -41,6 +41,8 @@
     "popularTitle": "Comparaciones populares",
     "popularSub": "Las rutas de mudanza que más se buscan.",
     "trust": "Basado en datos públicos de institutos nacionales de estadística, la Oficina de Análisis Económico de EE. UU., el Census Bureau y el Banco Mundial.",
+    "ledBy": "encabeza {city}",
+    "personasTitle": "Según tu situación",
     "collectionsSub": "Ciudades ordenadas por lo que importa — coste, impuestos, seguridad y más.",
     "browseTitle": "Explorar ciudades",
     "browseSub": "Elige cualquier ciudad para un desglose completo de coste, impuestos y calidad de vida."

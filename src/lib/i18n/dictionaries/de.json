@@ -41,6 +41,8 @@
     "popularTitle": "Beliebte Vergleiche",
     "popularSub": "Die meistgesuchten Umzugsrouten.",
     "trust": "Basiert auf öffentlichen Daten nationaler Statistikämter, des U.S. Bureau of Economic Analysis, des Census Bureau und der Weltbank.",
+    "ledBy": "Spitzenreiter: {city}",
+    "personasTitle": "Passend zu deiner Situation",
     "collectionsSub": "Städte sortiert nach dem, was zählt — Kosten, Steuern, Sicherheit und mehr.",
     "browseTitle": "Städte durchsuchen",
     "browseSub": "Wähle eine Stadt für eine vollständige Aufschlüsselung von Kosten, Steuern und Lebensqualität."

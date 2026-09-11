@@ -41,6 +41,8 @@
     "popularTitle": "Popular comparisons",
     "popularSub": "The relocation routes people search for most.",
     "trust": "Built on public data from national statistics offices, the U.S. Bureau of Economic Analysis, the Census Bureau and the World Bank.",
+    "ledBy": "led by {city}",
+    "personasTitle": "Best for your situation",
     "collectionsSub": "Cities ranked by what matters — cost, taxes, safety and more.",
     "browseTitle": "Browse cities",
     "browseSub": "Pick any city for a full cost, tax and quality-of-life breakdown."

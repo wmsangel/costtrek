@@ -12,11 +12,17 @@ import {
   overallIndex,
 } from "@/lib/cities";
 import { isLocale, type Locale } from "@/lib/i18n/config";
-import { getDictionary } from "@/lib/i18n/dictionaries";
+import { fill, getDictionary } from "@/lib/i18n/dictionaries";
 import { localizedCityLabel, localizedCityName } from "@/lib/i18n/places";
-import { COLLECTIONS, COLLECTION_KEYS } from "@/lib/collections";
+import {
+  COLLECTIONS,
+  COLLECTION_KEYS,
+  type CollectionKey,
+  rankCities,
+} from "@/lib/collections";
 import { GUIDES, localizedGuide } from "@/content/guides";
 import { CALCULATORS } from "@/lib/calculators/registry";
+import { localizedCalc } from "@/lib/calculators/calc-i18n";
 import { getCountry } from "@/lib/data";
 import { pageMetadata, SITE_NAME } from "@/lib/seo/site";
 import { websiteJsonLd } from "@/lib/seo/jsonld";
@@ -38,6 +44,32 @@ const POPULAR: [string, string][] = [
   ["vienna-at", "budapest-hu"],
   ["new-york-ny", "istanbul-tr"],
 ];
+
+// Glyph per ranking hub, and the split between metric rankings and audience
+// personas — drives the homepage showcase.
+const COLLECTION_ICON: Record<CollectionKey, string> = {
+  cheapest: "💸",
+  "most-expensive": "💎",
+  "low-tax": "🧾",
+  safest: "🛡️",
+  sunniest: "☀️",
+  "best-internet": "📶",
+  "best-transit": "🚆",
+  "best-healthcare": "🏥",
+  "cleanest-air": "🌿",
+  walkable: "🚶",
+  nomad: "🎒",
+  "for-families": "👨‍👩‍👧",
+  "for-retirees": "🏖️",
+  "for-students": "🎓",
+};
+const PERSONA_KEYS: CollectionKey[] = [
+  "nomad",
+  "for-families",
+  "for-retirees",
+  "for-students",
+];
+const RANKING_KEYS = COLLECTION_KEYS.filter((k) => !PERSONA_KEYS.includes(k));
 
 export async function generateMetadata({
   params,
@@ -224,25 +256,68 @@ export default async function Home({
         </div>
       </section>
 
-      {/* Best-of collections */}
+      {/* Rankings & personas showcase */}
       <section className="mt-16">
         <h2 className="mag-h2 mb-1.5">★ {dict.collections.homeTitle}</h2>
         <p className="text-[var(--muted)] mb-5 max-w-[60ch]">
           {dict.home.collectionsSub}
         </p>
         <div className="grid sm:grid-cols-2 gap-3">
-          {COLLECTION_KEYS.map((k) => (
-            <Link
-              key={k}
-              href={`/${l}/best/${k}`}
-              className="card card-hover rounded-xl p-4 flex items-center justify-between gap-3"
-            >
-              <span className="font-semibold">
-                {dict.collections[COLLECTIONS[k].dictKey].title}
-              </span>
-              <span className="text-[var(--muted)]">→</span>
-            </Link>
-          ))}
+          {RANKING_KEYS.map((k) => {
+            const top = rankCities(k, 1)[0]?.city;
+            return (
+              <Link
+                key={k}
+                href={`/${l}/best/${k}`}
+                className="card card-hover rounded-xl p-4 flex items-center gap-3"
+              >
+                <span className="grid place-items-center w-11 h-11 rounded-xl bg-[var(--accent-soft)] text-xl shrink-0">
+                  {COLLECTION_ICON[k]}
+                </span>
+                <span className="min-w-0">
+                  <span className="block font-bold leading-tight">
+                    {dict.collections[COLLECTIONS[k].dictKey].title}
+                  </span>
+                  {top && (
+                    <span className="block text-xs text-[var(--muted)] mt-0.5 truncate">
+                      {fill(dict.home.ledBy, {
+                        city: `${flagEmoji(top.countryCode)} ${localizedCityName(l, top)}`,
+                      })}
+                    </span>
+                  )}
+                </span>
+                <span className="ml-auto text-[var(--muted)]">→</span>
+              </Link>
+            );
+          })}
+        </div>
+
+        <h3 className="text-xs font-bold uppercase tracking-wider text-[var(--muted)] mt-8 mb-3">
+          {dict.home.personasTitle}
+        </h3>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+          {PERSONA_KEYS.map((k) => {
+            const top = rankCities(k, 1)[0]?.city;
+            return (
+              <Link
+                key={k}
+                href={`/${l}/best/${k}`}
+                className="card card-hover rounded-xl p-4 text-center"
+              >
+                <span className="grid place-items-center mx-auto w-12 h-12 rounded-2xl bg-[var(--accent-soft)] text-2xl">
+                  {COLLECTION_ICON[k]}
+                </span>
+                <span className="block font-bold text-sm mt-2 leading-tight">
+                  {dict.collections[COLLECTIONS[k].dictKey].title}
+                </span>
+                {top && (
+                  <span className="block text-[11px] text-[var(--muted)] mt-1 truncate">
+                    {flagEmoji(top.countryCode)} {localizedCityName(l, top)}
+                  </span>
+                )}
+              </Link>
+            );
+          })}
         </div>
       </section>
 
@@ -288,19 +363,28 @@ export default async function Home({
         <p className="text-[var(--muted)] mb-6 max-w-[60ch]">
           {dict.calculators.subtitle}
         </p>
-        <div className="flex flex-wrap gap-3">
-          {CALCULATORS.filter((c) => c.live).map((c) => (
-            <Link
-              key={c.slug}
-              href={`/${l}/calculators/${c.slug}`}
-              className="group flex items-center gap-2.5 rounded-full border border-[var(--border)] px-4 py-2 hover:border-[var(--accent)]"
-            >
-              <span aria-hidden>{c.glyph}</span>
-              <span className="font-semibold group-hover:text-[var(--accent)]">
-                {c.title}
-              </span>
-            </Link>
-          ))}
+        <div className="grid sm:grid-cols-2 gap-3">
+          {CALCULATORS.filter((c) => c.live).map((c) => {
+            const lc = localizedCalc(c, l);
+            return (
+              <Link
+                key={c.slug}
+                href={`/${l}/calculators/${c.slug}`}
+                className="card card-hover rounded-xl p-4 flex items-center gap-3"
+              >
+                <span className="grid place-items-center w-11 h-11 rounded-xl bg-[var(--accent-soft)] text-xl shrink-0">
+                  {c.glyph}
+                </span>
+                <span className="min-w-0">
+                  <span className="block font-bold leading-tight">{lc.title}</span>
+                  <span className="block text-xs text-[var(--muted)] mt-0.5 truncate">
+                    {lc.intent}
+                  </span>
+                </span>
+                <span className="ml-auto text-[var(--muted)]">→</span>
+              </Link>
+            );
+          })}
         </div>
         <p className="mt-6">
           <Link

@@ -41,6 +41,8 @@
     "popularTitle": "Comparações populares",
     "popularSub": "As rotas de mudança que mais se procuram.",
     "trust": "Baseado em dados públicos de institutos nacionais de estatística, do U.S. Bureau of Economic Analysis, do Census Bureau e do Banco Mundial.",
+    "ledBy": "liderado por {city}",
+    "personasTitle": "Para a sua situação",
     "collectionsSub": "Cidades ordenadas pelo que importa — custo, impostos, segurança e mais.",
     "browseTitle": "Explorar cidades",
     "browseSub": "Escolha uma cidade para um detalhe completo de custo, impostos e qualidade de vida."

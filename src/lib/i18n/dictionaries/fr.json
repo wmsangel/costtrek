@@ -41,6 +41,8 @@
     "popularTitle": "Comparaisons populaires",
     "popularSub": "Les itinéraires de déménagement les plus recherchés.",
     "trust": "Fondé sur des données publiques des instituts nationaux de statistique, du U.S. Bureau of Economic Analysis, du Census Bureau et de la Banque mondiale.",
+    "ledBy": "en tête : {city}",
+    "personasTitle": "Selon votre profil",
     "collectionsSub": "Des villes classées selon ce qui compte — coût, impôts, sécurité et plus.",
     "browseTitle": "Parcourir les villes",
     "browseSub": "Choisissez une ville pour un détail complet du coût, des impôts et de la qualité de vie."

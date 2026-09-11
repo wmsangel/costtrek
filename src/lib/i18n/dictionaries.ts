@@ -39,6 +39,8 @@ export type Dictionary = {
     popularTitle: string;
     popularSub: string;
     trust: string;
+    ledBy: string; // {city}
+    personasTitle: string;
     collectionsSub: string;
     browseTitle: string;
     browseSub: string;
