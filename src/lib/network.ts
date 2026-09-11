@@ -70,4 +70,10 @@ export const NETWORK_SITES: NetworkSite[] = [
     tagline: "",
     emoji: "🧪",
   },
+  {
+    url: "https://foldoutkit.com/",
+    name: "Foldout",
+    tagline: "Website & email templates, clean code",
+    emoji: "🧩",
+  },
 ];
