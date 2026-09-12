@@ -66,7 +66,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  const lastModified = "2026-08-14";
+  // Build date — the sitemap is regenerated on every deploy, so this reflects
+  // the latest content refresh rather than a stale hardcoded date.
+  const lastModified = new Date().toISOString().slice(0, 10);
   const entries: MetadataRoute.Sitemap = [];
   for (const { path, priority } of paths) {
     const languages = languageAlternates(path);

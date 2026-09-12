@@ -9,6 +9,14 @@ export function organizationJsonLd() {
     name: SITE_NAME,
     url: SITE_URL,
     logo: `${SITE_URL}/icon`,
+    description:
+      "Independent cost-of-living, tax and quality-of-life comparisons between cities and countries worldwide.",
+    founder: { "@type": "Person", name: "Igor Zagorodnyi" },
+    contactPoint: {
+      "@type": "ContactPoint",
+      email: "info@costtrek.com",
+      contactType: "customer support",
+    },
   };
 }
 

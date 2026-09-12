@@ -12,6 +12,8 @@ import { isLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { localizedCountryNameByCode } from "@/lib/i18n/places";
 import { pageMetadata, SITE_NAME } from "@/lib/seo/site";
+import { breadcrumbJsonLd } from "@/lib/seo/jsonld";
+import JsonLd from "@/components/JsonLd";
 import Mountains from "@/components/Mountains";
 
 const CONTINENTS = [
@@ -59,6 +61,12 @@ export default async function CountriesPage({
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:py-10">
+      <JsonLd
+        data={breadcrumbJsonLd(l, [
+          { name: dict.breadcrumbHome, path: "" },
+          { name: dict.countriesIndex.linkTitle, path: "countries" },
+        ])}
+      />
       <nav className="text-sm text-[var(--muted)] mb-4">
         <Link href={`/${l}`} className="hover:underline">
           {dict.breadcrumbHome}
