@@ -37,6 +37,19 @@ function regionLabel(dict: Dictionary, region: Region): string {
   return dict.continents[key];
 }
 
+/**
+ * "<collection title> in <region>". Strips a trailing English " in" from the
+ * title so "Cheapest cities to live in" + " in {region}" doesn't double the
+ * preposition ("…to live in Europe", not "…to live in in Europe"). Other
+ * locales' titles never end in the English token, so this is a no-op for them.
+ */
+function regionTitle(dict: Dictionary, title: string, region: string): string {
+  return fill(dict.collections.titleInRegion, {
+    title: title.replace(/ in$/, ""),
+    region,
+  });
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -52,10 +65,7 @@ export async function generateMetadata({
   const nl = LOCALE_BCP47[l];
   const ranked = rankCities(list, 200, region);
   const top = ranked.slice(0, 3).map((r) => localizedCityName(l, r.city));
-  const title = fill(dict.collections.titleInRegion, {
-    title: cd.title,
-    region: region_,
-  });
+  const title = regionTitle(dict, cd.title, region_);
   const description =
     ranked.length >= 3
       ? fill(dict.collections.regionMetaDesc, {
@@ -95,10 +105,7 @@ export default async function RegionalCollectionPage({
   if (rows.length === 0) notFound();
   const nl = LOCALE_BCP47[l];
 
-  const title = fill(dict.collections.titleInRegion, {
-    title: cd.title,
-    region: region_,
-  });
+  const title = regionTitle(dict, cd.title, region_);
   const top = rows.slice(0, 3).map((r) => localizedCityName(l, r.city));
   const vars = {
     title: cd.title,
