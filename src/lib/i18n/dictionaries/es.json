@@ -26,13 +26,21 @@
     "titlePost": " allí.",
     "subtitle": "Compara el coste de vida entre ciudades de todo el mundo y averigua el salario que necesitarías para mantener tu nivel de vida tras una mudanza.",
     "tagline": "{n} ciudades · 5 idiomas",
-    "stats": { "cities": "Ciudades", "countries": "Países", "rankings": "Rankings", "languages": "Idiomas" },
+    "stats": {
+      "cities": "Ciudades",
+      "countries": "Países",
+      "rankings": "Rankings",
+      "languages": "Idiomas"
+    },
     "why": {
       "title": "Por qué CostTrek",
       "lead": "Cambiar de ciudad o de país es una de las mayores decisiones económicas que tomarás — y la mayoría de las cifras de coste de vida en internet son suposiciones. CostTrek las convierte en una comparación honesta y equivalente de alquiler, impuestos, salarios y vida diaria, para que veas lo que una mudanza significa de verdad antes de decidir.",
-      "p1t": "Datos reales y con fuentes", "p1d": "Costes de EE. UU. anclados a BEA y Census, economías del Banco Mundial — no suposiciones extraídas.",
-      "p2t": "Equivalencia salarial", "p2d": "Descubre el sueldo que necesitarías en otro lugar para mantener el mismo nivel de vida.",
-      "p3t": "Para quienes se mudan y nómadas", "p3d": "Impuestos, visados, seguridad, clima y calidad de vida en cada ciudad, en cinco idiomas."
+      "p1t": "Datos reales y con fuentes",
+      "p1d": "Costes de EE. UU. anclados a BEA y Census, economías del Banco Mundial — no suposiciones extraídas.",
+      "p2t": "Equivalencia salarial",
+      "p2d": "Descubre el sueldo que necesitarías en otro lugar para mantener el mismo nivel de vida.",
+      "p3t": "Para quienes se mudan y nómadas",
+      "p3d": "Impuestos, visados, seguridad, clima y calidad de vida en cada ciudad, en cinco idiomas."
     },
     "from": "Desde",
     "to": "Hasta",
@@ -85,6 +93,11 @@
     "subtitle": "Calculadoras gratuitas e instantáneas de hipotecas, préstamos, salario y gastos cotidianos — con los números explicados.",
     "sponsored": "Patrocinado — podemos recibir una comisión de estos socios, sin coste para ti.",
     "sponsoredBadge": "Patrocinado"
+  },
+  "mytrip": {
+    "headline": "Reserva tus vuelos con MyTrip",
+    "sub": "Compara tarifas de más de 650 aerolíneas y viaja por menos.",
+    "cta": "Buscar vuelos"
   },
   "compareCountries": {
     "breadcrumb": "Comparar países",
@@ -161,7 +174,6 @@
       "other": "Más"
     }
   },
-
   "facts": {
     "title": "Lo que debes saber antes de mudarte a {city}",
     "intro": "Lo esencial para instalarte en {city}: dinero, idioma, clima y vida diaria de un vistazo.",
@@ -253,14 +265,53 @@
       "description": "Ciudades asequibles y bien conectadas, populares entre teletrabajadores, ordenadas por coste de vida.",
       "metric": "Índice de coste"
     },
-    "mostExpensive": { "title": "Las ciudades más caras para vivir", "description": "Las ciudades más caras de nuestro índice, ordenadas por el coste de vida global (media de EE. UU. = 100). Cuanto más alto, más caro.", "metric": "Índice de coste" },
-    "bestInternet": { "title": "Ciudades con el internet más rápido", "description": "Donde el trabajo remoto simplemente funciona: ciudades ordenadas por la velocidad típica de la banda ancha doméstica.", "metric": "Velocidad" },
-    "bestTransit": { "title": "Ciudades con el mejor transporte público", "description": "Moverse sin coche: ciudades ordenadas por la calidad de su transporte público.", "metric": "Transporte" },
-    "bestHealthcare": { "title": "Ciudades con la mejor sanidad", "description": "Ciudades ordenadas por la calidad y accesibilidad de su sanidad.", "metric": "Sanidad" },
-    "cleanestAir": { "title": "Ciudades con el aire más limpio", "description": "Respira tranquilo: ciudades ordenadas por calidad del aire, menor contaminación primero.", "metric": "Contaminación" },
-    "walkable": { "title": "Ciudades más caminables", "description": "Vivir sin coche: ciudades ordenadas por lo caminables que son en el día a día.", "metric": "Caminabilidad" },
-    "flightsCta": "¿Planeando una mudanza? Encuentra vuelos baratos por todo el mundo"
-  ,"forFamilies":{"title":"Mejores ciudades para familias","description":"Ciudades que equilibran seguridad, sanidad, aire limpio y vida familiar — clasificadas para quienes se mudan con hijos.","metric":"Puntuación familias"},"forRetirees":{"title":"Mejores ciudades para jubilarse","description":"Donde la pensión rinde más, con buena sanidad, poca delincuencia, aire limpio y clima suave — para jubilados.","metric":"Puntuación jubilación"},"forStudents":{"title":"Mejores ciudades para estudiantes","description":"Ciudades asequibles, caminables y bien conectadas con internet rápido — para estudiantes y jóvenes con presupuesto ajustado.","metric":"Puntuación estudiantes"}},
+    "mostExpensive": {
+      "title": "Las ciudades más caras para vivir",
+      "description": "Las ciudades más caras de nuestro índice, ordenadas por el coste de vida global (media de EE. UU. = 100). Cuanto más alto, más caro.",
+      "metric": "Índice de coste"
+    },
+    "bestInternet": {
+      "title": "Ciudades con el internet más rápido",
+      "description": "Donde el trabajo remoto simplemente funciona: ciudades ordenadas por la velocidad típica de la banda ancha doméstica.",
+      "metric": "Velocidad"
+    },
+    "bestTransit": {
+      "title": "Ciudades con el mejor transporte público",
+      "description": "Moverse sin coche: ciudades ordenadas por la calidad de su transporte público.",
+      "metric": "Transporte"
+    },
+    "bestHealthcare": {
+      "title": "Ciudades con la mejor sanidad",
+      "description": "Ciudades ordenadas por la calidad y accesibilidad de su sanidad.",
+      "metric": "Sanidad"
+    },
+    "cleanestAir": {
+      "title": "Ciudades con el aire más limpio",
+      "description": "Respira tranquilo: ciudades ordenadas por calidad del aire, menor contaminación primero.",
+      "metric": "Contaminación"
+    },
+    "walkable": {
+      "title": "Ciudades más caminables",
+      "description": "Vivir sin coche: ciudades ordenadas por lo caminables que son en el día a día.",
+      "metric": "Caminabilidad"
+    },
+    "flightsCta": "¿Planeando una mudanza? Encuentra vuelos baratos por todo el mundo",
+    "forFamilies": {
+      "title": "Mejores ciudades para familias",
+      "description": "Ciudades que equilibran seguridad, sanidad, aire limpio y vida familiar — clasificadas para quienes se mudan con hijos.",
+      "metric": "Puntuación familias"
+    },
+    "forRetirees": {
+      "title": "Mejores ciudades para jubilarse",
+      "description": "Donde la pensión rinde más, con buena sanidad, poca delincuencia, aire limpio y clima suave — para jubilados.",
+      "metric": "Puntuación jubilación"
+    },
+    "forStudents": {
+      "title": "Mejores ciudades para estudiantes",
+      "description": "Ciudades asequibles, caminables y bien conectadas con internet rápido — para estudiantes y jóvenes con presupuesto ajustado.",
+      "metric": "Puntuación estudiantes"
+    }
+  },
   "data": {
     "fullComparison": "Comparación completa",
     "comingSoon": "Próximamente",

@@ -26,13 +26,21 @@
     "titlePost": " ist.",
     "subtitle": "Vergleiche die Lebenshaltungskosten von Städten weltweit und finde heraus, welches Gehalt du brauchst, um nach einem Umzug deinen Lebensstandard zu halten.",
     "tagline": "{n} Städte · 5 Sprachen",
-    "stats": { "cities": "Städte", "countries": "Länder", "rankings": "Ranglisten", "languages": "Sprachen" },
+    "stats": {
+      "cities": "Städte",
+      "countries": "Länder",
+      "rankings": "Ranglisten",
+      "languages": "Sprachen"
+    },
     "why": {
       "title": "Warum CostTrek",
       "lead": "Ein Umzug in eine andere Stadt oder ein anderes Land ist eine der größten Geldentscheidungen überhaupt — und die meisten Lebenshaltungskosten-Angaben im Netz sind bloß geschätzt. CostTrek macht daraus einen ehrlichen, direkten Vergleich von Miete, Steuern, Gehältern und Alltag, damit du vor der Entscheidung siehst, was ein Umzug wirklich bedeutet.",
-      "p1t": "Echte, belegte Daten", "p1d": "US-Kosten verankert an BEA und Census, Wirtschaftsdaten von der Weltbank — keine zusammengescrapten Schätzungen.",
-      "p2t": "Gehaltsäquivalenz", "p2d": "Sieh, welches Einkommen du anderswo brauchst, um denselben Lebensstandard zu halten.",
-      "p3t": "Für Umziehende und Nomaden", "p3d": "Steuern, Visa, Sicherheit, Klima und Lebensqualität für jede Stadt, in fünf Sprachen."
+      "p1t": "Echte, belegte Daten",
+      "p1d": "US-Kosten verankert an BEA und Census, Wirtschaftsdaten von der Weltbank — keine zusammengescrapten Schätzungen.",
+      "p2t": "Gehaltsäquivalenz",
+      "p2d": "Sieh, welches Einkommen du anderswo brauchst, um denselben Lebensstandard zu halten.",
+      "p3t": "Für Umziehende und Nomaden",
+      "p3d": "Steuern, Visa, Sicherheit, Klima und Lebensqualität für jede Stadt, in fünf Sprachen."
     },
     "from": "Von",
     "to": "Nach",
@@ -85,6 +93,11 @@
     "subtitle": "Kostenlose Sofort-Rechner für Hypotheken, Kredite, Gehalt und Alltagskosten – mit verständlich erklärten Zahlen.",
     "sponsored": "Anzeige — wir erhalten ggf. eine Provision von diesen Partnern, ohne Mehrkosten für dich.",
     "sponsoredBadge": "Anzeige"
+  },
+  "mytrip": {
+    "headline": "Buche deine Flüge mit MyTrip",
+    "sub": "Vergleiche Preise von über 650 Airlines und reise günstiger.",
+    "cta": "Flüge suchen"
   },
   "compareCountries": {
     "breadcrumb": "Länder vergleichen",
@@ -161,7 +174,6 @@
       "other": "Mehr"
     }
   },
-
   "facts": {
     "title": "Wissenswertes vor dem Umzug nach {city}",
     "intro": "Das Wichtigste, um in {city} anzukommen — Geld, Sprache, Klima und Alltag auf einen Blick.",
@@ -253,14 +265,53 @@
       "description": "Günstige, gut angebundene Städte, die bei Remote-Arbeitern beliebt sind, sortiert nach Lebenshaltungskosten.",
       "metric": "Kostenindex"
     },
-    "mostExpensive": { "title": "Teuerste Städte zum Leben", "description": "Die teuersten Städte in unserem Index, sortiert nach den Gesamtlebenshaltungskosten (US-Durchschnitt = 100). Höher ist teurer.", "metric": "Kostenindex" },
-    "bestInternet": { "title": "Städte mit dem schnellsten Internet", "description": "Wo Remote-Arbeit einfach funktioniert — Städte sortiert nach typischer Breitbandgeschwindigkeit zu Hause.", "metric": "Geschwindigkeit" },
-    "bestTransit": { "title": "Städte mit dem besten Nahverkehr", "description": "Ohne Auto vorankommen — Städte sortiert nach der Qualität ihres Nahverkehrs.", "metric": "Nahverkehr" },
-    "bestHealthcare": { "title": "Städte mit der besten Gesundheitsversorgung", "description": "Städte sortiert nach Qualität und Zugänglichkeit ihrer Gesundheitsversorgung.", "metric": "Gesundheit" },
-    "cleanestAir": { "title": "Städte mit der saubersten Luft", "description": "Durchatmen — Städte sortiert nach Luftqualität, geringste Belastung zuerst.", "metric": "Umweltbelastung" },
-    "walkable": { "title": "Fußgängerfreundlichste Städte", "description": "Autofrei leben — Städte sortiert danach, wie gut man sie täglich zu Fuß erschließen kann.", "metric": "Fußgängerfreundlichkeit" },
-    "flightsCta": "Umzug geplant? Günstige Flüge weltweit finden"
-  ,"forFamilies":{"title":"Beste Städte für Familien","description":"Städte, die Sicherheit, Gesundheitsversorgung, saubere Luft und Familienfreundlichkeit vereinen — für alle, die mit Kindern umziehen.","metric":"Familien-Score"},"forRetirees":{"title":"Beste Städte für den Ruhestand","description":"Wo die Rente am weitesten reicht — mit guter Gesundheitsversorgung, wenig Kriminalität, sauberer Luft und mildem Klima.","metric":"Rentner-Score"},"forStudents":{"title":"Beste Städte für Studierende","description":"Günstige, fußläufige, gut angebundene Städte mit schnellem Internet — für Studierende und junge Umziehende mit knappem Budget.","metric":"Studenten-Score"}},
+    "mostExpensive": {
+      "title": "Teuerste Städte zum Leben",
+      "description": "Die teuersten Städte in unserem Index, sortiert nach den Gesamtlebenshaltungskosten (US-Durchschnitt = 100). Höher ist teurer.",
+      "metric": "Kostenindex"
+    },
+    "bestInternet": {
+      "title": "Städte mit dem schnellsten Internet",
+      "description": "Wo Remote-Arbeit einfach funktioniert — Städte sortiert nach typischer Breitbandgeschwindigkeit zu Hause.",
+      "metric": "Geschwindigkeit"
+    },
+    "bestTransit": {
+      "title": "Städte mit dem besten Nahverkehr",
+      "description": "Ohne Auto vorankommen — Städte sortiert nach der Qualität ihres Nahverkehrs.",
+      "metric": "Nahverkehr"
+    },
+    "bestHealthcare": {
+      "title": "Städte mit der besten Gesundheitsversorgung",
+      "description": "Städte sortiert nach Qualität und Zugänglichkeit ihrer Gesundheitsversorgung.",
+      "metric": "Gesundheit"
+    },
+    "cleanestAir": {
+      "title": "Städte mit der saubersten Luft",
+      "description": "Durchatmen — Städte sortiert nach Luftqualität, geringste Belastung zuerst.",
+      "metric": "Umweltbelastung"
+    },
+    "walkable": {
+      "title": "Fußgängerfreundlichste Städte",
+      "description": "Autofrei leben — Städte sortiert danach, wie gut man sie täglich zu Fuß erschließen kann.",
+      "metric": "Fußgängerfreundlichkeit"
+    },
+    "flightsCta": "Umzug geplant? Günstige Flüge weltweit finden",
+    "forFamilies": {
+      "title": "Beste Städte für Familien",
+      "description": "Städte, die Sicherheit, Gesundheitsversorgung, saubere Luft und Familienfreundlichkeit vereinen — für alle, die mit Kindern umziehen.",
+      "metric": "Familien-Score"
+    },
+    "forRetirees": {
+      "title": "Beste Städte für den Ruhestand",
+      "description": "Wo die Rente am weitesten reicht — mit guter Gesundheitsversorgung, wenig Kriminalität, sauberer Luft und mildem Klima.",
+      "metric": "Rentner-Score"
+    },
+    "forStudents": {
+      "title": "Beste Städte für Studierende",
+      "description": "Günstige, fußläufige, gut angebundene Städte mit schnellem Internet — für Studierende und junge Umziehende mit knappem Budget.",
+      "metric": "Studenten-Score"
+    }
+  },
   "data": {
     "fullComparison": "Vollständiger Vergleich",
     "comingSoon": "Bald verfügbar",

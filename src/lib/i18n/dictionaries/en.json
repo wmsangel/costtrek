@@ -26,13 +26,21 @@
     "titlePost": " there.",
     "subtitle": "Compare the cost of living between cities worldwide and find the salary you'd need to keep your standard of living after a move.",
     "tagline": "{n} cities · 5 languages",
-    "stats": { "cities": "Cities", "countries": "Countries", "rankings": "Rankings", "languages": "Languages" },
+    "stats": {
+      "cities": "Cities",
+      "countries": "Countries",
+      "rankings": "Rankings",
+      "languages": "Languages"
+    },
     "why": {
       "title": "Why CostTrek",
       "lead": "Moving city or country is one of the biggest money decisions you will make — and most cost-of-living figures online are guesses. CostTrek turns them into an honest, like-for-like comparison of rent, taxes, salaries and everyday life, so you can see what a move really means before you commit.",
-      "p1t": "Real, sourced data", "p1d": "US costs anchored to BEA and Census, economies from the World Bank — not scraped guesses.",
-      "p2t": "Salary equivalence", "p2d": "See the income you would need elsewhere to keep the same standard of living.",
-      "p3t": "For movers and nomads", "p3d": "Taxes, visas, safety, climate and quality of life across every city, in five languages."
+      "p1t": "Real, sourced data",
+      "p1d": "US costs anchored to BEA and Census, economies from the World Bank — not scraped guesses.",
+      "p2t": "Salary equivalence",
+      "p2d": "See the income you would need elsewhere to keep the same standard of living.",
+      "p3t": "For movers and nomads",
+      "p3d": "Taxes, visas, safety, climate and quality of life across every city, in five languages."
     },
     "from": "From",
     "to": "To",
@@ -85,6 +93,11 @@
     "subtitle": "Free, instant calculators for mortgages, loans, salary and everyday costs — with the numbers explained.",
     "sponsored": "Sponsored — we may earn a commission from these partners, at no cost to you.",
     "sponsoredBadge": "Sponsored"
+  },
+  "mytrip": {
+    "headline": "Book your flights with MyTrip",
+    "sub": "Compare fares across 650+ airlines and travel more for less.",
+    "cta": "Search flights"
   },
   "compareCountries": {
     "breadcrumb": "Compare countries",
@@ -161,7 +174,6 @@
       "other": "More"
     }
   },
-
   "facts": {
     "title": "Good to know before you move to {city}",
     "intro": "The essentials for settling into {city} — money, language, climate and daily life at a glance.",
@@ -284,9 +296,21 @@
       "description": "Live car-free — cities ranked by how walkable they are day to day.",
       "metric": "Walkability"
     },
-    "forFamilies": {"title":"Best cities for families","description":"Cities that balance safety, healthcare, clean air and family-friendly living — ranked for anyone relocating with kids.","metric":"Family score"},
-    "forRetirees": {"title":"Best cities to retire","description":"Where a pension stretches furthest alongside good healthcare, low crime, clean air and a mild climate — ranked for retirees.","metric":"Retiree score"},
-    "forStudents": {"title":"Best cities for students","description":"Affordable, walkable, well-connected cities with fast internet — ranked for students and young movers on a budget.","metric":"Student score"}
+    "forFamilies": {
+      "title": "Best cities for families",
+      "description": "Cities that balance safety, healthcare, clean air and family-friendly living — ranked for anyone relocating with kids.",
+      "metric": "Family score"
+    },
+    "forRetirees": {
+      "title": "Best cities to retire",
+      "description": "Where a pension stretches furthest alongside good healthcare, low crime, clean air and a mild climate — ranked for retirees.",
+      "metric": "Retiree score"
+    },
+    "forStudents": {
+      "title": "Best cities for students",
+      "description": "Affordable, walkable, well-connected cities with fast internet — ranked for students and young movers on a budget.",
+      "metric": "Student score"
+    }
   },
   "data": {
     "fullComparison": "Full comparison",

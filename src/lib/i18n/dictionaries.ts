@@ -90,6 +90,11 @@ export type Dictionary = {
     sponsored: string;
     sponsoredBadge: string;
   };
+  mytrip: {
+    headline: string;
+    sub: string;
+    cta: string;
+  };
   compare: {
     breadcrumb: string;
     subtitle: string;

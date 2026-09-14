@@ -23,6 +23,7 @@ import { localizedCountry } from "@/lib/i18n/places";
 import CityProfileSections from "@/components/CityProfileSections";
 import CityFacts from "@/components/CityFacts";
 import FlightWidget from "@/components/FlightWidget";
+import MyTripCard from "@/components/MyTripCard";
 import { COLLECTIONS, cityCollections } from "@/lib/collections";
 import Mountains from "@/components/Mountains";
 import JsonLd from "@/components/JsonLd";
@@ -271,6 +272,8 @@ export default async function CityPage({
         title={dict.city.flightSearch}
         sponsoredLabel={dict.calculators.sponsoredBadge}
       />
+
+      <MyTripCard dict={dict} />
 
       <Faq
         title={dict.faq.title}

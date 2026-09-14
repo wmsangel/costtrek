@@ -26,13 +26,21 @@
     "titlePost": ".",
     "subtitle": "Comparez le coût de la vie entre les villes du monde entier et trouvez le salaire dont vous auriez besoin pour conserver votre niveau de vie après un déménagement.",
     "tagline": "{n} villes · 5 langues",
-    "stats": { "cities": "Villes", "countries": "Pays", "rankings": "Classements", "languages": "Langues" },
+    "stats": {
+      "cities": "Villes",
+      "countries": "Pays",
+      "rankings": "Classements",
+      "languages": "Langues"
+    },
     "why": {
       "title": "Pourquoi CostTrek",
       "lead": "Changer de ville ou de pays est l’une des plus grandes décisions financières de votre vie — et la plupart des chiffres du coût de la vie en ligne ne sont que des estimations. CostTrek en fait une comparaison honnête et équitable du loyer, des impôts, des salaires et du quotidien, pour voir ce qu’un déménagement signifie vraiment avant de vous lancer.",
-      "p1t": "Des données réelles et sourcées", "p1d": "Coûts américains ancrés au BEA et au Census, économies de la Banque mondiale — pas des estimations grattées.",
-      "p2t": "Équivalence de salaire", "p2d": "Voyez le revenu qu’il vous faudrait ailleurs pour garder le même niveau de vie.",
-      "p3t": "Pour ceux qui déménagent et les nomades", "p3d": "Impôts, visas, sécurité, climat et qualité de vie pour chaque ville, en cinq langues."
+      "p1t": "Des données réelles et sourcées",
+      "p1d": "Coûts américains ancrés au BEA et au Census, économies de la Banque mondiale — pas des estimations grattées.",
+      "p2t": "Équivalence de salaire",
+      "p2d": "Voyez le revenu qu’il vous faudrait ailleurs pour garder le même niveau de vie.",
+      "p3t": "Pour ceux qui déménagent et les nomades",
+      "p3d": "Impôts, visas, sécurité, climat et qualité de vie pour chaque ville, en cinq langues."
     },
     "from": "De",
     "to": "À",
@@ -85,6 +93,11 @@
     "subtitle": "Des calculateurs gratuits et instantanés pour prêts immobiliers, crédits, salaire et coûts du quotidien — chiffres expliqués.",
     "sponsored": "Sponsorisé — nous pouvons percevoir une commission de ces partenaires, sans coût pour vous.",
     "sponsoredBadge": "Sponsorisé"
+  },
+  "mytrip": {
+    "headline": "Réservez vos vols avec MyTrip",
+    "sub": "Comparez les tarifs de plus de 650 compagnies et voyagez pour moins cher.",
+    "cta": "Rechercher des vols"
   },
   "compareCountries": {
     "breadcrumb": "Comparer les pays",
@@ -161,7 +174,6 @@
       "other": "Plus"
     }
   },
-
   "facts": {
     "title": "À savoir avant de vous installer à {city}",
     "intro": "L’essentiel pour s’installer à {city} — argent, langue, climat et vie quotidienne en un coup d’œil.",
@@ -253,14 +265,53 @@
       "description": "Villes abordables et bien connectées, prisées des télétravailleurs, classées par coût de la vie.",
       "metric": "Indice du coût"
     },
-    "mostExpensive": { "title": "Les villes les plus chères où vivre", "description": "Les villes les plus chères de notre index, classées selon le coût de la vie global (moyenne américaine = 100). Plus c'est élevé, plus c'est cher.", "metric": "Indice de coût" },
-    "bestInternet": { "title": "Villes avec l'internet le plus rapide", "description": "Là où le télétravail fonctionne sans accroc — villes classées selon le débit internet domestique typique.", "metric": "Débit" },
-    "bestTransit": { "title": "Villes avec les meilleurs transports en commun", "description": "Se déplacer sans voiture — villes classées selon la qualité de leurs transports en commun.", "metric": "Transports" },
-    "bestHealthcare": { "title": "Villes avec les meilleurs soins de santé", "description": "Villes classées selon la qualité et l'accessibilité de leurs soins de santé.", "metric": "Santé" },
-    "cleanestAir": { "title": "Villes à l'air le plus pur", "description": "Respirez — villes classées selon la qualité de l'air, la plus faible pollution d'abord.", "metric": "Pollution" },
-    "walkable": { "title": "Villes les plus propices à la marche", "description": "Vivre sans voiture — villes classées selon leur caractère piétonnier au quotidien.", "metric": "Marchabilité" },
-    "flightsCta": "Un déménagement en vue ? Trouvez des vols pas chers dans le monde entier"
-  ,"forFamilies":{"title":"Meilleures villes pour les familles","description":"Des villes qui allient sécurité, santé, air pur et cadre familial — classées pour ceux qui déménagent avec des enfants.","metric":"Score familles"},"forRetirees":{"title":"Meilleures villes pour la retraite","description":"Là où la retraite va le plus loin — avec de bons soins, peu de criminalité, un air pur et un climat doux.","metric":"Score retraite"},"forStudents":{"title":"Meilleures villes pour les étudiants","description":"Des villes abordables, piétonnes et bien connectées, au bon débit internet — pour les étudiants et jeunes au budget serré.","metric":"Score étudiants"}},
+    "mostExpensive": {
+      "title": "Les villes les plus chères où vivre",
+      "description": "Les villes les plus chères de notre index, classées selon le coût de la vie global (moyenne américaine = 100). Plus c'est élevé, plus c'est cher.",
+      "metric": "Indice de coût"
+    },
+    "bestInternet": {
+      "title": "Villes avec l'internet le plus rapide",
+      "description": "Là où le télétravail fonctionne sans accroc — villes classées selon le débit internet domestique typique.",
+      "metric": "Débit"
+    },
+    "bestTransit": {
+      "title": "Villes avec les meilleurs transports en commun",
+      "description": "Se déplacer sans voiture — villes classées selon la qualité de leurs transports en commun.",
+      "metric": "Transports"
+    },
+    "bestHealthcare": {
+      "title": "Villes avec les meilleurs soins de santé",
+      "description": "Villes classées selon la qualité et l'accessibilité de leurs soins de santé.",
+      "metric": "Santé"
+    },
+    "cleanestAir": {
+      "title": "Villes à l'air le plus pur",
+      "description": "Respirez — villes classées selon la qualité de l'air, la plus faible pollution d'abord.",
+      "metric": "Pollution"
+    },
+    "walkable": {
+      "title": "Villes les plus propices à la marche",
+      "description": "Vivre sans voiture — villes classées selon leur caractère piétonnier au quotidien.",
+      "metric": "Marchabilité"
+    },
+    "flightsCta": "Un déménagement en vue ? Trouvez des vols pas chers dans le monde entier",
+    "forFamilies": {
+      "title": "Meilleures villes pour les familles",
+      "description": "Des villes qui allient sécurité, santé, air pur et cadre familial — classées pour ceux qui déménagent avec des enfants.",
+      "metric": "Score familles"
+    },
+    "forRetirees": {
+      "title": "Meilleures villes pour la retraite",
+      "description": "Là où la retraite va le plus loin — avec de bons soins, peu de criminalité, un air pur et un climat doux.",
+      "metric": "Score retraite"
+    },
+    "forStudents": {
+      "title": "Meilleures villes pour les étudiants",
+      "description": "Des villes abordables, piétonnes et bien connectées, au bon débit internet — pour les étudiants et jeunes au budget serré.",
+      "metric": "Score étudiants"
+    }
+  },
   "data": {
     "fullComparison": "Comparaison complète",
     "comingSoon": "Bientôt disponible",
