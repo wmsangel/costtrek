@@ -5,9 +5,11 @@ import {
   COLLECTIONS,
   COLLECTION_KEYS,
   isCollection,
+  isRegion,
   rankCities,
   REGION_KEYS,
   REGION_DICT_KEY,
+  type Region,
 } from "@/lib/collections";
 import { cityPath, flagEmoji } from "@/lib/cities";
 import { LOCALE_BCP47, isLocale, type Locale } from "@/lib/i18n/config";
@@ -21,10 +23,18 @@ import Faq, { type FaqItem } from "@/components/Faq";
 
 export const dynamicParams = false;
 
-type Params = { locale: string; list: string };
+type Params = { locale: string; list: string; region: string };
 
 export function generateStaticParams() {
-  return COLLECTION_KEYS.map((list) => ({ list }));
+  const out: { list: string; region: string }[] = [];
+  for (const list of COLLECTION_KEYS)
+    for (const region of REGION_KEYS) out.push({ list, region });
+  return out;
+}
+
+function regionLabel(dict: Dictionary, region: Region): string {
+  const key = REGION_DICT_KEY[region] as keyof Dictionary["continents"];
+  return dict.continents[key];
 }
 
 export async function generateMetadata({
@@ -32,22 +42,25 @@ export async function generateMetadata({
 }: {
   params: Promise<Params>;
 }): Promise<Metadata> {
-  const { locale, list } = await params;
-  if (!isLocale(locale) || !isCollection(list)) return {};
-  const dict = await getDictionary(locale);
+  const { locale, list, region } = await params;
+  if (!isLocale(locale) || !isCollection(list) || !isRegion(region)) return {};
   const l = locale as Locale;
+  const dict = await getDictionary(l);
   const def = COLLECTIONS[list];
   const cd = dict.collections[def.dictKey];
-  // Rich, data-driven meta description from the live ranking (top cities +
-  // score + count) — fixes thin/short descriptions and matches "<metric> index"
-  // style queries. Falls back to the static blurb if a hub is too sparse.
-  const ranked = rankCities(list, 200);
+  const region_ = regionLabel(dict, region);
   const nl = LOCALE_BCP47[l];
+  const ranked = rankCities(list, 200, region);
   const top = ranked.slice(0, 3).map((r) => localizedCityName(l, r.city));
+  const title = fill(dict.collections.titleInRegion, {
+    title: cd.title,
+    region: region_,
+  });
   const description =
     ranked.length >= 3
-      ? fill(dict.collections.metaDesc, {
+      ? fill(dict.collections.regionMetaDesc, {
           title: cd.title,
+          region: region_,
           n: ranked.length,
           metric: cd.metric,
           top1: top[0],
@@ -57,33 +70,39 @@ export async function generateMetadata({
         })
       : cd.description;
   return pageMetadata({
-    locale,
-    path: `best/${list}`,
-    title: cd.title,
+    locale: l,
+    path: `best/${list}/${region}`,
+    title,
     description,
     ogType: "article",
-    ogImage: { title: cd.title, sub: SITE_NAME, tag: dict.collections.homeTitle },
+    ogImage: { title, sub: SITE_NAME, tag: dict.collections.homeTitle },
   });
 }
 
-export default async function CollectionPage({
+export default async function RegionalCollectionPage({
   params,
 }: {
   params: Promise<Params>;
 }) {
-  const { locale, list } = await params;
-  if (!isLocale(locale) || !isCollection(list)) notFound();
+  const { locale, list, region } = await params;
+  if (!isLocale(locale) || !isCollection(list) || !isRegion(region)) notFound();
   const l = locale as Locale;
   const dict = await getDictionary(l);
   const def = COLLECTIONS[list];
   const cd = dict.collections[def.dictKey];
-  const rows = rankCities(list, 200); // full ranked list — richer hub + more links
+  const region_ = regionLabel(dict, region);
+  const rows = rankCities(list, 200, region);
+  if (rows.length === 0) notFound();
   const nl = LOCALE_BCP47[l];
 
-  // Data-driven intro + FAQ — unique per hub, thickens the page and can win a
-  // rich result. Composed from the ranking itself, so it stays correct as data grows.
+  const title = fill(dict.collections.titleInRegion, {
+    title: cd.title,
+    region: region_,
+  });
   const top = rows.slice(0, 3).map((r) => localizedCityName(l, r.city));
   const vars = {
+    title: cd.title,
+    region: region_,
     n: rows.length,
     metric: cd.metric,
     top1: top[0] ?? "",
@@ -101,7 +120,7 @@ export default async function CollectionPage({
   const itemListJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: cd.title,
+    name: title,
     itemListElement: rows.map((r, i) => ({
       "@type": "ListItem",
       position: i + 1,
@@ -117,6 +136,7 @@ export default async function CollectionPage({
           breadcrumbJsonLd(l, [
             { name: dict.breadcrumbHome, path: "" },
             { name: cd.title, path: `best/${list}` },
+            { name: title, path: `best/${list}/${region}` },
           ]),
           itemListJsonLd,
         ]}
@@ -126,7 +146,11 @@ export default async function CollectionPage({
         <Link href={`/${l}`} className="hover:underline">
           {dict.breadcrumbHome}
         </Link>{" "}
-        / {dict.collections.homeTitle}
+        /{" "}
+        <Link href={`/${l}/best/${list}`} className="hover:underline">
+          {cd.title}
+        </Link>{" "}
+        / {region_}
       </nav>
 
       <section className="cover px-6 sm:px-10 py-9 sm:py-11">
@@ -134,28 +158,34 @@ export default async function CollectionPage({
         <div className="relative">
           <p className="kicker">★ {dict.collections.homeTitle}</p>
           <h1 className="display text-3xl sm:text-5xl font-black leading-[0.95] mt-3 max-w-[18ch]">
-            {cd.title}
+            {title}
           </h1>
           <p className="mt-3 font-medium max-w-[52ch]">{cd.description}</p>
         </div>
       </section>
 
       <p className="mt-6 text-lg leading-relaxed max-w-[72ch] text-[var(--foreground)]">
-        {fill(co.intro, vars)}
+        {fill(co.regionIntro, vars)}
       </p>
 
-      {/* Regional slices — internal links to the metric×region hubs */}
+      {/* Other regions + the worldwide list */}
       <div className="mt-5 flex flex-wrap items-center gap-2">
         <span className="text-xs font-bold uppercase tracking-wider text-[var(--muted)] mr-1">
           {co.byRegion}
         </span>
-        {REGION_KEYS.map((r) => (
+        <Link
+          href={`/${l}/best/${list}`}
+          className="text-sm rounded-full border border-[var(--border)] px-3 py-1.5 hover:border-[var(--accent)]"
+        >
+          🌍 {cd.title}
+        </Link>
+        {REGION_KEYS.filter((r) => r !== region).map((r) => (
           <Link
             key={r}
             href={`/${l}/best/${list}/${r}`}
             className="text-sm rounded-full border border-[var(--border)] px-3 py-1.5 hover:border-[var(--accent)]"
           >
-            {dict.continents[REGION_DICT_KEY[r] as keyof Dictionary["continents"]]}
+            {regionLabel(dict, r)}
           </Link>
         ))}
       </div>
@@ -222,21 +252,6 @@ export default async function CollectionPage({
       <div className="mt-12">
         <Faq title={dict.faq.title} items={faqItems} />
       </div>
-
-      <section className="mt-10">
-        <h2 className="mag-h2 mb-4">★ {dict.collections.homeTitle}</h2>
-        <div className="flex flex-wrap gap-2">
-          {COLLECTION_KEYS.filter((k) => k !== list).map((k) => (
-            <Link
-              key={k}
-              href={`/${l}/best/${k}`}
-              className="text-sm rounded-full border border-[var(--border)] px-3 py-1.5 hover:border-[var(--accent)]"
-            >
-              {dict.collections[COLLECTIONS[k].dictKey].title}
-            </Link>
-          ))}
-        </div>
-      </section>
     </div>
   );
 }

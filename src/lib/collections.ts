@@ -241,12 +241,36 @@ export function cityCollections(city: City, topN = 15): CollectionKey[] {
   );
 }
 
+// Regional slices of every ranking — only continents with enough cities for a
+// meaningful list (South America / Oceania are too thin, so omitted).
+export type Region = "europe" | "asia" | "north-america";
+export const REGION_CONTINENT: Record<Region, string> = {
+  europe: "Europe",
+  asia: "Asia",
+  "north-america": "North America",
+};
+/** Region slug → key in the dictionary's `continents` block, for labels. */
+export const REGION_DICT_KEY: Record<Region, string> = {
+  europe: "europe",
+  asia: "asia",
+  "north-america": "northAmerica",
+};
+export const REGION_KEYS = Object.keys(REGION_CONTINENT) as Region[];
+export function isRegion(v: string): v is Region {
+  return v in REGION_CONTINENT;
+}
+
 export function rankCities(
   key: CollectionKey,
   limit = 30,
+  region?: Region,
 ): { city: City; value: number }[] {
   const def = COLLECTIONS[key];
+  const continent = region ? REGION_CONTINENT[region] : null;
   const rows = CITIES.filter((c) => !def.filter || def.filter(c))
+    .filter(
+      (c) => !continent || getCountry(c.countryCode)?.continent === continent,
+    )
     .map((c) => ({ city: c, value: def.metric(c) }))
     .filter(
       (r): r is { city: City; value: number } => typeof r.value === "number",

@@ -212,6 +212,10 @@ export type Dictionary = {
     flightsCta: string;
     intro: string; // {n} {metric} {top1} {v1} {top2} {top3}
     metaDesc: string; // {title} {n} {metric} {top1} {v1} {top2} {top3}
+    titleInRegion: string; // {title} {region}
+    byRegion: string;
+    regionIntro: string; // {title} {region} {n} {metric} {top1} {v1} {top2} {top3}
+    regionMetaDesc: string; // {title} {region} {n} {metric} {top1} {v1} {top2} {top3}
     faqTopQ: string;
     faqTopA: string; // {top1} {v1} {top2} {top3} {n}
     faqMethodQ: string;
