@@ -311,7 +311,7 @@ export default async function Home({
                   {dict.collections[COLLECTIONS[k].dictKey].title}
                 </span>
                 {top && (
-                  <span className="block text-[11px] text-[var(--muted)] mt-1 truncate">
+                  <span className="block text-xs text-[var(--muted)] mt-1 truncate">
                     {flagEmoji(top.countryCode)} {localizedCityName(l, top)}
                   </span>
                 )}

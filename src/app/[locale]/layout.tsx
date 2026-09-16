@@ -138,7 +138,7 @@ export default async function LocaleLayout({
           <div className="mx-auto max-w-5xl px-4 h-16 flex items-center justify-between">
             <Link
               href={`/${locale}`}
-              className="display text-xl font-extrabold tracking-tight"
+              className="display text-xl font-extrabold tracking-tight inline-flex items-center min-h-[44px]"
             >
               Cost<span className="gradient-text">Trek</span>
             </Link>

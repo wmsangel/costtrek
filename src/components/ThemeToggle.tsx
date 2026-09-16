@@ -37,7 +37,7 @@ export default function ThemeToggle() {
       onClick={toggle}
       aria-label="Toggle light/dark theme"
       title="Toggle theme"
-      className="flex items-center justify-center w-9 h-9 rounded-lg border border-[var(--border)] bg-[var(--card)] hover:border-[var(--accent)]"
+      className="flex items-center justify-center w-11 h-11 rounded-lg border border-[var(--border)] bg-[var(--card)] hover:border-[var(--accent)]"
     >
       {isDark ? (
         // Sun (switch to light)

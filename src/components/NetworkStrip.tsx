@@ -27,7 +27,7 @@ export default function NetworkStrip({ heading }: { heading: string }) {
 
   return (
     <div className="border-t border-[var(--border)] pt-6 mt-6">
-      <p className="text-[11px] font-bold uppercase tracking-wider text-[var(--muted)] mb-3">
+      <p className="text-xs font-bold uppercase tracking-wider text-[var(--muted)] mb-3">
         {heading}
       </p>
       <ul className="flex flex-wrap gap-2.5">
