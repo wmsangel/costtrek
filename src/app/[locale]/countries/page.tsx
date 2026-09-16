@@ -91,7 +91,7 @@ export default async function CountriesPage({
         {groups.map((g) => (
           <div key={g.key}>
             <h2 className="mag-h2 mb-3">{dict.continents[g.key]}</h2>
-            <div className="grid sm:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {g.countries.map((co) => {
                 const name = localizedCountryNameByCode(l, co.code, co.name);
                 const n = citiesInCountry(co.code).length;

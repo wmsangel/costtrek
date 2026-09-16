@@ -207,7 +207,7 @@ export default async function Home({
         <p className="text-[var(--muted)] mb-5 max-w-[60ch]">
           {dict.home.popularSub}
         </p>
-        <div className="grid sm:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {POPULAR.map(([aSlug, bSlug]) => {
             const a = getCity(aSlug);
             const b = getCity(bSlug);
@@ -262,7 +262,7 @@ export default async function Home({
         <p className="text-[var(--muted)] mb-5 max-w-[60ch]">
           {dict.home.collectionsSub}
         </p>
-        <div className="grid sm:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {RANKING_KEYS.map((k) => {
             const top = rankCities(k, 1)[0]?.city;
             return (
@@ -363,7 +363,7 @@ export default async function Home({
         <p className="text-[var(--muted)] mb-6 max-w-[60ch]">
           {dict.calculators.subtitle}
         </p>
-        <div className="grid sm:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {CALCULATORS.filter((c) => c.live).map((c) => {
             const lc = localizedCalc(c, l);
             return (

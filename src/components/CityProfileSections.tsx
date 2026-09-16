@@ -114,7 +114,7 @@ export default function CityProfileSections({
       {profile?.prices && profile.prices.length > 0 && (
         <section className="mt-10">
           <SectionTitle glyph="◷">{t.sections.prices}</SectionTitle>
-          <div className="grid sm:grid-cols-2 gap-x-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
             {profile.prices.map((p) => (
               <div
                 key={p.key}
@@ -133,7 +133,7 @@ export default function CityProfileSections({
         Object.values(profile.housing).some((v) => v != null) && (
           <section className="mt-10">
             <SectionTitle glyph="⌂">{t.sections.housing}</SectionTitle>
-            <div className="grid sm:grid-cols-2 gap-x-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
               {profile.housing.medianRent1brCentreUsd != null && (
                 <HouseRow k={L.house_rent1brCentre} v={profile.housing.medianRent1brCentreUsd} unit="/mo" locale={numLocale} />
               )}
@@ -204,7 +204,7 @@ export default function CityProfileSections({
               ✈ {country.immigration.visaFreeNote}
             </p>
           )}
-          <div className="grid sm:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {country.immigration.visaTypes.map((v) => (
               <div key={v.name} className="card rounded-xl p-4">
                 <div className="flex items-center justify-between gap-2">

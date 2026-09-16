@@ -344,12 +344,12 @@ export default async function ComparePage({
         labelB={labelB}
       />
 
-      <section className="mt-12 grid md:grid-cols-2 gap-4">
+      <section className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4">
         <CityFacts city={a} dict={dict} locale={l} />
         <CityFacts city={b} dict={dict} locale={l} />
       </section>
 
-      <section className="mt-4 grid md:grid-cols-2 gap-4">
+      <section className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
         <PlanYourMove city={a} dict={dict} locale={l} />
         <PlanYourMove city={b} dict={dict} locale={l} />
       </section>

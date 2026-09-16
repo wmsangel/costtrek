@@ -223,7 +223,7 @@ export default async function CountryPage({
               ✈ {co.immigration.visaFreeNote}
             </p>
           )}
-          <div className="grid sm:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {co.immigration.visaTypes.map((v) => (
               <div key={v.name} className="card rounded-xl p-4">
                 <div className="flex items-center justify-between gap-2">
@@ -246,7 +246,7 @@ export default async function CountryPage({
         <h2 className="mag-h2 mb-4">
           ❖ {fill(dict.country.citiesTitle, { country: name })}
         </h2>
-        <div className="grid sm:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {cities.map((c) => (
             <Link
               key={c.slug}
