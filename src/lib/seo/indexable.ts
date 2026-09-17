@@ -34,6 +34,27 @@ export const MAJOR_CITY_SLUGS = new Set<string>([
   "istanbul-tr", "bali-id", "chiang-mai-th",
 ]);
 
+/**
+ * A tighter "top demand" tier used ONLY to concentrate the sitemap. On a young,
+ * low-authority domain Google indexes a fraction of submitted URLs and holds the
+ * rest as "discovered — currently not indexed"; advertising all ~1.8k major↔major
+ * compares reads as scaled content and wastes crawl budget. So the sitemap lists
+ * city compares only between these top cities. Pages between other major cities
+ * stay index,follow and internally linked (still discoverable) — we just don't
+ * push them in the sitemap. Widen this set as Search Console proves demand.
+ */
+export const TOP_CITY_SLUGS = new Set<string>([
+  // US
+  "new-york-ny", "san-francisco-ca", "los-angeles-ca", "chicago-il", "miami-fl",
+  // Europe
+  "london-uk", "paris-fr", "berlin-de", "munich-de", "amsterdam-nl",
+  "barcelona-es", "madrid-es", "lisbon-pt", "rome-it", "vienna-at",
+  // Middle East / Asia
+  "dubai-ae", "singapore-sg", "tokyo-jp", "bangkok-th", "seoul-kr",
+  // Americas / Oceania / nomad
+  "toronto-ca", "sydney-au", "mexico-city-mx", "istanbul-tr",
+]);
+
 export const MAJOR_COUNTRY_CODES = new Set<string>([
   "US", "GB", "FR", "DE", "NL", "ES", "PT", "IT", "CH", "AT", "IE",
   "AE", "SG", "JP", "KR", "TH", "IN", "ID",
@@ -43,6 +64,15 @@ export const MAJOR_COUNTRY_CODES = new Set<string>([
 /** A city-vs-city compare page is indexable only between two major cities. */
 export function cityPairIndexable(aSlug: string, bSlug: string): boolean {
   return MAJOR_CITY_SLUGS.has(aSlug) && MAJOR_CITY_SLUGS.has(bSlug);
+}
+
+/**
+ * Whether a city-vs-city compare belongs in the sitemap — the tighter top tier.
+ * Narrower than `cityPairIndexable` (which still governs indexability/noindex);
+ * this only decides what we advertise, to concentrate crawl budget.
+ */
+export function cityPairInSitemap(aSlug: string, bSlug: string): boolean {
+  return TOP_CITY_SLUGS.has(aSlug) && TOP_CITY_SLUGS.has(bSlug);
 }
 
 /** A country-vs-country compare page is indexable only between two major GEOs. */

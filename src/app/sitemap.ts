@@ -1,14 +1,13 @@
 import type { MetadataRoute } from "next";
 import { CITIES, cityPath, comparePath } from "@/lib/cities";
-import { COLLECTION_KEYS, REGION_KEYS } from "@/lib/collections";
+import { COLLECTION_KEYS } from "@/lib/collections";
 import { countrySlug, getCountry } from "@/lib/data";
 import { countriesWithCities } from "@/lib/countryStats";
 import { GUIDES } from "@/content/guides";
 import { CALCULATORS } from "@/lib/calculators/registry";
-import { CALC_PRESETS } from "@/lib/calculators/presets";
 import { locales } from "@/lib/i18n/config";
 import { absUrl, languageAlternates } from "@/lib/seo/site";
-import { cityPairIndexable, countryPairIndexable } from "@/lib/seo/indexable";
+import { cityPairInSitemap, countryPairIndexable } from "@/lib/seo/indexable";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Locale-less paths, each emitted once per locale with hreflang alternates.
@@ -31,9 +30,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const c of CALCULATORS) {
     if (c.live) paths.push({ path: `calculators/${c.slug}`, priority: 0.7 });
   }
-  for (const p of CALC_PRESETS) {
-    paths.push({ path: `calculators/${p.calcSlug}/${p.preset}`, priority: 0.5 });
-  }
+  // Calculator preset permutations (e.g. mortgage-calculator/400000) are
+  // near-duplicate templated pages — Google marks them "discovered, not
+  // indexed". Kept live + internally linked, but no longer advertised.
 
   const countryList = countriesWithCities();
   for (const a of countryList) {
@@ -49,9 +48,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   for (const key of COLLECTION_KEYS) {
     paths.push({ path: `best/${key}`, priority: 0.8 });
-    for (const region of REGION_KEYS) {
-      paths.push({ path: `best/${key}/${region}`, priority: 0.6 });
-    }
+    // Region hubs (best/<key>/<region>) are thin slices of the main hub and are
+    // not being indexed on a young domain — kept live + linked from the parent
+    // hub, but dropped from the sitemap to concentrate crawl budget.
   }
   const countryCodes = new Set(CITIES.map((c) => c.countryCode));
   for (const code of countryCodes) {
@@ -64,7 +63,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const a of CITIES) {
     for (const b of CITIES) {
       if (a.slug >= b.slug) continue; // canonical direction only
-      if (!cityPairIndexable(a.slug, b.slug)) continue; // skip noindex long tail
+      // Advertise only top-tier compares; other major↔major pairs stay
+      // index,follow + internally linked but out of the sitemap (crawl budget).
+      if (!cityPairInSitemap(a.slug, b.slug)) continue;
       paths.push({ path: comparePath(a, b).replace(/^\//, ""), priority: 0.6 });
     }
   }
