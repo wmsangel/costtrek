@@ -84,7 +84,9 @@ export function buildGeoToolkit(city: City): ToolkitItem[] {
     });
   }
 
-  // NH Hotels — city hotels where the chain operates.
+  // Hotels — NH Hotels chain in its markets, else Planetofhotels (global hotel
+  // metasearch across Booking/Expedia/Agoda/Priceline). Planetofhotels excludes
+  // Russian & Turkish markets, so skip TR (we have no RU cities).
   const NH = new Set([
     "NL", "ES", "DE", "GB", "IT", "FR", "US",
     "MX", "AR", "BR", "CO", "PT", "AT",
@@ -95,6 +97,13 @@ export function buildGeoToolkit(city: City): ToolkitItem[] {
       provider: "NH Hotels",
       url: "https://xnmik.com/g/jpnebfysh2a27dee2ccd8f408ce589/",
       note: "City-centre hotels — book your stay",
+    });
+  } else if (cc !== "TR") {
+    items.push({
+      category: "hotel",
+      provider: "Planetofhotels",
+      url: "https://uhtkc.com/g/zhz7s51tzia27dee2ccdd0cfe7b65a/",
+      note: "Compare 2M+ hotels — Booking, Expedia, Agoda",
     });
   }
 
