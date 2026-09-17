@@ -1,3 +1,4 @@
+import Script from "next/script";
 import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -204,6 +205,13 @@ export default async function LocaleLayout({
         />
         <Analytics />
         <VercelAnalytics />
+        {/* Cloudflare Web Analytics — маячок без кук и без согласия; сайт идёт мимо прокси, поэтому вставляется руками */}
+        <Script
+          id="cf-beacon"
+          strategy="afterInteractive"
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon={'{"token": "541e9eeec34e45fc89bd13749c2c3d5c"}'}
+        />
       </body>
     </html>
   );
