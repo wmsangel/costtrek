@@ -24,6 +24,7 @@ import CityProfileSections from "@/components/CityProfileSections";
 import CityFacts from "@/components/CityFacts";
 import FlightWidget from "@/components/FlightWidget";
 import MyTripCard from "@/components/MyTripCard";
+import CostInCurrency, { type MoneyItem } from "@/components/CostInCurrency";
 import { COLLECTIONS, cityCollections } from "@/lib/collections";
 import Mountains from "@/components/Mountains";
 import JsonLd from "@/components/JsonLd";
@@ -88,6 +89,31 @@ export default async function CityPage({
 
   const profile = getCityProfile(c.slug);
   const path = `cost-of-living/${c.slug}`;
+
+  // Representative USD figures for the "cost in your currency" widget. Rent is
+  // always shown (with a fallback); staples appear when the profile has them.
+  const priceOf = (key: string) =>
+    profile?.prices?.find((p) => p.key === key)?.amountUsd;
+  const currencyItems: MoneyItem[] = [
+    {
+      label: dict.currency.rentCentre,
+      usd: profile?.housing?.medianRent1brCentreUsd ?? c.medianRent1br,
+    },
+    {
+      label: dict.currency.rentOutside,
+      usd:
+        profile?.housing?.medianRent1brOutsideUsd ??
+        Math.round(c.medianRent1br * 0.75),
+    },
+  ];
+  const staples: [string, number | undefined][] = [
+    [dict.currency.meal, priceOf("mealInexpensive")],
+    [dict.currency.transit, priceOf("transitPass")],
+    [dict.currency.utilities, priceOf("utilities")],
+  ];
+  for (const [label, usd] of staples) {
+    if (typeof usd === "number") currencyItems.push({ label, usd });
+  }
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:py-10">
@@ -267,6 +293,16 @@ export default async function CityPage({
       </section>
 
       <CityProfileSections locale={l} dict={dict} city={c} />
+
+      <div className="mt-10">
+        <CostInCurrency
+          title={fill(dict.currency.title, { city: localizedCityName(l, c) })}
+          items={currencyItems}
+          locale={l}
+          note={dict.currency.note}
+          selLabel={dict.currency.label}
+        />
+      </div>
 
       <FlightWidget
         title={dict.city.flightSearch}

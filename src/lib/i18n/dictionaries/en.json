@@ -99,6 +99,16 @@
     "sub": "Compare fares across 650+ airlines and travel more for less.",
     "cta": "Search flights"
   },
+  "currency": {
+    "title": "Cost of living in {city} — in your currency",
+    "rentCentre": "1-bed rent, city centre",
+    "rentOutside": "1-bed rent, outside centre",
+    "meal": "Inexpensive meal",
+    "transit": "Monthly transit pass",
+    "utilities": "Utilities (monthly)",
+    "note": "Converted from USD at approximate rates ({date}).",
+    "label": "Currency"
+  },
   "compareCountries": {
     "breadcrumb": "Compare countries",
     "title": "{a} vs {b}: cost of living & taxes",
@@ -219,6 +229,8 @@
     "cmpMoveA": "Moving from {a} to {b}, your cost of living will be roughly {pct}% {word}. {b}’s cost-of-living index is {ib} versus {ia} for {a} (US = 100). Use the salary tool above to see the income you’d need to keep the same lifestyle.",
     "cmpCheaperQ": "Is {a} cheaper than {b}?",
     "cmpCheaperA": "{b} is about {pct}% {word} than {a} overall — its cost-of-living index is {ib} versus {ia} for {a}.",
+    "cmpExpensiveQ": "Which is more expensive, {a} or {b}?",
+    "cmpExpensiveA": "{high} is more expensive than {low}. Its cost-of-living index is {iHigh} vs {iLow} (US = 100) — about {pct}% higher.",
     "cmpSalaryQ": "How much do you need to earn in {b} to live like in {a}?",
     "cmpSalaryA": "To keep the same standard of living, a ${salary} salary in {a} is worth about ${equivalent} in {b}. Enter your own figure in the calculator above.",
     "cmpTaxQ": "Which has lower taxes, {a} or {b}?",

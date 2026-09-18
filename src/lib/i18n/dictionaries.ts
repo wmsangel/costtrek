@@ -95,6 +95,16 @@ export type Dictionary = {
     sub: string;
     cta: string;
   };
+  currency: {
+    title: string; // {city}
+    rentCentre: string;
+    rentOutside: string;
+    meal: string;
+    transit: string;
+    utilities: string;
+    note: string; // {date}
+    label: string;
+  };
   compare: {
     breadcrumb: string;
     subtitle: string;
@@ -205,6 +215,8 @@ export type Dictionary = {
     cmpMoveA: string; // {a} {b} {pct} {word} {ia} {ib}
     cmpCheaperQ: string; // {a} {b}
     cmpCheaperA: string; // {a} {b} {pct} {word} {ia} {ib}
+    cmpExpensiveQ: string; // {a} {b}
+    cmpExpensiveA: string; // {high} {low} {pct} {iHigh} {iLow}
     cmpSalaryQ: string; // {a} {b}
     cmpSalaryA: string; // {a} {b} {salary} {equivalent}
     cmpTaxQ: string; // {a} {b}

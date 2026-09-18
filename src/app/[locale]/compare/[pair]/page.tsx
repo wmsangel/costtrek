@@ -389,6 +389,24 @@ export default async function ComparePage({
               }),
             },
             {
+              // "Which is more expensive, A or B?" — matches that exact query
+              // phrasing (GSC), data-driven from the two overall indices.
+              q: fill(dict.faq.cmpExpensiveQ, { a: aName, b: bName }),
+              a: (() => {
+                const aExp = overallA >= overallB;
+                const iHigh = Math.round(aExp ? overallA : overallB);
+                const iLow = Math.round(aExp ? overallB : overallA);
+                const pct = iLow > 0 ? Math.round((iHigh / iLow - 1) * 100) : 0;
+                return fill(dict.faq.cmpExpensiveA, {
+                  high: aExp ? aName : bName,
+                  low: aExp ? bName : aName,
+                  iHigh,
+                  iLow,
+                  pct,
+                });
+              })(),
+            },
+            {
               q: fill(dict.faq.cmpSalaryQ, { a: aName, b: bName }),
               a: fill(dict.faq.cmpSalaryA, {
                 a: aName,

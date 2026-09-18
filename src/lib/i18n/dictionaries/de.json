@@ -99,6 +99,16 @@
     "sub": "Vergleiche Preise von über 650 Airlines und reise günstiger.",
     "cta": "Flüge suchen"
   },
+  "currency": {
+    "title": "Lebenshaltungskosten in {city} — in deiner Währung",
+    "rentCentre": "Miete 1-Zi., Stadtzentrum",
+    "rentOutside": "Miete 1-Zi., außerhalb",
+    "meal": "Günstiges Essen",
+    "transit": "Monatliches Nahverkehrsticket",
+    "utilities": "Nebenkosten (monatlich)",
+    "note": "Aus USD zu ungefähren Kursen umgerechnet ({date}).",
+    "label": "Währung"
+  },
   "compareCountries": {
     "breadcrumb": "Länder vergleichen",
     "title": "{a} vs {b}: Lebenshaltungskosten & Steuern",
@@ -219,6 +229,8 @@
     "cmpMoveA": "Beim Umzug von {a} nach {b} sind die Lebenshaltungskosten etwa {pct}% {word}. Der Index von {b} liegt bei {ib} gegenüber {ia} für {a} (USA = 100). Oben siehst du das nötige Gehalt für denselben Lebensstandard.",
     "cmpCheaperQ": "Ist {a} günstiger als {b}?",
     "cmpCheaperA": "{b} ist insgesamt etwa {pct}% {word} als {a} — der Index liegt bei {ib} gegenüber {ia} für {a}.",
+    "cmpExpensiveQ": "Was ist teurer, {a} oder {b}?",
+    "cmpExpensiveA": "{high} ist teurer als {low}. Der Lebenshaltungskosten-Index liegt bei {iHigh} gegenüber {iLow} (USA = 100) — etwa {pct}% höher.",
     "cmpSalaryQ": "Wie viel muss man in {b} verdienen, um wie in {a} zu leben?",
     "cmpSalaryA": "Um denselben Lebensstandard zu halten, entspricht ein Gehalt von {salary} $ in {a} etwa {equivalent} $ in {b}. Gib oben im Rechner deinen eigenen Wert ein.",
     "cmpTaxQ": "Wo sind die Steuern niedriger, in {a} oder {b}?",

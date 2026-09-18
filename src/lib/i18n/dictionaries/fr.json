@@ -99,6 +99,16 @@
     "sub": "Comparez les tarifs de plus de 650 compagnies et voyagez pour moins cher.",
     "cta": "Rechercher des vols"
   },
+  "currency": {
+    "title": "Coût de la vie à {city} — dans votre devise",
+    "rentCentre": "Loyer 1 pièce, centre-ville",
+    "rentOutside": "Loyer 1 pièce, hors centre",
+    "meal": "Repas bon marché",
+    "transit": "Abonnement de transport mensuel",
+    "utilities": "Charges (par mois)",
+    "note": "Converti depuis l'USD à des taux approximatifs ({date}).",
+    "label": "Devise"
+  },
   "compareCountries": {
     "breadcrumb": "Comparer les pays",
     "title": "{a} vs {b} : coût de la vie & impôts",
@@ -219,6 +229,8 @@
     "cmpMoveA": "En déménageant de {a} à {b}, votre coût de la vie sera environ {pct}% {word}. L’indice de {b} est de {ib} contre {ia} pour {a} (USA = 100). Utilisez l’outil de salaire ci-dessus pour le revenu nécessaire au même niveau de vie.",
     "cmpCheaperQ": "{a} est-elle moins chère que {b} ?",
     "cmpCheaperA": "{b} est globalement environ {pct}% {word} que {a} — son indice du coût de la vie est de {ib} contre {ia} pour {a}.",
+    "cmpExpensiveQ": "Qu'est-ce qui est plus cher, {a} ou {b} ?",
+    "cmpExpensiveA": "{high} est plus cher que {low}. Son indice du coût de la vie est de {iHigh} contre {iLow} (États-Unis = 100) — environ {pct}% de plus.",
     "cmpSalaryQ": "Combien faut-il gagner à {b} pour vivre comme à {a} ?",
     "cmpSalaryA": "Pour conserver le même niveau de vie, un salaire de {salary} $ à {a} équivaut à environ {equivalent} $ à {b}. Saisissez votre propre chiffre dans le calculateur ci-dessus.",
     "cmpTaxQ": "Où les impôts sont-ils plus bas, à {a} ou à {b} ?",
