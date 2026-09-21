@@ -302,6 +302,14 @@ export default async function CityPage({
           note={dict.currency.note}
           selLabel={dict.currency.label}
         />
+        <p className="mt-3 text-sm">
+          <Link
+            href={`/${l}/methodology`}
+            className="text-[var(--muted)] hover:text-[var(--accent)] hover:underline"
+          >
+            {dict.methodologyLink} →
+          </Link>
+        </p>
       </div>
 
       <FlightWidget

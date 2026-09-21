@@ -1,5 +1,6 @@
 {
   "breadcrumbHome": "Inicio",
+  "methodologyLink": "Cómo calculamos estas cifras",
   "footer": {
     "line1": "© CostTrek. Las estimaciones del coste de vida tienen únicamente fines informativos.",
     "line2": "Las cifras son aproximadas y no deben usarse como base para decisiones financieras.",
@@ -11,6 +12,7 @@
     "terms": "Términos de uso",
     "about": "Acerca de",
     "contact": "Contacto",
+    "methodology": "Metodología",
     "lastUpdated": "Última actualización"
   },
   "cookie": {

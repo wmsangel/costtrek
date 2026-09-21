@@ -91,6 +91,136 @@ const de: Record<string, (p: { l: Locale }) => React.ReactNode> = {
       </p>
     </>
   ),
+  methodology: ({ l }) => (
+    <>
+      <p>
+        Diese Seite erklärt genau, wie CostTrek jede Zahl erzeugt, die Sie
+        sehen — den Lebenshaltungskostenindex, die Gehaltsentsprechung, Steuern
+        und Lebensqualitäts-Bewertungen — und, ebenso wichtig, woher jede
+        Angabe stammt und wie sehr Sie ihr vertrauen sollten. Wir sind lieber
+        transparent, als unsere Schätzwerte als amtliche Statistik auszugeben.
+      </p>
+
+      <h2>Der Lebenshaltungskostenindex</h2>
+      <p>
+        Unsere zentrale Kennzahl ist ein Index, bei dem die durchschnittliche
+        US-Stadt auf <strong>100</strong> gesetzt ist. Eine Stadt mit dem Wert
+        60 ist rund 40&nbsp;% günstiger als eine typische US-Stadt; eine Stadt
+        mit dem Wert 150 ist etwa 50&nbsp;% teurer. Der Index vereint sechs
+        alltägliche Kategorien — <strong>Wohnen, Lebensmittel, Verkehr,
+        Nebenkosten, Gesundheitsversorgung sowie Güter &amp; Dienstleistungen</strong> —
+        die jeweils auf derselben Skala USA = 100 bewertet und dann zur
+        Gesamtzahl zusammengeführt werden.
+      </p>
+
+      <h2>Gehaltsentsprechung</h2>
+      <p>
+        Auf jeder Vergleichsseite können Sie ein Gehalt eingeben und sehen,
+        wie viel Sie in der anderen Stadt bräuchten, um denselben
+        Lebensstandard zu halten. Es ist ein einfaches Verhältnis der beiden
+        Kostenindizes — liegt der Index von Stadt&nbsp;B um 20&nbsp;% höher als
+        der von Stadt&nbsp;A, bräuchten Sie dort rund 20&nbsp;% mehr. Es ist
+        ein Orientierungswert zur Kaufkraft, keine Gehaltsumfrage und kein
+        Stellenangebot.
+      </p>
+
+      <h2>Woher jede Angabe stammt</h2>
+      <p>
+        Wir kombinieren verlässliche offene Daten, wo es sie gibt, mit
+        kalibrierten Schätzwerten, wo keine kostenlose, weltweite Quelle je
+        Stadt existiert. Wir kennzeichnen, was was ist, statt die Grenze zu
+        verwischen:
+      </p>
+      <ul>
+        <li>
+          <strong>Wirtschaft — tatsächlich.</strong> BIP pro Kopf,
+          Lebenserwartung und Inflation stammen von{" "}
+          <a href="https://data.worldbank.org" rel="noopener" target="_blank">
+            World Bank Open Data
+          </a>
+          .
+        </li>
+        <li>
+          <strong>US-Gesamtkostenindex — tatsächlich.</strong> Gekoppelt an{" "}
+          <a
+            href="https://www.bea.gov/data/prices-inflation/regional-price-parities-state-and-metro-area"
+            rel="noopener"
+            target="_blank"
+          >
+            BEA Regional Price Parities
+          </a>{" "}
+          (alle Posten, USA = 100, 2023 — das letzte Jahr, für das die BEA
+          Metropolen-RPPs veröffentlicht hat).
+        </li>
+        <li>
+          <strong>US-Metropolen-Mieten — tatsächlich.</strong> Mittlere
+          Bruttomiete des{" "}
+          <a
+            href="https://data.census.gov/table?q=B25064"
+            rel="noopener"
+            target="_blank"
+          >
+            U.S. Census Bureau ACS
+          </a>{" "}
+          (2023).
+        </li>
+        <li>
+          <strong>Steuern &amp; Visa — zusammengestellt.</strong> Übersichten
+          zu Einkommensteuer, Mehrwertsteuer und Visa auf Überblicksebene aus
+          nationalen Steuerbehörden und öffentlichen Quellen. Nur die
+          Eckwerte — nicht Ihr effektiver Steuersatz.
+        </li>
+        <li>
+          <strong>Indizes internationaler Städte, Mieten für
+          1-Zimmer-Wohnungen, Kategorie-Aufschlüsselungen und
+          Lebensqualitäts-Bewertungen — Schätzwerte.</strong> Dies sind
+          kalibrierte Näherungswerte zur allgemeinen Orientierung, die im Laufe
+          der Zeit verfeinert werden. Es existiert kein kostenloser,
+          lizenzierbarer, weltweiter Kostendatensatz je Stadt, daher
+          modellieren wir diese Werte, statt die Karte leer zu lassen.
+        </li>
+      </ul>
+
+      <h2>Währungsumrechnung</h2>
+      <p>
+        Die Angaben zu Städten werden in US-Dollar gespeichert. Das Widget
+        &bdquo;in Ihrer Währung&ldquo; rechnet sie mit statischen
+        Referenzkursen um (zuletzt gesetzt 2026-09), sodass die Beträge
+        ungefähr sind und der Orientierung dienen, nicht der auf den Cent
+        genauen Buchung oder Budgetierung.
+      </p>
+
+      <h2>Wie oft aktualisiert wird</h2>
+      <p>
+        Die Website wird bei jeder Änderung neu gebaut, sodass strukturelle
+        Aktualisierungen sofort live gehen. Die zugrunde liegenden Datensätze
+        werden regelmäßig aufgefrischt, sobald neue amtliche Veröffentlichungen
+        (World&nbsp;Bank, BEA, Census) erscheinen und wir die Schätzwerte
+        verbessern — das Datum &bdquo;zuletzt aktualisiert&ldquo; auf jeder
+        Seite spiegelt den jüngsten Build wider.
+      </p>
+
+      <h2>Grenzen &amp; Ehrlichkeit</h2>
+      <p>
+        Kosten variieren je nach Viertel, Lebensstil und Zeitpunkt, und unsere
+        geschätzten Zahlen können für eine einzelne Stadt danebenliegen.
+        Betrachten Sie alles hier als Ausgangspunkt für einen Vergleich, nicht
+        als exaktes Budget. Nichts auf CostTrek ist eine Finanz-, Steuer-,
+        Rechts- oder Einwanderungsberatung — überprüfen Sie alles Wichtige bei
+        einer offiziellen Quelle oder einer qualifizierten Fachkraft, bevor Sie
+        danach handeln.
+      </p>
+
+      <h2>Korrekturen</h2>
+      <p>
+        Ist Ihnen eine Zahl aufgefallen, die falsch wirkt? Wir möchten es
+        wirklich wissen — schreiben Sie an{" "}
+        <a href="mailto:info@costtrek.com">info@costtrek.com</a>, und wir
+        prüfen sie. Mehr über das Projekt auf unserer{" "}
+        <Link href={`/${l}/about`}>Über uns</Link>-Seite.
+      </p>
+    </>
+  ),
   privacy: ({ l }) => (
     <>
       <p>

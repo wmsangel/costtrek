@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "cookies", priority: 0.2 },
     { path: "terms", priority: 0.2 },
     { path: "about", priority: 0.4 },
+    { path: "methodology", priority: 0.4 },
     { path: "contact", priority: 0.3 },
     { path: "countries", priority: 0.7 },
     { path: "guides", priority: 0.6 },

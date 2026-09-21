@@ -1,5 +1,6 @@
 {
   "breadcrumbHome": "Home",
+  "methodologyLink": "How we calculate these figures",
   "footer": {
     "line1": "© CostTrek. Cost-of-living estimates for informational purposes only.",
     "line2": "Figures are approximate and should not be relied on for financial decisions.",
@@ -11,6 +12,7 @@
     "terms": "Terms of Use",
     "about": "About",
     "contact": "Contact",
+    "methodology": "Methodology",
     "lastUpdated": "Last updated"
   },
   "cookie": {

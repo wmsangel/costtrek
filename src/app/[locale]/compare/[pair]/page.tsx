@@ -462,7 +462,16 @@ export default async function ComparePage({
         </div>
       </section>
 
-      <p className="mt-10 text-xs text-[var(--muted)]">
+      <p className="mt-8 text-sm">
+        <Link
+          href={`/${l}/methodology`}
+          className="text-[var(--muted)] hover:text-[var(--accent)] hover:underline"
+        >
+          {dict.methodologyLink} →
+        </Link>
+      </p>
+
+      <p className="mt-6 text-xs text-[var(--muted)]">
         {dict.compare.disclaimer}
       </p>
     </div>

@@ -1,5 +1,6 @@
 {
   "breadcrumbHome": "Accueil",
+  "methodologyLink": "Comment nous calculons ces chiffres",
   "footer": {
     "line1": "© CostTrek. Les estimations du coût de la vie sont fournies à titre informatif uniquement.",
     "line2": "Les chiffres sont approximatifs et ne doivent pas servir de base à des décisions financières.",
@@ -11,6 +12,7 @@
     "terms": "Conditions d'utilisation",
     "about": "À propos",
     "contact": "Contact",
+    "methodology": "Méthodologie",
     "lastUpdated": "Dernière mise à jour"
   },
   "cookie": {

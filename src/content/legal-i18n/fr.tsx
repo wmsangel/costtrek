@@ -92,6 +92,135 @@ const fr: Record<string, (p: { l: Locale }) => React.ReactNode> = {
       </p>
     </>
   ),
+  methodology: ({ l }) => (
+    <>
+      <p>
+        Cette page explique exactement comment CostTrek produit chacun des chiffres
+        que vous voyez — l&apos;indice du coût de la vie, l&apos;équivalence
+        salariale, la fiscalité et les scores de qualité de vie — et, tout aussi
+        important, d&apos;où provient chaque chiffre et quel degré de confiance vous
+        pouvez lui accorder. Nous préférons être transparents plutôt que de faire
+        passer nos estimations pour des statistiques officielles.
+      </p>
+
+      <h2>L&apos;indice du coût de la vie</h2>
+      <p>
+        Notre chiffre de référence est un indice où la ville américaine moyenne est
+        fixée à <strong>100</strong>. Une ville à 60 est environ 40&nbsp;% moins
+        chère qu&apos;une ville américaine typique&nbsp;; une ville à 150 est
+        environ 50&nbsp;% plus chère. L&apos;indice combine six catégories du
+        quotidien — <strong>logement, alimentation, transports, services publics,
+        santé et biens &amp; services</strong> — chacune notée sur la même échelle
+        US = 100, puis regroupées dans le chiffre global.
+      </p>
+
+      <h2>L&apos;équivalence salariale</h2>
+      <p>
+        Sur n&apos;importe quelle page de comparaison, vous pouvez saisir un salaire
+        et voir l&apos;équivalent dont vous auriez besoin dans l&apos;autre ville
+        pour conserver le même niveau de vie. Il s&apos;agit d&apos;un simple rapport
+        entre les deux indices de coût — si l&apos;indice de la ville B est
+        supérieur de 20&nbsp;% à celui de la ville A, il vous faudrait environ
+        20&nbsp;% de plus là-bas. C&apos;est un repère de pouvoir d&apos;achat, non
+        une enquête salariale ni une offre d&apos;emploi.
+      </p>
+
+      <h2>D&apos;où provient chaque chiffre</h2>
+      <p>
+        Nous combinons des données ouvertes faisant autorité là où elles existent
+        avec des estimations calibrées là où aucune source gratuite, mondiale et par
+        ville n&apos;existe. Nous indiquons ce qui relève de l&apos;une ou de
+        l&apos;autre plutôt que de brouiller la frontière&nbsp;:
+      </p>
+      <ul>
+        <li>
+          <strong>Économie — réel.</strong> Le PIB par habitant, l&apos;espérance de
+          vie et l&apos;inflation proviennent de{" "}
+          <a href="https://data.worldbank.org" rel="noopener" target="_blank">
+            World Bank Open Data
+          </a>
+          .
+        </li>
+        <li>
+          <strong>Indice de coût global des États-Unis — réel.</strong> Ancré aux{" "}
+          <a
+            href="https://www.bea.gov/data/prices-inflation/regional-price-parities-state-and-metro-area"
+            rel="noopener"
+            target="_blank"
+          >
+            parités de prix régionales du BEA
+          </a>{" "}
+          (tous articles, US = 100, 2023 — la dernière année pour laquelle le BEA a
+          publié des RPP métropolitaines).
+        </li>
+        <li>
+          <strong>Loyers des métropoles américaines — réel.</strong> Loyer brut
+          médian issu de l&apos;{" "}
+          <a
+            href="https://data.census.gov/table?q=B25064"
+            rel="noopener"
+            target="_blank"
+          >
+            enquête ACS de l&apos;U.S. Census Bureau
+          </a>{" "}
+          (2023).
+        </li>
+        <li>
+          <strong>Fiscalité &amp; visas — compilé.</strong> Les résumés sur
+          l&apos;impôt sur le revenu, la TVA et les visas proviennent des
+          administrations fiscales nationales et de sources publiques. Il
+          s&apos;agit des taux de référence uniquement — pas de votre taux effectif.
+        </li>
+        <li>
+          <strong>Indices des villes internationales, loyers pour un logement
+          d&apos;une chambre, ventilations par catégorie et scores de qualité de vie
+          — estimations.</strong> Ce sont des approximations calibrées fournies à
+          titre indicatif général, affinées au fil du temps. Aucun flux de coûts
+          gratuit, licenciable et mondial par ville n&apos;existe&nbsp;; nous les
+          modélisons donc plutôt que de laisser la carte vide.
+        </li>
+      </ul>
+
+      <h2>Conversion des devises</h2>
+      <p>
+        Les chiffres des villes sont stockés en dollars américains. Le widget
+        «&nbsp;dans votre devise&nbsp;» les convertit à l&apos;aide de taux de
+        référence statiques (dernière mise à jour&nbsp;: 2026-09), de sorte que les
+        montants sont approximatifs et destinés à l&apos;orientation, non à une
+        réservation ou à un budget au centime près.
+      </p>
+
+      <h2>Fréquence des mises à jour</h2>
+      <p>
+        Le site est reconstruit à chaque modification, de sorte que les mises à jour
+        structurelles sont mises en ligne immédiatement. Les jeux de données
+        sous-jacents sont actualisés périodiquement au fur et à mesure des nouvelles
+        publications officielles (World Bank, BEA, Census) et de l&apos;amélioration
+        de nos estimations — la date de «&nbsp;dernière mise à jour&nbsp;» de chaque
+        page reflète la dernière construction.
+      </p>
+
+      <h2>Limites &amp; honnêteté</h2>
+      <p>
+        Les coûts varient selon le quartier, le mode de vie et le moment, et nos
+        chiffres estimés peuvent être erronés pour une ville donnée. Considérez tout
+        ce qui figure ici comme un point de départ pour la comparaison, non comme un
+        budget précis. Rien sur CostTrek ne constitue un conseil financier, fiscal,
+        juridique ou en matière d&apos;immigration — vérifiez tout élément important
+        auprès d&apos;une source officielle ou d&apos;un professionnel qualifié avant
+        d&apos;agir.
+      </p>
+
+      <h2>Corrections</h2>
+      <p>
+        Vous avez repéré un chiffre qui semble erroné&nbsp;? Nous voulons vraiment
+        le savoir — écrivez à{" "}
+        <a href="mailto:info@costtrek.com">info@costtrek.com</a> et nous
+        l&apos;examinerons. Plus d&apos;informations sur le projet sur notre page{" "}
+        <Link href={`/${l}/about`}>À propos</Link>.
+      </p>
+    </>
+  ),
   privacy: ({ l }) => (
     <>
       <p>

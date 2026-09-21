@@ -178,6 +178,9 @@ export default async function LocaleLayout({
                 <Link href={`/${locale}/about`} className="hover:text-[var(--foreground)]">
                   {dict.legal.about}
                 </Link>
+                <Link href={`/${locale}/methodology`} className="hover:text-[var(--foreground)]">
+                  {dict.legal.methodology}
+                </Link>
                 <Link href={`/${locale}/contact`} className="hover:text-[var(--foreground)]">
                   {dict.legal.contact}
                 </Link>

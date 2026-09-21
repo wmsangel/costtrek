@@ -9,6 +9,7 @@ export type Dictionary = {
     terms: string;
     about: string;
     contact: string;
+    methodology: string;
     lastUpdated: string;
   };
   cookie: {
@@ -197,6 +198,7 @@ export type Dictionary = {
     englishLevel: { low: string; moderate: string; high: string; native: string };
   };
   breadcrumbHome: string;
+  methodologyLink: string; // "How we calculate these figures" — links to /methodology
   faq: {
     title: string;
     cityCostQ: string; // {city}

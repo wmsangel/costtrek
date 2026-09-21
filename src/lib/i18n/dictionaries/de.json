@@ -1,5 +1,6 @@
 {
   "breadcrumbHome": "Start",
+  "methodologyLink": "Wie wir diese Zahlen berechnen",
   "footer": {
     "line1": "© CostTrek. Schätzungen der Lebenshaltungskosten dienen nur zur Information.",
     "line2": "Die Angaben sind Näherungswerte und sollten nicht als Grundlage für finanzielle Entscheidungen dienen.",
@@ -11,6 +12,7 @@
     "terms": "Nutzungsbedingungen",
     "about": "Über uns",
     "contact": "Kontakt",
+    "methodology": "Methodik",
     "lastUpdated": "Zuletzt aktualisiert"
   },
   "cookie": {
