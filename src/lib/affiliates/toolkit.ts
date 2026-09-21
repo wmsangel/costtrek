@@ -157,7 +157,7 @@ export function buildGeoToolkit(city: City): ToolkitItem[] {
   // Tiqets — museums & attraction tickets (Europe-strong; complements Klook).
   const TIQETS = new Set([
     "GB", "FR", "ES", "IT", "PT", "DE", "AT", "CZ",
-    "HU", "GR", "NL", "EE", "IE", "BE", "PL", "TR", "AE",
+    "HU", "GR", "NL", "EE", "IE", "BE", "PL", "TR",
   ]);
   if (TIQETS.has(cc)) {
     items.push({
@@ -165,6 +165,19 @@ export function buildGeoToolkit(city: City): ToolkitItem[] {
       provider: "Tiqets",
       url: "https://tiqets.tpm.li/rpRB7oEZ",
       note: "Museum & attraction tickets — skip the line",
+    });
+  }
+
+  // Platinumlist — events, theme parks & attractions, MENA/Gulf market leader
+  // (Dubai/Abu Dhabi etc.). The local specialist for these geos, so it takes
+  // the attraction-tickets slot from the Europe-focused Tiqets there.
+  const PLATINUMLIST = new Set(["AE", "SA", "QA", "EG", "BH", "KW", "OM"]);
+  if (PLATINUMLIST.has(cc)) {
+    items.push({
+      category: "tours",
+      provider: "Platinumlist",
+      url: "https://i07o.xyz/6ab102c3e77b1",
+      note: "Events, theme parks & attraction tickets",
     });
   }
 
