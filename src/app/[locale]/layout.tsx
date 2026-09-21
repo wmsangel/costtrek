@@ -215,6 +215,16 @@ export default async function LocaleLayout({
           src="https://static.cloudflareinsights.com/beacon.min.js"
           data-cf-beacon={'{"token": "541e9eeec34e45fc89bd13749c2c3d5c"}'}
         />
+        {/* Google AdSense loader — site-wide, NOT consent-gated so the reviewer
+            bot sees it (required for review). EEA/UK ad-serving consent is handled
+            by Google Funding Choices (configured in AdSense after approval). */}
+        <Script
+          id="adsense"
+          async
+          strategy="afterInteractive"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=pub-5535516142831006"
+          crossOrigin="anonymous"
+        />
       </body>
     </html>
   );
