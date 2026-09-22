@@ -103,6 +103,7 @@
   },
   "currency": {
     "title": "Cost of living in {city} — in your currency",
+    "compareTitle": "Cost of living: {a} vs {b} — in your currency",
     "rentCentre": "1-bed rent, city centre",
     "rentOutside": "1-bed rent, outside centre",
     "meal": "Inexpensive meal",
@@ -233,6 +234,8 @@
     "cmpCheaperA": "{b} is about {pct}% {word} than {a} overall — its cost-of-living index is {ib} versus {ia} for {a}.",
     "cmpExpensiveQ": "Which is more expensive, {a} or {b}?",
     "cmpExpensiveA": "{high} is more expensive than {low}. Its cost-of-living index is {iHigh} vs {iLow} (US = 100) — about {pct}% higher.",
+    "cmpRentQ": "Is rent cheaper in {a} or {b}?",
+    "cmpRentA": "Rent is cheaper in {low} — about ${lowRent}/month for a one-bedroom in the city centre, vs ${highRent} in {high}.",
     "cmpSalaryQ": "How much do you need to earn in {b} to live like in {a}?",
     "cmpSalaryA": "To keep the same standard of living, a ${salary} salary in {a} is worth about ${equivalent} in {b}. Enter your own figure in the calculator above.",
     "cmpTaxQ": "Which has lower taxes, {a} or {b}?",

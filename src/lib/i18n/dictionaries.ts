@@ -98,6 +98,7 @@ export type Dictionary = {
   };
   currency: {
     title: string; // {city}
+    compareTitle: string; // {a} {b}
     rentCentre: string;
     rentOutside: string;
     meal: string;
@@ -219,6 +220,8 @@ export type Dictionary = {
     cmpCheaperA: string; // {a} {b} {pct} {word} {ia} {ib}
     cmpExpensiveQ: string; // {a} {b}
     cmpExpensiveA: string; // {high} {low} {pct} {iHigh} {iLow}
+    cmpRentQ: string; // {a} {b}
+    cmpRentA: string; // {low} {high} {lowRent} {highRent}
     cmpSalaryQ: string; // {a} {b}
     cmpSalaryA: string; // {a} {b} {salary} {equivalent}
     cmpTaxQ: string; // {a} {b}

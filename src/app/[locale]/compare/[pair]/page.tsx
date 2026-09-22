@@ -25,12 +25,13 @@ import {
   localizedCityName,
   localizedCountry,
 } from "@/lib/i18n/places";
-import { getCountry } from "@/lib/data";
+import { getCountry, getCityProfile } from "@/lib/data";
 import { pageMetadata } from "@/lib/seo/site";
 import { cityPairIndexable } from "@/lib/seo/indexable";
 import { breadcrumbJsonLd } from "@/lib/seo/jsonld";
 import JsonLd from "@/components/JsonLd";
 import Faq, { type FaqItem } from "@/components/Faq";
+import CompareInCurrency, { type CompareRow } from "@/components/CompareInCurrency";
 
 // Prerender only the canonical direction of each pair; the reverse URL resolves
 // on-demand and 308-redirects to canonical (see below). Halves the static-page
@@ -125,6 +126,30 @@ export default async function ComparePage({
   const overallB = overallIndex(b);
   const overallDiff = ((overallB - overallA) / overallA) * 100;
   const cheaper = overallDiff < 0;
+
+  // "In your currency" rows: rent (always, with fallback) + staples the two
+  // cities both have. Feeds the client CompareInCurrency widget.
+  const profA = getCityProfile(a.slug);
+  const profB = getCityProfile(b.slug);
+  const rentCentre = (c: typeof a, p: typeof profA) =>
+    p?.housing?.medianRent1brCentreUsd ?? c.medianRent1br;
+  const rentOutside = (c: typeof a, p: typeof profA) =>
+    p?.housing?.medianRent1brOutsideUsd ?? Math.round(c.medianRent1br * 0.75);
+  const priceOf = (p: typeof profA, key: string) =>
+    p?.prices?.find((x) => x.key === key)?.amountUsd ?? null;
+  const currencyRows: CompareRow[] = [
+    { label: dict.currency.rentCentre, a: rentCentre(a, profA), b: rentCentre(b, profB) },
+    { label: dict.currency.rentOutside, a: rentOutside(a, profA), b: rentOutside(b, profB) },
+  ];
+  for (const [key, label] of [
+    ["mealInexpensive", dict.currency.meal],
+    ["transitPass", dict.currency.transit],
+    ["utilities", dict.currency.utilities],
+  ] as const) {
+    const av = priceOf(profA, key);
+    const bv = priceOf(profB, key);
+    if (av != null && bv != null) currencyRows.push({ label, a: av, b: bv });
+  }
 
   const labelA = localizedCityLabel(l, a);
   const labelB = localizedCityLabel(l, b);
@@ -344,6 +369,21 @@ export default async function ComparePage({
         labelB={labelB}
       />
 
+      <div className="mt-10">
+        <CompareInCurrency
+          title={fill(dict.currency.compareTitle, {
+            a: localizedCityName(l, a),
+            b: localizedCityName(l, b),
+          })}
+          rows={currencyRows}
+          aName={localizedCityName(l, a)}
+          bName={localizedCityName(l, b)}
+          locale={l}
+          note={dict.currency.note}
+          selLabel={dict.currency.label}
+        />
+      </div>
+
       <section className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4">
         <CityFacts city={a} dict={dict} locale={l} />
         <CityFacts city={b} dict={dict} locale={l} />
@@ -403,6 +443,20 @@ export default async function ComparePage({
                   iHigh,
                   iLow,
                   pct,
+                });
+              })(),
+            },
+            {
+              // "Is rent cheaper in A or B?" — rent is the biggest cost + high
+              // search intent; data-driven from the two 1-bed centre rents.
+              q: fill(dict.faq.cmpRentQ, { a: aName, b: bName }),
+              a: (() => {
+                const aCheaper = a.medianRent1br <= b.medianRent1br;
+                return fill(dict.faq.cmpRentA, {
+                  low: aCheaper ? aName : bName,
+                  high: aCheaper ? bName : aName,
+                  lowRent: Math.min(a.medianRent1br, b.medianRent1br).toLocaleString(nl),
+                  highRent: Math.max(a.medianRent1br, b.medianRent1br).toLocaleString(nl),
                 });
               })(),
             },

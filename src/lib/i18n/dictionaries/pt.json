@@ -103,6 +103,7 @@
   },
   "currency": {
     "title": "Custo de vida em {city} — na sua moeda",
+    "compareTitle": "Custo de vida: {a} vs {b} — na sua moeda",
     "rentCentre": "Renda T1, centro",
     "rentOutside": "Renda T1, fora do centro",
     "meal": "Refeição barata",
@@ -233,6 +234,8 @@
     "cmpCheaperA": "{b} é, no total, cerca de {pct}% {word} do que {a} — o seu índice de custo de vida é {ib} contra {ia} de {a}.",
     "cmpExpensiveQ": "O que é mais caro, {a} ou {b}?",
     "cmpExpensiveA": "{high} é mais caro do que {low}. O seu índice de custo de vida é {iHigh} contra {iLow} (EUA = 100) — cerca de {pct}% mais.",
+    "cmpRentQ": "O arrendamento é mais barato em {a} ou {b}?",
+    "cmpRentA": "O arrendamento é mais barato em {low} — cerca de {lowRent}$/mês por um T1 no centro, contra {highRent}$ em {high}.",
     "cmpSalaryQ": "Quanto é preciso ganhar em {b} para viver como em {a}?",
     "cmpSalaryA": "Para manter o mesmo padrão de vida, um salário de {salary} $ em {a} equivale a cerca de {equivalent} $ em {b}. Introduza o seu próprio valor na calculadora acima.",
     "cmpTaxQ": "Onde se pagam menos impostos, em {a} ou {b}?",

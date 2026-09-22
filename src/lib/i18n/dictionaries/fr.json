@@ -103,6 +103,7 @@
   },
   "currency": {
     "title": "Coût de la vie à {city} — dans votre devise",
+    "compareTitle": "Coût de la vie : {a} vs {b} — dans votre devise",
     "rentCentre": "Loyer 1 pièce, centre-ville",
     "rentOutside": "Loyer 1 pièce, hors centre",
     "meal": "Repas bon marché",
@@ -233,6 +234,8 @@
     "cmpCheaperA": "{b} est globalement environ {pct}% {word} que {a} — son indice du coût de la vie est de {ib} contre {ia} pour {a}.",
     "cmpExpensiveQ": "Qu'est-ce qui est plus cher, {a} ou {b} ?",
     "cmpExpensiveA": "{high} est plus cher que {low}. Son indice du coût de la vie est de {iHigh} contre {iLow} (États-Unis = 100) — environ {pct}% de plus.",
+    "cmpRentQ": "Le loyer est-il moins cher à {a} ou à {b} ?",
+    "cmpRentA": "Le loyer est moins cher à {low} — environ {lowRent}$/mois pour un studio/1 pièce en centre-ville, contre {highRent}$ à {high}.",
     "cmpSalaryQ": "Combien faut-il gagner à {b} pour vivre comme à {a} ?",
     "cmpSalaryA": "Pour conserver le même niveau de vie, un salaire de {salary} $ à {a} équivaut à environ {equivalent} $ à {b}. Saisissez votre propre chiffre dans le calculateur ci-dessus.",
     "cmpTaxQ": "Où les impôts sont-ils plus bas, à {a} ou à {b} ?",

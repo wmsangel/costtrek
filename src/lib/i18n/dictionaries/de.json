@@ -103,6 +103,7 @@
   },
   "currency": {
     "title": "Lebenshaltungskosten in {city} — in deiner Währung",
+    "compareTitle": "Lebenshaltungskosten: {a} vs. {b} — in deiner Währung",
     "rentCentre": "Miete 1-Zi., Stadtzentrum",
     "rentOutside": "Miete 1-Zi., außerhalb",
     "meal": "Günstiges Essen",
@@ -233,6 +234,8 @@
     "cmpCheaperA": "{b} ist insgesamt etwa {pct}% {word} als {a} — der Index liegt bei {ib} gegenüber {ia} für {a}.",
     "cmpExpensiveQ": "Was ist teurer, {a} oder {b}?",
     "cmpExpensiveA": "{high} ist teurer als {low}. Der Lebenshaltungskosten-Index liegt bei {iHigh} gegenüber {iLow} (USA = 100) — etwa {pct}% höher.",
+    "cmpRentQ": "Ist die Miete in {a} oder {b} günstiger?",
+    "cmpRentA": "Die Miete ist in {low} günstiger — rund ${lowRent}/Monat für eine 1-Zimmer-Wohnung im Zentrum, gegenüber ${highRent} in {high}.",
     "cmpSalaryQ": "Wie viel muss man in {b} verdienen, um wie in {a} zu leben?",
     "cmpSalaryA": "Um denselben Lebensstandard zu halten, entspricht ein Gehalt von {salary} $ in {a} etwa {equivalent} $ in {b}. Gib oben im Rechner deinen eigenen Wert ein.",
     "cmpTaxQ": "Wo sind die Steuern niedriger, in {a} oder {b}?",
