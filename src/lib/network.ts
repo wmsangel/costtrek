@@ -73,7 +73,7 @@ export const NETWORK_SITES: NetworkSite[] = [
     // testsweep.com was unreachable when wired; tagline pending from the owner.
     url: "https://testsweep.com/",
     name: "TestSweep",
-    tagline: "",
+    tagline: "Test your computer in the browser",
     emoji: "🧪",
   },
   {
