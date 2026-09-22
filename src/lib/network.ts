@@ -43,6 +43,7 @@ export const NETWORK_SITES: NetworkSite[] = [
     url: "https://pawdget.com/",
     name: "Pawdget",
     tagline: "What a dog really costs, by breed",
+    emoji: "🐶",
   },
   {
     url: "https://izngames.com/",
