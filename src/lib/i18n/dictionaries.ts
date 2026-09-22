@@ -200,6 +200,36 @@ export type Dictionary = {
   };
   breadcrumbHome: string;
   methodologyLink: string; // "How we calculate these figures" — links to /methodology
+  support: {
+    nav: string;
+    title: string;
+    intro: string;
+    cryptoTitle: string;
+    networkWarn: string;
+    scanHint: string;
+    copy: string;
+    copied: string;
+    whereTitle: string;
+    whereBody: string;
+    disclaimersTitle: string;
+    disc1: string;
+    disc2: string;
+    disc3: string;
+    disc4: string;
+    freeTitle: string;
+    freeIntro: string;
+    shareText: string;
+    shareX: string;
+    shareReddit: string;
+    copyLink: string;
+    linkCopied: string;
+    star: string;
+    linkTitle: string;
+    linkBody: string;
+    copySnippet: string;
+    snippetCopied: string;
+    metaDescription: string;
+  };
   faq: {
     title: string;
     cityCostQ: string; // {city}
