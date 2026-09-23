@@ -24,6 +24,8 @@ import CityProfileSections from "@/components/CityProfileSections";
 import CityFacts from "@/components/CityFacts";
 import CarFreeCard from "@/components/CarFreeCard";
 import { carFree } from "@/lib/carfree";
+import AffordabilityCard from "@/components/AffordabilityCard";
+import { affordability } from "@/lib/affordability";
 import FlightWidget from "@/components/FlightWidget";
 import MyTripCard from "@/components/MyTripCard";
 import CostInCurrency, { type MoneyItem } from "@/components/CostInCurrency";
@@ -92,6 +94,7 @@ export default async function CityPage({
   const profile = getCityProfile(c.slug);
   const path = `cost-of-living/${c.slug}`;
   const carFreeData = carFree(c);
+  const affordData = affordability(c);
 
   // Representative USD figures for the "cost in your currency" widget. Rent is
   // always shown (with a fallback); staples appear when the profile has them.
@@ -291,6 +294,13 @@ export default async function CityPage({
         </ul>
       </section>
 
+      <AffordabilityCard
+        locale={l}
+        dict={dict}
+        city={localizedCityName(l, c)}
+        data={affordData}
+      />
+
       <section className="mt-10">
         <CityFacts city={c} dict={dict} locale={l} />
       </section>
@@ -344,7 +354,22 @@ export default async function CityPage({
           const rentOutside =
             profile?.housing?.medianRent1brOutsideUsd ??
             Math.round(c.medianRent1br * 0.75);
+          const solo = affordData.budgets.find((b) => b.persona === "solo");
+          const family = affordData.budgets.find((b) => b.persona === "family");
           const items: FaqItem[] = [
+            {
+              q: fill(dict.faq.cityExpensiveQ, { city: label }),
+              a: fill(dict.faq.cityExpensiveA, {
+                city: label,
+                index: roundedIndex,
+                pct: Math.abs(Math.round(index - 100)),
+                word,
+                rank: affordData.rank,
+                n: affordData.total,
+                solo: (solo?.total ?? 0).toLocaleString(nl),
+                family: (family?.total ?? 0).toLocaleString(nl),
+              }),
+            },
             {
               q: fill(dict.faq.cityCostQ, { city: label }),
               a: fill(dict.faq.cityCostA, {

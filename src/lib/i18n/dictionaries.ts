@@ -214,6 +214,31 @@ export type Dictionary = {
     rankLink: string;
     note: string;
   };
+  affordability: {
+    title: string; // {city}
+    verdictVeryExpensive: string; // {city} {index} {pct}
+    verdictExpensive: string; // {city} {index} {pct}
+    verdictModerate: string; // {city} {index} {pct}
+    verdictAffordable: string; // {city} {index} {pct}
+    verdictCheap: string; // {city} {index} {pct}
+    rank: string; // {city} {rank} {n} {cheaper}
+    budgetTitle: string; // {city}
+    personaSolo: string;
+    personaCouple: string;
+    personaFamily: string;
+    personaSoloNote: string;
+    personaCoupleNote: string;
+    personaFamilyNote: string;
+    rowHeader: string;
+    rowRent: string;
+    rowFood: string;
+    rowTransport: string;
+    rowUtilities: string;
+    rowHealthcare: string;
+    rowGoods: string;
+    rowTotal: string;
+    note: string;
+  };
   breadcrumbHome: string;
   methodologyLink: string; // "How we calculate these figures" — links to /methodology
   support: {
@@ -262,6 +287,8 @@ export type Dictionary = {
     citySafetyA: string; // {city} {safety}
     cityCarQ: string; // {city}
     cityCarA: string; // {city} {score} {walk} {transit}
+    cityExpensiveQ: string; // {city}
+    cityExpensiveA: string; // {city} {index} {pct} {word} {rank} {n} {solo} {family}
     cmpMoveQ: string; // {a} {b}
     cmpMoveA: string; // {a} {b} {pct} {word} {ia} {ib}
     cmpCheaperQ: string; // {a} {b}
