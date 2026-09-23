@@ -1,6 +1,22 @@
 {
   "breadcrumbHome": "Accueil",
   "methodologyLink": "Comment nous calculons ces chiffres",
+  "carFree": {
+    "title": "Peut-on vivre à {city} sans voiture ?",
+    "score": "Score sans voiture",
+    "walk": "Marchabilité",
+    "transit": "Transports en commun",
+    "verdictEasy": "Oui — {city} obtient {score}/100 à notre score sans voiture : trajets domicile-travail, courses et sorties se font à pied ou en transports. La plupart des habitants s'y passent totalement de voiture, et l'économie va droit dans le reste du budget.",
+    "verdictDoable": "En grande partie — avec {score}/100, {city} couvre le quotidien à pied et en transports, mais une voiture reste utile pour les week-ends, les gros achats et tout ce qui sort du centre.",
+    "verdictMixed": "En partie — {city} obtient {score}/100. Les quartiers centraux fonctionnent sans voiture, mais dans les banlieues moins chères il en faut une pour le travail et les courses. Prévoyez une voiture, ou acceptez le surcoût du loyer au centre.",
+    "verdictCarNeeded": "Difficilement — avec {score}/100, {city} est conçue pour la voiture. Prévoyez un véhicule et ses frais, sinon attendez-vous à de longs trajets et à un choix de quartiers réduit.",
+    "transportBelow": "Les transports à {city} affichent un indice de {index} contre 100 pour la moyenne américaine — environ {pct}% moins cher qu'une ville américaine typique. Ce poste couvre les titres de transport, le carburant et l'usage d'un véhicule : c'est celui qui bouge le plus quand on renonce à la voiture.",
+    "transportAbove": "Les transports à {city} affichent un indice de {index} contre 100 pour la moyenne américaine — environ {pct}% plus cher qu'une ville américaine typique. Ce poste couvre les titres de transport, le carburant et l'usage d'un véhicule : c'est celui qui bouge le plus quand on renonce à la voiture.",
+    "transportEqual": "Les transports à {city} affichent un indice de {index}, au niveau de la moyenne américaine. Ce poste couvre les titres de transport, le carburant et l'usage d'un véhicule : c'est celui qui bouge le plus quand on renonce à la voiture.",
+    "rank": "{city} occupe la place n° {rank} sur {n} villes suivies pour la marchabilité.",
+    "rankLink": "Voir les villes les plus marchables",
+    "note": "Le score sans voiture est notre propre indicateur : 60% de marchabilité, 40% de transports en commun, sur une échelle de 0 à 100. Comme nos autres indices de qualité de vie, ce sont des estimations calibrées, pas des statistiques officielles."
+  },
   "support": {
     "nav": "Soutenir",
     "title": "Soutenir CostTrek",
@@ -258,6 +274,8 @@
     "cityClimateA": "{city} affiche en moyenne environ {jan} en janvier et {jul} en juillet, avec à peu près {sunny} jours de soleil par an.",
     "citySafetyQ": "{city} est-elle sûre ?",
     "citySafetyA": "{city} obtient {safety} sur 100 à notre indice de sécurité, où plus haut signifie plus sûr.",
+    "cityCarQ": "Peut-on vivre à {city} sans voiture ?",
+    "cityCarA": "{city} obtient {score}/100 à notre score sans voiture — {walk}/100 pour la marchabilité et {transit}/100 pour les transports en commun. Plus le score est élevé, plus le quotidien se règle à pied ou en transports plutôt qu'en entretenant une voiture.",
     "cmpMoveQ": "Déménager de {a} à {b} : moins cher ou plus cher ?",
     "cmpMoveA": "En déménageant de {a} à {b}, votre coût de la vie sera environ {pct}% {word}. L’indice de {b} est de {ib} contre {ia} pour {a} (USA = 100). Utilisez l’outil de salaire ci-dessus pour le revenu nécessaire au même niveau de vie.",
     "cmpCheaperQ": "{a} est-elle moins chère que {b} ?",
@@ -286,6 +304,11 @@
     "faqMethodA": "Nous trions les {n} villes de notre index par {metric}. Les chiffres sont des estimations calibrées, actualisées à mesure que la couverture s’élargit — un repère pratique, pas une statistique officielle.",
     "faqCompareQ": "Puis-je comparer ces villes en détail ?",
     "faqCompareA": "Oui. Ouvrez une ville pour son coût de la vie, ses loyers, impôts, visas et qualité de vie, ou utilisez la comparaison côte à côte de CostTrek.",
+    "walkableExplainer": [
+      "La marchabilité pèse sur le budget plus qu'il n'y paraît. Là où les courses, le travail et l'école se font à pied ou en quelques minutes de tram, la voiture devient facultative — et s'en passer supprime une mensualité, l'assurance, le carburant, le stationnement et l'entretien. Dans une ville dépendante de l'automobile, ce même argent fait simplement partie du coût de la vie, quel que soit le loyer.",
+      "Le score ci-dessous va de 0 à 100 et répond à une seule question : quelle part du quotidien pouvez-vous atteindre à pied ? Les centres denses et mixtes, aux îlots courts et aux commerces en rez-de-chaussée, obtiennent des notes élevées ; les villes où logement, travail et commerces occupent des zones séparées obtiennent des notes basses. Les transports en commun sont notés à part : une ville peut être marchable en son cœur et mal desservie, ou l'inverse.",
+      "Chaque page de ville combine les deux en un score sans voiture et indique si vivre sans automobile y est réaliste, aux côtés de l'indice du coût des transports (moyenne américaine = 100). À lire avec le loyer : la banlieue bon marché cesse de l'être dès qu'elle impose une voiture, et un centre marchable plus cher peut finir gagnant."
+    ],
     "rank": "Rang",
     "cheapest": {
       "title": "Les villes les moins chères où vivre",

@@ -1,6 +1,22 @@
 {
   "breadcrumbHome": "Home",
   "methodologyLink": "How we calculate these figures",
+  "carFree": {
+    "title": "Can you live in {city} without a car?",
+    "score": "Car-free score",
+    "walk": "Walkability",
+    "transit": "Public transport",
+    "verdictEasy": "Yes — {city} scores {score}/100 on our car-free score, so commuting, errands and nights out all work on foot or by public transport. Most residents here can skip car ownership entirely, and the savings go straight into the rest of the budget.",
+    "verdictDoable": "Mostly — at {score}/100, {city} handles everyday trips on foot and by public transport, but a car still helps for weekend trips, bulk shopping and anything outside the built-up core.",
+    "verdictMixed": "Partly — {city} scores {score}/100. Central neighbourhoods work without a car, but move out to the cheaper suburbs and you will want one for commuting and shopping. Budget for a car, or pay the centre's rent premium.",
+    "verdictCarNeeded": "Not easily — at {score}/100, {city} is built around driving. Plan for a car and its running costs, or expect long trips and a narrow choice of neighbourhoods.",
+    "transportBelow": "Transport in {city} indexes at {index} against a US average of 100 — about {pct}% cheaper than a typical US city. That line covers fares, fuel and running a vehicle, so it is the one that moves most when you drop the car.",
+    "transportAbove": "Transport in {city} indexes at {index} against a US average of 100 — about {pct}% more expensive than a typical US city. That line covers fares, fuel and running a vehicle, so it is the one that moves most when you drop the car.",
+    "transportEqual": "Transport in {city} indexes at {index}, level with the US average. That line covers fares, fuel and running a vehicle, so it is the one that moves most when you drop the car.",
+    "rank": "{city} ranks #{rank} of {n} cities we track for walkability.",
+    "rankLink": "See the most walkable cities",
+    "note": "The car-free score is our own composite: 60% walkability, 40% public transport, both on a 0–100 scale. Like the rest of our quality-of-life figures, they are calibrated estimates, not official statistics."
+  },
   "support": {
     "nav": "Support",
     "title": "Support CostTrek",
@@ -258,6 +274,8 @@
     "cityClimateA": "{city} averages around {jan} in January and {jul} in July, with roughly {sunny} sunny days a year.",
     "citySafetyQ": "Is {city} safe?",
     "citySafetyA": "{city} scores {safety} out of 100 on our safety index, where higher means safer.",
+    "cityCarQ": "Can you live in {city} without a car?",
+    "cityCarA": "{city} scores {score}/100 on our car-free score — {walk}/100 for walkability and {transit}/100 for public transport. The higher the score, the more of daily life you can cover on foot or by transit instead of paying to run a car.",
     "cmpMoveQ": "Moving from {a} to {b}: cheaper or more expensive?",
     "cmpMoveA": "Moving from {a} to {b}, your cost of living will be roughly {pct}% {word}. {b}’s cost-of-living index is {ib} versus {ia} for {a} (US = 100). Use the salary tool above to see the income you’d need to keep the same lifestyle.",
     "cmpCheaperQ": "Is {a} cheaper than {b}?",
@@ -286,6 +304,11 @@
     "faqMethodA": "We sort all {n} cities in our index by {metric}. Figures are calibrated estimates, refreshed as we expand coverage — a practical guide, not official statistics.",
     "faqCompareQ": "Can I compare these cities in detail?",
     "faqCompareA": "Yes. Open any city for its cost of living, rent, taxes, visas and quality of life, or use CostTrek’s side-by-side comparison to weigh two cities against each other.",
+    "walkableExplainer": [
+      "Walkability decides more of your budget than it looks. Where errands, work and school are a walk or a short tram ride away, a car is optional — and dropping it removes a payment, insurance, fuel, parking and maintenance from the monthly total. In a car-dependent city that same money is simply part of the cost of living, whatever the rent looks like.",
+      "The score below runs 0–100 and answers one question: how much of everyday life can you reach on foot? Dense, mixed-use centres with short blocks and shops at street level score high; cities where housing, work and shopping sit in separate zones score low. Public transport is scored separately, so a city can be walkable in its core and still have thin transit — or the reverse.",
+      "Every city page pairs the two into a car-free score and says whether living without a car there is realistic, alongside that city's transport cost index (US average = 100). Read it together with rent: the cheap suburb stops being cheap once it needs a car, and a pricier walkable centre can come out ahead."
+    ],
     "rank": "Rank",
     "flightsCta": "Planning a move? Search cheap flights worldwide",
     "cheapest": {

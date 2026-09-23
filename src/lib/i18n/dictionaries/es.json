@@ -1,6 +1,22 @@
 {
   "breadcrumbHome": "Inicio",
   "methodologyLink": "Cómo calculamos estas cifras",
+  "carFree": {
+    "title": "¿Se puede vivir en {city} sin coche?",
+    "score": "Puntuación sin coche",
+    "walk": "Caminabilidad",
+    "transit": "Transporte público",
+    "verdictEasy": "Sí — {city} obtiene {score}/100 en nuestra puntuación sin coche: ir al trabajo, hacer recados y salir por la noche funcionan a pie o en transporte público. La mayoría de sus residentes prescinde por completo del coche, y ese ahorro se queda en el resto del presupuesto.",
+    "verdictDoable": "En gran medida — con {score}/100, {city} cubre el día a día a pie y en transporte público, aunque un coche sigue ayudando para escapadas de fin de semana, compras grandes y todo lo que queda fuera del núcleo urbano.",
+    "verdictMixed": "En parte — {city} obtiene {score}/100. Los barrios céntricos funcionan sin coche, pero en las afueras más baratas lo necesitarás para el trabajo y las compras. Presupuesta un coche o paga el sobreprecio del alquiler en el centro.",
+    "verdictCarNeeded": "Difícilmente — con {score}/100, {city} está pensada para el coche. Cuenta con un vehículo y sus gastos corrientes, o prepárate para trayectos largos y pocas opciones de barrio.",
+    "transportBelow": "El transporte en {city} marca un índice de {index} frente a 100 de la media estadounidense: alrededor de un {pct}% más barato que en una ciudad típica de EE. UU. Esa partida incluye billetes, combustible y el uso del vehículo, así que es la que más cambia cuando renuncias al coche.",
+    "transportAbove": "El transporte en {city} marca un índice de {index} frente a 100 de la media estadounidense: alrededor de un {pct}% más caro que en una ciudad típica de EE. UU. Esa partida incluye billetes, combustible y el uso del vehículo, así que es la que más cambia cuando renuncias al coche.",
+    "transportEqual": "El transporte en {city} marca un índice de {index}, al nivel de la media estadounidense. Esa partida incluye billetes, combustible y el uso del vehículo, así que es la que más cambia cuando renuncias al coche.",
+    "rank": "{city} ocupa el puesto n.º {rank} de {n} ciudades que seguimos por caminabilidad.",
+    "rankLink": "Ver las ciudades más caminables",
+    "note": "La puntuación sin coche es un indicador propio: 60% caminabilidad y 40% transporte público, ambos en una escala de 0 a 100. Como el resto de nuestros índices de calidad de vida, son estimaciones calibradas, no estadísticas oficiales."
+  },
   "support": {
     "nav": "Apóyanos",
     "title": "Apoya a CostTrek",
@@ -258,6 +274,8 @@
     "cityClimateA": "{city} promedia alrededor de {jan} en enero y {jul} en julio, con unos {sunny} días de sol al año.",
     "citySafetyQ": "¿Es segura {city}?",
     "citySafetyA": "{city} obtiene {safety} sobre 100 en nuestro índice de seguridad, donde más alto es más seguro.",
+    "cityCarQ": "¿Se puede vivir en {city} sin coche?",
+    "cityCarA": "{city} obtiene {score}/100 en nuestra puntuación sin coche: {walk}/100 en caminabilidad y {transit}/100 en transporte público. Cuanto más alta es la puntuación, más parte del día a día se resuelve a pie o en transporte en lugar de mantener un coche.",
     "cmpMoveQ": "Mudarse de {a} a {b}: ¿más barato o más caro?",
     "cmpMoveA": "Al mudarte de {a} a {b}, tu coste de vida será aproximadamente un {pct}% {word}. El índice de {b} es {ib} frente a {ia} de {a} (EE. UU. = 100). Usa la herramienta de salario de arriba para ver el ingreso necesario para mantener el mismo nivel de vida.",
     "cmpCheaperQ": "¿Es {a} más barata que {b}?",
@@ -286,6 +304,11 @@
     "faqMethodA": "Ordenamos las {n} ciudades de nuestro índice por {metric}. Las cifras son estimaciones calibradas, actualizadas a medida que ampliamos la cobertura: una guía práctica, no estadísticas oficiales.",
     "faqCompareQ": "¿Puedo comparar estas ciudades en detalle?",
     "faqCompareA": "Sí. Abre cualquier ciudad para su coste de vida, alquiler, impuestos, visados y calidad de vida, o usa la comparación en paralelo de CostTrek.",
+    "walkableExplainer": [
+      "La caminabilidad pesa en el presupuesto más de lo que parece. Donde los recados, el trabajo y el colegio quedan a pie o a un corto trayecto de tranvía, el coche es opcional — y prescindir de él elimina una cuota, el seguro, el combustible, el aparcamiento y el mantenimiento del total mensual. En una ciudad dependiente del coche, ese mismo dinero forma parte del coste de la vida, sea cual sea el alquiler.",
+      "La puntuación de abajo va de 0 a 100 y responde a una sola pregunta: ¿qué parte del día a día se alcanza a pie? Los centros densos y de usos mixtos, con manzanas cortas y comercio a pie de calle, puntúan alto; las ciudades donde vivienda, trabajo y compras ocupan zonas separadas puntúan bajo. El transporte público se puntúa aparte: una ciudad puede ser caminable en su centro y tener una red escasa, o al revés.",
+      "Cada página de ciudad combina ambos en una puntuación sin coche y dice si vivir sin automóvil allí es realista, junto al índice de coste del transporte (media de EE. UU. = 100). Léelo junto con el alquiler: el suburbio barato deja de serlo en cuanto exige un coche, y un centro caminable más caro puede salir ganando."
+    ],
     "rank": "Puesto",
     "cheapest": {
       "title": "Ciudades más baratas para vivir",

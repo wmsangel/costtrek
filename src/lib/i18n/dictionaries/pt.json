@@ -1,6 +1,22 @@
 {
   "breadcrumbHome": "Início",
   "methodologyLink": "Como calculamos estes valores",
+  "carFree": {
+    "title": "Dá para viver em {city} sem carro?",
+    "score": "Pontuação sem carro",
+    "walk": "Pedonabilidade",
+    "transit": "Transportes públicos",
+    "verdictEasy": "Sim — {city} tem {score}/100 na nossa pontuação sem carro: ir para o trabalho, fazer compras e sair à noite resolvem-se a pé ou de transportes públicos. A maioria dos residentes dispensa completamente o carro, e essa poupança fica no resto do orçamento.",
+    "verdictDoable": "Em grande parte — com {score}/100, {city} cobre o dia a dia a pé e de transportes públicos, mas um carro continua a ajudar em fins de semana, compras grandes e tudo o que fica fora do centro.",
+    "verdictMixed": "Em parte — {city} tem {score}/100. Os bairros centrais funcionam sem carro, mas nos subúrbios mais baratos vai precisar de um para o trabalho e as compras. Conte com um carro ou pague o prémio da renda no centro.",
+    "verdictCarNeeded": "Dificilmente — com {score}/100, {city} foi feita para o carro. Planeie um veículo e os seus custos correntes, ou conte com viagens longas e poucas opções de bairro.",
+    "transportBelow": "Os transportes em {city} registam um índice de {index} face a 100 da média dos EUA — cerca de {pct}% mais baratos do que numa cidade norte-americana típica. Essa rubrica inclui bilhetes, combustível e a utilização do veículo, por isso é a que mais muda quando se abdica do carro.",
+    "transportAbove": "Os transportes em {city} registam um índice de {index} face a 100 da média dos EUA — cerca de {pct}% mais caros do que numa cidade norte-americana típica. Essa rubrica inclui bilhetes, combustível e a utilização do veículo, por isso é a que mais muda quando se abdica do carro.",
+    "transportEqual": "Os transportes em {city} registam um índice de {index}, ao nível da média dos EUA. Essa rubrica inclui bilhetes, combustível e a utilização do veículo, por isso é a que mais muda quando se abdica do carro.",
+    "rank": "{city} ocupa a posição n.º {rank} de {n} cidades que acompanhamos em pedonabilidade.",
+    "rankLink": "Ver as cidades mais pedonais",
+    "note": "A pontuação sem carro é um indicador nosso: 60% pedonabilidade e 40% transportes públicos, ambos numa escala de 0 a 100. Tal como os restantes índices de qualidade de vida, são estimativas calibradas, não estatísticas oficiais."
+  },
   "support": {
     "nav": "Apoiar",
     "title": "Apoia o CostTrek",
@@ -258,6 +274,8 @@
     "cityClimateA": "{city} tem em média cerca de {jan} em janeiro e {jul} em julho, com aproximadamente {sunny} dias de sol por ano.",
     "citySafetyQ": "{city} é segura?",
     "citySafetyA": "{city} tem {safety} em 100 no nosso índice de segurança, onde mais alto significa mais seguro.",
+    "cityCarQ": "Dá para viver em {city} sem carro?",
+    "cityCarA": "{city} tem {score}/100 na nossa pontuação sem carro — {walk}/100 em pedonabilidade e {transit}/100 em transportes públicos. Quanto mais alta a pontuação, maior a parte do dia a dia que se resolve a pé ou de transportes em vez de sustentar um carro.",
     "cmpMoveQ": "Mudar de {a} para {b}: mais barato ou mais caro?",
     "cmpMoveA": "Ao mudar de {a} para {b}, seu custo de vida será cerca de {pct}% {word}. O índice de {b} é {ib} ante {ia} de {a} (EUA = 100). Use a ferramenta de salário acima para ver a renda necessária para manter o mesmo padrão.",
     "cmpCheaperQ": "{a} é mais barata do que {b}?",
@@ -286,6 +304,11 @@
     "faqMethodA": "Ordenamos as {n} cidades do nosso índice por {metric}. Os valores são estimativas calibradas, atualizadas à medida que ampliamos a cobertura — um guia prático, não estatísticas oficiais.",
     "faqCompareQ": "Posso comparar estas cidades em detalhe?",
     "faqCompareA": "Sim. Abra qualquer cidade para o seu custo de vida, renda, impostos, vistos e qualidade de vida, ou use a comparação lado a lado do CostTrek.",
+    "walkableExplainer": [
+      "A pedonabilidade pesa no orçamento mais do que parece. Onde as compras, o trabalho e a escola ficam a pé ou a uma curta viagem de elétrico, o carro é opcional — e dispensá-lo retira do total mensal a prestação, o seguro, o combustível, o estacionamento e a manutenção. Numa cidade dependente do automóvel, esse mesmo dinheiro faz simplesmente parte do custo de vida, seja qual for a renda.",
+      "A pontuação abaixo vai de 0 a 100 e responde a uma só pergunta: que parte do dia a dia consegue alcançar a pé? Centros densos e de usos mistos, com quarteirões curtos e comércio ao nível da rua, pontuam alto; cidades onde habitação, trabalho e compras ficam em zonas separadas pontuam baixo. Os transportes públicos são pontuados à parte: uma cidade pode ser pedonal no centro e ter rede fraca, ou o contrário.",
+      "Cada página de cidade junta os dois numa pontuação sem carro e diz se viver sem automóvel ali é realista, a par do índice de custo dos transportes dessa cidade (média dos EUA = 100). Leia-o com a renda: o subúrbio barato deixa de o ser assim que exige um carro, e um centro pedonal mais caro pode acabar por compensar."
+    ],
     "rank": "Posição",
     "cheapest": {
       "title": "Cidades mais baratas para viver",

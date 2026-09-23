@@ -22,6 +22,8 @@ import { getCityProfile, getCountry, countrySlug } from "@/lib/data";
 import { localizedCountry } from "@/lib/i18n/places";
 import CityProfileSections from "@/components/CityProfileSections";
 import CityFacts from "@/components/CityFacts";
+import CarFreeCard from "@/components/CarFreeCard";
+import { carFree } from "@/lib/carfree";
 import FlightWidget from "@/components/FlightWidget";
 import MyTripCard from "@/components/MyTripCard";
 import CostInCurrency, { type MoneyItem } from "@/components/CostInCurrency";
@@ -89,6 +91,7 @@ export default async function CityPage({
 
   const profile = getCityProfile(c.slug);
   const path = `cost-of-living/${c.slug}`;
+  const carFreeData = carFree(c);
 
   // Representative USD figures for the "cost in your currency" widget. Rent is
   // always shown (with a fallback); staples appear when the profile has them.
@@ -294,6 +297,15 @@ export default async function CityPage({
 
       <CityProfileSections locale={l} dict={dict} city={c} />
 
+      {carFreeData && (
+        <CarFreeCard
+          locale={l}
+          dict={dict}
+          city={localizedCityName(l, c)}
+          data={carFreeData}
+        />
+      )}
+
       <div className="mt-10">
         <CostInCurrency
           title={fill(dict.currency.title, { city: localizedCityName(l, c) })}
@@ -389,6 +401,17 @@ export default async function CityPage({
             items.push({
               q: fill(dict.faq.citySafetyQ, { city: label }),
               a: fill(dict.faq.citySafetyA, { city: label, safety }),
+            });
+          }
+          if (carFreeData) {
+            items.push({
+              q: fill(dict.faq.cityCarQ, { city: label }),
+              a: fill(dict.faq.cityCarA, {
+                city: label,
+                score: carFreeData.score,
+                walk: carFreeData.walkability,
+                transit: carFreeData.transit,
+              }),
             });
           }
           return items;

@@ -144,6 +144,16 @@ export default async function CollectionPage({
         {fill(co.intro, vars)}
       </p>
 
+      {/* Long-form explainer — only the walkability hub has one so far; it is
+          our recurring search niche, so the hub earns real prose. */}
+      {list === "walkable" && (
+        <div className="mt-5 space-y-3 max-w-[72ch] leading-relaxed text-[var(--foreground)]">
+          {co.walkableExplainer.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
+        </div>
+      )}
+
       {/* Regional slices — internal links to the metric×region hubs */}
       <div className="mt-5 flex flex-wrap items-center gap-2">
         <span className="text-xs font-bold uppercase tracking-wider text-[var(--muted)] mr-1">

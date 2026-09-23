@@ -1,6 +1,22 @@
 {
   "breadcrumbHome": "Start",
   "methodologyLink": "Wie wir diese Zahlen berechnen",
+  "carFree": {
+    "title": "Kann man in {city} ohne Auto leben?",
+    "score": "Autofrei-Score",
+    "walk": "Fußgängerfreundlichkeit",
+    "transit": "Öffentlicher Nahverkehr",
+    "verdictEasy": "Ja — {city} erreicht {score}/100 auf unserem Autofrei-Score: Arbeitsweg, Besorgungen und Abende in der Stadt funktionieren zu Fuß oder mit den Öffentlichen. Die meisten kommen hier ganz ohne eigenes Auto aus, und das Ersparte bleibt im übrigen Budget.",
+    "verdictDoable": "Weitgehend — mit {score}/100 deckt {city} den Alltag zu Fuß und mit dem Nahverkehr ab; für Wochenendtouren, Großeinkäufe und alles außerhalb des Kerns hilft ein Auto aber weiterhin.",
+    "verdictMixed": "Teilweise — {city} kommt auf {score}/100. In den zentralen Vierteln geht es ohne Auto, in den günstigeren Randlagen brauchen Sie für Arbeitsweg und Einkauf eines. Entweder Auto einplanen oder den Mietaufschlag im Zentrum zahlen.",
+    "verdictCarNeeded": "Kaum — mit {score}/100 ist {city} auf das Auto ausgelegt. Planen Sie ein Fahrzeug samt laufenden Kosten ein, sonst drohen lange Wege und eine kleine Auswahl an Vierteln.",
+    "transportBelow": "Mobilität liegt in {city} bei einem Index von {index} gegenüber 100 im US-Durchschnitt — rund {pct}% günstiger als in einer typischen US-Stadt. Darin stecken Fahrscheine, Kraftstoff und Autokosten; genau diese Position verändert sich am stärksten, wenn das Auto wegfällt.",
+    "transportAbove": "Mobilität liegt in {city} bei einem Index von {index} gegenüber 100 im US-Durchschnitt — rund {pct}% teurer als in einer typischen US-Stadt. Darin stecken Fahrscheine, Kraftstoff und Autokosten; genau diese Position verändert sich am stärksten, wenn das Auto wegfällt.",
+    "transportEqual": "Mobilität liegt in {city} bei einem Index von {index} — gleichauf mit dem US-Durchschnitt. Darin stecken Fahrscheine, Kraftstoff und Autokosten; genau diese Position verändert sich am stärksten, wenn das Auto wegfällt.",
+    "rank": "{city} steht bei der Fußgängerfreundlichkeit auf Platz {rank} von {n} erfassten Städten.",
+    "rankLink": "Die fußgängerfreundlichsten Städte ansehen",
+    "note": "Der Autofrei-Score ist unsere eigene Kennzahl: 60% Fußgängerfreundlichkeit, 40% Nahverkehr, jeweils auf einer Skala von 0–100. Wie unsere übrigen Lebensqualitätswerte sind es kalibrierte Schätzungen, keine amtlichen Statistiken."
+  },
   "support": {
     "nav": "Unterstützen",
     "title": "CostTrek unterstützen",
@@ -258,6 +274,8 @@
     "cityClimateA": "{city} hat im Januar durchschnittlich etwa {jan} und im Juli {jul}, mit rund {sunny} Sonnentagen pro Jahr.",
     "citySafetyQ": "Ist {city} sicher?",
     "citySafetyA": "{city} erreicht {safety} von 100 auf unserem Sicherheitsindex, wobei höher sicherer bedeutet.",
+    "cityCarQ": "Kann man in {city} ohne Auto leben?",
+    "cityCarA": "{city} erreicht {score}/100 auf unserem Autofrei-Score — {walk}/100 bei der Fußgängerfreundlichkeit und {transit}/100 beim Nahverkehr. Je höher der Wert, desto mehr Alltag lässt sich zu Fuß oder mit den Öffentlichen erledigen, statt ein Auto zu unterhalten.",
     "cmpMoveQ": "Umzug von {a} nach {b}: günstiger oder teurer?",
     "cmpMoveA": "Beim Umzug von {a} nach {b} sind die Lebenshaltungskosten etwa {pct}% {word}. Der Index von {b} liegt bei {ib} gegenüber {ia} für {a} (USA = 100). Oben siehst du das nötige Gehalt für denselben Lebensstandard.",
     "cmpCheaperQ": "Ist {a} günstiger als {b}?",
@@ -286,6 +304,11 @@
     "faqMethodA": "Wir sortieren alle {n} Städte unseres Index nach {metric}. Die Werte sind kalibrierte Schätzungen, die mit wachsender Abdeckung aktualisiert werden — ein praktischer Leitfaden, keine amtliche Statistik.",
     "faqCompareQ": "Kann ich diese Städte im Detail vergleichen?",
     "faqCompareA": "Ja. Öffne eine Stadt für Lebenshaltungskosten, Miete, Steuern, Visa und Lebensqualität, oder nutze den direkten Vergleich von CostTrek für zwei Städte.",
+    "walkableExplainer": [
+      "Fußgängerfreundlichkeit entscheidet über mehr Budget, als es zunächst scheint. Wo Besorgungen, Arbeit und Schule zu Fuß oder mit einer kurzen Tramfahrt erreichbar sind, ist das Auto optional — und ohne es entfallen Rate, Versicherung, Kraftstoff, Parken und Wartung. In einer autoabhängigen Stadt gehört genau dieses Geld fest zu den Lebenshaltungskosten, egal wie die Miete aussieht.",
+      "Der Wert unten reicht von 0 bis 100 und beantwortet eine Frage: Wie viel vom Alltag erreichen Sie zu Fuß? Dichte, gemischt genutzte Zentren mit kurzen Blöcken und Läden im Erdgeschoss schneiden gut ab; Städte, in denen Wohnen, Arbeiten und Einkaufen getrennt liegen, schneiden schlecht ab. Der Nahverkehr wird getrennt bewertet — eine Stadt kann im Kern gut zu Fuß funktionieren und trotzdem dünnen Nahverkehr haben, oder umgekehrt.",
+      "Auf jeder Stadtseite werden beide Werte zu einem Autofrei-Score verbunden, zusammen mit dem Verkehrskostenindex der Stadt (US-Durchschnitt = 100). Lesen Sie ihn zusammen mit der Miete: Der günstige Vorort ist nicht mehr günstig, sobald ein Auto dazukommt, und ein teureres, fußläufiges Zentrum kann am Ende besser abschneiden."
+    ],
     "rank": "Rang",
     "cheapest": {
       "title": "Die günstigsten Städte zum Leben",

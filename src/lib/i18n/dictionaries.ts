@@ -198,6 +198,22 @@ export type Dictionary = {
     neighborhoods: string;
     englishLevel: { low: string; moderate: string; high: string; native: string };
   };
+  carFree: {
+    title: string; // {city}
+    score: string;
+    walk: string;
+    transit: string;
+    verdictEasy: string; // {city} {score}
+    verdictDoable: string; // {city} {score}
+    verdictMixed: string; // {city} {score}
+    verdictCarNeeded: string; // {city} {score}
+    transportBelow: string; // {city} {pct} {index}
+    transportAbove: string; // {city} {pct} {index}
+    transportEqual: string; // {city} {index}
+    rank: string; // {city} {rank} {n}
+    rankLink: string;
+    note: string;
+  };
   breadcrumbHome: string;
   methodologyLink: string; // "How we calculate these figures" — links to /methodology
   support: {
@@ -244,6 +260,8 @@ export type Dictionary = {
     cityClimateA: string; // {city} {jan} {jul} {sunny}
     citySafetyQ: string; // {city}
     citySafetyA: string; // {city} {safety}
+    cityCarQ: string; // {city}
+    cityCarA: string; // {city} {score} {walk} {transit}
     cmpMoveQ: string; // {a} {b}
     cmpMoveA: string; // {a} {b} {pct} {word} {ia} {ib}
     cmpCheaperQ: string; // {a} {b}
@@ -274,6 +292,8 @@ export type Dictionary = {
     faqMethodA: string; // {n} {metric}
     faqCompareQ: string;
     faqCompareA: string;
+    /** Long-form explainer shown only on the walkability hub. */
+    walkableExplainer: string[];
     cheapest: { title: string; description: string; metric: string };
     mostExpensive: { title: string; description: string; metric: string };
     lowTax: { title: string; description: string; metric: string };
