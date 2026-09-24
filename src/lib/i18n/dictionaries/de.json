@@ -414,6 +414,8 @@
     "comingSoon": "Bald verfügbar",
     "updated": "Aktualisiert",
     "sources": "Quellen",
+    "officialMark": "Amtliche Statistik",
+    "officialLegend": "✓ = amtliche Statistik ({sources}). Nicht markierte Werte sind Schätzungen von CostTrek.",
     "groups": {
       "cost": "Lebenshaltungskosten",
       "housing": "Wohnen",

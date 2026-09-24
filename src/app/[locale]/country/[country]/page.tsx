@@ -95,8 +95,20 @@ export default async function CountryPage({
       `$${co.economy.avgNetSalaryUsdMonthly.toLocaleString(nl)}`,
       "per month",
     ]);
+  if (co.economy?.minWageUsdMonthly)
+    taxes.push([
+      "Minimum wage",
+      `$${co.economy.minWageUsdMonthly.toLocaleString(nl)}`,
+      co.economy.official?.minWageUsdMonthly
+        ? `per month · ${co.economy.official.minWageUsdMonthly}`
+        : "per month",
+    ]);
   if (co.economy?.lifeExpectancyYears != null)
-    taxes.push(["Life expectancy", `${co.economy.lifeExpectancyYears} yr`]);
+    taxes.push([
+      "Life expectancy",
+      `${co.economy.lifeExpectancyYears} yr`,
+      co.economy.official?.lifeExpectancyYears,
+    ]);
 
   // Data-driven verdict intro — answers "cost of living in {country}".
   const index = Math.round(avgCostIndex(co.code));

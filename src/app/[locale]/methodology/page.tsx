@@ -90,6 +90,10 @@ export default async function MethodologyPage({
               .
             </li>
             <li>
+              <strong>Minimum wage — real (EU + Türkiye).</strong>{" "}
+              Statutory monthly minimum wages come from Eurostat (2026-S2), converted to USD at the Eurostat August 2026 average rate. Other countries' minimum wages, and all average salaries, are estimates. Real figures carry a ✓ in comparison tables.
+            </li>
+            <li>
               <strong>US overall cost index — real.</strong> Anchored to{" "}
               <a
                 href="https://www.bea.gov/data/prices-inflation/regional-price-parities-state-and-metro-area"

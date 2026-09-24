@@ -148,6 +148,10 @@ const es: Record<string, (p: { l: Locale }) => React.ReactNode> = {
           .
         </li>
         <li>
+          <strong>Salario mínimo — real (UE + Turquía).</strong>{" "}
+          Los salarios mínimos mensuales legales proceden de Eurostat (2026-S2), convertidos a USD al tipo medio de Eurostat de agosto de 2026. Los salarios mínimos de otros países y todos los salarios medios son estimaciones. Las cifras reales llevan un ✓ en las tablas comparativas.
+        </li>
+        <li>
           <strong>Índice general de coste de EE.&nbsp;UU. — real.</strong>{" "}
           Anclado a las{" "}
           <a

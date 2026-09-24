@@ -8,7 +8,9 @@ import {
   METRICS,
   formatMetric,
   metricContext,
+  officialSource,
 } from "@/lib/data";
+import { OfficialLegend, OfficialMark, uniqueSources } from "@/components/OfficialMark";
 
 /**
  * Renders every registered metric, grouped, as an A-vs-B table. Metrics where
@@ -49,6 +51,8 @@ export default function MetricComparison({
           label: m.label,
           a: formatMetric(va, m.format, numLocale),
           b: formatMetric(vb, m.format, numLocale),
+          srcA: m.official && va != null ? officialSource(ctxA.country, m.official) : undefined,
+          srcB: m.official && vb != null ? officialSource(ctxB.country, m.official) : undefined,
           winner,
         };
       })
@@ -94,12 +98,14 @@ export default function MetricComparison({
                       style={r.winner === "a" ? { color: "var(--good)" } : undefined}
                     >
                       {r.a}
+                      <OfficialMark source={r.srcA} dict={dict} />
                     </td>
                     <td
                       className="px-4 sm:px-5 py-2 text-right font-medium tabular-nums whitespace-nowrap"
                       style={r.winner === "b" ? { color: "var(--good)" } : undefined}
                     >
                       {r.b}
+                      <OfficialMark source={r.srcB} dict={dict} />
                     </td>
                   </tr>
                 ))}
@@ -112,6 +118,11 @@ export default function MetricComparison({
         {dict.data.groups.taxes} & {dict.data.groups.economy}:{" "}
         {a.country} vs {b.country}. {dict.compare.disclaimer}
       </p>
+      <OfficialLegend
+        sources={uniqueSources(groups.flatMap((g) => g.rows.flatMap((r) => [r.srcA, r.srcB])))}
+        dict={dict}
+        locale={locale}
+      />
     </section>
   );
 }

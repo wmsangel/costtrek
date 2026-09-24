@@ -141,6 +141,10 @@ const de: Record<string, (p: { l: Locale }) => React.ReactNode> = {
           .
         </li>
         <li>
+          <strong>Mindestlohn — tatsächlich (EU + Türkei).</strong>{" "}
+          Gesetzliche monatliche Mindestlöhne stammen von Eurostat (2026-S2), umgerechnet in USD zum Eurostat-Durchschnittskurs August 2026. Mindestlöhne anderer Länder und alle Durchschnittsgehälter sind Schätzungen. Echte Werte tragen in Vergleichstabellen ein ✓.
+        </li>
+        <li>
           <strong>US-Gesamtkostenindex — tatsächlich.</strong> Gekoppelt an{" "}
           <a
             href="https://www.bea.gov/data/prices-inflation/regional-price-parities-state-and-metro-area"

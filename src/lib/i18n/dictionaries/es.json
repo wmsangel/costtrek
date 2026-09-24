@@ -414,6 +414,8 @@
     "comingSoon": "Próximamente",
     "updated": "Actualizado",
     "sources": "Fuentes",
+    "officialMark": "Estadística oficial",
+    "officialLegend": "✓ = estadística oficial ({sources}). Las cifras sin marcar son estimaciones de CostTrek.",
     "groups": {
       "cost": "Coste de vida",
       "housing": "Vivienda",

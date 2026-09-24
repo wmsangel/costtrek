@@ -414,6 +414,8 @@
     "comingSoon": "Coming soon",
     "updated": "Updated",
     "sources": "Sources",
+    "officialMark": "Official statistics",
+    "officialLegend": "✓ = official statistics ({sources}). Unmarked figures are CostTrek estimates.",
     "groups": {
       "cost": "Cost of living",
       "housing": "Housing",

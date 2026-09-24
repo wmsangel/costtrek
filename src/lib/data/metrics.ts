@@ -1,6 +1,6 @@
 import type { City } from "@/lib/cities";
 import { overallIndex } from "@/lib/cities";
-import type { Country, CityProfile } from "./schema";
+import type { Country, CityProfile, OfficialEconomyField } from "./schema";
 import { getCountry } from "./countries";
 import { getCityProfile } from "./cityProfiles";
 
@@ -52,6 +52,8 @@ export type Metric = {
   /** true = higher is better, false = lower is better, null = neutral. */
   higherIsBetter: boolean | null;
   get: (ctx: MetricContext) => number | string | null | undefined;
+  /** Country economy field this metric reads — lets the table mark official statistics vs estimates. */
+  official?: OfficialEconomyField;
 };
 
 export const GROUP_ORDER: MetricGroup[] = [
@@ -98,9 +100,9 @@ export const METRICS: Metric[] = [
 
   // Economy (USD)
   { key: "avgNetSalary", group: "economy", label: "Avg net salary", format: "usdMonth", higherIsBetter: true, get: (c) => c.country?.economy?.avgNetSalaryUsdMonthly },
-  { key: "minWage", group: "economy", label: "Minimum wage", format: "usdMonth", higherIsBetter: true, get: (c) => c.country?.economy?.minWageUsdMonthly || null },
-  { key: "gdpPerCapita", group: "economy", label: "GDP per capita", format: "usd", higherIsBetter: true, get: (c) => c.country?.economy?.gdpPerCapitaUsd },
-  { key: "inflation", group: "economy", label: "Inflation (annual)", format: "percent", higherIsBetter: false, get: (c) => c.country?.economy?.inflationPct },
+  { key: "minWage", group: "economy", label: "Minimum wage", format: "usdMonth", higherIsBetter: true, official: "minWageUsdMonthly", get: (c) => c.country?.economy?.minWageUsdMonthly || null },
+  { key: "gdpPerCapita", group: "economy", label: "GDP per capita", format: "usd", higherIsBetter: true, official: "gdpPerCapitaUsd", get: (c) => c.country?.economy?.gdpPerCapitaUsd },
+  { key: "inflation", group: "economy", label: "Inflation (annual)", format: "percent", higherIsBetter: false, official: "inflationPct", get: (c) => c.country?.economy?.inflationPct },
 
   // Work & digital nomad
   { key: "nomadVisa", group: "work", label: "Digital-nomad visa", format: "text", higherIsBetter: null, get: (c) => { const d = c.country?.immigration.digitalNomad; return d == null ? null : d.available ? "Yes" : "No"; } },
@@ -118,7 +120,7 @@ export const METRICS: Metric[] = [
   { key: "familyFriendly", group: "quality", label: "Family-friendly", format: "number", higherIsBetter: true, get: (c) => c.profile?.qualityOfLife?.familyFriendly },
   { key: "tapWater", group: "quality", label: "Tap water", format: "text", higherIsBetter: null, get: (c) => { const s = c.profile?.qualityOfLife?.tapWaterSafe; return s == null ? null : s ? "Safe to drink" : "Use caution"; } },
   { key: "healthInsurance", group: "quality", label: "Health insurance", format: "usdMonth", higherIsBetter: false, get: (c) => c.profile?.qualityOfLife?.healthInsuranceUsdMonthly },
-  { key: "lifeExpectancy", group: "quality", label: "Life expectancy", format: "years", higherIsBetter: true, get: (c) => c.country?.economy?.lifeExpectancyYears },
+  { key: "lifeExpectancy", group: "quality", label: "Life expectancy", format: "years", higherIsBetter: true, official: "lifeExpectancyYears", get: (c) => c.country?.economy?.lifeExpectancyYears },
   { key: "lgbtq", group: "quality", label: "LGBTQ+ acceptance", format: "text", higherIsBetter: null, get: (c) => c.country?.social?.lgbtqAcceptance },
 
   // Climate

@@ -51,6 +51,12 @@ export type VisaType = {
   note?: string;
 };
 
+export type OfficialEconomyField =
+  | "gdpPerCapitaUsd"
+  | "minWageUsdMonthly"
+  | "lifeExpectancyYears"
+  | "inflationPct";
+
 export type Country = {
   code: string; // ISO-3166 alpha-2
   name: string;
@@ -101,6 +107,11 @@ export type Country = {
     minWageUsdMonthly?: number;
     lifeExpectancyYears?: number;
     inflationPct?: number;
+    /**
+     * Which of the fields above are OFFICIAL statistics (field → short source
+     * label, e.g. "World Bank 2025"). Anything not listed is our estimate.
+     */
+    official?: Partial<Record<OfficialEconomyField, string>>;
   };
 
   /** Social/relocation climate (factual indicators, neutral). */

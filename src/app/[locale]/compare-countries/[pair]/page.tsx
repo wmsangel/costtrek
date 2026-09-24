@@ -7,9 +7,12 @@ import {
   countrySlug,
   getCountryBySlug,
   formatMetric,
+  officialSource,
   type Country,
   type MetricFormat,
+  type OfficialEconomyField,
 } from "@/lib/data";
+import { OfficialLegend, OfficialMark, uniqueSources } from "@/components/OfficialMark";
 import { avgCostIndex, countriesWithCities } from "@/lib/countryStats";
 import { LOCALE_BCP47, isLocale, type Locale } from "@/lib/i18n/config";
 import { fill, getDictionary } from "@/lib/i18n/dictionaries";
@@ -36,6 +39,7 @@ type CM = {
   format: MetricFormat;
   better: boolean | null;
   get: (co: Country, code: string) => number | string | null | undefined;
+  official?: OfficialEconomyField;
 };
 
 const METRICS: CM[] = [
@@ -46,10 +50,10 @@ const METRICS: CM[] = [
   { group: "taxes", label: "Corporate tax", format: "percent", better: false, get: (co) => co.taxes.corporateTax },
   { group: "taxes", label: "Capital gains", format: "percent", better: false, get: (co) => co.taxes.capitalGains?.rate },
   { group: "economy", label: "Avg net salary", format: "usdMonth", better: true, get: (co) => co.economy?.avgNetSalaryUsdMonthly },
-  { group: "economy", label: "Minimum wage", format: "usdMonth", better: true, get: (co) => co.economy?.minWageUsdMonthly || null },
-  { group: "economy", label: "GDP per capita", format: "usd", better: true, get: (co) => co.economy?.gdpPerCapitaUsd },
-  { group: "economy", label: "Inflation (annual)", format: "percent", better: false, get: (co) => co.economy?.inflationPct },
-  { group: "economy", label: "Life expectancy", format: "years", better: true, get: (co) => co.economy?.lifeExpectancyYears },
+  { group: "economy", label: "Minimum wage", format: "usdMonth", better: true, official: "minWageUsdMonthly", get: (co) => co.economy?.minWageUsdMonthly || null },
+  { group: "economy", label: "GDP per capita", format: "usd", better: true, official: "gdpPerCapitaUsd", get: (co) => co.economy?.gdpPerCapitaUsd },
+  { group: "economy", label: "Inflation (annual)", format: "percent", better: false, official: "inflationPct", get: (co) => co.economy?.inflationPct },
+  { group: "economy", label: "Life expectancy", format: "years", better: true, official: "lifeExpectancyYears", get: (co) => co.economy?.lifeExpectancyYears },
   { group: "quality", label: "LGBTQ+ acceptance", format: "text", better: null, get: (co) => co.social?.lgbtqAcceptance },
   { group: "quality", label: "Digital-nomad visa", format: "text", better: null, get: (co) => (co.immigration.digitalNomad ? (co.immigration.digitalNomad.available ? "Yes" : "No") : null) },
 ];
@@ -143,6 +147,8 @@ export default async function CompareCountriesPage({
           label: m.label,
           a: formatMetric(va, m.format, nl),
           b: formatMetric(vb, m.format, nl),
+          srcA: m.official && va != null ? officialSource(a, m.official) : undefined,
+          srcB: m.official && vb != null ? officialSource(b, m.official) : undefined,
           winner,
         };
       })
@@ -271,9 +277,11 @@ export default async function CompareCountriesPage({
                     <td className="px-4 sm:px-5 py-2 text-[var(--muted)]">{r.label}</td>
                     <td className="px-4 sm:px-5 py-2 text-right font-medium tabular-nums whitespace-nowrap" style={r.winner === "a" ? { color: "var(--good)" } : undefined}>
                       {r.a}
+                      <OfficialMark source={r.srcA} dict={dict} />
                     </td>
                     <td className="px-4 sm:px-5 py-2 text-right font-medium tabular-nums whitespace-nowrap" style={r.winner === "b" ? { color: "var(--good)" } : undefined}>
                       {r.b}
+                      <OfficialMark source={r.srcB} dict={dict} />
                     </td>
                   </tr>
                 ))}
@@ -282,6 +290,11 @@ export default async function CompareCountriesPage({
           </tbody>
         </table>
       </div>
+      <OfficialLegend
+        sources={uniqueSources(groups.flatMap((g) => g.rows.flatMap((r) => [r.srcA, r.srcB])))}
+        dict={dict}
+        locale={l}
+      />
 
       <Faq title={dict.faq.title} items={faqItems} />
     </div>

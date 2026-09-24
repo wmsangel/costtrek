@@ -341,6 +341,8 @@ export type Dictionary = {
     comingSoon: string;
     updated: string;
     sources: string;
+    officialMark: string;
+    officialLegend: string;
     groups: {
       cost: string;
       housing: string;

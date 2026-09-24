@@ -4,6 +4,7 @@ export {
   getCountry,
   countrySlug,
   getCountryBySlug,
+  officialSource,
   type CountryCode,
 } from "./countries";
 export { CITY_PROFILES, getCityProfile } from "./cityProfiles";

@@ -1,4 +1,4 @@
-import type { Country } from "./schema";
+import type { Country, OfficialEconomyField } from "./schema";
 
 // Headline tax/visa/economy figures per country. Real-ish and roughly current,
 // but PLACEHOLDER-grade — verify against primary sources before launch.
@@ -8,6 +8,10 @@ const SRC = [
   {
     label: "Economy: World Bank Open Data (GDP per capita, life expectancy, inflation)",
     url: "https://data.worldbank.org",
+  },
+  {
+    label: "Minimum wage (EU + Türkiye): Eurostat earn_mw_cur, 2026-S2",
+    url: "https://ec.europa.eu/eurostat/databrowser/view/earn_mw_cur/default/table",
   },
   { label: "Taxes: national tax authority / OECD (headline figures)" },
 ];
@@ -843,16 +847,52 @@ const EXTRA: Record<string, Extra> = {
   VN: { gdp: 4347, life: 74.6, inflation: 3.6, lgbtq: "moderate" },
   KR: { gdp: 35563, life: 83.6, inflation: 2.3, lgbtq: "low" },
 };
+// REAL statutory monthly minimum wage — Eurostat `earn_mw_cur`, 2026-S2, EUR
+// (countries paying 14 salaries — ES, PT, GR — are annualised ÷ 12 by
+// Eurostat), converted at the ECB/Eurostat Aug-2026 average 1 EUR = 1.1593 USD
+// (`ert_bil_eur_m`). Pulled 2026-09-24. Countries with no statutory minimum
+// (AT, IT, CH…) aren't in the Eurostat table and keep their inline value.
+const EUR_USD = 1.1593;
+const EUROSTAT_MIN_WAGE_EUR: Record<string, number> = {
+  FR: 1867, DE: 2343, NL: 2338, IE: 2391, ES: 1425, PT: 1073, PL: 1119,
+  CZ: 923, HU: 906, GR: 1073, EE: 946, TR: 621,
+};
+
 for (const [code, ex] of Object.entries(EXTRA)) {
   const c = (COUNTRIES as Record<string, Country>)[code];
   if (!c) continue;
+  const official: NonNullable<NonNullable<Country["economy"]>["official"]> = {
+    lifeExpectancyYears: "World Bank 2024",
+  };
+  if (ex.gdp != null) official.gdpPerCapitaUsd = "World Bank 2025";
+  if (ex.inflation != null) official.inflationPct = "World Bank 2025";
   c.economy = {
     ...c.economy,
     gdpPerCapitaUsd: ex.gdp ?? c.economy?.gdpPerCapitaUsd,
     lifeExpectancyYears: ex.life,
     ...(ex.inflation != null ? { inflationPct: ex.inflation } : {}),
+    official,
   };
   c.social = { lgbtqAcceptance: ex.lgbtq };
+}
+for (const [code, eur] of Object.entries(EUROSTAT_MIN_WAGE_EUR)) {
+  const c = (COUNTRIES as Record<string, Country>)[code];
+  if (!c?.economy) continue;
+  c.economy.minWageUsdMonthly = Math.round(eur * EUR_USD);
+  c.economy.official = { ...c.economy.official, minWageUsdMonthly: "Eurostat 2026" };
+}
+// US federal minimum: $7.25/h × 40 h × 52 wk ÷ 12 (U.S. Dept. of Labor).
+{
+  const us = (COUNTRIES as Record<string, Country>).US;
+  if (us?.economy) us.economy.official = { ...us.economy.official, minWageUsdMonthly: "US DOL (federal)" };
+}
+
+/** Source label if `field` is an official statistic for this country, else undefined (= estimate). */
+export function officialSource(
+  country: Country | undefined,
+  field: OfficialEconomyField,
+): string | undefined {
+  return country?.economy?.official?.[field];
 }
 
 export function getCountry(code: string): Country | undefined {
