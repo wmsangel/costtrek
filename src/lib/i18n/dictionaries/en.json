@@ -149,7 +149,8 @@
   "countriesIndex": {
     "title": "Cost of living by country",
     "subtitle": "Every country in our index — national taxes, visas, salaries and the cities we track.",
-    "linkTitle": "Browse by country"
+    "linkTitle": "Browse by country",
+    "popularComparisons": "Popular country comparisons"
   },
   "guides": {
     "nav": "Guides",
@@ -187,7 +188,8 @@
     "breadcrumb": "Compare countries",
     "title": "{a} vs {b}: cost of living & taxes",
     "subtitle": "{b} is {pct} {word} than {a}. Compare cost of living, taxes, salaries and visas — and the salary you’d need in {b} to match {a}.",
-    "compareWith": "Compare {country} with other countries"
+    "compareWith": "Compare {country} with other countries",
+    "related": "Related comparisons"
   },
   "compare": {
     "breadcrumb": "Compare",

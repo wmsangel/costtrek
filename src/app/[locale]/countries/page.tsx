@@ -13,6 +13,7 @@ import { getDictionary } from "@/lib/i18n/dictionaries";
 import { localizedCountryNameByCode } from "@/lib/i18n/places";
 import { pageMetadata, SITE_NAME } from "@/lib/seo/site";
 import { breadcrumbJsonLd } from "@/lib/seo/jsonld";
+import { HEADLINE_COUNTRY_CODES } from "@/lib/seo/indexable";
 import JsonLd from "@/components/JsonLd";
 import Mountains from "@/components/Mountains";
 
@@ -59,6 +60,22 @@ export default async function CountriesPage({
       .sort((a, b) => avgCostIndex(a.code) - avgCostIndex(b.code)),
   })).filter((g) => g.countries.length > 0);
 
+  // "Popular comparisons" — indexable country pairs among the highest-demand
+  // countries. Surfaced on this well-crawled hub so Googlebot has a short path
+  // to the top country-vs-country pages (they were otherwise reached only from
+  // deep per-country pages and left uncrawled).
+  const headline = countries.filter((co) => HEADLINE_COUNTRY_CODES.has(co.code));
+  const popularPairs: [(typeof headline)[number], (typeof headline)[number]][] = [];
+  for (let i = 0; i < headline.length; i++) {
+    for (let j = i + 1; j < headline.length; j++) {
+      const [p, q] =
+        countrySlug(headline[i]) < countrySlug(headline[j])
+          ? [headline[i], headline[j]]
+          : [headline[j], headline[i]];
+      popularPairs.push([p, q]);
+    }
+  }
+
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:py-10">
       <JsonLd
@@ -86,6 +103,26 @@ export default async function CountriesPage({
           </p>
         </div>
       </section>
+
+      {popularPairs.length > 0 && (
+        <section className="mt-8">
+          <h2 className="mag-h2 mb-3">
+            ⚖ {dict.countriesIndex.popularComparisons}
+          </h2>
+          <div className="flex flex-wrap gap-2">
+            {popularPairs.map(([p, q]) => (
+              <Link
+                key={`${p.code}-${q.code}`}
+                href={`/${l}/compare-countries/${countrySlug(p)}-vs-${countrySlug(q)}`}
+                className="text-sm rounded-full border border-[var(--border)] px-3 py-1.5 hover:border-[var(--accent)]"
+              >
+                {localizedCountryNameByCode(l, p.code, p.name)} {dict.compare.vs}{" "}
+                {localizedCountryNameByCode(l, q.code, q.name)}
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       <div className="mt-8 space-y-8">
         {groups.map((g) => (

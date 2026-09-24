@@ -149,7 +149,8 @@
   "countriesIndex": {
     "title": "Custo de vida por país",
     "subtitle": "Cada país do nosso índice — impostos nacionais, vistos, salários e as cidades que acompanhamos.",
-    "linkTitle": "Explorar por país"
+    "linkTitle": "Explorar por país",
+    "popularComparisons": "Comparações de países populares"
   },
   "guides": {
     "nav": "Guias",
@@ -187,7 +188,8 @@
     "breadcrumb": "Comparar países",
     "title": "{a} vs {b}: custo de vida e impostos",
     "subtitle": "{b} é {pct} {word} que {a}. Compare custo de vida, impostos, salários e vistos — e o salário de que precisaria em {b} para igualar {a}.",
-    "compareWith": "Comparar {country} com outros países"
+    "compareWith": "Comparar {country} com outros países",
+    "related": "Comparações relacionadas"
   },
   "compare": {
     "breadcrumb": "Comparar",

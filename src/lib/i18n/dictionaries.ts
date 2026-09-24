@@ -68,12 +68,14 @@ export type Dictionary = {
     title: string;
     subtitle: string;
     linkTitle: string;
+    popularComparisons: string;
   };
   compareCountries: {
     breadcrumb: string;
     title: string; // {a} {b}
     subtitle: string; // {a} {b}
     compareWith: string; // {country}
+    related: string;
   };
   guides: {
     nav: string;

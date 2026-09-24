@@ -61,6 +61,17 @@ export const MAJOR_COUNTRY_CODES = new Set<string>([
   "CA", "AU", "MX", "BR", "AR", "CO", "TR",
 ]);
 
+/**
+ * Highest-demand countries — used to surface a curated "popular comparisons"
+ * grid on the countries index (a well-crawled hub), so Googlebot has a short
+ * path to the top country-vs-country pages instead of only reaching them from
+ * deep per-country pages. All are in MAJOR_COUNTRY_CODES, so every pair is
+ * indexable.
+ */
+export const HEADLINE_COUNTRY_CODES = new Set<string>([
+  "US", "GB", "DE", "FR", "CA", "AU", "ES",
+]);
+
 /** A city-vs-city compare page is indexable only between two major cities. */
 export function cityPairIndexable(aSlug: string, bSlug: string): boolean {
   return MAJOR_CITY_SLUGS.has(aSlug) && MAJOR_CITY_SLUGS.has(bSlug);

@@ -149,7 +149,8 @@
   "countriesIndex": {
     "title": "Lebenshaltungskosten nach Land",
     "subtitle": "Jedes Land in unserem Index — nationale Steuern, Visa, Gehälter und die erfassten Städte.",
-    "linkTitle": "Nach Land durchsuchen"
+    "linkTitle": "Nach Land durchsuchen",
+    "popularComparisons": "Beliebte Ländervergleiche"
   },
   "guides": {
     "nav": "Ratgeber",
@@ -187,7 +188,8 @@
     "breadcrumb": "Länder vergleichen",
     "title": "{a} vs {b}: Lebenshaltungskosten & Steuern",
     "subtitle": "{b} ist {pct} {word} als {a}. Vergleiche Lebenshaltungskosten, Steuern, Gehälter und Visa — und das Gehalt, das du in {b} bräuchtest, um mit {a} gleichzuziehen.",
-    "compareWith": "{country} mit anderen Ländern vergleichen"
+    "compareWith": "{country} mit anderen Ländern vergleichen",
+    "related": "Ähnliche Vergleiche"
   },
   "compare": {
     "breadcrumb": "Vergleich",

@@ -9,6 +9,7 @@ import {
   type City,
 } from "@/lib/cities";
 import { countriesWithCities, avgCostIndex } from "@/lib/countryStats";
+import { countryPairIndexable } from "@/lib/seo/indexable";
 import {
   countrySlug,
   getCountry,
@@ -277,28 +278,36 @@ export default async function CountryPage({
         </div>
       </section>
 
-      <section className="mt-12">
-        <h2 className="mag-h2 mb-4">
-          ⚖ {fill(dict.compareCountries.compareWith, { country: name })}
-        </h2>
-        <div className="flex flex-wrap gap-2">
-          {countriesWithCities()
-            .filter((x) => x.code !== co.code)
-            .map((x) => {
-              const [p, q] =
-                countrySlug(co) < countrySlug(x) ? [co, x] : [x, co];
-              return (
-                <Link
-                  key={x.code}
-                  href={`/${l}/compare-countries/${countrySlug(p)}-vs-${countrySlug(q)}`}
-                  className="text-sm rounded-full border border-[var(--border)] px-3 py-1.5 hover:border-[var(--accent)]"
-                >
-                  {name} {dict.compare.vs} {x.name}
-                </Link>
-              );
-            })}
-        </div>
-      </section>
+      {(() => {
+        // Only major↔major country pairs are indexable — link only those, so we
+        // concentrate crawl on pages we actually want indexed (not noindex ones).
+        const partners = countriesWithCities().filter(
+          (x) => x.code !== co.code && countryPairIndexable(co.code, x.code),
+        );
+        if (partners.length === 0) return null;
+        return (
+          <section className="mt-12">
+            <h2 className="mag-h2 mb-4">
+              ⚖ {fill(dict.compareCountries.compareWith, { country: name })}
+            </h2>
+            <div className="flex flex-wrap gap-2">
+              {partners.map((x) => {
+                const [p, q] =
+                  countrySlug(co) < countrySlug(x) ? [co, x] : [x, co];
+                return (
+                  <Link
+                    key={x.code}
+                    href={`/${l}/compare-countries/${countrySlug(p)}-vs-${countrySlug(q)}`}
+                    className="text-sm rounded-full border border-[var(--border)] px-3 py-1.5 hover:border-[var(--accent)]"
+                  >
+                    {name} {dict.compare.vs} {x.name}
+                  </Link>
+                );
+              })}
+            </div>
+          </section>
+        );
+      })()}
     </div>
   );
 }

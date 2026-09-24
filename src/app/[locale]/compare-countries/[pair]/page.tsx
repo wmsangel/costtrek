@@ -18,7 +18,7 @@ import { LOCALE_BCP47, isLocale, type Locale } from "@/lib/i18n/config";
 import { fill, getDictionary } from "@/lib/i18n/dictionaries";
 import { localizedCountryNameByCode } from "@/lib/i18n/places";
 import { pageMetadata } from "@/lib/seo/site";
-import { countryPairIndexable } from "@/lib/seo/indexable";
+import { countryPairIndexable, HEADLINE_COUNTRY_CODES } from "@/lib/seo/indexable";
 import { breadcrumbJsonLd } from "@/lib/seo/jsonld";
 import JsonLd from "@/components/JsonLd";
 import Mountains from "@/components/Mountains";
@@ -155,6 +155,25 @@ export default async function CompareCountriesPage({
       .filter((r): r is NonNullable<typeof r> => r !== null);
     return { group, rows };
   }).filter((g) => g.rows.length > 0);
+
+  // Related comparisons — indexable pairs sharing a or b with a headline
+  // country. Gives crawl a lateral path between the top country compares (which
+  // were otherwise reached only from deep per-country pages and left uncrawled).
+  const relatedSeen = new Set<string>([`${countrySlug(a)}-vs-${countrySlug(b)}`]);
+  const relatedPairs: [Country, Country][] = [];
+  for (const base of [a, b]) {
+    for (const x of countriesWithCities()) {
+      if (x.code === a.code || x.code === b.code) continue;
+      if (!HEADLINE_COUNTRY_CODES.has(x.code)) continue;
+      if (!countryPairIndexable(base.code, x.code)) continue;
+      const [p, q] =
+        countrySlug(base) < countrySlug(x) ? [base, x] : [x, base];
+      const key = `${countrySlug(p)}-vs-${countrySlug(q)}`;
+      if (relatedSeen.has(key)) continue;
+      relatedSeen.add(key);
+      relatedPairs.push([p, q]);
+    }
+  }
 
   // FAQ (reuses the city-compare templates with country data)
   const avgA = avgCostIndex(a.code);
@@ -295,6 +314,34 @@ export default async function CompareCountriesPage({
         dict={dict}
         locale={l}
       />
+
+      <section className="mt-10">
+        <h2 className="mag-h2 mb-3">⚖ {dict.compareCountries.related}</h2>
+        <div className="flex flex-wrap gap-2">
+          <Link
+            href={`/${l}/country/${countrySlug(a)}`}
+            className="text-sm rounded-full border border-[var(--border)] px-3 py-1.5 hover:border-[var(--accent)]"
+          >
+            <span aria-hidden="true">{flagEmoji(a.code)}</span> {aName}
+          </Link>
+          <Link
+            href={`/${l}/country/${countrySlug(b)}`}
+            className="text-sm rounded-full border border-[var(--border)] px-3 py-1.5 hover:border-[var(--accent)]"
+          >
+            <span aria-hidden="true">{flagEmoji(b.code)}</span> {bName}
+          </Link>
+          {relatedPairs.map(([p, q]) => (
+            <Link
+              key={`${p.code}-${q.code}`}
+              href={`/${l}/compare-countries/${countrySlug(p)}-vs-${countrySlug(q)}`}
+              className="text-sm rounded-full border border-[var(--border)] px-3 py-1.5 hover:border-[var(--accent)]"
+            >
+              {localizedCountryNameByCode(l, p.code, p.name)} {dict.compare.vs}{" "}
+              {localizedCountryNameByCode(l, q.code, q.name)}
+            </Link>
+          ))}
+        </div>
+      </section>
 
       <Faq title={dict.faq.title} items={faqItems} />
     </div>
