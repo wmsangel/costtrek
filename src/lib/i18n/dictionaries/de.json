@@ -1,6 +1,13 @@
 {
   "breadcrumbHome": "Start",
   "methodologyLink": "Wie wir diese Zahlen berechnen",
+  "feedback": {
+    "open": "Unterstützen & Feedback",
+    "support": "Unterstütze uns",
+    "report": "Feedback senden",
+    "mailSubject": "CostTrek Feedback",
+    "mailBodyHint": "Was ist das Problem oder die Idee? (Diese E-Mail enthält die Seite, auf der du bist.)"
+  },
   "carFree": {
     "title": "Kann man in {city} ohne Auto leben?",
     "score": "Autofrei-Score",

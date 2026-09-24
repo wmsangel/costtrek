@@ -1,6 +1,13 @@
 {
   "breadcrumbHome": "Accueil",
   "methodologyLink": "Comment nous calculons ces chiffres",
+  "feedback": {
+    "open": "Soutien & retour",
+    "support": "Soutenez-nous",
+    "report": "Envoyer un retour",
+    "mailSubject": "Retour CostTrek",
+    "mailBodyHint": "Quel est le problème ou l'idée ? (Cet e-mail inclut la page où vous êtes.)"
+  },
   "carFree": {
     "title": "Peut-on vivre à {city} sans voiture ?",
     "score": "Score sans voiture",

@@ -243,6 +243,13 @@ export type Dictionary = {
   };
   breadcrumbHome: string;
   methodologyLink: string; // "How we calculate these figures" — links to /methodology
+  feedback: {
+    open: string; // aria-label for the floating button
+    support: string;
+    report: string;
+    mailSubject: string;
+    mailBodyHint: string;
+  };
   support: {
     nav: string;
     title: string;

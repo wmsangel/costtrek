@@ -13,6 +13,7 @@ import { getDictionary } from "@/lib/i18n/dictionaries";
 import LanguageDropdown from "@/components/LanguageDropdown";
 import ThemeToggle from "@/components/ThemeToggle";
 import CookieBanner from "@/components/CookieBanner";
+import FeedbackFab from "@/components/FeedbackFab";
 import NetworkStrip from "@/components/NetworkStrip";
 import Analytics from "@/components/Analytics";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
@@ -209,6 +210,7 @@ export default async function LocaleLayout({
           moreHref={`/${locale}/cookies`}
           strings={dict.cookie}
         />
+        <FeedbackFab locale={locale} s={dict.feedback} />
         <Analytics />
         <VercelAnalytics />
         {/* Cloudflare Web Analytics — маячок без кук и без согласия; сайт идёт мимо прокси, поэтому вставляется руками */}

@@ -1,6 +1,13 @@
 {
   "breadcrumbHome": "Home",
   "methodologyLink": "How we calculate these figures",
+  "feedback": {
+    "open": "Support & feedback",
+    "support": "Support us",
+    "report": "Send feedback",
+    "mailSubject": "CostTrek feedback",
+    "mailBodyHint": "What's the problem or idea? (This email includes the page you're on.)"
+  },
   "carFree": {
     "title": "Can you live in {city} without a car?",
     "score": "Car-free score",
