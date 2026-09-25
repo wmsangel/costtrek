@@ -121,14 +121,6 @@ export default async function LocaleLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${archivo.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)]">
-        {/* Travelpayouts verification / monetisation loader — inlined so it's
-            present in the static HTML of every page (reliable verification). */}
-        <script
-          data-cmp-ab="2"
-          dangerouslySetInnerHTML={{
-            __html: `(function(){var s=document.createElement("script");s.async=1;s.setAttribute("data-cmp-ab","2");s.src="https://emrldco.com/NTY3MzE3.js?t=567317";document.head.appendChild(s);})();`,
-          }}
-        />
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light'){document.documentElement.dataset.theme=t;}}catch(e){}})();`,
@@ -229,16 +221,6 @@ export default async function LocaleLayout({
           strategy="afterInteractive"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=pub-5535516142831006"
           crossOrigin="anonymous"
-        />
-        {/* Travelpayouts web-monetization (own Travelpayouts marker 567317),
-            installed per Travelpayouts' instructions: site-wide, loads its own
-            CMP (data-cmp-ab) to handle ad consent. NOTE: an auto-ad injector —
-            remove before an AdSense review if it conflicts. */}
-        <Script
-          id="travelpayouts-web"
-          strategy="afterInteractive"
-          src="https://emrldco.com/NTY3MzE3.js?t=567317"
-          data-cmp-ab="2"
         />
       </body>
     </html>
