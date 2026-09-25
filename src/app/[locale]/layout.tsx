@@ -230,6 +230,16 @@ export default async function LocaleLayout({
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=pub-5535516142831006"
           crossOrigin="anonymous"
         />
+        {/* Travelpayouts web-monetization (own Travelpayouts marker 567317),
+            installed per Travelpayouts' instructions: site-wide, loads its own
+            CMP (data-cmp-ab) to handle ad consent. NOTE: an auto-ad injector —
+            remove before an AdSense review if it conflicts. */}
+        <Script
+          id="travelpayouts-web"
+          strategy="afterInteractive"
+          src="https://emrldco.com/NTY3MzE3.js?t=567317"
+          data-cmp-ab="2"
+        />
       </body>
     </html>
   );
