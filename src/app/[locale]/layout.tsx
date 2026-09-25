@@ -14,6 +14,7 @@ import LanguageDropdown from "@/components/LanguageDropdown";
 import ThemeToggle from "@/components/ThemeToggle";
 import CookieBanner from "@/components/CookieBanner";
 import FeedbackFab from "@/components/FeedbackFab";
+import { TRAVELPAYOUTS_DRIVE } from "@/lib/flags";
 import NetworkStrip from "@/components/NetworkStrip";
 import Analytics from "@/components/Analytics";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
@@ -222,6 +223,17 @@ export default async function LocaleLayout({
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=pub-5535516142831006"
           crossOrigin="anonymous"
         />
+        {/* Travelpayouts Drive (native contextual travel affiliate, marker
+            567317). Gated by a single flag — flip TRAVELPAYOUTS_DRIVE to false +
+            push to remove site-wide before an AdSense review. */}
+        {TRAVELPAYOUTS_DRIVE && (
+          <Script
+            id="travelpayouts-web"
+            strategy="afterInteractive"
+            src="https://emrldco.com/NTY3MzE3.js?t=567317"
+            data-cmp-ab="2"
+          />
+        )}
       </body>
     </html>
   );
