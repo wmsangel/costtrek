@@ -24,7 +24,7 @@ export const NETWORK_SITES: NetworkSite[] = [
   {
     url: "https://iznkit.com/en",
     name: "iznkit",
-    tagline: "Tools that make clean PDFs",
+    tagline: "Calculators, converters & dev tools",
     emoji: "📄",
   },
   {
