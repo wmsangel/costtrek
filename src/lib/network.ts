@@ -94,4 +94,10 @@ export const NETWORK_SITES: NetworkSite[] = [
     tagline: "One great find every day",
     emoji: "✨",
   },
+  {
+    url: "https://dasha-motion.com/",
+    name: "Dasha Motion",
+    tagline: "Motion design & 2D animation",
+    emoji: "🎬",
+  },
 ];
