@@ -1,6 +1,7 @@
 import type { City } from "@/lib/cities";
 import type { Country, CityProfile, ReferralLink } from "@/lib/data";
 import { getCountry, getCityProfile, translateCountry } from "@/lib/data";
+import { qualityOfLifeScore } from "@/lib/data/qol";
 import { PROFILE_TR } from "@/lib/data/cityProfiles-i18n";
 import { type Dictionary, fill } from "@/lib/i18n/dictionaries";
 import { LOCALE_BCP47, type Locale } from "@/lib/i18n/config";
@@ -245,6 +246,7 @@ export default function CityProfileSections({
         <section className="mt-10">
           <SectionTitle glyph="❖">{t.sections.quality}</SectionTitle>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <QStat k={L.qol_overall} v={qualityOfLifeScore(profile.qualityOfLife) ?? undefined} suffix="/100" />
             <QStat k={L.qol_safety} v={profile.qualityOfLife.safetyIndex} suffix="/100" />
             <QStat k={L.qol_healthcare} v={profile.qualityOfLife.healthcareIndex} suffix="/100" />
             <QStat k={L.qol_pollution} v={profile.qualityOfLife.pollutionIndex} suffix="/100" />

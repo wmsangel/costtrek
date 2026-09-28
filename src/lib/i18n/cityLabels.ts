@@ -30,6 +30,7 @@ export const CITY_LABELS_EN = {
   house_buyCentre: "Buy price, centre",
   house_buyOutside: "Buy price, outside centre",
   // Quality of life
+  qol_overall: "Quality of life",
   qol_safety: "Safety",
   qol_healthcare: "Healthcare",
   qol_pollution: "Pollution",

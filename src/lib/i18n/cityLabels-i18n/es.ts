@@ -16,6 +16,7 @@ const es: Record<string, string> = {
   house_rent3brCentre: "Alquiler, 3 hab. centro",
   house_buyCentre: "Precio de compra, centro",
   house_buyOutside: "Precio de compra, afueras",
+  qol_overall: "Calidad de vida",
   qol_safety: "Seguridad",
   qol_healthcare: "Sanidad",
   qol_pollution: "Contaminación",

@@ -2,6 +2,103 @@ import Link from "next/link";
 import type { GuideContent } from "@/content/guides";
 
 const es: Record<string, GuideContent> = {
+  "digital-nomad-visa-guide": {
+    title: "Visados para nómadas digitales: cómo funcionan y cómo elegir tu base",
+    excerpt:
+      "Un visado de trabajo remoto te permite vivir en algún lugar de forma legal mientras cobras del extranjero. Esto es lo que realmente es un visado para nómadas digitales, qué comprobar antes de solicitarlo y cómo elegir una ciudad que puedas permitirte.",
+    Body: ({ l }) => (
+      <>
+        <p>
+          «Visado para nómadas digitales» es uno de los términos de reubicación
+          más buscados, y uno de los peor entendidos. No es un truco ni un sello
+          de turista. Es un permiso de residencia concreto que te permite vivir en
+          un país de forma legal mientras obtienes tus ingresos de empleadores o
+          clientes <em>fuera</em> de ese país. Aquí va la versión honesta y
+          práctica.
+        </p>
+
+        <h2>Qué es realmente un visado para nómadas digitales</h2>
+        <p>
+          Un visado de turista te permite visitar; normalmente prohíbe trabajar y
+          te limita a unos pocos meses. Un visado para nómadas digitales (a veces
+          llamado visado de trabajo remoto o de «trabajador independiente») está
+          pensado para personas cuyo empleo viaja con ellas: demuestras que tus
+          ingresos vienen del extranjero y, a cambio, obtienes el derecho a residir
+          —normalmente <strong>de 6 meses a 2 años</strong>, a menudo renovable—.
+          Hoy lo ofrecen decenas de países, desde Portugal, España y Estonia hasta
+          los Emiratos Árabes Unidos, Tailandia y varias naciones del Caribe.
+        </p>
+
+        <h2>Qué comprobar antes de solicitarlo</h2>
+        <p>
+          El marketing siempre habla de playas; la decisión siempre está en la
+          letra pequeña. Cinco cosas determinan si un visado de nómada te conviene:
+        </p>
+        <ul>
+          <li>
+            <strong>Requisito de ingresos.</strong> Casi todos los programas fijan
+            un ingreso mensual mínimo —habitualmente entre unos €2,500–€4,000
+            aproximadamente—, que se demuestra con nóminas o extractos bancarios
+            recientes. Los países más caros exigen umbrales más altos.
+          </li>
+          <li>
+            <strong>Impuestos.</strong> Esta es la parte que la gente confunde. Un
+            visado es inmigración, no legislación fiscal. Quedarte más de ~183 días
+            suele convertirte en <em>residente fiscal</em>, incluso sobre ingresos
+            extranjeros, aunque algunos países ofrecen tipos fijos especiales o
+            exenciones para los recién llegados. Calcula los impuestos antes de
+            enamorarte del lugar.
+          </li>
+          <li>
+            <strong>Duración y renovación.</strong> Un visado de 1 año que no puedes
+            renovar es un plan de vida muy distinto de uno de 2 años que conduce a
+            la residencia permanente. Comprueba el recorrido, no solo la entrada.
+          </li>
+          <li>
+            <strong>Familia.</strong> Si un cónyuge y los hijos pueden acompañarte
+            —y si pueden trabajar o estudiar— varía mucho y cambia las cuentas.
+          </li>
+          <li>
+            <strong>Seguro médico.</strong> Casi todos exigen un seguro médico
+            internacional privado para toda la estancia; presupuéstalo desde el
+            primer día.
+          </li>
+        </ul>
+
+        <h2>Luego elige una ciudad que de verdad puedas permitirte</h2>
+        <p>
+          Cumplir el umbral de ingresos es solo la mitad de la cuestión; la otra
+          mitad es lo que ese ingreso <em>compra</em> una vez que llegas. Los mismos
+          €3,000/mes son una vida cómoda en Lisboa o Tallin y muy ajustada en
+          Singapur o Zúrich. Esa diferencia es justo para lo que sirve esta web:
+          consulta las{" "}
+          <Link href={`/${l}/best/cheapest`}>ciudades más baratas para vivir</Link>,
+          revisa el perfil fiscal y de costes de un país en la{" "}
+          <Link href={`/${l}/countries`}>visión general de países</Link> y luego{" "}
+          <Link href={`/${l}`}>compara dos ciudades una al lado de la otra</Link>{" "}
+          para ver el salario que realmente necesita cada una.
+        </p>
+
+        <h2>Una forma sencilla de hacer la preselección</h2>
+        <p>
+          Trabájalo en este orden: (1) enumera los países cuyo visado de nómada
+          cumples realmente por ingresos; (2) descarta aquellos cuyo tratamiento
+          fiscal de los ingresos extranjeros sea un impedimento; (3) de lo que
+          quede, ordena las ciudades por coste de vida frente a tus ingresos; (4)
+          verifica los dos o tres costes que más te importan —alquiler, seguro
+          médico e impuestos— frente a una fuente local actualizada. El visado te
+          abre la puerta; el coste de vida decide si te quedarías.
+        </p>
+
+        <p>
+          Una advertencia honesta: las normas de visado y los umbrales de ingresos
+          cambian a menudo, y nada de esto es asesoramiento legal ni de inmigración.
+          Úsalo para preseleccionar y luego confirma cada requisito en el portal
+          oficial del gobierno del país de destino antes de comprometerte.
+        </p>
+      </>
+    ),
+  },
   "cost-of-living-index-explained": {
     title: "Qué significa realmente un índice de coste de vida de 100",
     excerpt:

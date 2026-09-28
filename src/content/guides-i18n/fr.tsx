@@ -2,6 +2,110 @@ import Link from "next/link";
 import type { GuideContent } from "@/content/guides";
 
 const fr: Record<string, GuideContent> = {
+  "digital-nomad-visa-guide": {
+    title: "Visas pour nomades numériques : comment ils fonctionnent et comment choisir sa base",
+    excerpt:
+      "Un visa de travail à distance vous permet de vivre légalement quelque part tout en gagnant votre vie depuis l'étranger. Voici ce qu'est vraiment un visa pour nomade numérique, ce qu'il faut vérifier avant de postuler, et comment choisir une ville à votre portée.",
+    Body: ({ l }) => (
+      <>
+        <p>
+          &laquo; Visa pour nomade numérique &raquo; est l&apos;un des termes de
+          relocalisation les plus recherchés — et l&apos;un des plus mal compris.
+          Ce n&apos;est ni une astuce ni un simple tampon de touriste. C&apos;est un
+          titre de séjour bien précis qui vous permet de vivre légalement dans un
+          pays tout en tirant vos revenus d&apos;employeurs ou de clients situés
+          <em> en dehors</em> de ce pays. Voici la version honnête et pratique.
+        </p>
+
+        <h2>Ce qu&apos;est réellement un visa pour nomade numérique</h2>
+        <p>
+          Un visa de touriste vous permet de visiter ; il interdit généralement de
+          travailler et vous limite à quelques mois. Un visa pour nomade numérique
+          (parfois appelé visa de travail à distance ou visa de &laquo; travailleur
+          indépendant &raquo;) est conçu pour les personnes dont le métier voyage
+          avec elles : vous démontrez que vos revenus proviennent de l&apos;étranger
+          et, en échange, vous obtenez le droit de séjourner — généralement de{" "}
+          <strong>6 mois à 2 ans</strong>, souvent renouvelable. Des dizaines de
+          pays en proposent désormais un, du Portugal, de l&apos;Espagne et de
+          l&apos;Estonie aux Émirats arabes unis, à la Thaïlande et à plusieurs
+          nations des Caraïbes.
+        </p>
+
+        <h2>Ce qu&apos;il faut vérifier avant de postuler</h2>
+        <p>
+          Le marketing parle toujours de plages ; la décision se joue toujours dans
+          les détails. Cinq éléments déterminent si un visa nomade vous convient :
+        </p>
+        <ul>
+          <li>
+            <strong>Le seuil de revenus.</strong> Presque tous les programmes fixent
+            un revenu mensuel minimum — souvent compris entre environ €2,500–€4,000,
+            justifié par des fiches de paie ou des relevés bancaires récents. Les
+            pays où la vie est plus chère placent la barre plus haut.
+          </li>
+          <li>
+            <strong>La fiscalité.</strong> C&apos;est là que les gens se trompent. Un
+            visa relève de l&apos;immigration, pas du droit fiscal. Rester au-delà
+            d&apos;environ 183 jours fait souvent de vous un{" "}
+            <em>résident fiscal</em>, même sur des revenus étrangers — même si
+            certains pays offrent des taux forfaitaires ou des exonérations spéciales
+            aux nouveaux arrivants. Modélisez l&apos;impôt avant de tomber amoureux
+            de l&apos;endroit.
+          </li>
+          <li>
+            <strong>Durée &amp; renouvellement.</strong> Un visa d&apos;un an non
+            renouvelable n&apos;a rien à voir, comme projet de vie, avec un visa de
+            deux ans menant à la résidence permanente. Vérifiez le parcours, pas
+            seulement l&apos;entrée.
+          </li>
+          <li>
+            <strong>La famille.</strong> La possibilité pour un conjoint et des
+            enfants de vous rejoindre — et de travailler ou d&apos;étudier — varie
+            énormément et change tout le calcul.
+          </li>
+          <li>
+            <strong>L&apos;assurance santé.</strong> Presque tous exigent une
+            couverture santé internationale privée pour toute la durée du séjour ;
+            prévoyez-la dès le premier jour.
+          </li>
+        </ul>
+
+        <h2>Choisissez ensuite une ville réellement à votre portée</h2>
+        <p>
+          Atteindre le seuil de revenus ne règle que la moitié de la question —
+          l&apos;autre moitié, c&apos;est ce que ce revenu <em>permet d&apos;acheter</em>{" "}
+          une fois sur place. Les mêmes €3,000 par mois offrent une vie confortable à
+          Lisbonne ou à Tallinn, et une vie serrée à Singapour ou à Zurich. C&apos;est
+          précisément à cela que sert ce site : consultez les{" "}
+          <Link href={`/${l}/best/cheapest`}>villes les moins chères où vivre</Link>,
+          parcourez le profil fiscal et de coûts d&apos;un pays sur l&apos;{" "}
+          <Link href={`/${l}/countries`}>aperçu des pays</Link>, puis{" "}
+          <Link href={`/${l}`}>comparez deux villes côte à côte</Link> pour voir le
+          salaire réellement nécessaire dans chacune.
+        </p>
+
+        <h2>Une méthode simple pour établir une présélection</h2>
+        <p>
+          Procédez dans cet ordre : (1) listez les pays dont le visa nomade vous est
+          réellement accessible au regard du revenu ; (2) écartez ceux dont le
+          traitement fiscal des revenus étrangers est rédhibitoire ; (3) parmi ce qui
+          reste, classez les villes selon leur coût de la vie rapporté à votre revenu ;
+          (4) vérifiez les deux ou trois coûts qui comptent le plus pour vous — loyer,
+          assurance santé et impôts — auprès d&apos;une source locale à jour. Le visa
+          vous ouvre la porte ; c&apos;est le coût de la vie qui décide si vous
+          resteriez.
+        </p>
+
+        <p>
+          Une mise en garde honnête : les règles de visa et les seuils de revenus
+          changent souvent, et rien ici ne constitue un conseil juridique ou en
+          matière d&apos;immigration. Servez-vous-en pour présélectionner, puis
+          confirmez chaque exigence sur le portail gouvernemental officiel du pays de
+          destination avant de vous engager.
+        </p>
+      </>
+    ),
+  },
   "cost-of-living-index-explained": {
     title: "Ce que signifie vraiment un indice du coût de la vie de 100",
     excerpt:

@@ -2,6 +2,111 @@ import Link from "next/link";
 import type { GuideContent } from "@/content/guides";
 
 const de: Record<string, GuideContent> = {
+  "digital-nomad-visa-guide": {
+    title:
+      "Digital-Nomad-Visa: wie sie funktionieren und wie Sie eine Basis wählen",
+    excerpt:
+      "Ein Remote-Work-Visum erlaubt Ihnen, legal irgendwo zu leben, während Sie Ihr Einkommen aus dem Ausland beziehen. Hier erfahren Sie, was ein Digital-Nomad-Visum wirklich ist, was Sie vor dem Antrag prüfen sollten und wie Sie eine Stadt wählen, die Sie sich leisten können.",
+    Body: ({ l }) => (
+      <>
+        <p>
+          „Digital Nomad Visa“ ist einer der meistgesuchten Umzugsbegriffe — und
+          einer der am meisten missverstandenen. Es ist kein Schlupfloch und kein
+          Touristenstempel. Es ist eine bestimmte Aufenthaltserlaubnis, die es
+          Ihnen erlaubt, legal in einem Land zu leben, während Sie Ihr Einkommen
+          von Arbeitgebern oder Kunden <em>außerhalb</em> dieses Landes beziehen.
+          Hier die ehrliche, praktische Version.
+        </p>
+
+        <h2>Was ein Digital-Nomad-Visum wirklich ist</h2>
+        <p>
+          Ein Touristenvisum erlaubt Ihnen den Besuch; es verbietet meist das
+          Arbeiten und begrenzt Sie auf wenige Monate. Ein Digital-Nomad-Visum
+          (manchmal Remote-Work- oder „Independent-Worker“-Visum genannt) ist für
+          Menschen gemacht, deren Job mit ihnen reist: Sie weisen nach, dass Ihr
+          Einkommen aus dem Ausland stammt, und erhalten im Gegenzug das
+          Aufenthaltsrecht — typischerweise <strong>6 Monate bis 2 Jahre</strong>,
+          oft verlängerbar. Dutzende Länder bieten inzwischen eines an, von
+          Portugal, Spanien und Estland bis zu den VAE, Thailand und mehreren
+          karibischen Staaten.
+        </p>
+
+        <h2>Was Sie vor dem Antrag prüfen sollten</h2>
+        <p>
+          Die Werbung dreht sich immer um Strände; die Entscheidung dreht sich
+          immer um das Kleingedruckte. Fünf Dinge entscheiden, ob ein
+          Nomadenvisum das Richtige für Sie ist:
+        </p>
+        <ul>
+          <li>
+            <strong>Einkommensanforderung.</strong> Fast jedes Programm legt ein
+            monatliches Mindesteinkommen fest — üblicherweise irgendwo zwischen
+            etwa €2,500–€4,000, nachzuweisen mit aktuellen Gehaltsabrechnungen
+            oder Kontoauszügen. Teurere Länder setzen höhere Hürden.
+          </li>
+          <li>
+            <strong>Steuern.</strong> Das ist der Teil, den die meisten falsch
+            verstehen. Ein Visum ist Einwanderungsrecht, kein Steuerrecht. Wer
+            länger als ~183 Tage bleibt, wird oft <em>steuerlich ansässig</em>,
+            selbst bei ausländischem Einkommen — auch wenn manche Länder
+            Neuankömmlingen besondere Pauschalsätze oder Befreiungen bieten.
+            Kalkulieren Sie die Steuer, bevor Sie sich in den Ort verlieben.
+          </li>
+          <li>
+            <strong>Dauer &amp; Verlängerung.</strong> Ein 1-Jahres-Visum, das Sie
+            nicht verlängern können, ist ein ganz anderer Lebensplan als ein
+            2-Jahres-Visum, das zur dauerhaften Niederlassung führt. Prüfen Sie
+            den Weg, nicht nur den Einstieg.
+          </li>
+          <li>
+            <strong>Familie.</strong> Ob Ehepartner und Kinder mitkommen dürfen —
+            und ob sie arbeiten oder studieren dürfen — variiert stark und
+            verändert die Rechnung.
+          </li>
+          <li>
+            <strong>Krankenversicherung.</strong> Fast alle verlangen eine private
+            internationale Krankenversicherung für den gesamten Aufenthalt; planen
+            Sie sie vom ersten Tag an ein.
+          </li>
+        </ul>
+
+        <h2>Dann wählen Sie eine Stadt, die Sie sich wirklich leisten können</h2>
+        <p>
+          Die Einkommenshürde zu erfüllen ist nur die halbe Frage — die andere
+          Hälfte ist, was dieses Einkommen <em>kauft</em>, sobald Sie angekommen
+          sind. Dieselben €3,000/Monat bedeuten ein bequemes Leben in Lisbon oder
+          Tallinn und ein knappes in Singapore oder Zurich. Genau für diese Lücke
+          ist diese Seite da: Sehen Sie sich die{" "}
+          <Link href={`/${l}/best/cheapest`}>günstigsten Städte zum Leben</Link>{" "}
+          an, durchstöbern Sie das Steuer- und Kostenprofil eines Landes in der{" "}
+          <Link href={`/${l}/countries`}>Länderübersicht</Link> und{" "}
+          <Link href={`/${l}`}>vergleichen Sie dann zwei Städte nebeneinander</Link>,
+          um zu sehen, welches Gehalt jede wirklich erfordert.
+        </p>
+
+        <h2>Eine einfache Methode für die engere Auswahl</h2>
+        <p>
+          Gehen Sie in dieser Reihenfolge vor: (1) Listen Sie die Länder auf,
+          deren Nomadenvisum Sie beim Einkommen tatsächlich erfüllen; (2) streichen
+          Sie jene, deren steuerliche Behandlung ausländischen Einkommens ein
+          Ausschlusskriterium ist; (3) ordnen Sie die verbleibenden Städte nach den
+          Lebenshaltungskosten im Verhältnis zu Ihrem Einkommen; (4) prüfen Sie die
+          zwei oder drei Kosten, die Ihnen am wichtigsten sind — Miete,
+          Krankenversicherung und Steuern — anhand einer aktuellen lokalen Quelle.
+          Das Visum bringt Sie durch die Tür; die Lebenshaltungskosten entscheiden,
+          ob Sie bleiben würden.
+        </p>
+
+        <p>
+          Ein ehrlicher Vorbehalt: Visabestimmungen und Einkommensgrenzen ändern
+          sich häufig, und nichts hiervon ist Rechts- oder Einwanderungsberatung.
+          Nutzen Sie dies für die engere Auswahl und bestätigen Sie dann jede
+          Anforderung auf dem offiziellen Regierungsportal des Ziellandes, bevor
+          Sie sich festlegen.
+        </p>
+      </>
+    ),
+  },
   "cost-of-living-index-explained": {
     title: "Was ein Lebenshaltungskosten-Index von 100 wirklich bedeutet",
     excerpt:

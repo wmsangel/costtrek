@@ -22,6 +22,101 @@ export type Guide = GuideContent & {
 
 export const GUIDES: Guide[] = [
   {
+    slug: "digital-nomad-visa-guide",
+    title: "Digital nomad visas: how they work and how to choose a base",
+    excerpt:
+      "A remote-work visa lets you live somewhere legally while earning from abroad. Here's what a digital nomad visa actually is, what to check before you apply, and how to pick a city you can afford.",
+    date: "2026-09-28",
+    minutes: 7,
+    Body: ({ l }) => (
+      <>
+        <p>
+          &quot;Digital nomad visa&quot; is one of the most-searched relocation
+          terms — and one of the most misunderstood. It is not a loophole and not
+          a tourist stamp. It&apos;s a specific residence permit that lets you live
+          in a country legally while you earn your income from employers or clients
+          <em> outside</em> that country. Here&apos;s the honest, practical version.
+        </p>
+
+        <h2>What a digital nomad visa actually is</h2>
+        <p>
+          A tourist visa lets you visit; it usually forbids working and caps you at
+          a few months. A digital nomad visa (sometimes called a remote-work or
+          &quot;independent worker&quot; visa) is built for people whose job travels
+          with them: you show that your income comes from abroad, and in return you
+          get the right to stay — typically <strong>6 months to 2 years</strong>,
+          often renewable. Dozens of countries now offer one, from Portugal, Spain
+          and Estonia to the UAE, Thailand and several Caribbean nations.
+        </p>
+
+        <h2>What to check before you apply</h2>
+        <p>
+          The marketing is always about beaches; the decision is always about the
+          fine print. Five things decide whether a nomad visa is right for you:
+        </p>
+        <ul>
+          <li>
+            <strong>Income requirement.</strong> Almost every program sets a
+            minimum monthly income — commonly somewhere between roughly
+            €2,500–€4,000, proven with recent payslips or bank statements. Higher-
+            cost countries set higher bars.
+          </li>
+          <li>
+            <strong>Tax.</strong> This is the part people get wrong. A visa is
+            immigration, not tax law. Staying past ~183 days often makes you a{" "}
+            <em>tax resident</em>, even on foreign income — though some countries
+            offer special flat rates or exemptions for new arrivals. Model the tax
+            before you fall in love with the place.
+          </li>
+          <li>
+            <strong>Duration &amp; renewal.</strong> A 1-year visa you can&apos;t
+            renew is a very different life plan from a 2-year one that leads to
+            permanent residence. Check the path, not just the entry.
+          </li>
+          <li>
+            <strong>Family.</strong> Whether a spouse and children can join — and
+            whether they can work or study — varies widely and changes the maths.
+          </li>
+          <li>
+            <strong>Health insurance.</strong> Nearly all require private
+            international health cover for the full stay; budget for it from day one.
+          </li>
+        </ul>
+
+        <h2>Then choose a city you can actually afford</h2>
+        <p>
+          Meeting the income bar is only half the question — the other half is what
+          that income <em>buys</em> once you arrive. The same €3,000/month is a
+          comfortable life in Lisbon or Tallinn and a tight one in Singapore or
+          Zurich. That gap is exactly what this site is for: check the{" "}
+          <Link href={`/${l}/best/cheapest`}>cheapest cities to live in</Link>,
+          browse a country&apos;s tax and cost profile on the{" "}
+          <Link href={`/${l}/countries`}>countries overview</Link>, then{" "}
+          <Link href={`/${l}`}>compare two cities side by side</Link> to see the
+          salary each one really needs.
+        </p>
+
+        <h2>A simple way to shortlist</h2>
+        <p>
+          Work it in this order: (1) list countries whose nomad visa you actually
+          qualify for on income; (2) drop any whose tax treatment of foreign income
+          is a dealbreaker; (3) of what&apos;s left, rank cities by cost of living
+          against your income; (4) sanity-check the two or three costs that matter
+          most to you — rent, health insurance and tax — against a current local
+          source. The visa gets you in the door; the cost of living decides whether
+          you&apos;d stay.
+        </p>
+
+        <p>
+          One honest caveat: visa rules and income thresholds change often, and
+          nothing here is legal or immigration advice. Use this to shortlist, then
+          confirm every requirement on the destination country&apos;s official
+          government portal before you commit.
+        </p>
+      </>
+    ),
+  },
+  {
     slug: "cost-of-living-index-explained",
     title: "What a cost-of-living index of 100 actually means",
     excerpt:

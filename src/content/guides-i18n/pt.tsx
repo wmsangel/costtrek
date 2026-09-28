@@ -2,6 +2,103 @@ import Link from "next/link";
 import type { GuideContent } from "@/content/guides";
 
 const pt: Record<string, GuideContent> = {
+  "digital-nomad-visa-guide": {
+    title: "Vistos de nómada digital: como funcionam e como escolher uma base",
+    excerpt:
+      "Um visto de trabalho remoto permite-lhe viver legalmente num sítio enquanto ganha o seu rendimento no estrangeiro. Eis o que é de facto um visto de nómada digital, o que verificar antes de se candidatar e como escolher uma cidade que possa pagar.",
+    Body: ({ l }) => (
+      <>
+        <p>
+          &quot;Visto de nómada digital&quot; é um dos termos de relocalização mais
+          pesquisados — e um dos mais mal compreendidos. Não é um truque nem um
+          carimbo de turista. É uma autorização de residência específica que lhe
+          permite viver legalmente num país enquanto obtém o seu rendimento de
+          empregadores ou clientes <em>fora</em> desse país. Eis a versão honesta e
+          prática.
+        </p>
+
+        <h2>O que é de facto um visto de nómada digital</h2>
+        <p>
+          Um visto de turista permite-lhe visitar; normalmente proíbe trabalhar e
+          limita-o a alguns meses. Um visto de nómada digital (por vezes chamado
+          visto de trabalho remoto ou de &quot;trabalhador independente&quot;) foi
+          feito para pessoas cujo emprego viaja com elas: demonstra que o seu
+          rendimento vem do estrangeiro e, em troca, obtém o direito de permanecer —
+          normalmente <strong>de 6 meses a 2 anos</strong>, muitas vezes renovável.
+          Dezenas de países oferecem já um, desde Portugal, Espanha e Estónia até aos
+          Emirados Árabes Unidos, à Tailândia e a várias nações das Caraíbas.
+        </p>
+
+        <h2>O que verificar antes de se candidatar</h2>
+        <p>
+          O marketing é sempre sobre praias; a decisão é sempre sobre as letras
+          miudinhas. Cinco coisas determinam se um visto de nómada é o certo para si:
+        </p>
+        <ul>
+          <li>
+            <strong>Requisito de rendimento.</strong> Quase todos os programas fixam
+            um rendimento mensal mínimo — normalmente entre cerca de €2,500–€4,000,
+            comprovado com recibos de vencimento ou extratos bancários recentes. Os
+            países mais caros impõem fasquias mais altas.
+          </li>
+          <li>
+            <strong>Impostos.</strong> É a parte em que as pessoas se enganam. Um
+            visto é imigração, não legislação fiscal. Ficar para além de ~183 dias
+            faz de si, muitas vezes, um <em>residente fiscal</em>, mesmo sobre
+            rendimentos estrangeiros — embora alguns países ofereçam taxas fixas
+            especiais ou isenções aos recém-chegados. Faça as contas ao imposto antes
+            de se apaixonar pelo lugar.
+          </li>
+          <li>
+            <strong>Duração e renovação.</strong> Um visto de 1 ano que não pode
+            renovar é um plano de vida muito diferente de um de 2 anos que conduz à
+            residência permanente. Verifique o percurso, e não apenas a entrada.
+          </li>
+          <li>
+            <strong>Família.</strong> Se o cônjuge e os filhos podem juntar-se — e se
+            podem trabalhar ou estudar — varia muito e altera as contas.
+          </li>
+          <li>
+            <strong>Seguro de saúde.</strong> Quase todos exigem cobertura de saúde
+            internacional privada para toda a estadia; orce-a desde o primeiro dia.
+          </li>
+        </ul>
+
+        <h2>Depois, escolha uma cidade que possa realmente pagar</h2>
+        <p>
+          Cumprir a fasquia do rendimento é apenas metade da questão — a outra metade
+          é o que esse rendimento <em>compra</em> quando lá chega. Os mesmos
+          €3,000/mês são uma vida confortável em Lisboa ou Taline e uma vida apertada
+          em Singapura ou Zurique. É exatamente para essa diferença que serve este
+          site: consulte as{" "}
+          <Link href={`/${l}/best/cheapest`}>cidades mais baratas para viver</Link>,
+          percorra o perfil fiscal e de custos de um país na{" "}
+          <Link href={`/${l}/countries`}>visão geral dos países</Link> e depois{" "}
+          <Link href={`/${l}`}>compare duas cidades lado a lado</Link> para ver o
+          salário que cada uma exige de facto.
+        </p>
+
+        <h2>Uma forma simples de fazer a pré-seleção</h2>
+        <p>
+          Trabalhe por esta ordem: (1) liste os países cujo visto de nómada consegue
+          efetivamente obter em termos de rendimento; (2) elimine aqueles cujo
+          tratamento fiscal dos rendimentos estrangeiros seja um impedimento; (3) do
+          que sobrar, ordene as cidades por custo de vida face ao seu rendimento; (4)
+          confirme os dois ou três custos que mais lhe importam — renda, seguro de
+          saúde e impostos — face a uma fonte local atualizada. O visto abre-lhe a
+          porta; o custo de vida decide se ficaria.
+        </p>
+
+        <p>
+          Uma ressalva honesta: as regras dos vistos e os limiares de rendimento
+          mudam com frequência, e nada aqui é aconselhamento jurídico ou de
+          imigração. Use isto para fazer a pré-seleção e, depois, confirme cada
+          requisito no portal oficial do governo do país de destino antes de se
+          comprometer.
+        </p>
+      </>
+    ),
+  },
   "cost-of-living-index-explained": {
     title: "O que significa realmente um índice de custo de vida de 100",
     excerpt:

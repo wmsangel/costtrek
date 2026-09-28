@@ -16,6 +16,7 @@ const de: Record<string, string> = {
   house_rent3brCentre: "Miete, 3 Zi. Zentrum",
   house_buyCentre: "Kaufpreis, Zentrum",
   house_buyOutside: "Kaufpreis, außerhalb",
+  qol_overall: "Lebensqualität",
   qol_safety: "Sicherheit",
   qol_healthcare: "Gesundheit",
   qol_pollution: "Umweltbelastung",

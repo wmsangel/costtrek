@@ -3,6 +3,7 @@ import { overallIndex } from "@/lib/cities";
 import type { Country, CityProfile, OfficialEconomyField } from "./schema";
 import { getCountry } from "./countries";
 import { getCityProfile } from "./cityProfiles";
+import { qualityOfLifeScore } from "./qol";
 
 /**
  * The comparison engine. Every comparable dimension is ONE entry in METRICS.
@@ -111,6 +112,7 @@ export const METRICS: Metric[] = [
   { key: "timezone", group: "work", label: "Time zone", format: "utc", higherIsBetter: null, get: (c) => c.profile?.timezoneOffset },
 
   // Quality of life
+  { key: "qolOverall", group: "quality", label: "Quality of life (overall)", format: "number", higherIsBetter: true, get: (c) => qualityOfLifeScore(c.profile?.qualityOfLife) },
   { key: "safety", group: "quality", label: "Safety index", format: "number", higherIsBetter: true, get: (c) => c.profile?.qualityOfLife?.safetyIndex },
   { key: "healthcareQ", group: "quality", label: "Healthcare index", format: "number", higherIsBetter: true, get: (c) => c.profile?.qualityOfLife?.healthcareIndex },
   { key: "pollution", group: "quality", label: "Pollution index", format: "number", higherIsBetter: false, get: (c) => c.profile?.qualityOfLife?.pollutionIndex },
