@@ -82,4 +82,16 @@ export const NETWORK_SITES: NetworkSite[] = [
     tagline: "Website & email templates, clean code",
     emoji: "🧩",
   },
+  {
+    url: "https://ocrsnip.com/",
+    name: "OCRSnip",
+    tagline: "Statements to Excel, images to text",
+    emoji: "📑",
+  },
+  {
+    url: "https://foundaday.com/",
+    name: "Found a Day",
+    tagline: "One great find every day",
+    emoji: "✨",
+  },
 ];
