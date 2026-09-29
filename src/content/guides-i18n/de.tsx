@@ -42,7 +42,12 @@ const de: Record<string, GuideContent> = {
             <strong>Einkommensanforderung.</strong> Fast jedes Programm legt ein
             monatliches Mindesteinkommen fest — üblicherweise irgendwo zwischen
             etwa €2,500–€4,000, nachzuweisen mit aktuellen Gehaltsabrechnungen
-            oder Kontoauszügen. Teurere Länder setzen höhere Hürden.
+            oder Kontoauszügen. Teurere Länder setzen höhere Hürden. Liegen
+            diese Nachweise als PDFs oder Fotos vor,{" "}
+            <a href="https://ocrsnip.com/" target="_blank" rel="noopener">
+              verwandelt sie ein Werkzeug wie OCRSnip in eine saubere Tabelle
+            </a>{" "}
+            für den Antrag.
           </li>
           <li>
             <strong>Steuern.</strong> Das ist der Teil, den die meisten falsch
@@ -270,7 +275,12 @@ const de: Record<string, GuideContent> = {
           eine Kaution (oft 1–3 Monatsmieten), Visumsgebühren, Transport oder
           Neuanschaffung von Möbeln sowie einen Puffer für die Wochen, bevor Ihr
           Einkommen einsetzt. Eine Faustregel: Haben Sie drei bis sechs Monate der
-          Ausgaben der neuen Stadt angespart, bevor Sie aufbrechen.
+          Ausgaben der neuen Stadt angespart, bevor Sie aufbrechen. Um dieses
+          Ziel in einen monatlichen Betrag umzurechnen, rechnet ein{" "}
+          <a href="https://calclumen.com/" target="_blank" rel="noopener">
+            Sparziel-Rechner
+          </a>{" "}
+          vom gewünschten Abreisedatum zurück.
         </p>
         <h2>Wo Ihr Geld am weitesten reicht</h2>
         <p>
@@ -574,7 +584,13 @@ const de: Record<string, GuideContent> = {
           und die Kosten hinzu, alles zu ersetzen, was Sie nicht mitbringen
           konnten. Es ist üblich, dass ein Familienumzug ein Mehrfaches eines
           Umzugs allein kostet, noch bevor die erste Monatsmiete überhaupt fällig
-          ist.
+          ist. Ein Umzug mit Haustier bringt seine eigene Kostenzeile mit —
+          Impfungen, Papierkram und Transport im Voraus, dann laufende Kosten,
+          die man leicht unterschätzt;{" "}
+          <a href="https://pawdget.com/" target="_blank" rel="noopener">
+            Pawdget schlüsselt auf, was ein Hund wirklich kostet
+          </a>{" "}
+          nach Rasse und US-Bundesstaat.
         </p>
         <h2>Schulen sind der entscheidende Faktor</h2>
         <p>

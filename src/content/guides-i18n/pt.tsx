@@ -39,7 +39,11 @@ const pt: Record<string, GuideContent> = {
             <strong>Requisito de rendimento.</strong> Quase todos os programas fixam
             um rendimento mensal mínimo — normalmente entre cerca de €2,500–€4,000,
             comprovado com recibos de vencimento ou extratos bancários recentes. Os
-            países mais caros impõem fasquias mais altas.
+            países mais caros impõem fasquias mais altas. Se esses extratos forem PDFs ou fotos,{" "}
+            <a href="https://ocrsnip.com/" target="_blank" rel="noopener">
+              uma ferramenta como o OCRSnip transforma-os numa folha de cálculo organizada
+            </a>{" "}
+            para a candidatura.
           </li>
           <li>
             <strong>Impostos.</strong> É a parte em que as pessoas se enganam. Um
@@ -253,7 +257,11 @@ const pt: Record<string, GuideContent> = {
           vezes 1 a 3 meses de renda), taxas de visto, envio ou substituição de
           mobília e uma margem para as semanas antes de o seu rendimento começar.
           Uma regra prática: ter três a seis meses das despesas da nova cidade
-          poupados antes de partir.
+          poupados antes de partir. Para transformar essa meta num valor mensal, uma{" "}
+          <a href="https://calclumen.com/" target="_blank" rel="noopener">
+            calculadora de meta de poupança
+          </a>{" "}
+          trabalha a partir da data em que quer partir.
         </p>
         <h2>Onde o seu dinheiro rende mais</h2>
         <p>
@@ -548,7 +556,13 @@ const pt: Record<string, GuideContent> = {
           Acrescente a inscrição na escola, mobília nova para um espaço maior e o
           custo de substituir tudo o que não pôde trazer. É comum uma mudança em
           família custar várias vezes o preço de uma mudança a solo antes mesmo de
-          a primeira renda ser devida.
+          a primeira renda ser devida. Mudar-se com um animal acrescenta a sua
+          própria rubrica também — vacinas, papelada e transporte à partida, e
+          depois uma manutenção fácil de subestimar;{" "}
+          <a href="https://pawdget.com/" target="_blank" rel="noopener">
+            o Pawdget detalha quanto custa realmente um cão
+          </a>{" "}
+          por raça e estado dos EUA.
         </p>
         <h2>As escolas são o fator decisivo</h2>
         <p>

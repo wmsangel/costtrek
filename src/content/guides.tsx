@@ -59,7 +59,11 @@ export const GUIDES: Guide[] = [
             <strong>Income requirement.</strong> Almost every program sets a
             minimum monthly income — commonly somewhere between roughly
             €2,500–€4,000, proven with recent payslips or bank statements. Higher-
-            cost countries set higher bars.
+            cost countries set higher bars. If those statements are PDFs or photos,{" "}
+            <a href="https://ocrsnip.com/" target="_blank" rel="noopener">
+              a tool like OCRSnip turns them into a clean spreadsheet
+            </a>{" "}
+            for the application.
           </li>
           <li>
             <strong>Tax.</strong> This is the part people get wrong. A visa is
@@ -275,7 +279,11 @@ export const GUIDES: Guide[] = [
           (often 1–3 months&apos; rent), visa fees, shipping or replacing
           furniture, and a buffer for the weeks before your income starts. A rule
           of thumb: have three to six months of the new city&apos;s expenses saved
-          before you go.
+          before you go. To turn that target into a monthly amount, a{" "}
+          <a href="https://calclumen.com/" target="_blank" rel="noopener">
+            savings-goal calculator
+          </a>{" "}
+          works back from the date you want to leave.
         </p>
         <h2>Where your money stretches furthest</h2>
         <p>
@@ -586,7 +594,13 @@ export const GUIDES: Guide[] = [
           Add school registration, new furniture for a larger place, and the cost
           of replacing everything you couldn&apos;t bring. It&apos;s common for a
           family move to run several times the price of a solo one before the
-          first month&apos;s rent is even due.
+          first month&apos;s rent is even due. Moving with a pet adds its own line
+          too — vaccinations, paperwork and transport up front, then upkeep
+          that&apos;s easy to underestimate;{" "}
+          <a href="https://pawdget.com/" target="_blank" rel="noopener">
+            Pawdget breaks down what a dog really costs
+          </a>{" "}
+          by breed and US state.
         </p>
         <h2>Schools are the swing factor</h2>
         <p>

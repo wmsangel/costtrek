@@ -39,7 +39,13 @@ const es: Record<string, GuideContent> = {
             <strong>Requisito de ingresos.</strong> Casi todos los programas fijan
             un ingreso mensual mínimo —habitualmente entre unos €2,500–€4,000
             aproximadamente—, que se demuestra con nóminas o extractos bancarios
-            recientes. Los países más caros exigen umbrales más altos.
+            recientes. Los países más caros exigen umbrales más altos. Si esos
+            extractos son PDF o fotos,{" "}
+            <a href="https://ocrsnip.com/" target="_blank" rel="noopener">
+              una herramienta como OCRSnip los convierte en una hoja de cálculo
+              limpia
+            </a>{" "}
+            para la solicitud.
           </li>
           <li>
             <strong>Impuestos.</strong> Esta es la parte que la gente confunde. Un
@@ -256,7 +262,12 @@ const es: Record<string, GuideContent> = {
           fianza (a menudo de 1 a 3 meses de alquiler), tasas de visado, el envío
           o la reposición de muebles, y un colchón para las semanas antes de que
           empiecen tus ingresos. Una regla práctica: ten ahorrados de tres a seis
-          meses de los gastos de la nueva ciudad antes de irte.
+          meses de los gastos de la nueva ciudad antes de irte. Para convertir
+          ese objetivo en una cantidad mensual, una{" "}
+          <a href="https://calclumen.com/" target="_blank" rel="noopener">
+            calculadora de objetivos de ahorro
+          </a>{" "}
+          lo calcula hacia atrás desde la fecha en la que quieres marcharte.
         </p>
         <h2>Dónde rinde más tu dinero</h2>
         <p>
@@ -544,7 +555,13 @@ const es: Record<string, GuideContent> = {
           matrícula escolar, muebles nuevos para un sitio más grande y el coste de
           reponer todo lo que no pudiste llevarte. Es habitual que una mudanza
           familiar cueste varias veces el precio de una en solitario antes incluso
-          de que venza el primer mes de alquiler.
+          de que venza el primer mes de alquiler. Mudarse con una mascota añade
+          su propia partida también: vacunas, papeleo y transporte por adelantado,
+          y luego un mantenimiento que es fácil subestimar;{" "}
+          <a href="https://pawdget.com/" target="_blank" rel="noopener">
+            Pawdget desglosa lo que un perro cuesta de verdad
+          </a>{" "}
+          por raza y estado de EE. UU.
         </p>
         <h2>Los colegios son el factor decisivo</h2>
         <p>

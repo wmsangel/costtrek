@@ -41,7 +41,12 @@ const fr: Record<string, GuideContent> = {
             <strong>Le seuil de revenus.</strong> Presque tous les programmes fixent
             un revenu mensuel minimum — souvent compris entre environ €2,500–€4,000,
             justifié par des fiches de paie ou des relevés bancaires récents. Les
-            pays où la vie est plus chère placent la barre plus haut.
+            pays où la vie est plus chère placent la barre plus haut. Si ces
+            relevés sont des PDF ou des photos,{" "}
+            <a href="https://ocrsnip.com/" target="_blank" rel="noopener">
+              un outil comme OCRSnip les transforme en un tableur propre
+            </a>{" "}
+            pour votre dossier.
           </li>
           <li>
             <strong>La fiscalité.</strong> C&apos;est là que les gens se trompent. Un
@@ -266,7 +271,12 @@ const fr: Record<string, GuideContent> = {
           vols, une caution (souvent 1 à 3 mois de loyer), les frais de visa,
           l&apos;expédition ou le remplacement du mobilier, et une marge pour les
           semaines précédant le début de vos revenus. Règle empirique : ayez de trois
-          à six mois de dépenses de la nouvelle ville de côté avant de partir.
+          à six mois de dépenses de la nouvelle ville de côté avant de partir. Pour
+          transformer cet objectif en montant mensuel, un{" "}
+          <a href="https://calclumen.com/" target="_blank" rel="noopener">
+            calculateur d&apos;objectif d&apos;épargne
+          </a>{" "}
+          remonte à partir de la date à laquelle vous souhaitez partir.
         </p>
         <h2>Là où votre argent va le plus loin</h2>
         <p>
@@ -569,7 +579,13 @@ const fr: Record<string, GuideContent> = {
           grand logement, et le coût du remplacement de tout ce que vous n&apos;avez pas
           pu emporter. Il est courant qu&apos;un déménagement familial coûte plusieurs
           fois le prix d&apos;un déménagement en solo avant même que le premier mois de
-          loyer ne soit dû.
+          loyer ne soit dû. Déménager avec un animal ajoute sa propre ligne aussi —
+          vaccinations, paperasse et transport au départ, puis un entretien qu&apos;il
+          est facile de sous-estimer ;{" "}
+          <a href="https://pawdget.com/" target="_blank" rel="noopener">
+            Pawdget détaille ce que coûte réellement un chien
+          </a>{" "}
+          selon la race et l&apos;État américain.
         </p>
         <h2>Les écoles sont le facteur décisif</h2>
         <p>
