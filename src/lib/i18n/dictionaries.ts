@@ -93,6 +93,60 @@ export type Dictionary = {
     sponsored: string;
     sponsoredBadge: string;
   };
+  finder: {
+    nav: string;
+    title: string;
+    subtitle: string; // {n}
+    metaTitle: string;
+    metaDescription: string; // {n}
+    prioritiesTitle: string;
+    filtersTitle: string;
+    weight: { off: string; low: string; med: string; high: string };
+    axis: {
+      cost: string;
+      safety: string;
+      healthcare: string;
+      air: string;
+      climate: string;
+      walk: string;
+      transit: string;
+      internet: string;
+      english: string;
+      family: string;
+    };
+    region: string;
+    regionAny: string;
+    maxRent: string;
+    maxRentAny: string;
+    englishMin: string;
+    englishAny: string;
+    englishModerate: string;
+    englishHigh: string;
+    presets: string;
+    preset: {
+      balanced: string;
+      nomad: string;
+      family: string;
+      retiree: string;
+      student: string;
+      budget: string;
+    };
+    resultsTitle: string;
+    resultsSub: string; // {n}
+    match: string;
+    noResults: string;
+    reset: string;
+    copyLink: string;
+    copied: string;
+    viewCity: string; // {city}
+    disclaimer: string;
+    faqQ1: string;
+    faqA1: string;
+    faqQ2: string;
+    faqA2: string;
+    faqQ3: string;
+    faqA3: string;
+  };
   mytrip: {
     headline: string;
     sub: string;

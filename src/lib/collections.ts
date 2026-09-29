@@ -76,19 +76,33 @@ function climateMild(cl?: { janAvgC?: number; julAvgC?: number }): number | unde
   return clamp01(100 - Math.abs(cl.janAvgC - 12) * 2.2 - Math.abs(cl.julAvgC - 24) * 2.2);
 }
 
-type Weights = Partial<
-  Record<
-    "cost" | "internet" | "safety" | "healthcare" | "air" | "family" | "walk" | "english" | "climate",
-    number
-  >
->;
+/** The scoreable factors a city carries, each normalised to 0–100 (higher =
+ *  better). Shared by the persona ranking hubs and the "Find your city" finder,
+ *  so both read from ONE definition of how a factor is computed. */
+export type FinderAxis =
+  | "cost"
+  | "internet"
+  | "safety"
+  | "healthcare"
+  | "air"
+  | "family"
+  | "walk"
+  | "english"
+  | "climate"
+  | "transit";
 
-/** Weighted average of the normalised components that exist for the city. */
-function personaScore(c: City, w: Weights): number | null {
+type Weights = Partial<Record<FinderAxis, number>>;
+
+/**
+ * Per-city factor vector (0–100, higher = better), only for the factors the
+ * city actually has data for. Single source of truth for personaScore below and
+ * for the client-side finder dataset (see src/lib/finder.ts).
+ */
+export function cityComponents(c: City): Partial<Record<FinderAxis, number>> {
   const q = qol(c);
-  if (!q) return null;
+  if (!q) return {};
   const p = getCityProfile(c.slug);
-  const comp: Record<string, number | undefined> = {
+  const raw: Record<FinderAxis, number | undefined> = {
     cost: clamp01(100 - norm(overallIndex(c), 30, 180)),
     internet: q.internetMbps != null ? norm(q.internetMbps, 20, 220) : undefined,
     safety: q.safetyIndex,
@@ -100,14 +114,28 @@ function personaScore(c: City, w: Weights): number | null {
       ? ENGLISH_SCORE[p.expat.englishProficiency]
       : undefined,
     climate: climateMild(q.climate),
+    transit: q.transitScore,
   };
+  const out: Partial<Record<FinderAxis, number>> = {};
+  for (const [k, v] of Object.entries(raw)) {
+    if (typeof v === "number" && Number.isFinite(v)) {
+      out[k as FinderAxis] = Math.round(v);
+    }
+  }
+  return out;
+}
+
+/** Weighted average of the normalised components that exist for the city. */
+function personaScore(c: City, w: Weights): number | null {
+  const comp = cityComponents(c);
+  if (Object.keys(comp).length === 0) return null;
   let wsum = 0;
   let acc = 0;
   for (const [key, weight] of Object.entries(w)) {
-    const v = comp[key];
-    if (weight && Number.isFinite(v)) {
+    const v = comp[key as FinderAxis];
+    if (weight && typeof v === "number") {
       wsum += weight;
-      acc += weight * (v as number);
+      acc += weight * v;
     }
   }
   return wsum === 0 ? null : Math.round(acc / wsum);

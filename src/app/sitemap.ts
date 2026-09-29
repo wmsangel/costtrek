@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "support", priority: 0.3 },
     { path: "contact", priority: 0.3 },
     { path: "countries", priority: 0.7 },
+    { path: "find-your-city", priority: 0.8 },
     { path: "guides", priority: 0.6 },
   ];
 
