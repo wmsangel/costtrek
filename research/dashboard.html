@@ -1,0 +1,297 @@
+<title>CostTrek Roadmap</title>
+<style>
+  /* Layout: sticky masthead → key-number tiles → priority queue → done → idea inbox.
+     Palette + type follow the CostTrek "travel magazine" system (warm paper, coral,
+     mustard, teal; Archivo display). */
+  :root {
+    --bg: #faf6ee;          /* warm paper */
+    --surface: #fffdf8;     /* card */
+    --surface-2: #f3ecdd;   /* sunk tile */
+    --fg: #23201a;          /* warm near-black */
+    --muted: #6f675a;       /* warm grey */
+    --border: #e7ddc8;
+    --accent: #e0492f;      /* coral */
+    --mustard: #f4c020;
+    --teal: #0d7d70;        /* positive / done */
+    --shadow: 0 1px 2px rgba(35,32,26,.06), 0 6px 20px rgba(35,32,26,.05);
+    --display: "Archivo", ui-sans-serif, system-ui, sans-serif;
+    --body: "Geist", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1a1712; --surface: #241f18; --surface-2: #2e2820;
+      --fg: #f2ece0; --muted: #a99e8c; --border: #3a3226;
+      --accent: #f0603f; --mustard: #f4c020; --teal: #33b0a1;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.28);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1a1712; --surface: #241f18; --surface-2: #2e2820;
+    --fg: #f2ece0; --muted: #a99e8c; --border: #3a3226;
+    --accent: #f0603f; --mustard: #f4c020; --teal: #33b0a1;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.28);
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--fg);
+    font-family: var(--body); line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 940px; margin: 0 auto; padding-block: 0 56px; padding-inline: 16px; }
+
+  /* Masthead */
+  header { padding-block: 28px 18px; border-bottom: 3px solid var(--fg); margin-bottom: 22px; }
+  .kicker {
+    font-family: var(--display); font-weight: 800; text-transform: uppercase;
+    letter-spacing: .14em; font-size: 12px; color: var(--accent);
+  }
+  h1 {
+    font-family: var(--display); font-weight: 900; font-size: clamp(30px, 7vw, 46px);
+    line-height: 1.02; margin: 6px 0 8px; letter-spacing: -.01em; text-wrap: balance;
+  }
+  .sub { color: var(--muted); font-size: 15px; max-width: 62ch; }
+  .stamp { margin-top: 12px; font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .stamp b { color: var(--fg); font-weight: 600; }
+
+  h2 {
+    font-family: var(--display); font-weight: 800; text-transform: uppercase;
+    letter-spacing: .06em; font-size: 15px; color: var(--accent);
+    margin: 34px 0 14px; padding-bottom: 7px; border-bottom: 1px solid var(--border);
+  }
+  h2 .n { color: var(--muted); font-weight: 700; }
+
+  /* Key-number tiles */
+  .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  @media (max-width: 560px) { .tiles { grid-template-columns: repeat(2, 1fr); } }
+  .tile {
+    background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px;
+    padding: 14px 15px; min-width: 0;
+  }
+  .tile .big {
+    font-family: var(--display); font-weight: 900; font-size: 26px; line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .tile .lab { color: var(--muted); font-size: 12px; margin-top: 6px; }
+  .tile.good .big { color: var(--teal); }
+
+  /* Priority queue */
+  .queue { display: flex; flex-direction: column; gap: 9px; }
+  .row {
+    display: grid; grid-template-columns: 34px 1fr auto; align-items: start; gap: 12px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 13px 15px; box-shadow: var(--shadow);
+  }
+  .row.top { border-color: var(--accent); border-left-width: 4px; }
+  .idx {
+    font-family: var(--display); font-weight: 900; font-size: 18px; color: var(--muted);
+    font-variant-numeric: tabular-nums; line-height: 1.25;
+  }
+  .row.top .idx { color: var(--accent); }
+  .row .body { min-width: 0; }
+  .row .name { font-weight: 650; font-size: 15px; }
+  .row .why { color: var(--muted); font-size: 13px; margin-top: 3px; }
+
+  /* Pills */
+  .pill {
+    font-family: var(--display); font-weight: 700; font-size: 10.5px; text-transform: uppercase;
+    letter-spacing: .05em; white-space: nowrap; padding: 4px 9px; border-radius: 999px;
+    border: 1px solid transparent;
+  }
+  .p-next { background: color-mix(in srgb, var(--accent) 15%, transparent); color: var(--accent); border-color: color-mix(in srgb, var(--accent) 35%, transparent); }
+  .p-queue { background: var(--surface-2); color: var(--muted); border-color: var(--border); }
+  .p-decision { background: color-mix(in srgb, var(--mustard) 22%, transparent); color: #8a6d00; border-color: color-mix(in srgb, var(--mustard) 55%, transparent); }
+  :root:not([data-theme="light"]) .p-decision { color: var(--mustard); }
+  :root[data-theme="dark"] .p-decision { color: var(--mustard); }
+  .p-gated { background: var(--surface-2); color: var(--muted); border-color: var(--border); border-style: dashed; }
+  .p-done { background: color-mix(in srgb, var(--teal) 16%, transparent); color: var(--teal); border-color: color-mix(in srgb, var(--teal) 38%, transparent); }
+
+  /* Done + inbox lists */
+  ul.clean { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+  ul.clean li {
+    display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: baseline;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 11px 14px;
+  }
+  ul.clean li .mark { color: var(--teal); font-weight: 800; }
+  ul.clean li .txt { min-width: 0; font-size: 14px; }
+  ul.clean li .txt .date { color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+  ul.inbox li { grid-template-columns: 1fr; }
+  ul.inbox li .txt { font-size: 13.5px; }
+  ul.inbox li .txt b { font-weight: 650; }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+
+  .note {
+    background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px;
+    padding: 14px 16px; font-size: 13.5px; color: var(--muted);
+  }
+  .note b { color: var(--fg); font-weight: 650; }
+  .note ul { margin: 8px 0 0; padding-left: 18px; }
+  .note li { margin: 4px 0; }
+
+  footer { margin-top: 34px; padding-top: 14px; border-top: 1px solid var(--border); font-size: 12.5px; color: var(--muted); }
+  footer code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--surface-2); padding: 1px 6px; border-radius: 5px; color: var(--fg); }
+  a { color: var(--accent); }
+</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800;900&family=Geist:wght@400;500;600&display=swap">
+
+<div class="wrap">
+  <header>
+    <div class="kicker">CostTrek · costtrek.com</div>
+    <h1>План работ и статус</h1>
+    <p class="sub">Живой дашборд поверх roadmap. Приоритет по правилу <b>ценность × выполнимость</b> при реальности: трафик ≈ 0, показы растут, кликов нет — рычаг это авторитет + время + концентрация, а не ширина.</p>
+    <div class="stamp">Актуализировано <b>2026-09-29</b> · источник правды — <b>research/PLAN.md</b> в репозитории</div>
+  </header>
+
+  <h2>Ключевые цифры</h2>
+  <div class="tiles">
+    <div class="tile"><div class="big">~11 559</div><div class="lab">страниц (SSG, 5 языков)</div></div>
+    <div class="tile"><div class="big">~87</div><div class="lab">городов · ~34 страны</div></div>
+    <div class="tile good"><div class="big">Дни 1–7 ✓</div><div class="lab">базовый спринт закрыт</div></div>
+    <div class="tile"><div class="big">5</div><div class="lab">live-аффилиатов</div></div>
+    <div class="tile"><div class="big">~0</div><div class="lab">трафик · показы растут (20–79/запрос)</div></div>
+    <div class="tile"><div class="big">14</div><div class="lab">сайтов в footer-сети</div></div>
+  </div>
+
+  <h2>Очередь <span class="n">— ближайшие ~10 запусков</span></h2>
+  <div class="queue">
+
+    <div class="row top">
+      <div class="idx">1</div>
+      <div class="body">
+        <div class="name">W2-2 «Find your city» — интерактивный подборщик города</div>
+        <div class="why">Бюджет/климат/безопасность/язык → топ городов. Интерактив + шарибельность = бэклинки (дефицит #1). Заодно завести <code>track()</code> для аналитики.</div>
+      </div>
+      <span class="pill p-next">▶ следующее</span>
+    </div>
+
+    <div class="row">
+      <div class="idx">2</div>
+      <div class="body">
+        <div class="name">Кросс-ссылки по сети + самоописание для foundaday</div>
+        <div class="why">Карта контекстных do-follow ссылок (CalcLumen / OCRSnip / Pawdget) → владельцу на утверждение, затем внедрить. Драйвер бэклинков.</div>
+      </div>
+      <span class="pill p-queue">в очереди</span>
+    </div>
+
+    <div class="row">
+      <div class="idx">3</div>
+      <div class="body">
+        <div class="name">Глубина по Singapore и сильнейшим кластерам спроса</div>
+        <div class="why">Довести singapore-sg + US↔SG compare до отличного (проза, FAQ под фразы запросов). On-page глубина по доказанному спросу.</div>
+      </div>
+      <span class="pill p-queue">в очереди</span>
+    </div>
+
+    <div class="row">
+      <div class="idx">4</div>
+      <div class="body">
+        <div class="name">W2-3 калькулятор бюджета домохозяйства</div>
+        <div class="why">Оформить Day-4 персоны (одиночка/пара/семья на город) в интерактивный калькулятор. Dwell + шарибельность.</div>
+      </div>
+      <span class="pill p-queue">в очереди</span>
+    </div>
+
+    <div class="row">
+      <div class="idx">5</div>
+      <div class="body">
+        <div class="name">Реальные данные — средние зарплаты OECD</div>
+        <div class="why">Заменить оценочную avg net salary на реальную (расширяет official-marks). Доверие к данным бьёт флаг scaled-content.</div>
+      </div>
+      <span class="pill p-queue">в очереди</span>
+    </div>
+
+    <div class="row">
+      <div class="idx">6</div>
+      <div class="body">
+        <div class="name">Качественный лонгрид-гайд #2 + E-E-A-T</div>
+        <div class="why">Под доказанный кластер (напр. «salary to move abroad»), с авторством/байлайнами. Компаундит контент.</div>
+      </div>
+      <span class="pill p-queue">в очереди</span>
+    </div>
+
+    <div class="row">
+      <div class="idx">7</div>
+      <div class="body">
+        <div class="name">Канонизация направлений compare</div>
+        <div class="why">Google считает a-vs-b / b-vs-a дублями. Канон в одно направление → −½ страниц, концентрация авторитета.</div>
+      </div>
+      <span class="pill p-decision">🔸 решение владельца</span>
+    </div>
+
+    <div class="row">
+      <div class="idx">8</div>
+      <div class="body">
+        <div class="name">Разбор обвала показов + концентрация sitemap</div>
+        <div class="why">Показы 28д −99%; sitemap 25 545 URL, 93% без показов. Диагностика + решение урезать до сильных страниц.</div>
+      </div>
+      <span class="pill p-decision">🔸 решение владельца</span>
+    </div>
+
+    <div class="row">
+      <div class="idx">9</div>
+      <div class="body">
+        <div class="name">Монетизация «когда прилетит сигнал»</div>
+        <div class="why">Omio + Trip.com в toolkit (ждём ссылки). AdSense: при READY — Google Funding Choices CMP + выключить флаг Travelpayouts Drive на ревью.</div>
+      </div>
+      <span class="pill p-gated">🔒 гейт</span>
+    </div>
+
+    <div class="row">
+      <div class="idx">10</div>
+      <div class="body">
+        <div class="name">Буфер / грабёж бэклога</div>
+        <div class="why">ISR для region/persona-хабов, i18n-ярлыки метрик, слаги, support@-алиасы, форма фидбэка, подача URL в GSC.</div>
+      </div>
+      <span class="pill p-queue">в очереди</span>
+    </div>
+
+  </div>
+
+  <h2>Сделано</h2>
+  <ul class="clean">
+    <li><span class="mark">✓</span><span class="txt">База 7-дневного спринта (Дни 1–7): методология, глубина compare, walkability, «Is X expensive?» + персоны, реальные данные (Eurostat min wage + official-marks), внутренняя перелинковка, гайд-качество <span class="date">— 2026-09-28</span></span></li>
+    <li><span class="mark">✓</span><span class="txt">W2-1 — композитный балл «Quality of life» 0–100 на compare + city <span class="date">— 2026-09-28 · 810ff43</span></span></li>
+    <li><span class="mark">✓</span><span class="txt">Гайд «Digital nomad visas» (топ-запрос GSC, 79 показов), локализован ×5 <span class="date">— 2026-09-28 · 810ff43</span></span></li>
+    <li><span class="mark">✓</span><span class="txt">Footer-сеть: +OCRSnip, Found a Day, Dasha Motion; тег iznkit поправлен — 14 сайтов <span class="date">— 2026-09-29 · 678df6f</span></span></li>
+    <li><span class="mark">✓</span><span class="txt">Консолидация роадмапа в research/PLAN.md + этот живой дашборд <span class="date">— 2026-09-29 · 31b4028</span></span></li>
+  </ul>
+
+  <h2>💡 Входящие идеи <span class="n">— копилка</span></h2>
+  <ul class="clean inbox">
+    <li><span class="txt"><b>OECD average wages</b> — реальная avg зарплата для стран OECD (предусловие для будущего платного отчёта). → повышено в план #5</span></li>
+    <li><span class="txt"><b>Самоописания сети</b> — блоки по шаблону для обзоров на foundaday. → часть плана #2</span></li>
+    <li><span class="txt"><b>ISR для region/persona-хабов</b> — снять давление потолка Vercel и build-минут при росте городов.</span></li>
+    <li><span class="txt"><b>i18n-ярлыки метрик</b> — в metrics.ts сейчас EN на всех локалях.</span></li>
+    <li><span class="txt"><b>Локализованные URL-слаги</b> (/de/vergleich/…) — лучше для SEO, но нужны per-locale маршруты.</span></li>
+    <li><span class="txt"><b>support@ / hello@ алиасы</b> в Cloudflare — ловить частые угаданные адреса (catch-all выключен).</span></li>
+    <li><span class="txt"><b>Форма фидбэка</b> вместо mailto — только если пойдёт объём обращений.</span></li>
+    <li><span class="txt"><b>GSC-гигиена</b> — ~10 ценных URL/день вручную, пока индексация догоняет.</span></li>
+  </ul>
+
+  <h2>Стоящие фоном</h2>
+  <div class="note">
+    <b>Мониторим, не отдельные запуски:</b>
+    <ul>
+      <li>Обвал показов −99% — вероятно норма молодого домена, прод здоров; не передебажывать каждый заход.</li>
+      <li>AdSense readiness — структурно готово, ждём порог трафика (трекается централизованно в izn.project.stats).</li>
+      <li>RUM/Cloudflare — домен не проксирован, edge-аналитика пустая, только RUM-beacon.</li>
+      <li>Флаг <code>TRAVELPAYOUTS_DRIVE</code> = true → выключить перед AdSense-ревью.</li>
+    </ul>
+  </div>
+
+  <div class="legend">
+    <span class="pill p-next">▶ следующее</span>
+    <span class="pill p-queue">в очереди</span>
+    <span class="pill p-decision">🔸 решение владельца</span>
+    <span class="pill p-gated">🔒 внешний гейт</span>
+    <span class="pill p-done">✓ сделано</span>
+  </div>
+
+  <footer>
+    Источник правды — <code>research/PLAN.md</code> в репозитории; эта страница переопубликовывается на тот же URL после каждой выполненной работы. Приватный артефакт (виден только владельцу).
+  </footer>
+</div>
