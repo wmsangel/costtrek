@@ -382,6 +382,62 @@ export const CALCULATORS: CalcMeta[] = [
     ],
     live: true,
   },
+  {
+    slug: "cost-of-living-budget-calculator",
+    glyph: "📊",
+    title: "Cost of Living Budget Calculator",
+    excerpt:
+      "Estimate a realistic monthly budget for any city by household — pick a city, set adults, children and a lifestyle, and see rent, food, transport and more add up.",
+    intent: "Work out what a month really costs in a given city for your household.",
+    intro: [
+      "This calculator turns a city and a household into a realistic monthly budget. Pick one of the cities we track, set how many adults and children you are, choose a lifestyle, and see the total broken down into rent, food, transport, utilities, healthcare and everyday goods — updating as you change anything.",
+      "The figures are estimates: a US-average spending basket for your household size, scaled by the chosen city's own price indices, with local rent dropped in for housing (a bigger household moves to a larger, pricier home). It's a planning guide, not a quote — useful for comparing cities and sizing the income or savings a move needs.",
+    ],
+    notes: [
+      "A second adult adds less than the first, and a child costs less than an adult on most lines — household budgets scale sub-linearly, and this model follows that.",
+      "Rent uses the city's real centre figures and steps up with household size (1-, 2- or 3-bedroom); it's usually the line that decides a city's affordability.",
+      "The lifestyle toggle nudges the discretionary (non-rent) spend — 'lean' for a frugal month, 'comfortable' for more dining out and extras.",
+    ],
+    faq: [
+      {
+        q: "How is the monthly budget calculated?",
+        a: "We start from a US-average monthly basket for your household (first adult, plus a sub-linear amount for each extra adult and child), scale each category by the city's own price index, and add local rent sized to the household. The lifestyle setting scales the non-rent total.",
+      },
+      {
+        q: "Are these real prices for the city?",
+        a: "Rent uses the city's real centre rent figures. The other categories are a US-reference basket scaled by the city's relative price indices — a calibrated estimate, not live local prices. See our methodology for the sources.",
+      },
+      {
+        q: "What currency are the figures in?",
+        a: "All amounts are in US dollars so cities compare directly. Each city page also offers a 'cost of living in your currency' view.",
+      },
+    ],
+    offersHeading: "Plan your move",
+    offers: [
+      {
+        name: "Send money abroad with Wise",
+        blurb: "Funding a move? Get the real exchange rate and low, transparent fees on transfers.",
+        cta: "Compare transfer costs",
+        href: null,
+        badge: "Sponsored",
+      },
+      {
+        name: "International health insurance",
+        blurb: "Budget a line for cover that works wherever you land, built for movers and nomads.",
+        cta: "Get a quote",
+        href: null,
+        badge: "Sponsored",
+      },
+      {
+        name: "eSIM data abroad",
+        blurb: "Skip roaming on arrival with an instant travel eSIM for your destination.",
+        cta: "See data plans",
+        href: null,
+        badge: "Sponsored",
+      },
+    ],
+    live: true,
+  },
 ];
 
 export function getCalculator(slug: string): CalcMeta | undefined {

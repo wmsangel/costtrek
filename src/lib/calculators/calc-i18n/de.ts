@@ -281,6 +281,52 @@ const de: Record<string, CalcText> = {
       }
     ]
   },
+  "cost-of-living-budget-calculator": {
+    title: "Budgetrechner für Lebenshaltungskosten",
+    excerpt: "Schätzen Sie ein realistisches Monatsbudget für jede Stadt nach Haushalt — wählen Sie eine Stadt, legen Sie Erwachsene, Kinder und einen Lebensstil fest und sehen Sie, wie sich Miete, Lebensmittel, Transport und mehr summieren.",
+    intent: "Finden Sie heraus, was ein Monat in einer bestimmten Stadt für Ihren Haushalt wirklich kostet.",
+    intro: [
+      "Dieser Rechner verwandelt eine Stadt und einen Haushalt in ein realistisches Monatsbudget. Wählen Sie eine der von uns erfassten Städte, legen Sie fest, wie viele Erwachsene und Kinder Sie sind, wählen Sie einen Lebensstil und sehen Sie die Gesamtsumme aufgeschlüsselt nach Miete, Lebensmitteln, Transport, Nebenkosten, Gesundheit und Dingen des täglichen Bedarfs — mit sofortiger Aktualisierung, sobald Sie etwas ändern.",
+      "Die Werte sind Schätzungen: ein US-durchschnittlicher Warenkorb für Ihre Haushaltsgröße, skaliert mit den Preisindizes der gewählten Stadt, wobei für das Wohnen die lokale Miete eingesetzt wird (ein größerer Haushalt zieht in eine größere, teurere Wohnung). Es ist ein Planungsleitfaden, kein Angebot — nützlich, um Städte zu vergleichen und das Einkommen oder die Ersparnisse zu bemessen, die ein Umzug erfordert."
+    ],
+    notes: [
+      "Ein zweiter Erwachsener kostet weniger als der erste, und ein Kind kostet bei den meisten Posten weniger als ein Erwachsener — Haushaltsbudgets skalieren unterproportional, und dieses Modell folgt dem.",
+      "Die Miete verwendet die realen Innenstadtwerte der Stadt und steigt mit der Haushaltsgröße (1, 2 oder 3 Schlafzimmer); meist ist sie der Posten, der über die Erschwinglichkeit einer Stadt entscheidet.",
+      "Der Lebensstil-Regler justiert die frei verfügbaren Ausgaben (ohne Miete) — „sparsam“ für einen genügsamen Monat, „komfortabel“ für mehr Restaurantbesuche und Extras."
+    ],
+    faq: [
+      {
+        q: "Wie wird das Monatsbudget berechnet?",
+        a: "Wir beginnen mit einem US-durchschnittlichen Monatswarenkorb für Ihren Haushalt (erster Erwachsener plus ein unterproportionaler Betrag für jeden weiteren Erwachsenen und jedes Kind), skalieren jede Kategorie mit dem Preisindex der Stadt und fügen die lokale, auf den Haushalt zugeschnittene Miete hinzu. Die Lebensstil-Einstellung skaliert die Gesamtsumme ohne Miete."
+      },
+      {
+        q: "Sind das reale Preise für die Stadt?",
+        a: "Die Miete verwendet die realen Innenstadt-Mietwerte der Stadt. Die übrigen Kategorien sind ein US-Referenzwarenkorb, skaliert mit den relativen Preisindizes der Stadt — eine kalibrierte Schätzung, keine aktuellen lokalen Preise. Die Quellen finden Sie in unserer Methodik."
+      },
+      {
+        q: "In welcher Währung sind die Werte angegeben?",
+        a: "Alle Beträge sind in US-Dollar, damit sich Städte direkt vergleichen lassen. Jede Stadtseite bietet zudem eine Ansicht „Lebenshaltungskosten in Ihrer Währung“."
+      }
+    ],
+    offersHeading: "Planen Sie Ihren Umzug",
+    offers: [
+      {
+        name: "Geld ins Ausland senden mit Wise",
+        blurb: "Finanzieren Sie einen Umzug? Erhalten Sie den echten Wechselkurs und niedrige, transparente Gebühren bei Überweisungen.",
+        cta: "Überweisungskosten vergleichen"
+      },
+      {
+        name: "Internationale Krankenversicherung",
+        blurb: "Planen Sie einen Posten für einen Schutz ein, der überall funktioniert, wo Sie landen — gemacht für Umziehende und Nomaden.",
+        cta: "Angebot einholen"
+      },
+      {
+        name: "eSIM-Daten im Ausland",
+        blurb: "Umgehen Sie Roaming bei der Ankunft mit einer sofort einsatzbereiten Reise-eSIM für Ihr Reiseziel.",
+        cta: "Datentarife ansehen"
+      }
+    ]
+  },
 };
 
 export default de;

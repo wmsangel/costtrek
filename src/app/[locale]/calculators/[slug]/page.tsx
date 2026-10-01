@@ -14,6 +14,8 @@ import CarLoanCalculator from "@/components/calculators/CarLoanCalculator";
 import SalaryCalculator from "@/components/calculators/SalaryCalculator";
 import ElectricityCalculator from "@/components/calculators/ElectricityCalculator";
 import TakeHomeCalculator from "@/components/calculators/TakeHomeCalculator";
+import BudgetCalculator from "@/components/calculators/BudgetCalculator";
+import { buildBudgetCities } from "@/lib/budgetData";
 import { CALCULATORS, getCalculator } from "@/lib/calculators/registry";
 import { localizedCalc } from "@/lib/calculators/calc-i18n";
 import { CALC_PRESETS } from "@/lib/calculators/presets";
@@ -27,7 +29,7 @@ export function generateStaticParams() {
 }
 
 /** Map a calculator slug to its interactive widget. */
-function widgetFor(slug: string) {
+function widgetFor(slug: string, l: Locale) {
   switch (slug) {
     case "mortgage-calculator":
       return <MortgageCalculator />;
@@ -41,6 +43,13 @@ function widgetFor(slug: string) {
       return <ElectricityCalculator />;
     case "take-home-pay-calculator":
       return <TakeHomeCalculator />;
+    case "cost-of-living-budget-calculator":
+      return (
+        <BudgetCalculator
+          cities={buildBudgetCities(l)}
+          methodologyHref={`/${l}/methodology`}
+        />
+      );
     default:
       return null;
   }
@@ -77,7 +86,7 @@ export default async function CalculatorPage({
   if (!calcRaw || !calcRaw.live) notFound();
   const calc = localizedCalc(calcRaw, l);
   const dict = await getDictionary(l);
-  const widget = widgetFor(slug);
+  const widget = widgetFor(slug, l);
 
   const softwareJsonLd = {
     "@context": "https://schema.org",

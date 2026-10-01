@@ -280,6 +280,52 @@ const fr: Record<string, CalcText> = {
         cta: "Obtenir un devis"
       }
     ]
+  },
+  "cost-of-living-budget-calculator": {
+    title: "Calculateur de budget du coût de la vie",
+    excerpt: "Estimez un budget mensuel réaliste pour n'importe quelle ville selon votre foyer — choisissez une ville, indiquez le nombre d'adultes et d'enfants ainsi qu'un style de vie, et voyez s'additionner loyer, alimentation, transport et le reste.",
+    intent: "Calculez ce qu'un mois coûte vraiment dans une ville donnée pour votre foyer.",
+    intro: [
+      "Ce calculateur transforme une ville et un foyer en un budget mensuel réaliste. Choisissez l'une des villes que nous suivons, indiquez le nombre d'adultes et d'enfants, sélectionnez un style de vie, et voyez le total se décomposer en loyer, alimentation, transport, charges, santé et biens du quotidien — le tout se met à jour à chaque modification.",
+      "Les chiffres sont des estimations : un panier de dépenses moyen américain pour la taille de votre foyer, ajusté par les indices de prix propres à la ville choisie, avec le loyer local intégré pour le logement (un foyer plus nombreux se tourne vers un logement plus grand et plus cher). C'est un guide de planification, pas un devis — utile pour comparer les villes et estimer le revenu ou l'épargne nécessaires à un déménagement."
+    ],
+    notes: [
+      "Un deuxième adulte ajoute moins que le premier, et un enfant coûte moins qu'un adulte sur la plupart des postes — les budgets des foyers évoluent de façon sous-linéaire, et ce modèle suit cette logique.",
+      "Le loyer s'appuie sur les vrais chiffres du centre-ville et augmente avec la taille du foyer (1, 2 ou 3 chambres) ; c'est généralement le poste qui détermine l'accessibilité financière d'une ville.",
+      "Le réglage du style de vie ajuste les dépenses discrétionnaires (hors loyer) — « économe » pour un mois frugal, « confortable » pour plus de restaurants et d'extras."
+    ],
+    faq: [
+      {
+        q: "Comment le budget mensuel est-il calculé ?",
+        a: "Nous partons d'un panier mensuel moyen américain pour votre foyer (le premier adulte, plus un montant sous-linéaire pour chaque adulte et enfant supplémentaire), ajustons chaque catégorie par l'indice de prix propre à la ville, et ajoutons le loyer local dimensionné au foyer. Le réglage du style de vie ajuste le total hors loyer."
+      },
+      {
+        q: "S'agit-il des vrais prix de la ville ?",
+        a: "Le loyer s'appuie sur les vrais chiffres de loyer du centre-ville. Les autres catégories reposent sur un panier de référence américain ajusté par les indices de prix relatifs de la ville — une estimation calibrée, pas des prix locaux en temps réel. Consultez notre méthodologie pour les sources."
+      },
+      {
+        q: "Dans quelle devise sont exprimés les chiffres ?",
+        a: "Tous les montants sont en dollars américains afin de comparer les villes directement. Chaque page de ville propose aussi un affichage « coût de la vie dans votre devise »."
+      }
+    ],
+    offersHeading: "Préparez votre déménagement",
+    offers: [
+      {
+        name: "Envoyer de l'argent à l'étranger avec Wise",
+        blurb: "Vous financez un déménagement ? Profitez du taux de change réel et de frais bas et transparents sur vos transferts.",
+        cta: "Comparer les coûts de transfert"
+      },
+      {
+        name: "Assurance santé internationale",
+        blurb: "Prévoyez une ligne de budget pour une couverture qui fonctionne où que vous arriviez, conçue pour les personnes mobiles et les nomades.",
+        cta: "Obtenir un devis"
+      },
+      {
+        name: "Données eSIM à l'étranger",
+        blurb: "Évitez l'itinérance dès l'arrivée grâce à une eSIM de voyage instantanée pour votre destination.",
+        cta: "Voir les forfaits data"
+      }
+    ]
   }
 };
 

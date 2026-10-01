@@ -280,6 +280,52 @@ const es: Record<string, CalcText> = {
         cta: "Obtener presupuesto"
       }
     ]
+  },
+  "cost-of-living-budget-calculator": {
+    title: "Calculadora de presupuesto del coste de vida",
+    excerpt: "Estima un presupuesto mensual realista para cualquier ciudad según tu hogar — elige una ciudad, indica adultos, niños y un estilo de vida, y mira cómo suman el alquiler, la comida, el transporte y más.",
+    intent: "Calcula lo que cuesta realmente un mes en una ciudad concreta para tu hogar.",
+    intro: [
+      "Esta calculadora convierte una ciudad y un hogar en un presupuesto mensual realista. Elige una de las ciudades que seguimos, indica cuántos adultos y niños sois, escoge un estilo de vida y mira el total desglosado en alquiler, comida, transporte, suministros, sanidad y bienes cotidianos — actualizándose a medida que cambias cualquier dato.",
+      "Las cifras son estimaciones: una cesta de gasto media de EE. UU. para el tamaño de tu hogar, ajustada por los índices de precios propios de la ciudad elegida, con el alquiler local incorporado para la vivienda (un hogar más grande pasa a una casa mayor y más cara). Es una guía de planificación, no un presupuesto cerrado — útil para comparar ciudades y dimensionar los ingresos o ahorros que requiere una mudanza."
+    ],
+    notes: [
+      "Un segundo adulto añade menos que el primero, y un niño cuesta menos que un adulto en la mayoría de las partidas — los presupuestos de los hogares escalan de forma sublineal, y este modelo lo refleja.",
+      "El alquiler usa las cifras reales del centro de la ciudad y aumenta con el tamaño del hogar (1, 2 o 3 habitaciones); suele ser la partida que decide la asequibilidad de una ciudad.",
+      "El selector de estilo de vida ajusta el gasto discrecional (sin contar el alquiler) — 'austero' para un mes frugal, 'cómodo' para más salidas a comer y extras."
+    ],
+    faq: [
+      {
+        q: "¿Cómo se calcula el presupuesto mensual?",
+        a: "Partimos de una cesta mensual media de EE. UU. para tu hogar (el primer adulto, más una cantidad sublineal por cada adulto y niño adicional), ajustamos cada categoría por el índice de precios propio de la ciudad y añadimos el alquiler local dimensionado al hogar. El estilo de vida ajusta el total sin contar el alquiler."
+      },
+      {
+        q: "¿Son precios reales de la ciudad?",
+        a: "El alquiler usa las cifras reales del alquiler en el centro de la ciudad. Las demás categorías son una cesta de referencia de EE. UU. ajustada por los índices de precios relativos de la ciudad — una estimación calibrada, no precios locales en tiempo real. Consulta nuestra metodología para ver las fuentes."
+      },
+      {
+        q: "¿En qué moneda están las cifras?",
+        a: "Todos los importes están en dólares estadounidenses para que las ciudades se comparen directamente. Cada página de ciudad también ofrece una vista de 'coste de vida en tu moneda'."
+      }
+    ],
+    offersHeading: "Planifica tu mudanza",
+    offers: [
+      {
+        name: "Envía dinero al extranjero con Wise",
+        blurb: "¿Financias una mudanza? Consigue el tipo de cambio real y comisiones bajas y transparentes en las transferencias.",
+        cta: "Comparar costes de transferencia"
+      },
+      {
+        name: "Seguro médico internacional",
+        blurb: "Reserva una partida para una cobertura que funcione dondequiera que llegues, pensada para quienes se mudan y nómadas.",
+        cta: "Obtener presupuesto"
+      },
+      {
+        name: "Datos eSIM en el extranjero",
+        blurb: "Evita el roaming al llegar con una eSIM de viaje instantánea para tu destino.",
+        cta: "Ver planes de datos"
+      }
+    ]
   }
 };
 

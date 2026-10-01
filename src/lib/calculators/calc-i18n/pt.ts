@@ -281,6 +281,52 @@ const pt: Record<string, CalcText> = {
       },
     ],
   },
+  "cost-of-living-budget-calculator": {
+    title: "Calculadora de Orçamento de Custo de Vida",
+    excerpt: "Estime um orçamento mensal realista para qualquer cidade consoante o agregado familiar — escolha uma cidade, defina adultos, crianças e um estilo de vida, e veja a renda, a alimentação, os transportes e muito mais a somarem-se.",
+    intent: "Perceba quanto custa realmente um mês numa determinada cidade para o seu agregado familiar.",
+    intro: [
+      "Esta calculadora transforma uma cidade e um agregado familiar num orçamento mensal realista. Escolha uma das cidades que acompanhamos, defina quantos adultos e crianças são, escolha um estilo de vida e veja o total repartido por renda, alimentação, transportes, serviços, saúde e bens do dia a dia — a atualizar-se à medida que altera qualquer campo.",
+      "Os valores são estimativas: um cabaz de despesa médio dos EUA para a dimensão do seu agregado, ajustado pelos índices de preços da própria cidade, com a renda local a entrar na habitação (um agregado maior passa para uma casa mais ampla e mais cara). É um guia de planeamento, não um orçamento fechado — útil para comparar cidades e dimensionar o rendimento ou as poupanças que uma mudança exige.",
+    ],
+    notes: [
+      "Um segundo adulto acrescenta menos do que o primeiro, e uma criança custa menos do que um adulto na maioria das rubricas — os orçamentos familiares crescem de forma sublinear, e este modelo segue essa lógica.",
+      "A renda usa os valores reais do centro da cidade e sobe com a dimensão do agregado (T1, T2 ou T3); é normalmente a rubrica que decide a acessibilidade de uma cidade.",
+      "O seletor de estilo de vida ajusta a despesa discricionária (sem renda) — 'contido' para um mês frugal, 'confortável' para mais refeições fora e extras.",
+    ],
+    faq: [
+      {
+        q: "Como é calculado o orçamento mensal?",
+        a: "Partimos de um cabaz mensal médio dos EUA para o seu agregado (primeiro adulto, mais um valor sublinear por cada adulto e criança adicional), ajustamos cada categoria pelo índice de preços da própria cidade e acrescentamos a renda local dimensionada ao agregado. O estilo de vida ajusta o total sem renda.",
+      },
+      {
+        q: "Estes são os preços reais da cidade?",
+        a: "A renda usa os valores reais da renda no centro da cidade. As restantes categorias são um cabaz de referência dos EUA ajustado pelos índices de preços relativos da cidade — uma estimativa calibrada, não preços locais em tempo real. Consulte a nossa metodologia para ver as fontes.",
+      },
+      {
+        q: "Em que moeda estão os valores?",
+        a: "Todos os montantes estão em dólares dos EUA (USD) para que as cidades se comparem diretamente. Cada página de cidade oferece também uma vista de 'custo de vida na sua moeda'.",
+      },
+    ],
+    offersHeading: "Planeie a sua mudança",
+    offers: [
+      {
+        name: "Envie dinheiro para o estrangeiro com a Wise",
+        blurb: "A financiar uma mudança? Obtenha a taxa de câmbio real e comissões baixas e transparentes nas transferências.",
+        cta: "Comparar custos de transferência",
+      },
+      {
+        name: "Seguro de saúde internacional",
+        blurb: "Reserve uma rubrica para uma cobertura que funciona onde quer que chegue, pensada para quem muda de país e nómadas.",
+        cta: "Pedir orçamento",
+      },
+      {
+        name: "Dados no estrangeiro com eSIM",
+        blurb: "Evite o roaming à chegada com um eSIM de viagem instantâneo para o seu destino.",
+        cta: "Ver planos de dados",
+      },
+    ],
+  },
 };
 
 export default pt;
