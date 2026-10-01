@@ -202,6 +202,7 @@ export type Dictionary = {
     plainAbove: string; // {city} {pct} {rent}
     compareWith: string; // {city}
     rankedIn: string;
+    deepDiveTitle: string; // {city} — editorial "what to know" section (priority cities)
     flightSearch: string;
     disclaimer: string;
   };

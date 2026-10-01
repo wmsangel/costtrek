@@ -291,6 +291,7 @@
     "plainAbove": "Em resumo: {city} é cerca de {pct}% mais cara do que uma cidade dos EUA típica. Um T1 no centro custa cerca de {rent} $/mês.",
     "compareWith": "Comparar {city} com…",
     "rankedIn": "Classificada em",
+    "deepDiveTitle": "Custo de vida em {city}: o que saber",
     "flightSearch": "Procurar voos baratos",
     "disclaimer": "As estimativas usam índices aproximados de custo de vida (média dos EUA = 100) e servem apenas de orientação geral."
   },

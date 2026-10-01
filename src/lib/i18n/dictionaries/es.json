@@ -291,6 +291,7 @@
     "plainAbove": "En pocas palabras: {city} es un {pct}% más cara que una ciudad estadounidense típica. Un piso de una habitación en el centro cuesta unos {rent} $/mes.",
     "compareWith": "Comparar {city} con…",
     "rankedIn": "Clasificada en",
+    "deepDiveTitle": "Coste de vida en {city}: lo que debes saber",
     "flightSearch": "Busca vuelos baratos",
     "disclaimer": "Las estimaciones usan índices aproximados del coste de vida (media de EE. UU. = 100) y son solo orientativas."
   },

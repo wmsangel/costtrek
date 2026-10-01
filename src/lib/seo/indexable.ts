@@ -15,7 +15,7 @@
 export const MAJOR_CITY_SLUGS = new Set<string>([
   // US
   "new-york-ny", "san-francisco-ca", "los-angeles-ca", "chicago-il", "miami-fl",
-  "austin-tx", "seattle-wa", "boston-ma", "washington-dc",
+  "austin-tx", "seattle-wa", "boston-ma", "washington-dc", "charlotte-nc",
   // Europe
   "london-uk", "paris-fr", "berlin-de", "munich-de", "amsterdam-nl",
   "madrid-es", "barcelona-es", "lisbon-pt", "rome-it", "zurich-ch",
@@ -46,6 +46,7 @@ export const MAJOR_CITY_SLUGS = new Set<string>([
 export const TOP_CITY_SLUGS = new Set<string>([
   // US
   "new-york-ny", "san-francisco-ca", "los-angeles-ca", "chicago-il", "miami-fl",
+  "charlotte-nc",
   // Europe
   "london-uk", "paris-fr", "berlin-de", "munich-de", "amsterdam-nl",
   "barcelona-es", "madrid-es", "lisbon-pt", "rome-it", "vienna-at",

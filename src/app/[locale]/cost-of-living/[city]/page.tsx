@@ -21,6 +21,7 @@ import { breadcrumbJsonLd, cityJsonLd, datasetJsonLd } from "@/lib/seo/jsonld";
 import { getCityProfile, getCountry, countrySlug } from "@/lib/data";
 import { localizedCountry } from "@/lib/i18n/places";
 import CityProfileSections from "@/components/CityProfileSections";
+import { cityNote } from "@/content/cityNotes";
 import CityFacts from "@/components/CityFacts";
 import CarFreeCard from "@/components/CarFreeCard";
 import { carFree } from "@/lib/carfree";
@@ -95,6 +96,7 @@ export default async function CityPage({
   const path = `cost-of-living/${c.slug}`;
   const carFreeData = carFree(c);
   const affordData = affordability(c);
+  const deepDive = cityNote(c.slug, l); // editorial "what to know" (priority cities only)
 
   // Representative USD figures for the "cost in your currency" widget. Rent is
   // always shown (with a fallback); staples appear when the profile has them.
@@ -244,6 +246,19 @@ export default async function CityPage({
             {fill(dict.country.citiesTitle, { country: localizedCountry(l, c) })} →
           </Link>
         </p>
+      )}
+
+      {deepDive && (
+        <section className="mt-8">
+          <h2 className="mag-h2 mb-3">
+            ◆ {fill(dict.city.deepDiveTitle, { city: localizedCityName(l, c) })}
+          </h2>
+          <div className="space-y-3 max-w-[70ch] leading-relaxed text-[var(--foreground)]">
+            {deepDive.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+          </div>
+        </section>
       )}
 
       <section className="mt-10">
