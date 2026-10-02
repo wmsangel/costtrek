@@ -156,7 +156,7 @@
     <div class="tile"><div class="big">14</div><div class="lab">сайтов в footer-сети</div></div>
   </div>
 
-  <h2>Очередь <span class="n">— ближайшие ~10 запусков</span></h2>
+  <h2>Очередь <span class="n">— ближайшие ~11 запусков</span></h2>
   <div class="queue">
 
     <div class="row">
@@ -207,6 +207,15 @@
     <div class="row">
       <div class="idx">6</div>
       <div class="body">
+        <div class="name">Миграция на Cloudflare (OpenNext) — спайк</div>
+        <div class="why">Vercel → Cloudflare Workers (@opennextjs/cloudflare). Статику CF отдаёт даром → масштаб страниц не растит счёт (paid $5/мес, 100k ассетов). Спайк на CF-превью, домен переключаем после зелёного. Решено 2026-10-02 поставить в план.</div>
+      </div>
+      <span class="pill p-queue">в очереди</span>
+    </div>
+
+    <div class="row">
+      <div class="idx">7</div>
+      <div class="body">
         <div class="name">Качественный лонгрид-гайд #2 + E-E-A-T</div>
         <div class="why">Под доказанный кластер (напр. «salary to move abroad»), с авторством/байлайнами. Компаундит контент.</div>
       </div>
@@ -214,7 +223,7 @@
     </div>
 
     <div class="row">
-      <div class="idx">7</div>
+      <div class="idx">8</div>
       <div class="body">
         <div class="name">Канонизация направлений compare</div>
         <div class="why">Google считает a-vs-b / b-vs-a дублями. Канон в одно направление → −½ страниц, концентрация авторитета.</div>
@@ -223,7 +232,7 @@
     </div>
 
     <div class="row">
-      <div class="idx">8</div>
+      <div class="idx">9</div>
       <div class="body">
         <div class="name">Разбор обвала показов + концентрация sitemap</div>
         <div class="why">Показы 28д −99%; sitemap 25 545 URL, 93% без показов. Диагностика + решение урезать до сильных страниц.</div>
@@ -232,7 +241,7 @@
     </div>
 
     <div class="row">
-      <div class="idx">9</div>
+      <div class="idx">10</div>
       <div class="body">
         <div class="name">Монетизация «когда прилетит сигнал»</div>
         <div class="why">Omio + Trip.com в toolkit (ждём ссылки). AdSense: при READY — Google Funding Choices CMP + выключить флаг Travelpayouts Drive на ревью.</div>
@@ -241,7 +250,7 @@
     </div>
 
     <div class="row">
-      <div class="idx">10</div>
+      <div class="idx">11</div>
       <div class="body">
         <div class="name">Буфер / грабёж бэклога</div>
         <div class="why">ISR для region/persona-хабов, i18n-ярлыки метрик, слаги, support@-алиасы, форма фидбэка, подача URL в GSC.</div>
@@ -268,7 +277,6 @@
   <ul class="clean inbox">
     <li><span class="txt"><b>OECD average wages</b> — реальная avg зарплата для стран OECD (предусловие для будущего платного отчёта). → повышено в план #5</span></li>
     <li><span class="txt"><b>Внутренний «house-ad» слот</b> — промо наших же фич (финдер / калькулятор / гайд / хаб), ротация по неделям (ISO-week), лента «Featured on CostTrek». Гонит внутренний трафик на свежее + перелинковка. Дёшево; хороший быстрый инсерт.</span></li>
-    <li><span class="txt"><b>Миграция на Cloudflare (спайк)</b> — через @opennextjs/cloudflare. НЕ сейчас (трафик ≈0, Vercel уже оптимизирован). Статику CF отдаёт бесплатно → «больше страниц» = вопрос file-лимита (free 20k / paid 100k ассетов), а не счёта; у нас ~25–35k файлов → нужен paid ($5/мес).</span></li>
     <li><span class="txt"><b>Самоописания сети</b> — блоки по шаблону для обзоров на foundaday. → часть плана #2</span></li>
     <li><span class="txt"><b>ISR для region/persona-хабов</b> — снять давление потолка Vercel и build-минут при росте городов.</span></li>
     <li><span class="txt"><b>i18n-ярлыки метрик</b> — в metrics.ts сейчас EN на всех локалях.</span></li>
