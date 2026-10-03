@@ -11,7 +11,7 @@ import {
 import { isLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { localizedCountryNameByCode } from "@/lib/i18n/places";
-import { pageMetadata, SITE_NAME } from "@/lib/seo/site";
+import { pageMetadata, SITE_NAME, absUrl } from "@/lib/seo/site";
 import { breadcrumbJsonLd } from "@/lib/seo/jsonld";
 import { HEADLINE_COUNTRY_CODES } from "@/lib/seo/indexable";
 import JsonLd from "@/components/JsonLd";
@@ -76,13 +76,29 @@ export default async function CountriesPage({
     }
   }
 
+  const countriesItemList = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: dict.countriesIndex.title,
+    numberOfItems: countries.length,
+    itemListElement: countries.map((co, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: localizedCountryNameByCode(l, co.code, co.name),
+      url: absUrl(l, `country/${countrySlug(co)}`),
+    })),
+  };
+
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:py-10">
       <JsonLd
-        data={breadcrumbJsonLd(l, [
-          { name: dict.breadcrumbHome, path: "" },
-          { name: dict.countriesIndex.linkTitle, path: "countries" },
-        ])}
+        data={[
+          breadcrumbJsonLd(l, [
+            { name: dict.breadcrumbHome, path: "" },
+            { name: dict.countriesIndex.linkTitle, path: "countries" },
+          ]),
+          countriesItemList,
+        ]}
       />
       <nav className="text-sm text-[var(--muted)] mb-4">
         <Link href={`/${l}`} className="hover:underline">

@@ -11,6 +11,7 @@ export function organizationJsonLd() {
     logo: `${SITE_URL}/icon`,
     description:
       "Independent cost-of-living, tax and quality-of-life comparisons between cities and countries worldwide.",
+    sameAs: ["https://github.com/wmsangel/costtrek"],
     founder: { "@type": "Person", name: "Igor Zagorodnyi" },
     contactPoint: {
       "@type": "ContactPoint",

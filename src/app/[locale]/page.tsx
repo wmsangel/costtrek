@@ -24,7 +24,7 @@ import { GUIDES, localizedGuide } from "@/content/guides";
 import { CALCULATORS } from "@/lib/calculators/registry";
 import { localizedCalc } from "@/lib/calculators/calc-i18n";
 import { getCountry } from "@/lib/data";
-import { pageMetadata, SITE_NAME } from "@/lib/seo/site";
+import { pageMetadata, SITE_NAME, absUrl } from "@/lib/seo/site";
 import { websiteJsonLd } from "@/lib/seo/jsonld";
 import JsonLd from "@/components/JsonLd";
 
@@ -123,9 +123,27 @@ export default async function Home({
     cities: CITIES.filter((c) => getCountry(c.countryCode)?.continent === name),
   })).filter((g) => g.cities.length > 0);
 
+  // ItemList of the featured comparisons (a genuine list on the home page).
+  const popularItemList = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: dict.home.popularTitle,
+    itemListElement: POPULAR.map(([aSlug, bSlug], i) => {
+      const a = getCity(aSlug);
+      const b = getCity(bSlug);
+      if (!a || !b) return null;
+      return {
+        "@type": "ListItem",
+        position: i + 1,
+        name: `${localizedCityName(l, a)} ${dict.compare.vs} ${localizedCityName(l, b)}`,
+        url: absUrl(l, comparePath(a, b).replace(/^\//, "")),
+      };
+    }).filter(Boolean),
+  };
+
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:py-12">
-      <JsonLd data={websiteJsonLd(l)} />
+      <JsonLd data={[websiteJsonLd(l), popularItemList]} />
 
       {/* Hero */}
       <section className="cover px-6 sm:px-12 py-12 sm:py-16">
