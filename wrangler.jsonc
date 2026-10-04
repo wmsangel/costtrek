@@ -1,0 +1,27 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "main": ".open-next/worker.js",
+  "name": "costtrek",
+  "compatibility_date": "2025-03-25",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    {
+      // Self-reference (name must match "name" above) — used by the cache.
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "costtrek"
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "NEXT_INC_CACHE_KV",
+      "id": "05ae934d4b3a4683a695e30a55b5e24b"
+    }
+  ],
+  "images": {
+    "binding": "IMAGES"
+  }
+}
