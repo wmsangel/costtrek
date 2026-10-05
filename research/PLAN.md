@@ -80,13 +80,18 @@ next-on-pages. **Почему:** CF отдаёт статику бесплатн
 - **✅ Фаза 1 (2026-10-03, a691b98): апгрейд Next 16.2.12 → 16.3.8** — адаптер не
   поддерживает 16.0–16.3.7; 16.2.12 был в дыре. Бамп next+eslint-config-next,
   React без изменений; tsc/build/рантайм чисто, прод здоров на новой версии.
-- **⏳ Фаза 2 (следующее по этому пункту): CF-адаптер + превью.** Поставить
-  @opennextjs/cloudflare, `wrangler.jsonc` + `open-next.config.ts`, **ISR-кэш через
-  KV** (R2-скоупа у токена НЕТ, KV — есть), адаптированный билд, деплой на
-  `*.workers.dev` превью. Проверить: число ассетов (free 20k / **paid $5/мес
-  100k** — возможно понадобится Workers Paid = РЕШЕНИЕ ВЛАДЕЛЬЦА по биллингу),
-  `/og` (Satori/WASM), proxy.ts, env. Wrangler залогинен (wmsangel@gmail.com,
-  acct d6d43b8e…). Домен переключаем ТОЛЬКО после зелёного превью.
+- **✅ Фаза 2 — конфиг готов (2026-10-05, ветка `cloudflare-spike`, fbd9af2).**
+  @opennextjs/cloudflare + `wrangler.jsonc` + `open-next.config.ts` (ISR-кэш через
+  **KV** — R2-скоупа нет; namespace `NEXT_INC_CACHE_KV`=05ae934d…), cf:* npm-скрипты.
+  Локально проверено end-to-end: middleware/proxy.ts ✓, /og (Satori/WASM) ✓, все
+  маршруты 200 после populate. Ассетов ~39–45 (file-лимит НЕ проблема). Рунбук:
+  `research/CLOUDFLARE-MIGRATION.md`.
+- **⏳ Фаза 3 — ГЕЙТ: Workers Paid $5/мес (владелец оплатит в ближайшие часы).**
+  Воркер 3.59 MB gzip > free 3 MB; populate ~11 869 KV-записей > free 1000/день
+  (уже сожгли квоту сегодня → письмо CF, сброс 2026-10-06 00:00 UTC). После оплаты:
+  `npm run cf:build && npm run cf:deploy` (populate ~20 мин) → превью
+  `costtrek.workers.dev` → проверка в облаке → **потом** переключение домена
+  (Custom Domain), Vercel держим как откат ~неделю.
 
 ### 7. Качественный лонгрид-гайд #2 (под доказанный кластер) + E-E-A-T
 Напр. «How much salary do you need to move abroad» или угол «cost of living US vs
