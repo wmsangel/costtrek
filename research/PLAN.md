@@ -72,7 +72,12 @@ than-india) уже покрыты существующими compare-FAQ; рас
 official-marks паттерн). **Почему:** доверие к данным бьёт флаг «scaled content» и
 это предусловие для будущего платного отчёта. Источник бесплатный (OECD API).
 
-### 6. Миграция на Cloudflare (OpenNext) — в работе (спайк)
+### ✅ 6. Миграция на Cloudflare (OpenNext) — СДЕЛАНО 2026-10-05 (7386196)
+**Прод `costtrek.com` + `www` переехали на Cloudflare Worker `costtrek`** (Custom
+Domains; подтверждено `server: cloudflare`, все маршруты 200/308, /og, middleware).
+Деплой теперь: `nvm use 22 && npm run cf:build && npm run cf:deploy` (НЕ git push —
+см. память deploy-workflow). Vercel держим ~неделю как откат. Остаток (бэклог):
+снять домен с Vercel, www→apex 301, убрать @vercel/analytics, авто-деплой на CF.
 Переезд с Vercel на Cloudflare через **@opennextjs/cloudflare** (Workers), НЕ старый
 next-on-pages. **Почему:** CF отдаёт статику бесплатно → масштаб страниц НЕ
 масштабирует счёт; заметно дешевле Vercel на росте вширь. DNS уже на CF; проксирование
