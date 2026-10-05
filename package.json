@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "cf:build": "opennextjs-cloudflare build",
+    "cf:deploy": "opennextjs-cloudflare deploy",
+    "cf:preview": "opennextjs-cloudflare preview",
+    "cf:upload": "opennextjs-cloudflare upload"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
@@ -15,6 +19,7 @@
     "react-dom": "19.2.4"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^1.20.8",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
