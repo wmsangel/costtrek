@@ -86,12 +86,19 @@ next-on-pages. **Почему:** CF отдаёт статику бесплатн
   Локально проверено end-to-end: middleware/proxy.ts ✓, /og (Satori/WASM) ✓, все
   маршруты 200 после populate. Ассетов ~39–45 (file-лимит НЕ проблема). Рунбук:
   `research/CLOUDFLARE-MIGRATION.md`.
-- **⏳ Фаза 3 — ГЕЙТ: Workers Paid $5/мес (владелец оплатит в ближайшие часы).**
-  Воркер 3.59 MB gzip > free 3 MB; populate ~11 869 KV-записей > free 1000/день
-  (уже сожгли квоту сегодня → письмо CF, сброс 2026-10-06 00:00 UTC). После оплаты:
-  `npm run cf:build && npm run cf:deploy` (populate ~20 мин) → превью
-  `costtrek.workers.dev` → проверка в облаке → **потом** переключение домена
-  (Custom Domain), Vercel держим как откат ~неделю.
+- **✅ Фаза 3 — ПРЕВЬЮ ЗАДЕПЛОЕНО И ЗЕЛЁНОЕ (2026-10-05, Workers Paid включён).**
+  **https://costtrek.ocrsnip.workers.dev** (Version 8869f98f). В облаке прогнано всё:
+  middleware (307→/de), /og (PNG), city/compare(308)/калькулятор/финдер/хабы/sitemap/
+  robots/ads.txt — 200; de локализовано; скрин рендера ок. **11 908 ассетов** (под
+  Paid-лимитом 100k). ВАЖНО: кэш переключён KV → **static-assets** (54db6dd) —
+  KV-populate был ~2ч на троттле, а static-assets отдаёт пререндер как ассеты
+  (бесплатно, без KV-записей; read-only, нам подходит). `revalidate` стал no-op
+  (страницы живут от деплоя до деплоя).
+- **⏳ Фаза 4 — переключение домена (решение/действие владельца).** Посмотреть
+  превью → добавить `costtrek.com`+`www` воркеру как **Custom Domain** (CF сам
+  переставит DNS) → снять домен с Vercel, **проект на Vercel держать ~неделю как
+  откат**. Потом: убрать @vercel/analytics из кода, настроить авто-деплой (Workers
+  Builds или GH Actions). Рунбук: `research/CLOUDFLARE-MIGRATION.md`.
 
 ### 7. Качественный лонгрид-гайд #2 (под доказанный кластер) + E-E-A-T
 Напр. «How much salary do you need to move abroad» или угол «cost of living US vs
