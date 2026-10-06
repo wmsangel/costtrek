@@ -96,6 +96,14 @@ export default async function CountryPage({
       `$${co.economy.avgNetSalaryUsdMonthly.toLocaleString(nl)}`,
       "per month",
     ]);
+  if (co.economy?.avgAnnualWagePppUsd != null)
+    taxes.push([
+      "Avg annual wage",
+      `$${co.economy.avgAnnualWagePppUsd.toLocaleString(nl)}`,
+      co.economy.official?.avgAnnualWagePppUsd
+        ? `per year · ${co.economy.official.avgAnnualWagePppUsd}`
+        : "per year",
+    ]);
   if (co.economy?.minWageUsdMonthly)
     taxes.push([
       "Minimum wage",

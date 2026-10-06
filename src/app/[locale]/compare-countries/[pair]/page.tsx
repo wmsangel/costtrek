@@ -50,6 +50,7 @@ const METRICS: CM[] = [
   { group: "taxes", label: "Corporate tax", format: "percent", better: false, get: (co) => co.taxes.corporateTax },
   { group: "taxes", label: "Capital gains", format: "percent", better: false, get: (co) => co.taxes.capitalGains?.rate },
   { group: "economy", label: "Avg net salary", format: "usdMonth", better: true, get: (co) => co.economy?.avgNetSalaryUsdMonthly },
+  { group: "economy", label: "Avg annual wage (OECD, PPP)", format: "usd", better: true, official: "avgAnnualWagePppUsd", get: (co) => co.economy?.avgAnnualWagePppUsd },
   { group: "economy", label: "Minimum wage", format: "usdMonth", better: true, official: "minWageUsdMonthly", get: (co) => co.economy?.minWageUsdMonthly || null },
   { group: "economy", label: "GDP per capita", format: "usd", better: true, official: "gdpPerCapitaUsd", get: (co) => co.economy?.gdpPerCapitaUsd },
   { group: "economy", label: "Inflation (annual)", format: "percent", better: false, official: "inflationPct", get: (co) => co.economy?.inflationPct },
