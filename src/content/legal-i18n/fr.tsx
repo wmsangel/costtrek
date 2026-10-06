@@ -143,7 +143,13 @@ const fr: Record<string, (p: { l: Locale }) => React.ReactNode> = {
         </li>
         <li>
           <strong>Salaire minimum — réel (UE + Turquie).</strong>{" "}
-          Les salaires minimums mensuels légaux proviennent d’Eurostat (2026-S2), convertis en USD au taux moyen Eurostat d’août 2026. Les salaires minimums des autres pays, et tous les salaires moyens, sont des estimations. Les chiffres réels portent un ✓ dans les tableaux comparatifs.
+          Les salaires minimums mensuels légaux proviennent d’Eurostat (2026-S2), convertis en USD au taux moyen Eurostat d’août 2026. Les salaires minimums des autres pays, et les salaires nets, sont des estimations. Les chiffres réels portent un ✓ dans les tableaux comparatifs.
+        </li>
+        <li>
+          <strong>Salaire moyen — réel (membres de l’OCDE).</strong>{" "}
+          Les salaires annuels moyens proviennent de l’{" "}
+          <a href="https://www.oecd.org/en/data/indicators/average-wages.html" rel="noopener" target="_blank">OCDE</a>{" "}
+          (dernière année disponible, en USD à parité de pouvoir d’achat). La PPA tient compte des niveaux de prix locaux&nbsp;; elle reflète donc ce qu’un salaire permet d’acheter sur place plutôt qu’un montant en dollars au taux de marché. Les pays hors OCDE conservent un salaire net estimé.
         </li>
         <li>
           <strong>Indice de coût global des États-Unis — réel.</strong> Ancré aux{" "}

@@ -91,7 +91,21 @@ export default async function MethodologyPage({
             </li>
             <li>
               <strong>Minimum wage — real (EU + Türkiye).</strong>{" "}
-              Statutory monthly minimum wages come from Eurostat (2026-S2), converted to USD at the Eurostat August 2026 average rate. Other countries' minimum wages, and all average salaries, are estimates. Real figures carry a ✓ in comparison tables.
+              Statutory monthly minimum wages come from Eurostat (2026-S2), converted to USD at the Eurostat August 2026 average rate. Other countries' minimum wages, and net take-home salaries, are estimates. Real figures carry a ✓ in comparison tables.
+            </li>
+            <li>
+              <strong>Average wage — real (OECD members).</strong>{" "}
+              Average annual wages come from the{" "}
+              <a
+                href="https://www.oecd.org/en/data/indicators/average-wages.html"
+                rel="noopener"
+                target="_blank"
+              >
+                OECD
+              </a>{" "}
+              (latest year, USD at purchasing-power parity). PPP adjusts for local
+              price levels, so it reflects what a wage buys locally rather than a
+              market-rate dollar amount. Non-OECD countries keep an estimated net salary.
             </li>
             <li>
               <strong>US overall cost index — real.</strong> Anchored to{" "}

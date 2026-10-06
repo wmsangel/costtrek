@@ -887,6 +887,23 @@ for (const [code, eur] of Object.entries(EUROSTAT_MIN_WAGE_EUR)) {
   if (us?.economy) us.economy.official = { ...us.economy.official, minWageUsdMonthly: "US DOL (federal)" };
 }
 
+// REAL average ANNUAL wage — OECD "Average annual wages" (AV_AN_WAGE), latest
+// year, USD at constant-2025 purchasing-power parity. Pulled 2026-10-06. OECD
+// members we track only; non-members keep their estimated net salary. PPP is
+// price-level-adjusted (see /methodology), so it is NOT a market-rate figure.
+const OECD_AVG_WAGE_PPP_USD: Record<string, number> = {
+  US: 86977, GB: 66299, DE: 76285, FR: 60483, ES: 57779, IT: 53864,
+  CA: 67901, AU: 72018, NL: 80136, IE: 70113, PT: 44937, AT: 78301,
+  CZ: 43607, HU: 39145, GR: 32412, EE: 41019, PL: 49074, KR: 61259,
+  JP: 50183, MX: 24463,
+};
+for (const [code, usd] of Object.entries(OECD_AVG_WAGE_PPP_USD)) {
+  const c = (COUNTRIES as Record<string, Country>)[code];
+  if (!c?.economy) continue;
+  c.economy.avgAnnualWagePppUsd = usd;
+  c.economy.official = { ...c.economy.official, avgAnnualWagePppUsd: "OECD (PPP)" };
+}
+
 /** Source label if `field` is an official statistic for this country, else undefined (= estimate). */
 export function officialSource(
   country: Country | undefined,

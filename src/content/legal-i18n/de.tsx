@@ -142,7 +142,18 @@ const de: Record<string, (p: { l: Locale }) => React.ReactNode> = {
         </li>
         <li>
           <strong>Mindestlohn — tatsächlich (EU + Türkei).</strong>{" "}
-          Gesetzliche monatliche Mindestlöhne stammen von Eurostat (2026-S2), umgerechnet in USD zum Eurostat-Durchschnittskurs August 2026. Mindestlöhne anderer Länder und alle Durchschnittsgehälter sind Schätzungen. Echte Werte tragen in Vergleichstabellen ein ✓.
+          Gesetzliche monatliche Mindestlöhne stammen von Eurostat (2026-S2), umgerechnet in USD zum Eurostat-Durchschnittskurs August 2026. Mindestlöhne anderer Länder und Netto-Gehälter sind Schätzungen. Echte Werte tragen in Vergleichstabellen ein ✓.
+        </li>
+        <li>
+          <strong>Durchschnittsgehalt — tatsächlich (OECD-Mitglieder).</strong>{" "}
+          Die durchschnittlichen Jahresgehälter stammen von der{" "}
+          <a href="https://www.oecd.org/en/data/indicators/average-wages.html" rel="noopener" target="_blank">
+            OECD
+          </a>{" "}
+          (letztes Jahr, in USD zur Kaufkraftparität). Die KKP berücksichtigt das
+          örtliche Preisniveau und spiegelt daher wider, was ein Gehalt vor Ort
+          kauft, statt eines Dollarbetrags zum Marktkurs. Für Länder außerhalb der
+          OECD bleibt ein geschätztes Netto-Gehalt bestehen.
         </li>
         <li>
           <strong>US-Gesamtkostenindex — tatsächlich.</strong> Gekoppelt an{" "}

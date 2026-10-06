@@ -101,6 +101,7 @@ export const METRICS: Metric[] = [
 
   // Economy (USD)
   { key: "avgNetSalary", group: "economy", label: "Avg net salary", format: "usdMonth", higherIsBetter: true, get: (c) => c.country?.economy?.avgNetSalaryUsdMonthly },
+  { key: "avgAnnualWage", group: "economy", label: "Avg annual wage (OECD, PPP)", format: "usd", higherIsBetter: true, official: "avgAnnualWagePppUsd", get: (c) => c.country?.economy?.avgAnnualWagePppUsd },
   { key: "minWage", group: "economy", label: "Minimum wage", format: "usdMonth", higherIsBetter: true, official: "minWageUsdMonthly", get: (c) => c.country?.economy?.minWageUsdMonthly || null },
   { key: "gdpPerCapita", group: "economy", label: "GDP per capita", format: "usd", higherIsBetter: true, official: "gdpPerCapitaUsd", get: (c) => c.country?.economy?.gdpPerCapitaUsd },
   { key: "inflation", group: "economy", label: "Inflation (annual)", format: "percent", higherIsBetter: false, official: "inflationPct", get: (c) => c.country?.economy?.inflationPct },

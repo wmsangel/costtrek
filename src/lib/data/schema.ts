@@ -54,6 +54,7 @@ export type VisaType = {
 export type OfficialEconomyField =
   | "gdpPerCapitaUsd"
   | "minWageUsdMonthly"
+  | "avgAnnualWagePppUsd"
   | "lifeExpectancyYears"
   | "inflationPct";
 
@@ -104,6 +105,8 @@ export type Country = {
   economy?: {
     gdpPerCapitaUsd?: number;
     avgNetSalaryUsdMonthly?: number;
+    /** Real OECD average ANNUAL wage, USD at PPP (OECD members only). */
+    avgAnnualWagePppUsd?: number;
     minWageUsdMonthly?: number;
     lifeExpectancyYears?: number;
     inflationPct?: number;

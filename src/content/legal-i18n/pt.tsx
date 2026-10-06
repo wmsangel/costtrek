@@ -140,7 +140,19 @@ const pt: Record<string, (p: { l: Locale }) => React.ReactNode> = {
         </li>
         <li>
           <strong>Salário mínimo — real (UE + Turquia).</strong>{" "}
-          Os salários mínimos mensais legais vêm do Eurostat (2026-S2), convertidos em USD à taxa média do Eurostat de agosto de 2026. Os salários mínimos de outros países e todos os salários médios são estimativas. Os valores reais levam um ✓ nas tabelas comparativas.
+          Os salários mínimos mensais legais vêm do Eurostat (2026-S2), convertidos em USD à taxa média do Eurostat de agosto de 2026. Os salários mínimos de outros países e os salários líquidos são estimativas. Os valores reais levam um ✓ nas tabelas comparativas.
+        </li>
+        <li>
+          <strong>Salário médio — real (membros da OCDE).</strong>{" "}
+          Os salários anuais médios provêm da{" "}
+          <a href="https://www.oecd.org/en/data/indicators/average-wages.html" rel="noopener" target="_blank">
+            OCDE
+          </a>{" "}
+          (último ano disponível, em USD à paridade do poder de compra). A PPC
+          ajusta-se aos níveis de preços locais, refletindo assim o que um
+          salário permite comprar localmente, e não um montante em dólares à
+          taxa de mercado. Os países que não pertencem à OCDE mantêm um salário
+          líquido estimado.
         </li>
         <li>
           <strong>Índice global de custos dos EUA — real.</strong> Ancorado nas{" "}
