@@ -69,10 +69,12 @@ than-india) уже покрыты существующими compare-FAQ; рас
 (`src/lib/budget.ts`) калибрована под Day-4 персоны. English-UI chrome, страница
 локализована ×5. Билд 11 869.
 
-### 5. Реальные данные — средние зарплаты OECD ⭐ СЛЕДУЮЩЕЕ
-Заменить оценочную avg net salary на реальную для стран OECD (расширяет Day-5
-official-marks паттерн). **Почему:** доверие к данным бьёт флаг «scaled content» и
-это предусловие для будущего платного отчёта. Источник бесплатный (OECD API).
+### ✅ 5. Реальные данные — средние зарплаты OECD — СДЕЛАНО 2026-10-06 (3247ba4)
+Реальная средняя годовая зарплата OECD (AV_AN_WAGE, USD PPP) по 20 странам-членам
+→ новое поле `economy.avgAnnualWagePppUsd` + официальная метрика «Avg annual wage
+(OECD, PPP)» с ✓-меткой на city-compare / compare-countries / country-страницах;
+методология ×5 обновлена. PPP чётко подписан (не рыночный курс); non-OECD держат
+net-оценку. Деплой через cf (Cloudflare).
 
 ### ✅ 6. Миграция на Cloudflare (OpenNext) — СДЕЛАНО 2026-10-05 (7386196)
 **Прод `costtrek.com` + `www` переехали на Cloudflare Worker `costtrek`** (Custom
@@ -107,7 +109,7 @@ next-on-pages. **Почему:** CF отдаёт статику бесплатн
   откат**. Потом: убрать @vercel/analytics из кода, настроить авто-деплой (Workers
   Builds или GH Actions). Рунбук: `research/CLOUDFLARE-MIGRATION.md`.
 
-### 7. Качественный лонгрид-гайд #2 (под доказанный кластер) + E-E-A-T
+### 7. Качественный лонгрид-гайд #2 (под доказанный кластер) + E-E-A-T ⭐ СЛЕДУЮЩЕЕ
 Напр. «How much salary do you need to move abroad» или угол «cost of living US vs
 X». Добавить авторство/байлайны (аудит отмечал их отсутствие). Компаундит контент.
 
@@ -148,6 +150,14 @@ compare-countries) → срежет ~половину compare-страниц, б
 - **RUM/Cloudflare аналитика** — домен не проксирован, edge-аналитика пустая; только
   RUM-beacon. Не передебажывать (см. память costtrek-analytics-limits).
 - **Флаг `TRAVELPAYOUTS_DRIVE`** сейчас = true; выключить перед AdSense-ревью.
+- **Googlebot-краул после переезда на CF (2026-10-06):** владелец заметил мало
+  запросов Googlebot (8/нед vs 1808 AppleBot). Серверная диагностика ЧИСТА:
+  robots `Allow:/`, sitemap 200 (3825 URL, lastmod свежий), Googlebot-UA → 200 на
+  всех страницах без challenge/noindex, GSC-мета на месте, Under Attack выкл,
+  A+AAAA проксируются. Вероятно: та неделя до cutover (был Vercel) + норм.
+  пост-миграционная осторожность Google + давнее плато молодого домена. Владельцу:
+  проверить CF Bot Fight Mode=off / WAF, и ГЛАВНОЕ — **GSC Crawl Stats → Host
+  status** после 05.10 (там настоящий сигнал), переотправить sitemap. Мониторим.
 
 ## НЕ делаем (ров конкурентов / нет данных / против принципов)
 Крауд-цены и охват 9–13к городов (ToS, ширина не рычаг); цены на ПОКУПКУ жилья;
