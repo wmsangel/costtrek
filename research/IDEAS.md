@@ -87,3 +87,17 @@
   - 2026-10-08: **EKTA закрывается** (письмо Travelpayouts: платежи стоп 08.10, прога на TP до 14.10) →
     снять из кандидатов (не подавать/не размещать). В коде EKTA нет — удалять нечего; страховка = SafetyWing
     (не затронута). Если нужен ещё страховой оффер — VisitorsCoverage (FlexOffers/Travelpayouts) как альтернатива.
+
+### TODO — новые города из GSC-запросов (2026-10-08)
+- [ ] Города, всплывшие в GSC/Bing-запросах, которых у нас НЕТ — добавить при следующем
+  city-expansion проходе (каждый сейчас ~1 показ, так что НЕ срочно: ширина — не рычаг
+  при краул-бюджете 8/нед; брать батчем, когда/если делаем расширение):
+  • В СУЩЕСТВУЮЩИХ странах (дёшево — профиль + i18n ×4, страна уже есть):
+    Monterrey (MX), Orlando (US), Indianapolis (US), Lugano (CH), Sitges (ES),
+    Florianópolis (BR), Mönchengladbach (DE).
+  • Требуют НОВОЙ страны (дороже — + country-профиль): Cuenca (Ecuador/EC),
+    Skopje (North Macedonia/MK).
+  Паттерн добавления: запись в `src/lib/cities.ts` (+ breakdown/rent) → профиль в
+  `src/lib/data/cityProfiles.ts` → переводы cityProfiles-i18n ×4 → (для новой страны)
+  запись в countries.ts + countries-i18n. Добавить в MAJOR_CITY_SLUGS, если тянут спрос.
+  ВАЖНО: это breadth — делать только осознанно, не ради 1-impression-запросов.
