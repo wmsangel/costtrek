@@ -22,6 +22,157 @@ export type Guide = GuideContent & {
 
 export const GUIDES: Guide[] = [
   {
+    slug: "cost-of-living-in-singapore",
+    title: "The real cost of living in Singapore (2026): an expat budget guide",
+    excerpt:
+      "Singapore ranks among the world's most expensive cities — but the cost is lopsided. Here's what actually drives the budget, what stays genuinely cheap, and how much a single person, a couple and a family really need.",
+    date: "2026-10-08",
+    minutes: 7,
+    Body: ({ l }) => (
+      <>
+        <p>
+          Singapore lands near the top of almost every &quot;most expensive
+          cities&quot; ranking, and newcomers brace for a brutal budget. The
+          reality is more interesting: the cost here is <em>lopsided</em>, not
+          uniformly high. A couple of categories do real damage; everything else
+          is surprisingly manageable, and some of it is world-class and cheap.
+          Understand which is which and Singapore becomes a very livable — even
+          sensible — place to earn and save.
+        </p>
+
+        <h2>Why Singapore is expensive — and why that&apos;s only half the story</h2>
+        <p>
+          Two things dominate a Singapore budget: <strong>housing</strong> and{" "}
+          <strong>cars</strong>. Private rents are steep, and owning a car means
+          first buying a Certificate of Entitlement (COE) that can cost more than
+          the vehicle itself. Add a premium on imported goods, alcohol and
+          restaurant dining, and that&apos;s where the eye-watering reputation
+          comes from. The headline cost-of-living index you&apos;ll see on our{" "}
+          <Link href={`/${l}/cost-of-living/singapore-sg`}>
+            Singapore city profile
+          </Link>{" "}
+          is driven overwhelmingly by those lines.
+        </p>
+
+        <h2>What stays genuinely cheap</h2>
+        <p>
+          The flip side rarely makes the rankings. Public transport is fast,
+          clean and inexpensive — the MRT and buses cover the island, so most
+          residents never need a car. Hawker centres serve a full, good meal for
+          a few dollars, which keeps food costs far below what a global financial
+          hub &quot;should&quot; cost. Public healthcare is excellent and
+          subsidised, and the city is extremely safe. If your lifestyle leans on
+          those — transit, hawker food, public services — Singapore is a bargain
+          dressed as a splurge.
+        </p>
+
+        <h2>Housing: the one decision that sets your whole budget</h2>
+        <p>
+          Nothing else moves your Singapore budget like where and how you live.
+          A private condo in the central districts is a different universe of
+          cost from an older HDB (public-housing) flat in the suburbs, which
+          foreigners can rent and which is where a large share of the population
+          lives. Renting a single room in a shared flat is cheaper again. Decide
+          the housing tier first; the rest of the budget follows from it. Our{" "}
+          <Link href={`/${l}/cost-of-living/singapore-sg`}>city profile</Link>{" "}
+          carries current rent figures for the centre and outside it.
+        </p>
+
+        <h2>Do you need a car? Almost certainly not</h2>
+        <p>
+          The COE system deliberately caps the number of cars, so a ten-year
+          right to own one is auctioned — and in tight years it alone can exceed
+          the price of the car. Factor in parking, petrol and insurance and
+          private car ownership is a genuine luxury. The good news is you
+          won&apos;t miss it: between the MRT, buses and ride-hailing, most expats
+          here simply don&apos;t drive. Skipping the car is the single biggest
+          lever an arriving household has over its Singapore costs.
+        </p>
+
+        <h2>A realistic monthly budget by household</h2>
+        <p>
+          Because housing swings so widely, think in ranges and set your own
+          numbers rather than trusting a single figure. As a rough shape:
+        </p>
+        <ul>
+          <li>
+            <strong>A single person</strong> living modestly — room or small flat,
+            hawker food, no car — can keep costs reasonable for a high-income
+            city.
+          </li>
+          <li>
+            <strong>A couple</strong> renting a one-bedroom in or near the centre
+            steps up mainly on rent; day-to-day spending barely doubles.
+          </li>
+          <li>
+            <strong>A family</strong> is where Singapore earns its reputation:
+            a larger condo plus international-school fees (often as much as rent,
+            per child) can multiply the budget.
+          </li>
+        </ul>
+        <p>
+          To put real figures on your own situation, run it through our{" "}
+          <Link href={`/${l}/calculators/cost-of-living-budget-calculator`}>
+            cost-of-living budget calculator
+          </Link>{" "}
+          — pick Singapore, set your household and lifestyle, and it breaks the
+          month into rent, food, transport and the rest.
+        </p>
+
+        <h2>The salary you need — and how it compares to the US</h2>
+        <p>
+          &quot;How much do I need to earn in Singapore?&quot; is best answered
+          by equivalence: take a salary you understand and scale it by the cost
+          difference. The much-searched comparison is with the United States, and
+          it&apos;s closer than people expect once you account for what Singapore
+          does cheaply. See it laid out on{" "}
+          <Link href={`/${l}/compare-countries/singapore-vs-united-states`}>
+            Singapore vs the United States
+          </Link>
+          , and read the method in our guide on{" "}
+          <Link href={`/${l}/guides/salary-you-need-to-move-abroad`}>
+            the salary you need to move abroad
+          </Link>
+          . Singapore&apos;s low income tax — no capital-gains tax, modest top
+          rates — means your <em>gross</em> and <em>take-home</em> are far closer
+          than in high-tax Europe, which flatters the comparison further.
+        </p>
+
+        <h2>Getting in: work passes, briefly</h2>
+        <p>
+          Most foreign professionals arrive on an Employment Pass tied to a job
+          offer above a salary threshold, with other passes for mid-skilled roles
+          and entrepreneurs. The rules and thresholds change regularly, so treat
+          this as orientation, not advice — the tax and economy lines for the
+          country live on our{" "}
+          <Link href={`/${l}/countries`}>countries overview</Link>, and you should
+          confirm current pass criteria on the official government portal.
+        </p>
+
+        <h2>So, is Singapore worth it?</h2>
+        <p>
+          For a high earner, a family that values safety, schools and healthcare,
+          or anyone wanting a clean, efficient base in Asia, Singapore can be both
+          comfortable <em>and</em> a strong place to save — precisely because tax
+          is low and the essentials are cheap. It&apos;s tightest for families
+          committed to international schooling and a central condo, and for anyone
+          whose lifestyle depends on a car. Decide the housing and car questions
+          honestly and you&apos;ll know your answer. Not sure Singapore is even the
+          right fit? Our{" "}
+          <Link href={`/${l}/find-your-city`}>find-your-city tool</Link> ranks
+          cities by what matters to you.
+        </p>
+        <p>
+          One honest caveat: the figures behind cost-of-living comparisons are
+          estimates that move with rents and exchange rates, and nothing here is
+          financial or immigration advice. Use this to plan, then confirm the two
+          or three numbers that matter most — rent, schooling and your pass — with
+          a current local source before you commit.
+        </p>
+      </>
+    ),
+  },
+  {
     slug: "digital-nomad-visa-guide",
     title: "Digital nomad visas: how they work and how to choose a base",
     excerpt:

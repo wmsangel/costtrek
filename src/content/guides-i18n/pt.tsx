@@ -2,6 +2,162 @@ import Link from "next/link";
 import type { GuideContent } from "@/content/guides";
 
 const pt: Record<string, GuideContent> = {
+  "cost-of-living-in-singapore": {
+    title: "O verdadeiro custo de vida em Singapura (2026): um guia de orçamento para expatriados",
+    excerpt:
+      "Singapura está entre as cidades mais caras do mundo — mas o custo é desequilibrado. Eis o que de facto pesa no orçamento, o que continua genuinamente barato e de quanto precisam realmente uma pessoa sozinha, um casal e uma família.",
+    Body: ({ l }) => (
+      <>
+        <p>
+          Singapura surge quase sempre no topo de todas as classificações de
+          &quot;cidades mais caras&quot;, e os recém-chegados preparam-se para um
+          orçamento brutal. A realidade é mais interessante: aqui o custo é{" "}
+          <em>desequilibrado</em>, não uniformemente alto. Um par de categorias
+          faz um verdadeiro estrago; tudo o resto é surpreendentemente comportável,
+          e parte disso é de craveira mundial e barata. Perceba o que é o quê e
+          Singapura torna-se um sítio muito habitável — até sensato — para ganhar
+          e poupar.
+        </p>
+
+        <h2>Porque Singapura é cara — e porque isso é só metade da história</h2>
+        <p>
+          Duas coisas dominam um orçamento em Singapura: <strong>habitação</strong> e{" "}
+          <strong>automóveis</strong>. As rendas privadas são elevadas, e ter carro
+          implica primeiro comprar um Certificate of Entitlement (COE) que pode
+          custar mais do que o próprio veículo. Acrescente um prémio sobre os bens
+          importados, o álcool e as refeições em restaurante, e é daí que vem a
+          reputação de arrasar a carteira. O índice de custo de vida em destaque que
+          verá no nosso{" "}
+          <Link href={`/${l}/cost-of-living/singapore-sg`}>
+            perfil da cidade de Singapura
+          </Link>{" "}
+          é determinado esmagadoramente por essas rubricas.
+        </p>
+
+        <h2>O que continua genuinamente barato</h2>
+        <p>
+          O reverso da medalha raramente entra nas classificações. Os transportes
+          públicos são rápidos, limpos e baratos — o MRT e os autocarros cobrem a
+          ilha, por isso a maioria dos residentes nunca precisa de carro. Os hawker
+          centres servem uma refeição completa e boa por uns poucos dólares, o que
+          mantém o custo da alimentação muito abaixo do que um centro financeiro
+          mundial &quot;deveria&quot; custar. A saúde pública é excelente e
+          subsidiada, e a cidade é extremamente segura. Se o seu estilo de vida
+          assenta nisso — transportes, comida de hawker, serviços públicos —
+          Singapura é uma pechincha disfarçada de extravagância.
+        </p>
+
+        <h2>Habitação: a única decisão que define todo o seu orçamento</h2>
+        <p>
+          Nada move o seu orçamento em Singapura como onde e como vive. Um condomínio
+          privado nos distritos centrais é um universo de custo completamente
+          diferente de um apartamento HDB (habitação pública) mais antigo nos
+          subúrbios, que os estrangeiros podem arrendar e onde vive uma grande fatia
+          da população. Arrendar um único quarto num apartamento partilhado é ainda
+          mais barato. Decida primeiro o patamar de habitação; o resto do orçamento
+          decorre dele. O nosso{" "}
+          <Link href={`/${l}/cost-of-living/singapore-sg`}>perfil da cidade</Link>{" "}
+          traz valores de renda atuais para o centro e para fora dele.
+        </p>
+
+        <h2>Precisa de carro? Quase de certeza que não</h2>
+        <p>
+          O sistema COE limita deliberadamente o número de carros, por isso o direito
+          a ter um durante dez anos é leiloado — e, em anos apertados, só ele pode
+          ultrapassar o preço do carro. Some o estacionamento, a gasolina e o seguro
+          e ter carro privado é um verdadeiro luxo. A boa notícia é que não vai
+          sentir a falta: entre o MRT, os autocarros e os serviços de boleia à
+          chamada, a maioria dos expatriados aqui simplesmente não conduz. Dispensar
+          o carro é a maior alavanca que um agregado recém-chegado tem sobre os seus
+          custos em Singapura.
+        </p>
+
+        <h2>Um orçamento mensal realista por agregado</h2>
+        <p>
+          Como a habitação varia tanto, pense em intervalos e defina os seus próprios
+          valores em vez de confiar num número único. Em traços largos:
+        </p>
+        <ul>
+          <li>
+            <strong>Uma pessoa sozinha</strong> a viver com modéstia — quarto ou
+            pequeno apartamento, comida de hawker, sem carro — consegue manter os
+            custos razoáveis para uma cidade de rendimentos elevados.
+          </li>
+          <li>
+            <strong>Um casal</strong> que arrende um T1 no centro ou perto dele sobe
+            sobretudo na renda; a despesa do dia a dia mal duplica.
+          </li>
+          <li>
+            <strong>Uma família</strong> é onde Singapura faz jus à sua reputação:
+            um condomínio maior mais as propinas de escola internacional (muitas
+            vezes tanto como a renda, por criança) podem multiplicar o orçamento.
+          </li>
+        </ul>
+        <p>
+          Para pôr valores reais na sua própria situação, passe-a pela nossa{" "}
+          <Link href={`/${l}/calculators/cost-of-living-budget-calculator`}>
+            calculadora de orçamento do custo de vida
+          </Link>{" "}
+          — escolha Singapura, defina o seu agregado e estilo de vida, e ela reparte
+          o mês em renda, alimentação, transportes e o resto.
+        </p>
+
+        <h2>O salário de que precisa — e como se compara com os EUA</h2>
+        <p>
+          &quot;Quanto preciso de ganhar em Singapura?&quot; responde-se melhor por
+          equivalência: pegue num salário que compreende e escale-o pela diferença de
+          custo. A comparação mais pesquisada é com os Estados Unidos, e está mais
+          próxima do que as pessoas esperam assim que se tem em conta o que Singapura
+          faz barato. Veja-a disposta em{" "}
+          <Link href={`/${l}/compare-countries/singapore-vs-united-states`}>
+            Singapura vs Estados Unidos
+          </Link>
+          , e leia o método no nosso guia sobre{" "}
+          <Link href={`/${l}/guides/salary-you-need-to-move-abroad`}>
+            o salário de que precisa para se mudar para o estrangeiro
+          </Link>
+          . O baixo imposto sobre o rendimento de Singapura — sem imposto sobre
+          mais-valias, taxas máximas moderadas — faz com que o seu valor{" "}
+          <em>bruto</em> e o seu <em>líquido</em> estejam muito mais próximos do que
+          na Europa de impostos elevados, o que favorece ainda mais a comparação.
+        </p>
+
+        <h2>Como entrar: vistos de trabalho, em breve</h2>
+        <p>
+          A maioria dos profissionais estrangeiros chega com um Employment Pass
+          associado a uma proposta de emprego acima de um limiar salarial, havendo
+          outros vistos para funções de qualificação intermédia e para
+          empreendedores. As regras e os limiares mudam com regularidade, por isso
+          encare isto como orientação, não como aconselhamento — as linhas de imposto
+          e de economia do país vivem na nossa{" "}
+          <Link href={`/${l}/countries`}>visão geral dos países</Link>, e deve
+          confirmar os critérios atuais dos vistos no portal oficial do governo.
+        </p>
+
+        <h2>Então, vale a pena Singapura?</h2>
+        <p>
+          Para quem ganha bem, para uma família que valoriza segurança, escolas e
+          saúde, ou para quem quer uma base limpa e eficiente na Ásia, Singapura pode
+          ser ao mesmo tempo confortável <em>e</em> um sítio forte para poupar —
+          precisamente porque o imposto é baixo e os essenciais são baratos. É mais
+          apertada para famílias comprometidas com o ensino internacional e um
+          condomínio central, e para quem tem um estilo de vida dependente do carro.
+          Decida com honestidade as questões da habitação e do carro e terá a sua
+          resposta. Não tem a certeza de que Singapura seja sequer a escolha certa? A
+          nossa{" "}
+          <Link href={`/${l}/find-your-city`}>ferramenta encontre a sua cidade</Link>{" "}
+          ordena as cidades por aquilo que lhe importa.
+        </p>
+        <p>
+          Uma ressalva honesta: os valores por trás das comparações de custo de vida
+          são estimativas que se movem com as rendas e as taxas de câmbio, e nada
+          aqui é aconselhamento financeiro ou de imigração. Use isto para planear e
+          depois confirme os dois ou três números que mais importam — renda, ensino
+          e o seu visto — numa fonte local atualizada antes de se comprometer.
+        </p>
+      </>
+    ),
+  },
   "digital-nomad-visa-guide": {
     title: "Vistos de nómada digital: como funcionam e como escolher uma base",
     excerpt:

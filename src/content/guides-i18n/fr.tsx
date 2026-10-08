@@ -2,6 +2,176 @@ import Link from "next/link";
 import type { GuideContent } from "@/content/guides";
 
 const fr: Record<string, GuideContent> = {
+  "cost-of-living-in-singapore": {
+    title: "Le vrai coût de la vie à Singapour (2026) : guide de budget pour expatriés",
+    excerpt:
+      "Singapour figure parmi les villes les plus chères du monde — mais le coût y est déséquilibré. Voici ce qui pèse réellement sur le budget, ce qui reste franchement bon marché, et combien il faut vraiment à une personne seule, à un couple et à une famille.",
+    Body: ({ l }) => (
+      <>
+        <p>
+          Singapour se place presque toujours en tête des classements des
+          &laquo; villes les plus chères &raquo;, et les nouveaux arrivants
+          s&apos;attendent à un budget impitoyable. La réalité est plus
+          intéressante : le coût y est <em>déséquilibré</em>, pas uniformément
+          élevé. Deux ou trois postes font de vrais dégâts ; tout le reste est
+          étonnamment gérable, et une partie est à la fois d&apos;excellente
+          qualité et bon marché. Comprenez ce qui relève de l&apos;un ou de
+          l&apos;autre et Singapour devient un endroit très vivable — et même
+          judicieux — pour gagner sa vie et épargner.
+        </p>
+
+        <h2>Pourquoi Singapour est cher — et pourquoi ce n&apos;est que la moitié de l&apos;histoire</h2>
+        <p>
+          Deux choses dominent un budget singapourien : le{" "}
+          <strong>logement</strong> et les <strong>voitures</strong>. Les loyers
+          privés sont élevés, et posséder une voiture suppose d&apos;abord
+          d&apos;acheter un Certificate of Entitlement (COE) qui peut coûter plus
+          cher que le véhicule lui-même. Ajoutez une surtaxe sur les produits
+          importés, l&apos;alcool et les repas au restaurant, et voilà
+          d&apos;où vient cette réputation vertigineuse. L&apos;indice du coût de
+          la vie que vous verrez sur notre{" "}
+          <Link href={`/${l}/cost-of-living/singapore-sg`}>
+            profil de la ville de Singapour
+          </Link>{" "}
+          est porté très majoritairement par ces lignes.
+        </p>
+
+        <h2>Ce qui reste franchement bon marché</h2>
+        <p>
+          Le revers de la médaille apparaît rarement dans les classements. Les
+          transports en commun sont rapides, propres et peu coûteux — le MRT et
+          les bus couvrent toute l&apos;île, de sorte que la plupart des
+          habitants n&apos;ont jamais besoin de voiture. Les hawker centres
+          servent un repas complet et de qualité pour quelques dollars, ce qui
+          maintient le coût de l&apos;alimentation bien en dessous de ce qu&apos;un
+          grand centre financier mondial &quot;devrait&quot; coûter. La santé
+          publique est excellente et subventionnée, et la ville est extrêmement
+          sûre. Si votre mode de vie repose sur ces atouts — transports, cuisine
+          des hawker centres, services publics — Singapour est une aubaine
+          déguisée en folie.
+        </p>
+
+        <h2>Le logement : la seule décision qui fixe tout votre budget</h2>
+        <p>
+          Rien ne fait bouger votre budget singapourien autant que l&apos;endroit
+          et la façon dont vous vous logez. Un condo privé dans les quartiers
+          centraux appartient à un tout autre univers de coûts qu&apos;un
+          ancien appartement HDB (logement public) en banlieue, que les
+          étrangers peuvent louer et où vit une large part de la population. Louer
+          une simple chambre dans un appartement partagé revient encore moins
+          cher. Décidez d&apos;abord du niveau de logement ; le reste du budget en
+          découle. Notre{" "}
+          <Link href={`/${l}/cost-of-living/singapore-sg`}>profil de la ville</Link>{" "}
+          indique les loyers actuels au centre et à l&apos;extérieur.
+        </p>
+
+        <h2>Avez-vous besoin d&apos;une voiture ? Presque certainement pas</h2>
+        <p>
+          Le système du COE plafonne volontairement le nombre de voitures : un
+          droit de dix ans à en posséder une est mis aux enchères — et, les
+          années tendues, il peut à lui seul dépasser le prix du véhicule.
+          Ajoutez le stationnement, l&apos;essence et l&apos;assurance, et
+          posséder une voiture devient un véritable luxe. La bonne nouvelle, c&apos;est
+          qu&apos;elle ne vous manquera pas : entre le MRT, les bus et les VTC, la
+          plupart des expatriés ici ne conduisent tout simplement pas. Renoncer à
+          la voiture est le plus grand levier dont dispose un foyer qui arrive
+          pour maîtriser ses coûts à Singapour.
+        </p>
+
+        <h2>Un budget mensuel réaliste selon le foyer</h2>
+        <p>
+          Comme le logement varie énormément, raisonnez en fourchettes et fixez
+          vos propres chiffres plutôt que de vous fier à un montant unique. À
+          grands traits :
+        </p>
+        <ul>
+          <li>
+            <strong>Une personne seule</strong> vivant modestement — chambre ou
+            petit appartement, cuisine des hawker centres, pas de voiture — peut
+            garder des coûts raisonnables pour une ville à hauts revenus.
+          </li>
+          <li>
+            <strong>Un couple</strong> louant un deux-pièces dans le centre ou à
+            proximité voit surtout grimper le loyer ; les dépenses du quotidien
+            doublent à peine.
+          </li>
+          <li>
+            <strong>Une famille</strong>, c&apos;est là que Singapour mérite sa
+            réputation : un condo plus grand plus les frais d&apos;école
+            internationale (souvent autant que le loyer, par enfant) peuvent
+            multiplier le budget.
+          </li>
+        </ul>
+        <p>
+          Pour poser des chiffres réels sur votre situation, passez-la dans notre{" "}
+          <Link href={`/${l}/calculators/cost-of-living-budget-calculator`}>
+            calculateur de budget du coût de la vie
+          </Link>{" "}
+          — choisissez Singapour, réglez votre foyer et votre mode de vie, et il
+          répartit le mois entre loyer, alimentation, transport et le reste.
+        </p>
+
+        <h2>Le salaire nécessaire — et sa comparaison avec les États-Unis</h2>
+        <p>
+          &quot;Combien dois-je gagner à Singapour ?&quot; se répond au mieux par
+          l&apos;équivalence : partez d&apos;un salaire que vous comprenez et
+          ajustez-le selon l&apos;écart de coût. La comparaison la plus recherchée
+          se fait avec les États-Unis, et elle est plus serrée qu&apos;on ne le
+          croit une fois pris en compte ce que Singapour fait à bas prix. Voyez-la
+          détaillée sur{" "}
+          <Link href={`/${l}/compare-countries/singapore-vs-united-states`}>
+            Singapour contre les États-Unis
+          </Link>
+          , et lisez la méthode dans notre guide sur{" "}
+          <Link href={`/${l}/guides/salary-you-need-to-move-abroad`}>
+            le salaire nécessaire pour s&apos;expatrier
+          </Link>
+          . Le faible impôt sur le revenu de Singapour — pas d&apos;impôt sur les
+          plus-values, des taux supérieurs modérés — fait que votre{" "}
+          <em>brut</em> et votre <em>net</em> sont bien plus proches qu&apos;en
+          Europe fortement taxée, ce qui flatte encore la comparaison.
+        </p>
+
+        <h2>Y entrer : les permis de travail, en bref</h2>
+        <p>
+          La plupart des professionnels étrangers arrivent avec un Employment Pass
+          lié à une offre d&apos;emploi au-dessus d&apos;un seuil de salaire,
+          d&apos;autres permis existant pour les postes de qualification
+          intermédiaire et les entrepreneurs. Les règles et les seuils changent
+          régulièrement, alors prenez ceci comme une orientation, pas comme un
+          conseil — les lignes fiscales et économiques du pays figurent sur notre{" "}
+          <Link href={`/${l}/countries`}>aperçu des pays</Link>, et vous devriez
+          confirmer les critères en vigueur sur le portail gouvernemental
+          officiel.
+        </p>
+
+        <h2>Alors, Singapour en vaut-il la peine ?</h2>
+        <p>
+          Pour un haut revenu, une famille qui accorde de l&apos;importance à la
+          sécurité, aux écoles et à la santé, ou quiconque cherche une base propre
+          et efficace en Asie, Singapour peut être à la fois confortable{" "}
+          <em>et</em> un endroit solide pour épargner — précisément parce que
+          l&apos;impôt est faible et les choses essentielles bon marché. C&apos;est
+          le plus serré pour les familles attachées à la scolarité internationale
+          et à un condo central, et pour quiconque dépend d&apos;une voiture.
+          Tranchez honnêtement les questions du logement et de la voiture et vous
+          connaîtrez votre réponse. Pas sûr que Singapour soit même le bon choix ?
+          Notre{" "}
+          <Link href={`/${l}/find-your-city`}>outil pour trouver votre ville</Link>{" "}
+          classe les villes selon ce qui compte pour vous.
+        </p>
+        <p>
+          Une mise en garde honnête : les chiffres derrière les comparaisons de
+          coût de la vie sont des estimations qui évoluent avec les loyers et les
+          taux de change, et rien ici ne constitue un conseil financier ou en
+          matière d&apos;immigration. Servez-vous-en pour planifier, puis confirmez
+          les deux ou trois chiffres qui comptent le plus — loyer, scolarité et
+          votre permis — auprès d&apos;une source locale à jour avant de vous
+          engager.
+        </p>
+      </>
+    ),
+  },
   "digital-nomad-visa-guide": {
     title: "Visas pour nomades numériques : comment ils fonctionnent et comment choisir sa base",
     excerpt:

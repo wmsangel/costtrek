@@ -2,6 +2,173 @@ import Link from "next/link";
 import type { GuideContent } from "@/content/guides";
 
 const de: Record<string, GuideContent> = {
+  "cost-of-living-in-singapore": {
+    title:
+      "Die wahren Lebenshaltungskosten in Singapur (2026): ein Budget-Leitfaden für Expats",
+    excerpt:
+      "Singapur zählt zu den teuersten Städten der Welt — doch die Kosten sind ungleich verteilt. Hier erfahren Sie, was das Budget wirklich treibt, was ehrlich günstig bleibt und wie viel eine Einzelperson, ein Paar und eine Familie tatsächlich brauchen.",
+    Body: ({ l }) => (
+      <>
+        <p>
+          Singapur landet in fast jedem Ranking der „teuersten Städte“ ganz weit
+          oben, und Neuankömmlinge stellen sich auf ein brutales Budget ein. Die
+          Realität ist interessanter: Die Kosten sind hier <em>ungleich
+          verteilt</em>, nicht durchweg hoch. Ein paar Kategorien richten echten
+          Schaden an; alles andere ist überraschend handhabbar, und manches davon
+          ist Weltklasse und günstig. Verstehen Sie, was wohin gehört, und
+          Singapur wird zu einem sehr lebenswerten — ja sogar vernünftigen — Ort,
+          um zu verdienen und zu sparen.
+        </p>
+
+        <h2>Warum Singapur teuer ist — und warum das nur die halbe Geschichte ist</h2>
+        <p>
+          Zwei Dinge beherrschen ein Budget in Singapur: <strong>Wohnen</strong>{" "}
+          und <strong>Autos</strong>. Private Mieten sind happig, und ein Auto zu
+          besitzen bedeutet, zuerst ein Certificate of Entitlement (COE) zu
+          kaufen, das mehr kosten kann als das Fahrzeug selbst. Rechnen Sie einen
+          Aufschlag auf importierte Waren, Alkohol und das Essen im Restaurant
+          hinzu, und schon haben Sie den Ruf, der einem die Tränen in die Augen
+          treibt. Der Lebenshaltungskosten-Index in der Schlagzeile, den Sie auf
+          unserem{" "}
+          <Link href={`/${l}/cost-of-living/singapore-sg`}>
+            Singapur-Städteprofil
+          </Link>{" "}
+          sehen, wird ganz überwiegend von diesen Posten getrieben.
+        </p>
+
+        <h2>Was ehrlich günstig bleibt</h2>
+        <p>
+          Die Kehrseite schafft es selten in die Rankings. Der öffentliche
+          Nahverkehr ist schnell, sauber und preiswert — die MRT und die Busse
+          erschließen die ganze Insel, sodass die meisten Einwohner nie ein Auto
+          brauchen. Hawker-Center servieren ein volles, gutes Essen für ein paar
+          Dollar, was die Essenskosten weit unter dem hält, was ein globales
+          Finanzzentrum „kosten sollte“. Die öffentliche Gesundheitsversorgung ist
+          ausgezeichnet und subventioniert, und die Stadt ist äußerst sicher.
+          Stützt sich Ihr Lebensstil auf diese Dinge — Nahverkehr, Hawker-Essen,
+          öffentliche Leistungen —, ist Singapur ein Schnäppchen im Gewand einer
+          Luxusausgabe.
+        </p>
+
+        <h2>Wohnen: die eine Entscheidung, die Ihr ganzes Budget festlegt</h2>
+        <p>
+          Nichts bewegt Ihr Budget in Singapur so sehr wie das Wo und Wie Ihres
+          Wohnens. Ein privates Condo in den zentralen Bezirken ist ein ganz
+          anderes Kosten-Universum als eine ältere HDB-Wohnung (aus dem
+          öffentlichen Wohnungsbau) in den Vororten, die Ausländer mieten können
+          und in der ein großer Teil der Bevölkerung lebt. Ein einzelnes Zimmer in
+          einer geteilten Wohnung zu mieten ist noch einmal günstiger. Legen Sie
+          zuerst die Wohnkategorie fest; der Rest des Budgets ergibt sich daraus.
+          Unser{" "}
+          <Link href={`/${l}/cost-of-living/singapore-sg`}>Städteprofil</Link>{" "}
+          führt aktuelle Mietzahlen für das Zentrum und außerhalb davon.
+        </p>
+
+        <h2>Brauchen Sie ein Auto? Mit ziemlicher Sicherheit nicht</h2>
+        <p>
+          Das COE-System begrenzt bewusst die Zahl der Autos, sodass ein
+          zehnjähriges Recht, eines zu besitzen, versteigert wird — und in knappen
+          Jahren kann es allein den Preis des Autos übersteigen. Rechnen Sie
+          Parken, Benzin und Versicherung hinzu, und privater Autobesitz ist ein
+          echter Luxus. Die gute Nachricht: Sie werden es nicht vermissen.
+          Zwischen MRT, Bussen und Ride-Hailing fahren die meisten Expats hier
+          schlicht nicht selbst. Auf das Auto zu verzichten ist der größte einzelne
+          Hebel, den ein ankommender Haushalt über seine Kosten in Singapur hat.
+        </p>
+
+        <h2>Ein realistisches Monatsbudget nach Haushalt</h2>
+        <p>
+          Weil die Wohnkosten so stark schwanken, denken Sie in Spannen und legen
+          Sie Ihre eigenen Zahlen fest, statt einer einzigen Angabe zu trauen. Als
+          grobe Form:
+        </p>
+        <ul>
+          <li>
+            <strong>Eine Einzelperson</strong>, die bescheiden lebt — Zimmer oder
+            kleine Wohnung, Hawker-Essen, kein Auto —, kann die Kosten für eine
+            Stadt mit hohem Einkommensniveau im Rahmen halten.
+          </li>
+          <li>
+            <strong>Ein Paar</strong>, das eine Einzimmerwohnung im oder nahe dem
+            Zentrum mietet, legt vor allem bei der Miete zu; die laufenden Ausgaben
+            verdoppeln sich kaum.
+          </li>
+          <li>
+            <strong>Eine Familie</strong> ist der Punkt, an dem Singapur seinem Ruf
+            gerecht wird: ein größeres Condo plus Gebühren für internationale
+            Schulen (oft so hoch wie die Miete, pro Kind) kann das Budget
+            vervielfachen.
+          </li>
+        </ul>
+        <p>
+          Um echte Zahlen auf Ihre eigene Lage zu legen, lassen Sie sie durch
+          unseren{" "}
+          <Link href={`/${l}/calculators/cost-of-living-budget-calculator`}>
+            Rechner für das Lebenshaltungskosten-Budget
+          </Link>{" "}
+          laufen — wählen Sie Singapur, stellen Sie Ihren Haushalt und Lebensstil
+          ein, und er zerlegt den Monat in Miete, Essen, Verkehr und den Rest.
+        </p>
+
+        <h2>Das Gehalt, das Sie brauchen — und wie es sich mit den USA vergleicht</h2>
+        <p>
+          „Wie viel muss ich in Singapur verdienen?“ beantwortet man am besten über
+          die Äquivalenz: Nehmen Sie ein Gehalt, das Sie verstehen, und skalieren
+          Sie es mit dem Kostenunterschied. Der meistgesuchte Vergleich ist jener
+          mit den Vereinigten Staaten, und er fällt knapper aus, als die Leute
+          erwarten, sobald man berücksichtigt, was Singapur günstig macht. Sehen
+          Sie es aufgeschlüsselt unter{" "}
+          <Link href={`/${l}/compare-countries/singapore-vs-united-states`}>
+            Singapur vs. die Vereinigten Staaten
+          </Link>
+          , und lesen Sie die Methode in unserem Leitfaden über{" "}
+          <Link href={`/${l}/guides/salary-you-need-to-move-abroad`}>
+            das Gehalt, das Sie für einen Umzug ins Ausland brauchen
+          </Link>
+          . Die niedrige Einkommensteuer Singapurs — keine Kapitalertragsteuer,
+          moderate Spitzensätze — bedeutet, dass Ihr <em>Brutto</em> und Ihr{" "}
+          <em>Netto</em> weit näher beieinanderliegen als im Hochsteuer-Europa, was
+          den Vergleich weiter schmeichelt.
+        </p>
+
+        <h2>Der Zugang: Arbeitsvisa, kurz gefasst</h2>
+        <p>
+          Die meisten ausländischen Fachkräfte kommen mit einem Employment Pass,
+          der an ein Jobangebot oberhalb einer Gehaltsschwelle gebunden ist, mit
+          weiteren Pässen für mittelqualifizierte Tätigkeiten und Unternehmer. Die
+          Regeln und Schwellen ändern sich regelmäßig, betrachten Sie dies also als
+          Orientierung, nicht als Beratung — die Steuer- und Wirtschaftskennzahlen
+          des Landes finden Sie in unserer{" "}
+          <Link href={`/${l}/countries`}>Länderübersicht</Link>, und Sie sollten
+          die aktuellen Kriterien für die Pässe auf dem offiziellen
+          Regierungsportal bestätigen.
+        </p>
+
+        <h2>Also, lohnt sich Singapur?</h2>
+        <p>
+          Für einen Gutverdiener, eine Familie, die Sicherheit, Schulen und
+          Gesundheitsversorgung schätzt, oder für jeden, der eine saubere,
+          effiziente Basis in Asien sucht, kann Singapur zugleich komfortabel{" "}
+          <em>und</em> ein starker Ort zum Sparen sein — gerade weil die Steuer
+          niedrig und das Nötigste günstig ist. Am knappsten wird es für Familien,
+          die auf internationale Schulen und ein zentrales Condo festgelegt sind,
+          und für jeden, dessen Lebensstil von einem Auto abhängt. Beantworten Sie
+          die Fragen zu Wohnen und Auto ehrlich, und Sie kennen Ihre Antwort. Nicht
+          sicher, ob Singapur überhaupt das Richtige ist? Unser{" "}
+          <Link href={`/${l}/find-your-city`}>Finde-deine-Stadt-Tool</Link> ordnet
+          Städte nach dem, was Ihnen wichtig ist.
+        </p>
+        <p>
+          Ein ehrlicher Vorbehalt: Die Zahlen hinter Lebenshaltungskosten-
+          Vergleichen sind Schätzungen, die sich mit Mieten und Wechselkursen
+          bewegen, und nichts hiervon ist Finanz- oder Einwanderungsberatung.
+          Nutzen Sie dies zum Planen und bestätigen Sie dann die zwei oder drei
+          Zahlen, die am wichtigsten sind — Miete, Schulbildung und Ihren Pass —
+          anhand einer aktuellen lokalen Quelle, bevor Sie sich festlegen.
+        </p>
+      </>
+    ),
+  },
   "digital-nomad-visa-guide": {
     title:
       "Digital-Nomad-Visa: wie sie funktionieren und wie Sie eine Basis wählen",
