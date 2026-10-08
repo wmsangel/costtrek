@@ -798,7 +798,11 @@ const pt: Record<string, GuideContent> = {
           quem paga reparações e serviços, se os aumentos de renda têm limite e o
           que conta como &quot;desgaste normal&quot; quando sair. Se o contrato só
           estiver na língua local, mande-o traduzir — assinar algo que não consegue
-          ler é como começam os litígios.
+          ler é como começam os litígios. Se só existir em foto ou PDF, uma ferramenta como{" "}
+          <a href="https://ocrsnip.com/" target="_blank" rel="noopener">
+            o OCRSnip transforma-o em texto
+          </a>{" "}
+          que pode colar primeiro num tradutor.
         </p>
         <h2>Comissões de agente e como funcionam</h2>
         <p>

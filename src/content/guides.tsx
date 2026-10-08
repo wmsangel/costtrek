@@ -831,7 +831,11 @@ export const GUIDES: Guide[] = [
           and utilities, whether rent increases are capped, and what counts as
           &quot;normal wear&quot; when you leave. If the contract is only in the
           local language, get it translated — signing something you can&apos;t
-          read is how disputes start.
+          read is how disputes start. If it&apos;s only a photo or PDF, a tool like{" "}
+          <a href="https://ocrsnip.com/" target="_blank" rel="noopener">
+            OCRSnip turns it into text
+          </a>{" "}
+          you can paste into a translator first.
         </p>
         <h2>Agent fees and how they work</h2>
         <p>

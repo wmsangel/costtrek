@@ -842,7 +842,12 @@ const de: Record<string, GuideContent> = {
           was beim Auszug als &quot;normale Abnutzung&quot; gilt. Ist der Vertrag
           nur in der Landessprache, lassen Sie ihn übersetzen — etwas zu
           unterschreiben, das Sie nicht lesen können, ist der Beginn von
-          Streitigkeiten.
+          Streitigkeiten. Liegt er nur als Foto oder PDF vor, macht ein Werkzeug
+          wie{" "}
+          <a href="https://ocrsnip.com/" target="_blank" rel="noopener">
+            OCRSnip daraus Text
+          </a>{" "}
+          den Sie zuerst in einen Übersetzer einfügen können.
         </p>
         <h2>Maklergebühren und wie sie funktionieren</h2>
         <p>

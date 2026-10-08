@@ -835,7 +835,12 @@ const fr: Record<string, GuideContent> = {
           réparations et les charges, si les hausses de loyer sont plafonnées, et ce qui
           compte comme &quot;usure normale&quot; à votre départ. Si le contrat est
           uniquement dans la langue locale, faites-le traduire — signer un document que
-          vous ne pouvez pas lire, c&apos;est ainsi que naissent les litiges.
+          vous ne pouvez pas lire, c&apos;est ainsi que naissent les litiges. Si ce
+          n&apos;est qu&apos;une photo ou un PDF, un outil comme{" "}
+          <a href="https://ocrsnip.com/" target="_blank" rel="noopener">
+            OCRSnip le transforme en texte
+          </a>{" "}
+          que vous pouvez coller dans un traducteur au préalable.
         </p>
         <h2>Les frais d&apos;agence et leur fonctionnement</h2>
         <p>

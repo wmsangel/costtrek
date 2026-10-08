@@ -640,7 +640,12 @@ const es: Record<string, GuideContent> = {
           preaviso, quién paga las reparaciones y los suministros, si hay tope a las
           subidas de alquiler y qué cuenta como &quot;desgaste normal&quot; cuando
           te vayas. Si el contrato está solo en el idioma local, hazlo traducir:
-          firmar algo que no puedes leer es como empiezan las disputas.
+          firmar algo que no puedes leer es como empiezan las disputas. Si es
+          solo una foto o un PDF, una herramienta como{" "}
+          <a href="https://ocrsnip.com/" target="_blank" rel="noopener">
+            OCRSnip lo convierte en texto
+          </a>{" "}
+          que puedes pegar en un traductor primero.
         </p>
         <h2>Comisiones de agencia y cómo funcionan</h2>
         <p>
