@@ -76,3 +76,10 @@
   • Если владелец пришлёт готовые трекинг-ссылки — вставить сразу, API-проверка не нужна.
 - [ ] Отдельно (важнее CPS): добавить **costtrek.com в AdSense** (Sites → Add site) — по
   файлу доступов сайт ещё не добавлен; это рычаг дохода №1, не партнёрки-мелочь.
+
+  - СТАТУСЫ 2026-10-08: ждём одобрения только 3 живых — DiscoverCars(Admitad 20065, 🟡pending),
+    NordVPN(Admitad 18867, 🟡pending), Trip.com(Indoleads 378, 🟡pending). italki(24736)+
+    Preply(29694) на Admitad → 🔴declined (авто-реджект мелкого сайта). Omio/Trip.com(Admitad)/
+    Infobus → остались declined. EKTA(162553) не зарегистрировалась — переподать. На Indoleads
+    allowed:true стали Udemy(650)/Macpaw(2015)/Costway(21626) — НЕрелевантны, не размещаем.
+    → проверять раз в пару дней только эти 3 pending; как active/allowed — вставить в toolkit + cf:deploy.
