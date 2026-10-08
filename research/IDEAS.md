@@ -83,3 +83,7 @@
     Infobus → остались declined. EKTA(162553) не зарегистрировалась — переподать. На Indoleads
     allowed:true стали Udemy(650)/Macpaw(2015)/Costway(21626) — НЕрелевантны, не размещаем.
     → проверять раз в пару дней только эти 3 pending; как active/allowed — вставить в toolkit + cf:deploy.
+
+  - 2026-10-08: **EKTA закрывается** (письмо Travelpayouts: платежи стоп 08.10, прога на TP до 14.10) →
+    снять из кандидатов (не подавать/не размещать). В коде EKTA нет — удалять нечего; страховка = SafetyWing
+    (не затронута). Если нужен ещё страховой оффер — VisitorsCoverage (FlexOffers/Travelpayouts) как альтернатива.
