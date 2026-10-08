@@ -82,7 +82,7 @@
   "footer": {
     "line1": "© CostTrek. Cost-of-living estimates for informational purposes only.",
     "line2": "Figures are approximate and should not be relied on for financial decisions.",
-    "network": "From our network"
+    "network": "From our network", "featured": "Featured on CostTrek"
   },
   "legal": {
     "privacy": "Privacy Policy",

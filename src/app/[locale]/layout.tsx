@@ -16,6 +16,8 @@ import CookieBanner from "@/components/CookieBanner";
 import FeedbackFab from "@/components/FeedbackFab";
 import { TRAVELPAYOUTS_DRIVE } from "@/lib/flags";
 import NetworkStrip from "@/components/NetworkStrip";
+import FeaturedPromo from "@/components/FeaturedPromo";
+import { buildFeatured } from "@/lib/featured";
 import Analytics from "@/components/Analytics";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 import JsonLd from "@/components/JsonLd";
@@ -201,6 +203,10 @@ export default async function LocaleLayout({
                 </Link>
               </nav>
             </div>
+            <FeaturedPromo
+              items={buildFeatured(locale as Locale, dict)}
+              heading={dict.footer.featured}
+            />
             <NetworkStrip heading={dict.footer.network} />
             <div className="mt-6 space-y-1">
               <p>{dict.footer.line1}</p>

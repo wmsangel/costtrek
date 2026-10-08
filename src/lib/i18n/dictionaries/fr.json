@@ -82,7 +82,7 @@
   "footer": {
     "line1": "© CostTrek. Les estimations du coût de la vie sont fournies à titre informatif uniquement.",
     "line2": "Les chiffres sont approximatifs et ne doivent pas servir de base à des décisions financières.",
-    "network": "De notre réseau"
+    "network": "De notre réseau", "featured": "À la une sur CostTrek"
   },
   "legal": {
     "privacy": "Confidentialité",

@@ -2,7 +2,7 @@ import "server-only";
 import type { Locale } from "./config";
 
 export type Dictionary = {
-  footer: { line1: string; line2: string; network: string };
+  footer: { line1: string; line2: string; network: string; featured: string };
   legal: {
     privacy: string;
     cookies: string;
