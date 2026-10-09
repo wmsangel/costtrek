@@ -1,318 +1,181 @@
-<title>CostTrek Roadmap</title>
-<style>
-  /* Layout: sticky masthead → key-number tiles → priority queue → done → idea inbox.
-     Palette + type follow the CostTrek "travel magazine" system (warm paper, coral,
-     mustard, teal; Archivo display). */
-  :root {
-    --bg: #faf6ee;          /* warm paper */
-    --surface: #fffdf8;     /* card */
-    --surface-2: #f3ecdd;   /* sunk tile */
-    --fg: #23201a;          /* warm near-black */
-    --muted: #6f675a;       /* warm grey */
-    --border: #e7ddc8;
-    --accent: #e0492f;      /* coral */
-    --mustard: #f4c020;
-    --teal: #0d7d70;        /* positive / done */
-    --shadow: 0 1px 2px rgba(35,32,26,.06), 0 6px 20px rgba(35,32,26,.05);
-    --display: "Archivo", ui-sans-serif, system-ui, sans-serif;
-    --body: "Geist", ui-sans-serif, system-ui, -apple-system, sans-serif;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #1a1712; --surface: #241f18; --surface-2: #2e2820;
-      --fg: #f2ece0; --muted: #a99e8c; --border: #3a3226;
-      --accent: #f0603f; --mustard: #f4c020; --teal: #33b0a1;
-      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.28);
-      color-scheme: dark;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #1a1712; --surface: #241f18; --surface-2: #2e2820;
-    --fg: #f2ece0; --muted: #a99e8c; --border: #3a3226;
-    --accent: #f0603f; --mustard: #f4c020; --teal: #33b0a1;
-    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.28);
-    color-scheme: dark;
-  }
-
-  * { box-sizing: border-box; }
-  body {
-    background: var(--bg); color: var(--fg);
-    font-family: var(--body); line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-  }
-  .wrap { max-width: 940px; margin: 0 auto; padding-block: 0 56px; padding-inline: 16px; }
-
-  /* Masthead */
-  header { padding-block: 28px 18px; border-bottom: 3px solid var(--fg); margin-bottom: 22px; }
-  .kicker {
-    font-family: var(--display); font-weight: 800; text-transform: uppercase;
-    letter-spacing: .14em; font-size: 12px; color: var(--accent);
-  }
-  h1 {
-    font-family: var(--display); font-weight: 900; font-size: clamp(30px, 7vw, 46px);
-    line-height: 1.02; margin: 6px 0 8px; letter-spacing: -.01em; text-wrap: balance;
-  }
-  .sub { color: var(--muted); font-size: 15px; max-width: 62ch; }
-  .stamp { margin-top: 12px; font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
-  .stamp b { color: var(--fg); font-weight: 600; }
-
-  h2 {
-    font-family: var(--display); font-weight: 800; text-transform: uppercase;
-    letter-spacing: .06em; font-size: 15px; color: var(--accent);
-    margin: 34px 0 14px; padding-bottom: 7px; border-bottom: 1px solid var(--border);
-  }
-  h2 .n { color: var(--muted); font-weight: 700; }
-
-  /* Key-number tiles */
-  .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-  @media (max-width: 560px) { .tiles { grid-template-columns: repeat(2, 1fr); } }
-  .tile {
-    background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px;
-    padding: 14px 15px; min-width: 0;
-  }
-  .tile .big {
-    font-family: var(--display); font-weight: 900; font-size: 26px; line-height: 1;
-    font-variant-numeric: tabular-nums;
-  }
-  .tile .lab { color: var(--muted); font-size: 12px; margin-top: 6px; }
-  .tile.good .big { color: var(--teal); }
-
-  /* Priority queue */
-  .queue { display: flex; flex-direction: column; gap: 9px; }
-  .row {
-    display: grid; grid-template-columns: 34px 1fr auto; align-items: start; gap: 12px;
-    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-    padding: 13px 15px; box-shadow: var(--shadow);
-  }
-  .row.top { border-color: var(--accent); border-left-width: 4px; }
-  .idx {
-    font-family: var(--display); font-weight: 900; font-size: 18px; color: var(--muted);
-    font-variant-numeric: tabular-nums; line-height: 1.25;
-  }
-  .row.top .idx { color: var(--accent); }
-  .row .body { min-width: 0; }
-  .row .name { font-weight: 650; font-size: 15px; }
-  .row .why { color: var(--muted); font-size: 13px; margin-top: 3px; }
-
-  /* Pills */
-  .pill {
-    font-family: var(--display); font-weight: 700; font-size: 10.5px; text-transform: uppercase;
-    letter-spacing: .05em; white-space: nowrap; padding: 4px 9px; border-radius: 999px;
-    border: 1px solid transparent;
-  }
-  .p-next { background: color-mix(in srgb, var(--accent) 15%, transparent); color: var(--accent); border-color: color-mix(in srgb, var(--accent) 35%, transparent); }
-  .p-queue { background: var(--surface-2); color: var(--muted); border-color: var(--border); }
-  .p-decision { background: color-mix(in srgb, var(--mustard) 22%, transparent); color: #8a6d00; border-color: color-mix(in srgb, var(--mustard) 55%, transparent); }
-  :root:not([data-theme="light"]) .p-decision { color: var(--mustard); }
-  :root[data-theme="dark"] .p-decision { color: var(--mustard); }
-  .p-gated { background: var(--surface-2); color: var(--muted); border-color: var(--border); border-style: dashed; }
-  .p-done { background: color-mix(in srgb, var(--teal) 16%, transparent); color: var(--teal); border-color: color-mix(in srgb, var(--teal) 38%, transparent); }
-
-  /* Done + inbox lists */
-  ul.clean { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
-  ul.clean li {
-    display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: baseline;
-    background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 11px 14px;
-  }
-  ul.clean li .mark { color: var(--teal); font-weight: 800; }
-  ul.clean li .txt { min-width: 0; font-size: 14px; }
-  ul.clean li .txt .date { color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
-  ul.inbox li { grid-template-columns: 1fr; }
-  ul.inbox li .txt { font-size: 13.5px; }
-  ul.inbox li .txt b { font-weight: 650; }
-
-  .legend { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
-
-  .note {
-    background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px;
-    padding: 14px 16px; font-size: 13.5px; color: var(--muted);
-  }
-  .note b { color: var(--fg); font-weight: 650; }
-  .note ul { margin: 8px 0 0; padding-left: 18px; }
-  .note li { margin: 4px 0; }
-
-  footer { margin-top: 34px; padding-top: 14px; border-top: 1px solid var(--border); font-size: 12.5px; color: var(--muted); }
-  footer code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--surface-2); padding: 1px 6px; border-radius: 5px; color: var(--fg); }
-  a { color: var(--accent); }
-</style>
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CostTrek — дорожная карта</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800;900&family=Geist:wght@400;500;600&display=swap">
-
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Графит: холодный нейтраль, IBM Plex, один акцент под сайт.
+   Светлая + тёмная тема. Одна читаемая колонка ≤860px. */
+:root{
+  --bg:#fbfbfc; --surface:#f4f5f8; --surface2:#eceef3;
+  --ink:#1b1e26; --muted:#6a6f7d; --line:#e6e8ee; --line2:#d6d9e2;
+  --accent:#9c5a3a; --accent-soft:color-mix(in srgb,var(--accent) 10%,transparent);
+  --good:#3f8f63; --warn:#9c7620; --bad:#b5494a;
+  --font-display:'IBM Plex Mono',ui-monospace,monospace;
+  --font-body:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+  --font-mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#14161b; --surface:#1b1e25; --surface2:#222630;
+  --ink:#e7e9ef; --muted:#959bab; --line:#282c35; --line2:#353a45;
+  --accent:#e3a07f; /* ← тёмный вариант акцента, светлее основного */
+  --good:#6bbd8e; --warn:#d7ab5c; --bad:#e08383; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#14161b; --surface:#1b1e25; --surface2:#222630;
+  --ink:#e7e9ef; --muted:#959bab; --line:#282c35; --line2:#353a45;
+  --accent:#e3a07f; /* ← тот же тёмный вариант акцента */
+  --good:#6bbd8e; --warn:#d7ab5c; --bad:#e08383; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);
+  font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  font-variant-numeric:tabular-nums}
+.wrap{max-width:860px;margin:0 auto;padding-inline:20px;padding-block:28px 64px}
+.kicker{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent);font-weight:500}
+h1{margin:10px 0 0;font-family:var(--font-display);font-weight:600;
+  font-size:clamp(32px,6vw,46px);line-height:1.05;letter-spacing:-.01em;text-wrap:balance}
+.sub{color:var(--muted);font-size:16px;max-width:60ch;margin:10px 0 0}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:32px 0 40px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+.tile .n{font-family:var(--font-mono);font-weight:600;font-size:27px;line-height:1;letter-spacing:-.02em}
+.tile .n.accent{color:var(--accent)}
+.tile .c{display:block;margin-top:8px;font-size:13px;color:var(--muted);line-height:1.35}
+section{margin-bottom:38px}
+.s-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;
+  padding-bottom:9px;border-bottom:1px solid var(--line)}
+.s-head h2{margin:0;font-family:var(--font-display);font-weight:600;font-size:21px;letter-spacing:-.01em}
+.s-head .count{font-family:var(--font-mono);font-size:13px;color:var(--muted)}
+.q{display:grid;grid-template-columns:34px 1fr;gap:14px;padding:14px 4px;border-bottom:1px solid var(--line)}
+.q:last-child{border-bottom:none}
+.q .idx{font-family:var(--font-mono);font-weight:600;font-size:15px;color:var(--accent);padding-top:2px}
+.q .t{font-weight:600;font-size:17px}
+.q .d{color:var(--muted);font-size:15.5px;margin-top:3px}
+.q .tag{display:inline-block;margin-top:8px;font-family:var(--font-mono);font-size:11px;
+  letter-spacing:.04em;text-transform:uppercase;color:var(--accent);
+  background:var(--accent-soft);padding:3px 8px;border-radius:6px}
+.done,.ideas{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
+.done li,.ideas li{display:grid;grid-template-columns:22px 1fr;gap:12px;font-size:16.5px}
+.done .mk{color:var(--good);font-weight:700;font-family:var(--font-mono)}
+.ideas .bx{width:15px;height:15px;border:1.5px solid var(--line2);border-radius:4px;margin-top:5px}
+.note{color:var(--muted);font-size:14.5px}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+table{width:100%;border-collapse:collapse;font-size:15.5px;min-width:380px}
+th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:none}
+th{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;background:var(--surface)}
+.st{font-family:var(--font-mono);font-size:12px;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.st.on{color:var(--good);background:color-mix(in srgb,var(--good) 14%,transparent)}
+.st.wait{color:var(--warn);background:color-mix(in srgb,var(--warn) 16%,transparent)}
+.st.soon{color:var(--muted);background:var(--surface2)}
+td.num{font-family:var(--font-mono);text-align:right}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+@media(max-width:620px){body{font-size:17px}.tiles{grid-template-columns:repeat(2,1fr)}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
 <div class="wrap">
   <header>
-    <div class="kicker">CostTrek · costtrek.com</div>
-    <h1>План работ и статус</h1>
-    <p class="sub">Живой дашборд поверх roadmap. Приоритет по правилу <b>ценность × выполнимость</b> при реальности: трафик ≈ 0, показы растут, кликов нет — рычаг это авторитет + время + концентрация, а не ширина.</p>
-    <div class="stamp">Актуализировано <b>2026-09-29</b> · источник правды — <b>research/PLAN.md</b> в репозитории</div>
+    <span class="kicker">Дорожная карта · обновлено 2026-10-09</span>
+    <h1>CostTrek</h1>
+    <p class="sub">Сравнение стоимости жизни город-vs-город, 5 языков, ~11.9k страниц.
+      Эта страница — живое зеркало <code>research/PLAN.md</code>: что в работе, что сделано, что в идеях.</p>
   </header>
 
-  <h2>Ключевые цифры</h2>
   <div class="tiles">
-    <div class="tile"><div class="big">~11 564</div><div class="lab">страниц (SSG, 5 языков)</div></div>
-    <div class="tile"><div class="big">~87</div><div class="lab">городов · ~34 страны</div></div>
-    <div class="tile good"><div class="big">Дни 1–7 ✓</div><div class="lab">базовый спринт закрыт</div></div>
-    <div class="tile"><div class="big">5</div><div class="lab">live-аффилиатов</div></div>
-    <div class="tile"><div class="big">~0</div><div class="lab">трафик · показы растут (20–79/запрос)</div></div>
-    <div class="tile"><div class="big">14</div><div class="lab">сайтов в footer-сети</div></div>
+    <div class="tile"><span class="n">≈450</span><span class="c">визитов за 30 дней · RUM, ≈15/д</span></div>
+    <div class="tile"><span class="n">3 825</span><span class="c">страниц в sitemap (GSC)</span></div>
+    <div class="tile"><span class="n accent">6</span><span class="c">задач в очереди</span></div>
+    <div class="tile"><span class="n">2</span><span class="c">кликов из поиска · 28 дн</span></div>
   </div>
 
-  <h2>Очередь <span class="n">— ближайшие ~11 запусков</span></h2>
-  <div class="queue">
+  <section>
+    <div class="s-head"><h2>Очередь</h2><span class="count">по приоритету · 6</span></div>
 
-    <div class="row">
-      <div class="idx">1</div>
-      <div class="body">
-        <div class="name">W2-2 «Find your city» — интерактивный подборщик города</div>
-        <div class="why">Слайдеры приоритетов + пресеты + фильтры, живой рейтинг, шарибельный URL. Сделано 2026-09-29 · 8748cd6.</div>
-      </div>
-      <span class="pill p-done">✓ сделано</span>
-    </div>
+    <div class="q"><span class="idx">01</span><div>
+      <div class="t">Добавить costtrek.com в AdSense</div>
+      <div class="d">Сайт ещё не добавлен (Sites → Add site) — рычаг дохода №1. Перед ревью выключить <code>TRAVELPAYOUTS_DRIVE</code>.</div>
+      <span class="tag">деньги</span></div></div>
 
-    <div class="row">
-      <div class="idx">2</div>
-      <div class="body">
-        <div class="name">Кросс-ссылки по сети + самоописание для foundaday</div>
-        <div class="why">3 контекстных do-follow ссылки в гайдах (OCRSnip / Pawdget / CalcLumen) ×5 + самоописание. Сделано 2026-09-29 · 268ca29.</div>
-      </div>
-      <span class="pill p-done">✓ сделано</span>
-    </div>
+    <div class="q"><span class="idx">02</span><div>
+      <div class="t">Разместить одобренные партнёрки</div>
+      <div class="d">Ждём 3 заявки (DiscoverCars, NordVPN, Trip.com); как active/allowed — трекинг-диплинк в toolkit.ts + деплой.</div>
+      <span class="tag">деньги</span></div></div>
 
-    <div class="row">
-      <div class="idx">3</div>
-      <div class="body">
-        <div class="name">Глубина по Singapore и сильнейшим кластерам спроса</div>
-        <div class="why">Редакционные deep-dive блоки на city-страницах (Singapore / Charlotte / Tokyo) ×5 + Charlotte в indexable/sitemap. Сделано 2026-10-01 · a2d3755.</div>
-      </div>
-      <span class="pill p-done">✓ сделано</span>
-    </div>
+    <div class="q"><span class="idx">03</span><div>
+      <div class="t">Следить за краулом Googlebot после переезда на CF</div>
+      <div class="d">GSC «Статистика сканирования» → Host status после 05.10, переотправить sitemap; проверить Bot Fight Mode / WAF.</div>
+      <span class="tag">индексация</span></div></div>
 
-    <div class="row">
-      <div class="idx">4</div>
-      <div class="body">
-        <div class="name">W2-3 калькулятор бюджета домохозяйства</div>
-        <div class="why">Интерактивный калькулятор: город + состав + стиль жизни → месячный бюджет, шарибельный URL. Сделано 2026-10-01 · 37dfa97.</div>
-      </div>
-      <span class="pill p-done">✓ сделано</span>
-    </div>
+    <div class="q"><span class="idx">04</span><div>
+      <div class="t">Решить судьбу sitemap / показов</div>
+      <div class="d">25k URL, 93% без показов; урезать до сильных страниц, noindex тонких пар. Решение владельца.</div>
+      <span class="tag">индексация</span></div></div>
 
-    <div class="row">
-      <div class="idx">5</div>
-      <div class="body">
-        <div class="name">Реальные данные — средние зарплаты OECD</div>
-        <div class="why">Реальная средняя годовая ЗП OECD (USD PPP, 20 стран) как официальная метрика с ✓ на compare/country/методологии ×5. Сделано 2026-10-06 · 3247ba4.</div>
-      </div>
-      <span class="pill p-done">✓ сделано</span>
-    </div>
+    <div class="q"><span class="idx">05</span><div>
+      <div class="t">Углублять контент по доказанным кластерам спроса</div>
+      <div class="d">City deep-dives / гайды под Singapore, digital-nomad-visa, charlotte-nc, is-japan-cheaper-than-india.</div>
+      <span class="tag">контент</span></div></div>
 
-    <div class="row">
-      <div class="idx">6</div>
-      <div class="body">
-        <div class="name">Миграция на Cloudflare (OpenNext)</div>
-        <div class="why">✅ ПРОД costtrek.com + www переехали на Cloudflare Worker (server: cloudflare, все маршруты 200). Next 16.3.8, static-assets кэш, Paid $5/мес. Деплой теперь: nvm use 22 + cf:build + cf:deploy. Vercel держим неделю как откат. 2026-10-05 · 7386196.</div>
-      </div>
-      <span class="pill p-done">✓ сделано</span>
-    </div>
+    <div class="q"><span class="idx">06</span><div>
+      <div class="t">Добить остаток Cloudflare-бэклога</div>
+      <div class="d">Снять домен с Vercel, убрать @vercel/analytics, www→apex 301.</div>
+      <span class="tag">инфра</span></div></div>
+  </section>
 
-    <div class="row">
-      <div class="idx">7</div>
-      <div class="body">
-        <div class="name">Качественный лонгрид-гайд #2 + E-E-A-T</div>
-        <div class="why">Гайд «cost of living in Singapore» (самый сильный кластер), expat-бюджет, байлайн/E-E-A-T, ×5, внутренние ссылки. Сделано 2026-10-08 · 43d13a1.</div>
-      </div>
-      <span class="pill p-done">✓ сделано</span>
-    </div>
-
-    <div class="row">
-      <div class="idx">8</div>
-      <div class="body">
-        <div class="name">Канонизация направлений compare</div>
-        <div class="why">Проверено 06.10: уже внедрено в августе — reverse 308→канон, sitemap без зеркал. GSC-«Google выбрал обратное» = лаг переобхода при краул 8/нед, кодом не ускорить. Узкое место — авторитет/беклинки/время, не код.</div>
-      </div>
-      <span class="pill p-done">✓ сделано</span>
-    </div>
-
-    <div class="row">
-      <div class="idx">9</div>
-      <div class="body">
-        <div class="name">Разбор обвала показов + концентрация sitemap</div>
-        <div class="why">Показы 28д −99%; sitemap 25 545 URL, 93% без показов. Диагностика + решение урезать до сильных страниц.</div>
-      </div>
-      <span class="pill p-decision">🔸 решение владельца</span>
-    </div>
-
-    <div class="row">
-      <div class="idx">10</div>
-      <div class="body">
-        <div class="name">Монетизация «когда прилетит сигнал»</div>
-        <div class="why">Omio + Trip.com в toolkit (ждём ссылки). AdSense: при READY — Google Funding Choices CMP + выключить флаг Travelpayouts Drive на ревью.</div>
-      </div>
-      <span class="pill p-gated">🔒 гейт</span>
-    </div>
-
-    <div class="row">
-      <div class="idx">11</div>
-      <div class="body">
-        <div class="name">Буфер / грабёж бэклога</div>
-        <div class="why">ISR для region/persona-хабов, i18n-ярлыки метрик, слаги, support@-алиасы, форма фидбэка, подача URL в GSC.</div>
-      </div>
-      <span class="pill p-queue">в очереди</span>
-    </div>
-
-  </div>
-
-  <h2>Сделано</h2>
-  <ul class="clean">
-    <li><span class="mark">✓</span><span class="txt">База 7-дневного спринта (Дни 1–7): методология, глубина compare, walkability, «Is X expensive?» + персоны, реальные данные (Eurostat min wage + official-marks), внутренняя перелинковка, гайд-качество <span class="date">— 2026-09-28</span></span></li>
-    <li><span class="mark">✓</span><span class="txt">W2-1 — композитный балл «Quality of life» 0–100 на compare + city <span class="date">— 2026-09-28 · 810ff43</span></span></li>
-    <li><span class="mark">✓</span><span class="txt">Гайд «Digital nomad visas» (топ-запрос GSC, 79 показов), локализован ×5 <span class="date">— 2026-09-28 · 810ff43</span></span></li>
-    <li><span class="mark">✓</span><span class="txt">Footer-сеть: +OCRSnip, Found a Day, Dasha Motion; тег iznkit поправлен — 14 сайтов <span class="date">— 2026-09-29 · 678df6f</span></span></li>
-    <li><span class="mark">✓</span><span class="txt">Консолидация роадмапа в research/PLAN.md + этот живой дашборд <span class="date">— 2026-09-29 · 31b4028</span></span></li>
-    <li><span class="mark">✓</span><span class="txt">W2-2 «Find your city» — интерактивный подборщик города (слайдеры/пресеты/фильтры, живой рейтинг, шарибельный URL) + аналитический <code>track()</code>, локализован ×5 <span class="date">— 2026-09-29 · 8748cd6</span></span></li>
-    <li><span class="mark">✓</span><span class="txt">Контекстные do-follow кросс-ссылки в гайдах на сеть (OCRSnip / Pawdget / CalcLumen), ×5 локалей; самоописание CostTrek для foundaday <span class="date">— 2026-09-29 · 268ca29</span></span></li>
-    <li><span class="mark">✓</span><span class="txt">Редакционные deep-dive блоки на city-страницах (Singapore / Charlotte / Tokyo) ×5 + Charlotte в indexable/sitemap — глубина по сильнейшим кластерам спроса <span class="date">— 2026-10-01 · a2d3755</span></span></li>
-    <li><span class="mark">✓</span><span class="txt">W2-3 интерактивный калькулятор бюджета домохозяйства (город + состав + стиль жизни → месячный бюджет, шарибельный URL), локализован ×5 <span class="date">— 2026-10-01 · 37dfa97</span></span></li>
-    <li><span class="mark">✓</span><span class="txt">Разметка Schema.org докручена: ItemList на главной + /countries, Organization.sameAs (GitHub). HowTo/Product сознательно не добавляли (deprecated / фейк) <span class="date">— 2026-10-03 · bf12ca1</span></span></li>
-    <li><span class="mark">✓</span><span class="txt"><b>Переезд с Vercel на Cloudflare</b> (OpenNext/Workers): Next 16.3.8, static-assets кэш, Paid $5/мес; costtrek.com + www на воркере, подтверждено. Деплой теперь cf:build+cf:deploy (Node 22). Vercel — откат на неделю <span class="date">— 2026-10-05 · 7386196</span></span></li>
-    <li><span class="mark">✓</span><span class="txt">Реальные средние зарплаты OECD (USD PPP, 20 стран) как официальная метрика с ✓ на compare/country-страницах + методология ×5; non-OECD держат оценку <span class="date">— 2026-10-06 · 3247ba4</span></span></li>
-    <li><span class="mark">✓</span><span class="txt">#8 канонизация compare — проверено, уже сделана (reverse 308→канон, sitemap чистый); лаг переобхода, не код <span class="date">— 2026-10-06</span></span></li>
-    <li><span class="mark">✓</span><span class="txt">Лонгрид-гайд «cost of living in Singapore» (сильнейший кластер, expat-бюджет, E-E-A-T-байлайн), локализован ×5, внутренние ссылки <span class="date">— 2026-10-08 · 43d13a1</span></span></li>
-    <li><span class="mark">✓</span><span class="txt">+5 city deep-dive (Lisbon / Dubai / Bangkok / Mexico City / London) ×5 — углубление топ-городов под спрос <span class="date">— 2026-10-08 · 383e5cb</span></span></li>
-    <li><span class="mark">✓</span><span class="txt"><b>Авто-деплой на Cloudflare</b> (GitHub Actions): push в main с кодом → CI сам собирает OpenNext и деплоит; ручной cf:deploy больше не нужен. Проверено тестовым раном ✓ <span class="date">— 2026-10-08 · b786f2f</span></span></li>
-  </ul>
-
-  <h2>💡 Входящие идеи <span class="n">— копилка</span></h2>
-  <ul class="clean inbox">
-    <li><span class="txt"><b>OECD average wages</b> — реальная avg зарплата для стран OECD (предусловие для будущего платного отчёта). → повышено в план #5</span></li>
-    <li><span class="txt"><b>Внутренний «house-ad» слот</b> — промо наших же фич (финдер / калькулятор / гайд / хаб), ротация по неделям (ISO-week), лента «Featured on CostTrek». Гонит внутренний трафик на свежее + перелинковка. Дёшево; хороший быстрый инсерт.</span></li>
-    <li><span class="txt"><b>Самоописания сети</b> — блоки по шаблону для обзоров на foundaday. → часть плана #2</span></li>
-    <li><span class="txt"><b>ISR для region/persona-хабов</b> — снять давление потолка Vercel и build-минут при росте городов.</span></li>
-    <li><span class="txt"><b>i18n-ярлыки метрик</b> — в metrics.ts сейчас EN на всех локалях.</span></li>
-    <li><span class="txt"><b>Локализованные URL-слаги</b> (/de/vergleich/…) — лучше для SEO, но нужны per-locale маршруты.</span></li>
-    <li><span class="txt"><b>support@ / hello@ алиасы</b> в Cloudflare — ловить частые угаданные адреса (catch-all выключен).</span></li>
-    <li><span class="txt"><b>Форма фидбэка</b> вместо mailto — только если пойдёт объём обращений.</span></li>
-    <li><span class="txt"><b>GSC-гигиена</b> — ~10 ценных URL/день вручную, пока индексация догоняет.</span></li>
-  </ul>
-
-  <h2>Стоящие фоном</h2>
-  <div class="note">
-    <b>Мониторим, не отдельные запуски:</b>
-    <ul>
-      <li>Обвал показов −99% — вероятно норма молодого домена, прод здоров; не передебажывать каждый заход.</li>
-      <li>AdSense readiness — структурно готово, ждём порог трафика (трекается централизованно в izn.project.stats).</li>
-      <li>RUM/Cloudflare — домен не проксирован, edge-аналитика пустая, только RUM-beacon.</li>
-      <li>Флаг <code>TRAVELPAYOUTS_DRIVE</code> = true → выключить перед AdSense-ревью.</li>
+  <section>
+    <div class="s-head"><h2>Сделано</h2><span class="count">за 2 недели</span></div>
+    <ul class="done">
+      <li><span class="mk">✓</span><span>Реципрокная контекстная do-follow ссылка OCRSnip → гайд аренды, ×5 локалей <span class="note">— 02d0654, 09.10</span></span></li>
+      <li><span class="mk">✓</span><span>Единый справочник по рекламе / партнёркам / перелинковке <span class="note">— research/ADS-AND-LINKS.md, 09.10</span></span></li>
+      <li><span class="mk">✓</span><span>House-ad слот «Featured on CostTrek» — внутр. промо фич, ротация по ISO-неделе <span class="note">— fe04ec8</span></span></li>
+      <li><span class="mk">✓</span><span>CI авто-деплой на Cloudflare по push в main (убрали ручной cf:deploy) <span class="note">— b786f2f</span></span></li>
+      <li><span class="mk">✓</span><span>+5 city deep-dives: Lisbon / Dubai / Bangkok / Mexico City / London, ×5 <span class="note">— 383e5cb</span></span></li>
+      <li><span class="mk">✓</span><span>Гайд #2 «cost of living in Singapore» под сильнейший кластер, ×5 <span class="note">— 43d13a1</span></span></li>
+      <li><span class="mk">✓</span><span>Реальные зарплаты OECD (AV_AN_WAGE, PPP) как официальная метрика <span class="note">— 3247ba4</span></span></li>
+      <li><span class="mk">✓</span><span>Миграция прода на Cloudflare (OpenNext Worker, кэш static-assets) <span class="note">— 7386196</span></span></li>
+      <li><span class="mk">✓</span><span>W2-3 калькулятор бюджета домохозяйства (город + состав → разбивка), ×5 <span class="note">— 37dfa97</span></span></li>
+      <li><span class="mk">✓</span><span>W2-2 «Find your city» финдер + track(), ×5 <span class="note">— 8748cd6</span></span></li>
     </ul>
-  </div>
+  </section>
 
-  <div class="legend">
-    <span class="pill p-next">▶ следующее</span>
-    <span class="pill p-queue">в очереди</span>
-    <span class="pill p-decision">🔸 решение владельца</span>
-    <span class="pill p-gated">🔒 внешний гейт</span>
-    <span class="pill p-done">✓ сделано</span>
-  </div>
+  <section>
+    <div class="s-head"><h2>Идеи</h2><span class="count">инбокс · не в работе</span></div>
+    <ul class="ideas">
+      <li><span class="bx"></span><span>Новые города из GSC-запросов <span class="note">— Monterrey/Orlando/Lugano/Sitges/… + Cuenca/Skopje (новые страны); ширина, не срочно</span></span></li>
+      <li><span class="bx"></span><span>Локализованные URL-слаги (/de/vergleich/…) <span class="note">— лучше SEO, но дорого (per-locale route dirs)</span></span></li>
+      <li><span class="bx"></span><span>i18n-ярлыки метрик в metrics.ts <span class="note">— сейчас EN везде</span></span></li>
+      <li><span class="bx"></span><span>Форма фидбэка вместо mailto <span class="note">— только если пойдёт объём</span></span></li>
+      <li><span class="bx"></span><span>VisitorsCoverage как доп. страховой оффер <span class="note">— замена закрывшейся EKTA</span></span></li>
+      <li><span class="bx"></span><span>Разовый PDF-отчёт (à la Expatistan) <span class="note">— только при трафике + реальных данных + Paddle/LS под КГ</span></span></li>
+    </ul>
+  </section>
 
-  <footer>
-    Источник правды — <code>research/PLAN.md</code> в репозитории; эта страница переопубликовывается на тот же URL после каждой выполненной работы. Приватный артефакт (виден только владельцу).
-  </footer>
+  <section>
+    <div class="s-head"><h2>Реклама и офферы</h2><span class="count">монетизация</span></div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Канал</th><th>Статус</th><th class="num">Доход / мес</th></tr></thead>
+      <tbody>
+        <tr><td>AdSense (display)</td><td><span class="st wait">рано</span></td><td class="num">—</td></tr>
+        <tr><td>Travelpayouts (flights/hotels/cars/tours/eSIM)</td><td><span class="st on">активна</span></td><td class="num">≈ $0</td></tr>
+        <tr><td>SafetyWing (insurance)</td><td><span class="st on">активна</span></td><td class="num">—</td></tr>
+        <tr><td>MyTrip (flights · Indoleads)</td><td><span class="st on">активна</span></td><td class="num">—</td></tr>
+        <tr><td>Admitad (Way.com / Cheapvuelos)</td><td><span class="st on">активна</span></td><td class="num">—</td></tr>
+        <tr><td>DiscoverCars (cars · Admitad)</td><td><span class="st soon">ждёт</span></td><td class="num">—</td></tr>
+        <tr><td>NordVPN (Admitad)</td><td><span class="st soon">ждёт</span></td><td class="num">—</td></tr>
+        <tr><td>Trip.com (Indoleads)</td><td><span class="st soon">ждёт</span></td><td class="num">—</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <footer>Витрина проекта CostTrek. Обновляется вместе с планом (research/PLAN.md).</footer>
 </div>
+</body>
+</html>
