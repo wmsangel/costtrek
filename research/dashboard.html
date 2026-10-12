@@ -83,7 +83,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:v
 <body>
 <div class="wrap">
   <header>
-    <span class="kicker">Дорожная карта · обновлено 2026-10-09</span>
+    <span class="kicker">Дорожная карта · обновлено 2026-10-12</span>
     <h1>CostTrek</h1>
     <p class="sub">Сравнение стоимости жизни город-vs-город, 5 языков, ~11.9k страниц.
       Эта страница — живое зеркало <code>research/PLAN.md</code>: что в работе, что сделано, что в идеях.</p>
@@ -92,12 +92,12 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:v
   <div class="tiles">
     <div class="tile"><span class="n">≈450</span><span class="c">визитов за 30 дней · RUM, ≈15/д</span></div>
     <div class="tile"><span class="n">3 825</span><span class="c">страниц в sitemap (GSC)</span></div>
-    <div class="tile"><span class="n accent">6</span><span class="c">задач в очереди</span></div>
+    <div class="tile"><span class="n accent">8</span><span class="c">задач в очереди</span></div>
     <div class="tile"><span class="n">2</span><span class="c">кликов из поиска · 28 дн</span></div>
   </div>
 
   <section>
-    <div class="s-head"><h2>Очередь</h2><span class="count">по приоритету · 6</span></div>
+    <div class="s-head"><h2>Очередь</h2><span class="count">по приоритету · 8</span></div>
 
     <div class="q"><span class="idx">01</span><div>
       <div class="t">Добавить costtrek.com в AdSense</div>
@@ -116,7 +116,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:v
 
     <div class="q"><span class="idx">04</span><div>
       <div class="t">Решить судьбу sitemap / показов</div>
-      <div class="d">25k URL, 93% без показов; урезать до сильных страниц, noindex тонких пар. Решение владельца.</div>
+      <div class="d">Показы 28д −99%, 25k URL, 93% без показов; урезать до сильных страниц, noindex тонких пар. Решение владельца.</div>
       <span class="tag">индексация</span></div></div>
 
     <div class="q"><span class="idx">05</span><div>
@@ -125,8 +125,18 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:v
       <span class="tag">контент</span></div></div>
 
     <div class="q"><span class="idx">06</span><div>
+      <div class="t">Добавить новые города из GSC-запросов (батчем)</div>
+      <div class="d">Monterrey/Orlando/Indianapolis/Lugano/Sitges/Florianópolis/Mönchengladbach + Cuenca (EC)/Skopje (MK). Breadth, не рычаг при краул-бюджете 8/нед — осознанно, не ради 1-impression.</div>
+      <span class="tag">контент</span></div></div>
+
+    <div class="q"><span class="idx">07</span><div>
       <div class="t">Добить остаток Cloudflare-бэклога</div>
       <div class="d">Снять домен с Vercel, убрать @vercel/analytics, www→apex 301.</div>
+      <span class="tag">инфра</span></div></div>
+
+    <div class="q"><span class="idx">08</span><div>
+      <div class="t">Буфер / мелкий бэклог</div>
+      <div class="d">ISR для хабов, i18n-ярлыки метрик, локализованные слаги, support@-алиасы, форма фидбэка, VisitorsCoverage как доп. страховой оффер.</div>
       <span class="tag">инфра</span></div></div>
   </section>
 
@@ -149,13 +159,10 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:v
   <section>
     <div class="s-head"><h2>Идеи</h2><span class="count">инбокс · не в работе</span></div>
     <ul class="ideas">
-      <li><span class="bx"></span><span>Новые города из GSC-запросов <span class="note">— Monterrey/Orlando/Lugano/Sitges/… + Cuenca/Skopje (новые страны); ширина, не срочно</span></span></li>
-      <li><span class="bx"></span><span>Локализованные URL-слаги (/de/vergleich/…) <span class="note">— лучше SEO, но дорого (per-locale route dirs)</span></span></li>
-      <li><span class="bx"></span><span>i18n-ярлыки метрик в metrics.ts <span class="note">— сейчас EN везде</span></span></li>
-      <li><span class="bx"></span><span>Форма фидбэка вместо mailto <span class="note">— только если пойдёт объём</span></span></li>
-      <li><span class="bx"></span><span>VisitorsCoverage как доп. страховой оффер <span class="note">— замена закрывшейся EKTA</span></span></li>
-      <li><span class="bx"></span><span>Разовый PDF-отчёт (à la Expatistan) <span class="note">— только при трафике + реальных данных + Paddle/LS под КГ</span></span></li>
+      <li><span class="bx"></span><span>Разовый PDF-отчёт (à la Expatistan) <span class="note">— гейт: только при трафике + реальных данных + Paddle/LS под КГ</span></span></li>
+      <li><span class="bx"></span><span>Инспектор индексации в izn.project.stats <span class="note">— кросс-репо: брать URL из sitemap, чтобы 308-неканон не шумел</span></span></li>
     </ul>
+    <p class="note" style="margin-top:12px">Остальные идеи 12.10 перенесены в Очередь (новые города → #6, буфер → #8, монетизация/индексация → #1–4).</p>
   </section>
 
   <section>
