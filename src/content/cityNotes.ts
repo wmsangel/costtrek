@@ -51,6 +51,30 @@ export const EN_CITY_NOTES: CityNotes = {
     "London is simply expensive, with none of the lopsided silver lining that Singapore or Dubai offer. Rent is the headline pain and it is severe across most of the city; add high transport costs, pricey dining and council tax and the budget climbs quickly. Salaries run higher than the rest of the UK, but rarely enough to fully offset the housing hit.",
     "What you pay for is scale and opportunity: one of the world's deepest job markets, world-class culture, and crowded but excellent public transport that genuinely lets you skip a car. The main budget lever is location — commuter zones and outer boroughs cut rent substantially in exchange for a longer commute. For a high earner the city works; on an average salary, London demands trade-offs most other UK cities don't.",
   ],
+  "new-york-ny": [
+    "New York is the city other budgets get measured against, and housing is why. Rent in Manhattan and the popular parts of Brooklyn can swallow a salary that would look generous almost anywhere else, while groceries and the subway are merely expensive rather than absurd. A car is a luxury you do not need in the core, and an expensive one if you insist on keeping it.",
+    "The offset is pay. Finance, tech, media and a deep professional market push salaries above most of the country, though rarely enough to make a central apartment feel casual. Healthcare is its own line — private insurance, not a deduction into a public system — and it belongs in the plan before you fall for a neighbourhood. The practical lever is the commute: outer boroughs and a longer subway ride are how people actually afford to stay.",
+  ],
+  "paris-fr": [
+    "Paris is expensive in a different way from London. Rent is serious, especially for a family-sized flat in a central arrondissement, but it stops short of London's, and it is not the only thing taking the pay cheque. French income tax and social contributions leave a wide gap between gross salary and what lands in the account. Day to day the metro, markets and a walkable city keep a modest life in check, and a car is mostly a cost you can skip.",
+    "What blows the budget is space plus a habit of eating out. Small flats are the norm, and the jump to another room is steep. Neighbourhood is the lever — a short metro ride changes the rent far more than it changes how you live. On a strong local salary Paris works; on an average one, the city asks you to choose between space and the centre.",
+  ],
+  "berlin-de": [
+    "Berlin's old reputation as Western Europe's cheap capital has been fading, but the shape of the budget is still different from Munich, Paris or Amsterdam. Rent is the line that moved: sought-after neighbourhoods are competitive, and the flat hunt can cost more in time, deposits and lost weeks than the monthly price suggests. Once you are in, everyday spending — food, the transit pass, going out — stays reasonable for a major European city.",
+    "The quieter hit is tax. German income tax and social contributions take a heavy share of gross pay, so a salary that looks comfortable on paper shrinks before it meets the rent. Winter heating and utilities also run harder than newcomers from milder cities expect. English will carry you through much of the startup and creative scene; the paperwork will not. Budget for the flat hunt and for take-home, not for the headline salary.",
+  ],
+  "amsterdam-nl": [
+    "Amsterdam's cost of living is a housing story with a bicycle attached. Flats are scarce, competition is fierce, and newcomers without a local rental history are asked for more cash up front — a deposit, and often an agent fee — before the monthly rent even starts. The city is compact and built for bikes, so a car is an unnecessary expense, and that is the one category where Amsterdam is kinder than a typical capital.",
+    "Almost everything else sits at a northern-European level: groceries, dining and utilities are comfortable, and they are not a bargain. Income tax means a gross salary and spending money are different numbers. English is widely spoken, which makes the landing easy and does nothing for the flat hunt. The practical rule: do not move until the housing is real. The lifestyle is why people fight for a place; the place is what decides whether the salary works.",
+  ],
+  "barcelona-es": [
+    "Barcelona sells a life — beach, walkable neighbourhoods, long evenings out — at a cost that still undercuts Paris, London or Amsterdam. The catch is housing where everyone wants to be. Tourism and a large remote-worker scene have tightened the central barrios, and a flat in the old town or by the sea is a different budget from one a short metro ride inland.",
+    "Food is the part that stays generous: markets and everyday restaurants are where the city still feels like good value, and you do not need a car. Tax is national, so Barcelona is not a low-tax escape; the saving versus northern Europe is rent and daily life, not the payslip. Madrid, in the same country, takes less tourist pressure on its housing. On a foreign income Barcelona works if the neighbourhood is the decision; on a local salary, the centre is the part that stops adding up.",
+  ],
+  "toronto-ca": [
+    "Toronto is where a lot of people land in Canada, and the budget has two hard parts: rent and winter. Housing in the core is steep for the country — short of Vancouver, well above Montreal — and a long heating season pushes utilities in a way a mild-climate arrival does not expect. The subway and streetcars cover a real share of daily life downtown; the further out you go for a lower rent, the more a car creeps back into the budget.",
+    "Salaries in finance, tech and the wider professional market are the offset, and healthcare does not show up as a large private-insurance bill the way it does in a comparable US city. That is the trade: a serious housing cost, a cold winter, and a city big enough to build a career in English. Decide how far you will commute before you decide a flat is a bargain.",
+  ],
 };
 
 const BY_LOCALE: Record<Locale, CityNotes> = {
