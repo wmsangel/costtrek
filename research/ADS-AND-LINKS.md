@@ -23,10 +23,11 @@
 | **SafetyWing** (insurance) | активна | — | direct, 10% recurring, Wise |
 | **MyTrip** (flights) | активна | — | Indoleads, CPS $6/sale |
 | **Admitad** (Way.com / Cheapvuelos / Flight Network) | активна | — | website_id 2988082 |
-| **DiscoverCars** (cars) | ждёт | — | Admitad 20065, 365-дн. cookie |
-| **NordVPN** (VPN) | ждёт | — | Admitad 18867 |
-| **Trip.com** (hotels/flights Asia) | ждёт | — | Indoleads 378 |
-| **EKTA** (insurance) | нет | — | программа закрывается (08.10) |
+| **DiscoverCars** (cars) | ждёт | — | Admitad 20065, awaiting moderation (365-дн. cookie) |
+| **Instarem** (money-transfer) 💰 | ждёт | — | Indoleads 20719, $6 CPA; нужен запрос менеджеру под costtrek |
+| **Trip.com** (hotels/flights Asia) | ждёт | — | Indoleads 378, не одобрен |
+| **NordVPN** (VPN) | нет | — | Admitad 18867 declined |
+| **EKTA** (insurance) | нет | — | программа закрылась (08.10) |
 | **Travelpayouts Drive** (скрипт site-wide) | активна | — | флаг `TRAVELPAYOUTS_DRIVE`; выключить перед AdSense-ревью |
 
 Детали по каждому каналу, гео-скоуп, трекеры и rel= — в разделах ниже.
@@ -101,38 +102,59 @@ Awin) платят на Payoneer/банк 🟢. Опасность — прям�
 > Подача заявок и привязка офферов = действия от имени владельца → **делает владелец сам**.
 > Я читаю API свободно и готовлю трекинг-вставки в код, но **пушу только по подтверждению.**
 
-### Ждём одобрения — проверять раз в пару дней (статус 2026-10-08)
-| Оффер | Сеть | ID | Статус | Категория (куда вставить) |
-|---|---|---|---|---|
-| **DiscoverCars** | Admitad | 20065 | 🟡 pending | cars (365-дн. cookie — лучше текущих) |
-| **NordVPN** | Admitad | 18867 | 🟡 pending | other/VPN (nomad) |
-| **Trip.com** | Indoleads | 378 | 🟡 pending | hotels/flights Asia |
+### Статус по кабинетам — ПРОВЕРЕНО ВРУЧНУЮ 2026-10-13 (истина = кабинет, не API)
+Полный аудит по API + оба веб-кабинета (сессия владельца в Chrome). Итог: **нового,
+пригодного к размещению под costtrek — нет**; все живые ссылки в коде здоровы.
 
-Как только `active`/`allowed:true` → я генерю диплинк `source=costtrek.com`, вставляю
-в `toolkit.ts` по паттерну кластера, `npm run build`, пуш по подтверждению.
+| Оффер | Сеть | ID | Реальный статус (кабинет) | Решение |
+|---|---|---|---|---|
+| **DiscoverCars** | Admitad | 20065 | 🟡 **awaiting moderation** (рекламодатель) под costtrek | ждать; ссылок пока нет |
+| **NordVPN** | Admitad | 18867 | 🔴 declined | мимо (VPN — слабый фит) |
+| **Trip.com** | Indoleads | 378 | 🟡 applied, `allowed:false` (не одобрен) | ждать |
+| **Instarem** 💰 | Indoleads | 20719 | ✅ approved — но для **calclumen**, НЕ costtrek | см. ниже (нужен запрос менеджеру) |
+| **GetYourGuide** | Indoleads | 19048 | ✅ approved под costtrek | дубль туров (Klook/Tiqets) → не ставим |
+| **eSky** | Indoleads | 17503 | ✅ approved под costtrek | дубль флайтов (Aviasales/MyTrip) → не ставим |
+| **Udemy** | Indoleads | 650 | ✅ approved под costtrek | нерелевантно |
+
+**Живые Admitad-ссылки в коде (costtrek 2988082) — все `active` ✓:** AvitoVIP (107567),
+Cheapvuelos (183133), Flight Network (130860), Planetofhotels (100844), Way.com (29492).
+Мёртвых нет. (NH-Hotels 17396 тоже active, но из кода убран — безвредно.)
+
+**💰 Instarem — единственный стратегически ценный (money-transfer, закрывает гап №1):**
+CPA **6 USD** (first-time transaction), cookie/hold 30 дней, deeplink yes, SEO/Websites/
+Content ads = allow. Гео: US/UK/EU(весь)/Singapore/Japan/Malaysia/HK — отлично ложится.
+НО approved только под **calclumen**; чтобы добавить costtrek — нет самосервисной кнопки
+«Apply» (заявка на уровне аккаунта), нужен **запрос менеджеру Marina Lavrenova**
+(m.lavrenova@indoleads.com) — это сообщение от имени владельца → по отдельному ок.
 
 ### Отклонено / мимо
-- 🔴 **declined** (авто-реджект мелкого сайта): italki (24736), Preply (29694) на Admitad;
-  Omio (16528), Trip.com (Admitad 23733), Infobus (19229). Переподать позже, когда подрастёт траст.
-- **EKTA** (Admitad 162553 / Travelpayouts) — ⚠️ **закрывается** (платежи стоп 08.10, прога до 14.10).
-  Снято из кандидатов. В коде не было — удалять нечего. Нужна ещё страховка →
-  **VisitorsCoverage** (FlexOffers/Travelpayouts) как альтернатива.
-- Indoleads стали `allowed` Udemy (650) / Macpaw (2015) / Costway (21626) — **нерелевантны**, не ставим.
+- 🔴 **declined**: NordVPN (Admitad 18867), italki (24736), Preply (29694), Omio (16528),
+  Trip.com (Admitad 23733), Infobus (19229).
+- **EKTA** — закрылась (08.10). Нужна ещё страховка → **VisitorsCoverage** (FlexOffers/TP).
+- Indoleads account-wide `allowed` (но НЕ под costtrek / нерелевантно): Macpaw, Costway,
+  ExpressVPN/Crypto.com (→ thecryptotools), Platinumlist (→ testsweep, у нас уже через TP).
 
 ### Реквизиты сетей (для ручной подачи)
-- **Admitad:** website_id costtrek.com = **2988082**. ⚠️ API-attach мёртв (HTTP 410) —
-  подавать только в веб-кабинете. Каталог ~775 программ.
-- **Indoleads:** app.indoleads.ru (**домен заблокирован** для браузера Claude — текст/коды
-  владелец копирует сам). API требует заголовок `User-Agent` иначе 403. 518 офферов.
-- **Travelpayouts:** основной линчпин — один аккаунт закрывает 4 категории (cars/transfers/
-  tours/hotels). marker 567317.
+- **Admitad:** website_id costtrek.com = **2988082**. ⚠️ Файл `~/.config/seo-stats/
+  admitad-website-id.txt` = 2995811 = **testsweep.com** (чужой сайт!) — всегда матчить по
+  домену через `GET /websites/v2/`, не по файлу. API-attach мёртв (HTTP 410) — подавать в
+  кабинете store.admitad.com, переключив **Ad Space → costtrek.com** (иначе заявка уйдёт
+  не на тот сайт). «Banners and Links» в шапке ≠ approved: смотреть баннер «Codes will
+  become available after you join» + «My Ad Spaces: Awaiting moderation».
+- **Indoleads:** app.indoleads.**ru** (кабинет; в браузере владельца открывается). API —
+  app.indoleads.**com** `/api/offers` (нужен User-Agent). ⚠️ Поля `applied`/`allowed`
+  account-wide и ВРУТ про конкретный сайт — реальный source смотреть в Dashboard →
+  «Latest Approved Offers» (там видно offer × source). Ссылку брать: оффер → Tracking link
+  → Source = свой домен → Generate.
+- **Travelpayouts:** основной линчпин — один аккаунт закрывает 4 категории. marker 567317.
 
-### Незакрытые гео-гапы (не на этих сетях)
-- **Money-transfer (Wise/Revolut/Remitly)** — высший RPM релокации, **отсутствует** в каталогах
-  Admitad/Indoleads → только через Travelpayouts/Impact напрямую. Главный незакрытый вертикал.
-- **Недвижимость (rent/buy)** — тончайшие рельсы; реально только Spotahome/Uniplaces.
-  HousingAnywhere/Blueground — без affiliate (только B2B) → прямой аутрич.
-- **Визы** — iVisa (проверить payout rail).
+### Незакрытые гео-гапы
+- **Money-transfer** — **Instarem найден на Indoleads** (см. выше, нужен запрос менеджеру под
+  costtrek). Это и есть главный незакрытый вертикал (высший RPM релокации). Wise/Revolut/
+  Remitly по-прежнему только через TP/Impact напрямую.
+- **Недвижимость (rent/buy)** — Spotahome/Uniplaces; HousingAnywhere/Blueground только B2B.
+- **Визы** — iVisa / VisatoSingapore (Admitad 190129 / Indoleads 21830) — фит под Singapore-
+  кластер, но качество офферов проверить; не подавали.
 
 **Калибровка (честно):** travel-вертикаль насыщена; ещё один CPS-оффер = копейки при ~13
 визитах/день. Реальные рычаги — **AdSense** + money-transfer, не travel-мелочь.
