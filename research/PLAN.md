@@ -39,6 +39,8 @@
 
 За последние ~2 недели (сверху — свежее):
 
+- +6 city deep-dive заметок (New York / Paris / Berlin / Amsterdam / Barcelona / Toronto), EN, через Cursor — `9ab4213`, 13.10
+- Аудит внутренней перелинковки (27 предложений) → `research/CURSOR-internal-links.md`, через Cursor — `9ab4213`
 - GA4 переведён на Google Consent Mode v2 (cookieless-пинги до согласия → GA видит данные,
   EEA-совместимо, задел под AdSense); `G-MYL1G6RWDF` — 13.10, `a564dd7`
 - Привёл доки/витрину к сетевому стандарту: PLAN/IDEAS/ADS структурированы, витрина в
