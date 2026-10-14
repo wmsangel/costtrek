@@ -12,3 +12,11 @@
  * previews, native recommendation blocks) is AdSense-friendly.
  */
 export const TRAVELPAYOUTS_DRIVE = true;
+
+/**
+ * AMAZON_ENABLED — renders the native "Recommended reading & gear" Amazon
+ * Associates block (country pages). Kept behind a flag so it can be turned off
+ * with a single flip + push if an AdSense/Ezoic review flags extra affiliate
+ * links. The Associates tracking tag lives in `src/lib/amazon.ts`.
+ */
+export const AMAZON_ENABLED = true;

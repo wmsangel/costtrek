@@ -84,6 +84,13 @@
     "line2": "Las cifras son aproximadas y no deben usarse como base para decisiones financieras.",
     "network": "De nuestra red", "featured": "Destacado en CostTrek"
   },
+  "amazon": {
+    "heading": "Lecturas y equipo recomendados",
+    "disclaimer": "Como Afiliado de Amazon, CostTrek obtiene ingresos por las compras adscritas que cumplen los requisitos aplicables.",
+    "books": "Libros sobre mudarse a {country}",
+    "phrasebook": "Guía de conversación de {language}",
+    "gear": "Adaptador de viaje universal"
+  },
   "legal": {
     "privacy": "Privacidad",
     "cookies": "Política de cookies",

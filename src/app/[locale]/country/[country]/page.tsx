@@ -24,6 +24,9 @@ import { pageMetadata } from "@/lib/seo/site";
 import { breadcrumbJsonLd } from "@/lib/seo/jsonld";
 import JsonLd from "@/components/JsonLd";
 import Mountains from "@/components/Mountains";
+import AmazonPicks from "@/components/AmazonPicks";
+import { buildAmazonPicks } from "@/lib/amazon";
+import { AMAZON_ENABLED } from "@/lib/flags";
 
 export const dynamicParams = false;
 
@@ -316,6 +319,14 @@ export default async function CountryPage({
           </section>
         );
       })()}
+
+      {AMAZON_ENABLED && (
+        <AmazonPicks
+          picks={buildAmazonPicks(co, dict)}
+          heading={dict.amazon.heading}
+          disclaimer={dict.amazon.disclaimer}
+        />
+      )}
     </div>
   );
 }

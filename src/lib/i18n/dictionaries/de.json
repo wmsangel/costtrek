@@ -84,6 +84,13 @@
     "line2": "Die Angaben sind Näherungswerte und sollten nicht als Grundlage für finanzielle Entscheidungen dienen.",
     "network": "Aus unserem Netzwerk", "featured": "Empfohlen auf CostTrek"
   },
+  "amazon": {
+    "heading": "Empfohlene Bücher & Ausrüstung",
+    "disclaimer": "Als Amazon-Partner verdient CostTrek an qualifizierten Käufen.",
+    "books": "Bücher über den Umzug nach {country}",
+    "phrasebook": "Sprachführer {language}",
+    "gear": "Universal-Reiseadapter"
+  },
   "legal": {
     "privacy": "Datenschutz",
     "cookies": "Cookie-Richtlinie",
