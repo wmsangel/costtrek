@@ -39,6 +39,7 @@
 
 За последние ~2 недели (сверху — свежее):
 
+- +5 city deep-dive (Mumbai/Bangalore/Pune/Chennai/Osaka) под кластер Japan↔India + локализация ×5 всех заметок (19 городов) — `24f424c`, 14.10
 - Amazon Associates запущен (tag costtrek-20) — нативный ДОП-блок книг/гаджетов на country-страницах, ×5, за флагом — `f32c980`, 14.10
 - +6 city deep-dive заметок (New York / Paris / Berlin / Amsterdam / Barcelona / Toronto), EN, через Cursor — `9ab4213`, 13.10
 - Аудит внутренней перелинковки (27 предложений) → `research/CURSOR-internal-links.md`, через Cursor — `9ab4213`
