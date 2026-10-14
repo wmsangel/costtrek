@@ -27,8 +27,8 @@
    Monterrey/Orlando/Indianapolis/Lugano/Sitges/Florianópolis/Mönchengladbach; новые страны:
    Cuenca (EC), Skopje (MK). Breadth, не рычаг при краул-бюджете 8/нед — только осознанно,
    не ради 1-impression-запросов. `контент`
-7. **Добить остаток Cloudflare-бэклога** — снять домен с Vercel, убрать @vercel/analytics,
-   www→apex 301. `инфра`
+7. **Добить остаток Cloudflare-бэклога** — осталось owner-side: снять домен/проект с Vercel,
+   www→apex 301. (@vercel/analytics убран — `930e121`.) `инфра`
 8. **Буфер / мелкий бэклог (когда дойдут руки)** — ISR для region/persona-хабов (давление
    билда при росте городов); i18n-ярлыки метрик в `metrics.ts` (сейчас EN везде);
    локализованные URL-слаги (`/de/vergleich/…`); support@/hello@ алиасы в Cloudflare; форма
@@ -39,6 +39,7 @@
 
 За последние ~2 недели (сверху — свежее):
 
+- Убрал @vercel/analytics (мёртвый скрипт на Cloudflare) + реципрокный do-follow линк на CalcLumen — `930e121`/`ac10323`, 14.10
 - +5 city deep-dive (Mumbai/Bangalore/Pune/Chennai/Osaka) под кластер Japan↔India + локализация ×5 всех заметок (19 городов) — `24f424c`, 14.10
 - Amazon Associates запущен (tag costtrek-20) — нативный ДОП-блок книг/гаджетов на country-страницах, ×5, за флагом — `f32c980`, 14.10
 - +6 city deep-dive заметок (New York / Paris / Berlin / Amsterdam / Barcelona / Toronto), EN, через Cursor — `9ab4213`, 13.10
