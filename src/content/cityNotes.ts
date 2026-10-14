@@ -75,6 +75,26 @@ export const EN_CITY_NOTES: CityNotes = {
     "Toronto is where a lot of people land in Canada, and the budget has two hard parts: rent and winter. Housing in the core is steep for the country — short of Vancouver, well above Montreal — and a long heating season pushes utilities in a way a mild-climate arrival does not expect. The subway and streetcars cover a real share of daily life downtown; the further out you go for a lower rent, the more a car creeps back into the budget.",
     "Salaries in finance, tech and the wider professional market are the offset, and healthcare does not show up as a large private-insurance bill the way it does in a comparable US city. That is the trade: a serious housing cost, a cold winter, and a city big enough to build a career in English. Decide how far you will commute before you decide a flat is a bargain.",
   ],
+  "mumbai-in": [
+    "Mumbai is India's most expensive city, and the reason is land: the city is squeezed onto a narrow peninsula, so rent in the sought-after south and western suburbs is in a different league from the rest of the country. For anyone weighing India against Japan or the West, Mumbai is the exception that still undercuts them heavily on daily life — food, help, transport — while housing is where the gap narrows sharply.",
+    "What you pay for is proximity. In a city this congested, living near work is worth real money, and the commute is the lever that decides a budget: a flat an hour out on the local train costs a fraction of one in the centre. Domestic help, eating out and getting around stay cheap by Western standards; imported goods, international schooling and a car with a driver are where an expat budget actually climbs.",
+  ],
+  "bangalore-in": [
+    "Bangalore is India's tech capital, and its cost of living has risen with the industry. Rent in the tech corridors and central neighbourhoods climbed fast as the sector pulled in talent, though it still sits below Mumbai and far under any Western tech hub. The mild climate is a genuine perk — the city rarely needs heavy heating or air-conditioning, which quietly keeps utility bills down.",
+    "The budget pain here is less rent than time and infrastructure: traffic is severe, so people pay — in rent or in commute — to live near work. Everyday life stays inexpensive; the costs that add up for a relocating professional are a reliable car or driver, backup power and internet, and international schooling. On a tech salary the city is comfortable, and the commute is the quality-of-life tax you negotiate.",
+  ],
+  "pune-in": [
+    "Pune reads as the quieter, cheaper alternative to nearby Mumbai: a big student and IT population, a calmer pace, and rents well below the coast. For someone comparing Indian cities, Pune is where a Mumbai-style life gets more affordable without leaving the same economic orbit — the trade is a smaller job market and less of the big-city intensity.",
+    "Daily costs are low across the board, and the pleasant climate keeps utilities modest. For a relocating family the spending that matters is the usual Indian shortlist — a car, backup power and internet, private or international schooling — rather than rent, which is the city's main draw. Pune works best for people tied to its IT and education economy; outside that, the opportunities thin out.",
+  ],
+  "chennai-in": [
+    "Chennai is one of India's more affordable major cities: a coastal industrial and IT centre in the south with a strong local culture. Rent is reasonable even in desirable areas, and everyday costs — food, transport, help — are low, which is much of the appeal for people who want a large-city job market without large-city prices.",
+    "The real budget line here is the climate. It is hot and humid for much of the year, so air-conditioning is less a luxury than a running cost, and it shows up on the electricity bill. Beyond that, the familiar Indian extras — a car or driver, reliable power and internet, international schooling — are where a relocating professional's money goes, not rent.",
+  ],
+  "osaka-jp": [
+    "Osaka is the budget-friendly face of urban Japan: the same safety, transport and public order as Tokyo, at noticeably lower rent. For anyone priced out of the capital it is the obvious trade — a big, dense, deeply liveable city where housing costs less and daily life, famously its food, is cheaper and more relaxed.",
+    "The Japanese fundamentals still apply: moving in means large up-front costs — deposit, key money, a guarantor — and the language is a real barrier outside the biggest employers. But the monthly budget is kinder than Tokyo's across rent, eating out and going out, and the excellent train network makes a car optional. For a cost-conscious move to Japan, Osaka is the pragmatic pick.",
+  ],
 };
 
 const BY_LOCALE: Record<Locale, CityNotes> = {
