@@ -3,6 +3,13 @@ import type { Locale } from "./config";
 
 export type Dictionary = {
   footer: { line1: string; line2: string; network: string; featured: string };
+  amazon: {
+    heading: string;
+    disclaimer: string;
+    books: string;
+    phrasebook: string;
+    gear: string;
+  };
   legal: {
     privacy: string;
     cookies: string;

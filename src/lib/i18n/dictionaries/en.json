@@ -84,6 +84,13 @@
     "line2": "Figures are approximate and should not be relied on for financial decisions.",
     "network": "From our network", "featured": "Featured on CostTrek"
   },
+  "amazon": {
+    "heading": "Recommended reading & gear",
+    "disclaimer": "As an Amazon Associate, CostTrek earns from qualifying purchases.",
+    "books": "Books about moving to {country}",
+    "phrasebook": "{language} phrasebook",
+    "gear": "Universal travel adapter"
+  },
   "legal": {
     "privacy": "Privacy Policy",
     "cookies": "Cookie Policy",
