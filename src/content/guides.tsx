@@ -785,7 +785,15 @@ export const GUIDES: Guide[] = [
           <Link href={`/${l}/calculators/mortgage-calculator`}>
             mortgage calculator
           </Link>{" "}
-          turns a price into a monthly figure.
+          turns a price into a monthly figure, while a{" "}
+          <a
+            href="https://calclumen.com/en/home-affordability-calculator"
+            target="_blank"
+            rel="noopener"
+          >
+            home affordability calculator
+          </a>{" "}
+          works the other way — how much house your income actually supports.
         </p>
         <h2>Build a bigger buffer than you think you need</h2>
         <p>
