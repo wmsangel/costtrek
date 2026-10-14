@@ -28,9 +28,19 @@
 | **Trip.com** (hotels/flights Asia) | ждёт | — | Indoleads 378, не одобрен |
 | **NordVPN** (VPN) | нет | — | Admitad 18867 declined |
 | **EKTA** (insurance) | нет | — | программа закрылась (08.10) |
+| **Amazon Associates** (книги/гаджеты) | активна | — | tag `costtrek-20`; ДОП-блок на country-страницах, за флагом `AMAZON_ENABLED` |
 | **Travelpayouts Drive** (скрипт site-wide) | активна | — | флаг `TRAVELPAYOUTS_DRIVE`; выключить перед AdSense-ревью |
 
 Детали по каждому каналу, гео-скоуп, трекеры и rel= — в разделах ниже.
+
+**Amazon Associates (запущен 2026-10-14).** tag **`costtrek-20`** (`src/lib/amazon.ts`).
+Нативный ДОП-блок «Recommended reading & gear» внизу country-страниц (`AmazonPicks.tsx`,
+за флагом `AMAZON_ENABLED` в `flags.ts` — вырубить перед AdSense-ревью, если придерутся).
+v1 = тегированные **search-ссылки** на amazon.com (вечнозелёные; без цен/фото — политика
+до PA-API), `rel="sponsored nofollow noopener"` + дисклеймер. Правило «3 продажи/180 дней»
+— на весь аккаунт (держат другие сайты сети). **TODO:** (1) OneLink для гео-роутинга
+de/fr/es/pt на локальные маркетплейсы (иначе не-US трафик идёт на amazon.com и хуже
+конвертит); (2) после первых 3 продаж — PA-API → конкретные ASIN вместо search + фото.
 
 ---
 

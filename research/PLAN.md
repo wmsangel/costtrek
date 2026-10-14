@@ -39,6 +39,7 @@
 
 За последние ~2 недели (сверху — свежее):
 
+- Amazon Associates запущен (tag costtrek-20) — нативный ДОП-блок книг/гаджетов на country-страницах, ×5, за флагом — `f32c980`, 14.10
 - +6 city deep-dive заметок (New York / Paris / Berlin / Amsterdam / Barcelona / Toronto), EN, через Cursor — `9ab4213`, 13.10
 - Аудит внутренней перелинковки (27 предложений) → `research/CURSOR-internal-links.md`, через Cursor — `9ab4213`
 - GA4 переведён на Google Consent Mode v2 (cookieless-пинги до согласия → GA видит данные,
