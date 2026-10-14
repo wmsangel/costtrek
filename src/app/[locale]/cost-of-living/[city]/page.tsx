@@ -258,6 +258,58 @@ export default async function CityPage({
               <p key={i}>{p}</p>
             ))}
           </div>
+          {/* In-content links for priority notes. cityNotes are plain strings,
+              so the anchors live here and apply to every locale. */}
+          {(() => {
+            const more: { href: string; label: string }[] =
+              c.slug === "singapore-sg"
+                ? [
+                    {
+                      href: `/${l}/guides/cost-of-living-in-singapore`,
+                      label: "expat budget guide for Singapore",
+                    },
+                  ]
+                : c.slug === "tokyo-jp"
+                  ? [
+                      { href: `/${l}/cost-of-living/london-uk`, label: "London" },
+                      { href: `/${l}/cost-of-living/new-york-ny`, label: "New York" },
+                      { href: `/${l}/cost-of-living/singapore-sg`, label: "Singapore" },
+                      {
+                        href: `/${l}/compare/osaka-jp-vs-tokyo-jp`,
+                        label: "Osaka vs Tokyo",
+                      },
+                    ]
+                  : c.slug === "charlotte-nc"
+                    ? [
+                        { href: `/${l}/cost-of-living/new-york-ny`, label: "New York" },
+                        { href: `/${l}/cost-of-living/boston-ma`, label: "Boston" },
+                        {
+                          href: `/${l}/compare/charlotte-nc-vs-new-york-ny`,
+                          label: "Charlotte vs New York",
+                        },
+                        {
+                          href: `/${l}/compare/atlanta-ga-vs-charlotte-nc`,
+                          label: "Atlanta vs Charlotte",
+                        },
+                      ]
+                    : [];
+            if (more.length === 0) return null;
+            return (
+              <p className="mt-3 max-w-[70ch] leading-relaxed">
+                {more.map((item, i) => (
+                  <span key={item.href}>
+                    {i > 0 ? " · " : null}
+                    <Link
+                      href={item.href}
+                      className="text-[var(--accent)] font-semibold hover:underline"
+                    >
+                      {item.label}
+                    </Link>
+                  </span>
+                ))}
+              </p>
+            );
+          })()}
         </section>
       )}
 

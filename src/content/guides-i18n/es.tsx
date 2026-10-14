@@ -6,6 +6,7 @@ const es: Record<string, GuideContent> = {
     title: "Visados para nómadas digitales: cómo funcionan y cómo elegir tu base",
     excerpt:
       "Un visado de trabajo remoto te permite vivir en algún lugar de forma legal mientras cobras del extranjero. Esto es lo que realmente es un visado para nómadas digitales, qué comprobar antes de solicitarlo y cómo elegir una ciudad que puedas permitirte.",
+    // NOTE: rows 10–12 skipped — this translation has no phrase for "best cities for digital nomads", "cost-of-living budget calculator", or "which nomad visas you can qualify for" in this guide.
     Body: ({ l }) => (
       <>
         <p>
@@ -75,8 +76,11 @@ const es: Record<string, GuideContent> = {
         <p>
           Cumplir el umbral de ingresos es solo la mitad de la cuestión; la otra
           mitad es lo que ese ingreso <em>compra</em> una vez que llegas. Los mismos
-          €3,000/mes son una vida cómoda en Lisboa o Tallin y muy ajustada en
-          Singapur o Zúrich. Esa diferencia es justo para lo que sirve esta web:
+          €3,000/mes son una vida cómoda en{" "}
+          <Link href={`/${l}/cost-of-living/lisbon-pt`}>Lisboa</Link> o{" "}
+          <Link href={`/${l}/cost-of-living/tallinn-ee`}>Tallin</Link> y muy ajustada en{" "}
+          <Link href={`/${l}/cost-of-living/singapore-sg`}>Singapur</Link> o{" "}
+          <Link href={`/${l}/cost-of-living/zurich-ch`}>Zúrich</Link>. Esa diferencia es justo para lo que sirve esta web:
           consulta las{" "}
           <Link href={`/${l}/best/cheapest`}>ciudades más baratas para vivir</Link>,
           revisa el perfil fiscal y de costes de un país en la{" "}
@@ -404,6 +408,7 @@ const es: Record<string, GuideContent> = {
     title: "Visados de nómada digital: quién califica y cómo funcionan",
     excerpt:
       "Una oleada de países emite ahora visados pensados para trabajadores remotos. Aquí ves en qué se diferencian de un sello de turista, qué ingresos esperan y dónde se quedan cortos.",
+    // NOTE: rows 13–16 skipped — this translation has no "Where to look right now" paragraph naming Portugal, Malaysia, Estonia or the UAE.
     Body: ({ l }) => (
       <>
         <p>
@@ -761,6 +766,7 @@ const es: Record<string, GuideContent> = {
     title: "El coste de vida real en Singapur (2026): guía de presupuesto para expatriados",
     excerpt:
       "Singapur figura entre las ciudades más caras del mundo, pero el coste es desigual. Esto es lo que de verdad dispara el presupuesto, lo que se mantiene genuinamente barato y cuánto necesitan realmente una persona sola, una pareja y una familia.",
+    // NOTE: rows 2–4 skipped — this translation does not name Tokyo, Kuala Lumpur, or "safest cities we rank".
     Body: ({ l }) => (
       <>
         <p>

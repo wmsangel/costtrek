@@ -6,6 +6,7 @@ const pt: Record<string, GuideContent> = {
     title: "O verdadeiro custo de vida em Singapura (2026): um guia de orçamento para expatriados",
     excerpt:
       "Singapura está entre as cidades mais caras do mundo — mas o custo é desequilibrado. Eis o que de facto pesa no orçamento, o que continua genuinamente barato e de quanto precisam realmente uma pessoa sozinha, um casal e uma família.",
+    // NOTE: rows 2–4 skipped — this translation does not name Tokyo, Kuala Lumpur, or "safest cities we rank".
     Body: ({ l }) => (
       <>
         <p>
@@ -162,6 +163,7 @@ const pt: Record<string, GuideContent> = {
     title: "Vistos de nómada digital: como funcionam e como escolher uma base",
     excerpt:
       "Um visto de trabalho remoto permite-lhe viver legalmente num sítio enquanto ganha o seu rendimento no estrangeiro. Eis o que é de facto um visto de nómada digital, o que verificar antes de se candidatar e como escolher uma cidade que possa pagar.",
+    // NOTE: rows 10–12 skipped — this translation has no phrase for "best cities for digital nomads", "cost-of-living budget calculator", or "which nomad visas you can qualify for" in this guide.
     Body: ({ l }) => (
       <>
         <p>
@@ -228,8 +230,12 @@ const pt: Record<string, GuideContent> = {
         <p>
           Cumprir a fasquia do rendimento é apenas metade da questão — a outra metade
           é o que esse rendimento <em>compra</em> quando lá chega. Os mesmos
-          €3,000/mês são uma vida confortável em Lisboa ou Taline e uma vida apertada
-          em Singapura ou Zurique. É exatamente para essa diferença que serve este
+          €3,000/mês são uma vida confortável em{" "}
+          <Link href={`/${l}/cost-of-living/lisbon-pt`}>Lisboa</Link> ou{" "}
+          <Link href={`/${l}/cost-of-living/tallinn-ee`}>Taline</Link> e uma vida
+          apertada em <Link href={`/${l}/cost-of-living/singapore-sg`}>Singapura</Link>{" "}
+          ou <Link href={`/${l}/cost-of-living/zurich-ch`}>Zurique</Link>. É exatamente
+          para essa diferença que serve este
           site: consulte as{" "}
           <Link href={`/${l}/best/cheapest`}>cidades mais baratas para viver</Link>,
           percorra o perfil fiscal e de custos de um país na{" "}
@@ -558,6 +564,7 @@ const pt: Record<string, GuideContent> = {
     title: "Vistos para nómadas digitais explicados: quem se qualifica e como funcionam",
     excerpt:
       "Uma onda de países emite agora vistos feitos para trabalhadores remotos. Eis como diferem de um carimbo de turista, o rendimento que esperam e onde ficam aquém.",
+    // NOTE: rows 13–16 skipped — this translation has no "Where to look right now" paragraph naming Portugal, Malaysia, Estonia or the UAE.
     Body: ({ l }) => (
       <>
         <p>

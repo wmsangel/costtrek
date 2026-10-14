@@ -61,7 +61,9 @@ export const GUIDES: Guide[] = [
           residents never need a car. Hawker centres serve a full, good meal for
           a few dollars, which keeps food costs far below what a global financial
           hub &quot;should&quot; cost. Public healthcare is excellent and
-          subsidised, and the city is extremely safe. If your lifestyle leans on
+          subsidised, and the city is extremely safe. See the{" "}
+          <Link href={`/${l}/best/safest`}>safest cities we rank</Link>. If your
+          lifestyle leans on
           those — transit, hawker food, public services — Singapore is a bargain
           dressed as a splurge.
         </p>
@@ -158,7 +160,15 @@ export const GUIDES: Guide[] = [
           committed to international schooling and a central condo, and for anyone
           whose lifestyle depends on a car. Decide the housing and car questions
           honestly and you&apos;ll know your answer. Not sure Singapore is even the
-          right fit? Our{" "}
+          right fit? Compare{" "}
+          <Link href={`/${l}/compare/singapore-sg-vs-tokyo-jp`}>
+            Singapore vs Tokyo
+          </Link>{" "}
+          and{" "}
+          <Link href={`/${l}/compare/kuala-lumpur-my-vs-singapore-sg`}>
+            Singapore vs Kuala Lumpur
+          </Link>
+          . Our{" "}
           <Link href={`/${l}/find-your-city`}>find-your-city tool</Link> ranks
           cities by what matters to you.
         </p>
@@ -242,9 +252,16 @@ export const GUIDES: Guide[] = [
         <p>
           Meeting the income bar is only half the question — the other half is what
           that income <em>buys</em> once you arrive. The same €3,000/month is a
-          comfortable life in Lisbon or Tallinn and a tight one in Singapore or
-          Zurich. That gap is exactly what this site is for: check the{" "}
+          comfortable life in{" "}
+          <Link href={`/${l}/cost-of-living/lisbon-pt`}>Lisbon</Link> or{" "}
+          <Link href={`/${l}/cost-of-living/tallinn-ee`}>Tallinn</Link> and a
+          tight one in{" "}
+          <Link href={`/${l}/cost-of-living/singapore-sg`}>Singapore</Link> or{" "}
+          <Link href={`/${l}/cost-of-living/zurich-ch`}>Zurich</Link>. That gap
+          is exactly what this site is for: check the{" "}
           <Link href={`/${l}/best/cheapest`}>cheapest cities to live in</Link>,
+          the{" "}
+          <Link href={`/${l}/best/nomad`}>best cities for digital nomads</Link>,
           browse a country&apos;s tax and cost profile on the{" "}
           <Link href={`/${l}/countries`}>countries overview</Link>, then{" "}
           <Link href={`/${l}`}>compare two cities side by side</Link> to see the
@@ -254,9 +271,17 @@ export const GUIDES: Guide[] = [
         <h2>A simple way to shortlist</h2>
         <p>
           Work it in this order: (1) list countries whose nomad visa you actually
-          qualify for on income; (2) drop any whose tax treatment of foreign income
+          qualify for on income —{" "}
+          <Link href={`/${l}/guides/digital-nomad-visas-explained`}>
+            which nomad visas you can qualify for
+          </Link>
+          ; (2) drop any whose tax treatment of foreign income
           is a dealbreaker; (3) of what&apos;s left, rank cities by cost of living
-          against your income; (4) sanity-check the two or three costs that matter
+          against your income with the{" "}
+          <Link href={`/${l}/calculators/cost-of-living-budget-calculator`}>
+            cost-of-living budget calculator
+          </Link>
+          ; (4) sanity-check the two or three costs that matter
           most to you — rent, health insurance and tax — against a current local
           source. The visa gets you in the door; the cost of living decides whether
           you&apos;d stay.
@@ -621,15 +646,23 @@ export const GUIDES: Guide[] = [
         <p>
           The map changes constantly, but a handful of programs stand out. On the
           more affordable, lower-threshold end sit{" "}
-          <strong>Portugal&apos;s D8</strong>,{" "}
+          <strong>Portugal&apos;s D8</strong> (
+          <Link href={`/${l}/cost-of-living/lisbon-pt`}>Lisbon</Link>
+          ),{" "}
           <strong>Spain&apos;s digital-nomad visa</strong> (with a Beckham-law tax
           option), <strong>Greece</strong> (a 50% income-tax break for new
           residents), <strong>Georgia</strong> (a full year visa-free plus a 1%
           small-business regime) and <strong>Malaysia&apos;s DE Rantau</strong>{" "}
-          pass, along with Latin-American routes in{" "}
+          pass (
+          <Link href={`/${l}/cost-of-living/kuala-lumpur-my`}>Kuala Lumpur</Link>
+          ), along with Latin-American routes in{" "}
           <strong>Brazil</strong> and <strong>Colombia</strong>. At the
-          higher-income end are <strong>Estonia</strong>, which pioneered the
-          format, the <strong>UAE</strong>&apos;s remote-work visa and{" "}
+          higher-income end are <strong>Estonia</strong> (
+          <Link href={`/${l}/cost-of-living/tallinn-ee`}>Tallinn</Link>
+          ), which pioneered the
+          format, the <strong>UAE</strong>&apos;s remote-work visa (
+          <Link href={`/${l}/cost-of-living/dubai-ae`}>Dubai</Link>
+          ) and{" "}
           <strong>South Korea</strong>&apos;s new workation visa.
         </p>
         <p>
