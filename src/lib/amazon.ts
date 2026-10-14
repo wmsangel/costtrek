@@ -16,8 +16,8 @@ import { fill, type Dictionary } from "@/lib/i18n/dictionaries";
  * auto-route de/fr/es/pt visitors to their local marketplace with the local tag.
  */
 
-// Replace with the real Associates tracking ID after adding costtrek.com in
-// Associates Central → Manage Your Websites (each site gets its own tracking ID).
+// costtrek.com's own Associates tracking ID (created in Associates Central →
+// Manage Your Websites, 2026-10-14). Each network site gets its own tracking ID.
 export const AMAZON_TAG = "costtrek-20";
 
 const AMAZON_HOST = "https://www.amazon.com";
