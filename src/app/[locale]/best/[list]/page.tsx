@@ -23,6 +23,32 @@ export const dynamicParams = false;
 
 type Params = { locale: string; list: string };
 
+/** Renders a collection intro, linking only the city names the audit named. */
+function linkedIntro(
+  template: string,
+  vars: Record<string, string | number>,
+  links: Partial<Record<"top1" | "top2" | "top3", string>>,
+) {
+  return template.split(/(\{(?:n|metric|v1|top1|top2|top3)\})/).map((part, i) => {
+    const match = /^\{(n|metric|v1|top1|top2|top3)\}$/.exec(part);
+    if (!match) return <span key={i}>{part}</span>;
+    const key = match[1] as "n" | "metric" | "v1" | "top1" | "top2" | "top3";
+    const text = String(vars[key] ?? "");
+    const href =
+      key === "top1" || key === "top2" || key === "top3" ? links[key] : undefined;
+    if (!href) return <span key={i}>{text}</span>;
+    return (
+      <Link
+        key={i}
+        href={href}
+        className="font-semibold text-[var(--accent)] hover:underline"
+      >
+        {text}
+      </Link>
+    );
+  });
+}
+
 export function generateStaticParams() {
   return COLLECTION_KEYS.map((list) => ({ list }));
 }
@@ -141,15 +167,56 @@ export default async function CollectionPage({
       </section>
 
       <p className="mt-6 text-lg leading-relaxed max-w-[72ch] text-[var(--foreground)]">
-        {fill(co.intro, vars)}
+        {linkedIntro(co.intro, vars, (() => {
+          const links: Partial<Record<"top1" | "top2" | "top3", string>> = {};
+          // Row 5: safest intro names Singapore as the leader.
+          if (list === "safest" && rows[0]?.city.slug === "singapore-sg") {
+            links.top1 = `/${l}${cityPath(rows[0].city)}`;
+          }
+          // Row 17: nomad intro names these three, in this order, as of the audit.
+          if (
+            list === "nomad" &&
+            rows[0]?.city.slug === "bishkek-kg" &&
+            rows[1]?.city.slug === "ho-chi-minh-city-vn" &&
+            rows[2]?.city.slug === "bali-id"
+          ) {
+            links.top1 = `/${l}${cityPath(rows[0].city)}`;
+            links.top2 = `/${l}${cityPath(rows[1].city)}`;
+            links.top3 = `/${l}${cityPath(rows[2].city)}`;
+          }
+          return links;
+        })())}
       </p>
+
+      {list === "nomad" && (
+        <p className="mt-3 max-w-[72ch] leading-relaxed">
+          <Link
+            href={`/${l}/guides/digital-nomad-visa-guide`}
+            className="text-[var(--accent)] font-semibold hover:underline"
+          >
+            how a digital nomad visa works
+          </Link>
+        </p>
+      )}
 
       {/* Long-form explainer — only the walkability hub has one so far; it is
           our recurring search niche, so the hub earns real prose. */}
       {list === "walkable" && (
         <div className="mt-5 space-y-3 max-w-[72ch] leading-relaxed text-[var(--foreground)]">
           {co.walkableExplainer.map((p, i) => (
-            <p key={i}>{p}</p>
+            <div key={i}>
+              <p>{p}</p>
+              {i === 1 && (
+                <p className="mt-3">
+                  <Link
+                    href={`/${l}/cost-of-living/tokyo-jp`}
+                    className="text-[var(--accent)] font-semibold hover:underline"
+                  >
+                    Tokyo
+                  </Link>
+                </p>
+              )}
+            </div>
           ))}
         </div>
       )}

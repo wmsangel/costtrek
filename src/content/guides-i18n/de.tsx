@@ -7,6 +7,7 @@ const de: Record<string, GuideContent> = {
       "Die wahren Lebenshaltungskosten in Singapur (2026): ein Budget-Leitfaden für Expats",
     excerpt:
       "Singapur zählt zu den teuersten Städten der Welt — doch die Kosten sind ungleich verteilt. Hier erfahren Sie, was das Budget wirklich treibt, was ehrlich günstig bleibt und wie viel eine Einzelperson, ein Paar und eine Familie tatsächlich brauchen.",
+    // NOTE: rows 2–4 skipped — this translation does not name Tokyo, Kuala Lumpur, or "safest cities we rank".
     Body: ({ l }) => (
       <>
         <p>
@@ -174,6 +175,7 @@ const de: Record<string, GuideContent> = {
       "Digital-Nomad-Visa: wie sie funktionieren und wie Sie eine Basis wählen",
     excerpt:
       "Ein Remote-Work-Visum erlaubt Ihnen, legal irgendwo zu leben, während Sie Ihr Einkommen aus dem Ausland beziehen. Hier erfahren Sie, was ein Digital-Nomad-Visum wirklich ist, was Sie vor dem Antrag prüfen sollten und wie Sie eine Stadt wählen, die Sie sich leisten können.",
+    // NOTE: rows 10–12 skipped — this translation has no phrase for "best cities for digital nomads", "cost-of-living budget calculator", or "which nomad visas you can qualify for" in this guide.
     Body: ({ l }) => (
       <>
         <p>
@@ -246,8 +248,12 @@ const de: Record<string, GuideContent> = {
         <p>
           Die Einkommenshürde zu erfüllen ist nur die halbe Frage — die andere
           Hälfte ist, was dieses Einkommen <em>kauft</em>, sobald Sie angekommen
-          sind. Dieselben €3,000/Monat bedeuten ein bequemes Leben in Lisbon oder
-          Tallinn und ein knappes in Singapore oder Zurich. Genau für diese Lücke
+          sind. Dieselben €3,000/Monat bedeuten ein bequemes Leben in{" "}
+          <Link href={`/${l}/cost-of-living/lisbon-pt`}>Lisbon</Link> oder{" "}
+          <Link href={`/${l}/cost-of-living/tallinn-ee`}>Tallinn</Link> und ein
+          knappes in <Link href={`/${l}/cost-of-living/singapore-sg`}>Singapore</Link>{" "}
+          oder <Link href={`/${l}/cost-of-living/zurich-ch`}>Zurich</Link>. Genau
+          für diese Lücke
           ist diese Seite da: Sehen Sie sich die{" "}
           <Link href={`/${l}/best/cheapest`}>günstigsten Städte zum Leben</Link>{" "}
           an, durchstöbern Sie das Steuer- und Kostenprofil eines Landes in der{" "}
@@ -589,6 +595,7 @@ const de: Record<string, GuideContent> = {
     title: "Visa für digitale Nomaden erklärt: wer sich qualifiziert und wie sie funktionieren",
     excerpt:
       "Eine Welle von Ländern stellt inzwischen Visa aus, die für Remote-Arbeitende gemacht sind. Hier erfahren Sie, wie sie sich von einem Touristenstempel unterscheiden, welches Einkommen sie erwarten und wo ihre Grenzen liegen.",
+    // NOTE: rows 13–16 skipped — this translation has no "Where to look right now" paragraph naming Portugal, Malaysia, Estonia or the UAE.
     Body: ({ l }) => (
       <>
         <p>
