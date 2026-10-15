@@ -23,13 +23,22 @@
    урезать до сильных страниц, noindex тонких пар. Решение владельца (не мелкий фикс). `индексация`
 5. **Углублять контент по доказанным кластерам спроса** — city deep-dives / гайды под
    Singapore, digital-nomad-visa, charlotte-nc, is-japan-cheaper-than-india. `контент`
-6. **Добавить новые города из GSC-запросов (батчем)** — в существующих странах:
+6. **Зарегистрировать и настроить соцаккаунты (активация соцмодуля)** — owner-side.
+   Соцмодуль готов (`scripts/social/`, хаб-артефакт); чтобы он заработал, завести аккаунты
+   единым хэндлом `costtrek`, аватар + bio (honest, ключевые «cost of living / moving abroad»):
+   • **Pinterest** (приоритет — поисковик, лучший фит под органику): business-аккаунт →
+     **verify costtrek.com** (Rich Pins + аналитика) → доски с keyword-названиями
+     («Cost of living by city», «Moving abroad», «City comparisons», «Digital nomad»);
+   • **Instagram**: @costtrek business-аккаунт, bio + link-in-bio (→ costtrek.com), аватар;
+   • **Telegram**: решить — нужен ли канал (TG не поисковый); если да — @costtrek + ASO имя/описание;
+   • общее: link-in-bio target, UTM-метки для отслеживания соц-трафика в GA4. `трафик`
+7. **Добавить новые города из GSC-запросов (батчем)** — в существующих странах:
    Monterrey/Orlando/Indianapolis/Lugano/Sitges/Florianópolis/Mönchengladbach; новые страны:
    Cuenca (EC), Skopje (MK). Breadth, не рычаг при краул-бюджете 8/нед — только осознанно,
    не ради 1-impression-запросов. `контент`
-7. **Добить остаток Cloudflare-бэклога** — осталось owner-side: снять домен/проект с Vercel,
+8. **Добить остаток Cloudflare-бэклога** — осталось owner-side: снять домен/проект с Vercel,
    www→apex 301. (@vercel/analytics убран — `930e121`.) `инфра`
-8. **Буфер / мелкий бэклог (когда дойдут руки)** — ISR для region/persona-хабов (давление
+9. **Буфер / мелкий бэклог (когда дойдут руки)** — ISR для region/persona-хабов (давление
    билда при росте городов); i18n-ярлыки метрик в `metrics.ts` (сейчас EN везде);
    локализованные URL-слаги (`/de/vergleich/…`); support@/hello@ алиасы в Cloudflare; форма
    фидбэка вместо mailto (если пойдёт объём); VisitorsCoverage как доп. страховой оффер
