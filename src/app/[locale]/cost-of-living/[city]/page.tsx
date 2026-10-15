@@ -288,8 +288,8 @@ export default async function CityPage({
                           label: "Charlotte vs New York",
                         },
                         {
-                          href: `/${l}/compare/atlanta-ga-vs-charlotte-nc`,
-                          label: "Atlanta vs Charlotte",
+                          href: `/${l}/cost-of-living/atlanta-ga`,
+                          label: "Atlanta",
                         },
                       ]
                     : [];

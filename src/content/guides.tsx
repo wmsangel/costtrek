@@ -164,9 +164,9 @@ export const GUIDES: Guide[] = [
           <Link href={`/${l}/compare/singapore-sg-vs-tokyo-jp`}>
             Singapore vs Tokyo
           </Link>{" "}
-          and{" "}
-          <Link href={`/${l}/compare/kuala-lumpur-my-vs-singapore-sg`}>
-            Singapore vs Kuala Lumpur
+          or weigh a cheaper regional base like{" "}
+          <Link href={`/${l}/cost-of-living/kuala-lumpur-my`}>
+            Kuala Lumpur
           </Link>
           . Our{" "}
           <Link href={`/${l}/find-your-city`}>find-your-city tool</Link> ranks
