@@ -41,3 +41,6 @@ next-env.d.ts
 # Cloudflare / OpenNext build output
 .open-next/
 .wrangler/
+
+# social media generated slides (regenerable via scripts/social/gen.mjs)
+scripts/social/out/

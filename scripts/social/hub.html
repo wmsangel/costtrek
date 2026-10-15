@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CostTrek — social</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbfbfc; --surface:#fff; --surface2:#f1f2f6;
+  --ink:#1b1e26; --muted:#6a6f7d; --line:#e2e5ec; --line2:#d6d9e2;
+  --accent:#9c5a3a; --accent-soft:color-mix(in srgb,var(--accent) 12%,transparent);
+  --good:#3f8f63;
+  --fd:'IBM Plex Mono',ui-monospace,monospace;
+  --fb:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#14161b; --surface:#1b1e25; --surface2:#222630;
+  --ink:#e7e9ef; --muted:#959bab; --line:#282c35; --line2:#353a45;
+  --accent:#e3a07f; --good:#6bbd8e; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#14161b; --surface:#1b1e25; --surface2:#222630;
+  --ink:#e7e9ef; --muted:#959bab; --line:#282c35; --line2:#353a45;
+  --accent:#e3a07f; --good:#6bbd8e; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--fb);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:24px 16px 80px}
+header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.kicker{font-family:var(--fd);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{font-family:var(--fd);font-weight:600;font-size:clamp(26px,6vw,34px);margin:8px 0 0;letter-spacing:-.01em}
+.sub{color:var(--muted);font-size:14px;margin:8px 0 0;max-width:52ch}
+.theme{flex-shrink:0;border:1px solid var(--line2);background:var(--surface);color:var(--ink);width:40px;height:40px;border-radius:10px;font-size:18px;cursor:pointer}
+.note{background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:18px 0 24px;font-size:13.5px;color:var(--muted)}
+.note b{color:var(--ink)}
+.day{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:16px}
+.day.today{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.day.done{opacity:.55}
+.dhead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.chip{font-family:var(--fd);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:999px;background:var(--surface2);color:var(--muted)}
+.chip.rub{background:var(--accent-soft);color:var(--accent)}
+.chip.now{background:var(--accent);color:#fff}
+.chip.kind{border:1px solid var(--line)}
+.slides{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;-webkit-overflow-scrolling:touch}
+.slides img{height:180px;width:auto;border-radius:10px;border:1px solid var(--line);flex-shrink:0;cursor:zoom-in;background:var(--surface2)}
+.slides img.story{height:240px}
+.cap{margin-top:12px;font-size:14px;white-space:pre-wrap;color:var(--ink)}
+.tags{margin-top:8px;font-size:13px;color:var(--accent);word-break:break-word}
+.meta{margin-top:10px;font-size:13px;color:var(--muted)}
+.meta b{color:var(--ink)}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:center}
+button.act{font-family:var(--fb);font-size:13px;font-weight:600;border:1px solid var(--line2);background:var(--surface2);color:var(--ink);border-radius:9px;padding:8px 12px;cursor:pointer}
+button.act:hover{border-color:var(--accent)}
+button.act.copied{border-color:var(--good);color:var(--good)}
+label.pub{margin-left:auto;display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--muted);cursor:pointer;user-select:none}
+label.pub input{width:18px;height:18px;accent-color:var(--accent)}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;padding:16px;z-index:50}
+.lb.open{display:flex}
+.lb img{max-width:100%;max-height:92vh;border-radius:8px}
+.lb .x{position:fixed;top:14px;right:16px;color:#fff;font-size:30px;cursor:pointer;line-height:1}
+footer{margin-top:28px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
+@media(max-width:480px){.slides img{height:150px}.slides img.story{height:210px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <span class="kicker">Social · CostTrek</span>
+      <h1>This week's posts</h1>
+      <p class="sub">Grab today's content, post it in Instagram (+ Pinterest / Telegram). English. Honest tone — no clickbait, cost figures stay framed as estimates.</p>
+    </div>
+    <button class="theme" id="theme" title="Theme">◐</button>
+  </header>
+
+  <div class="note">
+    <b>Saving images:</b> this page can't offer a Download button (sandbox). To save a slide in full quality — <b>long-press the image → “Save to Photos”</b> on phone, or <b>right-click → “Save image”</b> on desktop. Tap a slide to open it full-size first.
+  </div>
+
+  <div id="days"></div>
+
+  <footer>Week 1 · 7 posts. Regenerate slides with <code>node scripts/social/gen.mjs</code>. Tick “Published” to track progress (saved on this device).</footer>
+</div>
+
+<div class="lb" id="lb"><span class="x" id="lbx">✕</span><img id="lbimg" alt=""></div>
+
+<script>
+const DATA = [
+  {id:"01-singapore-breakdown",day:"Mon",rubric:"Breakdown",kind:"Carousel · 1080×1080",link:"costtrek.com/guides/cost-of-living-in-singapore",n:5,story:false,
+   caption:"Is Singapore really that expensive? Short answer: it depends almost entirely on two things — housing and whether you own a car. Everything else (hawker food, transit, healthcare) is cheap and excellent.\n\nWe broke down what a move actually costs, for a single, a couple and a family. Full guide — link in bio.",
+   hashtags:"#singapore #costofliving #expat #movingabroad #relocation #singaporelife #expatlife #digitalnomad"},
+  {id:"02-dubai-myth",day:"Tue",rubric:"Myth vs Fact",kind:"Single post · 1080×1080",link:"costtrek.com/cost-of-living/dubai-ae",n:1,story:false,
+   caption:"Dubai isn't just for the ultra-rich — the real story is the tax. No personal income tax means a given salary stretches much further than in high-tax Europe. The costs that bite are rent (often paid in a few big cheques), schooling and running a car.\n\nFull Dubai profile — link in bio.",
+   hashtags:"#dubai #uae #expat #costofliving #movingtodubai #expatlife #relocation #notax"},
+  {id:"03-lease-checklist",day:"Wed",rubric:"Checklist",kind:"Carousel · 1080×1080",link:"costtrek.com/guides/renting-an-apartment-abroad",n:4,story:false,
+   caption:"The rental market is where new arrivals lose the most money and sleep. Before you sign a lease abroad, run this checklist — deposits, contracts, and the scams to spot early.\n\nFull renting guide — link in bio.",
+   hashtags:"#renting #movingabroad #expat #relocation #apartmenthunting #expatlife #rentalscams #housing"},
+  {id:"04-finder-promo",day:"Thu",rubric:"Tool",kind:"Single post · 1080×1080",link:"costtrek.com/find-your-city",n:1,story:false,
+   caption:"Not sure where to move? Find your city ranks real cities by what matters to you — budget, climate, safety, walkability, English, internet. Move the sliders, get a shortlist, share the link.\n\nTry it — link in bio.",
+   hashtags:"#movingabroad #relocation #digitalnomad #expat #wheretolive #costofliving #citylife #nomadlife"},
+  {id:"05-move-story",day:"Fri",rubric:"Story",kind:"Story · 1080×1920",link:"costtrek.com/find-your-city",n:1,story:true,
+   caption:"Story poll — would you move abroad for a lower cost of living?",
+   hashtags:"",sticker:"Add a Poll sticker in Instagram — options: “Yes, already planning” / “No, staying put”"},
+  {id:"06-japan-india-breakdown",day:"Sat",rubric:"Breakdown",kind:"Carousel · 1080×1080",link:"costtrek.com/compare/tokyo-jp-vs-mumbai-in",n:5,story:false,
+   caption:"Is Japan cheaper than India? Not even close on most things — but the gap is narrower than you'd think on housing, and wages tell the other half of the story. We compared them honestly.\n\nFull comparison — link in bio.",
+   hashtags:"#japan #india #costofliving #tokyo #mumbai #expat #movingabroad #comparecities"},
+  {id:"07-salary-myth",day:"Sun",rubric:"Myth vs Fact",kind:"Single post · 1080×1080",link:"costtrek.com/guides/salary-you-need-to-move-abroad",n:1,story:false,
+   caption:"You don't need a huge salary to live abroad — you need the right city for your salary. The same income that's tight in Zurich or Singapore is comfortable in Lisbon or Kuala Lumpur.\n\nWork out the number — link in bio.",
+   hashtags:"#movingabroad #salary #costofliving #expat #relocation #financialfreedom #digitalnomad #geoarbitrage"},
+];
+const WD=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+const todayWd=WD[new Date().getDay()];
+const S=k=>{try{return localStorage.getItem(k)}catch(e){return null}};
+const Sset=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
+
+function files(p){const a=[];for(let i=1;i<=p.n;i++)a.push(`slides/${p.id}/${String(i).padStart(2,"0")}.png`);return a}
+function esc(s){return s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]))}
+
+function copyBtn(label,text){
+  return `<button class="act" data-copy="${encodeURIComponent(text)}">${label}</button>`;
+}
+
+const root=document.getElementById("days");
+root.innerHTML=DATA.map(p=>{
+  const done=S("pub:"+p.id)==="1";
+  const isToday=p.day===todayWd;
+  const imgs=files(p).map(f=>`<img class="${p.story?'story':''}" src="${f}" alt="${p.id}" loading="lazy" data-full="${f}">`).join("");
+  const tags=p.hashtags?`<div class="tags">${esc(p.hashtags)}</div>`:"";
+  const sticker=p.sticker?`<div class="meta">🎯 <b>Sticker:</b> ${esc(p.sticker)}</div>`:"";
+  const copyTags=p.hashtags?copyBtn("Copy hashtags",p.hashtags):"";
+  const copyCap=p.caption?copyBtn("Copy caption",p.caption+(p.hashtags?"\n\n"+p.hashtags:"")):"";
+  return `<div class="day ${isToday?'today':''} ${done?'done':''}" data-id="${p.id}">
+    <div class="dhead">
+      <span class="chip ${isToday?'now':''}">${p.day}${isToday?' · today':''}</span>
+      <span class="chip rub">${esc(p.rubric)}</span>
+      <span class="chip kind">${esc(p.kind)}</span>
+    </div>
+    <div class="slides">${imgs}</div>
+    <div class="cap">${esc(p.caption)}</div>
+    ${tags}
+    <div class="meta">🔗 <b>Link in bio →</b> ${esc(p.link)}</div>
+    ${sticker}
+    <div class="row">
+      ${copyCap}${copyTags}${copyBtn("Copy link",p.link)}
+      <label class="pub"><input type="checkbox" data-pub="${p.id}" ${done?'checked':''}> Published</label>
+    </div>
+  </div>`;
+}).join("");
+
+// copy buttons
+root.addEventListener("click",e=>{
+  const b=e.target.closest("button[data-copy]");
+  if(!b)return;
+  const txt=decodeURIComponent(b.dataset.copy);
+  navigator.clipboard?.writeText(txt).then(()=>{
+    const old=b.textContent;b.textContent="Copied ✓";b.classList.add("copied");
+    setTimeout(()=>{b.textContent=old;b.classList.remove("copied")},1400);
+  });
+});
+// published toggle
+root.addEventListener("change",e=>{
+  const c=e.target.closest("input[data-pub]");
+  if(!c)return;
+  Sset("pub:"+c.dataset.pub,c.checked?"1":"0");
+  c.closest(".day").classList.toggle("done",c.checked);
+});
+// lightbox
+const lb=document.getElementById("lb"),lbimg=document.getElementById("lbimg");
+root.addEventListener("click",e=>{
+  const im=e.target.closest("img[data-full]");
+  if(!im)return;lbimg.src=im.dataset.full;lb.classList.add("open");
+});
+const closeLb=()=>lb.classList.remove("open");
+document.getElementById("lbx").onclick=closeLb;
+lb.onclick=e=>{if(e.target===lb)closeLb()};
+// theme
+const tb=document.getElementById("theme");
+const applyT=t=>{if(t)document.documentElement.setAttribute("data-theme",t)};
+applyT(S("socialTheme"));
+tb.onclick=()=>{
+  const cur=document.documentElement.getAttribute("data-theme");
+  const next=cur==="dark"?"light":"dark";
+  document.documentElement.setAttribute("data-theme",next);Sset("socialTheme",next);
+};
+</script>
+</body>
+</html>

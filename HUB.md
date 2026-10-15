@@ -1,6 +1,7 @@
 # CostTrek — хаб
 
 Витрина: https://claude.ai/artifact/KG1bhXaFN8PHcZfw5jK2cB
+Соцсети: https://claude.ai/artifact/FghuMMyJyHa33WouaVAQ4V
 Акцент: #9c5a3a
 
 Единая точка входа в рабочие документы проекта. Источник правды по задачам —
