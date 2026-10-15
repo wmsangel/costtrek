@@ -26,6 +26,9 @@ export default function AmazonPicks({
               href={p.href}
               target="_blank"
               rel="sponsored nofollow noopener"
+              data-aff-item="amazon"
+              data-aff-placement="country-reading"
+              data-aff-platform="associates"
               className="inline-flex items-center gap-1 text-sm rounded-full border border-[var(--border)] px-3 py-1.5 hover:border-[var(--accent)]"
             >
               {p.label}

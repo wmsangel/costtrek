@@ -338,6 +338,9 @@ export default async function ComparePage({
           <a
             href="https://xyowz.com/g/n2q2nolvw6a27dee2ccd6d2e807f50/"
             rel="sponsored nofollow noopener"
+            data-aff-item="aviasales"
+            data-aff-placement="compare-cta"
+            data-aff-platform="travelpayouts"
             target="_blank"
             className="group block rounded-2xl bg-[var(--accent)] px-5 py-4 text-white shadow-sm transition hover:brightness-110 hover:shadow-lg hover:-translate-y-0.5"
           >

@@ -236,6 +236,9 @@ export default async function RegionalCollectionPage({
       <a
         href="https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/"
         rel="sponsored nofollow noopener"
+        data-aff-item="aviasales"
+        data-aff-placement="best-region-hub"
+        data-aff-platform="travelpayouts"
         target="_blank"
         className="mt-10 flex items-center justify-between gap-4 rounded-2xl bg-[var(--accent)] px-5 sm:px-6 py-4 sm:py-5 text-white transition hover:brightness-110"
       >

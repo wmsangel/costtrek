@@ -370,6 +370,8 @@ export default function CityProfileSections({
                       href={r.url}
                       rel="sponsored nofollow noopener"
                       target="_blank"
+                      data-aff-item={r.provider.toLowerCase().replace(/[^a-z0-9]+/g, "-")}
+                      data-aff-placement="city-offers"
                       className="group flex items-center justify-between gap-3 rounded-2xl bg-white px-3.5 py-3 text-[#171310] shadow-sm transition hover:shadow-xl hover:-translate-y-0.5"
                     >
                       <span className="flex items-center gap-3 min-w-0">

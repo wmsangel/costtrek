@@ -19,6 +19,7 @@ import NetworkStrip from "@/components/NetworkStrip";
 import FeaturedPromo from "@/components/FeaturedPromo";
 import { buildFeatured } from "@/lib/featured";
 import Analytics from "@/components/Analytics";
+import ClickTracker from "@/components/ClickTracker";
 import JsonLd from "@/components/JsonLd";
 import {
   OG_LOCALE,
@@ -219,6 +220,7 @@ export default async function LocaleLayout({
         />
         <FeedbackFab locale={locale} s={dict.feedback} />
         <Analytics />
+        <ClickTracker />
         {/* Cloudflare Web Analytics — маячок без кук и без согласия; сайт идёт мимо прокси, поэтому вставляется руками */}
         <Script
           id="cf-beacon"

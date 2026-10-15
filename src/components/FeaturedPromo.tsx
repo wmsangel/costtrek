@@ -48,7 +48,12 @@ export default function FeaturedPromo({
   return (
     <Link
       href={item.href}
-      onClick={() => track("promo_click", { href: item.href })}
+      onClick={() =>
+        track("cta_click", {
+          item: item.href.split("/").filter(Boolean).pop() ?? "featured",
+          placement: "featured",
+        })
+      }
       className="coral-band mt-6 flex items-center justify-between gap-4 rounded-2xl px-5 py-4 text-white transition hover:brightness-110"
     >
       <span className="flex items-center gap-3 min-w-0">

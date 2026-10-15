@@ -152,14 +152,14 @@ export default function CityFinder({
   useEffect(() => {
     if (!hydrated.current) return;
     const id = setTimeout(() => {
-      track("finder_result", { top: results[0]?.city.slug ?? "none", count: results.length, region });
+      track("tool_used", { item: "find-your-city", action: "result", top: results[0]?.city.slug ?? "none", count: results.length, region });
     }, 900);
     return () => clearTimeout(id);
   }, [results, region]);
 
   function applyPreset(key: string) {
     setWeights({ ...PRESETS[key] });
-    track("finder_preset", { preset: key });
+    track("filter_apply", { item: "preset", value: key });
   }
   function reset() {
     setWeights({ ...PRESETS.balanced });
@@ -169,7 +169,7 @@ export default function CityFinder({
     try {
       await navigator.clipboard.writeText(window.location.href);
       setCopied(true);
-      track("finder_share", { top: results[0]?.city.slug ?? "none" });
+      track("share_click", { item: "find-your-city", platform: "link" });
     } catch { /* clipboard blocked */ }
   }
 

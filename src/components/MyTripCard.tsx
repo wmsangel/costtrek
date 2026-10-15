@@ -14,6 +14,9 @@ export default function MyTripCard({ dict }: { dict: Dictionary }) {
       href={MYTRIP_URL}
       rel="sponsored nofollow noopener"
       target="_blank"
+      data-aff-item="mytrip"
+      data-aff-placement="city-flights"
+      data-aff-platform="indoleads"
       className="group mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-2xl border border-[var(--border)] bg-[var(--card)] px-5 sm:px-6 py-4 sm:py-5 transition hover:border-[var(--accent)]"
     >
       <span className="flex flex-col gap-1 min-w-0">

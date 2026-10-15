@@ -51,6 +51,8 @@ export default function OfferSlot({
               href={o.href}
               rel="sponsored nofollow noopener"
               target="_blank"
+              data-aff-item={o.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}
+              data-aff-placement="calculator"
               className={`${cls} transition-colors hover:border-[var(--accent)]`}
             >
               {inner}

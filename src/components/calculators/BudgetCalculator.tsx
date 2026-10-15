@@ -87,7 +87,7 @@ export default function BudgetCalculator({
   useEffect(() => {
     if (!hydrated.current || !city || !result) return;
     const id = setTimeout(() => {
-      track("budget_calc", { city: city.slug, adults, children, lifestyle, total: result.total });
+      track("tool_used", { item: "cost-of-living-budget-calculator", action: "calculate", city: city.slug });
     }, 900);
     return () => clearTimeout(id);
   }, [city, result, adults, children, lifestyle]);
@@ -96,7 +96,7 @@ export default function BudgetCalculator({
     try {
       await navigator.clipboard.writeText(window.location.href);
       setCopied(true);
-      track("budget_share", { city: slug });
+      track("share_click", { item: "cost-of-living-budget-calculator", platform: "link" });
     } catch { /* ignore */ }
   }
 
