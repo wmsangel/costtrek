@@ -1,5 +1,5 @@
 /**
- * Site feature flags. Flip a value and redeploy (git push → Vercel).
+ * Site feature flags. Flip a value and redeploy (git push → CI → Cloudflare).
  *
  * TRAVELPAYOUTS_DRIVE — the Travelpayouts "Drive" web-monetization script
  * (native contextual travel affiliate; marker 567317). It is loaded site-wide
