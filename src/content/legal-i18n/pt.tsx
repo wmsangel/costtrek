@@ -260,12 +260,36 @@ const pt: Record<string, (p: { l: Locale }) => React.ReactNode> = {
       <h2>Publicidade &amp; terceiros</h2>
       <p>
         Podemos apresentar anúncios veiculados por redes de terceiros (por
-        exemplo, o Google AdSense). Estes parceiros podem utilizar cookies para
-        apresentar anúncios com base nas suas visitas anteriores. Pode controlar a
-        publicidade personalizada através das definições do seu dispositivo e do
-        seu navegador e, na UE/Reino Unido, através das opções de consentimento
-        que lhe apresentamos.
+        exemplo, o Google AdSense). Estes parceiros, incluindo a Google, podem
+        utilizar cookies para apresentar anúncios com base nas suas visitas
+        anteriores a este e a outros sites. Pode desativar a publicidade
+        personalizada aqui:
       </p>
+      <ul>
+        <li>
+          Google —{" "}
+          <a href="https://adssettings.google.com" rel="noopener" target="_blank">
+            Definições de anúncios
+          </a>
+        </li>
+        <li>
+          EUA —{" "}
+          <a href="https://optout.aboutads.info" rel="noopener" target="_blank">
+            aboutads.info
+          </a>{" "}
+          e{" "}
+          <a href="https://optout.networkadvertising.org" rel="noopener" target="_blank">
+            exclusão da NAI
+          </a>
+        </li>
+        <li>
+          UE/Reino Unido —{" "}
+          <a href="https://www.youronlinechoices.eu" rel="noopener" target="_blank">
+            youronlinechoices.eu
+          </a>{" "}
+          e as opções de consentimento que lhe apresentamos na sua primeira visita
+        </li>
+      </ul>
       <h2>Os seus direitos</h2>
       <p>
         Consoante o local onde reside (por exemplo, ao abrigo do RGPD ou da CCPA),
