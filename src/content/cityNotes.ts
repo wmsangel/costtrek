@@ -95,6 +95,30 @@ export const EN_CITY_NOTES: CityNotes = {
     "Osaka is the budget-friendly face of urban Japan: the same safety, transport and public order as Tokyo, at noticeably lower rent. For anyone priced out of the capital it is the obvious trade — a big, dense, deeply liveable city where housing costs less and daily life, famously its food, is cheaper and more relaxed.",
     "The Japanese fundamentals still apply: moving in means large up-front costs — deposit, key money, a guarantor — and the language is a real barrier outside the biggest employers. But the monthly budget is kinder than Tokyo's across rent, eating out and going out, and the excellent train network makes a car optional. For a cost-conscious move to Japan, Osaka is the pragmatic pick.",
   ],
+  "kuala-lumpur-my": [
+    "Kuala Lumpur is one of Asia's best-value big cities, and the obvious landing spot for anyone priced out of Singapore next door. A modern, central condo — often with a pool and gym — costs a fraction of Singapore or any Western city, and everyday life, from street food to transport, is cheap. English is widely spoken, which makes the arrival unusually smooth.",
+    "The budget barely stretches on the essentials; where it goes is lifestyle. Imported goods, alcohol and international schooling are the pricey exceptions, and the city is spread out, so many residents lean on ride-hailing or a car. For remote workers weighing Southeast Asia, KL offers a comfortable, low-cost base with real-city infrastructure — the trade is a hotter climate and a car-dependent sprawl.",
+  ],
+  "ho-chi-minh-city-vn": [
+    "Ho Chi Minh City is among the cheapest major cities a remote worker can live in well, which is much of why it draws a large nomad and expat crowd. Rent, food and services are low across the board, and the local food scene makes eating out a daily habit rather than a splurge. A modest income from abroad goes a very long way here.",
+    "The costs that climb for a Western lifestyle are the familiar ones — imported goods, international schooling, and Western-style apartments in the central districts. The city is dense, hot and fast-moving, and a scooter is the default way to get around. For someone optimising for low cost and energy, HCMC is hard to beat; the trade is the heat, the traffic and a language barrier outside expat circles.",
+  ],
+  "bali-id": [
+    "Bali is less a city than a lifestyle destination, and its cost of living reflects what you choose rather than a fixed number. A local life is very cheap; the expat-and-nomad version — a villa with a pool in Canggu or Ubud, cafés, coworking and a scooter — costs more, though still well below any Western city. The island runs on a large remote-worker economy, so the infrastructure for it is well developed.",
+    "Housing is the swing: a long-term local rental is inexpensive, while a short-term furnished villa in a popular area is a different budget. Imported goods are pricey, anything serious medically means flying to Singapore or home, and visas are the real admin hurdle. For a nomad chasing lifestyle per dollar, Bali delivers; it is a base to enjoy, not a long-term career city.",
+  ],
+  "tallinn-ee": [
+    "Tallinn is one of the more affordable capitals in the European Union, and Estonia's digital-first government — e-residency, an early digital-nomad visa — makes it a natural base for location-independent workers. Rent and daily costs sit below Western Europe, while the city offers EU-standard infrastructure, fast internet and a compact, walkable old town.",
+    "The budget is kinder than Berlin, Paris or Amsterdam, but it is not Southeast-Asia cheap, and the long, dark northern winter is the real adjustment — it pushes heating and the general mood. English is widely spoken in the tech scene. For someone who wants an EU base with low friction and lower costs than the big capitals, Tallinn is a strong, under-rated pick.",
+  ],
+  "zurich-ch": [
+    "Zurich is consistently one of the most expensive cities in the world, and it sets the benchmark that cheaper places get measured against. Rent, eating out, groceries and services are all high, and the city is built for a population that earns accordingly. Nothing here is a bargain — the value proposition is a different one.",
+    "What offsets the cost is pay and what it buys: salaries are among the world's highest, taxes are comparatively low for a wealthy country, and the public services, transport and safety are world-class. A strong local salary makes Zurich comfortable; on anything less, the city is punishing. For most people it is somewhere you move for a specific, well-paid job, not for affordability.",
+  ],
+  "bishkek-kg": [
+    "Bishkek is one of the cheapest capitals a remote worker can base in, which is why it turns up on budget-nomad shortlists despite being off the usual map. Rent, food and transport are very low, the pace is relaxed, and a modest foreign income stretches further here than almost anywhere. The surrounding mountains are a genuine draw for the outdoors-minded.",
+    "The trade-offs are the quieter kind: a smaller expat scene, less English outside the centre, fewer of the conveniences a Western nomad expects, and infrastructure that is improving but not polished. Imported goods are limited and pricey. For someone optimising purely for low cost and a slower life with mountains on the doorstep, Bishkek is surprising value; for city buzz and services, it is a compromise.",
+  ],
 };
 
 const BY_LOCALE: Record<Locale, CityNotes> = {
