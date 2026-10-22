@@ -33,8 +33,10 @@
 4. **Урезать sitemap + noindex тонких compare-пар (РЕШЕНО 19.10)** — показы 28д −99%, 25k URL, 93% без показов; <!-- crm:0mvarrqv4221ed3710c4f2e82 --> <!-- due:2026-10-28 -->
    владелец решил: в sitemap оставить сильные страницы, тонкие compare-пары → noindex
    (концентрируем краул-бюджет 8/нед). Внедрить в `sitemap.ts` + robots-мета на тонких. `индексация` · **→сам** (наши sitemap/indexable-конвенции, нестандартный стек Next 16)
-5. **Углублять контент по доказанным кластерам спроса** — city deep-dives / гайды под <!-- crm:0mvarrqv7c7563c30a7d35662 --> <!-- due:2026-10-23 -->
-   Singapore, digital-nomad-visa, charlotte-nc, is-japan-cheaper-than-india. `контент` · **→сам** (контент = продукт; авторский evergreen-текст, локализация ×4 через переводчиков-субагентов)
+5. **Углублять контент по кластерам спроса (ПОВТОРЯЮЩАЯСЯ — батчами)** — city deep-dives / гайды под <!-- crm:0mvarrqv7c7563c30a7d35662 --> <!-- due:2026-10-30 -->
+   доказанные кластеры (Singapore, digital-nomad-visa, nomad/cheapest, is-japan-cheaper-than-india).
+   Последний батч: +6 deep-dive 22.10 (`b6319d4` — KL/HCMC/Bali/Tallinn/Zurich/Bishkek ×5). Следующий
+   батч — к 30.10. `контент` · **→сам** (контент = продукт; evergreen-текст, локализация ×4)
 6. **Зарегистрировать и настроить соцаккаунты (активация соцмодуля)** — owner-side. <!-- crm:0mvarrqva1b32054238e2b4d6 --> <!-- due:2026-10-27 -->
    Соцмодуль готов (`scripts/social/`, хаб-артефакт); чтобы он заработал, завести аккаунты
    единым хэндлом `costtrek`, аватар + bio (honest, ключевые «cost of living / moving abroad»):
