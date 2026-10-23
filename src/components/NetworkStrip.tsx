@@ -36,7 +36,7 @@ export default function NetworkStrip({ heading }: { heading: string }) {
             <a
               href={s.url}
               target="_blank"
-              rel="noopener"
+              rel="nofollow noopener"
               className="group flex items-center gap-2.5 rounded-xl border border-[var(--border)] px-3.5 py-2 hover:border-[var(--accent)] transition-colors"
             >
               <span aria-hidden="true" className="text-lg leading-none">
