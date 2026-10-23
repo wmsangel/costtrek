@@ -73,6 +73,18 @@ export const HEADLINE_COUNTRY_CODES = new Set<string>([
   "US", "GB", "DE", "FR", "CA", "AU", "ES",
 ]);
 
+/**
+ * The sitemap tier for country compares — mirrors TOP_CITY_SLUGS for cities. All
+ * MAJOR_COUNTRY_CODES pairs stay indexable (index,follow) and internally linked,
+ * but we advertise only pairs between these highest-demand relocation countries,
+ * so the country-vs-country long tail (~300 pairs) doesn't dilute crawl budget on
+ * a young domain. Widen as Search Console proves demand.
+ */
+export const TOP_COUNTRY_CODES = new Set<string>([
+  "US", "GB", "DE", "FR", "ES", "PT", "IT", "NL",
+  "CA", "AU", "MX", "AE", "SG", "TH", "JP",
+]);
+
 /** A city-vs-city compare page is indexable only between two major cities. */
 export function cityPairIndexable(aSlug: string, bSlug: string): boolean {
   return MAJOR_CITY_SLUGS.has(aSlug) && MAJOR_CITY_SLUGS.has(bSlug);
@@ -90,4 +102,13 @@ export function cityPairInSitemap(aSlug: string, bSlug: string): boolean {
 /** A country-vs-country compare page is indexable only between two major GEOs. */
 export function countryPairIndexable(aCode: string, bCode: string): boolean {
   return MAJOR_COUNTRY_CODES.has(aCode) && MAJOR_COUNTRY_CODES.has(bCode);
+}
+
+/**
+ * Whether a country-vs-country compare belongs in the sitemap — the tighter top
+ * tier (mirrors `cityPairInSitemap`). Narrower than `countryPairIndexable`, which
+ * still governs indexability/noindex; this only decides what we advertise.
+ */
+export function countryPairInSitemap(aCode: string, bCode: string): boolean {
+  return TOP_COUNTRY_CODES.has(aCode) && TOP_COUNTRY_CODES.has(bCode);
 }

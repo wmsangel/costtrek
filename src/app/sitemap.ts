@@ -7,7 +7,7 @@ import { GUIDES } from "@/content/guides";
 import { CALCULATORS } from "@/lib/calculators/registry";
 import { locales } from "@/lib/i18n/config";
 import { absUrl, languageAlternates } from "@/lib/seo/site";
-import { cityPairInSitemap, countryPairIndexable } from "@/lib/seo/indexable";
+import { cityPairInSitemap, countryPairInSitemap } from "@/lib/seo/indexable";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Locale-less paths, each emitted once per locale with hreflang alternates.
@@ -41,7 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const a of countryList) {
     for (const b of countryList) {
       if (countrySlug(a) >= countrySlug(b)) continue; // canonical direction only
-      if (!countryPairIndexable(a.code, b.code)) continue; // skip noindex long tail
+      if (!countryPairInSitemap(a.code, b.code)) continue; // advertise only the top tier
       paths.push({
         path: `compare-countries/${countrySlug(a)}-vs-${countrySlug(b)}`,
         priority: 0.5,
