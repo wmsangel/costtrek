@@ -170,6 +170,7 @@
     "nav": "Guias",
     "title": "Guias de mudança e custo de vida",
     "subtitle": "Guias práticos para emigrar, comparar cidades, perceber os impostos e esticar o seu dinheiro.",
+    "metaDesc": "Guias práticos e sem enrolação para emigrar — comparar cidades, o salário de que vais precisar, impostos, arrendar sem burlas e vistos para nómadas digitais, explicado de forma simples.",
     "readTime": "{n} min de leitura",
     "by": "Por",
     "role": "Fundador e editor",
@@ -179,6 +180,7 @@
     "nav": "Calculadoras",
     "title": "Calculadoras financeiras",
     "subtitle": "Calculadoras gratuitas e instantâneas de hipotecas, empréstimos, salário e custos do dia a dia — com os números explicados.",
+    "metaDesc": "Calculadoras gratuitas e instantâneas para a tua mudança para o estrangeiro — orçamento mensal do agregado por cidade, salário necessário, custos de hipoteca e crédito e mais, cada resultado detalhado e explicado.",
     "sponsored": "Patrocinado — podemos receber uma comissão destes parceiros, sem custo para si.",
     "sponsoredBadge": "Patrocinado"
   },

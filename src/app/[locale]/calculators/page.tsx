@@ -21,7 +21,7 @@ export async function generateMetadata({
     locale,
     path: "calculators",
     title: dict.calculators.title,
-    description: dict.calculators.subtitle,
+    description: dict.calculators.metaDesc,
     ogImage: { title: dict.calculators.title, sub: dict.calculators.nav },
   });
 }

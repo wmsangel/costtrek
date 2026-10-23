@@ -88,6 +88,7 @@ export type Dictionary = {
     nav: string;
     title: string;
     subtitle: string;
+    metaDesc: string;
     readTime: string; // {n}
     by: string;
     role: string;
@@ -97,6 +98,7 @@ export type Dictionary = {
     nav: string;
     title: string;
     subtitle: string;
+    metaDesc: string;
     sponsored: string;
     sponsoredBadge: string;
   };

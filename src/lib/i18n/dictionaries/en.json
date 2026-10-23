@@ -170,6 +170,7 @@
     "nav": "Guides",
     "title": "Relocation & cost-of-living guides",
     "subtitle": "Practical, no-fluff guides to moving abroad, comparing cities, taxes and making your money go further.",
+    "metaDesc": "Practical, no-fluff guides to moving abroad — comparing cities, the salary you'll need, taxes when you relocate, renting without scams and digital-nomad visas, all explained plainly.",
     "readTime": "{n} min read",
     "by": "By",
     "role": "Founder & editor",
@@ -179,6 +180,7 @@
     "nav": "Calculators",
     "title": "Financial calculators",
     "subtitle": "Free, instant calculators for mortgages, loans, salary and everyday costs — with the numbers explained.",
+    "metaDesc": "Free, instant calculators for your move abroad — work out a monthly household budget by city, the salary you need, mortgage and loan costs and more, with every result broken down and explained.",
     "sponsored": "Sponsored — we may earn a commission from these partners, at no cost to you.",
     "sponsoredBadge": "Sponsored"
   },

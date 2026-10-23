@@ -20,7 +20,7 @@ export async function generateMetadata({
     locale,
     path: "guides",
     title: dict.guides.title,
-    description: dict.guides.subtitle,
+    description: dict.guides.metaDesc,
     ogImage: { title: dict.guides.title, sub: dict.guides.nav },
   });
 }
