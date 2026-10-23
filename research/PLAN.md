@@ -63,6 +63,7 @@
 
 За последние ~2 недели (сверху — свежее):
 
+- IndexNow: добавил активный сабмит URL (скрипт + шаг в CI на каждый деплой) — ключ хостился, но URL не слались; Yandex принимает (202), Bing ждёт подтверждения ключа в BWT — `e63898e`, 23.10
 - Cloudflare-бэклог закрыт полностью: владелец удалил проект на Vercel; прод здоров (apex 200 / www→apex 301 / DNS на CF), @vercel/analytics убран ранее — 22.10 <!-- crm:0mvarrqvyd6ddbb92ac73b235 -->
 - +6 nomad/relocation deep-dive (Kuala Lumpur/HCMC/Bali/Tallinn/Zurich/Bishkek) ×5 — `b6319d4`, 22.10
 - Privacy: явные opt-out-ссылки персонализированной рекламы в de/fr/es/pt (под AdSense) — `491f95b`, 19.10
