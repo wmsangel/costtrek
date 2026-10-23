@@ -59,3 +59,11 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: npx opennextjs-cloudflare deploy
+
+      # Instant Bing/Yandex/Seznam indexing of new & changed pages. Non-fatal:
+      # a bad IndexNow response must never fail a deploy. (Bing needs the key
+      # confirmed once in Bing Webmaster Tools → "Set up IndexNow".)
+      - name: Ping IndexNow
+        if: steps.check.outputs.skip != 'true'
+        continue-on-error: true
+        run: node scripts/indexnow-submit.mjs
