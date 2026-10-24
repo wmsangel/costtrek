@@ -44,3 +44,5 @@ next-env.d.ts
 
 # social media generated slides (regenerable via scripts/social/gen.mjs)
 scripts/social/out/
+# Telegram bot credentials for the daily social delivery (never commit)
+scripts/social/.telegram.json

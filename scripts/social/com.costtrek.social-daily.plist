@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  launchd-агент: раз в день шлёт готовый пост на сегодня в Telegram.
+  Время — 08:07 (лёгкий сдвиг от ровного часа). Mac должен быть ВКЛЮЧЁН и не спать
+  в это время (иначе StartCalendarInterval догонит запуск при следующем пробуждении).
+
+  Установка:
+    cp scripts/social/com.costtrek.social-daily.plist ~/Library/LaunchAgents/
+    launchctl load ~/Library/LaunchAgents/com.costtrek.social-daily.plist
+  Снять:
+    launchctl unload ~/Library/LaunchAgents/com.costtrek.social-daily.plist
+  Проверить разовый запуск:
+    launchctl start com.costtrek.social-daily
+  Лог: ~/Library/Logs/costtrek-social.log
+
+  Путь к node взят из текущего nvm (v20.18.0). Если сменишь версию Node —
+  обнови ProgramArguments[0] и перезагрузи агент.
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.costtrek.social-daily</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/igorzagorodnyi/.nvm/versions/node/v20.18.0/bin/node</string>
+    <string>/Users/igorzagorodnyi/Sites/worldtime/scripts/social/telegram-daily.mjs</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/igorzagorodnyi/Sites/worldtime</string>
+
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>8</integer>
+    <key>Minute</key>
+    <integer>7</integer>
+  </dict>
+
+  <key>StandardOutPath</key>
+  <string>/Users/igorzagorodnyi/Library/Logs/costtrek-social.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/igorzagorodnyi/Library/Logs/costtrek-social.log</string>
+</dict>
+</plist>
