@@ -45,7 +45,9 @@
      **verify costtrek.com** (Rich Pins + аналитика) → доски с keyword-названиями
      («Cost of living by city», «Moving abroad», «City comparisons», «Digital nomad»);
    • **Instagram**: @costtrek business-аккаунт, bio + link-in-bio (→ costtrek.com), аватар;
-   • **Telegram**: нет (решение 19.10 — только органика, TG не поисковый);
+   • **Telegram**: как публичный канал — нет (решение 19.10 — только органика, TG не поисковый);
+     но дневная ДОСТАВКА готового контента в личный бот @costtrek_bot живёт (ops-пайп владельцу,
+     не канал; шлёт пост на день для ручной публикации в IG) — `327e186`, 25.10;
    • общее: link-in-bio target, UTM-метки для отслеживания соц-трафика в GA4. `трафик` · **owner-side** (регистрация аккаунтов — не код; соцмодуль уже готов)
 6. **Добавить новые города из GSC — ВСЯ партия (решение 19.10)** — в существующих странах: <!-- crm:0mvarrqvu07cf483601947685 --> <!-- due:2026-11-07 -->
    Monterrey/Orlando/Indianapolis/Lugano/Sitges/Florianópolis/Mönchengladbach; новые страны:
@@ -68,6 +70,7 @@
 
 За последние ~2 недели (сверху — свежее):
 
+- Дневная соц-рассылка в Telegram: бот @costtrek_bot шлёт готовый IG-пост на день (медиа + отдельным сообщением подпись с хэштегами), источник — `out/manifest.json` (выхлоп gen.mjs); launchd 08:07 (Mac вкл.). Ops-доставка владельцу, НЕ публичный TG-канал — `327e186`, 25.10
 - Урезал sitemap (решение #4): country-compare 300→105 (TOP_COUNTRY tier), тонкие пары уже noindex,follow; sitemap 765→570 путей/локаль — `c5cdd58`, 23.10 <!-- crm:0mvarrqv4221ed3710c4f2e82 -->
 - IndexNow: добавил активный сабмит URL (скрипт + шаг в CI на каждый деплой) — ключ хостился, но URL не слались; Yandex принимает (202), Bing ждёт подтверждения ключа в BWT — `e63898e`, 23.10
 - Cloudflare-бэклог закрыт полностью: владелец удалил проект на Vercel; прод здоров (apex 200 / www→apex 301 / DNS на CF), @vercel/analytics убран ранее — 22.10 <!-- crm:0mvarrqvyd6ddbb92ac73b235 -->

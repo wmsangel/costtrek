@@ -83,7 +83,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:v
 <body>
 <div class="wrap">
   <header>
-    <span class="kicker">Дорожная карта · обновлено 2026-10-22</span>
+    <span class="kicker">Дорожная карта · обновлено 2026-10-25</span>
     <h1>CostTrek</h1>
     <p class="sub">Сравнение стоимости жизни город-vs-город, 5 языков, ~11.9k страниц.
       Эта страница — живое зеркало <code>research/PLAN.md</code>: что в работе, что сделано, что в идеях.</p>
@@ -110,29 +110,29 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:v
       <span class="tag">деньги</span></div></div>
 
     <div class="q"><span class="idx">03</span><div>
-      <div class="t">Следить за краулом Googlebot после переезда на CF</div>
-      <div class="d">GSC «Статистика сканирования» → Host status после 05.10, переотправить sitemap; проверить Bot Fight Mode / WAF.</div>
+      <div class="t">Следить за краулом Googlebot (ПОВТОРЯЮЩАЯСЯ — мониторинг)</div>
+      <div class="d">Проверка 23.10 ЧИСТО: Googlebot-UA 200 на всех типах, нет CF-челленджа, index,follow, sitemap свежий, IndexNow активен (Yandex 202). Узкое место — авторитет/краул-бюджет/время. GSC Host status — за владельцем. Next ~30.10.</div>
       <span class="tag">индексация</span></div></div>
 
     <div class="q"><span class="idx">04</span><div>
-      <div class="t">Урезать sitemap + noindex тонких compare-пар (РЕШЕНО 19.10)</div>
-      <div class="d">Показы 28д −99%, 25k URL, 93% без показов. Решено: сильные страницы в sitemap, тонкие compare → noindex (концентрируем краул 8/нед). Внедрить в sitemap.ts.</div>
-      <span class="tag">индексация</span></div></div>
-
-    <div class="q"><span class="idx">05</span><div>
-      <div class="t">Углублять контент по доказанным кластерам спроса</div>
-      <div class="d">City deep-dives / гайды под Singapore, digital-nomad-visa, charlotte-nc, is-japan-cheaper-than-india.</div>
+      <div class="t">Углублять контент по кластерам (ПОВТОРЯЮЩАЯСЯ — батчами)</div>
+      <div class="d">City deep-dives / гайды под Singapore, digital-nomad-visa, nomad/cheapest, is-japan-cheaper-than-india. Последний батч +6 (22.10). Следующий ~30.10.</div>
       <span class="tag">контент</span></div></div>
 
-    <div class="q"><span class="idx">06</span><div>
+    <div class="q"><span class="idx">05</span><div>
       <div class="t">Зарегистрировать соцаккаунты (активация соцмодуля)</div>
-      <div class="d">Хэндл costtrek + bio/аватар. Pinterest (приоритет — поисковик): verify costtrek.com + keyword-доски. Instagram: @costtrek + link-in-bio. Telegram: нет (только органика). UTM в GA4.</div>
+      <div class="d">Хэндл costtrek + bio/аватар. Pinterest (приоритет — поисковик): verify costtrek.com + keyword-доски. Instagram: @costtrek + link-in-bio. Telegram как канал — нет; но дневная доставка в бот @costtrek_bot живёт. UTM в GA4.</div>
       <span class="tag">трафик</span></div></div>
 
-    <div class="q"><span class="idx">07</span><div>
+    <div class="q"><span class="idx">06</span><div>
       <div class="t">Новые города из GSC — ВСЯ партия (решение 19.10)</div>
       <div class="d">Все 11: Monterrey/Orlando/Indianapolis/Lugano/Sitges/Florianópolis/Mönchengladbach + Cuenca (EC)/Skopje (MK). Флагил breadth при трафике ≈0 — владелец решил делать.</div>
       <span class="tag">контент</span></div></div>
+
+    <div class="q"><span class="idx">07</span><div>
+      <div class="t">Настроить IndexNow в Bing Webmaster Tools (owner)</div>
+      <div class="d">Yandex принимает сабмит (202), Bing отдаёт 403 → в BWT нажать «Set up IndexNow» (подтвердить/сгенерить ключ). Новый ключ — прислать, подставлю в INDEXNOW_KEY + деплой.</div>
+      <span class="tag">индексация</span></div></div>
 
     <div class="q"><span class="idx">08</span><div>
       <div class="t">Буфер / мелкий бэклог</div>
@@ -143,6 +143,9 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:v
   <section>
     <div class="s-head"><h2>Сделано</h2><span class="count">за 2 недели</span></div>
     <ul class="done">
+      <li><span class="mk">✓</span><span>Дневная соц-рассылка в Telegram: бот @costtrek_bot шлёт готовый IG-пост на день (медиа + отдельным сообщением подпись с хэштегами); источник — out/manifest.json, launchd 08:07. Ops-доставка владельцу, НЕ публичный TG-канал <span class="note">— 327e186, 25.10</span></span></li>
+      <li><span class="mk">✓</span><span>Урезал sitemap (#4): country-compare 300→105 (TOP_COUNTRY), тонкие пары уже noindex,follow; 765→570 путей/локаль <span class="note">— c5cdd58, 23.10</span></span></li>
+      <li><span class="mk">✓</span><span>IndexNow: активный сабмит URL (скрипт + шаг в CI на деплой); Yandex принимает (202), Bing ждёт подтверждения ключа в BWT <span class="note">— e63898e, 23.10</span></span></li>
       <li><span class="mk">✓</span><span>Cloudflare-бэклог закрыт полностью: владелец удалил проект на Vercel, прод здоров (apex 200 / www→301 / DNS на CF) <span class="note">— 22.10</span></span></li>
       <li><span class="mk">✓</span><span>+6 nomad/relocation deep-dive (Kuala Lumpur / HCMC / Bali / Tallinn / Zurich / Bishkek) ×5 — углубление кластера nomad/cheapest (25 городов с заметками) <span class="note">— b6319d4, 22.10</span></span></li>
       <li><span class="mk">✓</span><span>Privacy: явные opt-out-ссылки персонализированной рекламы в de/fr/es/pt (под AdSense-политику) <span class="note">— 491f95b, 19.10</span></span></li>
