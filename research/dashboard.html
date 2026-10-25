@@ -92,12 +92,12 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:v
   <div class="tiles">
     <div class="tile"><span class="n">≈450</span><span class="c">визитов за 30 дней · RUM, ≈15/д</span></div>
     <div class="tile"><span class="n">3 825</span><span class="c">страниц в sitemap (GSC)</span></div>
-    <div class="tile"><span class="n accent">8</span><span class="c">задач в очереди</span></div>
+    <div class="tile"><span class="n accent">7</span><span class="c">задач в очереди</span></div>
     <div class="tile"><span class="n">2</span><span class="c">кликов из поиска · 28 дн</span></div>
   </div>
 
   <section>
-    <div class="s-head"><h2>Очередь</h2><span class="count">по приоритету · 8</span></div>
+    <div class="s-head"><h2>Очередь</h2><span class="count">по приоритету · 7</span></div>
 
     <div class="q"><span class="idx">01</span><div>
       <div class="t">AdSense — ждём трафика, НЕ подаём (решение 19.10)</div>
@@ -130,11 +130,6 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:v
       <span class="tag">контент</span></div></div>
 
     <div class="q"><span class="idx">07</span><div>
-      <div class="t">Настроить IndexNow в Bing Webmaster Tools (owner)</div>
-      <div class="d">Yandex принимает сабмит (202), Bing отдаёт 403 → в BWT нажать «Set up IndexNow» (подтвердить/сгенерить ключ). Новый ключ — прислать, подставлю в INDEXNOW_KEY + деплой.</div>
-      <span class="tag">индексация</span></div></div>
-
-    <div class="q"><span class="idx">08</span><div>
       <div class="t">Буфер / мелкий бэклог</div>
       <div class="d">ISR для хабов, i18n-ярлыки метрик, локализованные слаги, support@-алиасы, форма фидбэка, VisitorsCoverage как доп. страховой оффер.</div>
       <span class="tag">инфра</span></div></div>
@@ -143,6 +138,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:v
   <section>
     <div class="s-head"><h2>Сделано</h2><span class="count">за 2 недели</span></div>
     <ul class="done">
+      <li><span class="mk">✓</span><span>IndexNow в Bing WMT подтверждён (через Chrome владельца): сайт верифицирован, ключ-файл валиден, Bing принял и проиндексировал сабмит (costtrek.com/en — Indexed). Настраивать в BWT нечего; остаточный 403 на новые сабмиты — троттлинг молодого домена, не пробел BWT <span class="note">— 25.10</span></span></li>
       <li><span class="mk">✓</span><span>Дневная соц-рассылка в Telegram: бот @costtrek_bot шлёт готовый IG-пост на день (медиа + отдельным сообщением подпись с хэштегами); источник — out/manifest.json, launchd 08:07. Ops-доставка владельцу, НЕ публичный TG-канал <span class="note">— 327e186, 25.10</span></span></li>
       <li><span class="mk">✓</span><span>Урезал sitemap (#4): country-compare 300→105 (TOP_COUNTRY), тонкие пары уже noindex,follow; 765→570 путей/локаль <span class="note">— c5cdd58, 23.10</span></span></li>
       <li><span class="mk">✓</span><span>IndexNow: активный сабмит URL (скрипт + шаг в CI на деплой); Yandex принимает (202), Bing ждёт подтверждения ключа в BWT <span class="note">— e63898e, 23.10</span></span></li>
