@@ -91,7 +91,7 @@ export default function MetricComparison({
                 {rows.map((r) => (
                   <tr key={r.key} className="border-t border-[var(--border)]">
                     <td className="px-4 sm:px-5 py-2 text-[var(--muted)]">
-                      {r.label}
+                      {dict.data.metricLabels[r.key] ?? r.label}
                     </td>
                     <td
                       className="px-4 sm:px-5 py-2 text-right font-medium tabular-nums whitespace-nowrap"

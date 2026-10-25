@@ -427,6 +427,7 @@ export type Dictionary = {
       climate: string;
       connectivity: string;
     };
+    metricLabels: Record<string, string>;
     sections: {
       prices: string;
       housing: string;
