@@ -1,3 +1,5 @@
+> ВЫПОЛНЕНО, 26.10.2026 — 10aafae (влито в main, задеплоено, проверено на проде). НЕ прогонять повторно.
+
 # Cursor prompt — Localize the compare-table metric labels (de/fr/es/pt)
 
 > Plan item: #7 buffer/backlog → **i18n-ярлыки метрик в `metrics.ts` (сейчас EN везде)**.

@@ -9,11 +9,15 @@ Scope rule: only open items marked **`→cursor`** (mechanical/volume) and the *
 replication tail** *when the exemplar is already built*. Judgement-heavy (`→сам`),
 owner-side, and gated items are not here.
 
-## Ready prompts
+## Prompts
 
-| File | Plan item | What it does |
-|---|---|---|
-| [metric-labels-i18n.md](metric-labels-i18n.md) | #7 buffer → i18n-ярлыки метрик | Localize the ~45 compare-table metric labels (`metrics.ts`) into de/fr/es/pt via a new `data.metricLabels` dict map, mirroring the existing `data.groups` pattern; EN fallback. Low-ROI while traffic ≈ 0. |
+| File | Plan item | Status | What it does |
+|---|---|---|---|
+| [metric-labels-i18n.md](metric-labels-i18n.md) | #7 buffer → i18n-ярлыки метрик | ✅ ВЫПОЛНЕНО 26.10.2026 (10aafae) | Localize the ~45 compare-table metric labels (`metrics.ts`) into de/fr/es/pt via a new `data.metricLabels` dict map, mirroring the existing `data.groups` pattern; EN fallback. |
+
+> Done prompts carry a `ВЫПОЛНЕНО, дата — коммит` marker on their first line so they're
+> not re-run. The older internal-links audit `research/CURSOR-internal-links.md` is also
+> marked done (15.10.2026, dfa61c1 — Cursor PR #1).
 
 ## Not yet eligible (no prompt)
 
