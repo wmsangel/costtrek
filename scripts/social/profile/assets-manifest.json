@@ -1,0 +1,29 @@
+{
+  "avatar": "avatar.png",
+  "highlights": [
+    {
+      "file": "highlight-1-guides.png",
+      "name": "Guides"
+    },
+    {
+      "file": "highlight-2-calculators.png",
+      "name": "Calculators"
+    },
+    {
+      "file": "highlight-3-compare.png",
+      "name": "City vs City"
+    },
+    {
+      "file": "highlight-4-breakdown.png",
+      "name": "Cost Breakdown"
+    },
+    {
+      "file": "highlight-5-nomad.png",
+      "name": "Nomad Visas"
+    },
+    {
+      "file": "highlight-6-checklist.png",
+      "name": "Move Checklist"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "project": "CostTrek",
+  "name": "CostTrek · Cost of Living",
+  "nameNote": "25 символов (лимит IG — 30). Ключевое слово «Cost of Living» для поиска.",
+  "usernames": ["costtrek", "costtrek.app", "getcosttrek"],
+  "bio": "Compare the real cost of living between cities worldwide. Rent, salaries, taxes — what a move actually costs. Free tools, no hype 👇",
+  "link": "https://costtrek.com/?utm_source=instagram&utm_medium=social&utm_campaign=bio",
+  "account": {
+    "type": "Business",
+    "typeWhy": "Business (не Creator): даёт кнопку-ссылку на сайт, статистику и контактные кнопки; Creator — под личный бренд-инфлюенсера, нам не подходит.",
+    "category": "Website",
+    "categoryАльтернативыNote": "Категория «Website» (нейтрально и точно). Альтернативы, если хочешь: «Travel & Tourism» или «Personal Blog»."
+  },
+  "contact": "Почта: на домене включён Cloudflare Email Routing (MX есть), но публичный алиас ещё не подтверждён. Рекомендую: Cloudflare → Email → Email Routing → создать hello@costtrek.com → forward на свой ящик; добавить в контакты IG ТОЛЬКО после тест-письма. До этого — контактный e-mail оставить пустым.",
+  "avatar": "avatar.png",
+  "highlights": [
+    { "file": "highlight-1-guides.png", "name": "Guides" },
+    { "file": "highlight-2-calculators.png", "name": "Calculators" },
+    { "file": "highlight-3-compare.png", "name": "City vs City" },
+    { "file": "highlight-4-breakdown.png", "name": "Cost Breakdown" },
+    { "file": "highlight-5-nomad.png", "name": "Nomad Visas" },
+    { "file": "highlight-6-checklist.png", "name": "Move Checklist" }
+  ],
+  "pins": [
+    { "post": "Singapore — что реально стоит жизнь (разбор-карусель)", "why": "сильнейший кластер спроса, показывает глубину контента" },
+    { "post": "Find your city — интерактивный подбор города", "why": "утилита, которая гонит клики по ссылке в профиле" },
+    { "post": "Japan vs India — честное сравнение (карусель)", "why": "популярное сравнение, сильный хук для первого впечатления" }
+  ],
+  "checklist": [
+    "Настройки → Аккаунт → Перейти на профессиональный аккаунт → Бизнес.",
+    "Редактировать профиль → фото профиля = avatar.png (прислан файлом, без сжатия).",
+    "Имя = «CostTrek · Cost of Living». Username — @costtrek (если занят: @costtrek.app или @getcosttrek).",
+    "Bio → вставить текст (прислан отдельным сообщением).",
+    "Ссылки → добавить внешнюю ссылку → URL с UTM (прислан отдельным сообщением).",
+    "Категория = Website (показывается под именем). Контактный e-mail пока пропустить.",
+    "Актуальное: создать 6 highlight'ов → для каждого «изменить обложку» → загрузить highlight-N-*.png → назвать (Guides / Calculators / City vs City / Cost Breakdown / Nomad Visas / Move Checklist).",
+    "После первых постов — закрепить 3 поста (пост → ⋯ → Закрепить в профиле)."
+  ]
+}

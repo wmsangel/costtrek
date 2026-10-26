@@ -173,11 +173,71 @@ async function showChatId() {
   }
 }
 
+async function sendDocument(bot, chat, path, caption) {
+  const form = new FormData();
+  form.append("chat_id", chat);
+  form.append("document", fileBlob(path), basename(path));
+  if (caption) form.append("caption", caption);
+  await tg(bot, "sendDocument", form);
+}
+
+// --profile: шлёт готовое оформление IG-профиля по кусочкам (каждое отдельным
+// сообщением), чтобы владелец просто скачал и вставил. Источник — profile/profile.json
+// + картинки profile/*.png (генерит profile/gen-profile.mjs).
+async function sendProfile(bot, chat) {
+  const dir = join(HERE, "profile");
+  const p = JSON.parse(readFileSync(join(dir, "profile.json"), "utf8"));
+  const img = (f) => join(dir, f);
+
+  await sendText(bot, chat,
+    `📸 ${p.project} — оформление Instagram\nНиже всё по кусочкам: аватар, имя, bio, ссылка, категория, обложки, контакты, закрепы, чек-лист. Скачивай и вставляй.`);
+
+  // 1) Аватар: файлом (без сжатия) + превью.
+  if (existsSync(img(p.avatar))) {
+    await sendDocument(bot, chat, img(p.avatar), "1) Аватар 1080×1080 — загрузи ИЗ ФАЙЛА (без сжатия)");
+    await sendPhoto(bot, chat, img(p.avatar), "Превью аватара");
+  }
+  // 2) Имя + username.
+  await sendText(bot, chat,
+    `2) Имя профиля (${p.nameNote})\n${p.name}\n\nUsername (по приоритету):\n` +
+    p.usernames.map((u) => `@${u}`).join("\n"));
+  // 3) Bio — отдельно, чтобы скопировать целиком.
+  await sendText(bot, chat, `3) Bio (≤150):\n\n${p.bio}`);
+  // 4) Ссылка с UTM.
+  await sendText(bot, chat, `4) Ссылка в профиле (с UTM):\n${p.link}`);
+  // 5) Категория и тип.
+  await sendText(bot, chat,
+    `5) Аккаунт\nТип: ${p.account.type} — ${p.account.typeWhy}\nКатегория: ${p.account.category}`);
+  // 6) Обложки «Актуального» — файлами (без сжатия) + имена.
+  await sendText(bot, chat, "6) Обложки «Актуального» (6 шт., без текста — имя задаёшь в IG вручную):");
+  let i = 1;
+  for (const h of p.highlights) {
+    if (existsSync(img(h.file))) await sendDocument(bot, chat, img(h.file), `Обложка ${i} — ${h.name}`);
+    i++;
+  }
+  // 7) Контакты.
+  await sendText(bot, chat, `7) Контакты\n${p.contact}`);
+  // 8) Закрепы.
+  await sendText(bot, chat, "8) Закрепить 3 поста:\n" +
+    p.pins.map((x, n) => `${n + 1}. ${x.post} — ${x.why}`).join("\n"));
+  // 9) Чек-лист.
+  await sendText(bot, chat, "9) Чек-лист «что нажать в Instagram»:\n" +
+    p.checklist.map((s, n) => `${n + 1}. ${s}`).join("\n"));
+
+  console.log("Профиль отправлен в Telegram (аватар + 6 обложек + тексты).");
+}
+
 // ─── main ───
 const arg = process.argv[2];
 
 if (arg === "--chat-id") {
   await showChatId();
+  process.exit(0);
+}
+
+if (arg === "--profile") {
+  const { bot, chat } = requireConfig();
+  await sendProfile(bot, chat);
   process.exit(0);
 }
 
