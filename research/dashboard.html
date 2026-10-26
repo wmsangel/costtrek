@@ -83,7 +83,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:v
 <body>
 <div class="wrap">
   <header>
-    <span class="kicker">Дорожная карта · обновлено 2026-10-25</span>
+    <span class="kicker">Дорожная карта · обновлено 2026-10-26</span>
     <h1>CostTrek</h1>
     <p class="sub">Сравнение стоимости жизни город-vs-город, 5 языков, ~11.9k страниц.
       Эта страница — живое зеркало <code>research/PLAN.md</code>: что в работе, что сделано, что в идеях.</p>
@@ -131,13 +131,14 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:v
 
     <div class="q"><span class="idx">07</span><div>
       <div class="t">Буфер / мелкий бэклог</div>
-      <div class="d">ISR для хабов, i18n-ярлыки метрик, локализованные слаги, support@-алиасы, форма фидбэка, VisitorsCoverage как доп. страховой оффер.</div>
+      <div class="d">ISR для хабов, локализованные слаги, support@-алиасы, форма фидбэка, VisitorsCoverage как доп. страховой оффер.</div>
       <span class="tag">инфра</span></div></div>
   </section>
 
   <section>
     <div class="s-head"><h2>Сделано</h2><span class="count">за 2 недели</span></div>
     <ul class="done">
+      <li><span class="mk">✓</span><span>i18n ярлыков метрик compare-таблицы (45 × de/fr/es/pt) — карта data.metricLabels по образцу data.groups + EN-fallback; промт → Cursor, приёмка (переводы/типы/сборка) + влил/задеплоил/проверил прод <span class="note">— 10aafae, 26.10</span></span></li>
       <li><span class="mk">✓</span><span>IndexNow в Bing WMT подтверждён (через Chrome владельца): сайт верифицирован, ключ-файл валиден, Bing принял и проиндексировал сабмит (costtrek.com/en — Indexed). Настраивать в BWT нечего; остаточный 403 на новые сабмиты — троттлинг молодого домена, не пробел BWT <span class="note">— 25.10</span></span></li>
       <li><span class="mk">✓</span><span>Дневная соц-рассылка в Telegram: бот @costtrek_bot шлёт готовый IG-пост на день (медиа + отдельным сообщением подпись с хэштегами); источник — out/manifest.json, launchd 08:07. Ops-доставка владельцу, НЕ публичный TG-канал <span class="note">— 327e186, 25.10</span></span></li>
       <li><span class="mk">✓</span><span>Урезал sitemap (#4): country-compare 300→105 (TOP_COUNTRY), тонкие пары уже noindex,follow; 765→570 путей/локаль <span class="note">— c5cdd58, 23.10</span></span></li>
