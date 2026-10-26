@@ -23,7 +23,7 @@
 | **SafetyWing** (insurance) | активна | — | direct, 10% recurring, Wise |
 | **MyTrip** (flights) | активна | — | Indoleads, CPS $6/sale |
 | **Admitad** (Way.com / Cheapvuelos / Flight Network) | активна | — | website_id 2988082 |
-| **DiscoverCars** (cars) | ждёт | — | Admitad 20065, awaiting moderation (365-дн. cookie) |
+| **DiscoverCars** (cars) | активна | — | Admitad 20065, **ОДОБРЕНА + размещена 26.10** (deeplink `naiawork.com`), 365-дн. cookie, глоб. дефолт авто (заменил Economybookings) |
 | **Instarem** (money-transfer) 💰 | ждёт | — | Indoleads 20719, $6 CPA; нужен запрос менеджеру под costtrek |
 | **Trip.com** (hotels/flights Asia) | ждёт | — | Indoleads 378, не одобрен |
 | **NordVPN** (VPN) | нет | — | Admitad 18867 declined |
@@ -87,7 +87,7 @@ de/fr/es/pt на локальные маркетплейсы (иначе не-US
 | ✈️ Flights (card) | **MyTrip** (Etraveli) | **Indoleads** | global (→ UK сайт) | `io10.info/6aa7d36473fb3` |
 | ✈️ Flights (slot) | Cheapvuelos / Flight Network | Admitad | в profile-слотах | `yknhc.com` / `xyowz.com` |
 | 🏨 Hotels | **Planetofhotels** (единственный, метапоиск 2M+) | Travelpayouts | везде, **кроме TR** | `uhtkc.com/...` (CPA 4.93%) |
-| 🚗 Cars | **Localrent** (турист. рынки) / иначе **Economybookings** | Travelpayouts | Localrent: GE/TR/AE/TH/ID/VN/MY/GR/ES/IT/PT/MX/CO | `localrent.tpm.li` / `economybookings.tpm.li` |
+| 🚗 Cars | **Localrent** (турист. рынки) / иначе **DiscoverCars** (Admitad, одобр. 26.10) | Travelpayouts / **Admitad** | Localrent: GE/TR/AE/TH/ID/VN/MY/GR/ES/IT/PT/MX/CO | `localrent.tpm.li` / `naiawork.com` (Economybookings — резерв) |
 | 🛵 Scooter | **BikesBooking** | Travelpayouts | ID/VN/TH | `bikesbooking.tpm.li` |
 | 🚕 Transfer | **Welcome Pickups** (юж. Европа) / иначе **Kiwitaxi** | Travelpayouts | WP: ES/IT/GR/PT/FR; Kiwitaxi: ост. (кроме TR) | `tpm.li/bFe65KrG` / `kiwitaxi.tpm.li` |
 | 🎟️ Tours | **Klook** (global) + **Tiqets** (Европа) / **Platinumlist** (Gulf) | Travelpayouts | Tiqets: EU+TR; Platinumlist: AE/SA/QA/EG/BH/KW/OM | `klook.tpm.li` / `tiqets.tpm.li` / `i07o.xyz` |
@@ -111,6 +111,14 @@ Awin) платят на Payoneer/банк 🟢. Опасность — прям�
 
 > Подача заявок и привязка офферов = действия от имени владельца → **делает владелец сам**.
 > Я читаю API свободно и готовлю трекинг-вставки в код, но **пушу только по подтверждению.**
+
+### Перепроверка 2026-10-26 (Chrome владельца, read-only)
+**Admitad costtrek (ad space 2988082, «My Programs» = 9 подключённых):** DiscoverCars 20065
+теперь **ОДОБРЕНА** (joined, Banners&Links доступны) → размещена в коде (deeplink
+`naiawork.com/g/wqjhitsyjqa27dee2ccd5ea594bb46/`). NordVPN 18867 — в подключённых нет
+(по-прежнему declined). Новые AvitoVIP Transfer / NH-Hotels — дубли категорий, не ставил.
+**Indoleads (Trip.com 378, Instarem 20719):** НЕ проверено — кабинет разлогинен в Chrome,
+вход под паролем я не делаю → за владельцем.
 
 ### Статус по кабинетам — ПРОВЕРЕНО ВРУЧНУЮ 2026-10-13 (истина = кабинет, не API)
 Полный аудит по API + оба веб-кабинета (сессия владельца в Chrome). Итог: **нового,

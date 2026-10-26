@@ -96,7 +96,10 @@ export function buildGeoToolkit(city: City): ToolkitItem[] {
     });
   }
 
-  // Car rental — Localrent in tourist/expat markets, Economybookings elsewhere.
+  // Car rental — Localrent in tourist/expat markets, DiscoverCars elsewhere.
+  // DiscoverCars (Admitad, costtrek ad space 2988082): global rental comparison,
+  // 365-day cookie, 4.5% booking + 23% on full-coverage. Approved 2026-10-26 →
+  // replaced Economybookings as the global default (one car card per city, no dup).
   const LOCALRENT = new Set([
     "GE", "TR", "AE", "TH", "ID", "VN", "MY",
     "GR", "ES", "IT", "PT", "MX", "CO",
@@ -111,10 +114,12 @@ export function buildGeoToolkit(city: City): ToolkitItem[] {
   } else {
     items.push({
       category: "cars",
-      provider: "Economybookings",
-      url: "https://economybookings.tpm.li/S2nY6rl8",
-      note: "Compare worldwide car rental",
+      provider: "DiscoverCars",
+      url: "https://naiawork.com/g/wqjhitsyjqa27dee2ccd5ea594bb46/",
+      note: "Compare car rental worldwide — free cancellation",
     });
+    // Reserve (Travelpayouts), if DiscoverCars ever pauses:
+    //   provider "Economybookings" → https://economybookings.tpm.li/S2nY6rl8
   }
 
   // BikesBooking — scooter/motorbike rental in scooter-first cities.
