@@ -24,7 +24,7 @@
 | **MyTrip** (flights) | активна | — | Indoleads, CPS $6/sale |
 | **Admitad** (Way.com / Cheapvuelos / Flight Network) | активна | — | website_id 2988082 |
 | **DiscoverCars** (cars) | активна | — | Admitad 20065, **ОДОБРЕНА + размещена 26.10** (deeplink `naiawork.com`), 365-дн. cookie, глоб. дефолт авто (заменил Economybookings) |
-| **Instarem** (money-transfer) 💰 | ждёт | — | Indoleads 20719, одобрен только под calclumen; под costtrek — **нужен запрос менеджеру** (проверено 26.10) |
+| **Instarem** (money-transfer) 💰 | ждёт | — | Indoleads 20719, одобрен только под calclumen. **Владелец запросил менеджеру под costtrek 27.10** — ждём; в Requests строки ещё нет. Как одобрят → диплинк в toolkit.ts (category `other`/money-transfer) + деплой |
 | **Trip.com** (hotels/flights Asia) | нет | — | Indoleads 378, под costtrek **REJECTED** 05.10 (проверено 26.10); можно пере-подать с др. источником |
 | **NordVPN** (VPN) | нет | — | Admitad 18867 declined |
 | **EKTA** (insurance) | нет | — | программа закрылась (08.10) |
