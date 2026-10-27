@@ -26,10 +26,11 @@
    privacy готов (opt-out ×5). Вернуться, когда органика вырастет: тогда Google Funding
    Choices (CMP) + выключить `TRAVELPAYOUTS_DRIVE` на ревью. `деньги` · **гейт** (ждём трафик, не код)
 2. **Разместить одобренные партнёрки** — ✅ **DiscoverCars (Admitad 20065) одобрена 26.10 → <!-- crm:0mvarrquxc4b66a83a03cc370 --> <!-- due:2026-10-27 -->
-   размещена и на проде** (`toolkit.ts`, глоб. дефолт авто, `5f99686`). Остаются: NordVPN 18867
-   (всё ещё declined — мимо); Trip.com 378 / Instarem 20719 (Indoleads) — **не проверены 26.10**
-   (кабинет разлогинен в Chrome, вход за владельцем). Как одобрят — диплинк в `toolkit.ts` + деплой.
-   Детали — в `ADS-AND-LINKS.md` §3. `деньги` · **→сам** (мелкая вставка; гейт на одобрения Indoleads)
+   размещена и на проде** (`toolkit.ts`, глоб. дефолт авто, `5f99686`). Indoleads перепроверен 26.10:
+   Trip.com 378 — **REJECTED под costtrek**; Instarem 20719 — одобрен лишь под calclumen (под costtrek
+   нужен запрос менеджеру); GetYourGuide/eSky/Traveloka/Udemy одобрены под costtrek, но held (дубли
+   категорий, анти-link-farm). NordVPN 18867 — declined. **Нового к размещению нет** — пункт по сути
+   закрыт до новых одобрений. Детали — `ADS-AND-LINKS.md` §3. `деньги` · **→сам** (мелкая вставка)
 3. **Следить за краулом Googlebot после CF (ПОВТОРЯЮЩАЯСЯ — мониторинг)** — серверная диагностика + GSC <!-- crm:0mvarrqv1af7f16a2364ebfa1 --> <!-- due:2026-10-30 -->
    Проверка 23.10: ЧИСТО — Googlebot-UA 200 на всех типах (compare 308 = канон-редирект), нет
    CF-челленджа (`cf-mitigated` отсутствует), нет noindex (`index,follow`), robots `Allow:/` + sitemap,

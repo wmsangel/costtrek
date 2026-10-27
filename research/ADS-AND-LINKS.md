@@ -24,8 +24,8 @@
 | **MyTrip** (flights) | активна | — | Indoleads, CPS $6/sale |
 | **Admitad** (Way.com / Cheapvuelos / Flight Network) | активна | — | website_id 2988082 |
 | **DiscoverCars** (cars) | активна | — | Admitad 20065, **ОДОБРЕНА + размещена 26.10** (deeplink `naiawork.com`), 365-дн. cookie, глоб. дефолт авто (заменил Economybookings) |
-| **Instarem** (money-transfer) 💰 | ждёт | — | Indoleads 20719, $6 CPA; нужен запрос менеджеру под costtrek |
-| **Trip.com** (hotels/flights Asia) | ждёт | — | Indoleads 378, не одобрен |
+| **Instarem** (money-transfer) 💰 | ждёт | — | Indoleads 20719, одобрен только под calclumen; под costtrek — **нужен запрос менеджеру** (проверено 26.10) |
+| **Trip.com** (hotels/flights Asia) | нет | — | Indoleads 378, под costtrek **REJECTED** 05.10 (проверено 26.10); можно пере-подать с др. источником |
 | **NordVPN** (VPN) | нет | — | Admitad 18867 declined |
 | **EKTA** (insurance) | нет | — | программа закрылась (08.10) |
 | **Amazon Associates** (книги/гаджеты) | активна | — | tag `costtrek-20`; ДОП-блок на country-страницах, за флагом `AMAZON_ENABLED` |
@@ -117,8 +117,15 @@ Awin) платят на Payoneer/банк 🟢. Опасность — прям�
 теперь **ОДОБРЕНА** (joined, Banners&Links доступны) → размещена в коде (deeplink
 `naiawork.com/g/wqjhitsyjqa27dee2ccd5ea594bb46/`). NordVPN 18867 — в подключённых нет
 (по-прежнему declined). Новые AvitoVIP Transfer / NH-Hotels — дубли категорий, не ставил.
-**Indoleads (Trip.com 378, Instarem 20719):** НЕ проверено — кабинет разлогинен в Chrome,
-вход под паролем я не делаю → за владельцем.
+**Indoleads (после входа владельца, read-only, Offers→Requests, 34 заявки):**
+- **Trip.com** под costtrek — **REJECTED** (05.10, «apply with another source»); pending только
+  для foundaday. → под costtrek недоступен (можно пере-подать с другим источником).
+- **Instarem** — Approved только для **calclumen**, заявки под costtrek НЕТ → нужен запрос
+  менеджеру (Marina Lavrenova) под costtrek. Пока не разместить.
+- **Одобрены под costtrek, но НЕ ставлю (дубли категорий, анти-link-farm):** GetYourGuide
+  (туры — дубль Klook/Tiqets), eSky (авиа — дубль Aviasales/MyTrip), Traveloka MY (авиа/отели
+  SEA), Udemy (курсы — слабый фит под cost-of-living). MyTrip под costtrek — уже в коде.
+- **Итог Indoleads:** нового, пригодного без дублирования — нет.
 
 ### Статус по кабинетам — ПРОВЕРЕНО ВРУЧНУЮ 2026-10-13 (истина = кабинет, не API)
 Полный аудит по API + оба веб-кабинета (сессия владельца в Chrome). Итог: **нового,
