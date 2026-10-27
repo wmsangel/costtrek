@@ -106,7 +106,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:v
 
     <div class="q"><span class="idx">02</span><div>
       <div class="t">Разместить одобренные партнёрки</div>
-      <div class="d">Ждём 3 заявки (DiscoverCars, NordVPN, Trip.com); как active/allowed — трекинг-диплинк в toolkit.ts + деплой.</div>
+      <div class="d">✅ DiscoverCars (Admitad) одобрена → размещена на проде (глоб. дефолт авто). NordVPN — declined. Trip.com/Instarem (Indoleads) — не проверены (кабинет разлогинен, за владельцем).</div>
       <span class="tag">деньги</span></div></div>
 
     <div class="q"><span class="idx">03</span><div>
@@ -121,7 +121,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:v
 
     <div class="q"><span class="idx">05</span><div>
       <div class="t">Зарегистрировать соцаккаунты (активация соцмодуля)</div>
-      <div class="d">Хэндл costtrek + bio/аватар. Pinterest (приоритет — поисковик): verify costtrek.com + keyword-доски. Instagram: @costtrek + link-in-bio. Telegram как канал — нет; но дневная доставка в бот @costtrek_bot живёт. UTM в GA4.</div>
+      <div class="d">Создание аккаунтов — за владельцем. Инструкции готовы: IG профиль-кит в боте (scripts/social/profile/), Pinterest — scripts/social/pinterest/PINTEREST.md. Telegram как канал — нет (доставка в бот живёт). UTM в GA4.</div>
       <span class="tag">трафик</span></div></div>
 
     <div class="q"><span class="idx">06</span><div>
@@ -138,6 +138,8 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:v
   <section>
     <div class="s-head"><h2>Сделано</h2><span class="count">за 2 недели</span></div>
     <ul class="done">
+      <li><span class="mk">✓</span><span>Партнёрка DiscoverCars (Admitad) одобрена → размещена глоб. дефолтом аренды авто (toolkit.ts), sponsored nofollow + affiliate_click; прод ✓ (Токио DiscoverCars / Бангкок Localrent), диплинк 302→discovercars.com <span class="note">— 5f99686, 26.10</span></span></li>
+      <li><span class="mk">✓</span><span>Соцоформление: IG профиль-кит в бот (аватар+6 обложек+тексты) + пошаговая инструкция Pinterest <span class="note">— a4cd2a5/882f921, 26.10</span></span></li>
       <li><span class="mk">✓</span><span>i18n ярлыков метрик compare-таблицы (45 × de/fr/es/pt) — карта data.metricLabels по образцу data.groups + EN-fallback; промт → Cursor, приёмка (переводы/типы/сборка) + влил/задеплоил/проверил прод <span class="note">— 10aafae, 26.10</span></span></li>
       <li><span class="mk">✓</span><span>IndexNow в Bing WMT подтверждён (через Chrome владельца): сайт верифицирован, ключ-файл валиден, Bing принял и проиндексировал сабмит (costtrek.com/en — Indexed). Настраивать в BWT нечего; остаточный 403 на новые сабмиты — троттлинг молодого домена, не пробел BWT <span class="note">— 25.10</span></span></li>
       <li><span class="mk">✓</span><span>Дневная соц-рассылка в Telegram: бот @costtrek_bot шлёт готовый IG-пост на день (медиа + отдельным сообщением подпись с хэштегами); источник — out/manifest.json, launchd 08:07. Ops-доставка владельцу, НЕ публичный TG-канал <span class="note">— 327e186, 25.10</span></span></li>

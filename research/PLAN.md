@@ -25,9 +25,11 @@
    Сетевое решение — заявку не подавать до роста трафика. `ads.txt` + loader уже на проде,
    privacy готов (opt-out ×5). Вернуться, когда органика вырастет: тогда Google Funding
    Choices (CMP) + выключить `TRAVELPAYOUTS_DRIVE` на ревью. `деньги` · **гейт** (ждём трафик, не код)
-2. **Разместить одобренные партнёрки** — ждём 3 заявки (DiscoverCars 20065, NordVPN 18867, <!-- crm:0mvarrquxc4b66a83a03cc370 --> <!-- due:2026-10-27 -->
-   Trip.com 378); как `active`/`allowed` — трекинг-диплинк в `toolkit.ts` + деплой. Детали
-   и статусы — в `ADS-AND-LINKS.md` §3. `деньги` · **→сам** (мелкая вставка трекинг-ссылки в `toolkit.ts` + наши кластеры/KG-выплаты; гейт на одобрения — объёма для Cursor нет)
+2. **Разместить одобренные партнёрки** — ✅ **DiscoverCars (Admitad 20065) одобрена 26.10 → <!-- crm:0mvarrquxc4b66a83a03cc370 --> <!-- due:2026-10-27 -->
+   размещена и на проде** (`toolkit.ts`, глоб. дефолт авто, `5f99686`). Остаются: NordVPN 18867
+   (всё ещё declined — мимо); Trip.com 378 / Instarem 20719 (Indoleads) — **не проверены 26.10**
+   (кабинет разлогинен в Chrome, вход за владельцем). Как одобрят — диплинк в `toolkit.ts` + деплой.
+   Детали — в `ADS-AND-LINKS.md` §3. `деньги` · **→сам** (мелкая вставка; гейт на одобрения Indoleads)
 3. **Следить за краулом Googlebot после CF (ПОВТОРЯЮЩАЯСЯ — мониторинг)** — серверная диагностика + GSC <!-- crm:0mvarrqv1af7f16a2364ebfa1 --> <!-- due:2026-10-30 -->
    Проверка 23.10: ЧИСТО — Googlebot-UA 200 на всех типах (compare 308 = канон-редирект), нет
    CF-челленджа (`cf-mitigated` отсутствует), нет noindex (`index,follow`), robots `Allow:/` + sitemap,
@@ -42,9 +44,10 @@
    Соцмодуль готов (`scripts/social/`, хаб-артефакт); чтобы он заработал, завести аккаунты
    единым хэндлом `costtrek`, аватар + bio (honest, ключевые «cost of living / moving abroad»):
    • **Pinterest** (приоритет — поисковик, лучший фит под органику): business-аккаунт →
-     **verify costtrek.com** (Rich Pins + аналитика) → доски с keyword-названиями
-     («Cost of living by city», «Moving abroad», «City comparisons», «Digital nomad»);
-   • **Instagram**: @costtrek business-аккаунт, bio + link-in-bio (→ costtrek.com), аватар;
+     **verify costtrek.com** (Rich Pins + аналитика) → доски с keyword-названиями.
+     📄 Пошаговая инструкция готова: `scripts/social/pinterest/PINTEREST.md` (26.10);
+   • **Instagram**: @costtrek business-аккаунт. ✅ Полный профиль-кит готов и отправлен
+     в бот @costtrek_bot (`scripts/social/profile/`, 26.10) — аватар/имя/bio/UTM/обложки/чек-лист;
    • **Telegram**: как публичный канал — нет (решение 19.10 — только органика, TG не поисковый);
      но дневная ДОСТАВКА готового контента в личный бот @costtrek_bot живёт (ops-пайп владельцу,
      не канал; шлёт пост на день для ручной публикации в IG) — `327e186`, 25.10;
@@ -64,6 +67,8 @@
 
 За последние ~2 недели (сверху — свежее):
 
+- Партнёрка **DiscoverCars** (Admitad 20065) одобрена (проверено в кабинете через Chrome) → размещена глоб. дефолтом аренды авто в `toolkit.ts` (заменила Economybookings, в резерве), `rel=sponsored nofollow noopener` + `affiliate_click` авто. Прод ✓: Токио → DiscoverCars (`naiawork.com`), Бангкок → Localrent без изменений; диплинк `302 → discovercars.com` — `5f99686`, 26.10
+- Соцоформление: IG профиль-кит отправлен в бот (`scripts/social/profile/`, аватар+6 обложек+тексты) + пошаговая инструкция Pinterest (`scripts/social/pinterest/PINTEREST.md`) — `a4cd2a5`/`882f921`, 26.10
 - i18n ярлыков метрик compare-таблицы (45 × de/fr/es/pt): новая карта `data.metricLabels` по образцу `data.groups`, рендер с EN-fallback. Промт → Cursor (`docs/cursor-prompts/metric-labels-i18n.md`), я сделал приёмку (паритет ключей 45×5, переводы MwSt/IVA/BIP/PIB/IRPF/PPA, tsc+build чисто) → влил в main, задеплоил, проверил прод de/fr/es — `10aafae`, 26.10
 - IndexNow в Bing WMT подтверждён (owner-задача закрыта, через Chrome владельца): сайт верифицирован в BWT, ключ-файл `8880ab…` валиден (200 всем UA, без CF-challenge), Bing принял и **проиндексировал** сабмит (costtrek.com/en — Index Status: Indexed). Раздел IndexNow активен; кнопки «Set up»/генерации ключа в BWT нет (ключ файловый, BWT свой не создаёт) — настраивать нечего. Остаточный 403 на новые сабмиты = троттлинг молодого домена, НЕ пробел BWT; CI-пинг идемпотентен (continue-on-error), перепроверить ~01.11 — 25.10 <!-- crm:0mvkyt9gzd0596d7c104d9600 -->
 - Дневная соц-рассылка в Telegram: бот @costtrek_bot шлёт готовый IG-пост на день (медиа + отдельным сообщением подпись с хэштегами), источник — `out/manifest.json` (выхлоп gen.mjs); launchd 08:07 (Mac вкл.). Ops-доставка владельцу, НЕ публичный TG-канал — `327e186`, 25.10
