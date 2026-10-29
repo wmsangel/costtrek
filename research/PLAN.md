@@ -47,7 +47,7 @@
      переходит на **Instagram Graph API** → вынесено в п.6 (пилот almanackit). Профиль-кит (аватар/имя/
      bio/UTM/обложки/чек-лист) готов и в боте — `scripts/social/profile/`, 26.10;
    • **Telegram-бот @costtrek_bot** — ✅ дневная доставка контента живёт (ops-пайп, не канал) — `327e186`, 25.10;
-   • **Pinterest** — аккаунт ещё НЕ создан (owner-side). Инструкция готова: `scripts/social/pinterest/PINTEREST.md`;
+   • **Pinterest** — аккаунт ещё НЕ создан. **Отложено на неделю (решение владельца 29.10 → вернуться ~05.11).** Инструкция готова: `scripts/social/pinterest/PINTEREST.md`;
    • общее: link-in-bio + UTM-метки соц-трафика в GA4. `трафик` · **owner-side** (создание аккаунтов — не код)
 6. **IG-публикация через Instagram Graph API** — веб-композер отпал (входы по кругу при 12 профилях), <!-- due:2026-11-12 -->
    сеть переходит на Graph API. Ждём рецепт пилота **almanackit** (`docs/instagram-api.md`), затем подключаем
