@@ -5,6 +5,7 @@ import {
   TOOLKIT_ICON,
   type ToolkitCategory,
 } from "@/lib/affiliates/toolkit";
+import { goHref } from "@/lib/affiliates/links";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import { fill } from "@/lib/i18n/dictionaries";
 import type { Locale } from "@/lib/i18n/config";
@@ -68,7 +69,7 @@ export default function PlanYourMove({
         {items.map((it, i) => (
           <li key={`${it.category}-${it.provider}-${i}`}>
             <a
-              href={it.url}
+              href={goHref(it.url, city.slug)}
               rel="sponsored nofollow noopener"
               target="_blank"
               data-aff-item={it.provider.toLowerCase().replace(/[^a-z0-9]+/g, "-")}

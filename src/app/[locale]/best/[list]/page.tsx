@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { goHref } from "@/lib/affiliates/links";
 import {
   COLLECTIONS,
   COLLECTION_KEYS,
@@ -274,7 +275,7 @@ export default async function CollectionPage({
 
       {/* Flights affiliate CTA (sponsored, worldwide) */}
       <a
-        href="https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/"
+        href={goHref("https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", list)}
         rel="sponsored nofollow noopener"
         data-aff-item="aviasales"
         data-aff-placement="best-hub"

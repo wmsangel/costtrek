@@ -1,4 +1,5 @@
 import type { Dictionary } from "@/lib/i18n/dictionaries";
+import { goHref } from "@/lib/affiliates/links";
 
 // MyTrip flights affiliate (Indoleads, CPS). Distinct from the Aviasales coral
 // CTA / on-page search widget: a light click-out card with a dark pill, so the
@@ -11,7 +12,7 @@ export default function MyTripCard({ dict }: { dict: Dictionary }) {
   const m = dict.mytrip;
   return (
     <a
-      href={MYTRIP_URL}
+      href={goHref(MYTRIP_URL)}
       rel="sponsored nofollow noopener"
       target="_blank"
       data-aff-item="mytrip"

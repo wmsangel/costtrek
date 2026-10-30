@@ -11,6 +11,7 @@ import {
   referralCategory,
   TOOLKIT_ICON,
 } from "@/lib/affiliates/toolkit";
+import { goHref } from "@/lib/affiliates/links";
 
 function Money({ v, locale, unit }: { v: number; locale: string; unit?: string }) {
   return (
@@ -367,7 +368,7 @@ export default function CityProfileSections({
                   {live.map((r, i) => (
                     <a
                       key={i}
-                      href={r.url}
+                      href={goHref(r.url, city.slug)}
                       rel="sponsored nofollow noopener"
                       target="_blank"
                       data-aff-item={r.provider.toLowerCase().replace(/[^a-z0-9]+/g, "-")}

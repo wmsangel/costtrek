@@ -22,6 +22,6 @@ export const config = {
   // API/asset routes, Next internals, metadata routes (og image, icons,
   // manifest, sitemap, robots), and files with an extension.
   matcher: [
-    "/((?!(?:en|de|fr|es|pt)(?:/|$)|api|og|icon|apple-icon|manifest\\.webmanifest|sitemap\\.xml|robots\\.txt|_next/static|_next/image|.*\\..*).*)",
+    "/((?!(?:en|de|fr|es|pt)(?:/|$)|api|go(?:/|$)|og|icon|apple-icon|manifest\\.webmanifest|sitemap\\.xml|robots\\.txt|_next/static|_next/image|.*\\..*).*)",
   ],
 };

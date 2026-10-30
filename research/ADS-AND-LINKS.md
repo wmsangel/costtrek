@@ -77,6 +77,17 @@ de/fr/es/pt на локальные маркетплейсы (иначе не-US
 
 ## 2. Партнёрки — РАЗМЕЩЕНО И ЖИВЁТ (external, `sponsored nofollow noopener`)
 
+> **Клоакинг через `/go/<id>` (30.10, по итогам аудита «клики есть, денег ноль»).**
+> Реальные affiliate-URL больше НЕ в разметке — страницы ведут на `/go/<id>?s=<slug>`,
+> а `src/app/go/[id]/route.ts` резолвит id в `src/lib/affiliates/links.ts` (server-only
+> реестр) и отдаёт **302 человеку / 204 боту**. Фильтр (проверен на pawdget/prodom):
+> UA содержит «Mozilla» и не bot-слово + `Sec-Fetch-Site: same-origin|same-site` ИЛИ
+> `Referer` на нашем хосте. subid = slug страницы (`subid` для Admitad, `sub_id` для TP).
+> `Disallow:/go/` в robots, `X-Robots-Tag: noindex` на всех ответах, `/go` исключён из
+> locale-редиректа в `proxy.ts`. Цель — чтобы сети не считали краулеров кликами. rel
+> прежний (`sponsored nofollow noopener`, БЕЗ noreferrer — Referer нужен фильтру).
+
+
 Единый источник — `src/lib/affiliates/toolkit.ts` (`buildGeoToolkit`, гео-скоуп по
 `city.countryCode`, новые города покрываются автоматически). Рендерят `PlanYourMove.tsx`,
 `CityProfileSections.tsx`, `OfferSlot.tsx`, `FlightWidget.tsx`, `MyTripCard.tsx`.
