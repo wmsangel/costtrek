@@ -68,6 +68,7 @@
 
 За последние ~2 недели (сверху — свежее):
 
+- **Клоакинг партнёрок через `/go/<id>`** (по аудиту «клики есть, денег ноль»): реальные affiliate-URL убраны из разметки — все ссылки идут на `/go/<id>?s=<slug>`, редирект (`src/app/go/[id]/route.ts` + server-only реестр `src/lib/affiliates/links.ts`) отдаёт **302 человеку / 204 боту** (UA-фильтр + Sec-Fetch-Site/Referer, как на pawdget). subid = slug (Admitad `subid`, TP `sub_id`). `Disallow:/go/`, `X-Robots-Tag: noindex`, `/go` вне locale-редиректа. Прод ✓: бот→204, человек→302 с трекингом, живой клик → discovercars.com/?admitad_uid; 0 URL в статике — `50394d7`, 30.10
 - Партнёрка **DiscoverCars** (Admitad 20065) одобрена (проверено в кабинете через Chrome) → размещена глоб. дефолтом аренды авто в `toolkit.ts` (заменила Economybookings, в резерве), `rel=sponsored nofollow noopener` + `affiliate_click` авто. Прод ✓: Токио → DiscoverCars (`naiawork.com`), Бангкок → Localrent без изменений; диплинк `302 → discovercars.com` — `5f99686`, 26.10
 - Соцоформление: IG профиль-кит отправлен в бот (`scripts/social/profile/`, аватар+6 обложек+тексты) + пошаговая инструкция Pinterest (`scripts/social/pinterest/PINTEREST.md`) — `a4cd2a5`/`882f921`, 26.10
 - i18n ярлыков метрик compare-таблицы (45 × de/fr/es/pt): новая карта `data.metricLabels` по образцу `data.groups`, рендер с EN-fallback. Промт → Cursor (`docs/cursor-prompts/metric-labels-i18n.md`), я сделал приёмку (паритет ключей 45×5, переводы MwSt/IVA/BIP/PIB/IRPF/PPA, tsc+build чисто) → влил в main, задеплоил, проверил прод de/fr/es — `10aafae`, 26.10

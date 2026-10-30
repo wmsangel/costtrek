@@ -83,7 +83,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:v
 <body>
 <div class="wrap">
   <header>
-    <span class="kicker">Дорожная карта · обновлено 2026-10-29</span>
+    <span class="kicker">Дорожная карта · обновлено 2026-10-30</span>
     <h1>CostTrek</h1>
     <p class="sub">Сравнение стоимости жизни город-vs-город, 5 языков, ~11.9k страниц.
       Эта страница — живое зеркало <code>research/PLAN.md</code>: что в работе, что сделано, что в идеях.</p>
@@ -143,6 +143,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:v
   <section>
     <div class="s-head"><h2>Сделано</h2><span class="count">за 2 недели</span></div>
     <ul class="done">
+      <li><span class="mk">✓</span><span>Клоакинг партнёрок через /go/&lt;id&gt; (аудит «клики есть, денег ноль»): реальные affiliate-URL убраны из разметки → редирект отдаёт 302 человеку / 204 боту (UA + Sec-Fetch-Site/Referer), subid=slug. Прод ✓: бот→204, человек→302 с трекингом, живой клик → discovercars.com; 0 URL в статике <span class="note">— 50394d7, 30.10</span></span></li>
       <li><span class="mk">✓</span><span>Партнёрка DiscoverCars (Admitad) одобрена → размещена глоб. дефолтом аренды авто (toolkit.ts), sponsored nofollow + affiliate_click; прод ✓ (Токио DiscoverCars / Бангкок Localrent), диплинк 302→discovercars.com <span class="note">— 5f99686, 26.10</span></span></li>
       <li><span class="mk">✓</span><span>Соцоформление: IG профиль-кит в бот (аватар+6 обложек+тексты) + пошаговая инструкция Pinterest <span class="note">— a4cd2a5/882f921, 26.10</span></span></li>
       <li><span class="mk">✓</span><span>i18n ярлыков метрик compare-таблицы (45 × de/fr/es/pt) — карта data.metricLabels по образцу data.groups + EN-fallback; промт → Cursor, приёмка (переводы/типы/сборка) + влил/задеплоил/проверил прод <span class="note">— 10aafae, 26.10</span></span></li>
