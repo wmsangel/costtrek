@@ -49,12 +49,19 @@ export default async function CookiesPage({
           remembering your language and your cookie choice). Always on.
         </li>
         <li>
-          <strong>Analytics</strong> — help us understand which pages are useful.
-          Set only if you accept.
+          <strong>Analytics</strong> — Google Analytics 4 (the <code>_ga</code>
+          cookie), set only if you accept. Before that, GA4 runs cookielessly via
+          Google Consent Mode. Our Cloudflare Web Analytics beacon sets no cookie
+          at all.
         </li>
         <li>
-          <strong>Advertising</strong> — used by ad partners (for example, Google
-          AdSense) to measure and personalise ads. Set only if you accept.
+          <strong>Advertising</strong> — Google AdSense may set cookies to measure
+          and personalise ads. Set only if you accept personalised ads.
+        </li>
+        <li>
+          <strong>Affiliate</strong> — the Travelpayouts script sets a session
+          cookie (<code>am_user_session</code>) to credit affiliate clicks. It is
+          set on all visits and is not controlled by the banner.
         </li>
       </ul>
       <h2>Managing cookies</h2>

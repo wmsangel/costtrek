@@ -250,13 +250,45 @@ const fr: Record<string, (p: { l: Locale }) => React.ReactNode> = {
       <h2>Comment nous utilisons les données</h2>
       <ul>
         <li>Pour exploiter, sécuriser et améliorer le site web.</li>
-        <li>
-          Pour mesurer le trafic à l&apos;aide d&apos;outils d&apos;analyse
-          respectueux de la vie privée.
-        </li>
+        <li>Pour mesurer le trafic avec Google Analytics 4.</li>
         <li>
           Pour afficher de la publicité, qui peut utiliser des cookies afin de
           personnaliser les annonces.
+        </li>
+      </ul>
+      <h2>Outils d&apos;analyse &amp; services que nous utilisons</h2>
+      <p>
+        Pour rester honnêtes, voici exactement ce qui s&apos;exécute sur CostTrek
+        et si ces services déposent des cookies&nbsp;:
+      </p>
+      <ul>
+        <li>
+          <strong>Google Analytics 4</strong> (identifiant de mesure
+          G-MYL1G6RWDF) — mesure le trafic. Il fonctionne avec le mode
+          Consentement de Google&nbsp;: dans l&apos;EEE, au Royaume-Uni et en
+          Suisse, il n&apos;envoie que des signaux sans cookie et ne dépose aucun
+          cookie tant que vous n&apos;avez pas accepté&nbsp;; une fois que vous
+          acceptez, il dépose le cookie <code>_ga</code>.
+        </li>
+        <li>
+          <strong>Google AdSense</strong> — le script publicitaire se charge sur
+          l&apos;ensemble du site. Lorsque des annonces sont affichées, il peut
+          déposer des cookies publicitaires&nbsp;; le consentement à la publicité
+          personnalisée dans l&apos;EEE/au Royaume-Uni est géré par les outils de
+          consentement de Google, et vous pouvez vous désinscrire via les liens
+          ci-dessous.
+        </li>
+        <li>
+          <strong>Travelpayouts</strong> (réseau d&apos;affiliation de voyage) —
+          un script qui dépose le cookie de session <code>am_user_session</code>
+          afin d&apos;attribuer les clics d&apos;affiliation. Il est déposé à
+          chaque visite, y compris dans l&apos;EEE/au Royaume-Uni, et n&apos;est
+          pas contrôlé par la bannière de cookies.
+        </li>
+        <li>
+          <strong>Cloudflare Web Analytics</strong> — une balise de trafic
+          respectueuse de la vie privée qui ne dépose aucun cookie et ne requiert
+          aucun consentement.
         </li>
       </ul>
       <h2>Publicité &amp; tiers</h2>
@@ -357,13 +389,21 @@ const fr: Record<string, (p: { l: Locale }) => React.ReactNode> = {
           Toujours activés.
         </li>
         <li>
-          <strong>Analytiques</strong> — nous aident à comprendre quelles pages sont
-          utiles. Activés uniquement si vous les acceptez.
+          <strong>Analytiques</strong> — Google Analytics 4 (le cookie{" "}
+          <code>_ga</code>), déposé uniquement si vous l&apos;acceptez. Avant cela,
+          GA4 fonctionne sans cookie via le mode Consentement de Google. Notre
+          balise Cloudflare Web Analytics ne dépose aucun cookie.
         </li>
         <li>
-          <strong>Publicitaires</strong> — utilisés par des partenaires publicitaires
-          (par exemple, Google AdSense) pour mesurer et personnaliser les annonces.
-          Activés uniquement si vous les acceptez.
+          <strong>Publicitaires</strong> — Google AdSense peut déposer des cookies
+          pour mesurer et personnaliser les annonces. Déposés uniquement si vous
+          acceptez les annonces personnalisées.
+        </li>
+        <li>
+          <strong>Affiliation</strong> — le script Travelpayouts dépose un cookie
+          de session (<code>am_user_session</code>) afin de créditer les clics
+          d&apos;affiliation. Il est déposé à chaque visite et n&apos;est pas
+          contrôlé par la bannière.
         </li>
       </ul>
       <h2>Gérer les cookies</h2>

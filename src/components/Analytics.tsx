@@ -1,7 +1,8 @@
 "use client";
 
 import Script from "next/script";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { isProdHost } from "@/lib/host";
 
 const GA_ID = "G-MYL1G6RWDF";
 
@@ -18,6 +19,12 @@ const GA_ID = "G-MYL1G6RWDF";
  * visitors who already accepted start granted.
  */
 export default function Analytics() {
+  // Only load GA on the production host — keeps it off mirrors/previews/localhost.
+  const [prod, setProd] = useState(false);
+  useEffect(() => {
+    setProd(isProdHost());
+  }, []);
+
   useEffect(() => {
     const onChange = () => {
       let granted = false;
@@ -40,6 +47,8 @@ export default function Analytics() {
     window.addEventListener("cc-consent-change", onChange);
     return () => window.removeEventListener("cc-consent-change", onChange);
   }, []);
+
+  if (!prod) return null;
 
   return (
     <>

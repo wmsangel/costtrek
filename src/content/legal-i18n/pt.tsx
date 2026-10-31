@@ -251,10 +251,44 @@ const pt: Record<string, (p: { l: Locale }) => React.ReactNode> = {
       <h2>Como utilizamos os dados</h2>
       <ul>
         <li>Para operar, proteger e melhorar o site.</li>
-        <li>Para medir o tráfego com análises que respeitam a privacidade.</li>
+        <li>Para medir o tráfego com o Google Analytics 4.</li>
         <li>
           Para apresentar publicidade, que pode utilizar cookies para
           personalizar anúncios.
+        </li>
+      </ul>
+      <h2>Análise &amp; os serviços que utilizamos</h2>
+      <p>
+        Para sermos honestos, eis exatamente o que corre na CostTrek e se
+        define ou não cookies:
+      </p>
+      <ul>
+        <li>
+          <strong>Google Analytics 4</strong> (ID de medição G-MYL1G6RWDF) —
+          mede o tráfego. Funciona com o Google Consent Mode: no EEE, no Reino
+          Unido e na Suíça envia apenas pings sem cookies e não define quaisquer
+          cookies até que o utilizador aceite; depois de aceitar, define o
+          cookie <code>_ga</code>.
+        </li>
+        <li>
+          <strong>Google AdSense</strong> — o script de publicidade é carregado
+          em todo o site. Quando os anúncios são apresentados, pode definir
+          cookies de publicidade; o consentimento para anúncios personalizados
+          no EEE/Reino Unido é tratado pelas ferramentas de consentimento da
+          Google e o utilizador pode optar por não os receber através das
+          ligações abaixo.
+        </li>
+        <li>
+          <strong>Travelpayouts</strong> (rede de afiliados de viagens) — um
+          script que define o cookie de sessão <code>am_user_session</code> para
+          atribuir os cliques de afiliação. É definido em todas as visitas,
+          incluindo no EEE/Reino Unido, e não é controlado pelo banner de
+          cookies.
+        </li>
+        <li>
+          <strong>Cloudflare Web Analytics</strong> — um sinalizador de tráfego
+          que respeita a privacidade, não define quaisquer cookies e não exige
+          consentimento.
         </li>
       </ul>
       <h2>Publicidade &amp; terceiros</h2>
@@ -351,13 +385,21 @@ const pt: Record<string, (p: { l: Locale }) => React.ReactNode> = {
           Sempre ativos.
         </li>
         <li>
-          <strong>Análise</strong> — ajudam-nos a perceber que páginas são úteis.
-          Definidos apenas se aceitar.
+          <strong>Análise</strong> — Google Analytics 4 (o cookie{" "}
+          <code>_ga</code>), definido apenas se aceitar. Antes disso, o GA4
+          funciona sem cookies através do Google Consent Mode. O nosso
+          sinalizador Cloudflare Web Analytics não define qualquer cookie.
         </li>
         <li>
-          <strong>Publicidade</strong> — utilizados por parceiros de publicidade
-          (por exemplo, o Google AdSense) para medir e personalizar anúncios.
-          Definidos apenas se aceitar.
+          <strong>Publicidade</strong> — o Google AdSense pode definir cookies
+          para medir e personalizar anúncios. Definidos apenas se aceitar os
+          anúncios personalizados.
+        </li>
+        <li>
+          <strong>Afiliação</strong> — o script Travelpayouts define um cookie
+          de sessão (<code>am_user_session</code>) para atribuir os cliques de
+          afiliação. É definido em todas as visitas e não é controlado pelo
+          banner.
         </li>
       </ul>
       <h2>Gestão de cookies</h2>

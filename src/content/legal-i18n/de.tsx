@@ -256,11 +256,44 @@ const de: Record<string, (p: { l: Locale }) => React.ReactNode> = {
       <ul>
         <li>Um die Website zu betreiben, abzusichern und zu verbessern.</li>
         <li>
-          Um den Datenverkehr mit datenschutzfreundlicher Analyse zu messen.
+          Um den Datenverkehr mit Google Analytics 4 zu messen.
         </li>
         <li>
           Um Werbung anzuzeigen, die Cookies zur Personalisierung von Anzeigen
           verwenden kann.
+        </li>
+      </ul>
+      <h2>Analyse &amp; die von uns genutzten Dienste</h2>
+      <p>
+        Um dabei ehrlich zu bleiben, finden Sie hier genau, was auf CostTrek
+        läuft und ob dabei Cookies gesetzt werden:
+      </p>
+      <ul>
+        <li>
+          <strong>Google Analytics 4</strong> (Mess-ID G-MYL1G6RWDF) — misst den
+          Datenverkehr. Es läuft mit dem Google Consent Mode: im EWR, im
+          Vereinigten Königreich und in der Schweiz werden ausschließlich
+          cookielose Pings gesendet, und es werden keine Cookies gesetzt, bis
+          Sie zustimmen; sobald Sie zustimmen, wird das Cookie <code>_ga</code>{" "}
+          gesetzt.
+        </li>
+        <li>
+          <strong>Google AdSense</strong> — das Werbeskript wird auf der
+          gesamten Website geladen. Wenn Anzeigen ausgespielt werden, kann es
+          Werbe-Cookies setzen; die Einwilligung in personalisierte Werbung im
+          EWR/UK wird über die Einwilligungswerkzeuge von Google abgewickelt,
+          und Sie können sich über die unten stehenden Links abmelden.
+        </li>
+        <li>
+          <strong>Travelpayouts</strong> (Reise-Affiliate-Netzwerk) — ein
+          Skript, das das Sitzungs-Cookie <code>am_user_session</code> setzt, um
+          Affiliate-Klicks zuzuordnen. Es wird bei allen Besuchen gesetzt, auch
+          im EWR/UK, und wird nicht über das Cookie-Banner gesteuert.
+        </li>
+        <li>
+          <strong>Cloudflare Web Analytics</strong> — ein
+          datenschutzfreundliches Beacon für den Datenverkehr, das keine Cookies
+          setzt und keine Einwilligung benötigt.
         </li>
       </ul>
       <h2>Werbung &amp; Dritte</h2>
@@ -360,13 +393,21 @@ const de: Record<string, (p: { l: Locale }) => React.ReactNode> = {
           Cookie-Auswahl zu merken). Immer aktiv.
         </li>
         <li>
-          <strong>Analyse</strong> — helfen uns zu verstehen, welche Seiten
-          nützlich sind. Werden nur gesetzt, wenn Sie zustimmen.
+          <strong>Analyse</strong> — Google Analytics 4 (das Cookie{" "}
+          <code>_ga</code>), nur gesetzt, wenn Sie zustimmen. Zuvor läuft GA4
+          über den Google Consent Mode cookielos. Unser Beacon von Cloudflare
+          Web Analytics setzt überhaupt kein Cookie.
         </li>
         <li>
-          <strong>Werbung</strong> — werden von Werbepartnern (zum Beispiel
-          Google AdSense) verwendet, um Anzeigen zu messen und zu
-          personalisieren. Werden nur gesetzt, wenn Sie zustimmen.
+          <strong>Werbung</strong> — Google AdSense kann Cookies setzen, um
+          Anzeigen zu messen und zu personalisieren. Nur gesetzt, wenn Sie
+          personalisierten Anzeigen zustimmen.
+        </li>
+        <li>
+          <strong>Affiliate</strong> — das Skript von Travelpayouts setzt ein
+          Sitzungs-Cookie (<code>am_user_session</code>), um Affiliate-Klicks
+          zuzuordnen. Es wird bei allen Besuchen gesetzt und wird nicht über das
+          Banner gesteuert.
         </li>
       </ul>
       <h2>Cookies verwalten</h2>

@@ -2,6 +2,10 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "main": ".open-next/worker.js",
   "name": "costtrek",
+  // No workers.dev mirror: the site lives only on costtrek.com. This closes
+  // costtrek.<acct>.workers.dev, which otherwise served a 200 duplicate running
+  // GA/AdSense/CF analytics (privacy audit 2026-10-31; same as calclumen).
+  "workers_dev": false,
   "compatibility_date": "2025-03-25",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": {

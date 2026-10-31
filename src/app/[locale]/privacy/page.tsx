@@ -56,13 +56,42 @@ export default async function PrivacyPage({
       <h2>How we use data</h2>
       <ul>
         <li>To operate, secure and improve the website.</li>
-        <li>To measure traffic with privacy-respecting analytics.</li>
+        <li>To measure traffic with Google Analytics 4.</li>
         <li>To show advertising, which may use cookies to personalise ads.</li>
+      </ul>
+      <h2>Analytics &amp; the services we use</h2>
+      <p>
+        To keep this honest, here is exactly what runs on {SITE_NAME} and whether
+        it sets cookies:
+      </p>
+      <ul>
+        <li>
+          <strong>Google Analytics 4</strong> (measurement ID G-MYL1G6RWDF) —
+          measures traffic. It runs with Google Consent Mode: in the EEA, UK and
+          Switzerland it sends only cookieless pings and sets no cookies until you
+          accept; once you accept it sets the <code>_ga</code> cookie.
+        </li>
+        <li>
+          <strong>Google AdSense</strong> — the advertising script loads
+          site-wide. When ads are shown it may set advertising cookies;
+          personalised-ad consent in the EEA/UK is handled by Google&apos;s
+          consent tools, and you can opt out via the links below.
+        </li>
+        <li>
+          <strong>Travelpayouts</strong> (travel affiliate network) — a script
+          that sets the session cookie <code>am_user_session</code> to attribute
+          affiliate clicks. It is set on all visits, including in the EEA/UK, and
+          is not controlled by the cookie banner.
+        </li>
+        <li>
+          <strong>Cloudflare Web Analytics</strong> — a privacy-friendly traffic
+          beacon that sets no cookies and needs no consent.
+        </li>
       </ul>
       <h2>Advertising &amp; third parties</h2>
       <p>
-        We may display ads served by third-party networks (for example, Google
-        AdSense/Ezoic). These partners, including Google, may use cookies to serve
+        We display ads served by third-party networks (currently Google
+        AdSense). These partners, including Google, may use cookies to serve
         ads based on your prior visits to this and other websites. You can opt out
         of personalised advertising here:
       </p>
