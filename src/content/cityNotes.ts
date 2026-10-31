@@ -119,6 +119,14 @@ export const EN_CITY_NOTES: CityNotes = {
     "Bishkek is one of the cheapest capitals a remote worker can base in, which is why it turns up on budget-nomad shortlists despite being off the usual map. Rent, food and transport are very low, the pace is relaxed, and a modest foreign income stretches further here than almost anywhere. The surrounding mountains are a genuine draw for the outdoors-minded.",
     "The trade-offs are the quieter kind: a smaller expat scene, less English outside the centre, fewer of the conveniences a Western nomad expects, and infrastructure that is improving but not polished. Imported goods are limited and pricey. For someone optimising purely for low cost and a slower life with mountains on the doorstep, Bishkek is surprising value; for city buzz and services, it is a compromise.",
   ],
+  "sydney-au": [
+    "Sydney is Australia's most expensive city, and housing is overwhelmingly why. Rents and home prices rank among the steepest in the world relative to local incomes, and the gap between an inner-harbour postcode and the outer suburbs is enormous — where you live decides your budget far more than anything else. Groceries, eating out and a night out are all on the high side too, though not wildly out of line with other global cities.",
+    "What makes the maths work is pay. Salaries are high, and skilled migrants in shortage occupations — nurses and other healthcare staff, trades, tech and finance — are actively recruited and paid accordingly, often arriving on wages that comfortably outrun the UK or much of Europe. Transport is good across the inner city but a car helps once you're in the suburbs. For a professional relocating on an Australian salary, the higher pay usually stays ahead of the higher costs, as long as the housing choice is realistic rather than harbour-front.",
+  ],
+  "melbourne-au": [
+    "Melbourne sits a notch below Sydney on cost while offering much of the same earning power, which is why relocators weighing the two often land here. Housing is still expensive by global standards but noticeably cheaper than Sydney for a comparable home, and that one difference carries most of the gap between the cities. Everyday costs — food, coffee, eating out — are reasonable for a major city, and the culture, dining and sport are a large part of the draw.",
+    "The city is consistently rated among the world's most livable, with an extensive tram network that makes the inner suburbs genuinely car-optional. The trade-offs are famously changeable weather and real sprawl, so a car becomes useful the further out you settle. For someone choosing between Australia's big two, Melbourne tends to offer most of Sydney's salaries at a somewhat gentler housing cost — the practical reason many newcomers pick it.",
+  ],
 };
 
 const BY_LOCALE: Record<Locale, CityNotes> = {
