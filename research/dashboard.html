@@ -143,6 +143,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:v
   <section>
     <div class="s-head"><h2>Сделано</h2><span class="count">за 2 недели</span></div>
     <ul class="done">
+      <li><span class="mk">✓</span><span>Privacy = реальность (аудит 31.10): privacy/cookies ×5 локалей называют GA4 (G-MYL1G6RWDF)/AdSense/Travelpayouts (am_user_session)/CF Web Analytics + их cookies; GA4+TP host-гейтнуты (не грузятся на зеркалах); workers_dev:false → зеркало costtrek.ocrsnip.workers.dev закрыто (было 200 → 404). Прод ✓ <span class="note">— b6ce9a6, 31.10</span></span></li>
       <li><span class="mk">✓</span><span>Контент-батч: Sydney + Melbourne deep-dive ×5 локалей (кластер Australia по топ-показам GSC — «sydney … uk nurse»); + Googlebot-мониторинг 31.10 ЧИСТО (хост-статус GSC зелёный) <span class="note">— 0d626d5, 31.10</span></span></li>
       <li><span class="mk">✓</span><span>Клоакинг партнёрок через /go/&lt;id&gt; (аудит «клики есть, денег ноль»): реальные affiliate-URL убраны из разметки → редирект отдаёт 302 человеку / 204 боту (UA + Sec-Fetch-Site/Referer), subid=slug. Прод ✓: бот→204, человек→302 с трекингом, живой клик → discovercars.com; 0 URL в статике <span class="note">— 50394d7, 30.10</span></span></li>
       <li><span class="mk">✓</span><span>Партнёрка DiscoverCars (Admitad) одобрена → размещена глоб. дефолтом аренды авто (toolkit.ts), sponsored nofollow + affiliate_click; прод ✓ (Токио DiscoverCars / Бангкок Localrent), диплинк 302→discovercars.com <span class="note">— 5f99686, 26.10</span></span></li>
