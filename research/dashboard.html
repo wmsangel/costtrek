@@ -83,7 +83,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:v
 <body>
 <div class="wrap">
   <header>
-    <span class="kicker">Дорожная карта · обновлено 2026-10-30</span>
+    <span class="kicker">Дорожная карта · обновлено 2026-10-31</span>
     <h1>CostTrek</h1>
     <p class="sub">Сравнение стоимости жизни город-vs-город, 5 языков, ~11.9k страниц.
       Эта страница — живое зеркало <code>research/PLAN.md</code>: что в работе, что сделано, что в идеях.</p>
@@ -111,12 +111,12 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:v
 
     <div class="q"><span class="idx">03</span><div>
       <div class="t">Следить за краулом Googlebot (ПОВТОРЯЮЩАЯСЯ — мониторинг)</div>
-      <div class="d">Проверка 23.10 ЧИСТО: Googlebot-UA 200 на всех типах, нет CF-челленджа, index,follow, sitemap свежий, IndexNow активен (Yandex 202). Узкое место — авторитет/краул-бюджет/время. GSC Host status — за владельцем. Next ~30.10.</div>
+      <div class="d">Проверка 31.10 ЧИСТО: Googlebot 200 на всех типах, нет CF-челленджа, index,follow, robots +Disallow:/go/, sitemap свежий. GSC Crawl Stats: статус хоста — проблем за 90 дней НЕТ, 99% ответов 200. Узкое место — авторитет/краул-бюджет. Ритм раз в 2 нед, next ~14.11.</div>
       <span class="tag">индексация</span></div></div>
 
     <div class="q"><span class="idx">04</span><div>
-      <div class="t">Углублять контент по кластерам (ПОВТОРЯЮЩАЯСЯ — батчами)</div>
-      <div class="d">City deep-dives / гайды под Singapore, digital-nomad-visa, nomad/cheapest, is-japan-cheaper-than-india. Последний батч +6 (22.10). Следующий ~30.10.</div>
+      <div class="t">Углублять контент по кластерам (ПОВТОРЯЮЩАЯСЯ — раз в месяц)</div>
+      <div class="d">City deep-dives / гайды под доказанные кластеры. Последний батч: Sydney + Melbourne ×5 (кластер Australia по топ-показам GSC) — 0d626d5, 31.10. Ритм снижен до месячного (трафик ≈0). Следующий ~30.11.</div>
       <span class="tag">контент</span></div></div>
 
     <div class="q"><span class="idx">05</span><div>
@@ -143,6 +143,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:v
   <section>
     <div class="s-head"><h2>Сделано</h2><span class="count">за 2 недели</span></div>
     <ul class="done">
+      <li><span class="mk">✓</span><span>Контент-батч: Sydney + Melbourne deep-dive ×5 локалей (кластер Australia по топ-показам GSC — «sydney … uk nurse»); + Googlebot-мониторинг 31.10 ЧИСТО (хост-статус GSC зелёный) <span class="note">— 0d626d5, 31.10</span></span></li>
       <li><span class="mk">✓</span><span>Клоакинг партнёрок через /go/&lt;id&gt; (аудит «клики есть, денег ноль»): реальные affiliate-URL убраны из разметки → редирект отдаёт 302 человеку / 204 боту (UA + Sec-Fetch-Site/Referer), subid=slug. Прод ✓: бот→204, человек→302 с трекингом, живой клик → discovercars.com; 0 URL в статике <span class="note">— 50394d7, 30.10</span></span></li>
       <li><span class="mk">✓</span><span>Партнёрка DiscoverCars (Admitad) одобрена → размещена глоб. дефолтом аренды авто (toolkit.ts), sponsored nofollow + affiliate_click; прод ✓ (Токио DiscoverCars / Бангкок Localrent), диплинк 302→discovercars.com <span class="note">— 5f99686, 26.10</span></span></li>
       <li><span class="mk">✓</span><span>Соцоформление: IG профиль-кит в бот (аватар+6 обложек+тексты) + пошаговая инструкция Pinterest <span class="note">— a4cd2a5/882f921, 26.10</span></span></li>
