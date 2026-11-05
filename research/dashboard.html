@@ -83,7 +83,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:v
 <body>
 <div class="wrap">
   <header>
-    <span class="kicker">Дорожная карта · обновлено 2026-10-31</span>
+    <span class="kicker">Дорожная карта · обновлено 2026-11-05</span>
     <h1>CostTrek</h1>
     <p class="sub">Сравнение стоимости жизни город-vs-город, 5 языков, ~11.9k страниц.
       Эта страница — живое зеркало <code>research/PLAN.md</code>: что в работе, что сделано, что в идеях.</p>
@@ -143,6 +143,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:v
   <section>
     <div class="s-head"><h2>Сделано</h2><span class="count">за 2 недели</span></div>
     <ul class="done">
+      <li><span class="mk">✓</span><span>Cheapvuelos (Admitad удалён из каталога) → заменён на Aviasales (TP) в слоте flights 87 городов + 2 CTA /best; /go/cheapvuelos убран → 404 (было 302 на мёртвую программу, ~30 кликов/день впустую); дедуп тулкита; platinumlist net→indoleads. Прод ✓ <span class="note">— f5ea920, 05.11</span></span></li>
       <li><span class="mk">✓</span><span>Privacy = реальность (аудит 31.10): privacy/cookies ×5 локалей называют GA4 (G-MYL1G6RWDF)/AdSense/Travelpayouts (am_user_session)/CF Web Analytics + их cookies; GA4+TP host-гейтнуты (не грузятся на зеркалах); workers_dev:false → зеркало costtrek.ocrsnip.workers.dev закрыто (было 200 → 404). Прод ✓ <span class="note">— b6ce9a6, 31.10</span></span></li>
       <li><span class="mk">✓</span><span>Контент-батч: Sydney + Melbourne deep-dive ×5 локалей (кластер Australia по топ-показам GSC — «sydney … uk nurse»); + Googlebot-мониторинг 31.10 ЧИСТО (хост-статус GSC зелёный) <span class="note">— 0d626d5, 31.10</span></span></li>
       <li><span class="mk">✓</span><span>Клоакинг партнёрок через /go/&lt;id&gt; (аудит «клики есть, денег ноль»): реальные affiliate-URL убраны из разметки → редирект отдаёт 302 человеку / 204 боту (UA + Sec-Fetch-Site/Referer), subid=slug. Прод ✓: бот→204, человек→302 с трекингом, живой клик → discovercars.com; 0 URL в статике <span class="note">— 50394d7, 30.10</span></span></li>
