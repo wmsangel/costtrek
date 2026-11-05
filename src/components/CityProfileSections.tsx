@@ -331,7 +331,7 @@ export default function CityProfileSections({
           const reserved = profileLinks.filter((r) => !r.url);
           // Live cards: in-profile partners (with a url) + geo-scoped toolkit,
           // both normalised to a common {provider,url,note} shape.
-          const live: {
+          const liveAll: {
             provider: string;
             url: string;
             note?: string;
@@ -352,6 +352,15 @@ export default function CityProfileSections({
               icon: TOOLKIT_ICON[it.category],
             })),
           ];
+          // De-duplicate by provider: Aviasales is now both a profile flights slot
+          // (Cheapvuelos retired) and the geo flights offer — render each partner once.
+          const seenProv = new Set<string>();
+          const live = liveAll.filter((x) => {
+            const k = x.provider.toLowerCase();
+            if (seenProv.has(k)) return false;
+            seenProv.add(k);
+            return true;
+          });
           if (live.length === 0 && reserved.length === 0) return null;
           return (
             <section className="mt-10 coral-band p-6 sm:p-8">

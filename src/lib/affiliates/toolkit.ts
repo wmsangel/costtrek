@@ -244,5 +244,19 @@ export function cityToolkit(
       url: r.url,
       note: r.note,
     }));
-  return [...fromProfile, ...buildGeoToolkit(city)];
+  // Profile slots first, then the geo toolkit — de-duplicated by provider so a
+  // partner that appears in both (e.g. Aviasales, which is the geo flights offer
+  // AND a profile flights slot since Cheapvuelos was retired) renders once.
+  return dedupeByProvider([...fromProfile, ...buildGeoToolkit(city)]);
+}
+
+/** Keep the first item per provider (case-insensitive) — no duplicate cards. */
+export function dedupeByProvider(items: ToolkitItem[]): ToolkitItem[] {
+  const seen = new Set<string>();
+  return items.filter((it) => {
+    const k = it.provider.toLowerCase();
+    if (seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  });
 }

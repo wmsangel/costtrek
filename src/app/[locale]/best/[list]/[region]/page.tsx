@@ -235,7 +235,7 @@ export default async function RegionalCollectionPage({
 
       {/* Flights affiliate CTA (sponsored, worldwide) */}
       <a
-        href={goHref("https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", `${list}-${region}`)}
+        href={goHref("https://aviasales.tpm.li/dAyfvzBW", `${list}-${region}`)}
         rel="sponsored nofollow noopener"
         data-aff-item="aviasales"
         data-aff-placement="best-region-hub"

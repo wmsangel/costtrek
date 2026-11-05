@@ -275,7 +275,7 @@ export default async function CollectionPage({
 
       {/* Flights affiliate CTA (sponsored, worldwide) */}
       <a
-        href={goHref("https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", list)}
+        href={goHref("https://aviasales.tpm.li/dAyfvzBW", list)}
         rel="sponsored nofollow noopener"
         data-aff-item="aviasales"
         data-aff-placement="best-hub"

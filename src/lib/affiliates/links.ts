@@ -39,8 +39,7 @@ export const AFFILIATES: Record<string, Affiliate> = {
   "way-com": { url: "https://yyczo.com/g/vln7ctwgqja27dee2ccd12f7a14e01/", net: "admitad" },
   planetofhotels: { url: "https://uhtkc.com/g/zhz7s51tzia27dee2ccdd0cfe7b65a/", net: "admitad" },
   discovercars: { url: "https://naiawork.com/g/wqjhitsyjqa27dee2ccd5ea594bb46/", net: "admitad" },
-  platinumlist: { url: "https://i07o.xyz/6ab102c3e77b1", net: "admitad" },
-  cheapvuelos: { url: "https://yknhc.com/g/cmazc4pm8oa27dee2ccdce5f810ebf/", net: "admitad" },
+  platinumlist: { url: "https://i07o.xyz/6ab102c3e77b1", net: "indoleads" }, // i07o.xyz = Indoleads, not Admitad
   flightnetwork: { url: "https://xyowz.com/g/n2q2nolvw6a27dee2ccd6d2e807f50/", net: "admitad" },
 
   // Indoleads (subid param uncertain → none)
