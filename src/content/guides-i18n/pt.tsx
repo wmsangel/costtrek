@@ -919,6 +919,90 @@ const pt: Record<string, GuideContent> = {
       </>
     ),
   },
+  "visa-free-travel-explained": {
+    title:
+      "Viagem sem visto, visto à chegada e e-vistos: como funciona realmente a entrada",
+    excerpt:
+      "Antes de comparar o custo de duas cidades, verifique se sequer consegue entrar. Eis como funciona a entrada para estadias curtas — sem visto, visto à chegada, e-visto ou visto completo — e a única regra que apanha a maioria das pessoas desprevenida.",
+    Body: ({ l }) => (
+      <>
+        <p>
+          Uma cidade pode ser perfeita no papel e continuar fora de alcance se a
+          fronteira disser que não. As regras de entrada dependem de duas coisas —{" "}
+          <strong>o seu passaporte</strong> e <strong>para onde vai</strong> — e
+          são elas que decidem se chega sem nada, preenche um formulário online ou
+          se candidata com semanas de antecedência. Eis a versão curta, antes das
+          letras miudinhas.
+        </p>
+        <h2>As quatro formas de entrar</h2>
+        <ul>
+          <li>
+            <strong>Sem visto</strong> — basta chegar e recebe um carimbo para um
+            número de dias determinado. O regime mais comum para estadias curtas
+            entre países amigos.
+          </li>
+          <li>
+            <strong>Visto à chegada (VoA)</strong> — ainda o obtém na fronteira,
+            mas paga uma taxa e por vezes faz fila. Comum em grande parte do
+            Sudeste Asiático, do Médio Oriente e de África.
+          </li>
+          <li>
+            <strong>e-Visto / autorização de viagem (ETA)</strong> — aprovado
+            online antes de voar. Rápido, mas não imediato — candidate-se com
+            alguns dias de antecedência. (O ETIAS da UE e esquemas como o ESTA dos
+            EUA são deste tipo.)
+          </li>
+          <li>
+            <strong>Visto obrigatório</strong> — uma candidatura completa num
+            consulado, com documentos e prazo de resposta. Conte com semanas, não
+            dias.
+          </li>
+        </ul>
+        <h2>A regra dos 90/180 em que toda a gente tropeça</h2>
+        <p>
+          A maioria das estadias sem visto tem um limite, e esse limite é fácil de
+          ler mal. O Espaço Schengen — a maior parte da Europa continental —
+          permite a muitos visitantes permanecer{" "}
+          <strong>90 dias em qualquer janela móvel de 180 dias</strong>. Não são 90
+          dias por país e não se reinicia quando salta para o país seguinte: todo o
+          espaço conta como um só, e os 180 dias continuam a correr. Se exceder a
+          estadia, mesmo por engano, arrisca-se a multas ou a uma proibição de
+          entrada. Se a Europa está na sua lista, conte os dias com cuidado.
+        </p>
+        <h2>É o seu passaporte que decide</h2>
+        <p>
+          O mesmo destino pode ser sem visto para uma nacionalidade e exigir visto
+          a outra — o &quot;poder do passaporte&quot; é apenas o número de lugares
+          que o seu passaporte abre sem papelada. Por isso, a única resposta que
+          importa é a do <em>seu</em> passaporte para <em>aquele</em> país; a
+          experiência de um amigo com um passaporte diferente diz-lhe pouco.
+        </p>
+        <h2>Visitar não é viver</h2>
+        <p>
+          Uma ressalva crucial: a entrada sem visto permite-lhe <em>visitar</em>,
+          normalmente sem o direito de trabalhar ou permanecer a longo prazo. Para
+          se mudar de verdade precisa de uma via de longa duração — uma autorização
+          de trabalho, um visto de residência ou de rendimento passivo, ou um{" "}
+          <Link href={`/${l}/guides/digital-nomad-visas-explained`}>
+            visto de nómada digital
+          </Link>
+          . Encare o carimbo de turista como uma forma de fazer reconhecimento, não
+          de se instalar.
+        </p>
+        <h2>Como verificar o seu caso</h2>
+        <p>
+          As regras de entrada mudam com frequência e têm consequências reais, por
+          isso confirme junto de uma fonte oficial — o portal de imigração ou do
+          ministério dos negócios estrangeiros do destino, ou o aconselhamento de
+          viagem do seu próprio governo — perto da viagem, e não meses antes. Use as
+          nossas{" "}
+          <Link href={`/${l}/countries`}>páginas de países</Link> para fazer a
+          pré-seleção de onde viveria e depois confirme a via de entrada para o seu
+          passaporte antes de reservar seja o que for.
+        </p>
+      </>
+    ),
+  },
 };
 
 export default pt;

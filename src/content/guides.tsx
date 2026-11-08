@@ -22,6 +22,85 @@ export type Guide = GuideContent & {
 
 export const GUIDES: Guide[] = [
   {
+    slug: "visa-free-travel-explained",
+    title: "Visa-free travel, visa on arrival and e-visas: how entry actually works",
+    excerpt:
+      "Before you compare the cost of two cities, check whether you can even get in. Here's how short-stay entry works — visa-free, visa on arrival, e-visa or full visa — and the one rule that trips most people up.",
+    date: "2026-11-08",
+    minutes: 5,
+    Body: ({ l }) => (
+      <>
+        <p>
+          A city can be perfect on paper and still out of reach if the border
+          says no. Entry rules depend on two things — <strong>your passport</strong>{" "}
+          and <strong>where you&apos;re going</strong> — and they decide whether
+          you turn up with nothing, click a form online, or apply weeks ahead.
+          Here&apos;s the short version, before the fine print.
+        </p>
+        <h2>The four ways in</h2>
+        <ul>
+          <li>
+            <strong>Visa-free</strong> — you just arrive and get a stamp for a set
+            number of days. The most common short-stay arrangement between friendly
+            countries.
+          </li>
+          <li>
+            <strong>Visa on arrival (VoA)</strong> — you still get it at the
+            border, but you pay a fee and sometimes queue. Common across much of
+            Southeast Asia, the Middle East and Africa.
+          </li>
+          <li>
+            <strong>e-Visa / travel authorisation (ETA)</strong> — approved online
+            before you fly. Quick, but not instant — apply a few days ahead. (The
+            EU&apos;s ETIAS and schemes like the US ESTA are this type.)
+          </li>
+          <li>
+            <strong>Visa required</strong> — a full application at a consulate,
+            with documents and lead time. Plan weeks, not days.
+          </li>
+        </ul>
+        <h2>The 90/180 rule everyone trips on</h2>
+        <p>
+          Most visa-free stays are capped, and the cap is easy to misread. The
+          Schengen Area — most of continental Europe — lets many visitors stay{" "}
+          <strong>90 days in any rolling 180-day window</strong>. It is not 90 days
+          per country and it does not reset when you hop to the next one: the whole
+          area counts as one, and the 180 days keep rolling. Overstay, even by
+          accident, and you risk fines or an entry ban. If Europe is on your
+          shortlist, count the days carefully.
+        </p>
+        <h2>It&apos;s your passport that decides</h2>
+        <p>
+          The same destination can be visa-free for one nationality and
+          visa-required for another — &quot;passport power&quot; is just how many
+          places your passport opens without paperwork. So the only answer that
+          matters is for <em>your</em> passport to <em>that</em> country; a friend&apos;s
+          experience with a different passport tells you little.
+        </p>
+        <h2>Visiting is not living</h2>
+        <p>
+          A crucial catch: visa-free entry lets you <em>visit</em>, usually without
+          the right to work or stay long-term. To actually relocate you need a
+          long-stay route — a work permit, a residence or passive-income visa, or a{" "}
+          <Link href={`/${l}/guides/digital-nomad-visas-explained`}>
+            digital-nomad visa
+          </Link>
+          . Treat the tourist stamp as a way to scout, not to settle.
+        </p>
+        <h2>How to check your case</h2>
+        <p>
+          Entry rules change often and carry real consequences, so verify against
+          an official source — the destination&apos;s immigration or foreign-ministry
+          site, or your own government&apos;s travel advice — close to your trip,
+          not months before. Use our{" "}
+          <Link href={`/${l}/countries`}>country pages</Link> to shortlist where
+          you&apos;d live, then confirm the entry route for your passport before you
+          book anything.
+        </p>
+      </>
+    ),
+  },
+  {
     slug: "cost-of-living-in-singapore",
     title: "The real cost of living in Singapore (2026): an expat budget guide",
     excerpt:

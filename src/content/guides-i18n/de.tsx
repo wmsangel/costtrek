@@ -2,6 +2,100 @@ import Link from "next/link";
 import type { GuideContent } from "@/content/guides";
 
 const de: Record<string, GuideContent> = {
+  "visa-free-travel-explained": {
+    title:
+      "Visumfreies Reisen, Visum bei Einreise und E-Visa: wie die Einreise wirklich funktioniert",
+    excerpt:
+      "Bevor Sie die Kosten zweier Städte vergleichen, prüfen Sie, ob Sie überhaupt einreisen dürfen. So funktioniert die Einreise für Kurzaufenthalte — visumfrei, Visum bei Einreise, E-Visum oder volles Visum — und das eine Detail, über das die meisten stolpern.",
+    Body: ({ l }) => (
+      <>
+        <p>
+          Eine Stadt kann auf dem Papier perfekt sein und bleibt doch
+          unerreichbar, wenn die Grenze Nein sagt. Die Einreiseregeln hängen von
+          zwei Dingen ab — <strong>Ihrem Reisepass</strong> und{" "}
+          <strong>Ihrem Reiseziel</strong> — und sie entscheiden, ob Sie einfach
+          auftauchen, online ein Formular ausfüllen oder sich Wochen im Voraus
+          bewerben. Hier die Kurzfassung, vor dem Kleingedruckten.
+        </p>
+
+        <h2>Die vier Wege hinein</h2>
+        <ul>
+          <li>
+            <strong>Visumfrei</strong> — Sie reisen einfach ein und erhalten für
+            eine festgelegte Zahl von Tagen einen Stempel. Die häufigste
+            Regelung für Kurzaufenthalte zwischen befreundeten Ländern.
+          </li>
+          <li>
+            <strong>Visum bei Einreise (VoA)</strong> — Sie erhalten es weiterhin
+            an der Grenze, zahlen aber eine Gebühr und stehen manchmal Schlange.
+            Verbreitet in weiten Teilen Südostasiens, des Nahen Ostens und
+            Afrikas.
+          </li>
+          <li>
+            <strong>E-Visum / Reisegenehmigung (ETA)</strong> — online genehmigt,
+            bevor Sie fliegen. Schnell, aber nicht sofort — bewerben Sie sich
+            einige Tage im Voraus. (Das ETIAS der EU und Programme wie das
+            US-ESTA gehören zu diesem Typ.)
+          </li>
+          <li>
+            <strong>Visumpflicht</strong> — ein vollständiger Antrag bei einem
+            Konsulat, mit Dokumenten und Vorlaufzeit. Rechnen Sie mit Wochen,
+            nicht Tagen.
+          </li>
+        </ul>
+
+        <h2>Die 90/180-Regel, über die alle stolpern</h2>
+        <p>
+          Die meisten visumfreien Aufenthalte sind gedeckelt, und die Obergrenze
+          wird leicht falsch verstanden. Der Schengen-Raum — der größte Teil
+          Kontinentaleuropas — erlaubt vielen Besuchern einen Aufenthalt von{" "}
+          <strong>90 Tagen innerhalb eines beliebigen rollierenden
+          180-Tage-Zeitraums</strong>. Es sind nicht 90 Tage pro Land, und die
+          Zählung setzt sich nicht zurück, wenn Sie ins nächste Land weiterziehen:
+          Der gesamte Raum zählt als einer, und die 180 Tage rollen immer weiter.
+          Bei einem Überschreiten, selbst aus Versehen, riskieren Sie Geldbußen
+          oder ein Einreiseverbot. Steht Europa auf Ihrer engeren Liste, zählen
+          Sie die Tage sorgfältig.
+        </p>
+
+        <h2>Es ist Ihr Reisepass, der entscheidet</h2>
+        <p>
+          Dasselbe Reiseziel kann für die eine Staatsangehörigkeit visumfrei und
+          für eine andere visumpflichtig sein — „Passkraft“ ist schlicht, wie
+          viele Orte Ihr Reisepass ohne Papierkram öffnet. Es zählt also allein
+          die Antwort für <em>Ihren</em> Reisepass in Bezug auf <em>jenes</em>{" "}
+          Land; die Erfahrung einer Bekannten mit einem anderen Reisepass sagt
+          Ihnen wenig.
+        </p>
+
+        <h2>Besuchen ist nicht Leben</h2>
+        <p>
+          Ein entscheidender Haken: Die visumfreie Einreise erlaubt Ihnen, zu{" "}
+          <em>besuchen</em>, meist ohne das Recht, zu arbeiten oder langfristig zu
+          bleiben. Um tatsächlich umzuziehen, brauchen Sie einen Weg für einen
+          Langzeitaufenthalt — eine Arbeitserlaubnis, ein Aufenthalts- oder
+          Visum für passives Einkommen oder ein{" "}
+          <Link href={`/${l}/guides/digital-nomad-visas-explained`}>
+            Visum für digitale Nomaden
+          </Link>
+          . Betrachten Sie den Touristenstempel als Möglichkeit, sich umzusehen,
+          nicht, sich niederzulassen.
+        </p>
+
+        <h2>So prüfen Sie Ihren Fall</h2>
+        <p>
+          Einreiseregeln ändern sich häufig und haben reale Folgen; gleichen Sie
+          sie daher mit einer offiziellen Quelle ab — der Einwanderungs- oder
+          Außenministeriumsseite des Ziellandes oder den Reisehinweisen Ihrer
+          eigenen Regierung — kurz vor Ihrer Reise, nicht Monate vorher. Nutzen
+          Sie unsere{" "}
+          <Link href={`/${l}/countries`}>Länderseiten</Link>, um in die engere
+          Wahl zu nehmen, wo Sie leben würden, und bestätigen Sie dann den
+          Einreiseweg für Ihren Reisepass, bevor Sie irgendetwas buchen.
+        </p>
+      </>
+    ),
+  },
   "cost-of-living-in-singapore": {
     title:
       "Die wahren Lebenshaltungskosten in Singapur (2026): ein Budget-Leitfaden für Expats",

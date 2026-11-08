@@ -473,6 +473,88 @@ const es: Record<string, GuideContent> = {
       </>
     ),
   },
+  "visa-free-travel-explained": {
+    title:
+      "Viajar sin visado, visado a la llegada y e-visados: cómo funciona de verdad la entrada",
+    excerpt:
+      "Antes de comparar el coste de dos ciudades, comprueba si siquiera puedes entrar. Así funciona la entrada para estancias cortas —sin visado, visado a la llegada, e-visado o visado completo— y la única regla con la que tropieza casi todo el mundo.",
+    Body: ({ l }) => (
+      <>
+        <p>
+          Una ciudad puede ser perfecta sobre el papel y seguir estando fuera de
+          tu alcance si la frontera dice que no. Las normas de entrada dependen de
+          dos cosas —<strong>tu pasaporte</strong> y{" "}
+          <strong>a dónde vas</strong>— y deciden si te presentas sin nada, rellenas
+          un formulario online o lo solicitas con semanas de antelación. Aquí va la
+          versión corta, antes de la letra pequeña.
+        </p>
+        <h2>Las cuatro formas de entrar</h2>
+        <ul>
+          <li>
+            <strong>Sin visado</strong>: simplemente llegas y te ponen un sello por
+            un número fijo de días. Es el acuerdo de estancia corta más habitual
+            entre países amigos.
+          </li>
+          <li>
+            <strong>Visado a la llegada (VoA)</strong>: lo obtienes igualmente en la
+            frontera, pero pagas una tasa y a veces haces cola. Es común en buena
+            parte del Sudeste Asiático, Oriente Medio y África.
+          </li>
+          <li>
+            <strong>e-Visado / autorización de viaje (ETA)</strong>: se aprueba
+            online antes de volar. Rápido, pero no instantáneo: solicítalo con unos
+            días de antelación. (El ETIAS de la UE y esquemas como el ESTA de EE. UU.
+            son de este tipo.)
+          </li>
+          <li>
+            <strong>Visado obligatorio</strong>: una solicitud completa en un
+            consulado, con documentos y tiempo de tramitación. Planifica en semanas,
+            no en días.
+          </li>
+        </ul>
+        <h2>La regla del 90/180 con la que todos tropiezan</h2>
+        <p>
+          La mayoría de las estancias sin visado tienen un tope, y el tope es fácil
+          de malinterpretar. El espacio Schengen —la mayor parte de la Europa
+          continental— permite a muchos visitantes quedarse{" "}
+          <strong>90 días dentro de cualquier periodo móvil de 180 días</strong>. No
+          son 90 días por país y no se reinicia cuando saltas al siguiente: toda la
+          zona cuenta como una sola, y los 180 días siguen corriendo. Quedarte de
+          más, aunque sea por accidente, te expone a multas o a una prohibición de
+          entrada. Si Europa está en tu lista corta, cuenta los días con cuidado.
+        </p>
+        <h2>Es tu pasaporte el que decide</h2>
+        <p>
+          El mismo destino puede ser sin visado para una nacionalidad y exigir
+          visado a otra: el «poder del pasaporte» no es más que cuántos lugares abre
+          tu pasaporte sin papeleo. Así que la única respuesta que importa es la de{" "}
+          <em>tu</em> pasaporte para <em>ese</em> país; la experiencia de un amigo
+          con un pasaporte distinto te dice poco.
+        </p>
+        <h2>Visitar no es vivir</h2>
+        <p>
+          Un matiz crucial: la entrada sin visado te permite <em>visitar</em>, por
+          lo general sin derecho a trabajar ni a quedarte a largo plazo. Para
+          reubicarte de verdad necesitas una vía de estancia larga: un permiso de
+          trabajo, un visado de residencia o de ingresos pasivos, o un{" "}
+          <Link href={`/${l}/guides/digital-nomad-visas-explained`}>
+            visado de nómada digital
+          </Link>
+          . Toma el sello de turista como una forma de explorar, no de instalarte.
+        </p>
+        <h2>Cómo comprobar tu caso</h2>
+        <p>
+          Las normas de entrada cambian a menudo y tienen consecuencias reales, así
+          que verifícalas en una fuente oficial —la web de inmigración o del
+          ministerio de exteriores del destino, o los consejos de viaje de tu propio
+          gobierno— cerca de la fecha del viaje, no meses antes. Usa nuestras{" "}
+          <Link href={`/${l}/countries`}>páginas de países</Link> para hacer una
+          lista corta de dónde vivirías, y luego confirma la vía de entrada para tu
+          pasaporte antes de reservar nada.
+        </p>
+      </>
+    ),
+  },
   "health-insurance-for-expats": {
     title: "Seguro médico al mudarte al extranjero: público, privado o ambos",
     excerpt:

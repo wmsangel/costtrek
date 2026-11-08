@@ -173,6 +173,94 @@ const fr: Record<string, GuideContent> = {
       </>
     ),
   },
+  "visa-free-travel-explained": {
+    title: "Voyage sans visa, visa à l'arrivée et e-visas : comment fonctionne vraiment l'entrée",
+    excerpt:
+      "Avant de comparer le coût de deux villes, vérifiez si vous pouvez seulement y entrer. Voici comment fonctionne l'entrée pour un court séjour — sans visa, visa à l'arrivée, e-visa ou visa complet — et la seule règle qui piège la plupart des gens.",
+    Body: ({ l }) => (
+      <>
+        <p>
+          Une ville peut être parfaite sur le papier et rester hors de portée si la
+          frontière dit non. Les règles d&apos;entrée dépendent de deux choses —{" "}
+          <strong>votre passeport</strong> et <strong>votre destination</strong> — et
+          elles déterminent si vous vous présentez sans rien, remplissez un formulaire
+          en ligne, ou déposez une demande des semaines à l&apos;avance. Voici la
+          version courte, avant les petites lignes.
+        </p>
+        <h2>Les quatre façons d&apos;entrer</h2>
+        <ul>
+          <li>
+            <strong>Sans visa</strong> — vous arrivez simplement et obtenez un tampon
+            pour un nombre de jours défini. L&apos;arrangement de court séjour le plus
+            courant entre pays amis.
+          </li>
+          <li>
+            <strong>Visa à l&apos;arrivée (VoA)</strong> — vous l&apos;obtenez encore à
+            la frontière, mais vous payez des frais et faites parfois la queue. Fréquent
+            dans une grande partie de l&apos;Asie du Sud-Est, du Moyen-Orient et de
+            l&apos;Afrique.
+          </li>
+          <li>
+            <strong>e-Visa / autorisation de voyage (ETA)</strong> — approuvé en ligne
+            avant de prendre l&apos;avion. Rapide, mais pas instantané — déposez votre
+            demande quelques jours à l&apos;avance. (L&apos;ETIAS de l&apos;UE et des
+            dispositifs comme l&apos;ESTA américain relèvent de ce type.)
+          </li>
+          <li>
+            <strong>Visa requis</strong> — une demande complète auprès d&apos;un
+            consulat, avec des documents et des délais. Comptez en semaines, pas en
+            jours.
+          </li>
+        </ul>
+        <h2>La règle des 90/180 sur laquelle tout le monde trébuche</h2>
+        <p>
+          La plupart des séjours sans visa sont plafonnés, et le plafond est facile à
+          mal interpréter. L&apos;espace Schengen — l&apos;essentiel de l&apos;Europe
+          continentale — permet à de nombreux visiteurs de rester{" "}
+          <strong>90 jours sur toute période glissante de 180 jours</strong>. Ce ne
+          sont pas 90 jours par pays et le compteur ne se remet pas à zéro quand vous
+          passez au pays suivant : l&apos;ensemble de la zone compte comme un seul
+          espace, et les 180 jours continuent de glisser. Un dépassement, même
+          involontaire, vous expose à des amendes ou à une interdiction
+          d&apos;entrée. Si l&apos;Europe figure sur votre liste, comptez les jours avec
+          soin.
+        </p>
+        <h2>C&apos;est votre passeport qui décide</h2>
+        <p>
+          Une même destination peut être sans visa pour une nationalité et exiger un
+          visa pour une autre — la &laquo; puissance du passeport &raquo; n&apos;est
+          que le nombre d&apos;endroits que votre passeport ouvre sans paperasse. La
+          seule réponse qui compte est donc celle qui concerne <em>votre</em> passeport
+          pour <em>ce</em> pays ; l&apos;expérience d&apos;un ami avec un autre
+          passeport ne vous apprend pas grand-chose.
+        </p>
+        <h2>Visiter n&apos;est pas vivre</h2>
+        <p>
+          Un piège essentiel : l&apos;entrée sans visa vous permet de{" "}
+          <em>visiter</em>, généralement sans le droit de travailler ou de rester sur
+          le long terme. Pour vous installer réellement, il vous faut une voie de
+          long séjour — un permis de travail, un visa de résidence ou de revenu
+          passif, ou un{" "}
+          <Link href={`/${l}/guides/digital-nomad-visas-explained`}>
+            visa nomade numérique
+          </Link>
+          . Considérez le tampon touristique comme un moyen de repérer les lieux, pas
+          de s&apos;y établir.
+        </p>
+        <h2>Comment vérifier votre cas</h2>
+        <p>
+          Les règles d&apos;entrée changent souvent et ont de vraies conséquences,
+          alors vérifiez auprès d&apos;une source officielle — le site de
+          l&apos;immigration ou du ministère des affaires étrangères de la destination,
+          ou les conseils aux voyageurs de votre propre gouvernement — peu avant votre
+          voyage, pas des mois à l&apos;avance. Servez-vous de nos{" "}
+          <Link href={`/${l}/countries`}>pages pays</Link> pour présélectionner où vous
+          vivriez, puis confirmez la voie d&apos;entrée pour votre passeport avant de
+          réserver quoi que ce soit.
+        </p>
+      </>
+    ),
+  },
   "digital-nomad-visa-guide": {
     title: "Visas pour nomades numériques : comment ils fonctionnent et comment choisir sa base",
     excerpt:
