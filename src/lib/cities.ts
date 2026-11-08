@@ -167,6 +167,13 @@ const INTL_CITIES: City[] = [
   { slug: "florence-it", name: "Florence", country: "Italy", countryCode: "IT", aliases: ["Firenze", "Florencia", "Florenz"], medianRent1br: 900, breakdown: { housing: 95, food: 104, transport: 78, utilities: 118, healthcare: 80, goods: 106 } },
   { slug: "sapporo-jp", name: "Sapporo", country: "Japan", countryCode: "JP", aliases: ["札幌"], medianRent1br: 650, breakdown: { housing: 72, food: 95, transport: 78, utilities: 115, healthcare: 85, goods: 102 } },
   { slug: "chennai-in", name: "Chennai", country: "India", countryCode: "IN", aliases: ["Madras"], medianRent1br: 220, breakdown: { housing: 24, food: 34, transport: 30, utilities: 52, healthcare: 38, goods: 50 } },
+  // GSC-demand batch 2026-11 (international; indices hand-estimated, anchored to the
+  // same-country city already in this list — the documented method for non-US cities).
+  { slug: "monterrey-mx", name: "Monterrey", country: "Mexico", countryCode: "MX", aliases: ["Monterrey, Nuevo León"], medianRent1br: 650, breakdown: { housing: 55, food: 62, transport: 48, utilities: 82, healthcare: 62, goods: 68 } },
+  { slug: "lugano-ch", name: "Lugano", country: "Switzerland", countryCode: "CH", medianRent1br: 1800, breakdown: { housing: 160, food: 150, transport: 115, utilities: 122, healthcare: 140, goods: 155 } },
+  { slug: "sitges-es", name: "Sitges", country: "Spain", countryCode: "ES", medianRent1br: 1300, breakdown: { housing: 128, food: 100, transport: 72, utilities: 110, healthcare: 80, goods: 104 } },
+  { slug: "florianopolis-br", name: "Florianópolis", country: "Brazil", countryCode: "BR", aliases: ["Florianopolis", "Floripa"], medianRent1br: 600, breakdown: { housing: 52, food: 54, transport: 45, utilities: 64, healthcare: 58, goods: 66 } },
+  { slug: "monchengladbach-de", name: "Mönchengladbach", country: "Germany", countryCode: "DE", aliases: ["Monchengladbach", "Moenchengladbach"], medianRent1br: 750, breakdown: { housing: 82, food: 102, transport: 72, utilities: 128, healthcare: 92, goods: 100 } },
 ];
 
 export const CITIES: City[] = [...US_CITIES, ...INTL_CITIES];
