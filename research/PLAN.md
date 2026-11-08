@@ -54,11 +54,12 @@
    сеть переходит на Graph API. Ждём рецепт пилота **almanackit** (`docs/instagram-api.md`), затем подключаем
    автопубликацию costtrek из контент-плана (слот 13:20 по Бишкеку, журнал без дублей, один пост за запуск).
    До этого в Instagram НЕ входим и НЕ публикуем вручную. `трафик` · **→сам** (после пилота ~после 05.11)
-7. **Добавить новые города из GSC — ВСЯ партия (решение 19.10)** — в существующих странах: <!-- crm:0mvarrqvu07cf483601947685 --> <!-- due:2026-11-07 -->
-   Monterrey/Orlando/Indianapolis/Lugano/Sitges/Florianópolis/Mönchengladbach; новые страны:
-   Cuenca (EC), Skopje (MK) — все 11. (Флагил breadth / discovered-not-indexed при трафике ≈0;
-   владелец решил делать всю партию — ОК.) `контент` · **→гибрид** (данные + каркас первого города — я;
-   тираж структуры + i18n ×4 по образцу — Cursor. ⚠️ cost-индексы = оценки. Сверено 16.10: ни один из 11 не заведён.)
+7. **Добавить новые города из GSC — ОСТАЛОСЬ 4 из 11 (07.11)** — ✅ добавлено 5 (`8020c24`, прод 200): <!-- crm:0mvarrqvu07cf483601947685 --> <!-- due:2026-11-21 -->
+   Monterrey/Lugano/Sitges/Florianópolis/Mönchengladbach (оценки, привязаны к одностранным якорям).
+   **Осталось (пропущены, нужны данные):** Orlando(FL)/Indianapolis(IN) — US-города на сайте РЕАЛЬНЫЕ
+   (BEA RPP 2023 + Census ACS 2023); не фабрикую US рядом с реальными → нужен реальный pull этих метрик.
+   Cuenca(EC)/Skopje(MK) — Эквадор и Сев. Македония НЕ заведены в `countries.ts` (нет налогов/виз/эконом);
+   «нет данных → не добавлять». `контент` · **→сам** (US — реальные данные; EC/MK — сперва завести страну)
 8. **Буфер / мелкий бэклог (когда дойдут руки)** — ISR для region/persona-хабов (давление <!-- crm:0mvarrqw377cf456685709712 --> <!-- due:2026-11-14 -->
    билда при росте городов); локализованные URL-слаги (`/de/vergleich/…`); support@/hello@ алиасы
    в Cloudflare; форма фидбэка вместо mailto (если пойдёт объём); VisitorsCoverage как доп. страховой
@@ -69,6 +70,8 @@
 
 За последние ~2 недели (сверху — свежее):
 
+- **+5 новых городов из GSC-партии** (Monterrey/Lugano/Sitges/Florianópolis/Mönchengladbach): оценки индексов, привязанные к одностранным якорям (метод сайта для не-US). Страницы/compare/sitemap/hreflang ×5 — авто из CITIES. Прод ✓: 200, canonical, hreflang en/de/fr/es/pt+x-default, в sitemap. Пропущены 4 (см. #7): Orlando/Indianapolis (нужны реальные BEA/Census), Cuenca/Skopje (EC/MK не заведены) — `8020c24`, 08.11
+- **4 contextual do-follow ссылки на CalcLumen** в EN-гайдах (CRM «Ссылки на calclumen»): salary→salary-to-hourly, cost-of-living-index→inflation, how-to-compare→car-affordability, budgeting-family→currency-converter; `rel=noopener`. Прод ✓ — `026b739`, 08.11
 - **Cheapvuelos (Admitad 183133) удалён из каталога → заменён на Aviasales** (TP, маркер 567317): слот flights в 87 профилях + оба CTA /best → `/go/aviasales` (sub_id = slug); `cheapvuelos` убран из реестра → `/go/cheapvuelos` = 404 (было 302 на мёртвую программу, ~30 кликов/день впустую с 31.10). Дедуп тулкита по провайдеру (Aviasales есть и в гео-тулките — рендер один раз/секцию). Заодно: `platinumlist` net → indoleads (i07o.xyz = Indoleads). Прод ✓: /go/cheapvuelos→404, человек→302 tpm.li ?sub_id, бот→204 — `f5ea920`, 05.11
 - **Privacy = реальность + закрыто зеркало** (аудит privacy 31.10): privacy/cookies ×5 локалей теперь НАЗЫВАЮТ сервисы и их cookies — GA4 (G-MYL1G6RWDF, Consent Mode, `_ga`), AdSense, Travelpayouts (`am_user_session` — ставится везде, вкл. EEA, вне баннера), Cloudflare Web Analytics (без cookies); убрал обтекаемое «privacy-respecting» и несуществующий Ezoic. GA4 + TP-скрипт host-гейтнуты (`isProdHost`, `src/lib/host.ts`) — не грузятся на зеркалах/превью/localhost. `workers_dev:false` → зеркало `costtrek.ocrsnip.workers.dev` закрыто (было 200 с GA/ADS/CFWA → теперь 404). Прод ✓ (privacy ×5 = 200, сервисы названы) — `b6ce9a6`, 31.10
 - **Клоакинг партнёрок через `/go/<id>`** (по аудиту «клики есть, денег ноль»): реальные affiliate-URL убраны из разметки — все ссылки идут на `/go/<id>?s=<slug>`, редирект (`src/app/go/[id]/route.ts` + server-only реестр `src/lib/affiliates/links.ts`) отдаёт **302 человеку / 204 боту** (UA-фильтр + Sec-Fetch-Site/Referer, как на pawdget). subid = slug (Admitad `subid`, TP `sub_id`). `Disallow:/go/`, `X-Robots-Tag: noindex`, `/go` вне locale-редиректа. Прод ✓: бот→204, человек→302 с трекингом, живой клик → discovercars.com/?admitad_uid; 0 URL в статике — `50394d7`, 30.10
