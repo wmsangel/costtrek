@@ -344,7 +344,16 @@ export const GUIDES: Guide[] = [
           Prices move constantly, currencies swing, and no dataset is perfectly
           current for every city. Use the index to shortlist and compare, then
           verify the two or three costs that matter most to you — usually rent and
-          taxes — against a local, up-to-date source before you commit.
+          taxes — against a local, up-to-date source before you commit. And since
+          last year&apos;s figure isn&apos;t this year&apos;s, an{" "}
+          <a
+            href="https://calclumen.com/en/inflation-calculator"
+            target="_blank"
+            rel="noopener"
+          >
+            inflation calculator
+          </a>{" "}
+          shows how far a given budget has drifted over time.
         </p>
         <p>
           Ready to see it in action?{" "}
@@ -389,7 +398,16 @@ export const GUIDES: Guide[] = [
           Add the costs that reflect your routine: eating out, transport pass,
           gym, utilities, internet. Someone who cooks at home and cycles will
           experience a city completely differently from someone who eats out and
-          drives. Use the salary-equivalence tool on any{" "}
+          drives. If a car is part of the picture, a{" "}
+          <a
+            href="https://calclumen.com/en/car-affordability-calculator"
+            target="_blank"
+            rel="noopener"
+          >
+            car-affordability calculator
+          </a>{" "}
+          turns the purchase price into a realistic monthly cost to add in. Use the
+          salary-equivalence tool on any{" "}
           <Link href={`/${l}`}>comparison page</Link> to translate your current
           income into what you&apos;d need to live the same way elsewhere.
         </p>
@@ -447,7 +465,16 @@ export const GUIDES: Guide[] = [
           <em>gross</em>. A country with a 45% top rate and heavy social charges
           will need a bigger gross number to reach the same take-home than a flat-
           10% country. Check both cities&apos; tax lines before you translate the
-          figure into a job offer.
+          figure into a job offer. To put two offers on the same footing — hourly,
+          monthly or annual — a{" "}
+          <a
+            href="https://calclumen.com/en/salary-to-hourly-calculator"
+            target="_blank"
+            rel="noopener"
+          >
+            salary-to-hourly calculator
+          </a>{" "}
+          converts between them.
         </p>
         <h2>Don&apos;t forget the one-off costs</h2>
         <p>
@@ -833,7 +860,16 @@ export const GUIDES: Guide[] = [
           With dependents, &quot;figure it out as you go&quot; is not a plan. Aim
           for six months of the destination&apos;s living costs saved before you
           leave, and stress-test it against a delayed job start or a currency
-          swing. Stretching that buffer further is easier in a genuinely
+          swing — a{" "}
+          <a
+            href="https://calclumen.com/en/currency-converter"
+            target="_blank"
+            rel="noopener"
+          >
+            currency converter
+          </a>{" "}
+          shows what your savings are actually worth in the destination&apos;s
+          money today. Stretching that buffer further is easier in a genuinely
           affordable city — our{" "}
           <Link href={`/${l}/best/cheapest`}>cheapest-cities list</Link> is a good
           place to find one that still clears your family&apos;s non-negotiables.
