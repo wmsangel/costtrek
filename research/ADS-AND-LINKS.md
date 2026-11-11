@@ -19,7 +19,7 @@
 | Канал | Статус | Доход/мес | Условия / ссылка |
 |---|---|---|---|
 | **AdSense** (display) | рано | — | сайт ещё не добавлен; рычаг №1, ждёт порог трафика |
-| **Travelpayouts** (flights/hotels/cars/tours/eSIM/luggage/comp) | активна | ≈ $0 | marker 567317; ~0 при текущем трафике |
+| **Travelpayouts** (flights/hotels/cars/tours/eSIM/luggage/comp) | активна | ≈ $0 | account marker shmarker=770708, trs=567317 (источник); ~0 при текущем трафике |
 | **SafetyWing** (insurance) | активна | — | direct, 10% recurring, Wise |
 | **MyTrip** (flights) | активна | — | Indoleads, CPS $6/sale |
 | **Admitad** (Way.com / Cheapvuelos / Flight Network) | активна | — | website_id 2988082 |
@@ -182,7 +182,7 @@ Content ads = allow. Гео: US/UK/EU(весь)/Singapore/Japan/Malaysia/HK — 
   account-wide и ВРУТ про конкретный сайт — реальный source смотреть в Dashboard →
   «Latest Approved Offers» (там видно offer × source). Ссылку брать: оффер → Tracking link
   → Source = свой домен → Generate.
-- **Travelpayouts:** основной линчпин — один аккаунт закрывает 4 категории. marker 567317.
+- **Travelpayouts:** основной линчпин — один аккаунт закрывает 4 категории. Маркер аккаунта shmarker=770708, trs=567317 — это источник трафика (не маркер).
 
 ### Незакрытые гео-гапы
 - **Money-transfer** — **Instarem найден на Indoleads** (см. выше, нужен запрос менеджеру под

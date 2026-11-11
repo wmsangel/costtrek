@@ -6,7 +6,8 @@ import { TRAVELPAYOUTS_DRIVE } from "@/lib/flags";
 import { isProdHost } from "@/lib/host";
 
 /**
- * Travelpayouts "Drive" native-affiliate script (marker 567317). It sets the
+ * Travelpayouts "Drive" native-affiliate script (trs=567317 = traffic source;
+ * account marker is shmarker=770708 — do NOT treat 567317 as the marker). It sets the
  * `am_user_session` cookie with no Consent Mode — including in the EEA/UK — so
  * it is named in the privacy & cookies pages. Loaded ONLY on the production host:
  * off the live domain it returns 403 "config is not valid" (a Lighthouse hit) and

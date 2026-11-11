@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 
-// Aviasales "Flights Search Form" (Travelpayouts, marker 567317, USD, coral
+// Aviasales "Flights Search Form" (Travelpayouts: account marker shmarker=770708,
+// trs=567317 = traffic source — not the marker; USD, coral
 // theme to match the site). The script injects the widget right after itself,
 // so we append it into our own container and only do so when the block scrolls
 // near the viewport — keeping it fully off the critical path (no cost to LCP,
