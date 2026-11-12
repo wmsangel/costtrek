@@ -83,7 +83,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:v
 <body>
 <div class="wrap">
   <header>
-    <span class="kicker">Дорожная карта · обновлено 2026-11-09</span>
+    <span class="kicker">Дорожная карта · обновлено 2026-11-12</span>
     <h1>CostTrek</h1>
     <p class="sub">Сравнение стоимости жизни город-vs-город, 5 языков, ~11.9k страниц.
       Эта страница — живое зеркало <code>research/PLAN.md</code>: что в работе, что сделано, что в идеях.</p>
@@ -106,7 +106,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:v
 
     <div class="q"><span class="idx">02</span><div>
       <div class="t">Разместить одобренные партнёрки</div>
-      <div class="d">✅ DiscoverCars (Admitad) размещена на проде (глоб. дефолт авто). Indoleads перепроверен 26.10: Trip.com rejected под costtrek, Instarem только под calclumen, прочие одобренные — дубли категорий (held). NordVPN declined. Нового к размещению нет.</div>
+      <div class="d">✅ DiscoverCars (Admitad) + ✅ CheapOAir (Indoleads, US-флайты, 12.11) на проде. Trainpal (rail) — Pending под costtrek, ждём менеджера. Trip.com rejected под costtrek (05.10, причина не указана; одобрен под foundaday). Прочие флайт-офферы (eSky/KLM/Eurowings/Gotogate) — дубли, не берём.</div>
       <span class="tag">деньги</span></div></div>
 
     <div class="q"><span class="idx">03</span><div>
@@ -143,6 +143,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:v
   <section>
     <div class="s-head"><h2>Сделано</h2><span class="count">за 2 недели</span></div>
     <ul class="done">
+      <li><span class="mk">✓</span><span>CheapOAir (Indoleads) размещён US-флайтами через /go (решение владельца — US-комплемент к Aviasales). Оффер Active, свой диплинк под costtrek из кабинета (z02o.xyz), ?url=-диплинкинг клик-проверен → /flights с трекингом. Реестр links.ts + buildGeoToolkit только US/CA. Прод ✓: /go/cheapoair человек→302 / бот→204; austin-tx показывает CheapOAir+Aviasales, lisbon/berlin — только Aviasales (гео-скоуп). Trainpal (rail) подан под costtrek — Pending <span class="note">— 06111ec, 12.11</span></span></li>
       <li><span class="mk">✓</span><span>Контент-спринт 08.11→06.12 заведён (план + 6 задач в CRM: 4 нед контента визового раздела + 2 фичи). 1-я страница на проде ×5 локалей: гайд «Visa-free travel explained» (краеугольная для раздела виз) <span class="note">— 54cafd3, 08.11</span></span></li>
       <li><span class="mk">✓</span><span>+5 городов из GSC-партии (Monterrey/Lugano/Sitges/Florianópolis/Mönchengladbach) — оценки по якорям; страницы/compare/sitemap/hreflang×5 авто. Прод ✓ (200, canonical, hreflang). Пропущено 4: Orlando/Indianapolis (реальные BEA/Census), Cuenca/Skopje (EC/MK не заведены) <span class="note">— 8020c24, 08.11</span></span></li>
       <li><span class="mk">✓</span><span>4 contextual do-follow ссылки на CalcLumen-калькуляторы в EN-гайдах (salary/inflation/car-affordability/currency). Прод ✓ <span class="note">— 026b739, 08.11</span></span></li>
@@ -197,10 +198,12 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);color:v
         <tr><td>SafetyWing (insurance)</td><td><span class="st on">активна</span></td><td class="num">—</td></tr>
         <tr><td>Amazon Associates (книги/гаджеты)</td><td><span class="st on">активна</span></td><td class="num">—</td></tr>
         <tr><td>MyTrip (flights · Indoleads)</td><td><span class="st on">активна</span></td><td class="num">—</td></tr>
-        <tr><td>Admitad (Way.com / Cheapvuelos)</td><td><span class="st on">активна</span></td><td class="num">—</td></tr>
-        <tr><td>DiscoverCars (cars · Admitad)</td><td><span class="st soon">ждёт</span></td><td class="num">—</td></tr>
-        <tr><td>NordVPN (Admitad)</td><td><span class="st soon">ждёт</span></td><td class="num">—</td></tr>
-        <tr><td>Trip.com (Indoleads)</td><td><span class="st soon">ждёт</span></td><td class="num">—</td></tr>
+        <tr><td>CheapOAir (US flights · Indoleads)</td><td><span class="st on">активна</span></td><td class="num">—</td></tr>
+        <tr><td>DiscoverCars (cars · Admitad)</td><td><span class="st on">активна</span></td><td class="num">—</td></tr>
+        <tr><td>Admitad (Way.com)</td><td><span class="st on">активна</span></td><td class="num">—</td></tr>
+        <tr><td>Trainpal (rail · Indoleads)</td><td><span class="st wait">pending</span></td><td class="num">—</td></tr>
+        <tr><td>NordVPN (Admitad)</td><td><span class="st soon">declined</span></td><td class="num">—</td></tr>
+        <tr><td>Trip.com (Indoleads · costtrek)</td><td><span class="st soon">отклонён</span></td><td class="num">—</td></tr>
       </tbody>
     </table></div>
   </section>
