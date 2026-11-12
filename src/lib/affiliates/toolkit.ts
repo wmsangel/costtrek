@@ -202,6 +202,18 @@ export function buildGeoToolkit(city: City): ToolkitItem[] {
     note: "Compare flights across every airline",
   });
 
+  // CheapOAir — US-focused flights OTA (Indoleads, CPS). North-America only, as a
+  // direct-booking complement to the global Aviasales metasearch. URL must match
+  // the links.ts registry exactly so goHref() cloaks it to /go/cheapoair.
+  if (cc === "US" || cc === "CA") {
+    items.push({
+      category: "flights",
+      provider: "CheapOAir",
+      url: "https://z02o.xyz/6af529040c2e5?url=https://www.cheapoair.com/flights",
+      note: "Book cheap flights — compare 500+ airlines",
+    });
+  }
+
   // Radical Storage — luggage storage in tourist hubs worldwide.
   items.push({
     category: "luggage",

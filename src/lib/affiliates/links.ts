@@ -44,6 +44,7 @@ export const AFFILIATES: Record<string, Affiliate> = {
 
   // Indoleads (subid param uncertain → none)
   mytrip: { url: "https://io10.info/6aa7d36473fb3", net: "indoleads" },
+  cheapoair: { url: "https://z02o.xyz/6af529040c2e5?url=https://www.cheapoair.com/flights", net: "indoleads" }, // US-focused flights OTA; z02o.xyz = Indoleads, own costtrek-source deeplink (Get link), ?url= deeplinking click-verified → /flights with FpAffiliate tracking intact
 
   // Direct (no network subid)
   safetywing: { url: "https://safetywing.com/nomad-insurance?referenceID=26588804&campaign=costtrek&utm_campaign=costtrek&utm_source=26588804&utm_medium=Ambassador", net: "direct" },
