@@ -30,8 +30,11 @@
    размещена и на проде** (`toolkit.ts`, глоб. дефолт авто, `5f99686`). Indoleads перепроверен 26.10:
    Trip.com 378 — **REJECTED под costtrek**; Instarem 20719 — одобрен лишь под calclumen (под costtrek
    нужен запрос менеджеру); GetYourGuide/eSky/Traveloka/Udemy одобрены под costtrek, но held (дубли
-   категорий, анти-link-farm). NordVPN 18867 — declined. **Нового к размещению нет** — пункт по сути
-   закрыт до новых одобрений. Детали — `ADS-AND-LINKS.md` §3. `деньги` · **→сам** (мелкая вставка)
+   категорий, анти-link-farm). NordVPN 18867 — declined. **CheapOAir (421) размещён 12.11** US-флайтами
+   (Active, свой диплинк z02o.xyz, прод ✓). **Trainpal (rail) — Pending** под costtrek, ждём менеджера →
+   после Approved диплинк из кабинета в `/go` (категория «rail», первая незанятая). Trip.com под costtrek
+   остаётся REJECTED (05.10, причина в кабинете не указана; одобрен под foundaday — точечный отказ рекла).
+   Детали — `ADS-AND-LINKS.md` §3. `деньги` · **→сам** (мелкая вставка)
 3. **Следить за краулом Googlebot после CF (ПОВТОРЯЮЩАЯСЯ — мониторинг)** — серверная диагностика + GSC <!-- crm:0mvarrqv1af7f16a2364ebfa1 --> <!-- due:2026-11-14 -->
    Проверка 31.10: ЧИСТО — Googlebot-UA 200 на всех типах (compare 308 = канон-редирект), нет
    CF-челленджа, `index,follow`, robots `Allow:/` + `Disallow:/go/` + sitemap свежий (30.10).
@@ -81,6 +84,7 @@
 
 За последние ~2 недели (сверху — свежее):
 
+- **CheapOAir (Indoleads) размещён US-флайтами через `/go`** (решение владельца 12.11 — брать как US-комплемент к Aviasales). Оффер уже Active (заявка не нужна); свой диплинк под источник costtrek из кабинета (`z02o.xyz/6af529040c2e5`, Get link жал владелец), `?url=`-диплинкинг клик-проверен → /flights с трекингом FpAffiliate. Реестр `links.ts` (net indoleads) + `buildGeoToolkit` только для US/CA (как Way.com). Прод ✓: `/go/cheapoair` человек→302 на z02o.xyz, бот→204 noindex; austin-tx (US) показывает CheapOAir+Aviasales, lisbon/berlin — только Aviasales (гео-скоуп работает) — `06111ec`, 12.11. Trainpal (rail) подан под costtrek, статус Pending. Остальные CSV-офферы (Trip.com/eSky/KLM/Eurowings/Gotogate) — флайт-дубли, не берём (анти-link-farm)
 - **+5 новых городов из GSC-партии** (Monterrey/Lugano/Sitges/Florianópolis/Mönchengladbach): оценки индексов, привязанные к одностранным якорям (метод сайта для не-US). Страницы/compare/sitemap/hreflang ×5 — авто из CITIES. Прод ✓: 200, canonical, hreflang en/de/fr/es/pt+x-default, в sitemap. Пропущены 4 (см. #7): Orlando/Indianapolis (нужны реальные BEA/Census), Cuenca/Skopje (EC/MK не заведены) — `8020c24`, 08.11
 - **4 contextual do-follow ссылки на CalcLumen** в EN-гайдах (CRM «Ссылки на calclumen»): salary→salary-to-hourly, cost-of-living-index→inflation, how-to-compare→car-affordability, budgeting-family→currency-converter; `rel=noopener`. Прод ✓ — `026b739`, 08.11
 - **Cheapvuelos (Admitad 183133) удалён из каталога → заменён на Aviasales** (TP, маркер аккаунта shmarker=770708, trs=567317): слот flights в 87 профилях + оба CTA /best → `/go/aviasales` (sub_id = slug); `cheapvuelos` убран из реестра → `/go/cheapvuelos` = 404 (было 302 на мёртвую программу, ~30 кликов/день впустую с 31.10). Дедуп тулкита по провайдеру (Aviasales есть и в гео-тулките — рендер один раз/секцию). Заодно: `platinumlist` net → indoleads (i07o.xyz = Indoleads). Прод ✓: /go/cheapvuelos→404, человек→302 tpm.li ?sub_id, бот→204 — `f5ea920`, 05.11
