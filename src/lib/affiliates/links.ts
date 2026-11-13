@@ -8,7 +8,8 @@ import "server-only";
  * counting crawler hits as clicks (see research/ADS-AND-LINKS.md).
  *
  * `id → { url, net }`. `net` picks the sub-id param we append from the page slug
- * (`subid` for Admitad, `sub_id` for Travelpayouts; direct/indoleads get none).
+ * (`subid` for Admitad, `sub_id` for Travelpayouts, `p1` for Indoleads — "Sub 1"
+ * in their cabinet; `subid` is silently ignored by Indoleads; `direct` gets none).
  *
  * These URLs mirror the deeplinks that still live in the data/components
  * (`toolkit.ts`, `cityProfiles.ts` referral slots, the /best & compare CTAs,
@@ -42,7 +43,7 @@ export const AFFILIATES: Record<string, Affiliate> = {
   platinumlist: { url: "https://i07o.xyz/6ab102c3e77b1", net: "indoleads" }, // i07o.xyz = Indoleads, not Admitad
   flightnetwork: { url: "https://xyowz.com/g/n2q2nolvw6a27dee2ccd6d2e807f50/", net: "admitad" },
 
-  // Indoleads (subid param uncertain → none)
+  // Indoleads (sub-id param = p1 = "Sub 1" in cabinet; subid is ignored silently)
   mytrip: { url: "https://io10.info/6aa7d36473fb3", net: "indoleads" },
   cheapoair: { url: "https://z02o.xyz/6af529040c2e5?url=https://www.cheapoair.com/flights", net: "indoleads" }, // US-focused flights OTA; z02o.xyz = Indoleads, own costtrek-source deeplink (Get link), ?url= deeplinking click-verified → /flights with FpAffiliate tracking intact
 
@@ -58,7 +59,8 @@ export const ID_BY_URL: Record<string, string> = Object.fromEntries(
 /** Append the network's sub-id (the page slug) where the network supports it. */
 export function withSub(url: string, net: AffiliateNet, slug?: string): string {
   if (!slug) return url;
-  const param = net === "admitad" ? "subid" : net === "tp" ? "sub_id" : null;
+  const param =
+    net === "admitad" ? "subid" : net === "tp" ? "sub_id" : net === "indoleads" ? "p1" : null;
   if (!param) return url;
   const sep = url.includes("?") ? "&" : "?";
   return `${url}${sep}${param}=${encodeURIComponent(slug)}`;
