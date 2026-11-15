@@ -17,6 +17,7 @@ import {
   flagEmoji,
   overallIndex,
   parsePair,
+  type City,
 } from "@/lib/cities";
 import Mountains from "@/components/Mountains";
 import { LOCALE_BCP47, isLocale, type Locale } from "@/lib/i18n/config";
@@ -194,9 +195,31 @@ export default async function ComparePage({
         : fill(dict.compare.verdictTaxDiff, { tb: taxB, ta: taxA })
       : "");
 
-  const related = CITIES.filter(
-    (c) => c.slug !== a.slug && c.slug !== b.slug,
-  ).slice(0, 6);
+  // Related comparisons: link only to INDEXABLE pairs (both cities major) so we
+  // feed crawl budget and link equity into pages we actually want indexed, not
+  // the noindex thin long-tail. Rank by relevance — same country first, then the
+  // closest overall index (most comparable) — and offer BOTH cities' neighbours
+  // so every compare page strengthens its two clusters, not just A's.
+  const relatedFor = (base: City, other: City): City[] =>
+    CITIES.filter(
+      (c) =>
+        c.slug !== base.slug &&
+        c.slug !== other.slug &&
+        cityPairIndexable(base.slug, c.slug),
+    )
+      .sort((x, y) => {
+        const sameCountry = (c: City) =>
+          c.countryCode === base.countryCode ? 0 : 1;
+        if (sameCountry(x) !== sameCountry(y))
+          return sameCountry(x) - sameCountry(y);
+        return (
+          Math.abs(overallIndex(x) - overallIndex(base)) -
+          Math.abs(overallIndex(y) - overallIndex(base))
+        );
+      })
+      .slice(0, 5);
+  const relatedA = relatedFor(a, b);
+  const relatedB = relatedFor(b, a);
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-10">
@@ -503,23 +526,30 @@ export default async function ComparePage({
         })()}
       />
 
-      <section className="mt-12">
-        <h2 className="mag-h2 mb-4">
-          ◷ {fill(dict.compare.moreFrom, { city: localizedCityName(l, a) })}
-        </h2>
-        <div className="flex flex-wrap gap-2">
-          {related.map((c) => (
-            <Link
-              key={c.slug}
-              href={`/${l}${comparePath(a, c)}`}
-              className="text-sm rounded-full border border-[var(--border)] px-3 py-1.5 hover:border-[var(--accent)]"
-            >
-              {localizedCityName(l, a)} {dict.compare.vs}{" "}
-              {localizedCityName(l, c)}
-            </Link>
-          ))}
-        </div>
-      </section>
+      {[
+        { base: a, list: relatedA },
+        { base: b, list: relatedB },
+      ].map(({ base, list }) =>
+        list.length === 0 ? null : (
+          <section key={base.slug} className="mt-12">
+            <h2 className="mag-h2 mb-4">
+              ◷ {fill(dict.compare.moreFrom, { city: localizedCityName(l, base) })}
+            </h2>
+            <div className="flex flex-wrap gap-2">
+              {list.map((c) => (
+                <Link
+                  key={c.slug}
+                  href={`/${l}${comparePath(base, c)}`}
+                  className="text-sm rounded-full border border-[var(--border)] px-3 py-1.5 hover:border-[var(--accent)]"
+                >
+                  {localizedCityName(l, base)} {dict.compare.vs}{" "}
+                  {localizedCityName(l, c)}
+                </Link>
+              ))}
+            </div>
+          </section>
+        ),
+      )}
 
       <p className="mt-8 text-sm">
         <Link
