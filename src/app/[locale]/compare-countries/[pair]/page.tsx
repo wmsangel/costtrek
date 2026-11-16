@@ -26,9 +26,8 @@ import Faq, { type FaqItem } from "@/components/Faq";
 
 // Canonical direction only (see city compare route); reverse 308-redirects.
 export const dynamicParams = true;
-// 7-day ISR window → CDN edge HITs instead of an ISR Read per request (see the
-// city compare route for the rationale). Deploys still invalidate the cache.
-export const revalidate = 604800;
+// No `revalidate`: pure SSG (deploy-fresh, buildId-keyed static-asset cache,
+// edge-cached via enableCacheInterception). See the city compare route.
 
 type Params = { locale: string; pair: string };
 type Group = "cost" | "taxes" | "economy" | "quality";

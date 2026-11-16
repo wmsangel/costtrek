@@ -39,10 +39,11 @@ import CompareInCurrency, { type CompareRow } from "@/components/CompareInCurren
 // on-demand and 308-redirects to canonical (see below). Halves the static-page
 // count and removes mirror-URL duplicate content.
 export const dynamicParams = true;
-// Cost-of-living data is near-static between deploys; a 7-day window lets the
-// CDN serve these ISR pages as edge HITs instead of an ISR Read per request
-// (revalidates in the background at most once/week). Deploys still invalidate.
-export const revalidate = 604800;
+// No `revalidate`: cost-of-living data is baked at build and only changes on a
+// redeploy, so these are pure SSG (served from buildId-keyed static-asset cache,
+// edge-cached via enableCacheInterception). The old 7-day ISR window never
+// delivered edge HITs (cf-cache was empty, TTFB ~1s) and made content changes
+// lag up to a week; SSG + cache interception is deploy-fresh and fast.
 
 type Params = { locale: string; pair: string };
 
