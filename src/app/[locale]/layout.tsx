@@ -40,7 +40,14 @@ export const viewport: Viewport = {
 };
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+// Mono is only used for small UI labels (kicker, tabular stat numbers), never
+// the LCP element — so don't preload it (keep preloads to the critical body +
+// display fonts). Loads on swap; any FOUT is on minor labels only.
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+  preload: false,
+});
 const archivo = Archivo({
   variable: "--font-archivo",
   subsets: ["latin"],
