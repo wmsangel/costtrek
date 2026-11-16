@@ -1,0 +1,13 @@
+# Static file (public/robots.txt), NOT the Next metadata route: a route-handler
+# robots.txt gets cached by OpenNext cache interception in the Worker Cache API
+# and stuck serving a stale version across deploys (observed 2026-11-16, the
+# /*_rsc rule would not go live). A file in public/ is served as a pure static
+# asset — it bypasses the Worker entirely and refreshes on every deploy.
+# Host is fixed (costtrek.com), so hardcoding it here is safe.
+User-agent: *
+Allow: /
+Disallow: /go/
+Disallow: /*_rsc
+
+Host: https://costtrek.com
+Sitemap: https://costtrek.com/sitemap.xml
