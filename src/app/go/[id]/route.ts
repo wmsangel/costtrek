@@ -19,12 +19,19 @@ const NOINDEX = {
   "X-Robots-Tag": "noindex, nofollow",
 } as const;
 
+// Retired slugs that old pages / Google's cache / scrapers still link to. We
+// alias them to the live replacement so the clicks are kept — and crucially they
+// run through the SAME gate below (302 to a human, 204 to a bot/prefetch), not a
+// blanket 301 that would hand every bot a counted click. cheapvuelos → Aviasales
+// (program dropped 2026-10-23); was 404, ~445 hits/wk.
+const ALIAS: Record<string, string> = { cheapvuelos: "aviasales" };
+
 export async function GET(
   req: Request,
   { params }: { params: Promise<{ id: string }> },
 ) {
   const { id } = await params;
-  const aff = AFFILIATES[id];
+  const aff = AFFILIATES[ALIAS[id] ?? id];
   if (!aff) return new Response("Not found", { status: 404, headers: NOINDEX });
 
   // 1) User agent: every real browser sends "Mozilla"; prefetchers/crawlers that
