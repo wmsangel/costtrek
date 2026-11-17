@@ -36,9 +36,9 @@ export async function GET(
 
   // 2) Came from us: a click on a real page sends Sec-Fetch-Site: same-origin and a
   //    Referer on our host (links are noopener, NOT noreferrer). A /go URL typed from
-  //    a stored list has neither. This catches the residential-proxy crawler that
-  //    wears a Chrome UA and sails past gate 1.
+  //    a stored list has neither.
   const site = req.headers.get("sec-fetch-site");
+  const mode = req.headers.get("sec-fetch-mode");
   const ref = req.headers.get("referer") ?? "";
   let sameHost = false;
   try {
@@ -48,7 +48,29 @@ export async function GET(
   }
   const cameFromUs = site === "same-origin" || site === "same-site" || sameHost;
 
-  if (looksLikeBot || !cameFromUs) {
+  // 3) Human gesture. The /go redirects are plain <a> links, but browsers'
+  //    speculative prefetch/prerender and JS-rendering crawlers that follow <a>
+  //    hrefs hit them with a same-origin Referer + a real Chrome UA — identical to
+  //    a click to gates 1–2, which is how bots inflated Admitad to ~5k "clicks"/wk
+  //    at ~25 real visitors (spike dated to the /go cloaking launch 2026-10-30).
+  //    Fetch Metadata separates them: a prefetch/prerender carries Sec-Purpose:
+  //    prefetch, and only a user-activated navigation (real click/keypress) carries
+  //    Sec-Fetch-User: ?1 — never a prefetch or a scripted fetch()/goto(). Any
+  //    client new enough to speak Fetch Metadata (Sec-Fetch-* present — Chrome 76+,
+  //    FF 90+, Safari 16.4+, i.e. ~all live traffic) must prove the gesture; older
+  //    clients that send no Sec-Fetch-* fall back to gates 1–2.
+  const purpose =
+    req.headers.get("sec-purpose") ?? req.headers.get("purpose") ?? "";
+  const isPrefetch = /prefetch|prerender/i.test(purpose);
+  const supportsSecFetch = site !== null || mode !== null;
+  const userActivated = req.headers.get("sec-fetch-user") === "?1";
+
+  if (
+    looksLikeBot ||
+    !cameFromUs ||
+    isPrefetch ||
+    (supportsSecFetch && !userActivated)
+  ) {
     return new Response(null, { status: 204, headers: NOINDEX });
   }
 
