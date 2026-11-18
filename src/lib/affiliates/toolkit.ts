@@ -132,23 +132,23 @@ export function buildGeoToolkit(city: City): ToolkitItem[] {
     });
   }
 
-  // Airport transfers — one per city (Istanbul already has AvitoVIP in-profile).
-  if (cc !== "TR") {
-    if (cc === "ES" || cc === "IT" || cc === "GR" || cc === "PT" || cc === "FR") {
-      items.push({
-        category: "transfer",
-        provider: "Welcome Pickups",
-        url: "https://tpm.li/bFe65KrG",
-        note: "Airport pickup — English-speaking driver",
-      });
-    } else {
-      items.push({
-        category: "transfer",
-        provider: "Kiwitaxi",
-        url: "https://kiwitaxi.tpm.li/IPwPgM2i",
-        note: "Book an airport transfer",
-      });
-    }
+  // Airport transfers — one per city. Istanbul used to rely on an in-profile
+  // AvitoVIP link, but that Admitad program was suspended 2026-11-17, so TR now
+  // falls through to Kiwitaxi like every other non-Welcome-Pickups market.
+  if (cc === "ES" || cc === "IT" || cc === "GR" || cc === "PT" || cc === "FR") {
+    items.push({
+      category: "transfer",
+      provider: "Welcome Pickups",
+      url: "https://tpm.li/bFe65KrG",
+      note: "Airport pickup — English-speaking driver",
+    });
+  } else {
+    items.push({
+      category: "transfer",
+      provider: "Kiwitaxi",
+      url: "https://kiwitaxi.tpm.li/IPwPgM2i",
+      note: "Book an airport transfer",
+    });
   }
 
   // Klook — tours & things to do (worldwide, Asia-strong).

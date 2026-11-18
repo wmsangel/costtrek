@@ -36,7 +36,9 @@ export const CITY_PROFILES = {
       { type: "flights", provider: "Aviasales", url: "https://aviasales.tpm.li/dAyfvzBW", affiliate: true, note: "Compare flights across every airline" },
       { type: "insurance", provider: "SafetyWing", url: "https://safetywing.com/nomad-insurance?referenceID=26588804&campaign=costtrek&utm_campaign=costtrek&utm_source=26588804&utm_medium=Ambassador", affiliate: true, note: "Health & travel insurance for nomads" },
       { type: "coworking", provider: "Kolektif House" },
-      { type: "other", provider: "AvitoVIP", url: "https://kjuzv.com/g/02swkf5uv6a27dee2ccdbabf13962c/", affiliate: true, note: "Airport transfers & private driver" },
+      // AvitoVIP transfer link removed 2026-11-18: the Admitad program was
+      // suspended (17.11), so the link 404'd the offer. Istanbul now gets its
+      // airport-transfer card from the geo toolkit (Kiwitaxi, Travelpayouts).
     ],
     meta: { updatedAt: UPDATED, sources: SRC },
   },
