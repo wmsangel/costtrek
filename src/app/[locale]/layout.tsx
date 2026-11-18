@@ -6,6 +6,7 @@ import { Geist, Geist_Mono, Archivo } from "next/font/google";
 import {
   LOCALE_BCP47,
   isLocale,
+  localeIndexable,
   locales,
   type Locale,
 } from "@/lib/i18n/config";
@@ -90,17 +91,22 @@ export async function generateMetadata({
       },
     },
     formatDetection: { telephone: false, email: false, address: false },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-        "max-video-preview": -1,
-      },
-    },
+    // en/es are indexable; fr/de/pt are noindex,follow site-wide (index-reduction,
+    // see config.ts) — still crawled and linked, just kept out of the index so the
+    // five language copies stop competing with each other.
+    robots: localeIndexable(locale)
+      ? {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+            "max-video-preview": -1,
+          },
+        }
+      : { index: false, follow: true, googleBot: { index: false, follow: true } },
     openGraph: {
       type: "website",
       siteName: SITE_NAME,

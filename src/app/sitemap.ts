@@ -5,7 +5,7 @@ import { countrySlug, getCountry } from "@/lib/data";
 import { countriesWithCities } from "@/lib/countryStats";
 import { GUIDES } from "@/content/guides";
 import { CALCULATORS } from "@/lib/calculators/registry";
-import { locales } from "@/lib/i18n/config";
+import { locales, localeIndexable } from "@/lib/i18n/config";
 import { absUrl, languageAlternates } from "@/lib/seo/site";
 import { cityPairInSitemap, countryPairInSitemap } from "@/lib/seo/indexable";
 
@@ -80,6 +80,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const { path, priority } of paths) {
     const languages = languageAlternates(path);
     for (const locale of locales) {
+      // Advertise only indexable locales (en/es). fr/de/pt are noindex,follow
+      // (index-reduction) — kept in each entry's hreflang alternates, but not
+      // listed as their own sitemap URLs so we don't submit noindex pages.
+      if (!localeIndexable(locale)) continue;
       entries.push({
         url: absUrl(locale, path),
         lastModified,

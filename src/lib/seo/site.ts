@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { defaultLocale, locales, type Locale } from "@/lib/i18n/config";
+import {
+  defaultLocale,
+  localeIndexable,
+  locales,
+  type Locale,
+} from "@/lib/i18n/config";
 
 // Canonical site URL. Override in production via NEXT_PUBLIC_SITE_URL.
 // TODO: set the real .com once the domain is bought.
@@ -86,12 +91,13 @@ export function pageMetadata(opts: {
   const { locale, title, description, path = "", ogType = "website" } = opts;
   const url = absUrl(locale, path);
   const image = ogImageUrl(opts.ogImage ?? { title, sub: SITE_NAME });
+  // fr/de/pt are noindex,follow site-wide (index-reduction — see config.ts);
+  // en/es keep the layout's index,follow unless the page itself opts out.
+  const noindex = opts.noindex || !localeIndexable(locale);
   return {
     title,
     description,
-    ...(opts.noindex
-      ? { robots: { index: false, follow: true } }
-      : {}),
+    ...(noindex ? { robots: { index: false, follow: true } } : {}),
     alternates: {
       canonical: url,
       languages: languageAlternates(path),
