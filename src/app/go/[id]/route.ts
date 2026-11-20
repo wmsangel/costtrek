@@ -26,6 +26,44 @@ const NOINDEX = {
 // (program dropped 2026-10-23); was 404, ~445 hits/wk.
 const ALIAS: Record<string, string> = { cheapvuelos: "aviasales" };
 
+/**
+ * Does the User-Agent claim a browser version that ships `Sec-Fetch-User`?
+ * Chromium (Chrome/Edge/Opera/Brave) 76+, Firefox 90+, Safari 16.4+ and the iOS
+ * WebKit browsers on iOS 16.4+ (CriOS = iOS Chrome, FxiOS = iOS Firefox). Such a
+ * browser sends `Sec-Fetch-User: ?1` on a genuine click, so /go demands it from
+ * them regardless of whether the other Sec-Fetch headers are present — a real one
+ * always sends them; a scraper that claims the version but omits them, or a
+ * datacenter Safari bot, is lying. Only genuinely older UAs (which never send it)
+ * fall back to the Referer gate. (A soft "Safari → Referer" path was abused by
+ * datacenter bots; requiring ?1 only when a Sec-Fetch header was present let
+ * Chrome-UA scrapers through by sending none.)
+ */
+function sendsSecFetchUser(ua: string): boolean {
+  const num = (re: RegExp): number => {
+    const m = ua.match(re);
+    return m ? parseFloat(m[1]) : NaN;
+  };
+  const chromium = num(/\bChrom(?:e|ium)\/(\d+)/);
+  if (!Number.isNaN(chromium)) return chromium >= 76;
+  const firefox = num(/\bFirefox\/(\d+)/);
+  if (!Number.isNaN(firefox)) return firefox >= 90;
+  const isWebKit =
+    /\b(CriOS|FxiOS)\b/.test(ua) ||
+    (/\bSafari\//.test(ua) && !/\bChrom/.test(ua));
+  if (isWebKit) {
+    const ver = num(/\bVersion\/(\d+\.\d+)/); // Safari "Version/16.4"
+    if (!Number.isNaN(ver)) return ver >= 16.4;
+    const ios = ua.match(/\bOS (\d+)[._](\d+)/); // "CPU iPhone OS 16_4"
+    if (ios) {
+      const maj = Number(ios[1]);
+      const min = Number(ios[2]);
+      return maj > 16 || (maj === 16 && min >= 4);
+    }
+    return false; // unknown Safari/iOS version → treat as old (soft path)
+  }
+  return false; // unrecognised engine → old/soft path
+}
+
 export async function GET(
   req: Request,
   { params }: { params: Promise<{ id: string }> },
@@ -45,7 +83,6 @@ export async function GET(
   //    Referer on our host (links are noopener, NOT noreferrer). A /go URL typed from
   //    a stored list has neither.
   const site = req.headers.get("sec-fetch-site");
-  const mode = req.headers.get("sec-fetch-mode");
   const ref = req.headers.get("referer") ?? "";
   let sameHost = false;
   try {
@@ -55,29 +92,26 @@ export async function GET(
   }
   const cameFromUs = site === "same-origin" || site === "same-site" || sameHost;
 
-  // 3) Human gesture. The /go redirects are plain <a> links, but browsers'
-  //    speculative prefetch/prerender and JS-rendering crawlers that follow <a>
-  //    hrefs hit them with a same-origin Referer + a real Chrome UA — identical to
-  //    a click to gates 1–2, which is how bots inflated Admitad to ~5k "clicks"/wk
-  //    at ~25 real visitors (spike dated to the /go cloaking launch 2026-10-30).
-  //    Fetch Metadata separates them: a prefetch/prerender carries Sec-Purpose:
-  //    prefetch, and only a user-activated navigation (real click/keypress) carries
-  //    Sec-Fetch-User: ?1 — never a prefetch or a scripted fetch()/goto(). Any
-  //    client new enough to speak Fetch Metadata (Sec-Fetch-* present — Chrome 76+,
-  //    FF 90+, Safari 16.4+, i.e. ~all live traffic) must prove the gesture; older
-  //    clients that send no Sec-Fetch-* fall back to gates 1–2.
+  // 3) Human gesture, version-aware. The /go links are plain <a>, but speculative
+  //    prefetch/prerender and scraper navigations hit them with a same-origin
+  //    Referer + a real-looking UA — identical to a click at gates 1–2 (this is how
+  //    bots inflated Admitad to ~500 "clicks"/day with 0 conversions, incl. a
+  //    datacenter fleet wearing a Safari UA). A prefetch carries Sec-Purpose:
+  //    prefetch; a genuine user-activated navigation carries Sec-Fetch-User: ?1
+  //    (never a prefetch or a scripted fetch()/goto()). Any UA that CLAIMS a browser
+  //    version new enough to send Sec-Fetch-User (see sendsSecFetchUser) must
+  //    present it — absence then means a bot. Only genuinely old UAs fall back to
+  //    the Referer gate above.
   const purpose =
     req.headers.get("sec-purpose") ?? req.headers.get("purpose") ?? "";
   const isPrefetch = /prefetch|prerender/i.test(purpose);
-  const supportsSecFetch = site !== null || mode !== null;
   const userActivated = req.headers.get("sec-fetch-user") === "?1";
+  const gestureCapable = sendsSecFetchUser(ua);
 
-  if (
-    looksLikeBot ||
-    !cameFromUs ||
-    isPrefetch ||
-    (supportsSecFetch && !userActivated)
-  ) {
+  if (looksLikeBot || !cameFromUs || isPrefetch) {
+    return new Response(null, { status: 204, headers: NOINDEX });
+  }
+  if (gestureCapable && !userActivated) {
     return new Response(null, { status: 204, headers: NOINDEX });
   }
 
