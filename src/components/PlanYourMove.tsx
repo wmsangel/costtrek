@@ -74,6 +74,7 @@ export default function PlanYourMove({
               target="_blank"
               data-aff-item={it.provider.toLowerCase().replace(/[^a-z0-9]+/g, "-")}
               data-aff-placement="toolkit"
+              data-aff-platform={it.network}
               className="group flex items-center gap-3 rounded-xl border border-[var(--border)] bg-[var(--card)] px-3 py-2.5 transition hover:border-[var(--accent)] hover:shadow-md hover:-translate-y-0.5"
             >
               <span

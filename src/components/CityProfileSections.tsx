@@ -336,6 +336,7 @@ export default function CityProfileSections({
             url: string;
             note?: string;
             icon: string;
+            network?: string;
           }[] = [
             ...profileLinks
               .filter((r): r is ReferralLink & { url: string } => Boolean(r.url))
@@ -350,6 +351,7 @@ export default function CityProfileSections({
               url: it.url,
               note: it.note,
               icon: TOOLKIT_ICON[it.category],
+              network: it.network,
             })),
           ];
           // De-duplicate by provider: Aviasales is now both a profile flights slot
@@ -382,6 +384,7 @@ export default function CityProfileSections({
                       target="_blank"
                       data-aff-item={r.provider.toLowerCase().replace(/[^a-z0-9]+/g, "-")}
                       data-aff-placement="city-offers"
+                      data-aff-platform={r.network}
                       className="group flex items-center justify-between gap-3 rounded-2xl bg-white px-3.5 py-3 text-[#171310] shadow-sm transition hover:shadow-xl hover:-translate-y-0.5"
                     >
                       <span className="flex items-center gap-3 min-w-0">

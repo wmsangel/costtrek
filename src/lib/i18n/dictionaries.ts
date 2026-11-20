@@ -239,6 +239,7 @@ export type Dictionary = {
       compensation: string;
       parking: string;
       housing: string;
+      money: string;
       other: string;
     };
   };

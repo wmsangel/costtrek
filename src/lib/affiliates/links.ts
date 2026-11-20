@@ -18,7 +18,12 @@ import "server-only";
  * it just isn't cloaked. Keep this list in sync when a deeplink changes.
  */
 
-export type AffiliateNet = "admitad" | "tp" | "indoleads" | "direct";
+export type AffiliateNet =
+  | "admitad"
+  | "tp"
+  | "indoleads"
+  | "partnerize"
+  | "direct";
 
 export type Affiliate = { url: string; net: AffiliateNet };
 
@@ -47,6 +52,18 @@ export const AFFILIATES: Record<string, Affiliate> = {
   mytrip: { url: "https://io10.info/6aa7d36473fb3", net: "indoleads" },
   cheapoair: { url: "https://z02o.xyz/6af529040c2e5?url=https://www.cheapoair.com/flights", net: "indoleads" }, // US-focused flights OTA; z02o.xyz = Indoleads, own costtrek-source deeplink (Get link), ?url= deeplinking click-verified → /flights with FpAffiliate tracking intact
 
+  // Partnerize (Wise, Content partner — approved 2026-11-20). Params are PATH
+  // segments, not query: sub-id is `/pubref:<ref>` and the deep link is the final
+  // `/destination:<urlencoded wise.com page>` (geolocated by region). One camref per
+  // payout currency — the toolkit picks it by the city's country (that's the
+  // currency we're paid in). withSub() inserts /pubref:costtrek-<slug> before
+  // /destination:. Keep these URLs in sync with toolkit.ts.
+  "wise-usd": { url: "https://wise.prf.hn/click/camref:1101l6yR7X/destination:https%3A%2F%2Fwise.com%2Fus%2Fsend-money%2F", net: "partnerize" },
+  "wise-eur": { url: "https://wise.prf.hn/click/camref:1101l6yR7U/destination:https%3A%2F%2Fwise.com%2Fsend-money%2F", net: "partnerize" },
+  "wise-gbp": { url: "https://wise.prf.hn/click/camref:1101l6yR7V/destination:https%3A%2F%2Fwise.com%2Fgb%2Fsend-money%2F", net: "partnerize" },
+  "wise-aud": { url: "https://wise.prf.hn/click/camref:1101l6yR7T/destination:https%3A%2F%2Fwise.com%2Fau%2Fsend-money%2F", net: "partnerize" },
+  "wise-jpy": { url: "https://wise.prf.hn/click/camref:1101l6yR7W/destination:https%3A%2F%2Fwise.com%2Fjp%2Fsend-money%2F", net: "partnerize" },
+
   // Direct (no network subid)
   safetywing: { url: "https://safetywing.com/nomad-insurance?referenceID=26588804&campaign=costtrek&utm_campaign=costtrek&utm_source=26588804&utm_medium=Ambassador", net: "direct" },
 };
@@ -59,6 +76,15 @@ export const ID_BY_URL: Record<string, string> = Object.fromEntries(
 /** Append the network's sub-id (the page slug) where the network supports it. */
 export function withSub(url: string, net: AffiliateNet, slug?: string): string {
   if (!slug) return url;
+  // Partnerize: sub-id is a path segment /pubref:<ref>, inserted BEFORE the
+  // /destination: deep-link segment (or appended when there is none).
+  if (net === "partnerize") {
+    const ref = `pubref:costtrek-${encodeURIComponent(slug)}`;
+    const d = url.indexOf("/destination:");
+    return d >= 0
+      ? `${url.slice(0, d)}/${ref}${url.slice(d)}`
+      : `${url.replace(/\/$/, "")}/${ref}`;
+  }
   const param =
     net === "admitad" ? "subid" : net === "tp" ? "sub_id" : net === "indoleads" ? "p1" : null;
   if (!param) return url;

@@ -22,6 +22,7 @@ export type ToolkitCategory =
   | "compensation"
   | "parking"
   | "housing"
+  | "money"
   | "other";
 
 export type ToolkitItem = {
@@ -29,6 +30,8 @@ export type ToolkitItem = {
   provider: string;
   url: string;
   note?: string;
+  /** Affiliate network, surfaced as `data-aff-platform` for the click event. */
+  network?: string;
 };
 
 /** Emoji per category — universal, no translation needed. */
@@ -45,6 +48,7 @@ export const TOOLKIT_ICON: Record<ToolkitCategory, string> = {
   compensation: "⚖️",
   parking: "🅿️",
   housing: "🏠",
+  money: "💸",
   other: "🔗",
 };
 
@@ -235,6 +239,33 @@ export function buildGeoToolkit(city: City): ToolkitItem[] {
       note: "Delayed flight? Claim up to €600",
     });
   }
+
+  // Wise — international money transfer (Partnerize). Relocation = moving money, so
+  // it shows for every city; the payout-currency campaign is matched to the city's
+  // region (that's the currency we're paid in). URLs must match links.ts. The
+  // destination deep-links to Wise's localized send-money page; pubref (the page
+  // slug) is added by withSub at redirect time.
+  const WISE_EUROZONE = new Set([
+    "DE", "FR", "ES", "IT", "NL", "AT", "PT", "IE",
+    "BE", "GR", "FI", "EE", "SK", "LT", "LV", "LU", "SI",
+  ]);
+  const wiseUrl =
+    cc === "GB"
+      ? "https://wise.prf.hn/click/camref:1101l6yR7V/destination:https%3A%2F%2Fwise.com%2Fgb%2Fsend-money%2F"
+      : cc === "AU"
+        ? "https://wise.prf.hn/click/camref:1101l6yR7T/destination:https%3A%2F%2Fwise.com%2Fau%2Fsend-money%2F"
+        : cc === "JP"
+          ? "https://wise.prf.hn/click/camref:1101l6yR7W/destination:https%3A%2F%2Fwise.com%2Fjp%2Fsend-money%2F"
+          : WISE_EUROZONE.has(cc)
+            ? "https://wise.prf.hn/click/camref:1101l6yR7U/destination:https%3A%2F%2Fwise.com%2Fsend-money%2F"
+            : "https://wise.prf.hn/click/camref:1101l6yR7X/destination:https%3A%2F%2Fwise.com%2Fus%2Fsend-money%2F";
+  items.push({
+    category: "money",
+    provider: "Wise",
+    url: wiseUrl,
+    note: "Move money abroad at the real exchange rate",
+    network: "partnerize",
+  });
 
   return items;
 }
