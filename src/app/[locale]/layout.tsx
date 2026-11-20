@@ -224,6 +224,21 @@ export default async function LocaleLayout({
             <div className="mt-6 space-y-1">
               <p>{dict.footer.line1}</p>
               <p>{dict.footer.line2}</p>
+              {/* Studio signature (network standard 2026-11-20): brand-anchor,
+                  rel="nofollow noopener" so the sitewide link isn't read as a
+                  link scheme; ClickTracker fires outbound_click{item} on click. */}
+              <p className="pt-1 text-xs">
+                Made by{" "}
+                <a
+                  href="https://izagorodnyi.dev"
+                  rel="nofollow noopener"
+                  target="_blank"
+                  data-aff-item="izagorodnyi.dev"
+                  className="underline hover:text-[var(--foreground)]"
+                >
+                  izagorodnyi.dev
+                </a>
+              </p>
             </div>
           </div>
         </footer>
