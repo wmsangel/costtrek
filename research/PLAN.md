@@ -82,6 +82,8 @@
 
 За последние ~2 недели (сверху — свежее):
 
+- **Пт 20.11 — проверка + жест-гейт /go UA-осознанный + подпись студии.** Верификация чиста (git clean, Googlebot 200, sub-id по сетям, 7 редирект-ошибок = 1-хоп 308→200). Гейт `/go` переписан версионно: Chromium76+/FF90+/Safari16.4+/iOS16.4+ обязаны слать `Sec-Fetch-User:?1`, старые → Referer (`sendsSecFetchUser`) — закрыл утечку фейк-Chrome без Sec-Fetch и дата-центр-ботов с Safari-UA; прод-матрица 9/9 (`206c020`). До: Admitad 17-19.11=484/532/471 при 0 конверсий; цифры после — 23.11 (0mwoj3z3d). Подпись студии «Made by izagorodnyi.dev» (nofollow, outbound_click) в подвале — `17d0d69`, прод ✓. План↔CRM сверён (аудит 0/0).
+
 - **IG-публикация через Instagram Graph API** (18.11) <!-- crm:0mvtafgssbbf158f509bd0d2b -->
 - **Соцаккаунты — активация соцмодуля** (18.11) <!-- crm:0mvarrqva1b32054238e2b4d6 -->
 - **Ср 18.11 — сокращение индекса, шаг 1 ЯЗЫКИ** (лечение индекс-блоата): en+es остаются индексируемыми, **fr/de/pt → noindex,follow** site-wide (`localeIndexable` в i18n/config; pageMetadata + layout-fallback + sitemap). hreflang оставлен (5 локалей + x-default). Коммит `bd852a9`, прод ✓: meta robots en/es=index, de/fr/pt=noindex,follow; sitemap **2885 → 1154** URL (только en/es). Снимает ~15 360 fr/de/pt-адресов из конкуренции. CRM 0mwishn15 закрыта. Остаётся шаг 2 (пары compare канон + 7 ошибок) и шаг 3 (состав sitemap по типам) — 20.11.
