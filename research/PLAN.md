@@ -82,6 +82,8 @@
 
 За последние ~2 недели (сверху — свежее):
 
+- **Wise (Partnerize) размещён — новая категория «money»/перевод денег** (релокация = перевод денег). 5 кампаний одобрены 20.11; вшил с гео-выбором валюты по стране города (GB→GBP, AU→AUD, JP→JPY, еврозона→EUR, иначе USD), cloaked через /go с жест-гейтом, `pubref=costtrek-<slug>` (путь-сегмент) как sub-id, `affiliate_click{partnerize}`. Прод ✓: /go/wise-usd клик→302→wise.com/us/send-money с трекингом, бот→204, гео-валюта на city-страницах. Коммит `5ab5c30`. CRM 0mwop9f59 закрыта.
+
 - **Пт 20.11 — проверка + жест-гейт /go UA-осознанный + подпись студии.** Верификация чиста (git clean, Googlebot 200, sub-id по сетям, 7 редирект-ошибок = 1-хоп 308→200). Гейт `/go` переписан версионно: Chromium76+/FF90+/Safari16.4+/iOS16.4+ обязаны слать `Sec-Fetch-User:?1`, старые → Referer (`sendsSecFetchUser`) — закрыл утечку фейк-Chrome без Sec-Fetch и дата-центр-ботов с Safari-UA; прод-матрица 9/9 (`206c020`). До: Admitad 17-19.11=484/532/471 при 0 конверсий; цифры после — 23.11 (0mwoj3z3d). Подпись студии «Made by izagorodnyi.dev» (nofollow, outbound_click) в подвале — `17d0d69`, прод ✓. План↔CRM сверён (аудит 0/0).
 
 - **IG-публикация через Instagram Graph API** (18.11) <!-- crm:0mvtafgssbbf158f509bd0d2b -->
