@@ -579,7 +579,7 @@
     "homeDescription": "Compare the cost of living between cities worldwide and find the salary you'd need to keep your standard of living after a move.",
     "compareTitle": "{a} vs {b}: cost of living comparison",
     "compareDescription": "{bName} is {pct} {word} than {aName}. Compare the full cost of living — rent, food, transport and taxes — and see the net salary you’d need in {bName} to keep your {aName} standard of living.",
-    "cityTitle": "Cost of living in {city}",
-    "cityDescription": "Cost of living in {location}: index {index} (US average = 100), median 1-bedroom rent about ${rent}/month, plus a category breakdown."
+    "cityTitle": "Cost of living in {city}: rent, prices & salary needed",
+    "cityDescription": "How expensive is {location}? Cost-of-living index {index} (US average = 100), typical 1-bedroom rent about ${rent}/month, a full category breakdown, and the salary you need to live there."
   }
 }
