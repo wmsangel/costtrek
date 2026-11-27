@@ -325,6 +325,7 @@ export default async function CountryPage({
           picks={buildAmazonPicks(co, dict)}
           heading={dict.amazon.heading}
           disclaimer={dict.amazon.disclaimer}
+          slug={`country-${country}`}
         />
       )}
     </div>

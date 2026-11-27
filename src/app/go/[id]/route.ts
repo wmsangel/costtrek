@@ -89,11 +89,12 @@ export async function GET(
   //    captured tokenized one — is refused. Signed over the id as requested.
   const sp = new URL(req.url).searchParams;
   const slug = sp.get("s") || undefined;
-  if (!goTokenValid(id, slug ?? "", sp.get("t"), sp.get("k"))) {
+  const q = sp.get("q") ?? "";
+  if (!goTokenValid(id, slug ?? "", q, sp.get("t"), sp.get("k"))) {
     return new Response(null, { status: 204, headers: NOINDEX });
   }
 
-  const dest = withSub(aff.url, aff.net, slug);
+  const dest = withSub(aff.url, aff.net, slug, q);
   return new Response(null, {
     status: 302,
     headers: { Location: dest, ...NOINDEX },

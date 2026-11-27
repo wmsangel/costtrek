@@ -44,7 +44,7 @@ function arm(e: Event): HTMLAnchorElement | null {
   if (!a) return null;
   const id = a.dataset.go;
   if (!e.isTrusted || !id) return a;
-  a.setAttribute("href", goUrl(id, a.dataset.goS));
+  a.setAttribute("href", goUrl(id, a.dataset.goS, a.dataset.goQ));
   return a;
 }
 

@@ -198,7 +198,7 @@ const pt: Record<string, GuideContent> = {
             um rendimento mensal mínimo — normalmente entre cerca de €2,500–€4,000,
             comprovado com recibos de vencimento ou extratos bancários recentes. Os
             países mais caros impõem fasquias mais altas. Se esses extratos forem PDFs ou fotos,{" "}
-            <a href="https://ocrsnip.com/" target="_blank" rel="noopener">
+            <a href="https://ocrsnip.com/" target="_blank" rel="nofollow noopener">
               uma ferramenta como o OCRSnip transforma-os numa folha de cálculo organizada
             </a>{" "}
             para a candidatura.
@@ -420,7 +420,7 @@ const pt: Record<string, GuideContent> = {
           mobília e uma margem para as semanas antes de o seu rendimento começar.
           Uma regra prática: ter três a seis meses das despesas da nova cidade
           poupados antes de partir. Para transformar essa meta num valor mensal, uma{" "}
-          <a href="https://calclumen.com/" target="_blank" rel="noopener">
+          <a href="https://calclumen.com/" target="_blank" rel="nofollow noopener">
             calculadora de meta de poupança
           </a>{" "}
           trabalha a partir da data em que quer partir.
@@ -722,7 +722,7 @@ const pt: Record<string, GuideContent> = {
           a primeira renda ser devida. Mudar-se com um animal acrescenta a sua
           própria rubrica também — vacinas, papelada e transporte à partida, e
           depois uma manutenção fácil de subestimar;{" "}
-          <a href="https://pawdget.com/" target="_blank" rel="noopener">
+          <a href="https://pawdget.com/" target="_blank" rel="nofollow noopener">
             o Pawdget detalha quanto custa realmente um cão
           </a>{" "}
           por raça e estado dos EUA.
@@ -806,7 +806,7 @@ const pt: Record<string, GuideContent> = {
           que conta como &quot;desgaste normal&quot; quando sair. Se o contrato só
           estiver na língua local, mande-o traduzir — assinar algo que não consegue
           ler é como começam os litígios. Se só existir em foto ou PDF, uma ferramenta como{" "}
-          <a href="https://ocrsnip.com/" target="_blank" rel="noopener">
+          <a href="https://ocrsnip.com/" target="_blank" rel="nofollow noopener">
             o OCRSnip transforma-o em texto
           </a>{" "}
           que pode colar primeiro num tradutor.

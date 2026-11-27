@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useFirstInteraction } from "@/lib/useFirstInteraction";
 
 // Aviasales "Flights Search Form" (Travelpayouts: account marker shmarker=770708,
 // trs=567317 = traffic source — not the marker; USD, coral
@@ -20,10 +21,12 @@ export default function FlightWidget({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [loaded, setLoaded] = useState(false);
+  const interacted = useFirstInteraction();
 
   useEffect(() => {
     const el = ref.current;
-    if (!el || loaded) return;
+    // Needs a real visitor first (no input → no partner script), then scroll-near.
+    if (!el || loaded || !interacted) return;
     const io = new IntersectionObserver(
       (entries) => {
         if (!entries[0]?.isIntersecting) return;
@@ -39,7 +42,7 @@ export default function FlightWidget({
     );
     io.observe(el);
     return () => io.disconnect();
-  }, [loaded]);
+  }, [loaded, interacted]);
 
   return (
     <section className="mt-10">

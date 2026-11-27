@@ -4,6 +4,7 @@ import Script from "next/script";
 import { useEffect, useState } from "react";
 import { TRAVELPAYOUTS_DRIVE } from "@/lib/flags";
 import { isProdHost } from "@/lib/host";
+import { useFirstInteraction } from "@/lib/useFirstInteraction";
 
 /**
  * Travelpayouts "Drive" native-affiliate script (trs=567317 = traffic source;
@@ -16,11 +17,13 @@ import { isProdHost } from "@/lib/host";
  */
 export default function TravelpayoutsScript() {
   const [prod, setProd] = useState(false);
+  const interacted = useFirstInteraction();
   useEffect(() => {
     setProd(isProdHost());
   }, []);
 
-  if (!TRAVELPAYOUTS_DRIVE || !prod) return null;
+  // Held until the first real input: no person, no script (see useFirstInteraction).
+  if (!TRAVELPAYOUTS_DRIVE || !prod || !interacted) return null;
 
   return (
     <Script

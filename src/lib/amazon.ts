@@ -20,16 +20,7 @@ import { fill, type Dictionary } from "@/lib/i18n/dictionaries";
 // Manage Your Websites, 2026-10-14). Each network site gets its own tracking ID.
 export const AMAZON_TAG = "costtrek-20";
 
-const AMAZON_HOST = "https://www.amazon.com";
-
-export type AmazonPick = { href: string; label: string };
-
-function searchUrl(query: string): string {
-  const u = new URL(`${AMAZON_HOST}/s`);
-  u.searchParams.set("k", query);
-  u.searchParams.set("tag", AMAZON_TAG);
-  return u.toString();
-}
+export type AmazonPick = { q: string; label: string };
 
 /**
  * Native picks for a country: a relocation/expat book search, a phrasebook for
@@ -40,7 +31,7 @@ export function buildAmazonPicks(co: Country, dict: Dictionary): AmazonPick[] {
   const a = dict.amazon;
   const picks: AmazonPick[] = [
     {
-      href: searchUrl(`moving to ${co.name} expat guide`),
+      q: `moving to ${co.name} expat guide`,
       label: fill(a.books, { country: co.name }),
     },
   ];
@@ -48,11 +39,11 @@ export function buildAmazonPicks(co: Country, dict: Dictionary): AmazonPick[] {
   const lang = co.languages?.[0];
   if (lang && !/english/i.test(lang)) {
     picks.push({
-      href: searchUrl(`${lang} phrasebook`),
+      q: `${lang} phrasebook`,
       label: fill(a.phrasebook, { language: lang }),
     });
   }
 
-  picks.push({ href: searchUrl("universal travel adapter"), label: a.gear });
+  picks.push({ q: "universal travel adapter", label: a.gear });
   return picks;
 }

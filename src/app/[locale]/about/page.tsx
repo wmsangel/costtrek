@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import LegalShell from "@/components/LegalShell";
+import NetworkStrip from "@/components/NetworkStrip";
 import { legalBody } from "@/content/legal-i18n";
 import { isLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
@@ -127,6 +128,7 @@ export default async function AboutPage({
       </p>
         </>
       ))}
+      <NetworkStrip heading={dict.footer.network} />
     </LegalShell>
   );
 }

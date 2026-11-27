@@ -300,7 +300,7 @@ export const GUIDES: Guide[] = [
             minimum monthly income — commonly somewhere between roughly
             €2,500–€4,000, proven with recent payslips or bank statements. Higher-
             cost countries set higher bars. If those statements are PDFs or photos,{" "}
-            <a href="https://ocrsnip.com/" target="_blank" rel="noopener">
+            <a href="https://ocrsnip.com/" target="_blank" rel="nofollow noopener">
               a tool like OCRSnip turns them into a clean spreadsheet
             </a>{" "}
             for the application.
@@ -428,7 +428,7 @@ export const GUIDES: Guide[] = [
           <a
             href="https://calclumen.com/en/inflation-calculator"
             target="_blank"
-            rel="noopener"
+            rel="nofollow noopener"
           >
             inflation calculator
           </a>{" "}
@@ -481,7 +481,7 @@ export const GUIDES: Guide[] = [
           <a
             href="https://calclumen.com/en/car-affordability-calculator"
             target="_blank"
-            rel="noopener"
+            rel="nofollow noopener"
           >
             car-affordability calculator
           </a>{" "}
@@ -549,7 +549,7 @@ export const GUIDES: Guide[] = [
           <a
             href="https://calclumen.com/en/salary-to-hourly-calculator"
             target="_blank"
-            rel="noopener"
+            rel="nofollow noopener"
           >
             salary-to-hourly calculator
           </a>{" "}
@@ -562,7 +562,7 @@ export const GUIDES: Guide[] = [
           furniture, and a buffer for the weeks before your income starts. A rule
           of thumb: have three to six months of the new city&apos;s expenses saved
           before you go. To turn that target into a monthly amount, a{" "}
-          <a href="https://calclumen.com/" target="_blank" rel="noopener">
+          <a href="https://calclumen.com/" target="_blank" rel="nofollow noopener">
             savings-goal calculator
           </a>{" "}
           works back from the date you want to leave.
@@ -887,7 +887,7 @@ export const GUIDES: Guide[] = [
           first month&apos;s rent is even due. Moving with a pet adds its own line
           too — vaccinations, paperwork and transport up front, then upkeep
           that&apos;s easy to underestimate;{" "}
-          <a href="https://pawdget.com/" target="_blank" rel="noopener">
+          <a href="https://pawdget.com/" target="_blank" rel="nofollow noopener">
             Pawdget breaks down what a dog really costs
           </a>{" "}
           by breed and US state.
@@ -928,7 +928,7 @@ export const GUIDES: Guide[] = [
           <a
             href="https://calclumen.com/en/home-affordability-calculator"
             target="_blank"
-            rel="noopener"
+            rel="nofollow noopener"
           >
             home affordability calculator
           </a>{" "}
@@ -943,7 +943,7 @@ export const GUIDES: Guide[] = [
           <a
             href="https://calclumen.com/en/currency-converter"
             target="_blank"
-            rel="noopener"
+            rel="nofollow noopener"
           >
             currency converter
           </a>{" "}
@@ -988,7 +988,7 @@ export const GUIDES: Guide[] = [
           &quot;normal wear&quot; when you leave. If the contract is only in the
           local language, get it translated — signing something you can&apos;t
           read is how disputes start. If it&apos;s only a photo or PDF, a tool like{" "}
-          <a href="https://ocrsnip.com/" target="_blank" rel="noopener">
+          <a href="https://ocrsnip.com/" target="_blank" rel="nofollow noopener">
             OCRSnip turns it into text
           </a>{" "}
           you can paste into a translator first.

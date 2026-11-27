@@ -1,4 +1,5 @@
 import type { AmazonPick } from "@/lib/amazon";
+import { amazonAttrs } from "@/lib/affiliates/links";
 
 /**
  * Native "Recommended reading & gear" band — Amazon Associates text links
@@ -10,10 +11,12 @@ export default function AmazonPicks({
   picks,
   heading,
   disclaimer,
+  slug,
 }: {
   picks: AmazonPick[];
   heading: string;
   disclaimer: string;
+  slug?: string;
 }) {
   if (picks.length === 0) return null;
   return (
@@ -21,9 +24,9 @@ export default function AmazonPicks({
       <h2 className="mag-h2 mb-4">▸ {heading}</h2>
       <ul className="flex flex-wrap gap-2">
         {picks.map((p) => (
-          <li key={p.href}>
+          <li key={p.q}>
             <a
-              href={p.href}
+              {...amazonAttrs(p.q, slug)}
               target="_blank"
               rel="sponsored nofollow noopener"
               data-aff-item="amazon"

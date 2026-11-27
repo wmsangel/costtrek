@@ -16,7 +16,6 @@ import ThemeToggle from "@/components/ThemeToggle";
 import CookieBanner from "@/components/CookieBanner";
 import FeedbackFab from "@/components/FeedbackFab";
 import TravelpayoutsScript from "@/components/TravelpayoutsScript";
-import NetworkStrip from "@/components/NetworkStrip";
 import FeaturedPromo from "@/components/FeaturedPromo";
 import { buildFeatured } from "@/lib/featured";
 import Analytics from "@/components/Analytics";
@@ -220,7 +219,6 @@ export default async function LocaleLayout({
               items={buildFeatured(locale as Locale, dict)}
               heading={dict.footer.featured}
             />
-            <NetworkStrip heading={dict.footer.network} />
             <div className="mt-6 space-y-1">
               <p>{dict.footer.line1}</p>
               <p>{dict.footer.line2}</p>

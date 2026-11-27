@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import CompareForm from "@/components/CompareForm";
 import Mountains from "@/components/Mountains";
+import NetworkStrip from "@/components/NetworkStrip";
 import {
   CITIES,
   cityPath,
@@ -444,6 +445,7 @@ export default async function Home({
           </Link>
         </p>
       </section>
+      <NetworkStrip heading={dict.footer.network} />
     </div>
   );
 }

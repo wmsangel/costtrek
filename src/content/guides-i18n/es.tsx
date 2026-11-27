@@ -42,7 +42,7 @@ const es: Record<string, GuideContent> = {
             aproximadamente—, que se demuestra con nóminas o extractos bancarios
             recientes. Los países más caros exigen umbrales más altos. Si esos
             extractos son PDF o fotos,{" "}
-            <a href="https://ocrsnip.com/" target="_blank" rel="noopener">
+            <a href="https://ocrsnip.com/" target="_blank" rel="nofollow noopener">
               una herramienta como OCRSnip los convierte en una hoja de cálculo
               limpia
             </a>{" "}
@@ -268,7 +268,7 @@ const es: Record<string, GuideContent> = {
           empiecen tus ingresos. Una regla práctica: ten ahorrados de tres a seis
           meses de los gastos de la nueva ciudad antes de irte. Para convertir
           ese objetivo en una cantidad mensual, una{" "}
-          <a href="https://calclumen.com/" target="_blank" rel="noopener">
+          <a href="https://calclumen.com/" target="_blank" rel="nofollow noopener">
             calculadora de objetivos de ahorro
           </a>{" "}
           lo calcula hacia atrás desde la fecha en la que quieres marcharte.
@@ -645,7 +645,7 @@ const es: Record<string, GuideContent> = {
           de que venza el primer mes de alquiler. Mudarse con una mascota añade
           su propia partida también: vacunas, papeleo y transporte por adelantado,
           y luego un mantenimiento que es fácil subestimar;{" "}
-          <a href="https://pawdget.com/" target="_blank" rel="noopener">
+          <a href="https://pawdget.com/" target="_blank" rel="nofollow noopener">
             Pawdget desglosa lo que un perro cuesta de verdad
           </a>{" "}
           por raza y estado de EE. UU.
@@ -729,7 +729,7 @@ const es: Record<string, GuideContent> = {
           te vayas. Si el contrato está solo en el idioma local, hazlo traducir:
           firmar algo que no puedes leer es como empiezan las disputas. Si es
           solo una foto o un PDF, una herramienta como{" "}
-          <a href="https://ocrsnip.com/" target="_blank" rel="noopener">
+          <a href="https://ocrsnip.com/" target="_blank" rel="nofollow noopener">
             OCRSnip lo convierte en texto
           </a>{" "}
           que puedes pegar en un traductor primero.

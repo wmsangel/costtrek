@@ -303,7 +303,7 @@ const fr: Record<string, GuideContent> = {
             justifié par des fiches de paie ou des relevés bancaires récents. Les
             pays où la vie est plus chère placent la barre plus haut. Si ces
             relevés sont des PDF ou des photos,{" "}
-            <a href="https://ocrsnip.com/" target="_blank" rel="noopener">
+            <a href="https://ocrsnip.com/" target="_blank" rel="nofollow noopener">
               un outil comme OCRSnip les transforme en un tableur propre
             </a>{" "}
             pour votre dossier.
@@ -536,7 +536,7 @@ const fr: Record<string, GuideContent> = {
           semaines précédant le début de vos revenus. Règle empirique : ayez de trois
           à six mois de dépenses de la nouvelle ville de côté avant de partir. Pour
           transformer cet objectif en montant mensuel, un{" "}
-          <a href="https://calclumen.com/" target="_blank" rel="noopener">
+          <a href="https://calclumen.com/" target="_blank" rel="nofollow noopener">
             calculateur d&apos;objectif d&apos;épargne
           </a>{" "}
           remonte à partir de la date à laquelle vous souhaitez partir.
@@ -846,7 +846,7 @@ const fr: Record<string, GuideContent> = {
           loyer ne soit dû. Déménager avec un animal ajoute sa propre ligne aussi —
           vaccinations, paperasse et transport au départ, puis un entretien qu&apos;il
           est facile de sous-estimer ;{" "}
-          <a href="https://pawdget.com/" target="_blank" rel="noopener">
+          <a href="https://pawdget.com/" target="_blank" rel="nofollow noopener">
             Pawdget détaille ce que coûte réellement un chien
           </a>{" "}
           selon la race et l&apos;État américain.
@@ -931,7 +931,7 @@ const fr: Record<string, GuideContent> = {
           uniquement dans la langue locale, faites-le traduire — signer un document que
           vous ne pouvez pas lire, c&apos;est ainsi que naissent les litiges. Si ce
           n&apos;est qu&apos;une photo ou un PDF, un outil comme{" "}
-          <a href="https://ocrsnip.com/" target="_blank" rel="noopener">
+          <a href="https://ocrsnip.com/" target="_blank" rel="nofollow noopener">
             OCRSnip le transforme en texte
           </a>{" "}
           que vous pouvez coller dans un traducteur au préalable.

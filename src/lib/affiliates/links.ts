@@ -1,4 +1,5 @@
 import "server-only";
+import { AMAZON_TAG } from "@/lib/amazon";
 
 /**
  * Affiliate link registry + the /go cloaking helper. SERVER-ONLY: the real
@@ -24,6 +25,7 @@ export type AffiliateNet =
   | "tp"
   | "indoleads"
   | "partnerize"
+  | "amazon"
   | "direct";
 
 export type Affiliate = { url: string; net: AffiliateNet };
@@ -66,6 +68,9 @@ export const AFFILIATES: Record<string, Affiliate> = {
   "wise-jpy": { url: "https://wise.prf.hn/click/camref:1101l6yR7W/destination:https%3A%2F%2Fwise.com%2Fjp%2Fsend-money%2F", net: "partnerize" },
 
   // Direct (no network subid)
+  // Amazon Associates search link: the query (`q`) is supplied per link at click
+  // time (see amazonAttrs), the tracking tag lives here, server-side.
+  amazon: { url: `https://www.amazon.com/s?tag=${AMAZON_TAG}`, net: "amazon" },
   safetywing: { url: "https://safetywing.com/nomad-insurance?referenceID=26588804&campaign=costtrek&utm_campaign=costtrek&utm_source=26588804&utm_medium=Ambassador", net: "direct" },
 };
 
@@ -75,7 +80,19 @@ export const ID_BY_URL: Record<string, string> = Object.fromEntries(
 );
 
 /** Append the network's sub-id (the page slug) where the network supports it. */
-export function withSub(url: string, net: AffiliateNet, slug?: string): string {
+export function withSub(
+  url: string,
+  net: AffiliateNet,
+  slug?: string,
+  q?: string,
+): string {
+  // Amazon: search text + a per-page ascsubtag (the tag itself is in the URL).
+  if (net === "amazon") {
+    const u = new URL(url);
+    if (q) u.searchParams.set("k", q.slice(0, 120));
+    if (slug) u.searchParams.set("ascsubtag", `costtrek-${slug}`.slice(0, 60));
+    return u.toString();
+  }
   if (!slug) return url;
   // Partnerize: sub-id is a path segment /pubref:<ref>, inserted BEFORE the
   // /destination: deep-link segment (or appended when there is none).
@@ -110,4 +127,17 @@ export function goAttrs(
   return slug
     ? { href: "#", "data-go": id, "data-go-s": slug }
     : { href: "#", "data-go": id };
+}
+
+/** Anchor attributes for an Amazon search link (`q` = search text). */
+export function amazonAttrs(
+  q: string,
+  slug?: string,
+): { href: string; "data-go": string; "data-go-s"?: string; "data-go-q": string } {
+  return {
+    href: "#",
+    "data-go": "amazon",
+    ...(slug ? { "data-go-s": slug } : {}),
+    "data-go-q": q,
+  };
 }

@@ -307,7 +307,7 @@ const de: Record<string, GuideContent> = {
             etwa €2,500–€4,000, nachzuweisen mit aktuellen Gehaltsabrechnungen
             oder Kontoauszügen. Teurere Länder setzen höhere Hürden. Liegen
             diese Nachweise als PDFs oder Fotos vor,{" "}
-            <a href="https://ocrsnip.com/" target="_blank" rel="noopener">
+            <a href="https://ocrsnip.com/" target="_blank" rel="nofollow noopener">
               verwandelt sie ein Werkzeug wie OCRSnip in eine saubere Tabelle
             </a>{" "}
             für den Antrag.
@@ -544,7 +544,7 @@ const de: Record<string, GuideContent> = {
           Einkommen einsetzt. Eine Faustregel: Haben Sie drei bis sechs Monate der
           Ausgaben der neuen Stadt angespart, bevor Sie aufbrechen. Um dieses
           Ziel in einen monatlichen Betrag umzurechnen, rechnet ein{" "}
-          <a href="https://calclumen.com/" target="_blank" rel="noopener">
+          <a href="https://calclumen.com/" target="_blank" rel="nofollow noopener">
             Sparziel-Rechner
           </a>{" "}
           vom gewünschten Abreisedatum zurück.
@@ -855,7 +855,7 @@ const de: Record<string, GuideContent> = {
           ist. Ein Umzug mit Haustier bringt seine eigene Kostenzeile mit —
           Impfungen, Papierkram und Transport im Voraus, dann laufende Kosten,
           die man leicht unterschätzt;{" "}
-          <a href="https://pawdget.com/" target="_blank" rel="noopener">
+          <a href="https://pawdget.com/" target="_blank" rel="nofollow noopener">
             Pawdget schlüsselt auf, was ein Hund wirklich kostet
           </a>{" "}
           nach Rasse und US-Bundesstaat.
@@ -945,7 +945,7 @@ const de: Record<string, GuideContent> = {
           unterschreiben, das Sie nicht lesen können, ist der Beginn von
           Streitigkeiten. Liegt er nur als Foto oder PDF vor, macht ein Werkzeug
           wie{" "}
-          <a href="https://ocrsnip.com/" target="_blank" rel="noopener">
+          <a href="https://ocrsnip.com/" target="_blank" rel="nofollow noopener">
             OCRSnip daraus Text
           </a>{" "}
           den Sie zuerst in einen Übersetzer einfügen können.

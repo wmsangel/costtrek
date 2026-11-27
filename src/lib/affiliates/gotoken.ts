@@ -32,27 +32,38 @@ function fnv1a(str: string, seed: number): number {
   return h >>> 0;
 }
 
-/** Signature over (id, slug, time). `t` is the base-36 unix-seconds string. */
-export function goSig(id: string, slug: string, t: string): string {
-  const s = `${SALT}|${id}|${slug}|${t}`;
+/**
+ * Signature over (id, slug, query, time). `t` is the base-36 unix-seconds
+ * string; `q` is the optional search text for links whose destination takes one
+ * (Amazon search) — signed too, so a token can't be reused for another query.
+ */
+export function goSig(id: string, slug: string, t: string, q: string = ""): string {
+  const s = `${SALT}|${id}|${slug}|${q}|${t}`;
   const r = s.split("").reverse().join("");
   return fnv1a(s, 0x811c9dc5).toString(36) + fnv1a(r, 0x9747b28c).toString(36);
 }
 
 /** The /go URL for a click happening now. Built in the browser, at click time. */
-export function goUrl(id: string, slug?: string, nowMs: number = Date.now()): string {
+export function goUrl(
+  id: string,
+  slug?: string,
+  q?: string,
+  nowMs: number = Date.now(),
+): string {
   const t = Math.floor(nowMs / 1000).toString(36);
-  const q = new URLSearchParams();
-  if (slug) q.set("s", slug);
-  q.set("t", t);
-  q.set("k", goSig(id, slug ?? "", t));
-  return `/go/${encodeURIComponent(id)}?${q.toString()}`;
+  const p = new URLSearchParams();
+  if (slug) p.set("s", slug);
+  if (q) p.set("q", q);
+  p.set("t", t);
+  p.set("k", goSig(id, slug ?? "", t, q ?? ""));
+  return `/go/${encodeURIComponent(id)}?${p.toString()}`;
 }
 
 /** Server side: is this (t, k) pair a fresh signature for this id + slug? */
 export function goTokenValid(
   id: string,
   slug: string,
+  q: string,
   t: string | null,
   k: string | null,
   nowMs: number = Date.now(),
@@ -61,5 +72,5 @@ export function goTokenValid(
   const secs = parseInt(t, 36);
   if (!Number.isFinite(secs)) return false;
   if (Math.abs(nowMs / 1000 - secs) > GO_TOKEN_TTL_S) return false;
-  return k === goSig(id, slug, t);
+  return k === goSig(id, slug, t, q);
 }

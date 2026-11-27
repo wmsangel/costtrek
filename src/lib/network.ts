@@ -1,6 +1,6 @@
 /**
- * The owner's personal network of sites — cross-promoted in a rotating footer
- * strip (see `NetworkStrip`). CostTrek itself is intentionally excluded (no
+ * The owner's personal network of sites — cross-promoted in a nofollow list
+ * block (see `NetworkStrip`, home + /about only). CostTrek itself is intentionally excluded (no
  * point advertising the current site to its own visitors).
  *
  * Taglines are kept short and in English: CostTrek's audiences are en/de/fr/es/pt,
