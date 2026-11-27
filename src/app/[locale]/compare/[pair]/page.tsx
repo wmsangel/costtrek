@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, permanentRedirect } from "next/navigation";
-import { goHref } from "@/lib/affiliates/links";
+import { goAttrs } from "@/lib/affiliates/links";
 import CostCompareCalculator, {
   type BreakdownRow,
 } from "@/components/CostCompareCalculator";
@@ -362,7 +362,7 @@ export default async function ComparePage({
           </div>
 
           <a
-            href={goHref("https://xyowz.com/g/n2q2nolvw6a27dee2ccd6d2e807f50/", pair)}
+            {...goAttrs("https://xyowz.com/g/n2q2nolvw6a27dee2ccd6d2e807f50/", pair)}
             rel="sponsored nofollow noopener"
             data-aff-item="aviasales"
             data-aff-placement="compare-cta"

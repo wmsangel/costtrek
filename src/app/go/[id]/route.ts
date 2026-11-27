@@ -1,10 +1,12 @@
 import { AFFILIATES, withSub } from "@/lib/affiliates/links";
+import { goTokenValid } from "@/lib/affiliates/gotoken";
 
 /**
- * /go/<id>?s=<slug> — our own affiliate redirect. A real human who clicked a link
- * on one of our pages gets a 302 to the partner (with the page slug as the network
- * sub-id); anything that looks like a bot, or a request that did NOT come from our
- * own page, gets 204 with no Location. This keeps affiliate networks from counting
+ * /go/<id>?s=<slug>&t=<time>&k=<sig> — our own affiliate redirect. A real human
+ * who clicked a link on one of our pages gets a 302 to the partner (with the page
+ * slug as the network sub-id); anything that looks like a bot, a request that did
+ * NOT come from our own page, or a URL without a fresh click-time token (a stored
+ * or replayed link — see gotoken.ts) gets 204 with no Location. This keeps affiliate networks from counting
  * crawler hits as clicks (audit 2026-10-29). Not cloaking: the destination for a
  * person who clicks is exactly what it always was — we just decline to bill a
  * machine as a visitor. Proven on pawdget (izn.pets) and prodom-expert.
@@ -57,11 +59,11 @@ export async function GET(
   // 3) Human gesture, required of EVERY browser. The /go links are plain <a>, but
   //    speculative prefetch/prerender and scraper navigations hit them with a
   //    same-origin Referer + a real-looking UA — identical to a click at gates 1–2.
-  //    This is how a crawler inflated Admitad to ~420 "clicks"/day with 0
-  //    conversions: it loaded each page, read its `/go?s=<slug>` link and
-  //    re-requested it with a forged Referer + an old/unknown UA, which slipped
-  //    through the former "old UA → Referer" soft path (subid proved it — every
-  //    counted click carried a page slug, so it had passed /go). A prefetch carries
+  //    This is how a bot inflated Admitad to ~420 "clicks"/day with 0
+  //    conversions: it requested `/go?s=<slug>` URLs with a forged Referer + an
+  //    old/unknown UA, which slipped through the former "old UA → Referer" soft
+  //    path (subid proved it — every counted click carried a page slug, so it had
+  //    passed /go). A prefetch carries
   //    Sec-Purpose: prefetch; a genuine user-activated navigation carries
   //    Sec-Fetch-User: ?1 (never a prefetch, a scripted fetch()/goto(), or a UA too
   //    old to emit it). We now demand ?1 from EVERYONE — a browser older than 2019
@@ -79,7 +81,18 @@ export async function GET(
     return new Response(null, { status: 204, headers: NOINDEX });
   }
 
-  const slug = new URL(req.url).searchParams.get("s") || undefined;
+  // 4) Click-time token. Gates 1–3 are all request headers, and a bot replaying a
+  //    harvested list of /go URLs through residential proxies forges every one of
+  //    them (2026-11-26: 745 redirects from 742 IPs, none of which had loaded a
+  //    page). The token is minted by our own script at the moment of a trusted
+  //    click and expires in minutes, so a stored URL — in the old bare format or a
+  //    captured tokenized one — is refused. Signed over the id as requested.
+  const sp = new URL(req.url).searchParams;
+  const slug = sp.get("s") || undefined;
+  if (!goTokenValid(id, slug ?? "", sp.get("t"), sp.get("k"))) {
+    return new Response(null, { status: 204, headers: NOINDEX });
+  }
+
   const dest = withSub(aff.url, aff.net, slug);
   return new Response(null, {
     status: 302,

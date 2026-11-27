@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { goHref } from "@/lib/affiliates/links";
+import { goAttrs } from "@/lib/affiliates/links";
 import {
   COLLECTIONS,
   COLLECTION_KEYS,
@@ -235,7 +235,7 @@ export default async function RegionalCollectionPage({
 
       {/* Flights affiliate CTA (sponsored, worldwide) */}
       <a
-        href={goHref("https://aviasales.tpm.li/dAyfvzBW", `${list}-${region}`)}
+        {...goAttrs("https://aviasales.tpm.li/dAyfvzBW", `${list}-${region}`)}
         rel="sponsored nofollow noopener"
         data-aff-item="aviasales"
         data-aff-placement="best-region-hub"

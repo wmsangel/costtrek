@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { goHref } from "@/lib/affiliates/links";
+import { goAttrs } from "@/lib/affiliates/links";
 import {
   COLLECTIONS,
   COLLECTION_KEYS,
@@ -275,7 +275,7 @@ export default async function CollectionPage({
 
       {/* Flights affiliate CTA (sponsored, worldwide) */}
       <a
-        href={goHref("https://aviasales.tpm.li/dAyfvzBW", list)}
+        {...goAttrs("https://aviasales.tpm.li/dAyfvzBW", list)}
         rel="sponsored nofollow noopener"
         data-aff-item="aviasales"
         data-aff-placement="best-hub"

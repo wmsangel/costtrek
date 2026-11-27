@@ -2,10 +2,11 @@ import "server-only";
 
 /**
  * Affiliate link registry + the /go cloaking helper. SERVER-ONLY: the real
- * tracking URLs never reach client markup — pages link to `/go/<id>` instead,
- * and `src/app/go/[id]/route.ts` resolves the id here and 302s a real human to
- * the partner (bots get 204, no Location). This stops affiliate networks from
- * counting crawler hits as clicks (see research/ADS-AND-LINKS.md).
+ * tracking URLs never reach client markup — anchors carry only `data-go="<id>"`,
+ * the /go URL is built in the browser on a real click (`gotoken.ts`,
+ * `ClickTracker`), and `src/app/go/[id]/route.ts` resolves the id here and 302s
+ * a real human to the partner (bots get 204, no Location). This stops affiliate
+ * networks from counting crawler hits as clicks (see research/ADS-AND-LINKS.md).
  *
  * `id → { url, net }`. `net` picks the sub-id param we append from the page slug
  * (`subid` for Admitad, `sub_id` for Travelpayouts, `p1` for Indoleads — "Sub 1"
@@ -13,8 +14,8 @@ import "server-only";
  *
  * These URLs mirror the deeplinks that still live in the data/components
  * (`toolkit.ts`, `cityProfiles.ts` referral slots, the /best & compare CTAs,
- * `MyTripCard`). `goHref(url, slug)` resolves a raw deeplink to its /go path by
- * exact match; an unknown URL falls through unchanged, so nothing ever breaks —
+ * `MyTripCard`). `goAttrs(url, slug)` resolves a raw deeplink to its registry id
+ * by exact match; an unknown URL falls through unchanged, so nothing ever breaks —
  * it just isn't cloaked. Keep this list in sync when a deeplink changes.
  */
 
@@ -93,13 +94,20 @@ export function withSub(url: string, net: AffiliateNet, slug?: string): string {
 }
 
 /**
- * Resolve a raw affiliate deeplink to its cloaked `/go/<id>?s=<slug>` path.
- * Unknown URLs are returned unchanged (safe fallback — the link still works).
- * `slug` becomes the network sub-id at redirect time, so keep it short/clean.
+ * Anchor attributes for a raw affiliate deeplink: spread them onto the `<a>`.
+ * A known deeplink renders `href="#"` plus `data-go` (the registry id) and
+ * `data-go-s` (the page slug → network sub-id). No /go URL is ever written into
+ * the HTML: `ClickTracker` builds it, with a short-lived token, at the moment of
+ * a real click (see `gotoken.ts` for why). Unknown URLs fall through as a plain
+ * `href` (the link still works — it just isn't cloaked).
  */
-export function goHref(url: string, slug?: string): string {
+export function goAttrs(
+  url: string,
+  slug?: string,
+): { href: string; "data-go"?: string; "data-go-s"?: string } {
   const id = ID_BY_URL[url];
-  if (!id) return url;
-  const q = slug ? `?s=${encodeURIComponent(slug)}` : "";
-  return `/go/${id}${q}`;
+  if (!id) return { href: url };
+  return slug
+    ? { href: "#", "data-go": id, "data-go-s": slug }
+    : { href: "#", "data-go": id };
 }

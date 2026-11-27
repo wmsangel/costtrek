@@ -208,7 +208,7 @@ export function buildGeoToolkit(city: City): ToolkitItem[] {
 
   // CheapOAir — US-focused flights OTA (Indoleads, CPS). North-America only, as a
   // direct-booking complement to the global Aviasales metasearch. URL must match
-  // the links.ts registry exactly so goHref() cloaks it to /go/cheapoair.
+  // the links.ts registry exactly so goAttrs() cloaks it behind /go/cheapoair.
   if (cc === "US" || cc === "CA") {
     items.push({
       category: "flights",
